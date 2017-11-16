@@ -1115,31 +1115,31 @@ module Generated =
 
   module Controls =
     let accessText                               values =
-      StandardView<AccessText> (values) :> View
+      StandardView<_, AccessText> (values) :> View<_>
     module AccessText = 
       open Dummy
-      let text                                     v = SetConstantValue<_> (Properties.AccessText.text, v)
-      let fontFamily                               v = SetConstantValue<_> (Properties.AccessText.fontFamily, v)
-      let fontStyle                                v = SetConstantValue<_> (Properties.AccessText.fontStyle, v)
-      let fontWeight                               v = SetConstantValue<_> (Properties.AccessText.fontWeight, v)
-      let fontStretch                              v = SetConstantValue<_> (Properties.AccessText.fontStretch, v)
-      let fontSize                                 v = SetConstantValue<_> (Properties.AccessText.fontSize, v)
-      let foreground                               v = SetConstantValue<_> (Properties.AccessText.foreground, v)
-      let background                               v = SetConstantValue<_> (Properties.AccessText.background, v)
-      let textDecorations                          v = SetConstantValue<_> (Properties.AccessText.textDecorations, v)
-      let textEffects                              v = SetConstantValue<_> (Properties.AccessText.textEffects, v)
-      let lineHeight                               v = SetConstantValue<_> (Properties.AccessText.lineHeight, v)
-      let lineStackingStrategy                     v = SetConstantValue<_> (Properties.AccessText.lineStackingStrategy, v)
-      let textAlignment                            v = SetConstantValue<_> (Properties.AccessText.textAlignment, v)
-      let textTrimming                             v = SetConstantValue<_> (Properties.AccessText.textTrimming, v)
-      let textWrapping                             v = SetConstantValue<_> (Properties.AccessText.textWrapping, v)
-      let baselineOffset                           v = SetConstantValue<_> (Properties.AccessText.baselineOffset, v)
+      let text                                     v = SetConstantValue<_, _> (Properties.AccessText.text, v)
+      let fontFamily                               v = SetConstantValue<_, _> (Properties.AccessText.fontFamily, v)
+      let fontStyle                                v = SetConstantValue<_, _> (Properties.AccessText.fontStyle, v)
+      let fontWeight                               v = SetConstantValue<_, _> (Properties.AccessText.fontWeight, v)
+      let fontStretch                              v = SetConstantValue<_, _> (Properties.AccessText.fontStretch, v)
+      let fontSize                                 v = SetConstantValue<_, _> (Properties.AccessText.fontSize, v)
+      let foreground                               v = SetConstantValue<_, _> (Properties.AccessText.foreground, v)
+      let background                               v = SetConstantValue<_, _> (Properties.AccessText.background, v)
+      let textDecorations                          v = SetConstantValue<_, _> (Properties.AccessText.textDecorations, v)
+      let textEffects                              v = SetConstantValue<_, _> (Properties.AccessText.textEffects, v)
+      let lineHeight                               v = SetConstantValue<_, _> (Properties.AccessText.lineHeight, v)
+      let lineStackingStrategy                     v = SetConstantValue<_, _> (Properties.AccessText.lineStackingStrategy, v)
+      let textAlignment                            v = SetConstantValue<_, _> (Properties.AccessText.textAlignment, v)
+      let textTrimming                             v = SetConstantValue<_, _> (Properties.AccessText.textTrimming, v)
+      let textWrapping                             v = SetConstantValue<_, _> (Properties.AccessText.textWrapping, v)
+      let baselineOffset                           v = SetConstantValue<_, _> (Properties.AccessText.baselineOffset, v)
 
     module ActiveXHost = 
       open Dummy
 
     let adornedElementPlaceholder                values =
-      StandardView<AdornedElementPlaceholder> (values) :> View
+      StandardView<_, AdornedElementPlaceholder> (values) :> View<_>
     module AdornedElementPlaceholder = 
       open Dummy
 
@@ -1147,7 +1147,7 @@ module Generated =
       open Dummy
 
     let adornerDecorator                         values =
-      StandardView<AdornerDecorator> (values) :> View
+      StandardView<_, AdornerDecorator> (values) :> View<_>
     module AdornerDecorator = 
       open Dummy
 
@@ -1155,36 +1155,36 @@ module Generated =
       open Dummy
 
     let border                                   values =
-      StandardView<Border> (values) :> View
+      StandardView<_, Border> (values) :> View<_>
     module Border = 
       open Dummy
-      let borderThickness                          v = SetConstantValue<_> (Properties.Border.borderThickness, v)
-      let padding                                  v = SetConstantValue<_> (Properties.Border.padding, v)
-      let cornerRadius                             v = SetConstantValue<_> (Properties.Border.cornerRadius, v)
-      let borderBrush                              v = SetConstantValue<_> (Properties.Border.borderBrush, v)
-      let background                               v = SetConstantValue<_> (Properties.Border.background, v)
+      let borderThickness                          v = SetConstantValue<_, _> (Properties.Border.borderThickness, v)
+      let padding                                  v = SetConstantValue<_, _> (Properties.Border.padding, v)
+      let cornerRadius                             v = SetConstantValue<_, _> (Properties.Border.cornerRadius, v)
+      let borderBrush                              v = SetConstantValue<_, _> (Properties.Border.borderBrush, v)
+      let background                               v = SetConstantValue<_, _> (Properties.Border.background, v)
 
     let bulletDecorator                          values =
-      StandardView<BulletDecorator> (values) :> View
+      StandardView<_, BulletDecorator> (values) :> View<_>
     module BulletDecorator = 
       open Dummy
-      let background                               v = SetConstantValue<_> (Properties.BulletDecorator.background, v)
+      let background                               v = SetConstantValue<_, _> (Properties.BulletDecorator.background, v)
 
     let button                                   values child =
-      StandardContentView<Button> (values, child) :> View
+      StandardContentView<_, Button> (values, child) :> View<_>
     module Button = 
       open Dummy
-      let isDefault                                v = SetConstantValue<_> (Properties.Button.isDefault, v)
-      let isCancel                                 v = SetConstantValue<_> (Properties.Button.isCancel, v)
-      let isDefaulted                              v = SetConstantValue<_> (Properties.Button.isDefaulted, v)
+      let isDefault                                v = SetConstantValue<_, _> (Properties.Button.isDefault, v)
+      let isCancel                                 v = SetConstantValue<_, _> (Properties.Button.isCancel, v)
+      let isDefaulted                              v = SetConstantValue<_, _> (Properties.Button.isDefaulted, v)
 
     module ButtonBase = 
       open Dummy
-      let command                                  v = SetConstantValue<_> (Properties.ButtonBase.command, v)
-      let commandParameter                         v = SetConstantValue<_> (Properties.ButtonBase.commandParameter, v)
-      let commandTarget                            v = SetConstantValue<_> (Properties.ButtonBase.commandTarget, v)
-      let isPressed                                v = SetConstantValue<_> (Properties.ButtonBase.isPressed, v)
-      let clickMode                                v = SetConstantValue<_> (Properties.ButtonBase.clickMode, v)
+      let command                                  v = SetConstantValue<_, _> (Properties.ButtonBase.command, v)
+      let commandParameter                         v = SetConstantValue<_, _> (Properties.ButtonBase.commandParameter, v)
+      let commandTarget                            v = SetConstantValue<_, _> (Properties.ButtonBase.commandTarget, v)
+      let isPressed                                v = SetConstantValue<_, _> (Properties.ButtonBase.isPressed, v)
+      let clickMode                                v = SetConstantValue<_, _> (Properties.ButtonBase.clickMode, v)
       
       let private onClick_r (o : System.Windows.Controls.Primitives.ButtonBase) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Click.AddHandler    (System.Windows.RoutedEventHandler h)
       let private onClick_u (o : System.Windows.Controls.Primitives.ButtonBase) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Click.RemoveHandler (System.Windows.RoutedEventHandler h)
@@ -1194,20 +1194,20 @@ module Generated =
         OnChangedValue<'TMessage, System.Windows.Controls.Primitives.ButtonBase, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onClick_rf, onClick_uf, f)
 
     let calendar                                 values =
-      StandardView<Calendar> (values) :> View
+      StandardView<_, Calendar> (values) :> View<_>
     module Calendar = 
       open Dummy
-      let calendarButtonStyle                      v = SetConstantValue<_> (Properties.Calendar.calendarButtonStyle, v)
-      let calendarDayButtonStyle                   v = SetConstantValue<_> (Properties.Calendar.calendarDayButtonStyle, v)
-      let calendarItemStyle                        v = SetConstantValue<_> (Properties.Calendar.calendarItemStyle, v)
-      let displayDate                              v = SetConstantValue<_> (Properties.Calendar.displayDate, v)
-      let displayDateEnd                           v = SetConstantValue<_> (Properties.Calendar.displayDateEnd, v)
-      let displayDateStart                         v = SetConstantValue<_> (Properties.Calendar.displayDateStart, v)
-      let displayMode                              v = SetConstantValue<_> (Properties.Calendar.displayMode, v)
-      let firstDayOfWeek                           v = SetConstantValue<_> (Properties.Calendar.firstDayOfWeek, v)
-      let isTodayHighlighted                       v = SetConstantValue<_> (Properties.Calendar.isTodayHighlighted, v)
-      let selectedDate                             v = SetConstantValue<_> (Properties.Calendar.selectedDate, v)
-      let selectionMode                            v = SetConstantValue<_> (Properties.Calendar.selectionMode, v)
+      let calendarButtonStyle                      v = SetConstantValue<_, _> (Properties.Calendar.calendarButtonStyle, v)
+      let calendarDayButtonStyle                   v = SetConstantValue<_, _> (Properties.Calendar.calendarDayButtonStyle, v)
+      let calendarItemStyle                        v = SetConstantValue<_, _> (Properties.Calendar.calendarItemStyle, v)
+      let displayDate                              v = SetConstantValue<_, _> (Properties.Calendar.displayDate, v)
+      let displayDateEnd                           v = SetConstantValue<_, _> (Properties.Calendar.displayDateEnd, v)
+      let displayDateStart                         v = SetConstantValue<_, _> (Properties.Calendar.displayDateStart, v)
+      let displayMode                              v = SetConstantValue<_, _> (Properties.Calendar.displayMode, v)
+      let firstDayOfWeek                           v = SetConstantValue<_, _> (Properties.Calendar.firstDayOfWeek, v)
+      let isTodayHighlighted                       v = SetConstantValue<_, _> (Properties.Calendar.isTodayHighlighted, v)
+      let selectedDate                             v = SetConstantValue<_, _> (Properties.Calendar.selectedDate, v)
+      let selectionMode                            v = SetConstantValue<_, _> (Properties.Calendar.selectionMode, v)
       
       let private onSelectedDatesChanged_r (o : System.Windows.Controls.Calendar) (h : obj -> System.Windows.Controls.SelectionChangedEventArgs -> unit) = o.SelectedDatesChanged.AddHandler    (System.EventHandler<System.Windows.Controls.SelectionChangedEventArgs> h)
       let private onSelectedDatesChanged_u (o : System.Windows.Controls.Calendar) (h : obj -> System.Windows.Controls.SelectionChangedEventArgs -> unit) = o.SelectedDatesChanged.RemoveHandler (System.EventHandler<System.Windows.Controls.SelectionChangedEventArgs> h)
@@ -1238,55 +1238,55 @@ module Generated =
         OnChangedValue<'TMessage, System.Windows.Controls.Calendar, System.EventHandler<System.EventArgs>, System.EventArgs> (onSelectionModeChanged_rf, onSelectionModeChanged_uf, f)
 
     let calendarButton                           values child =
-      StandardContentView<CalendarButton> (values, child) :> View
+      StandardContentView<_, CalendarButton> (values, child) :> View<_>
     module CalendarButton = 
       open Dummy
-      let hasSelectedDays                          v = SetConstantValue<_> (Properties.CalendarButton.hasSelectedDays, v)
-      let isInactive                               v = SetConstantValue<_> (Properties.CalendarButton.isInactive, v)
+      let hasSelectedDays                          v = SetConstantValue<_, _> (Properties.CalendarButton.hasSelectedDays, v)
+      let isInactive                               v = SetConstantValue<_, _> (Properties.CalendarButton.isInactive, v)
 
     let calendarDayButton                        values child =
-      StandardContentView<CalendarDayButton> (values, child) :> View
+      StandardContentView<_, CalendarDayButton> (values, child) :> View<_>
     module CalendarDayButton = 
       open Dummy
-      let isToday                                  v = SetConstantValue<_> (Properties.CalendarDayButton.isToday, v)
-      let isSelected                               v = SetConstantValue<_> (Properties.CalendarDayButton.isSelected, v)
-      let isInactive                               v = SetConstantValue<_> (Properties.CalendarDayButton.isInactive, v)
-      let isBlackedOut                             v = SetConstantValue<_> (Properties.CalendarDayButton.isBlackedOut, v)
-      let isHighlighted                            v = SetConstantValue<_> (Properties.CalendarDayButton.isHighlighted, v)
+      let isToday                                  v = SetConstantValue<_, _> (Properties.CalendarDayButton.isToday, v)
+      let isSelected                               v = SetConstantValue<_, _> (Properties.CalendarDayButton.isSelected, v)
+      let isInactive                               v = SetConstantValue<_, _> (Properties.CalendarDayButton.isInactive, v)
+      let isBlackedOut                             v = SetConstantValue<_, _> (Properties.CalendarDayButton.isBlackedOut, v)
+      let isHighlighted                            v = SetConstantValue<_, _> (Properties.CalendarDayButton.isHighlighted, v)
 
     let calendarItem                             values =
-      StandardView<CalendarItem> (values) :> View
+      StandardView<_, CalendarItem> (values) :> View<_>
     module CalendarItem = 
       open Dummy
 
     let canvas                                   values children =
-      StandardPanelView<Canvas> (values, children) :> View
+      StandardPanelView<_, Canvas> (values, children) :> View<_>
     module Canvas = 
       open Dummy
-      let left                                     v = SetConstantValue<_> (Properties.Canvas.left, v)
-      let top                                      v = SetConstantValue<_> (Properties.Canvas.top, v)
-      let right                                    v = SetConstantValue<_> (Properties.Canvas.right, v)
-      let bottom                                   v = SetConstantValue<_> (Properties.Canvas.bottom, v)
+      let left                                     v = SetConstantValue<_, _> (Properties.Canvas.left, v)
+      let top                                      v = SetConstantValue<_, _> (Properties.Canvas.top, v)
+      let right                                    v = SetConstantValue<_, _> (Properties.Canvas.right, v)
+      let bottom                                   v = SetConstantValue<_, _> (Properties.Canvas.bottom, v)
 
     let checkBox                                 values child =
-      StandardContentView<CheckBox> (values, child) :> View
+      StandardContentView<_, CheckBox> (values, child) :> View<_>
     module CheckBox = 
       open Dummy
 
     let comboBox                                 values =
-      StandardView<ComboBox> (values) :> View
+      StandardView<_, ComboBox> (values) :> View<_>
     module ComboBox = 
       open Dummy
-      let maxDropDownHeight                        v = SetConstantValue<_> (Properties.ComboBox.maxDropDownHeight, v)
-      let isDropDownOpen                           v = SetConstantValue<_> (Properties.ComboBox.isDropDownOpen, v)
-      let shouldPreserveUserEnteredPrefix          v = SetConstantValue<_> (Properties.ComboBox.shouldPreserveUserEnteredPrefix, v)
-      let isEditable                               v = SetConstantValue<_> (Properties.ComboBox.isEditable, v)
-      let text                                     v = SetConstantValue<_> (Properties.ComboBox.text, v)
-      let isReadOnly                               v = SetConstantValue<_> (Properties.ComboBox.isReadOnly, v)
-      let selectionBoxItem                         v = SetConstantValue<_> (Properties.ComboBox.selectionBoxItem, v)
-      let selectionBoxItemTemplate                 v = SetConstantValue<_> (Properties.ComboBox.selectionBoxItemTemplate, v)
-      let selectionBoxItemStringFormat             v = SetConstantValue<_> (Properties.ComboBox.selectionBoxItemStringFormat, v)
-      let staysOpenOnEdit                          v = SetConstantValue<_> (Properties.ComboBox.staysOpenOnEdit, v)
+      let maxDropDownHeight                        v = SetConstantValue<_, _> (Properties.ComboBox.maxDropDownHeight, v)
+      let isDropDownOpen                           v = SetConstantValue<_, _> (Properties.ComboBox.isDropDownOpen, v)
+      let shouldPreserveUserEnteredPrefix          v = SetConstantValue<_, _> (Properties.ComboBox.shouldPreserveUserEnteredPrefix, v)
+      let isEditable                               v = SetConstantValue<_, _> (Properties.ComboBox.isEditable, v)
+      let text                                     v = SetConstantValue<_, _> (Properties.ComboBox.text, v)
+      let isReadOnly                               v = SetConstantValue<_, _> (Properties.ComboBox.isReadOnly, v)
+      let selectionBoxItem                         v = SetConstantValue<_, _> (Properties.ComboBox.selectionBoxItem, v)
+      let selectionBoxItemTemplate                 v = SetConstantValue<_, _> (Properties.ComboBox.selectionBoxItemTemplate, v)
+      let selectionBoxItemStringFormat             v = SetConstantValue<_, _> (Properties.ComboBox.selectionBoxItemStringFormat, v)
+      let staysOpenOnEdit                          v = SetConstantValue<_, _> (Properties.ComboBox.staysOpenOnEdit, v)
       
       let private onDropDownOpened_r (o : System.Windows.Controls.ComboBox) (h : obj -> System.EventArgs -> unit) = o.DropDownOpened.AddHandler    (System.EventHandler h)
       let private onDropDownOpened_u (o : System.Windows.Controls.ComboBox) (h : obj -> System.EventArgs -> unit) = o.DropDownOpened.RemoveHandler (System.EventHandler h)
@@ -1303,45 +1303,45 @@ module Generated =
         OnChangedValue<'TMessage, System.Windows.Controls.ComboBox, System.EventHandler, System.EventArgs> (onDropDownClosed_rf, onDropDownClosed_uf, f)
 
     let comboBoxItem                             values child =
-      StandardContentView<ComboBoxItem> (values, child) :> View
+      StandardContentView<_, ComboBoxItem> (values, child) :> View<_>
     module ComboBoxItem = 
       open Dummy
-      let isHighlighted                            v = SetConstantValue<_> (Properties.ComboBoxItem.isHighlighted, v)
+      let isHighlighted                            v = SetConstantValue<_, _> (Properties.ComboBoxItem.isHighlighted, v)
 
     let contentControl                           values =
-      StandardView<ContentControl> (values) :> View
+      StandardView<_, ContentControl> (values) :> View<_>
     module ContentControl = 
       open Dummy
-      let content                                  v = SetConstantValue<_> (Properties.ContentControl.content, v)
-      let hasContent                               v = SetConstantValue<_> (Properties.ContentControl.hasContent, v)
-      let contentTemplate                          v = SetConstantValue<_> (Properties.ContentControl.contentTemplate, v)
-      let contentTemplateSelector                  v = SetConstantValue<_> (Properties.ContentControl.contentTemplateSelector, v)
-      let contentStringFormat                      v = SetConstantValue<_> (Properties.ContentControl.contentStringFormat, v)
+      let content                                  v = SetConstantValue<_, _> (Properties.ContentControl.content, v)
+      let hasContent                               v = SetConstantValue<_, _> (Properties.ContentControl.hasContent, v)
+      let contentTemplate                          v = SetConstantValue<_, _> (Properties.ContentControl.contentTemplate, v)
+      let contentTemplateSelector                  v = SetConstantValue<_, _> (Properties.ContentControl.contentTemplateSelector, v)
+      let contentStringFormat                      v = SetConstantValue<_, _> (Properties.ContentControl.contentStringFormat, v)
 
     let contentPresenter                         values =
-      StandardView<ContentPresenter> (values) :> View
+      StandardView<_, ContentPresenter> (values) :> View<_>
     module ContentPresenter = 
       open Dummy
-      let recognizesAccessKey                      v = SetConstantValue<_> (Properties.ContentPresenter.recognizesAccessKey, v)
-      let content                                  v = SetConstantValue<_> (Properties.ContentPresenter.content, v)
-      let contentTemplate                          v = SetConstantValue<_> (Properties.ContentPresenter.contentTemplate, v)
-      let contentTemplateSelector                  v = SetConstantValue<_> (Properties.ContentPresenter.contentTemplateSelector, v)
-      let contentStringFormat                      v = SetConstantValue<_> (Properties.ContentPresenter.contentStringFormat, v)
-      let contentSource                            v = SetConstantValue<_> (Properties.ContentPresenter.contentSource, v)
+      let recognizesAccessKey                      v = SetConstantValue<_, _> (Properties.ContentPresenter.recognizesAccessKey, v)
+      let content                                  v = SetConstantValue<_, _> (Properties.ContentPresenter.content, v)
+      let contentTemplate                          v = SetConstantValue<_, _> (Properties.ContentPresenter.contentTemplate, v)
+      let contentTemplateSelector                  v = SetConstantValue<_, _> (Properties.ContentPresenter.contentTemplateSelector, v)
+      let contentStringFormat                      v = SetConstantValue<_, _> (Properties.ContentPresenter.contentStringFormat, v)
+      let contentSource                            v = SetConstantValue<_, _> (Properties.ContentPresenter.contentSource, v)
 
     let contextMenu                              values =
-      StandardView<ContextMenu> (values) :> View
+      StandardView<_, ContextMenu> (values) :> View<_>
     module ContextMenu = 
       open Dummy
-      let horizontalOffset                         v = SetConstantValue<_> (Properties.ContextMenu.horizontalOffset, v)
-      let verticalOffset                           v = SetConstantValue<_> (Properties.ContextMenu.verticalOffset, v)
-      let isOpen                                   v = SetConstantValue<_> (Properties.ContextMenu.isOpen, v)
-      let placementTarget                          v = SetConstantValue<_> (Properties.ContextMenu.placementTarget, v)
-      let placementRectangle                       v = SetConstantValue<_> (Properties.ContextMenu.placementRectangle, v)
-      let placement                                v = SetConstantValue<_> (Properties.ContextMenu.placement, v)
-      let hasDropShadow                            v = SetConstantValue<_> (Properties.ContextMenu.hasDropShadow, v)
-      let customPopupPlacementCallback             v = SetConstantValue<_> (Properties.ContextMenu.customPopupPlacementCallback, v)
-      let staysOpen                                v = SetConstantValue<_> (Properties.ContextMenu.staysOpen, v)
+      let horizontalOffset                         v = SetConstantValue<_, _> (Properties.ContextMenu.horizontalOffset, v)
+      let verticalOffset                           v = SetConstantValue<_, _> (Properties.ContextMenu.verticalOffset, v)
+      let isOpen                                   v = SetConstantValue<_, _> (Properties.ContextMenu.isOpen, v)
+      let placementTarget                          v = SetConstantValue<_, _> (Properties.ContextMenu.placementTarget, v)
+      let placementRectangle                       v = SetConstantValue<_, _> (Properties.ContextMenu.placementRectangle, v)
+      let placement                                v = SetConstantValue<_, _> (Properties.ContextMenu.placement, v)
+      let hasDropShadow                            v = SetConstantValue<_, _> (Properties.ContextMenu.hasDropShadow, v)
+      let customPopupPlacementCallback             v = SetConstantValue<_, _> (Properties.ContextMenu.customPopupPlacementCallback, v)
+      let staysOpen                                v = SetConstantValue<_, _> (Properties.ContextMenu.staysOpen, v)
       
       let private onOpened_r (o : System.Windows.Controls.ContextMenu) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Opened.AddHandler    (System.Windows.RoutedEventHandler h)
       let private onOpened_u (o : System.Windows.Controls.ContextMenu) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Opened.RemoveHandler (System.Windows.RoutedEventHandler h)
@@ -1358,24 +1358,24 @@ module Generated =
         OnChangedValue<'TMessage, System.Windows.Controls.ContextMenu, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onClosed_rf, onClosed_uf, f)
 
     let control                                  values =
-      StandardView<Control> (values) :> View
+      StandardView<_, Control> (values) :> View<_>
     module Control = 
       open Dummy
-      let borderBrush                              v = SetConstantValue<_> (Properties.Control.borderBrush, v)
-      let borderThickness                          v = SetConstantValue<_> (Properties.Control.borderThickness, v)
-      let background                               v = SetConstantValue<_> (Properties.Control.background, v)
-      let foreground                               v = SetConstantValue<_> (Properties.Control.foreground, v)
-      let fontFamily                               v = SetConstantValue<_> (Properties.Control.fontFamily, v)
-      let fontSize                                 v = SetConstantValue<_> (Properties.Control.fontSize, v)
-      let fontStretch                              v = SetConstantValue<_> (Properties.Control.fontStretch, v)
-      let fontStyle                                v = SetConstantValue<_> (Properties.Control.fontStyle, v)
-      let fontWeight                               v = SetConstantValue<_> (Properties.Control.fontWeight, v)
-      let horizontalContentAlignment               v = SetConstantValue<_> (Properties.Control.horizontalContentAlignment, v)
-      let verticalContentAlignment                 v = SetConstantValue<_> (Properties.Control.verticalContentAlignment, v)
-      let tabIndex                                 v = SetConstantValue<_> (Properties.Control.tabIndex, v)
-      let isTabStop                                v = SetConstantValue<_> (Properties.Control.isTabStop, v)
-      let padding                                  v = SetConstantValue<_> (Properties.Control.padding, v)
-      let template                                 v = SetConstantValue<_> (Properties.Control.template, v)
+      let borderBrush                              v = SetConstantValue<_, _> (Properties.Control.borderBrush, v)
+      let borderThickness                          v = SetConstantValue<_, _> (Properties.Control.borderThickness, v)
+      let background                               v = SetConstantValue<_, _> (Properties.Control.background, v)
+      let foreground                               v = SetConstantValue<_, _> (Properties.Control.foreground, v)
+      let fontFamily                               v = SetConstantValue<_, _> (Properties.Control.fontFamily, v)
+      let fontSize                                 v = SetConstantValue<_, _> (Properties.Control.fontSize, v)
+      let fontStretch                              v = SetConstantValue<_, _> (Properties.Control.fontStretch, v)
+      let fontStyle                                v = SetConstantValue<_, _> (Properties.Control.fontStyle, v)
+      let fontWeight                               v = SetConstantValue<_, _> (Properties.Control.fontWeight, v)
+      let horizontalContentAlignment               v = SetConstantValue<_, _> (Properties.Control.horizontalContentAlignment, v)
+      let verticalContentAlignment                 v = SetConstantValue<_, _> (Properties.Control.verticalContentAlignment, v)
+      let tabIndex                                 v = SetConstantValue<_, _> (Properties.Control.tabIndex, v)
+      let isTabStop                                v = SetConstantValue<_, _> (Properties.Control.isTabStop, v)
+      let padding                                  v = SetConstantValue<_, _> (Properties.Control.padding, v)
+      let template                                 v = SetConstantValue<_, _> (Properties.Control.template, v)
       
       let private onPreviewMouseDoubleClick_r (o : System.Windows.Controls.Control) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.PreviewMouseDoubleClick.AddHandler    (System.Windows.Input.MouseButtonEventHandler h)
       let private onPreviewMouseDoubleClick_u (o : System.Windows.Controls.Control) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.PreviewMouseDoubleClick.RemoveHandler (System.Windows.Input.MouseButtonEventHandler h)
@@ -1392,59 +1392,59 @@ module Generated =
         OnChangedValue<'TMessage, System.Windows.Controls.Control, System.Windows.Input.MouseButtonEventHandler, System.Windows.Input.MouseButtonEventArgs> (onMouseDoubleClick_rf, onMouseDoubleClick_uf, f)
 
     let dataGrid                                 values =
-      StandardView<DataGrid> (values) :> View
+      StandardView<_, DataGrid> (values) :> View<_>
     module DataGrid = 
       open Dummy
-      let canUserResizeColumns                     v = SetConstantValue<_> (Properties.DataGrid.canUserResizeColumns, v)
-      let columnWidth                              v = SetConstantValue<_> (Properties.DataGrid.columnWidth, v)
-      let minColumnWidth                           v = SetConstantValue<_> (Properties.DataGrid.minColumnWidth, v)
-      let maxColumnWidth                           v = SetConstantValue<_> (Properties.DataGrid.maxColumnWidth, v)
-      let gridLinesVisibility                      v = SetConstantValue<_> (Properties.DataGrid.gridLinesVisibility, v)
-      let horizontalGridLinesBrush                 v = SetConstantValue<_> (Properties.DataGrid.horizontalGridLinesBrush, v)
-      let verticalGridLinesBrush                   v = SetConstantValue<_> (Properties.DataGrid.verticalGridLinesBrush, v)
-      let rowStyle                                 v = SetConstantValue<_> (Properties.DataGrid.rowStyle, v)
-      let rowValidationErrorTemplate               v = SetConstantValue<_> (Properties.DataGrid.rowValidationErrorTemplate, v)
-      let rowStyleSelector                         v = SetConstantValue<_> (Properties.DataGrid.rowStyleSelector, v)
-      let rowBackground                            v = SetConstantValue<_> (Properties.DataGrid.rowBackground, v)
-      let alternatingRowBackground                 v = SetConstantValue<_> (Properties.DataGrid.alternatingRowBackground, v)
-      let rowHeight                                v = SetConstantValue<_> (Properties.DataGrid.rowHeight, v)
-      let minRowHeight                             v = SetConstantValue<_> (Properties.DataGrid.minRowHeight, v)
-      let rowHeaderWidth                           v = SetConstantValue<_> (Properties.DataGrid.rowHeaderWidth, v)
-      let rowHeaderActualWidth                     v = SetConstantValue<_> (Properties.DataGrid.rowHeaderActualWidth, v)
-      let columnHeaderHeight                       v = SetConstantValue<_> (Properties.DataGrid.columnHeaderHeight, v)
-      let headersVisibility                        v = SetConstantValue<_> (Properties.DataGrid.headersVisibility, v)
-      let cellStyle                                v = SetConstantValue<_> (Properties.DataGrid.cellStyle, v)
-      let columnHeaderStyle                        v = SetConstantValue<_> (Properties.DataGrid.columnHeaderStyle, v)
-      let rowHeaderStyle                           v = SetConstantValue<_> (Properties.DataGrid.rowHeaderStyle, v)
-      let rowHeaderTemplate                        v = SetConstantValue<_> (Properties.DataGrid.rowHeaderTemplate, v)
-      let rowHeaderTemplateSelector                v = SetConstantValue<_> (Properties.DataGrid.rowHeaderTemplateSelector, v)
-      let horizontalScrollBarVisibility            v = SetConstantValue<_> (Properties.DataGrid.horizontalScrollBarVisibility, v)
-      let verticalScrollBarVisibility              v = SetConstantValue<_> (Properties.DataGrid.verticalScrollBarVisibility, v)
-      let isReadOnly                               v = SetConstantValue<_> (Properties.DataGrid.isReadOnly, v)
-      let currentItem                              v = SetConstantValue<_> (Properties.DataGrid.currentItem, v)
-      let currentColumn                            v = SetConstantValue<_> (Properties.DataGrid.currentColumn, v)
-      let currentCell                              v = SetConstantValue<_> (Properties.DataGrid.currentCell, v)
-      let canUserAddRows                           v = SetConstantValue<_> (Properties.DataGrid.canUserAddRows, v)
-      let canUserDeleteRows                        v = SetConstantValue<_> (Properties.DataGrid.canUserDeleteRows, v)
-      let rowDetailsVisibilityMode                 v = SetConstantValue<_> (Properties.DataGrid.rowDetailsVisibilityMode, v)
-      let areRowDetailsFrozen                      v = SetConstantValue<_> (Properties.DataGrid.areRowDetailsFrozen, v)
-      let rowDetailsTemplate                       v = SetConstantValue<_> (Properties.DataGrid.rowDetailsTemplate, v)
-      let rowDetailsTemplateSelector               v = SetConstantValue<_> (Properties.DataGrid.rowDetailsTemplateSelector, v)
-      let canUserResizeRows                        v = SetConstantValue<_> (Properties.DataGrid.canUserResizeRows, v)
-      let newItemMargin                            v = SetConstantValue<_> (Properties.DataGrid.newItemMargin, v)
-      let selectionMode                            v = SetConstantValue<_> (Properties.DataGrid.selectionMode, v)
-      let selectionUnit                            v = SetConstantValue<_> (Properties.DataGrid.selectionUnit, v)
-      let canUserSortColumns                       v = SetConstantValue<_> (Properties.DataGrid.canUserSortColumns, v)
-      let autoGenerateColumns                      v = SetConstantValue<_> (Properties.DataGrid.autoGenerateColumns, v)
-      let frozenColumnCount                        v = SetConstantValue<_> (Properties.DataGrid.frozenColumnCount, v)
-      let nonFrozenColumnsViewportHorizontalOffset v = SetConstantValue<_> (Properties.DataGrid.nonFrozenColumnsViewportHorizontalOffset, v)
-      let enableRowVirtualization                  v = SetConstantValue<_> (Properties.DataGrid.enableRowVirtualization, v)
-      let enableColumnVirtualization               v = SetConstantValue<_> (Properties.DataGrid.enableColumnVirtualization, v)
-      let canUserReorderColumns                    v = SetConstantValue<_> (Properties.DataGrid.canUserReorderColumns, v)
-      let dragIndicatorStyle                       v = SetConstantValue<_> (Properties.DataGrid.dragIndicatorStyle, v)
-      let dropLocationIndicatorStyle               v = SetConstantValue<_> (Properties.DataGrid.dropLocationIndicatorStyle, v)
-      let clipboardCopyMode                        v = SetConstantValue<_> (Properties.DataGrid.clipboardCopyMode, v)
-      let cellsPanelHorizontalOffset               v = SetConstantValue<_> (Properties.DataGrid.cellsPanelHorizontalOffset, v)
+      let canUserResizeColumns                     v = SetConstantValue<_, _> (Properties.DataGrid.canUserResizeColumns, v)
+      let columnWidth                              v = SetConstantValue<_, _> (Properties.DataGrid.columnWidth, v)
+      let minColumnWidth                           v = SetConstantValue<_, _> (Properties.DataGrid.minColumnWidth, v)
+      let maxColumnWidth                           v = SetConstantValue<_, _> (Properties.DataGrid.maxColumnWidth, v)
+      let gridLinesVisibility                      v = SetConstantValue<_, _> (Properties.DataGrid.gridLinesVisibility, v)
+      let horizontalGridLinesBrush                 v = SetConstantValue<_, _> (Properties.DataGrid.horizontalGridLinesBrush, v)
+      let verticalGridLinesBrush                   v = SetConstantValue<_, _> (Properties.DataGrid.verticalGridLinesBrush, v)
+      let rowStyle                                 v = SetConstantValue<_, _> (Properties.DataGrid.rowStyle, v)
+      let rowValidationErrorTemplate               v = SetConstantValue<_, _> (Properties.DataGrid.rowValidationErrorTemplate, v)
+      let rowStyleSelector                         v = SetConstantValue<_, _> (Properties.DataGrid.rowStyleSelector, v)
+      let rowBackground                            v = SetConstantValue<_, _> (Properties.DataGrid.rowBackground, v)
+      let alternatingRowBackground                 v = SetConstantValue<_, _> (Properties.DataGrid.alternatingRowBackground, v)
+      let rowHeight                                v = SetConstantValue<_, _> (Properties.DataGrid.rowHeight, v)
+      let minRowHeight                             v = SetConstantValue<_, _> (Properties.DataGrid.minRowHeight, v)
+      let rowHeaderWidth                           v = SetConstantValue<_, _> (Properties.DataGrid.rowHeaderWidth, v)
+      let rowHeaderActualWidth                     v = SetConstantValue<_, _> (Properties.DataGrid.rowHeaderActualWidth, v)
+      let columnHeaderHeight                       v = SetConstantValue<_, _> (Properties.DataGrid.columnHeaderHeight, v)
+      let headersVisibility                        v = SetConstantValue<_, _> (Properties.DataGrid.headersVisibility, v)
+      let cellStyle                                v = SetConstantValue<_, _> (Properties.DataGrid.cellStyle, v)
+      let columnHeaderStyle                        v = SetConstantValue<_, _> (Properties.DataGrid.columnHeaderStyle, v)
+      let rowHeaderStyle                           v = SetConstantValue<_, _> (Properties.DataGrid.rowHeaderStyle, v)
+      let rowHeaderTemplate                        v = SetConstantValue<_, _> (Properties.DataGrid.rowHeaderTemplate, v)
+      let rowHeaderTemplateSelector                v = SetConstantValue<_, _> (Properties.DataGrid.rowHeaderTemplateSelector, v)
+      let horizontalScrollBarVisibility            v = SetConstantValue<_, _> (Properties.DataGrid.horizontalScrollBarVisibility, v)
+      let verticalScrollBarVisibility              v = SetConstantValue<_, _> (Properties.DataGrid.verticalScrollBarVisibility, v)
+      let isReadOnly                               v = SetConstantValue<_, _> (Properties.DataGrid.isReadOnly, v)
+      let currentItem                              v = SetConstantValue<_, _> (Properties.DataGrid.currentItem, v)
+      let currentColumn                            v = SetConstantValue<_, _> (Properties.DataGrid.currentColumn, v)
+      let currentCell                              v = SetConstantValue<_, _> (Properties.DataGrid.currentCell, v)
+      let canUserAddRows                           v = SetConstantValue<_, _> (Properties.DataGrid.canUserAddRows, v)
+      let canUserDeleteRows                        v = SetConstantValue<_, _> (Properties.DataGrid.canUserDeleteRows, v)
+      let rowDetailsVisibilityMode                 v = SetConstantValue<_, _> (Properties.DataGrid.rowDetailsVisibilityMode, v)
+      let areRowDetailsFrozen                      v = SetConstantValue<_, _> (Properties.DataGrid.areRowDetailsFrozen, v)
+      let rowDetailsTemplate                       v = SetConstantValue<_, _> (Properties.DataGrid.rowDetailsTemplate, v)
+      let rowDetailsTemplateSelector               v = SetConstantValue<_, _> (Properties.DataGrid.rowDetailsTemplateSelector, v)
+      let canUserResizeRows                        v = SetConstantValue<_, _> (Properties.DataGrid.canUserResizeRows, v)
+      let newItemMargin                            v = SetConstantValue<_, _> (Properties.DataGrid.newItemMargin, v)
+      let selectionMode                            v = SetConstantValue<_, _> (Properties.DataGrid.selectionMode, v)
+      let selectionUnit                            v = SetConstantValue<_, _> (Properties.DataGrid.selectionUnit, v)
+      let canUserSortColumns                       v = SetConstantValue<_, _> (Properties.DataGrid.canUserSortColumns, v)
+      let autoGenerateColumns                      v = SetConstantValue<_, _> (Properties.DataGrid.autoGenerateColumns, v)
+      let frozenColumnCount                        v = SetConstantValue<_, _> (Properties.DataGrid.frozenColumnCount, v)
+      let nonFrozenColumnsViewportHorizontalOffset v = SetConstantValue<_, _> (Properties.DataGrid.nonFrozenColumnsViewportHorizontalOffset, v)
+      let enableRowVirtualization                  v = SetConstantValue<_, _> (Properties.DataGrid.enableRowVirtualization, v)
+      let enableColumnVirtualization               v = SetConstantValue<_, _> (Properties.DataGrid.enableColumnVirtualization, v)
+      let canUserReorderColumns                    v = SetConstantValue<_, _> (Properties.DataGrid.canUserReorderColumns, v)
+      let dragIndicatorStyle                       v = SetConstantValue<_, _> (Properties.DataGrid.dragIndicatorStyle, v)
+      let dropLocationIndicatorStyle               v = SetConstantValue<_, _> (Properties.DataGrid.dropLocationIndicatorStyle, v)
+      let clipboardCopyMode                        v = SetConstantValue<_, _> (Properties.DataGrid.clipboardCopyMode, v)
+      let cellsPanelHorizontalOffset               v = SetConstantValue<_, _> (Properties.DataGrid.cellsPanelHorizontalOffset, v)
       
       let private onColumnDisplayIndexChanged_r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridColumnEventArgs -> unit) = o.ColumnDisplayIndexChanged.AddHandler    (System.EventHandler<System.Windows.Controls.DataGridColumnEventArgs> h)
       let private onColumnDisplayIndexChanged_u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridColumnEventArgs -> unit) = o.ColumnDisplayIndexChanged.RemoveHandler (System.EventHandler<System.Windows.Controls.DataGridColumnEventArgs> h)
@@ -1608,13 +1608,13 @@ module Generated =
         OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.EventHandler<System.Windows.Controls.DataGridRowClipboardEventArgs>, System.Windows.Controls.DataGridRowClipboardEventArgs> (onCopyingRowClipboardContent_rf, onCopyingRowClipboardContent_uf, f)
 
     let dataGridCell                             values child =
-      StandardContentView<DataGridCell> (values, child) :> View
+      StandardContentView<_, DataGridCell> (values, child) :> View<_>
     module DataGridCell = 
       open Dummy
-      let column                                   v = SetConstantValue<_> (Properties.DataGridCell.column, v)
-      let isEditing                                v = SetConstantValue<_> (Properties.DataGridCell.isEditing, v)
-      let isReadOnly                               v = SetConstantValue<_> (Properties.DataGridCell.isReadOnly, v)
-      let isSelected                               v = SetConstantValue<_> (Properties.DataGridCell.isSelected, v)
+      let column                                   v = SetConstantValue<_, _> (Properties.DataGridCell.column, v)
+      let isEditing                                v = SetConstantValue<_, _> (Properties.DataGridCell.isEditing, v)
+      let isReadOnly                               v = SetConstantValue<_, _> (Properties.DataGridCell.isReadOnly, v)
+      let isSelected                               v = SetConstantValue<_, _> (Properties.DataGridCell.isSelected, v)
       
       let private onSelected_r (o : System.Windows.Controls.DataGridCell) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Selected.AddHandler    (System.Windows.RoutedEventHandler h)
       let private onSelected_u (o : System.Windows.Controls.DataGridCell) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Selected.RemoveHandler (System.Windows.RoutedEventHandler h)
@@ -1631,54 +1631,54 @@ module Generated =
         OnChangedValue<'TMessage, System.Windows.Controls.DataGridCell, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onUnselected_rf, onUnselected_uf, f)
 
     let dataGridCellsPanel                       values children =
-      StandardPanelView<DataGridCellsPanel> (values, children) :> View
+      StandardPanelView<_, DataGridCellsPanel> (values, children) :> View<_>
     module DataGridCellsPanel = 
       open Dummy
 
     let dataGridCellsPresenter                   values =
-      StandardView<DataGridCellsPresenter> (values) :> View
+      StandardView<_, DataGridCellsPresenter> (values) :> View<_>
     module DataGridCellsPresenter = 
       open Dummy
 
     let dataGridColumnHeader                     values child =
-      StandardContentView<DataGridColumnHeader> (values, child) :> View
+      StandardContentView<_, DataGridColumnHeader> (values, child) :> View<_>
     module DataGridColumnHeader = 
       open Dummy
-      let separatorBrush                           v = SetConstantValue<_> (Properties.DataGridColumnHeader.separatorBrush, v)
-      let separatorVisibility                      v = SetConstantValue<_> (Properties.DataGridColumnHeader.separatorVisibility, v)
-      let displayIndex                             v = SetConstantValue<_> (Properties.DataGridColumnHeader.displayIndex, v)
-      let canUserSort                              v = SetConstantValue<_> (Properties.DataGridColumnHeader.canUserSort, v)
-      let sortDirection                            v = SetConstantValue<_> (Properties.DataGridColumnHeader.sortDirection, v)
-      let isFrozen                                 v = SetConstantValue<_> (Properties.DataGridColumnHeader.isFrozen, v)
+      let separatorBrush                           v = SetConstantValue<_, _> (Properties.DataGridColumnHeader.separatorBrush, v)
+      let separatorVisibility                      v = SetConstantValue<_, _> (Properties.DataGridColumnHeader.separatorVisibility, v)
+      let displayIndex                             v = SetConstantValue<_, _> (Properties.DataGridColumnHeader.displayIndex, v)
+      let canUserSort                              v = SetConstantValue<_, _> (Properties.DataGridColumnHeader.canUserSort, v)
+      let sortDirection                            v = SetConstantValue<_, _> (Properties.DataGridColumnHeader.sortDirection, v)
+      let isFrozen                                 v = SetConstantValue<_, _> (Properties.DataGridColumnHeader.isFrozen, v)
 
     let dataGridColumnHeadersPresenter           values =
-      StandardView<DataGridColumnHeadersPresenter> (values) :> View
+      StandardView<_, DataGridColumnHeadersPresenter> (values) :> View<_>
     module DataGridColumnHeadersPresenter = 
       open Dummy
 
     let dataGridDetailsPresenter                 values =
-      StandardView<DataGridDetailsPresenter> (values) :> View
+      StandardView<_, DataGridDetailsPresenter> (values) :> View<_>
     module DataGridDetailsPresenter = 
       open Dummy
 
     let dataGridRow                              values =
-      StandardView<DataGridRow> (values) :> View
+      StandardView<_, DataGridRow> (values) :> View<_>
     module DataGridRow = 
       open Dummy
-      let item                                     v = SetConstantValue<_> (Properties.DataGridRow.item, v)
-      let itemsPanel                               v = SetConstantValue<_> (Properties.DataGridRow.itemsPanel, v)
-      let header                                   v = SetConstantValue<_> (Properties.DataGridRow.header, v)
-      let headerStyle                              v = SetConstantValue<_> (Properties.DataGridRow.headerStyle, v)
-      let headerTemplate                           v = SetConstantValue<_> (Properties.DataGridRow.headerTemplate, v)
-      let headerTemplateSelector                   v = SetConstantValue<_> (Properties.DataGridRow.headerTemplateSelector, v)
-      let validationErrorTemplate                  v = SetConstantValue<_> (Properties.DataGridRow.validationErrorTemplate, v)
-      let detailsTemplate                          v = SetConstantValue<_> (Properties.DataGridRow.detailsTemplate, v)
-      let detailsTemplateSelector                  v = SetConstantValue<_> (Properties.DataGridRow.detailsTemplateSelector, v)
-      let detailsVisibility                        v = SetConstantValue<_> (Properties.DataGridRow.detailsVisibility, v)
-      let alternationIndex                         v = SetConstantValue<_> (Properties.DataGridRow.alternationIndex, v)
-      let isSelected                               v = SetConstantValue<_> (Properties.DataGridRow.isSelected, v)
-      let isEditing                                v = SetConstantValue<_> (Properties.DataGridRow.isEditing, v)
-      let isNewItem                                v = SetConstantValue<_> (Properties.DataGridRow.isNewItem, v)
+      let item                                     v = SetConstantValue<_, _> (Properties.DataGridRow.item, v)
+      let itemsPanel                               v = SetConstantValue<_, _> (Properties.DataGridRow.itemsPanel, v)
+      let header                                   v = SetConstantValue<_, _> (Properties.DataGridRow.header, v)
+      let headerStyle                              v = SetConstantValue<_, _> (Properties.DataGridRow.headerStyle, v)
+      let headerTemplate                           v = SetConstantValue<_, _> (Properties.DataGridRow.headerTemplate, v)
+      let headerTemplateSelector                   v = SetConstantValue<_, _> (Properties.DataGridRow.headerTemplateSelector, v)
+      let validationErrorTemplate                  v = SetConstantValue<_, _> (Properties.DataGridRow.validationErrorTemplate, v)
+      let detailsTemplate                          v = SetConstantValue<_, _> (Properties.DataGridRow.detailsTemplate, v)
+      let detailsTemplateSelector                  v = SetConstantValue<_, _> (Properties.DataGridRow.detailsTemplateSelector, v)
+      let detailsVisibility                        v = SetConstantValue<_, _> (Properties.DataGridRow.detailsVisibility, v)
+      let alternationIndex                         v = SetConstantValue<_, _> (Properties.DataGridRow.alternationIndex, v)
+      let isSelected                               v = SetConstantValue<_, _> (Properties.DataGridRow.isSelected, v)
+      let isEditing                                v = SetConstantValue<_, _> (Properties.DataGridRow.isEditing, v)
+      let isNewItem                                v = SetConstantValue<_, _> (Properties.DataGridRow.isNewItem, v)
       
       let private onSelected_r (o : System.Windows.Controls.DataGridRow) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Selected.AddHandler    (System.Windows.RoutedEventHandler h)
       let private onSelected_u (o : System.Windows.Controls.DataGridRow) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Selected.RemoveHandler (System.Windows.RoutedEventHandler h)
@@ -1695,32 +1695,32 @@ module Generated =
         OnChangedValue<'TMessage, System.Windows.Controls.DataGridRow, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onUnselected_rf, onUnselected_uf, f)
 
     let dataGridRowHeader                        values child =
-      StandardContentView<DataGridRowHeader> (values, child) :> View
+      StandardContentView<_, DataGridRowHeader> (values, child) :> View<_>
     module DataGridRowHeader = 
       open Dummy
-      let separatorBrush                           v = SetConstantValue<_> (Properties.DataGridRowHeader.separatorBrush, v)
-      let separatorVisibility                      v = SetConstantValue<_> (Properties.DataGridRowHeader.separatorVisibility, v)
-      let isRowSelected                            v = SetConstantValue<_> (Properties.DataGridRowHeader.isRowSelected, v)
+      let separatorBrush                           v = SetConstantValue<_, _> (Properties.DataGridRowHeader.separatorBrush, v)
+      let separatorVisibility                      v = SetConstantValue<_, _> (Properties.DataGridRowHeader.separatorVisibility, v)
+      let isRowSelected                            v = SetConstantValue<_, _> (Properties.DataGridRowHeader.isRowSelected, v)
 
     let dataGridRowsPresenter                    values children =
-      StandardPanelView<DataGridRowsPresenter> (values, children) :> View
+      StandardPanelView<_, DataGridRowsPresenter> (values, children) :> View<_>
     module DataGridRowsPresenter = 
       open Dummy
 
     let datePicker                               values =
-      StandardView<DatePicker> (values) :> View
+      StandardView<_, DatePicker> (values) :> View<_>
     module DatePicker = 
       open Dummy
-      let calendarStyle                            v = SetConstantValue<_> (Properties.DatePicker.calendarStyle, v)
-      let displayDate                              v = SetConstantValue<_> (Properties.DatePicker.displayDate, v)
-      let displayDateEnd                           v = SetConstantValue<_> (Properties.DatePicker.displayDateEnd, v)
-      let displayDateStart                         v = SetConstantValue<_> (Properties.DatePicker.displayDateStart, v)
-      let firstDayOfWeek                           v = SetConstantValue<_> (Properties.DatePicker.firstDayOfWeek, v)
-      let isDropDownOpen                           v = SetConstantValue<_> (Properties.DatePicker.isDropDownOpen, v)
-      let isTodayHighlighted                       v = SetConstantValue<_> (Properties.DatePicker.isTodayHighlighted, v)
-      let selectedDate                             v = SetConstantValue<_> (Properties.DatePicker.selectedDate, v)
-      let selectedDateFormat                       v = SetConstantValue<_> (Properties.DatePicker.selectedDateFormat, v)
-      let text                                     v = SetConstantValue<_> (Properties.DatePicker.text, v)
+      let calendarStyle                            v = SetConstantValue<_, _> (Properties.DatePicker.calendarStyle, v)
+      let displayDate                              v = SetConstantValue<_, _> (Properties.DatePicker.displayDate, v)
+      let displayDateEnd                           v = SetConstantValue<_, _> (Properties.DatePicker.displayDateEnd, v)
+      let displayDateStart                         v = SetConstantValue<_, _> (Properties.DatePicker.displayDateStart, v)
+      let firstDayOfWeek                           v = SetConstantValue<_, _> (Properties.DatePicker.firstDayOfWeek, v)
+      let isDropDownOpen                           v = SetConstantValue<_, _> (Properties.DatePicker.isDropDownOpen, v)
+      let isTodayHighlighted                       v = SetConstantValue<_, _> (Properties.DatePicker.isTodayHighlighted, v)
+      let selectedDate                             v = SetConstantValue<_, _> (Properties.DatePicker.selectedDate, v)
+      let selectedDateFormat                       v = SetConstantValue<_, _> (Properties.DatePicker.selectedDateFormat, v)
+      let text                                     v = SetConstantValue<_, _> (Properties.DatePicker.text, v)
       
       let private onCalendarClosed_r (o : System.Windows.Controls.DatePicker) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.CalendarClosed.AddHandler    (System.Windows.RoutedEventHandler h)
       let private onCalendarClosed_u (o : System.Windows.Controls.DatePicker) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.CalendarClosed.RemoveHandler (System.Windows.RoutedEventHandler h)
@@ -1751,29 +1751,29 @@ module Generated =
         OnChangedValue<'TMessage, System.Windows.Controls.DatePicker, System.EventHandler<System.Windows.Controls.SelectionChangedEventArgs>, System.Windows.Controls.SelectionChangedEventArgs> (onSelectedDateChanged_rf, onSelectedDateChanged_uf, f)
 
     let datePickerTextBox                        values =
-      StandardView<DatePickerTextBox> (values) :> View
+      StandardView<_, DatePickerTextBox> (values) :> View<_>
     module DatePickerTextBox = 
       open Dummy
 
     let decorator                                values =
-      StandardView<Decorator> (values) :> View
+      StandardView<_, Decorator> (values) :> View<_>
     module Decorator = 
       open Dummy
 
     let dockPanel                                values children =
-      StandardPanelView<DockPanel> (values, children) :> View
+      StandardPanelView<_, DockPanel> (values, children) :> View<_>
     module DockPanel = 
       open Dummy
-      let lastChildFill                            v = SetConstantValue<_> (Properties.DockPanel.lastChildFill, v)
-      let dock                                     v = SetConstantValue<_> (Properties.DockPanel.dock, v)
+      let lastChildFill                            v = SetConstantValue<_, _> (Properties.DockPanel.lastChildFill, v)
+      let dock                                     v = SetConstantValue<_, _> (Properties.DockPanel.dock, v)
 
     let documentPageView                         values =
-      StandardView<DocumentPageView> (values) :> View
+      StandardView<_, DocumentPageView> (values) :> View<_>
     module DocumentPageView = 
       open Dummy
-      let pageNumber                               v = SetConstantValue<_> (Properties.DocumentPageView.pageNumber, v)
-      let stretch                                  v = SetConstantValue<_> (Properties.DocumentPageView.stretch, v)
-      let stretchDirection                         v = SetConstantValue<_> (Properties.DocumentPageView.stretchDirection, v)
+      let pageNumber                               v = SetConstantValue<_, _> (Properties.DocumentPageView.pageNumber, v)
+      let stretch                                  v = SetConstantValue<_, _> (Properties.DocumentPageView.stretch, v)
+      let stretchDirection                         v = SetConstantValue<_, _> (Properties.DocumentPageView.stretchDirection, v)
       
       let private onPageConnected_r (o : System.Windows.Controls.Primitives.DocumentPageView) (h : obj -> System.EventArgs -> unit) = o.PageConnected.AddHandler    (System.EventHandler h)
       let private onPageConnected_u (o : System.Windows.Controls.Primitives.DocumentPageView) (h : obj -> System.EventArgs -> unit) = o.PageConnected.RemoveHandler (System.EventHandler h)
@@ -1790,41 +1790,41 @@ module Generated =
         OnChangedValue<'TMessage, System.Windows.Controls.Primitives.DocumentPageView, System.EventHandler, System.EventArgs> (onPageDisconnected_rf, onPageDisconnected_uf, f)
 
     let documentReference                        values =
-      StandardView<DocumentReference> (values) :> View
+      StandardView<_, DocumentReference> (values) :> View<_>
     module DocumentReference = 
       open Dummy
-      let source                                   v = SetConstantValue<_> (Properties.DocumentReference.source, v)
+      let source                                   v = SetConstantValue<_, _> (Properties.DocumentReference.source, v)
 
     let documentViewer                           values =
-      StandardView<DocumentViewer> (values) :> View
+      StandardView<_, DocumentViewer> (values) :> View<_>
     module DocumentViewer = 
       open Dummy
-      let horizontalOffset                         v = SetConstantValue<_> (Properties.DocumentViewer.horizontalOffset, v)
-      let verticalOffset                           v = SetConstantValue<_> (Properties.DocumentViewer.verticalOffset, v)
-      let extentWidth                              v = SetConstantValue<_> (Properties.DocumentViewer.extentWidth, v)
-      let extentHeight                             v = SetConstantValue<_> (Properties.DocumentViewer.extentHeight, v)
-      let viewportWidth                            v = SetConstantValue<_> (Properties.DocumentViewer.viewportWidth, v)
-      let viewportHeight                           v = SetConstantValue<_> (Properties.DocumentViewer.viewportHeight, v)
-      let showPageBorders                          v = SetConstantValue<_> (Properties.DocumentViewer.showPageBorders, v)
-      let zoom                                     v = SetConstantValue<_> (Properties.DocumentViewer.zoom, v)
-      let maxPagesAcross                           v = SetConstantValue<_> (Properties.DocumentViewer.maxPagesAcross, v)
-      let verticalPageSpacing                      v = SetConstantValue<_> (Properties.DocumentViewer.verticalPageSpacing, v)
-      let horizontalPageSpacing                    v = SetConstantValue<_> (Properties.DocumentViewer.horizontalPageSpacing, v)
-      let canMoveUp                                v = SetConstantValue<_> (Properties.DocumentViewer.canMoveUp, v)
-      let canMoveDown                              v = SetConstantValue<_> (Properties.DocumentViewer.canMoveDown, v)
-      let canMoveLeft                              v = SetConstantValue<_> (Properties.DocumentViewer.canMoveLeft, v)
-      let canMoveRight                             v = SetConstantValue<_> (Properties.DocumentViewer.canMoveRight, v)
-      let canIncreaseZoom                          v = SetConstantValue<_> (Properties.DocumentViewer.canIncreaseZoom, v)
-      let canDecreaseZoom                          v = SetConstantValue<_> (Properties.DocumentViewer.canDecreaseZoom, v)
+      let horizontalOffset                         v = SetConstantValue<_, _> (Properties.DocumentViewer.horizontalOffset, v)
+      let verticalOffset                           v = SetConstantValue<_, _> (Properties.DocumentViewer.verticalOffset, v)
+      let extentWidth                              v = SetConstantValue<_, _> (Properties.DocumentViewer.extentWidth, v)
+      let extentHeight                             v = SetConstantValue<_, _> (Properties.DocumentViewer.extentHeight, v)
+      let viewportWidth                            v = SetConstantValue<_, _> (Properties.DocumentViewer.viewportWidth, v)
+      let viewportHeight                           v = SetConstantValue<_, _> (Properties.DocumentViewer.viewportHeight, v)
+      let showPageBorders                          v = SetConstantValue<_, _> (Properties.DocumentViewer.showPageBorders, v)
+      let zoom                                     v = SetConstantValue<_, _> (Properties.DocumentViewer.zoom, v)
+      let maxPagesAcross                           v = SetConstantValue<_, _> (Properties.DocumentViewer.maxPagesAcross, v)
+      let verticalPageSpacing                      v = SetConstantValue<_, _> (Properties.DocumentViewer.verticalPageSpacing, v)
+      let horizontalPageSpacing                    v = SetConstantValue<_, _> (Properties.DocumentViewer.horizontalPageSpacing, v)
+      let canMoveUp                                v = SetConstantValue<_, _> (Properties.DocumentViewer.canMoveUp, v)
+      let canMoveDown                              v = SetConstantValue<_, _> (Properties.DocumentViewer.canMoveDown, v)
+      let canMoveLeft                              v = SetConstantValue<_, _> (Properties.DocumentViewer.canMoveLeft, v)
+      let canMoveRight                             v = SetConstantValue<_, _> (Properties.DocumentViewer.canMoveRight, v)
+      let canIncreaseZoom                          v = SetConstantValue<_, _> (Properties.DocumentViewer.canIncreaseZoom, v)
+      let canDecreaseZoom                          v = SetConstantValue<_, _> (Properties.DocumentViewer.canDecreaseZoom, v)
 
     module DocumentViewerBase = 
       open Dummy
-      let document                                 v = SetConstantValue<_> (Properties.DocumentViewerBase.document, v)
-      let pageCount                                v = SetConstantValue<_> (Properties.DocumentViewerBase.pageCount, v)
-      let masterPageNumber                         v = SetConstantValue<_> (Properties.DocumentViewerBase.masterPageNumber, v)
-      let canGoToPreviousPage                      v = SetConstantValue<_> (Properties.DocumentViewerBase.canGoToPreviousPage, v)
-      let canGoToNextPage                          v = SetConstantValue<_> (Properties.DocumentViewerBase.canGoToNextPage, v)
-      let isMasterPage                             v = SetConstantValue<_> (Properties.DocumentViewerBase.isMasterPage, v)
+      let document                                 v = SetConstantValue<_, _> (Properties.DocumentViewerBase.document, v)
+      let pageCount                                v = SetConstantValue<_, _> (Properties.DocumentViewerBase.pageCount, v)
+      let masterPageNumber                         v = SetConstantValue<_, _> (Properties.DocumentViewerBase.masterPageNumber, v)
+      let canGoToPreviousPage                      v = SetConstantValue<_, _> (Properties.DocumentViewerBase.canGoToPreviousPage, v)
+      let canGoToNextPage                          v = SetConstantValue<_, _> (Properties.DocumentViewerBase.canGoToNextPage, v)
+      let isMasterPage                             v = SetConstantValue<_, _> (Properties.DocumentViewerBase.isMasterPage, v)
       
       let private onPageViewsChanged_r (o : System.Windows.Controls.Primitives.DocumentViewerBase) (h : obj -> System.EventArgs -> unit) = o.PageViewsChanged.AddHandler    (System.EventHandler h)
       let private onPageViewsChanged_u (o : System.Windows.Controls.Primitives.DocumentViewerBase) (h : obj -> System.EventArgs -> unit) = o.PageViewsChanged.RemoveHandler (System.EventHandler h)
@@ -1834,16 +1834,16 @@ module Generated =
         OnChangedValue<'TMessage, System.Windows.Controls.Primitives.DocumentViewerBase, System.EventHandler, System.EventArgs> (onPageViewsChanged_rf, onPageViewsChanged_uf, f)
 
     let ellipse                                  values =
-      StandardView<Ellipse> (values) :> View
+      StandardView<_, Ellipse> (values) :> View<_>
     module Ellipse = 
       open Dummy
 
     let expander                                 values child =
-      StandardContentView<Expander> (values, child) :> View
+      StandardContentView<_, Expander> (values, child) :> View<_>
     module Expander = 
       open Dummy
-      let expandDirection                          v = SetConstantValue<_> (Properties.Expander.expandDirection, v)
-      let isExpanded                               v = SetConstantValue<_> (Properties.Expander.isExpanded, v)
+      let expandDirection                          v = SetConstantValue<_, _> (Properties.Expander.expandDirection, v)
+      let isExpanded                               v = SetConstantValue<_, _> (Properties.Expander.isExpanded, v)
       
       let private onExpanded_r (o : System.Windows.Controls.Expander) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Expanded.AddHandler    (System.Windows.RoutedEventHandler h)
       let private onExpanded_u (o : System.Windows.Controls.Expander) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Expanded.RemoveHandler (System.Windows.RoutedEventHandler h)
@@ -1860,92 +1860,92 @@ module Generated =
         OnChangedValue<'TMessage, System.Windows.Controls.Expander, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onCollapsed_rf, onCollapsed_uf, f)
 
     let fixedPage                                values =
-      StandardView<FixedPage> (values) :> View
+      StandardView<_, FixedPage> (values) :> View<_>
     module FixedPage = 
       open Dummy
-      let printTicket                              v = SetConstantValue<_> (Properties.FixedPage.printTicket, v)
-      let background                               v = SetConstantValue<_> (Properties.FixedPage.background, v)
-      let left                                     v = SetConstantValue<_> (Properties.FixedPage.left, v)
-      let top                                      v = SetConstantValue<_> (Properties.FixedPage.top, v)
-      let right                                    v = SetConstantValue<_> (Properties.FixedPage.right, v)
-      let bottom                                   v = SetConstantValue<_> (Properties.FixedPage.bottom, v)
-      let contentBox                               v = SetConstantValue<_> (Properties.FixedPage.contentBox, v)
-      let bleedBox                                 v = SetConstantValue<_> (Properties.FixedPage.bleedBox, v)
-      let navigateUri                              v = SetConstantValue<_> (Properties.FixedPage.navigateUri, v)
+      let printTicket                              v = SetConstantValue<_, _> (Properties.FixedPage.printTicket, v)
+      let background                               v = SetConstantValue<_, _> (Properties.FixedPage.background, v)
+      let left                                     v = SetConstantValue<_, _> (Properties.FixedPage.left, v)
+      let top                                      v = SetConstantValue<_, _> (Properties.FixedPage.top, v)
+      let right                                    v = SetConstantValue<_, _> (Properties.FixedPage.right, v)
+      let bottom                                   v = SetConstantValue<_, _> (Properties.FixedPage.bottom, v)
+      let contentBox                               v = SetConstantValue<_, _> (Properties.FixedPage.contentBox, v)
+      let bleedBox                                 v = SetConstantValue<_, _> (Properties.FixedPage.bleedBox, v)
+      let navigateUri                              v = SetConstantValue<_, _> (Properties.FixedPage.navigateUri, v)
 
     let flowDocumentPageViewer                   values =
-      StandardView<FlowDocumentPageViewer> (values) :> View
+      StandardView<_, FlowDocumentPageViewer> (values) :> View<_>
     module FlowDocumentPageViewer = 
       open Dummy
-      let zoom                                     v = SetConstantValue<_> (Properties.FlowDocumentPageViewer.zoom, v)
-      let maxZoom                                  v = SetConstantValue<_> (Properties.FlowDocumentPageViewer.maxZoom, v)
-      let minZoom                                  v = SetConstantValue<_> (Properties.FlowDocumentPageViewer.minZoom, v)
-      let zoomIncrement                            v = SetConstantValue<_> (Properties.FlowDocumentPageViewer.zoomIncrement, v)
-      let canIncreaseZoom                          v = SetConstantValue<_> (Properties.FlowDocumentPageViewer.canIncreaseZoom, v)
-      let canDecreaseZoom                          v = SetConstantValue<_> (Properties.FlowDocumentPageViewer.canDecreaseZoom, v)
-      let selectionBrush                           v = SetConstantValue<_> (Properties.FlowDocumentPageViewer.selectionBrush, v)
-      let selectionOpacity                         v = SetConstantValue<_> (Properties.FlowDocumentPageViewer.selectionOpacity, v)
-      let isSelectionActive                        v = SetConstantValue<_> (Properties.FlowDocumentPageViewer.isSelectionActive, v)
-      let isInactiveSelectionHighlightEnabled      v = SetConstantValue<_> (Properties.FlowDocumentPageViewer.isInactiveSelectionHighlightEnabled, v)
+      let zoom                                     v = SetConstantValue<_, _> (Properties.FlowDocumentPageViewer.zoom, v)
+      let maxZoom                                  v = SetConstantValue<_, _> (Properties.FlowDocumentPageViewer.maxZoom, v)
+      let minZoom                                  v = SetConstantValue<_, _> (Properties.FlowDocumentPageViewer.minZoom, v)
+      let zoomIncrement                            v = SetConstantValue<_, _> (Properties.FlowDocumentPageViewer.zoomIncrement, v)
+      let canIncreaseZoom                          v = SetConstantValue<_, _> (Properties.FlowDocumentPageViewer.canIncreaseZoom, v)
+      let canDecreaseZoom                          v = SetConstantValue<_, _> (Properties.FlowDocumentPageViewer.canDecreaseZoom, v)
+      let selectionBrush                           v = SetConstantValue<_, _> (Properties.FlowDocumentPageViewer.selectionBrush, v)
+      let selectionOpacity                         v = SetConstantValue<_, _> (Properties.FlowDocumentPageViewer.selectionOpacity, v)
+      let isSelectionActive                        v = SetConstantValue<_, _> (Properties.FlowDocumentPageViewer.isSelectionActive, v)
+      let isInactiveSelectionHighlightEnabled      v = SetConstantValue<_, _> (Properties.FlowDocumentPageViewer.isInactiveSelectionHighlightEnabled, v)
 
     let flowDocumentReader                       values =
-      StandardView<FlowDocumentReader> (values) :> View
+      StandardView<_, FlowDocumentReader> (values) :> View<_>
     module FlowDocumentReader = 
       open Dummy
-      let viewingMode                              v = SetConstantValue<_> (Properties.FlowDocumentReader.viewingMode, v)
-      let isPageViewEnabled                        v = SetConstantValue<_> (Properties.FlowDocumentReader.isPageViewEnabled, v)
-      let isTwoPageViewEnabled                     v = SetConstantValue<_> (Properties.FlowDocumentReader.isTwoPageViewEnabled, v)
-      let isScrollViewEnabled                      v = SetConstantValue<_> (Properties.FlowDocumentReader.isScrollViewEnabled, v)
-      let pageCount                                v = SetConstantValue<_> (Properties.FlowDocumentReader.pageCount, v)
-      let pageNumber                               v = SetConstantValue<_> (Properties.FlowDocumentReader.pageNumber, v)
-      let canGoToPreviousPage                      v = SetConstantValue<_> (Properties.FlowDocumentReader.canGoToPreviousPage, v)
-      let canGoToNextPage                          v = SetConstantValue<_> (Properties.FlowDocumentReader.canGoToNextPage, v)
-      let isFindEnabled                            v = SetConstantValue<_> (Properties.FlowDocumentReader.isFindEnabled, v)
-      let isPrintEnabled                           v = SetConstantValue<_> (Properties.FlowDocumentReader.isPrintEnabled, v)
-      let document                                 v = SetConstantValue<_> (Properties.FlowDocumentReader.document, v)
-      let zoom                                     v = SetConstantValue<_> (Properties.FlowDocumentReader.zoom, v)
-      let maxZoom                                  v = SetConstantValue<_> (Properties.FlowDocumentReader.maxZoom, v)
-      let minZoom                                  v = SetConstantValue<_> (Properties.FlowDocumentReader.minZoom, v)
-      let zoomIncrement                            v = SetConstantValue<_> (Properties.FlowDocumentReader.zoomIncrement, v)
-      let canIncreaseZoom                          v = SetConstantValue<_> (Properties.FlowDocumentReader.canIncreaseZoom, v)
-      let canDecreaseZoom                          v = SetConstantValue<_> (Properties.FlowDocumentReader.canDecreaseZoom, v)
-      let selectionBrush                           v = SetConstantValue<_> (Properties.FlowDocumentReader.selectionBrush, v)
-      let selectionOpacity                         v = SetConstantValue<_> (Properties.FlowDocumentReader.selectionOpacity, v)
-      let isSelectionActive                        v = SetConstantValue<_> (Properties.FlowDocumentReader.isSelectionActive, v)
-      let isInactiveSelectionHighlightEnabled      v = SetConstantValue<_> (Properties.FlowDocumentReader.isInactiveSelectionHighlightEnabled, v)
+      let viewingMode                              v = SetConstantValue<_, _> (Properties.FlowDocumentReader.viewingMode, v)
+      let isPageViewEnabled                        v = SetConstantValue<_, _> (Properties.FlowDocumentReader.isPageViewEnabled, v)
+      let isTwoPageViewEnabled                     v = SetConstantValue<_, _> (Properties.FlowDocumentReader.isTwoPageViewEnabled, v)
+      let isScrollViewEnabled                      v = SetConstantValue<_, _> (Properties.FlowDocumentReader.isScrollViewEnabled, v)
+      let pageCount                                v = SetConstantValue<_, _> (Properties.FlowDocumentReader.pageCount, v)
+      let pageNumber                               v = SetConstantValue<_, _> (Properties.FlowDocumentReader.pageNumber, v)
+      let canGoToPreviousPage                      v = SetConstantValue<_, _> (Properties.FlowDocumentReader.canGoToPreviousPage, v)
+      let canGoToNextPage                          v = SetConstantValue<_, _> (Properties.FlowDocumentReader.canGoToNextPage, v)
+      let isFindEnabled                            v = SetConstantValue<_, _> (Properties.FlowDocumentReader.isFindEnabled, v)
+      let isPrintEnabled                           v = SetConstantValue<_, _> (Properties.FlowDocumentReader.isPrintEnabled, v)
+      let document                                 v = SetConstantValue<_, _> (Properties.FlowDocumentReader.document, v)
+      let zoom                                     v = SetConstantValue<_, _> (Properties.FlowDocumentReader.zoom, v)
+      let maxZoom                                  v = SetConstantValue<_, _> (Properties.FlowDocumentReader.maxZoom, v)
+      let minZoom                                  v = SetConstantValue<_, _> (Properties.FlowDocumentReader.minZoom, v)
+      let zoomIncrement                            v = SetConstantValue<_, _> (Properties.FlowDocumentReader.zoomIncrement, v)
+      let canIncreaseZoom                          v = SetConstantValue<_, _> (Properties.FlowDocumentReader.canIncreaseZoom, v)
+      let canDecreaseZoom                          v = SetConstantValue<_, _> (Properties.FlowDocumentReader.canDecreaseZoom, v)
+      let selectionBrush                           v = SetConstantValue<_, _> (Properties.FlowDocumentReader.selectionBrush, v)
+      let selectionOpacity                         v = SetConstantValue<_, _> (Properties.FlowDocumentReader.selectionOpacity, v)
+      let isSelectionActive                        v = SetConstantValue<_, _> (Properties.FlowDocumentReader.isSelectionActive, v)
+      let isInactiveSelectionHighlightEnabled      v = SetConstantValue<_, _> (Properties.FlowDocumentReader.isInactiveSelectionHighlightEnabled, v)
 
     let flowDocumentScrollViewer                 values =
-      StandardView<FlowDocumentScrollViewer> (values) :> View
+      StandardView<_, FlowDocumentScrollViewer> (values) :> View<_>
     module FlowDocumentScrollViewer = 
       open Dummy
-      let document                                 v = SetConstantValue<_> (Properties.FlowDocumentScrollViewer.document, v)
-      let zoom                                     v = SetConstantValue<_> (Properties.FlowDocumentScrollViewer.zoom, v)
-      let maxZoom                                  v = SetConstantValue<_> (Properties.FlowDocumentScrollViewer.maxZoom, v)
-      let minZoom                                  v = SetConstantValue<_> (Properties.FlowDocumentScrollViewer.minZoom, v)
-      let zoomIncrement                            v = SetConstantValue<_> (Properties.FlowDocumentScrollViewer.zoomIncrement, v)
-      let canIncreaseZoom                          v = SetConstantValue<_> (Properties.FlowDocumentScrollViewer.canIncreaseZoom, v)
-      let canDecreaseZoom                          v = SetConstantValue<_> (Properties.FlowDocumentScrollViewer.canDecreaseZoom, v)
-      let isSelectionEnabled                       v = SetConstantValue<_> (Properties.FlowDocumentScrollViewer.isSelectionEnabled, v)
-      let isToolBarVisible                         v = SetConstantValue<_> (Properties.FlowDocumentScrollViewer.isToolBarVisible, v)
-      let horizontalScrollBarVisibility            v = SetConstantValue<_> (Properties.FlowDocumentScrollViewer.horizontalScrollBarVisibility, v)
-      let verticalScrollBarVisibility              v = SetConstantValue<_> (Properties.FlowDocumentScrollViewer.verticalScrollBarVisibility, v)
-      let selectionBrush                           v = SetConstantValue<_> (Properties.FlowDocumentScrollViewer.selectionBrush, v)
-      let selectionOpacity                         v = SetConstantValue<_> (Properties.FlowDocumentScrollViewer.selectionOpacity, v)
-      let isSelectionActive                        v = SetConstantValue<_> (Properties.FlowDocumentScrollViewer.isSelectionActive, v)
-      let isInactiveSelectionHighlightEnabled      v = SetConstantValue<_> (Properties.FlowDocumentScrollViewer.isInactiveSelectionHighlightEnabled, v)
+      let document                                 v = SetConstantValue<_, _> (Properties.FlowDocumentScrollViewer.document, v)
+      let zoom                                     v = SetConstantValue<_, _> (Properties.FlowDocumentScrollViewer.zoom, v)
+      let maxZoom                                  v = SetConstantValue<_, _> (Properties.FlowDocumentScrollViewer.maxZoom, v)
+      let minZoom                                  v = SetConstantValue<_, _> (Properties.FlowDocumentScrollViewer.minZoom, v)
+      let zoomIncrement                            v = SetConstantValue<_, _> (Properties.FlowDocumentScrollViewer.zoomIncrement, v)
+      let canIncreaseZoom                          v = SetConstantValue<_, _> (Properties.FlowDocumentScrollViewer.canIncreaseZoom, v)
+      let canDecreaseZoom                          v = SetConstantValue<_, _> (Properties.FlowDocumentScrollViewer.canDecreaseZoom, v)
+      let isSelectionEnabled                       v = SetConstantValue<_, _> (Properties.FlowDocumentScrollViewer.isSelectionEnabled, v)
+      let isToolBarVisible                         v = SetConstantValue<_, _> (Properties.FlowDocumentScrollViewer.isToolBarVisible, v)
+      let horizontalScrollBarVisibility            v = SetConstantValue<_, _> (Properties.FlowDocumentScrollViewer.horizontalScrollBarVisibility, v)
+      let verticalScrollBarVisibility              v = SetConstantValue<_, _> (Properties.FlowDocumentScrollViewer.verticalScrollBarVisibility, v)
+      let selectionBrush                           v = SetConstantValue<_, _> (Properties.FlowDocumentScrollViewer.selectionBrush, v)
+      let selectionOpacity                         v = SetConstantValue<_, _> (Properties.FlowDocumentScrollViewer.selectionOpacity, v)
+      let isSelectionActive                        v = SetConstantValue<_, _> (Properties.FlowDocumentScrollViewer.isSelectionActive, v)
+      let isInactiveSelectionHighlightEnabled      v = SetConstantValue<_, _> (Properties.FlowDocumentScrollViewer.isInactiveSelectionHighlightEnabled, v)
 
     let frame                                    values child =
-      StandardContentView<Frame> (values, child) :> View
+      StandardContentView<_, Frame> (values, child) :> View<_>
     module Frame = 
       open Dummy
-      let source                                   v = SetConstantValue<_> (Properties.Frame.source, v)
-      let canGoBack                                v = SetConstantValue<_> (Properties.Frame.canGoBack, v)
-      let canGoForward                             v = SetConstantValue<_> (Properties.Frame.canGoForward, v)
-      let backStack                                v = SetConstantValue<_> (Properties.Frame.backStack, v)
-      let forwardStack                             v = SetConstantValue<_> (Properties.Frame.forwardStack, v)
-      let navigationUIVisibility                   v = SetConstantValue<_> (Properties.Frame.navigationUIVisibility, v)
-      let sandboxExternalContent                   v = SetConstantValue<_> (Properties.Frame.sandboxExternalContent, v)
-      let journalOwnership                         v = SetConstantValue<_> (Properties.Frame.journalOwnership, v)
+      let source                                   v = SetConstantValue<_, _> (Properties.Frame.source, v)
+      let canGoBack                                v = SetConstantValue<_, _> (Properties.Frame.canGoBack, v)
+      let canGoForward                             v = SetConstantValue<_, _> (Properties.Frame.canGoForward, v)
+      let backStack                                v = SetConstantValue<_, _> (Properties.Frame.backStack, v)
+      let forwardStack                             v = SetConstantValue<_, _> (Properties.Frame.forwardStack, v)
+      let navigationUIVisibility                   v = SetConstantValue<_, _> (Properties.Frame.navigationUIVisibility, v)
+      let sandboxExternalContent                   v = SetConstantValue<_, _> (Properties.Frame.sandboxExternalContent, v)
+      let journalOwnership                         v = SetConstantValue<_, _> (Properties.Frame.journalOwnership, v)
       
       let private onContentRendered_r (o : System.Windows.Controls.Frame) (h : obj -> System.EventArgs -> unit) = o.ContentRendered.AddHandler    (System.EventHandler h)
       let private onContentRendered_u (o : System.Windows.Controls.Frame) (h : obj -> System.EventArgs -> unit) = o.ContentRendered.RemoveHandler (System.EventHandler h)
@@ -2004,36 +2004,36 @@ module Generated =
         OnChangedValue<'TMessage, System.Windows.Controls.Frame, System.Windows.Navigation.FragmentNavigationEventHandler, System.Windows.Navigation.FragmentNavigationEventArgs> (onFragmentNavigation_rf, onFragmentNavigation_uf, f)
 
     let frameworkElement                         values =
-      StandardView<FrameworkElement> (values) :> View
+      StandardView<_, FrameworkElement> (values) :> View<_>
     module FrameworkElement = 
       open Dummy
-      let style                                    v = SetConstantValue<_> (Properties.FrameworkElement.style, v)
-      let overridesDefaultStyle                    v = SetConstantValue<_> (Properties.FrameworkElement.overridesDefaultStyle, v)
-      let useLayoutRounding                        v = SetConstantValue<_> (Properties.FrameworkElement.useLayoutRounding, v)
-      let dataContext                              v = SetConstantValue<_> (Properties.FrameworkElement.dataContext, v)
-      let bindingGroup                             v = SetConstantValue<_> (Properties.FrameworkElement.bindingGroup, v)
-      let language                                 v = SetConstantValue<_> (Properties.FrameworkElement.language, v)
-      let name                                     v = SetConstantValue<_> (Properties.FrameworkElement.name, v)
-      let tag                                      v = SetConstantValue<_> (Properties.FrameworkElement.tag, v)
-      let inputScope                               v = SetConstantValue<_> (Properties.FrameworkElement.inputScope, v)
-      let actualWidth                              v = SetConstantValue<_> (Properties.FrameworkElement.actualWidth, v)
-      let actualHeight                             v = SetConstantValue<_> (Properties.FrameworkElement.actualHeight, v)
-      let layoutTransform                          v = SetConstantValue<_> (Properties.FrameworkElement.layoutTransform, v)
-      let width                                    v = SetConstantValue<_> (Properties.FrameworkElement.width, v)
-      let minWidth                                 v = SetConstantValue<_> (Properties.FrameworkElement.minWidth, v)
-      let maxWidth                                 v = SetConstantValue<_> (Properties.FrameworkElement.maxWidth, v)
-      let height                                   v = SetConstantValue<_> (Properties.FrameworkElement.height, v)
-      let minHeight                                v = SetConstantValue<_> (Properties.FrameworkElement.minHeight, v)
-      let maxHeight                                v = SetConstantValue<_> (Properties.FrameworkElement.maxHeight, v)
-      let flowDirection                            v = SetConstantValue<_> (Properties.FrameworkElement.flowDirection, v)
-      let margin                                   v = SetConstantValue<_> (Properties.FrameworkElement.margin, v)
-      let horizontalAlignment                      v = SetConstantValue<_> (Properties.FrameworkElement.horizontalAlignment, v)
-      let verticalAlignment                        v = SetConstantValue<_> (Properties.FrameworkElement.verticalAlignment, v)
-      let focusVisualStyle                         v = SetConstantValue<_> (Properties.FrameworkElement.focusVisualStyle, v)
-      let cursor                                   v = SetConstantValue<_> (Properties.FrameworkElement.cursor, v)
-      let forceCursor                              v = SetConstantValue<_> (Properties.FrameworkElement.forceCursor, v)
-      let toolTip                                  v = SetConstantValue<_> (Properties.FrameworkElement.toolTip, v)
-      let contextMenu                              v = SetConstantValue<_> (Properties.FrameworkElement.contextMenu, v)
+      let style                                    v = SetConstantValue<_, _> (Properties.FrameworkElement.style, v)
+      let overridesDefaultStyle                    v = SetConstantValue<_, _> (Properties.FrameworkElement.overridesDefaultStyle, v)
+      let useLayoutRounding                        v = SetConstantValue<_, _> (Properties.FrameworkElement.useLayoutRounding, v)
+      let dataContext                              v = SetConstantValue<_, _> (Properties.FrameworkElement.dataContext, v)
+      let bindingGroup                             v = SetConstantValue<_, _> (Properties.FrameworkElement.bindingGroup, v)
+      let language                                 v = SetConstantValue<_, _> (Properties.FrameworkElement.language, v)
+      let name                                     v = SetConstantValue<_, _> (Properties.FrameworkElement.name, v)
+      let tag                                      v = SetConstantValue<_, _> (Properties.FrameworkElement.tag, v)
+      let inputScope                               v = SetConstantValue<_, _> (Properties.FrameworkElement.inputScope, v)
+      let actualWidth                              v = SetConstantValue<_, _> (Properties.FrameworkElement.actualWidth, v)
+      let actualHeight                             v = SetConstantValue<_, _> (Properties.FrameworkElement.actualHeight, v)
+      let layoutTransform                          v = SetConstantValue<_, _> (Properties.FrameworkElement.layoutTransform, v)
+      let width                                    v = SetConstantValue<_, _> (Properties.FrameworkElement.width, v)
+      let minWidth                                 v = SetConstantValue<_, _> (Properties.FrameworkElement.minWidth, v)
+      let maxWidth                                 v = SetConstantValue<_, _> (Properties.FrameworkElement.maxWidth, v)
+      let height                                   v = SetConstantValue<_, _> (Properties.FrameworkElement.height, v)
+      let minHeight                                v = SetConstantValue<_, _> (Properties.FrameworkElement.minHeight, v)
+      let maxHeight                                v = SetConstantValue<_, _> (Properties.FrameworkElement.maxHeight, v)
+      let flowDirection                            v = SetConstantValue<_, _> (Properties.FrameworkElement.flowDirection, v)
+      let margin                                   v = SetConstantValue<_, _> (Properties.FrameworkElement.margin, v)
+      let horizontalAlignment                      v = SetConstantValue<_, _> (Properties.FrameworkElement.horizontalAlignment, v)
+      let verticalAlignment                        v = SetConstantValue<_, _> (Properties.FrameworkElement.verticalAlignment, v)
+      let focusVisualStyle                         v = SetConstantValue<_, _> (Properties.FrameworkElement.focusVisualStyle, v)
+      let cursor                                   v = SetConstantValue<_, _> (Properties.FrameworkElement.cursor, v)
+      let forceCursor                              v = SetConstantValue<_, _> (Properties.FrameworkElement.forceCursor, v)
+      let toolTip                                  v = SetConstantValue<_, _> (Properties.FrameworkElement.toolTip, v)
+      let contextMenu                              v = SetConstantValue<_, _> (Properties.FrameworkElement.contextMenu, v)
       
       let private onTargetUpdated_r (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.Data.DataTransferEventArgs -> unit) = o.TargetUpdated.AddHandler    (System.EventHandler<System.Windows.Data.DataTransferEventArgs> h)
       let private onTargetUpdated_u (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.Data.DataTransferEventArgs -> unit) = o.TargetUpdated.RemoveHandler (System.EventHandler<System.Windows.Data.DataTransferEventArgs> h)
@@ -2120,110 +2120,110 @@ module Generated =
         OnChangedValue<'TMessage, System.Windows.FrameworkElement, System.Windows.Controls.ContextMenuEventHandler, System.Windows.Controls.ContextMenuEventArgs> (onContextMenuClosing_rf, onContextMenuClosing_uf, f)
 
     let glyphs                                   values =
-      StandardView<Glyphs> (values) :> View
+      StandardView<_, Glyphs> (values) :> View<_>
     module Glyphs = 
       open Dummy
-      let fill                                     v = SetConstantValue<_> (Properties.Glyphs.fill, v)
-      let indices                                  v = SetConstantValue<_> (Properties.Glyphs.indices, v)
-      let unicodeString                            v = SetConstantValue<_> (Properties.Glyphs.unicodeString, v)
-      let caretStops                               v = SetConstantValue<_> (Properties.Glyphs.caretStops, v)
-      let fontRenderingEmSize                      v = SetConstantValue<_> (Properties.Glyphs.fontRenderingEmSize, v)
-      let originX                                  v = SetConstantValue<_> (Properties.Glyphs.originX, v)
-      let originY                                  v = SetConstantValue<_> (Properties.Glyphs.originY, v)
-      let fontUri                                  v = SetConstantValue<_> (Properties.Glyphs.fontUri, v)
-      let styleSimulations                         v = SetConstantValue<_> (Properties.Glyphs.styleSimulations, v)
-      let isSideways                               v = SetConstantValue<_> (Properties.Glyphs.isSideways, v)
-      let bidiLevel                                v = SetConstantValue<_> (Properties.Glyphs.bidiLevel, v)
-      let deviceFontName                           v = SetConstantValue<_> (Properties.Glyphs.deviceFontName, v)
+      let fill                                     v = SetConstantValue<_, _> (Properties.Glyphs.fill, v)
+      let indices                                  v = SetConstantValue<_, _> (Properties.Glyphs.indices, v)
+      let unicodeString                            v = SetConstantValue<_, _> (Properties.Glyphs.unicodeString, v)
+      let caretStops                               v = SetConstantValue<_, _> (Properties.Glyphs.caretStops, v)
+      let fontRenderingEmSize                      v = SetConstantValue<_, _> (Properties.Glyphs.fontRenderingEmSize, v)
+      let originX                                  v = SetConstantValue<_, _> (Properties.Glyphs.originX, v)
+      let originY                                  v = SetConstantValue<_, _> (Properties.Glyphs.originY, v)
+      let fontUri                                  v = SetConstantValue<_, _> (Properties.Glyphs.fontUri, v)
+      let styleSimulations                         v = SetConstantValue<_, _> (Properties.Glyphs.styleSimulations, v)
+      let isSideways                               v = SetConstantValue<_, _> (Properties.Glyphs.isSideways, v)
+      let bidiLevel                                v = SetConstantValue<_, _> (Properties.Glyphs.bidiLevel, v)
+      let deviceFontName                           v = SetConstantValue<_, _> (Properties.Glyphs.deviceFontName, v)
 
     let grid                                     values children =
-      StandardPanelView<Grid> (values, children) :> View
+      StandardPanelView<_, Grid> (values, children) :> View<_>
     module Grid = 
       open Dummy
-      let showGridLines                            v = SetConstantValue<_> (Properties.Grid.showGridLines, v)
-      let column                                   v = SetConstantValue<_> (Properties.Grid.column, v)
-      let row                                      v = SetConstantValue<_> (Properties.Grid.row, v)
-      let columnSpan                               v = SetConstantValue<_> (Properties.Grid.columnSpan, v)
-      let rowSpan                                  v = SetConstantValue<_> (Properties.Grid.rowSpan, v)
-      let isSharedSizeScope                        v = SetConstantValue<_> (Properties.Grid.isSharedSizeScope, v)
+      let showGridLines                            v = SetConstantValue<_, _> (Properties.Grid.showGridLines, v)
+      let column                                   v = SetConstantValue<_, _> (Properties.Grid.column, v)
+      let row                                      v = SetConstantValue<_, _> (Properties.Grid.row, v)
+      let columnSpan                               v = SetConstantValue<_, _> (Properties.Grid.columnSpan, v)
+      let rowSpan                                  v = SetConstantValue<_, _> (Properties.Grid.rowSpan, v)
+      let isSharedSizeScope                        v = SetConstantValue<_, _> (Properties.Grid.isSharedSizeScope, v)
 
     let gridSplitter                             values =
-      StandardView<GridSplitter> (values) :> View
+      StandardView<_, GridSplitter> (values) :> View<_>
     module GridSplitter = 
       open Dummy
-      let resizeDirection                          v = SetConstantValue<_> (Properties.GridSplitter.resizeDirection, v)
-      let resizeBehavior                           v = SetConstantValue<_> (Properties.GridSplitter.resizeBehavior, v)
-      let showsPreview                             v = SetConstantValue<_> (Properties.GridSplitter.showsPreview, v)
-      let previewStyle                             v = SetConstantValue<_> (Properties.GridSplitter.previewStyle, v)
-      let keyboardIncrement                        v = SetConstantValue<_> (Properties.GridSplitter.keyboardIncrement, v)
-      let dragIncrement                            v = SetConstantValue<_> (Properties.GridSplitter.dragIncrement, v)
+      let resizeDirection                          v = SetConstantValue<_, _> (Properties.GridSplitter.resizeDirection, v)
+      let resizeBehavior                           v = SetConstantValue<_, _> (Properties.GridSplitter.resizeBehavior, v)
+      let showsPreview                             v = SetConstantValue<_, _> (Properties.GridSplitter.showsPreview, v)
+      let previewStyle                             v = SetConstantValue<_, _> (Properties.GridSplitter.previewStyle, v)
+      let keyboardIncrement                        v = SetConstantValue<_, _> (Properties.GridSplitter.keyboardIncrement, v)
+      let dragIncrement                            v = SetConstantValue<_, _> (Properties.GridSplitter.dragIncrement, v)
 
     let gridViewColumnHeader                     values child =
-      StandardContentView<GridViewColumnHeader> (values, child) :> View
+      StandardContentView<_, GridViewColumnHeader> (values, child) :> View<_>
     module GridViewColumnHeader = 
       open Dummy
-      let column                                   v = SetConstantValue<_> (Properties.GridViewColumnHeader.column, v)
-      let role                                     v = SetConstantValue<_> (Properties.GridViewColumnHeader.role, v)
+      let column                                   v = SetConstantValue<_, _> (Properties.GridViewColumnHeader.column, v)
+      let role                                     v = SetConstantValue<_, _> (Properties.GridViewColumnHeader.role, v)
 
     let gridViewHeaderRowPresenter               values =
-      StandardView<GridViewHeaderRowPresenter> (values) :> View
+      StandardView<_, GridViewHeaderRowPresenter> (values) :> View<_>
     module GridViewHeaderRowPresenter = 
       open Dummy
-      let columnHeaderContainerStyle               v = SetConstantValue<_> (Properties.GridViewHeaderRowPresenter.columnHeaderContainerStyle, v)
-      let columnHeaderTemplate                     v = SetConstantValue<_> (Properties.GridViewHeaderRowPresenter.columnHeaderTemplate, v)
-      let columnHeaderTemplateSelector             v = SetConstantValue<_> (Properties.GridViewHeaderRowPresenter.columnHeaderTemplateSelector, v)
-      let columnHeaderStringFormat                 v = SetConstantValue<_> (Properties.GridViewHeaderRowPresenter.columnHeaderStringFormat, v)
-      let allowsColumnReorder                      v = SetConstantValue<_> (Properties.GridViewHeaderRowPresenter.allowsColumnReorder, v)
-      let columnHeaderContextMenu                  v = SetConstantValue<_> (Properties.GridViewHeaderRowPresenter.columnHeaderContextMenu, v)
-      let columnHeaderToolTip                      v = SetConstantValue<_> (Properties.GridViewHeaderRowPresenter.columnHeaderToolTip, v)
+      let columnHeaderContainerStyle               v = SetConstantValue<_, _> (Properties.GridViewHeaderRowPresenter.columnHeaderContainerStyle, v)
+      let columnHeaderTemplate                     v = SetConstantValue<_, _> (Properties.GridViewHeaderRowPresenter.columnHeaderTemplate, v)
+      let columnHeaderTemplateSelector             v = SetConstantValue<_, _> (Properties.GridViewHeaderRowPresenter.columnHeaderTemplateSelector, v)
+      let columnHeaderStringFormat                 v = SetConstantValue<_, _> (Properties.GridViewHeaderRowPresenter.columnHeaderStringFormat, v)
+      let allowsColumnReorder                      v = SetConstantValue<_, _> (Properties.GridViewHeaderRowPresenter.allowsColumnReorder, v)
+      let columnHeaderContextMenu                  v = SetConstantValue<_, _> (Properties.GridViewHeaderRowPresenter.columnHeaderContextMenu, v)
+      let columnHeaderToolTip                      v = SetConstantValue<_, _> (Properties.GridViewHeaderRowPresenter.columnHeaderToolTip, v)
 
     let gridViewRowPresenter                     values =
-      StandardView<GridViewRowPresenter> (values) :> View
+      StandardView<_, GridViewRowPresenter> (values) :> View<_>
     module GridViewRowPresenter = 
       open Dummy
-      let content                                  v = SetConstantValue<_> (Properties.GridViewRowPresenter.content, v)
+      let content                                  v = SetConstantValue<_, _> (Properties.GridViewRowPresenter.content, v)
 
     module GridViewRowPresenterBase = 
       open Dummy
-      let columns                                  v = SetConstantValue<_> (Properties.GridViewRowPresenterBase.columns, v)
+      let columns                                  v = SetConstantValue<_, _> (Properties.GridViewRowPresenterBase.columns, v)
 
     let groupBox                                 values child =
-      StandardContentView<GroupBox> (values, child) :> View
+      StandardContentView<_, GroupBox> (values, child) :> View<_>
     module GroupBox = 
       open Dummy
 
     let groupItem                                values child =
-      StandardContentView<GroupItem> (values, child) :> View
+      StandardContentView<_, GroupItem> (values, child) :> View<_>
     module GroupItem = 
       open Dummy
 
     let headeredContentControl                   values child =
-      StandardContentView<HeaderedContentControl> (values, child) :> View
+      StandardContentView<_, HeaderedContentControl> (values, child) :> View<_>
     module HeaderedContentControl = 
       open Dummy
-      let header                                   v = SetConstantValue<_> (Properties.HeaderedContentControl.header, v)
-      let hasHeader                                v = SetConstantValue<_> (Properties.HeaderedContentControl.hasHeader, v)
-      let headerTemplate                           v = SetConstantValue<_> (Properties.HeaderedContentControl.headerTemplate, v)
-      let headerTemplateSelector                   v = SetConstantValue<_> (Properties.HeaderedContentControl.headerTemplateSelector, v)
-      let headerStringFormat                       v = SetConstantValue<_> (Properties.HeaderedContentControl.headerStringFormat, v)
+      let header                                   v = SetConstantValue<_, _> (Properties.HeaderedContentControl.header, v)
+      let hasHeader                                v = SetConstantValue<_, _> (Properties.HeaderedContentControl.hasHeader, v)
+      let headerTemplate                           v = SetConstantValue<_, _> (Properties.HeaderedContentControl.headerTemplate, v)
+      let headerTemplateSelector                   v = SetConstantValue<_, _> (Properties.HeaderedContentControl.headerTemplateSelector, v)
+      let headerStringFormat                       v = SetConstantValue<_, _> (Properties.HeaderedContentControl.headerStringFormat, v)
 
     let headeredItemsControl                     values =
-      StandardView<HeaderedItemsControl> (values) :> View
+      StandardView<_, HeaderedItemsControl> (values) :> View<_>
     module HeaderedItemsControl = 
       open Dummy
-      let header                                   v = SetConstantValue<_> (Properties.HeaderedItemsControl.header, v)
-      let hasHeader                                v = SetConstantValue<_> (Properties.HeaderedItemsControl.hasHeader, v)
-      let headerTemplate                           v = SetConstantValue<_> (Properties.HeaderedItemsControl.headerTemplate, v)
-      let headerTemplateSelector                   v = SetConstantValue<_> (Properties.HeaderedItemsControl.headerTemplateSelector, v)
-      let headerStringFormat                       v = SetConstantValue<_> (Properties.HeaderedItemsControl.headerStringFormat, v)
+      let header                                   v = SetConstantValue<_, _> (Properties.HeaderedItemsControl.header, v)
+      let hasHeader                                v = SetConstantValue<_, _> (Properties.HeaderedItemsControl.hasHeader, v)
+      let headerTemplate                           v = SetConstantValue<_, _> (Properties.HeaderedItemsControl.headerTemplate, v)
+      let headerTemplateSelector                   v = SetConstantValue<_, _> (Properties.HeaderedItemsControl.headerTemplateSelector, v)
+      let headerStringFormat                       v = SetConstantValue<_, _> (Properties.HeaderedItemsControl.headerStringFormat, v)
 
     let image                                    values =
-      StandardView<Image> (values) :> View
+      StandardView<_, Image> (values) :> View<_>
     module Image = 
       open Dummy
-      let source                                   v = SetConstantValue<_> (Properties.Image.source, v)
-      let stretch                                  v = SetConstantValue<_> (Properties.Image.stretch, v)
-      let stretchDirection                         v = SetConstantValue<_> (Properties.Image.stretchDirection, v)
+      let source                                   v = SetConstantValue<_, _> (Properties.Image.source, v)
+      let stretch                                  v = SetConstantValue<_, _> (Properties.Image.stretch, v)
+      let stretchDirection                         v = SetConstantValue<_, _> (Properties.Image.stretchDirection, v)
       
       let private onImageFailed_r (o : System.Windows.Controls.Image) (h : obj -> System.Windows.ExceptionRoutedEventArgs -> unit) = o.ImageFailed.AddHandler    (System.EventHandler<System.Windows.ExceptionRoutedEventArgs> h)
       let private onImageFailed_u (o : System.Windows.Controls.Image) (h : obj -> System.Windows.ExceptionRoutedEventArgs -> unit) = o.ImageFailed.RemoveHandler (System.EventHandler<System.Windows.ExceptionRoutedEventArgs> h)
@@ -2240,19 +2240,19 @@ module Generated =
         OnChangedValue<'TMessage, System.Windows.Controls.Image, System.Windows.DpiChangedEventHandler, System.Windows.DpiChangedEventArgs> (onDpiChanged_rf, onDpiChanged_uf, f)
 
     let inkCanvas                                values =
-      StandardView<InkCanvas> (values) :> View
+      StandardView<_, InkCanvas> (values) :> View<_>
     module InkCanvas = 
       open Dummy
-      let background                               v = SetConstantValue<_> (Properties.InkCanvas.background, v)
-      let top                                      v = SetConstantValue<_> (Properties.InkCanvas.top, v)
-      let bottom                                   v = SetConstantValue<_> (Properties.InkCanvas.bottom, v)
-      let left                                     v = SetConstantValue<_> (Properties.InkCanvas.left, v)
-      let right                                    v = SetConstantValue<_> (Properties.InkCanvas.right, v)
-      let strokes                                  v = SetConstantValue<_> (Properties.InkCanvas.strokes, v)
-      let defaultDrawingAttributes                 v = SetConstantValue<_> (Properties.InkCanvas.defaultDrawingAttributes, v)
-      let activeEditingMode                        v = SetConstantValue<_> (Properties.InkCanvas.activeEditingMode, v)
-      let editingMode                              v = SetConstantValue<_> (Properties.InkCanvas.editingMode, v)
-      let editingModeInverted                      v = SetConstantValue<_> (Properties.InkCanvas.editingModeInverted, v)
+      let background                               v = SetConstantValue<_, _> (Properties.InkCanvas.background, v)
+      let top                                      v = SetConstantValue<_, _> (Properties.InkCanvas.top, v)
+      let bottom                                   v = SetConstantValue<_, _> (Properties.InkCanvas.bottom, v)
+      let left                                     v = SetConstantValue<_, _> (Properties.InkCanvas.left, v)
+      let right                                    v = SetConstantValue<_, _> (Properties.InkCanvas.right, v)
+      let strokes                                  v = SetConstantValue<_, _> (Properties.InkCanvas.strokes, v)
+      let defaultDrawingAttributes                 v = SetConstantValue<_, _> (Properties.InkCanvas.defaultDrawingAttributes, v)
+      let activeEditingMode                        v = SetConstantValue<_, _> (Properties.InkCanvas.activeEditingMode, v)
+      let editingMode                              v = SetConstantValue<_, _> (Properties.InkCanvas.editingMode, v)
+      let editingModeInverted                      v = SetConstantValue<_, _> (Properties.InkCanvas.editingModeInverted, v)
       
       let private onStrokeCollected_r (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.Controls.InkCanvasStrokeCollectedEventArgs -> unit) = o.StrokeCollected.AddHandler    (System.Windows.Controls.InkCanvasStrokeCollectedEventHandler h)
       let private onStrokeCollected_u (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.Controls.InkCanvasStrokeCollectedEventArgs -> unit) = o.StrokeCollected.RemoveHandler (System.Windows.Controls.InkCanvasStrokeCollectedEventHandler h)
@@ -2360,64 +2360,64 @@ module Generated =
         OnChangedValue<'TMessage, System.Windows.Controls.InkCanvas, System.EventHandler, System.EventArgs> (onSelectionChanged_rf, onSelectionChanged_uf, f)
 
     let inkPresenter                             values =
-      StandardView<InkPresenter> (values) :> View
+      StandardView<_, InkPresenter> (values) :> View<_>
     module InkPresenter = 
       open Dummy
-      let strokes                                  v = SetConstantValue<_> (Properties.InkPresenter.strokes, v)
+      let strokes                                  v = SetConstantValue<_, _> (Properties.InkPresenter.strokes, v)
 
     let itemsControl                             values =
-      StandardView<ItemsControl> (values) :> View
+      StandardView<_, ItemsControl> (values) :> View<_>
     module ItemsControl = 
       open Dummy
-      let itemsSource                              v = SetConstantValue<_> (Properties.ItemsControl.itemsSource, v)
-      let hasItems                                 v = SetConstantValue<_> (Properties.ItemsControl.hasItems, v)
-      let displayMemberPath                        v = SetConstantValue<_> (Properties.ItemsControl.displayMemberPath, v)
-      let itemTemplate                             v = SetConstantValue<_> (Properties.ItemsControl.itemTemplate, v)
-      let itemTemplateSelector                     v = SetConstantValue<_> (Properties.ItemsControl.itemTemplateSelector, v)
-      let itemStringFormat                         v = SetConstantValue<_> (Properties.ItemsControl.itemStringFormat, v)
-      let itemBindingGroup                         v = SetConstantValue<_> (Properties.ItemsControl.itemBindingGroup, v)
-      let itemContainerStyle                       v = SetConstantValue<_> (Properties.ItemsControl.itemContainerStyle, v)
-      let itemContainerStyleSelector               v = SetConstantValue<_> (Properties.ItemsControl.itemContainerStyleSelector, v)
-      let itemsPanel                               v = SetConstantValue<_> (Properties.ItemsControl.itemsPanel, v)
-      let isGrouping                               v = SetConstantValue<_> (Properties.ItemsControl.isGrouping, v)
-      let groupStyleSelector                       v = SetConstantValue<_> (Properties.ItemsControl.groupStyleSelector, v)
-      let alternationCount                         v = SetConstantValue<_> (Properties.ItemsControl.alternationCount, v)
-      let alternationIndex                         v = SetConstantValue<_> (Properties.ItemsControl.alternationIndex, v)
-      let isTextSearchEnabled                      v = SetConstantValue<_> (Properties.ItemsControl.isTextSearchEnabled, v)
-      let isTextSearchCaseSensitive                v = SetConstantValue<_> (Properties.ItemsControl.isTextSearchCaseSensitive, v)
+      let itemsSource                              v = SetConstantValue<_, _> (Properties.ItemsControl.itemsSource, v)
+      let hasItems                                 v = SetConstantValue<_, _> (Properties.ItemsControl.hasItems, v)
+      let displayMemberPath                        v = SetConstantValue<_, _> (Properties.ItemsControl.displayMemberPath, v)
+      let itemTemplate                             v = SetConstantValue<_, _> (Properties.ItemsControl.itemTemplate, v)
+      let itemTemplateSelector                     v = SetConstantValue<_, _> (Properties.ItemsControl.itemTemplateSelector, v)
+      let itemStringFormat                         v = SetConstantValue<_, _> (Properties.ItemsControl.itemStringFormat, v)
+      let itemBindingGroup                         v = SetConstantValue<_, _> (Properties.ItemsControl.itemBindingGroup, v)
+      let itemContainerStyle                       v = SetConstantValue<_, _> (Properties.ItemsControl.itemContainerStyle, v)
+      let itemContainerStyleSelector               v = SetConstantValue<_, _> (Properties.ItemsControl.itemContainerStyleSelector, v)
+      let itemsPanel                               v = SetConstantValue<_, _> (Properties.ItemsControl.itemsPanel, v)
+      let isGrouping                               v = SetConstantValue<_, _> (Properties.ItemsControl.isGrouping, v)
+      let groupStyleSelector                       v = SetConstantValue<_, _> (Properties.ItemsControl.groupStyleSelector, v)
+      let alternationCount                         v = SetConstantValue<_, _> (Properties.ItemsControl.alternationCount, v)
+      let alternationIndex                         v = SetConstantValue<_, _> (Properties.ItemsControl.alternationIndex, v)
+      let isTextSearchEnabled                      v = SetConstantValue<_, _> (Properties.ItemsControl.isTextSearchEnabled, v)
+      let isTextSearchCaseSensitive                v = SetConstantValue<_, _> (Properties.ItemsControl.isTextSearchCaseSensitive, v)
 
     let itemsPresenter                           values =
-      StandardView<ItemsPresenter> (values) :> View
+      StandardView<_, ItemsPresenter> (values) :> View<_>
     module ItemsPresenter = 
       open Dummy
 
     let label                                    values child =
-      StandardContentView<Label> (values, child) :> View
+      StandardContentView<_, Label> (values, child) :> View<_>
     module Label = 
       open Dummy
-      let target                                   v = SetConstantValue<_> (Properties.Label.target, v)
+      let target                                   v = SetConstantValue<_, _> (Properties.Label.target, v)
 
     let line                                     values =
-      StandardView<Line> (values) :> View
+      StandardView<_, Line> (values) :> View<_>
     module Line = 
       open Dummy
-      let x1                                       v = SetConstantValue<_> (Properties.Line.x1, v)
-      let y1                                       v = SetConstantValue<_> (Properties.Line.y1, v)
-      let x2                                       v = SetConstantValue<_> (Properties.Line.x2, v)
-      let y2                                       v = SetConstantValue<_> (Properties.Line.y2, v)
+      let x1                                       v = SetConstantValue<_, _> (Properties.Line.x1, v)
+      let y1                                       v = SetConstantValue<_, _> (Properties.Line.y1, v)
+      let x2                                       v = SetConstantValue<_, _> (Properties.Line.x2, v)
+      let y2                                       v = SetConstantValue<_, _> (Properties.Line.y2, v)
 
     let listBox                                  values =
-      StandardView<ListBox> (values) :> View
+      StandardView<_, ListBox> (values) :> View<_>
     module ListBox = 
       open Dummy
-      let selectionMode                            v = SetConstantValue<_> (Properties.ListBox.selectionMode, v)
-      let selectedItems                            v = SetConstantValue<_> (Properties.ListBox.selectedItems, v)
+      let selectionMode                            v = SetConstantValue<_, _> (Properties.ListBox.selectionMode, v)
+      let selectedItems                            v = SetConstantValue<_, _> (Properties.ListBox.selectedItems, v)
 
     let listBoxItem                              values child =
-      StandardContentView<ListBoxItem> (values, child) :> View
+      StandardContentView<_, ListBoxItem> (values, child) :> View<_>
     module ListBoxItem = 
       open Dummy
-      let isSelected                               v = SetConstantValue<_> (Properties.ListBoxItem.isSelected, v)
+      let isSelected                               v = SetConstantValue<_, _> (Properties.ListBoxItem.isSelected, v)
       
       let private onSelected_r (o : System.Windows.Controls.ListBoxItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Selected.AddHandler    (System.Windows.RoutedEventHandler h)
       let private onSelected_u (o : System.Windows.Controls.ListBoxItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Selected.RemoveHandler (System.Windows.RoutedEventHandler h)
@@ -2434,29 +2434,29 @@ module Generated =
         OnChangedValue<'TMessage, System.Windows.Controls.ListBoxItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onUnselected_rf, onUnselected_uf, f)
 
     let listView                                 values =
-      StandardView<ListView> (values) :> View
+      StandardView<_, ListView> (values) :> View<_>
     module ListView = 
       open Dummy
-      let view                                     v = SetConstantValue<_> (Properties.ListView.view, v)
+      let view                                     v = SetConstantValue<_, _> (Properties.ListView.view, v)
 
     let listViewItem                             values child =
-      StandardContentView<ListViewItem> (values, child) :> View
+      StandardContentView<_, ListViewItem> (values, child) :> View<_>
     module ListViewItem = 
       open Dummy
 
     let mediaElement                             values =
-      StandardView<MediaElement> (values) :> View
+      StandardView<_, MediaElement> (values) :> View<_>
     module MediaElement = 
       open Dummy
-      let source                                   v = SetConstantValue<_> (Properties.MediaElement.source, v)
-      let volume                                   v = SetConstantValue<_> (Properties.MediaElement.volume, v)
-      let balance                                  v = SetConstantValue<_> (Properties.MediaElement.balance, v)
-      let isMuted                                  v = SetConstantValue<_> (Properties.MediaElement.isMuted, v)
-      let scrubbingEnabled                         v = SetConstantValue<_> (Properties.MediaElement.scrubbingEnabled, v)
-      let unloadedBehavior                         v = SetConstantValue<_> (Properties.MediaElement.unloadedBehavior, v)
-      let loadedBehavior                           v = SetConstantValue<_> (Properties.MediaElement.loadedBehavior, v)
-      let stretch                                  v = SetConstantValue<_> (Properties.MediaElement.stretch, v)
-      let stretchDirection                         v = SetConstantValue<_> (Properties.MediaElement.stretchDirection, v)
+      let source                                   v = SetConstantValue<_, _> (Properties.MediaElement.source, v)
+      let volume                                   v = SetConstantValue<_, _> (Properties.MediaElement.volume, v)
+      let balance                                  v = SetConstantValue<_, _> (Properties.MediaElement.balance, v)
+      let isMuted                                  v = SetConstantValue<_, _> (Properties.MediaElement.isMuted, v)
+      let scrubbingEnabled                         v = SetConstantValue<_, _> (Properties.MediaElement.scrubbingEnabled, v)
+      let unloadedBehavior                         v = SetConstantValue<_, _> (Properties.MediaElement.unloadedBehavior, v)
+      let loadedBehavior                           v = SetConstantValue<_, _> (Properties.MediaElement.loadedBehavior, v)
+      let stretch                                  v = SetConstantValue<_, _> (Properties.MediaElement.stretch, v)
+      let stretchDirection                         v = SetConstantValue<_, _> (Properties.MediaElement.stretchDirection, v)
       
       let private onMediaFailed_r (o : System.Windows.Controls.MediaElement) (h : obj -> System.Windows.ExceptionRoutedEventArgs -> unit) = o.MediaFailed.AddHandler    (System.EventHandler<System.Windows.ExceptionRoutedEventArgs> h)
       let private onMediaFailed_u (o : System.Windows.Controls.MediaElement) (h : obj -> System.Windows.ExceptionRoutedEventArgs -> unit) = o.MediaFailed.RemoveHandler (System.EventHandler<System.Windows.ExceptionRoutedEventArgs> h)
@@ -2501,35 +2501,35 @@ module Generated =
         OnChangedValue<'TMessage, System.Windows.Controls.MediaElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onMediaEnded_rf, onMediaEnded_uf, f)
 
     let menu                                     values =
-      StandardView<Menu> (values) :> View
+      StandardView<_, Menu> (values) :> View<_>
     module Menu = 
       open Dummy
-      let isMainMenu                               v = SetConstantValue<_> (Properties.Menu.isMainMenu, v)
+      let isMainMenu                               v = SetConstantValue<_, _> (Properties.Menu.isMainMenu, v)
 
     module MenuBase = 
       open Dummy
-      let itemContainerTemplateSelector            v = SetConstantValue<_> (Properties.MenuBase.itemContainerTemplateSelector, v)
-      let usesItemContainerTemplate                v = SetConstantValue<_> (Properties.MenuBase.usesItemContainerTemplate, v)
+      let itemContainerTemplateSelector            v = SetConstantValue<_, _> (Properties.MenuBase.itemContainerTemplateSelector, v)
+      let usesItemContainerTemplate                v = SetConstantValue<_, _> (Properties.MenuBase.usesItemContainerTemplate, v)
 
     let menuItem                                 values =
-      StandardView<MenuItem> (values) :> View
+      StandardView<_, MenuItem> (values) :> View<_>
     module MenuItem = 
       open Dummy
-      let command                                  v = SetConstantValue<_> (Properties.MenuItem.command, v)
-      let commandParameter                         v = SetConstantValue<_> (Properties.MenuItem.commandParameter, v)
-      let commandTarget                            v = SetConstantValue<_> (Properties.MenuItem.commandTarget, v)
-      let isSubmenuOpen                            v = SetConstantValue<_> (Properties.MenuItem.isSubmenuOpen, v)
-      let role                                     v = SetConstantValue<_> (Properties.MenuItem.role, v)
-      let isCheckable                              v = SetConstantValue<_> (Properties.MenuItem.isCheckable, v)
-      let isPressed                                v = SetConstantValue<_> (Properties.MenuItem.isPressed, v)
-      let isHighlighted                            v = SetConstantValue<_> (Properties.MenuItem.isHighlighted, v)
-      let isChecked                                v = SetConstantValue<_> (Properties.MenuItem.isChecked, v)
-      let staysOpenOnClick                         v = SetConstantValue<_> (Properties.MenuItem.staysOpenOnClick, v)
-      let inputGestureText                         v = SetConstantValue<_> (Properties.MenuItem.inputGestureText, v)
-      let icon                                     v = SetConstantValue<_> (Properties.MenuItem.icon, v)
-      let isSuspendingPopupAnimation               v = SetConstantValue<_> (Properties.MenuItem.isSuspendingPopupAnimation, v)
-      let itemContainerTemplateSelector            v = SetConstantValue<_> (Properties.MenuItem.itemContainerTemplateSelector, v)
-      let usesItemContainerTemplate                v = SetConstantValue<_> (Properties.MenuItem.usesItemContainerTemplate, v)
+      let command                                  v = SetConstantValue<_, _> (Properties.MenuItem.command, v)
+      let commandParameter                         v = SetConstantValue<_, _> (Properties.MenuItem.commandParameter, v)
+      let commandTarget                            v = SetConstantValue<_, _> (Properties.MenuItem.commandTarget, v)
+      let isSubmenuOpen                            v = SetConstantValue<_, _> (Properties.MenuItem.isSubmenuOpen, v)
+      let role                                     v = SetConstantValue<_, _> (Properties.MenuItem.role, v)
+      let isCheckable                              v = SetConstantValue<_, _> (Properties.MenuItem.isCheckable, v)
+      let isPressed                                v = SetConstantValue<_, _> (Properties.MenuItem.isPressed, v)
+      let isHighlighted                            v = SetConstantValue<_, _> (Properties.MenuItem.isHighlighted, v)
+      let isChecked                                v = SetConstantValue<_, _> (Properties.MenuItem.isChecked, v)
+      let staysOpenOnClick                         v = SetConstantValue<_, _> (Properties.MenuItem.staysOpenOnClick, v)
+      let inputGestureText                         v = SetConstantValue<_, _> (Properties.MenuItem.inputGestureText, v)
+      let icon                                     v = SetConstantValue<_, _> (Properties.MenuItem.icon, v)
+      let isSuspendingPopupAnimation               v = SetConstantValue<_, _> (Properties.MenuItem.isSuspendingPopupAnimation, v)
+      let itemContainerTemplateSelector            v = SetConstantValue<_, _> (Properties.MenuItem.itemContainerTemplateSelector, v)
+      let usesItemContainerTemplate                v = SetConstantValue<_, _> (Properties.MenuItem.usesItemContainerTemplate, v)
       
       let private onClick_r (o : System.Windows.Controls.MenuItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Click.AddHandler    (System.Windows.RoutedEventHandler h)
       let private onClick_u (o : System.Windows.Controls.MenuItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Click.RemoveHandler (System.Windows.RoutedEventHandler h)
@@ -2570,16 +2570,16 @@ module Generated =
       open Dummy
 
     let navigationWindow                         values child =
-      StandardContentView<NavigationWindow> (values, child) :> View
+      StandardContentView<_, NavigationWindow> (values, child) :> View<_>
     module NavigationWindow = 
       open Dummy
-      let sandboxExternalContent                   v = SetConstantValue<_> (Properties.NavigationWindow.sandboxExternalContent, v)
-      let showsNavigationUI                        v = SetConstantValue<_> (Properties.NavigationWindow.showsNavigationUI, v)
-      let backStack                                v = SetConstantValue<_> (Properties.NavigationWindow.backStack, v)
-      let forwardStack                             v = SetConstantValue<_> (Properties.NavigationWindow.forwardStack, v)
-      let canGoBack                                v = SetConstantValue<_> (Properties.NavigationWindow.canGoBack, v)
-      let canGoForward                             v = SetConstantValue<_> (Properties.NavigationWindow.canGoForward, v)
-      let source                                   v = SetConstantValue<_> (Properties.NavigationWindow.source, v)
+      let sandboxExternalContent                   v = SetConstantValue<_, _> (Properties.NavigationWindow.sandboxExternalContent, v)
+      let showsNavigationUI                        v = SetConstantValue<_, _> (Properties.NavigationWindow.showsNavigationUI, v)
+      let backStack                                v = SetConstantValue<_, _> (Properties.NavigationWindow.backStack, v)
+      let forwardStack                             v = SetConstantValue<_, _> (Properties.NavigationWindow.forwardStack, v)
+      let canGoBack                                v = SetConstantValue<_, _> (Properties.NavigationWindow.canGoBack, v)
+      let canGoForward                             v = SetConstantValue<_, _> (Properties.NavigationWindow.canGoForward, v)
+      let source                                   v = SetConstantValue<_, _> (Properties.NavigationWindow.source, v)
       
       let private onNavigating_r (o : System.Windows.Navigation.NavigationWindow) (h : obj -> System.Windows.Navigation.NavigatingCancelEventArgs -> unit) = o.Navigating.AddHandler    (System.Windows.Navigation.NavigatingCancelEventHandler h)
       let private onNavigating_u (o : System.Windows.Navigation.NavigationWindow) (h : obj -> System.Windows.Navigation.NavigatingCancelEventArgs -> unit) = o.Navigating.RemoveHandler (System.Windows.Navigation.NavigatingCancelEventHandler h)
@@ -2631,23 +2631,23 @@ module Generated =
         OnChangedValue<'TMessage, System.Windows.Navigation.NavigationWindow, System.Windows.Navigation.FragmentNavigationEventHandler, System.Windows.Navigation.FragmentNavigationEventArgs> (onFragmentNavigation_rf, onFragmentNavigation_uf, f)
 
     let page                                     values =
-      StandardView<Page> (values) :> View
+      StandardView<_, Page> (values) :> View<_>
     module Page = 
       open Dummy
-      let content                                  v = SetConstantValue<_> (Properties.Page.content, v)
-      let background                               v = SetConstantValue<_> (Properties.Page.background, v)
-      let title                                    v = SetConstantValue<_> (Properties.Page.title, v)
-      let keepAlive                                v = SetConstantValue<_> (Properties.Page.keepAlive, v)
-      let foreground                               v = SetConstantValue<_> (Properties.Page.foreground, v)
-      let fontFamily                               v = SetConstantValue<_> (Properties.Page.fontFamily, v)
-      let fontSize                                 v = SetConstantValue<_> (Properties.Page.fontSize, v)
-      let template                                 v = SetConstantValue<_> (Properties.Page.template, v)
+      let content                                  v = SetConstantValue<_, _> (Properties.Page.content, v)
+      let background                               v = SetConstantValue<_, _> (Properties.Page.background, v)
+      let title                                    v = SetConstantValue<_, _> (Properties.Page.title, v)
+      let keepAlive                                v = SetConstantValue<_, _> (Properties.Page.keepAlive, v)
+      let foreground                               v = SetConstantValue<_, _> (Properties.Page.foreground, v)
+      let fontFamily                               v = SetConstantValue<_, _> (Properties.Page.fontFamily, v)
+      let fontSize                                 v = SetConstantValue<_, _> (Properties.Page.fontSize, v)
+      let template                                 v = SetConstantValue<_, _> (Properties.Page.template, v)
 
     let pageContent                              values =
-      StandardView<PageContent> (values) :> View
+      StandardView<_, PageContent> (values) :> View<_>
     module PageContent = 
       open Dummy
-      let source                                   v = SetConstantValue<_> (Properties.PageContent.source, v)
+      let source                                   v = SetConstantValue<_, _> (Properties.PageContent.source, v)
       
       let private onGetPageRootCompleted_r (o : System.Windows.Documents.PageContent) (h : obj -> System.Windows.Documents.GetPageRootCompletedEventArgs -> unit) = o.GetPageRootCompleted.AddHandler    (System.Windows.Documents.GetPageRootCompletedEventHandler h)
       let private onGetPageRootCompleted_u (o : System.Windows.Documents.PageContent) (h : obj -> System.Windows.Documents.GetPageRootCompletedEventArgs -> unit) = o.GetPageRootCompleted.RemoveHandler (System.Windows.Documents.GetPageRootCompletedEventHandler h)
@@ -2661,21 +2661,21 @@ module Generated =
 
     module Panel = 
       open Dummy
-      let background                               v = SetConstantValue<_> (Properties.Panel.background, v)
-      let isItemsHost                              v = SetConstantValue<_> (Properties.Panel.isItemsHost, v)
-      let zIndex                                   v = SetConstantValue<_> (Properties.Panel.zIndex, v)
+      let background                               v = SetConstantValue<_, _> (Properties.Panel.background, v)
+      let isItemsHost                              v = SetConstantValue<_, _> (Properties.Panel.isItemsHost, v)
+      let zIndex                                   v = SetConstantValue<_, _> (Properties.Panel.zIndex, v)
 
     let passwordBox                              values =
-      StandardView<PasswordBox> (values) :> View
+      StandardView<_, PasswordBox> (values) :> View<_>
     module PasswordBox = 
       open Dummy
-      let passwordChar                             v = SetConstantValue<_> (Properties.PasswordBox.passwordChar, v)
-      let maxLength                                v = SetConstantValue<_> (Properties.PasswordBox.maxLength, v)
-      let selectionBrush                           v = SetConstantValue<_> (Properties.PasswordBox.selectionBrush, v)
-      let selectionOpacity                         v = SetConstantValue<_> (Properties.PasswordBox.selectionOpacity, v)
-      let caretBrush                               v = SetConstantValue<_> (Properties.PasswordBox.caretBrush, v)
-      let isSelectionActive                        v = SetConstantValue<_> (Properties.PasswordBox.isSelectionActive, v)
-      let isInactiveSelectionHighlightEnabled      v = SetConstantValue<_> (Properties.PasswordBox.isInactiveSelectionHighlightEnabled, v)
+      let passwordChar                             v = SetConstantValue<_, _> (Properties.PasswordBox.passwordChar, v)
+      let maxLength                                v = SetConstantValue<_, _> (Properties.PasswordBox.maxLength, v)
+      let selectionBrush                           v = SetConstantValue<_, _> (Properties.PasswordBox.selectionBrush, v)
+      let selectionOpacity                         v = SetConstantValue<_, _> (Properties.PasswordBox.selectionOpacity, v)
+      let caretBrush                               v = SetConstantValue<_, _> (Properties.PasswordBox.caretBrush, v)
+      let isSelectionActive                        v = SetConstantValue<_, _> (Properties.PasswordBox.isSelectionActive, v)
+      let isInactiveSelectionHighlightEnabled      v = SetConstantValue<_, _> (Properties.PasswordBox.isInactiveSelectionHighlightEnabled, v)
       
       let private onPasswordChanged_r (o : System.Windows.Controls.PasswordBox) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.PasswordChanged.AddHandler    (System.Windows.RoutedEventHandler h)
       let private onPasswordChanged_u (o : System.Windows.Controls.PasswordBox) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.PasswordChanged.RemoveHandler (System.Windows.RoutedEventHandler h)
@@ -2685,41 +2685,41 @@ module Generated =
         OnChangedValue<'TMessage, System.Windows.Controls.PasswordBox, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onPasswordChanged_rf, onPasswordChanged_uf, f)
 
     let path                                     values =
-      StandardView<Path> (values) :> View
+      StandardView<_, Path> (values) :> View<_>
     module Path = 
       open Dummy
-      let data                                     v = SetConstantValue<_> (Properties.Path.data, v)
+      let data                                     v = SetConstantValue<_, _> (Properties.Path.data, v)
 
     let polygon                                  values =
-      StandardView<Polygon> (values) :> View
+      StandardView<_, Polygon> (values) :> View<_>
     module Polygon = 
       open Dummy
-      let points                                   v = SetConstantValue<_> (Properties.Polygon.points, v)
-      let fillRule                                 v = SetConstantValue<_> (Properties.Polygon.fillRule, v)
+      let points                                   v = SetConstantValue<_, _> (Properties.Polygon.points, v)
+      let fillRule                                 v = SetConstantValue<_, _> (Properties.Polygon.fillRule, v)
 
     let polyline                                 values =
-      StandardView<Polyline> (values) :> View
+      StandardView<_, Polyline> (values) :> View<_>
     module Polyline = 
       open Dummy
-      let points                                   v = SetConstantValue<_> (Properties.Polyline.points, v)
-      let fillRule                                 v = SetConstantValue<_> (Properties.Polyline.fillRule, v)
+      let points                                   v = SetConstantValue<_, _> (Properties.Polyline.points, v)
+      let fillRule                                 v = SetConstantValue<_, _> (Properties.Polyline.fillRule, v)
 
     let popup                                    values =
-      StandardView<Popup> (values) :> View
+      StandardView<_, Popup> (values) :> View<_>
     module Popup = 
       open Dummy
-      let child                                    v = SetConstantValue<_> (Properties.Popup.child, v)
-      let isOpen                                   v = SetConstantValue<_> (Properties.Popup.isOpen, v)
-      let placement                                v = SetConstantValue<_> (Properties.Popup.placement, v)
-      let customPopupPlacementCallback             v = SetConstantValue<_> (Properties.Popup.customPopupPlacementCallback, v)
-      let staysOpen                                v = SetConstantValue<_> (Properties.Popup.staysOpen, v)
-      let horizontalOffset                         v = SetConstantValue<_> (Properties.Popup.horizontalOffset, v)
-      let verticalOffset                           v = SetConstantValue<_> (Properties.Popup.verticalOffset, v)
-      let placementTarget                          v = SetConstantValue<_> (Properties.Popup.placementTarget, v)
-      let placementRectangle                       v = SetConstantValue<_> (Properties.Popup.placementRectangle, v)
-      let popupAnimation                           v = SetConstantValue<_> (Properties.Popup.popupAnimation, v)
-      let allowsTransparency                       v = SetConstantValue<_> (Properties.Popup.allowsTransparency, v)
-      let hasDropShadow                            v = SetConstantValue<_> (Properties.Popup.hasDropShadow, v)
+      let child                                    v = SetConstantValue<_, _> (Properties.Popup.child, v)
+      let isOpen                                   v = SetConstantValue<_, _> (Properties.Popup.isOpen, v)
+      let placement                                v = SetConstantValue<_, _> (Properties.Popup.placement, v)
+      let customPopupPlacementCallback             v = SetConstantValue<_, _> (Properties.Popup.customPopupPlacementCallback, v)
+      let staysOpen                                v = SetConstantValue<_, _> (Properties.Popup.staysOpen, v)
+      let horizontalOffset                         v = SetConstantValue<_, _> (Properties.Popup.horizontalOffset, v)
+      let verticalOffset                           v = SetConstantValue<_, _> (Properties.Popup.verticalOffset, v)
+      let placementTarget                          v = SetConstantValue<_, _> (Properties.Popup.placementTarget, v)
+      let placementRectangle                       v = SetConstantValue<_, _> (Properties.Popup.placementRectangle, v)
+      let popupAnimation                           v = SetConstantValue<_, _> (Properties.Popup.popupAnimation, v)
+      let allowsTransparency                       v = SetConstantValue<_, _> (Properties.Popup.allowsTransparency, v)
+      let hasDropShadow                            v = SetConstantValue<_, _> (Properties.Popup.hasDropShadow, v)
       
       let private onOpened_r (o : System.Windows.Controls.Primitives.Popup) (h : obj -> System.EventArgs -> unit) = o.Opened.AddHandler    (System.EventHandler h)
       let private onOpened_u (o : System.Windows.Controls.Primitives.Popup) (h : obj -> System.EventArgs -> unit) = o.Opened.RemoveHandler (System.EventHandler h)
@@ -2736,25 +2736,25 @@ module Generated =
         OnChangedValue<'TMessage, System.Windows.Controls.Primitives.Popup, System.EventHandler, System.EventArgs> (onClosed_rf, onClosed_uf, f)
 
     let progressBar                              values =
-      StandardView<ProgressBar> (values) :> View
+      StandardView<_, ProgressBar> (values) :> View<_>
     module ProgressBar = 
       open Dummy
-      let isIndeterminate                          v = SetConstantValue<_> (Properties.ProgressBar.isIndeterminate, v)
-      let orientation                              v = SetConstantValue<_> (Properties.ProgressBar.orientation, v)
+      let isIndeterminate                          v = SetConstantValue<_, _> (Properties.ProgressBar.isIndeterminate, v)
+      let orientation                              v = SetConstantValue<_, _> (Properties.ProgressBar.orientation, v)
 
     let radioButton                              values child =
-      StandardContentView<RadioButton> (values, child) :> View
+      StandardContentView<_, RadioButton> (values, child) :> View<_>
     module RadioButton = 
       open Dummy
-      let groupName                                v = SetConstantValue<_> (Properties.RadioButton.groupName, v)
+      let groupName                                v = SetConstantValue<_, _> (Properties.RadioButton.groupName, v)
 
     module RangeBase = 
       open Dummy
-      let minimum                                  v = SetConstantValue<_> (Properties.RangeBase.minimum, v)
-      let maximum                                  v = SetConstantValue<_> (Properties.RangeBase.maximum, v)
-      let value                                    v = SetConstantValue<_> (Properties.RangeBase.value, v)
-      let largeChange                              v = SetConstantValue<_> (Properties.RangeBase.largeChange, v)
-      let smallChange                              v = SetConstantValue<_> (Properties.RangeBase.smallChange, v)
+      let minimum                                  v = SetConstantValue<_, _> (Properties.RangeBase.minimum, v)
+      let maximum                                  v = SetConstantValue<_, _> (Properties.RangeBase.maximum, v)
+      let value                                    v = SetConstantValue<_, _> (Properties.RangeBase.value, v)
+      let largeChange                              v = SetConstantValue<_, _> (Properties.RangeBase.largeChange, v)
+      let smallChange                              v = SetConstantValue<_, _> (Properties.RangeBase.smallChange, v)
       
       let private onValueChanged_r (o : System.Windows.Controls.Primitives.RangeBase) (h : obj -> System.Windows.RoutedPropertyChangedEventArgs<System.Double> -> unit) = o.ValueChanged.AddHandler    (System.Windows.RoutedPropertyChangedEventHandler<System.Double> h)
       let private onValueChanged_u (o : System.Windows.Controls.Primitives.RangeBase) (h : obj -> System.Windows.RoutedPropertyChangedEventArgs<System.Double> -> unit) = o.ValueChanged.RemoveHandler (System.Windows.RoutedPropertyChangedEventHandler<System.Double> h)
@@ -2764,36 +2764,36 @@ module Generated =
         OnChangedValue<'TMessage, System.Windows.Controls.Primitives.RangeBase, System.Windows.RoutedPropertyChangedEventHandler<System.Double>, System.Windows.RoutedPropertyChangedEventArgs<System.Double>> (onValueChanged_rf, onValueChanged_uf, f)
 
     let rectangle                                values =
-      StandardView<Rectangle> (values) :> View
+      StandardView<_, Rectangle> (values) :> View<_>
     module Rectangle = 
       open Dummy
-      let radiusX                                  v = SetConstantValue<_> (Properties.Rectangle.radiusX, v)
-      let radiusY                                  v = SetConstantValue<_> (Properties.Rectangle.radiusY, v)
+      let radiusX                                  v = SetConstantValue<_, _> (Properties.Rectangle.radiusX, v)
+      let radiusY                                  v = SetConstantValue<_, _> (Properties.Rectangle.radiusY, v)
 
     let repeatButton                             values child =
-      StandardContentView<RepeatButton> (values, child) :> View
+      StandardContentView<_, RepeatButton> (values, child) :> View<_>
     module RepeatButton = 
       open Dummy
-      let delay                                    v = SetConstantValue<_> (Properties.RepeatButton.delay, v)
-      let interval                                 v = SetConstantValue<_> (Properties.RepeatButton.interval, v)
+      let delay                                    v = SetConstantValue<_, _> (Properties.RepeatButton.delay, v)
+      let interval                                 v = SetConstantValue<_, _> (Properties.RepeatButton.interval, v)
 
     let resizeGrip                               values =
-      StandardView<ResizeGrip> (values) :> View
+      StandardView<_, ResizeGrip> (values) :> View<_>
     module ResizeGrip = 
       open Dummy
 
     let richTextBox                              values =
-      StandardView<RichTextBox> (values) :> View
+      StandardView<_, RichTextBox> (values) :> View<_>
     module RichTextBox = 
       open Dummy
-      let isDocumentEnabled                        v = SetConstantValue<_> (Properties.RichTextBox.isDocumentEnabled, v)
+      let isDocumentEnabled                        v = SetConstantValue<_, _> (Properties.RichTextBox.isDocumentEnabled, v)
 
     let scrollBar                                values =
-      StandardView<ScrollBar> (values) :> View
+      StandardView<_, ScrollBar> (values) :> View<_>
     module ScrollBar = 
       open Dummy
-      let orientation                              v = SetConstantValue<_> (Properties.ScrollBar.orientation, v)
-      let viewportSize                             v = SetConstantValue<_> (Properties.ScrollBar.viewportSize, v)
+      let orientation                              v = SetConstantValue<_, _> (Properties.ScrollBar.orientation, v)
+      let viewportSize                             v = SetConstantValue<_, _> (Properties.ScrollBar.viewportSize, v)
       
       let private onScroll_r (o : System.Windows.Controls.Primitives.ScrollBar) (h : obj -> System.Windows.Controls.Primitives.ScrollEventArgs -> unit) = o.Scroll.AddHandler    (System.Windows.Controls.Primitives.ScrollEventHandler h)
       let private onScroll_u (o : System.Windows.Controls.Primitives.ScrollBar) (h : obj -> System.Windows.Controls.Primitives.ScrollEventArgs -> unit) = o.Scroll.RemoveHandler (System.Windows.Controls.Primitives.ScrollEventHandler h)
@@ -2803,34 +2803,34 @@ module Generated =
         OnChangedValue<'TMessage, System.Windows.Controls.Primitives.ScrollBar, System.Windows.Controls.Primitives.ScrollEventHandler, System.Windows.Controls.Primitives.ScrollEventArgs> (onScroll_rf, onScroll_uf, f)
 
     let scrollContentPresenter                   values =
-      StandardView<ScrollContentPresenter> (values) :> View
+      StandardView<_, ScrollContentPresenter> (values) :> View<_>
     module ScrollContentPresenter = 
       open Dummy
-      let canContentScroll                         v = SetConstantValue<_> (Properties.ScrollContentPresenter.canContentScroll, v)
+      let canContentScroll                         v = SetConstantValue<_, _> (Properties.ScrollContentPresenter.canContentScroll, v)
 
     let scrollViewer                             values child =
-      StandardContentView<ScrollViewer> (values, child) :> View
+      StandardContentView<_, ScrollViewer> (values, child) :> View<_>
     module ScrollViewer = 
       open Dummy
-      let canContentScroll                         v = SetConstantValue<_> (Properties.ScrollViewer.canContentScroll, v)
-      let horizontalScrollBarVisibility            v = SetConstantValue<_> (Properties.ScrollViewer.horizontalScrollBarVisibility, v)
-      let verticalScrollBarVisibility              v = SetConstantValue<_> (Properties.ScrollViewer.verticalScrollBarVisibility, v)
-      let computedHorizontalScrollBarVisibility    v = SetConstantValue<_> (Properties.ScrollViewer.computedHorizontalScrollBarVisibility, v)
-      let computedVerticalScrollBarVisibility      v = SetConstantValue<_> (Properties.ScrollViewer.computedVerticalScrollBarVisibility, v)
-      let verticalOffset                           v = SetConstantValue<_> (Properties.ScrollViewer.verticalOffset, v)
-      let horizontalOffset                         v = SetConstantValue<_> (Properties.ScrollViewer.horizontalOffset, v)
-      let contentVerticalOffset                    v = SetConstantValue<_> (Properties.ScrollViewer.contentVerticalOffset, v)
-      let contentHorizontalOffset                  v = SetConstantValue<_> (Properties.ScrollViewer.contentHorizontalOffset, v)
-      let extentWidth                              v = SetConstantValue<_> (Properties.ScrollViewer.extentWidth, v)
-      let extentHeight                             v = SetConstantValue<_> (Properties.ScrollViewer.extentHeight, v)
-      let scrollableWidth                          v = SetConstantValue<_> (Properties.ScrollViewer.scrollableWidth, v)
-      let scrollableHeight                         v = SetConstantValue<_> (Properties.ScrollViewer.scrollableHeight, v)
-      let viewportWidth                            v = SetConstantValue<_> (Properties.ScrollViewer.viewportWidth, v)
-      let viewportHeight                           v = SetConstantValue<_> (Properties.ScrollViewer.viewportHeight, v)
-      let isDeferredScrollingEnabled               v = SetConstantValue<_> (Properties.ScrollViewer.isDeferredScrollingEnabled, v)
-      let panningMode                              v = SetConstantValue<_> (Properties.ScrollViewer.panningMode, v)
-      let panningDeceleration                      v = SetConstantValue<_> (Properties.ScrollViewer.panningDeceleration, v)
-      let panningRatio                             v = SetConstantValue<_> (Properties.ScrollViewer.panningRatio, v)
+      let canContentScroll                         v = SetConstantValue<_, _> (Properties.ScrollViewer.canContentScroll, v)
+      let horizontalScrollBarVisibility            v = SetConstantValue<_, _> (Properties.ScrollViewer.horizontalScrollBarVisibility, v)
+      let verticalScrollBarVisibility              v = SetConstantValue<_, _> (Properties.ScrollViewer.verticalScrollBarVisibility, v)
+      let computedHorizontalScrollBarVisibility    v = SetConstantValue<_, _> (Properties.ScrollViewer.computedHorizontalScrollBarVisibility, v)
+      let computedVerticalScrollBarVisibility      v = SetConstantValue<_, _> (Properties.ScrollViewer.computedVerticalScrollBarVisibility, v)
+      let verticalOffset                           v = SetConstantValue<_, _> (Properties.ScrollViewer.verticalOffset, v)
+      let horizontalOffset                         v = SetConstantValue<_, _> (Properties.ScrollViewer.horizontalOffset, v)
+      let contentVerticalOffset                    v = SetConstantValue<_, _> (Properties.ScrollViewer.contentVerticalOffset, v)
+      let contentHorizontalOffset                  v = SetConstantValue<_, _> (Properties.ScrollViewer.contentHorizontalOffset, v)
+      let extentWidth                              v = SetConstantValue<_, _> (Properties.ScrollViewer.extentWidth, v)
+      let extentHeight                             v = SetConstantValue<_, _> (Properties.ScrollViewer.extentHeight, v)
+      let scrollableWidth                          v = SetConstantValue<_, _> (Properties.ScrollViewer.scrollableWidth, v)
+      let scrollableHeight                         v = SetConstantValue<_, _> (Properties.ScrollViewer.scrollableHeight, v)
+      let viewportWidth                            v = SetConstantValue<_, _> (Properties.ScrollViewer.viewportWidth, v)
+      let viewportHeight                           v = SetConstantValue<_, _> (Properties.ScrollViewer.viewportHeight, v)
+      let isDeferredScrollingEnabled               v = SetConstantValue<_, _> (Properties.ScrollViewer.isDeferredScrollingEnabled, v)
+      let panningMode                              v = SetConstantValue<_, _> (Properties.ScrollViewer.panningMode, v)
+      let panningDeceleration                      v = SetConstantValue<_, _> (Properties.ScrollViewer.panningDeceleration, v)
+      let panningRatio                             v = SetConstantValue<_, _> (Properties.ScrollViewer.panningRatio, v)
       
       let private onScrollChanged_r (o : System.Windows.Controls.ScrollViewer) (h : obj -> System.Windows.Controls.ScrollChangedEventArgs -> unit) = o.ScrollChanged.AddHandler    (System.Windows.Controls.ScrollChangedEventHandler h)
       let private onScrollChanged_u (o : System.Windows.Controls.ScrollViewer) (h : obj -> System.Windows.Controls.ScrollChangedEventArgs -> unit) = o.ScrollChanged.RemoveHandler (System.Windows.Controls.ScrollChangedEventHandler h)
@@ -2840,20 +2840,20 @@ module Generated =
         OnChangedValue<'TMessage, System.Windows.Controls.ScrollViewer, System.Windows.Controls.ScrollChangedEventHandler, System.Windows.Controls.ScrollChangedEventArgs> (onScrollChanged_rf, onScrollChanged_uf, f)
 
     let selectiveScrollingGrid                   values children =
-      StandardPanelView<SelectiveScrollingGrid> (values, children) :> View
+      StandardPanelView<_, SelectiveScrollingGrid> (values, children) :> View<_>
     module SelectiveScrollingGrid = 
       open Dummy
-      let selectiveScrollingOrientation            v = SetConstantValue<_> (Properties.SelectiveScrollingGrid.selectiveScrollingOrientation, v)
+      let selectiveScrollingOrientation            v = SetConstantValue<_, _> (Properties.SelectiveScrollingGrid.selectiveScrollingOrientation, v)
 
     module Selector = 
       open Dummy
-      let isSelectionActive                        v = SetConstantValue<_> (Properties.Selector.isSelectionActive, v)
-      let isSelected                               v = SetConstantValue<_> (Properties.Selector.isSelected, v)
-      let isSynchronizedWithCurrentItem            v = SetConstantValue<_> (Properties.Selector.isSynchronizedWithCurrentItem, v)
-      let selectedIndex                            v = SetConstantValue<_> (Properties.Selector.selectedIndex, v)
-      let selectedItem                             v = SetConstantValue<_> (Properties.Selector.selectedItem, v)
-      let selectedValue                            v = SetConstantValue<_> (Properties.Selector.selectedValue, v)
-      let selectedValuePath                        v = SetConstantValue<_> (Properties.Selector.selectedValuePath, v)
+      let isSelectionActive                        v = SetConstantValue<_, _> (Properties.Selector.isSelectionActive, v)
+      let isSelected                               v = SetConstantValue<_, _> (Properties.Selector.isSelected, v)
+      let isSynchronizedWithCurrentItem            v = SetConstantValue<_, _> (Properties.Selector.isSynchronizedWithCurrentItem, v)
+      let selectedIndex                            v = SetConstantValue<_, _> (Properties.Selector.selectedIndex, v)
+      let selectedItem                             v = SetConstantValue<_, _> (Properties.Selector.selectedItem, v)
+      let selectedValue                            v = SetConstantValue<_, _> (Properties.Selector.selectedValue, v)
+      let selectedValuePath                        v = SetConstantValue<_, _> (Properties.Selector.selectedValuePath, v)
       
       let private onSelectionChanged_r (o : System.Windows.Controls.Primitives.Selector) (h : obj -> System.Windows.Controls.SelectionChangedEventArgs -> unit) = o.SelectionChanged.AddHandler    (System.Windows.Controls.SelectionChangedEventHandler h)
       let private onSelectionChanged_u (o : System.Windows.Controls.Primitives.Selector) (h : obj -> System.Windows.Controls.SelectionChangedEventArgs -> unit) = o.SelectionChanged.RemoveHandler (System.Windows.Controls.SelectionChangedEventHandler h)
@@ -2863,152 +2863,152 @@ module Generated =
         OnChangedValue<'TMessage, System.Windows.Controls.Primitives.Selector, System.Windows.Controls.SelectionChangedEventHandler, System.Windows.Controls.SelectionChangedEventArgs> (onSelectionChanged_rf, onSelectionChanged_uf, f)
 
     let separator                                values =
-      StandardView<Separator> (values) :> View
+      StandardView<_, Separator> (values) :> View<_>
     module Separator = 
       open Dummy
 
     module Shape = 
       open Dummy
-      let stretch                                  v = SetConstantValue<_> (Properties.Shape.stretch, v)
-      let fill                                     v = SetConstantValue<_> (Properties.Shape.fill, v)
-      let stroke                                   v = SetConstantValue<_> (Properties.Shape.stroke, v)
-      let strokeThickness                          v = SetConstantValue<_> (Properties.Shape.strokeThickness, v)
-      let strokeStartLineCap                       v = SetConstantValue<_> (Properties.Shape.strokeStartLineCap, v)
-      let strokeEndLineCap                         v = SetConstantValue<_> (Properties.Shape.strokeEndLineCap, v)
-      let strokeDashCap                            v = SetConstantValue<_> (Properties.Shape.strokeDashCap, v)
-      let strokeLineJoin                           v = SetConstantValue<_> (Properties.Shape.strokeLineJoin, v)
-      let strokeMiterLimit                         v = SetConstantValue<_> (Properties.Shape.strokeMiterLimit, v)
-      let strokeDashOffset                         v = SetConstantValue<_> (Properties.Shape.strokeDashOffset, v)
-      let strokeDashArray                          v = SetConstantValue<_> (Properties.Shape.strokeDashArray, v)
+      let stretch                                  v = SetConstantValue<_, _> (Properties.Shape.stretch, v)
+      let fill                                     v = SetConstantValue<_, _> (Properties.Shape.fill, v)
+      let stroke                                   v = SetConstantValue<_, _> (Properties.Shape.stroke, v)
+      let strokeThickness                          v = SetConstantValue<_, _> (Properties.Shape.strokeThickness, v)
+      let strokeStartLineCap                       v = SetConstantValue<_, _> (Properties.Shape.strokeStartLineCap, v)
+      let strokeEndLineCap                         v = SetConstantValue<_, _> (Properties.Shape.strokeEndLineCap, v)
+      let strokeDashCap                            v = SetConstantValue<_, _> (Properties.Shape.strokeDashCap, v)
+      let strokeLineJoin                           v = SetConstantValue<_, _> (Properties.Shape.strokeLineJoin, v)
+      let strokeMiterLimit                         v = SetConstantValue<_, _> (Properties.Shape.strokeMiterLimit, v)
+      let strokeDashOffset                         v = SetConstantValue<_, _> (Properties.Shape.strokeDashOffset, v)
+      let strokeDashArray                          v = SetConstantValue<_, _> (Properties.Shape.strokeDashArray, v)
 
     let slider                                   values =
-      StandardView<Slider> (values) :> View
+      StandardView<_, Slider> (values) :> View<_>
     module Slider = 
       open Dummy
-      let orientation                              v = SetConstantValue<_> (Properties.Slider.orientation, v)
-      let isDirectionReversed                      v = SetConstantValue<_> (Properties.Slider.isDirectionReversed, v)
-      let delay                                    v = SetConstantValue<_> (Properties.Slider.delay, v)
-      let interval                                 v = SetConstantValue<_> (Properties.Slider.interval, v)
-      let autoToolTipPlacement                     v = SetConstantValue<_> (Properties.Slider.autoToolTipPlacement, v)
-      let autoToolTipPrecision                     v = SetConstantValue<_> (Properties.Slider.autoToolTipPrecision, v)
-      let isSnapToTickEnabled                      v = SetConstantValue<_> (Properties.Slider.isSnapToTickEnabled, v)
-      let tickPlacement                            v = SetConstantValue<_> (Properties.Slider.tickPlacement, v)
-      let tickFrequency                            v = SetConstantValue<_> (Properties.Slider.tickFrequency, v)
-      let ticks                                    v = SetConstantValue<_> (Properties.Slider.ticks, v)
-      let isSelectionRangeEnabled                  v = SetConstantValue<_> (Properties.Slider.isSelectionRangeEnabled, v)
-      let selectionStart                           v = SetConstantValue<_> (Properties.Slider.selectionStart, v)
-      let selectionEnd                             v = SetConstantValue<_> (Properties.Slider.selectionEnd, v)
-      let isMoveToPointEnabled                     v = SetConstantValue<_> (Properties.Slider.isMoveToPointEnabled, v)
+      let orientation                              v = SetConstantValue<_, _> (Properties.Slider.orientation, v)
+      let isDirectionReversed                      v = SetConstantValue<_, _> (Properties.Slider.isDirectionReversed, v)
+      let delay                                    v = SetConstantValue<_, _> (Properties.Slider.delay, v)
+      let interval                                 v = SetConstantValue<_, _> (Properties.Slider.interval, v)
+      let autoToolTipPlacement                     v = SetConstantValue<_, _> (Properties.Slider.autoToolTipPlacement, v)
+      let autoToolTipPrecision                     v = SetConstantValue<_, _> (Properties.Slider.autoToolTipPrecision, v)
+      let isSnapToTickEnabled                      v = SetConstantValue<_, _> (Properties.Slider.isSnapToTickEnabled, v)
+      let tickPlacement                            v = SetConstantValue<_, _> (Properties.Slider.tickPlacement, v)
+      let tickFrequency                            v = SetConstantValue<_, _> (Properties.Slider.tickFrequency, v)
+      let ticks                                    v = SetConstantValue<_, _> (Properties.Slider.ticks, v)
+      let isSelectionRangeEnabled                  v = SetConstantValue<_, _> (Properties.Slider.isSelectionRangeEnabled, v)
+      let selectionStart                           v = SetConstantValue<_, _> (Properties.Slider.selectionStart, v)
+      let selectionEnd                             v = SetConstantValue<_, _> (Properties.Slider.selectionEnd, v)
+      let isMoveToPointEnabled                     v = SetConstantValue<_, _> (Properties.Slider.isMoveToPointEnabled, v)
 
     let stackPanel                               values children =
-      StandardPanelView<StackPanel> (values, children) :> View
+      StandardPanelView<_, StackPanel> (values, children) :> View<_>
     module StackPanel = 
       open Dummy
-      let orientation                              v = SetConstantValue<_> (Properties.StackPanel.orientation, v)
+      let orientation                              v = SetConstantValue<_, _> (Properties.StackPanel.orientation, v)
 
     let statusBar                                values =
-      StandardView<StatusBar> (values) :> View
+      StandardView<_, StatusBar> (values) :> View<_>
     module StatusBar = 
       open Dummy
-      let itemContainerTemplateSelector            v = SetConstantValue<_> (Properties.StatusBar.itemContainerTemplateSelector, v)
-      let usesItemContainerTemplate                v = SetConstantValue<_> (Properties.StatusBar.usesItemContainerTemplate, v)
+      let itemContainerTemplateSelector            v = SetConstantValue<_, _> (Properties.StatusBar.itemContainerTemplateSelector, v)
+      let usesItemContainerTemplate                v = SetConstantValue<_, _> (Properties.StatusBar.usesItemContainerTemplate, v)
 
     let statusBarItem                            values child =
-      StandardContentView<StatusBarItem> (values, child) :> View
+      StandardContentView<_, StatusBarItem> (values, child) :> View<_>
     module StatusBarItem = 
       open Dummy
 
     module StickyNoteControl = 
       open Dummy
-      let author                                   v = SetConstantValue<_> (Properties.StickyNoteControl.author, v)
-      let isExpanded                               v = SetConstantValue<_> (Properties.StickyNoteControl.isExpanded, v)
-      let isActive                                 v = SetConstantValue<_> (Properties.StickyNoteControl.isActive, v)
-      let isMouseOverAnchor                        v = SetConstantValue<_> (Properties.StickyNoteControl.isMouseOverAnchor, v)
-      let captionFontFamily                        v = SetConstantValue<_> (Properties.StickyNoteControl.captionFontFamily, v)
-      let captionFontSize                          v = SetConstantValue<_> (Properties.StickyNoteControl.captionFontSize, v)
-      let captionFontStretch                       v = SetConstantValue<_> (Properties.StickyNoteControl.captionFontStretch, v)
-      let captionFontStyle                         v = SetConstantValue<_> (Properties.StickyNoteControl.captionFontStyle, v)
-      let captionFontWeight                        v = SetConstantValue<_> (Properties.StickyNoteControl.captionFontWeight, v)
-      let penWidth                                 v = SetConstantValue<_> (Properties.StickyNoteControl.penWidth, v)
-      let stickyNoteType                           v = SetConstantValue<_> (Properties.StickyNoteControl.stickyNoteType, v)
+      let author                                   v = SetConstantValue<_, _> (Properties.StickyNoteControl.author, v)
+      let isExpanded                               v = SetConstantValue<_, _> (Properties.StickyNoteControl.isExpanded, v)
+      let isActive                                 v = SetConstantValue<_, _> (Properties.StickyNoteControl.isActive, v)
+      let isMouseOverAnchor                        v = SetConstantValue<_, _> (Properties.StickyNoteControl.isMouseOverAnchor, v)
+      let captionFontFamily                        v = SetConstantValue<_, _> (Properties.StickyNoteControl.captionFontFamily, v)
+      let captionFontSize                          v = SetConstantValue<_, _> (Properties.StickyNoteControl.captionFontSize, v)
+      let captionFontStretch                       v = SetConstantValue<_, _> (Properties.StickyNoteControl.captionFontStretch, v)
+      let captionFontStyle                         v = SetConstantValue<_, _> (Properties.StickyNoteControl.captionFontStyle, v)
+      let captionFontWeight                        v = SetConstantValue<_, _> (Properties.StickyNoteControl.captionFontWeight, v)
+      let penWidth                                 v = SetConstantValue<_, _> (Properties.StickyNoteControl.penWidth, v)
+      let stickyNoteType                           v = SetConstantValue<_, _> (Properties.StickyNoteControl.stickyNoteType, v)
 
     let tabControl                               values =
-      StandardView<TabControl> (values) :> View
+      StandardView<_, TabControl> (values) :> View<_>
     module TabControl = 
       open Dummy
-      let tabStripPlacement                        v = SetConstantValue<_> (Properties.TabControl.tabStripPlacement, v)
-      let selectedContent                          v = SetConstantValue<_> (Properties.TabControl.selectedContent, v)
-      let selectedContentTemplate                  v = SetConstantValue<_> (Properties.TabControl.selectedContentTemplate, v)
-      let selectedContentTemplateSelector          v = SetConstantValue<_> (Properties.TabControl.selectedContentTemplateSelector, v)
-      let selectedContentStringFormat              v = SetConstantValue<_> (Properties.TabControl.selectedContentStringFormat, v)
-      let contentTemplate                          v = SetConstantValue<_> (Properties.TabControl.contentTemplate, v)
-      let contentTemplateSelector                  v = SetConstantValue<_> (Properties.TabControl.contentTemplateSelector, v)
-      let contentStringFormat                      v = SetConstantValue<_> (Properties.TabControl.contentStringFormat, v)
+      let tabStripPlacement                        v = SetConstantValue<_, _> (Properties.TabControl.tabStripPlacement, v)
+      let selectedContent                          v = SetConstantValue<_, _> (Properties.TabControl.selectedContent, v)
+      let selectedContentTemplate                  v = SetConstantValue<_, _> (Properties.TabControl.selectedContentTemplate, v)
+      let selectedContentTemplateSelector          v = SetConstantValue<_, _> (Properties.TabControl.selectedContentTemplateSelector, v)
+      let selectedContentStringFormat              v = SetConstantValue<_, _> (Properties.TabControl.selectedContentStringFormat, v)
+      let contentTemplate                          v = SetConstantValue<_, _> (Properties.TabControl.contentTemplate, v)
+      let contentTemplateSelector                  v = SetConstantValue<_, _> (Properties.TabControl.contentTemplateSelector, v)
+      let contentStringFormat                      v = SetConstantValue<_, _> (Properties.TabControl.contentStringFormat, v)
 
     let tabItem                                  values child =
-      StandardContentView<TabItem> (values, child) :> View
+      StandardContentView<_, TabItem> (values, child) :> View<_>
     module TabItem = 
       open Dummy
-      let isSelected                               v = SetConstantValue<_> (Properties.TabItem.isSelected, v)
-      let tabStripPlacement                        v = SetConstantValue<_> (Properties.TabItem.tabStripPlacement, v)
+      let isSelected                               v = SetConstantValue<_, _> (Properties.TabItem.isSelected, v)
+      let tabStripPlacement                        v = SetConstantValue<_, _> (Properties.TabItem.tabStripPlacement, v)
 
     let tabPanel                                 values children =
-      StandardPanelView<TabPanel> (values, children) :> View
+      StandardPanelView<_, TabPanel> (values, children) :> View<_>
     module TabPanel = 
       open Dummy
 
     let textBlock                                values =
-      StandardView<TextBlock> (values) :> View
+      StandardView<_, TextBlock> (values) :> View<_>
     module TextBlock = 
       open Dummy
-      let baselineOffset                           v = SetConstantValue<_> (Properties.TextBlock.baselineOffset, v)
-      let text                                     v = SetConstantValue<_> (Properties.TextBlock.text, v)
-      let fontFamily                               v = SetConstantValue<_> (Properties.TextBlock.fontFamily, v)
-      let fontStyle                                v = SetConstantValue<_> (Properties.TextBlock.fontStyle, v)
-      let fontWeight                               v = SetConstantValue<_> (Properties.TextBlock.fontWeight, v)
-      let fontStretch                              v = SetConstantValue<_> (Properties.TextBlock.fontStretch, v)
-      let fontSize                                 v = SetConstantValue<_> (Properties.TextBlock.fontSize, v)
-      let foreground                               v = SetConstantValue<_> (Properties.TextBlock.foreground, v)
-      let background                               v = SetConstantValue<_> (Properties.TextBlock.background, v)
-      let textDecorations                          v = SetConstantValue<_> (Properties.TextBlock.textDecorations, v)
-      let textEffects                              v = SetConstantValue<_> (Properties.TextBlock.textEffects, v)
-      let lineHeight                               v = SetConstantValue<_> (Properties.TextBlock.lineHeight, v)
-      let lineStackingStrategy                     v = SetConstantValue<_> (Properties.TextBlock.lineStackingStrategy, v)
-      let padding                                  v = SetConstantValue<_> (Properties.TextBlock.padding, v)
-      let textAlignment                            v = SetConstantValue<_> (Properties.TextBlock.textAlignment, v)
-      let textTrimming                             v = SetConstantValue<_> (Properties.TextBlock.textTrimming, v)
-      let textWrapping                             v = SetConstantValue<_> (Properties.TextBlock.textWrapping, v)
-      let isHyphenationEnabled                     v = SetConstantValue<_> (Properties.TextBlock.isHyphenationEnabled, v)
+      let baselineOffset                           v = SetConstantValue<_, _> (Properties.TextBlock.baselineOffset, v)
+      let text                                     v = SetConstantValue<_, _> (Properties.TextBlock.text, v)
+      let fontFamily                               v = SetConstantValue<_, _> (Properties.TextBlock.fontFamily, v)
+      let fontStyle                                v = SetConstantValue<_, _> (Properties.TextBlock.fontStyle, v)
+      let fontWeight                               v = SetConstantValue<_, _> (Properties.TextBlock.fontWeight, v)
+      let fontStretch                              v = SetConstantValue<_, _> (Properties.TextBlock.fontStretch, v)
+      let fontSize                                 v = SetConstantValue<_, _> (Properties.TextBlock.fontSize, v)
+      let foreground                               v = SetConstantValue<_, _> (Properties.TextBlock.foreground, v)
+      let background                               v = SetConstantValue<_, _> (Properties.TextBlock.background, v)
+      let textDecorations                          v = SetConstantValue<_, _> (Properties.TextBlock.textDecorations, v)
+      let textEffects                              v = SetConstantValue<_, _> (Properties.TextBlock.textEffects, v)
+      let lineHeight                               v = SetConstantValue<_, _> (Properties.TextBlock.lineHeight, v)
+      let lineStackingStrategy                     v = SetConstantValue<_, _> (Properties.TextBlock.lineStackingStrategy, v)
+      let padding                                  v = SetConstantValue<_, _> (Properties.TextBlock.padding, v)
+      let textAlignment                            v = SetConstantValue<_, _> (Properties.TextBlock.textAlignment, v)
+      let textTrimming                             v = SetConstantValue<_, _> (Properties.TextBlock.textTrimming, v)
+      let textWrapping                             v = SetConstantValue<_, _> (Properties.TextBlock.textWrapping, v)
+      let isHyphenationEnabled                     v = SetConstantValue<_, _> (Properties.TextBlock.isHyphenationEnabled, v)
 
     let textBox                                  values =
-      StandardView<TextBox> (values) :> View
+      StandardView<_, TextBox> (values) :> View<_>
     module TextBox = 
       open Dummy
-      let textWrapping                             v = SetConstantValue<_> (Properties.TextBox.textWrapping, v)
-      let minLines                                 v = SetConstantValue<_> (Properties.TextBox.minLines, v)
-      let maxLines                                 v = SetConstantValue<_> (Properties.TextBox.maxLines, v)
-      let text                                     v = SetConstantValue<_> (Properties.TextBox.text, v)
-      let characterCasing                          v = SetConstantValue<_> (Properties.TextBox.characterCasing, v)
-      let maxLength                                v = SetConstantValue<_> (Properties.TextBox.maxLength, v)
-      let textAlignment                            v = SetConstantValue<_> (Properties.TextBox.textAlignment, v)
-      let textDecorations                          v = SetConstantValue<_> (Properties.TextBox.textDecorations, v)
+      let textWrapping                             v = SetConstantValue<_, _> (Properties.TextBox.textWrapping, v)
+      let minLines                                 v = SetConstantValue<_, _> (Properties.TextBox.minLines, v)
+      let maxLines                                 v = SetConstantValue<_, _> (Properties.TextBox.maxLines, v)
+      let text                                     v = SetConstantValue<_, _> (Properties.TextBox.text, v)
+      let characterCasing                          v = SetConstantValue<_, _> (Properties.TextBox.characterCasing, v)
+      let maxLength                                v = SetConstantValue<_, _> (Properties.TextBox.maxLength, v)
+      let textAlignment                            v = SetConstantValue<_, _> (Properties.TextBox.textAlignment, v)
+      let textDecorations                          v = SetConstantValue<_, _> (Properties.TextBox.textDecorations, v)
 
     module TextBoxBase = 
       open Dummy
-      let isReadOnly                               v = SetConstantValue<_> (Properties.TextBoxBase.isReadOnly, v)
-      let isReadOnlyCaretVisible                   v = SetConstantValue<_> (Properties.TextBoxBase.isReadOnlyCaretVisible, v)
-      let acceptsReturn                            v = SetConstantValue<_> (Properties.TextBoxBase.acceptsReturn, v)
-      let acceptsTab                               v = SetConstantValue<_> (Properties.TextBoxBase.acceptsTab, v)
-      let horizontalScrollBarVisibility            v = SetConstantValue<_> (Properties.TextBoxBase.horizontalScrollBarVisibility, v)
-      let verticalScrollBarVisibility              v = SetConstantValue<_> (Properties.TextBoxBase.verticalScrollBarVisibility, v)
-      let isUndoEnabled                            v = SetConstantValue<_> (Properties.TextBoxBase.isUndoEnabled, v)
-      let undoLimit                                v = SetConstantValue<_> (Properties.TextBoxBase.undoLimit, v)
-      let autoWordSelection                        v = SetConstantValue<_> (Properties.TextBoxBase.autoWordSelection, v)
-      let selectionBrush                           v = SetConstantValue<_> (Properties.TextBoxBase.selectionBrush, v)
-      let selectionOpacity                         v = SetConstantValue<_> (Properties.TextBoxBase.selectionOpacity, v)
-      let caretBrush                               v = SetConstantValue<_> (Properties.TextBoxBase.caretBrush, v)
-      let isSelectionActive                        v = SetConstantValue<_> (Properties.TextBoxBase.isSelectionActive, v)
-      let isInactiveSelectionHighlightEnabled      v = SetConstantValue<_> (Properties.TextBoxBase.isInactiveSelectionHighlightEnabled, v)
+      let isReadOnly                               v = SetConstantValue<_, _> (Properties.TextBoxBase.isReadOnly, v)
+      let isReadOnlyCaretVisible                   v = SetConstantValue<_, _> (Properties.TextBoxBase.isReadOnlyCaretVisible, v)
+      let acceptsReturn                            v = SetConstantValue<_, _> (Properties.TextBoxBase.acceptsReturn, v)
+      let acceptsTab                               v = SetConstantValue<_, _> (Properties.TextBoxBase.acceptsTab, v)
+      let horizontalScrollBarVisibility            v = SetConstantValue<_, _> (Properties.TextBoxBase.horizontalScrollBarVisibility, v)
+      let verticalScrollBarVisibility              v = SetConstantValue<_, _> (Properties.TextBoxBase.verticalScrollBarVisibility, v)
+      let isUndoEnabled                            v = SetConstantValue<_, _> (Properties.TextBoxBase.isUndoEnabled, v)
+      let undoLimit                                v = SetConstantValue<_, _> (Properties.TextBoxBase.undoLimit, v)
+      let autoWordSelection                        v = SetConstantValue<_, _> (Properties.TextBoxBase.autoWordSelection, v)
+      let selectionBrush                           v = SetConstantValue<_, _> (Properties.TextBoxBase.selectionBrush, v)
+      let selectionOpacity                         v = SetConstantValue<_, _> (Properties.TextBoxBase.selectionOpacity, v)
+      let caretBrush                               v = SetConstantValue<_, _> (Properties.TextBoxBase.caretBrush, v)
+      let isSelectionActive                        v = SetConstantValue<_, _> (Properties.TextBoxBase.isSelectionActive, v)
+      let isInactiveSelectionHighlightEnabled      v = SetConstantValue<_, _> (Properties.TextBoxBase.isInactiveSelectionHighlightEnabled, v)
       
       let private onTextChanged_r (o : System.Windows.Controls.Primitives.TextBoxBase) (h : obj -> System.Windows.Controls.TextChangedEventArgs -> unit) = o.TextChanged.AddHandler    (System.Windows.Controls.TextChangedEventHandler h)
       let private onTextChanged_u (o : System.Windows.Controls.Primitives.TextBoxBase) (h : obj -> System.Windows.Controls.TextChangedEventArgs -> unit) = o.TextChanged.RemoveHandler (System.Windows.Controls.TextChangedEventHandler h)
@@ -3025,10 +3025,10 @@ module Generated =
         OnChangedValue<'TMessage, System.Windows.Controls.Primitives.TextBoxBase, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onSelectionChanged_rf, onSelectionChanged_uf, f)
 
     let thumb                                    values =
-      StandardView<Thumb> (values) :> View
+      StandardView<_, Thumb> (values) :> View<_>
     module Thumb = 
       open Dummy
-      let isDragging                               v = SetConstantValue<_> (Properties.Thumb.isDragging, v)
+      let isDragging                               v = SetConstantValue<_, _> (Properties.Thumb.isDragging, v)
       
       let private onDragStarted_r (o : System.Windows.Controls.Primitives.Thumb) (h : obj -> System.Windows.Controls.Primitives.DragStartedEventArgs -> unit) = o.DragStarted.AddHandler    (System.Windows.Controls.Primitives.DragStartedEventHandler h)
       let private onDragStarted_u (o : System.Windows.Controls.Primitives.Thumb) (h : obj -> System.Windows.Controls.Primitives.DragStartedEventArgs -> unit) = o.DragStarted.RemoveHandler (System.Windows.Controls.Primitives.DragStartedEventHandler h)
@@ -3052,27 +3052,27 @@ module Generated =
         OnChangedValue<'TMessage, System.Windows.Controls.Primitives.Thumb, System.Windows.Controls.Primitives.DragCompletedEventHandler, System.Windows.Controls.Primitives.DragCompletedEventArgs> (onDragCompleted_rf, onDragCompleted_uf, f)
 
     let tickBar                                  values =
-      StandardView<TickBar> (values) :> View
+      StandardView<_, TickBar> (values) :> View<_>
     module TickBar = 
       open Dummy
-      let fill                                     v = SetConstantValue<_> (Properties.TickBar.fill, v)
-      let minimum                                  v = SetConstantValue<_> (Properties.TickBar.minimum, v)
-      let maximum                                  v = SetConstantValue<_> (Properties.TickBar.maximum, v)
-      let selectionStart                           v = SetConstantValue<_> (Properties.TickBar.selectionStart, v)
-      let selectionEnd                             v = SetConstantValue<_> (Properties.TickBar.selectionEnd, v)
-      let isSelectionRangeEnabled                  v = SetConstantValue<_> (Properties.TickBar.isSelectionRangeEnabled, v)
-      let tickFrequency                            v = SetConstantValue<_> (Properties.TickBar.tickFrequency, v)
-      let ticks                                    v = SetConstantValue<_> (Properties.TickBar.ticks, v)
-      let isDirectionReversed                      v = SetConstantValue<_> (Properties.TickBar.isDirectionReversed, v)
-      let placement                                v = SetConstantValue<_> (Properties.TickBar.placement, v)
-      let reservedSpace                            v = SetConstantValue<_> (Properties.TickBar.reservedSpace, v)
+      let fill                                     v = SetConstantValue<_, _> (Properties.TickBar.fill, v)
+      let minimum                                  v = SetConstantValue<_, _> (Properties.TickBar.minimum, v)
+      let maximum                                  v = SetConstantValue<_, _> (Properties.TickBar.maximum, v)
+      let selectionStart                           v = SetConstantValue<_, _> (Properties.TickBar.selectionStart, v)
+      let selectionEnd                             v = SetConstantValue<_, _> (Properties.TickBar.selectionEnd, v)
+      let isSelectionRangeEnabled                  v = SetConstantValue<_, _> (Properties.TickBar.isSelectionRangeEnabled, v)
+      let tickFrequency                            v = SetConstantValue<_, _> (Properties.TickBar.tickFrequency, v)
+      let ticks                                    v = SetConstantValue<_, _> (Properties.TickBar.ticks, v)
+      let isDirectionReversed                      v = SetConstantValue<_, _> (Properties.TickBar.isDirectionReversed, v)
+      let placement                                v = SetConstantValue<_, _> (Properties.TickBar.placement, v)
+      let reservedSpace                            v = SetConstantValue<_, _> (Properties.TickBar.reservedSpace, v)
 
     let toggleButton                             values child =
-      StandardContentView<ToggleButton> (values, child) :> View
+      StandardContentView<_, ToggleButton> (values, child) :> View<_>
     module ToggleButton = 
       open Dummy
-      let isChecked                                v = SetConstantValue<_> (Properties.ToggleButton.isChecked, v)
-      let isThreeState                             v = SetConstantValue<_> (Properties.ToggleButton.isThreeState, v)
+      let isChecked                                v = SetConstantValue<_, _> (Properties.ToggleButton.isChecked, v)
+      let isThreeState                             v = SetConstantValue<_, _> (Properties.ToggleButton.isThreeState, v)
       
       let private onChecked_r (o : System.Windows.Controls.Primitives.ToggleButton) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Checked.AddHandler    (System.Windows.RoutedEventHandler h)
       let private onChecked_u (o : System.Windows.Controls.Primitives.ToggleButton) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Checked.RemoveHandler (System.Windows.RoutedEventHandler h)
@@ -3096,49 +3096,49 @@ module Generated =
         OnChangedValue<'TMessage, System.Windows.Controls.Primitives.ToggleButton, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onIndeterminate_rf, onIndeterminate_uf, f)
 
     let toolBar                                  values =
-      StandardView<ToolBar> (values) :> View
+      StandardView<_, ToolBar> (values) :> View<_>
     module ToolBar = 
       open Dummy
-      let orientation                              v = SetConstantValue<_> (Properties.ToolBar.orientation, v)
-      let band                                     v = SetConstantValue<_> (Properties.ToolBar.band, v)
-      let bandIndex                                v = SetConstantValue<_> (Properties.ToolBar.bandIndex, v)
-      let isOverflowOpen                           v = SetConstantValue<_> (Properties.ToolBar.isOverflowOpen, v)
-      let hasOverflowItems                         v = SetConstantValue<_> (Properties.ToolBar.hasOverflowItems, v)
-      let isOverflowItem                           v = SetConstantValue<_> (Properties.ToolBar.isOverflowItem, v)
-      let overflowMode                             v = SetConstantValue<_> (Properties.ToolBar.overflowMode, v)
+      let orientation                              v = SetConstantValue<_, _> (Properties.ToolBar.orientation, v)
+      let band                                     v = SetConstantValue<_, _> (Properties.ToolBar.band, v)
+      let bandIndex                                v = SetConstantValue<_, _> (Properties.ToolBar.bandIndex, v)
+      let isOverflowOpen                           v = SetConstantValue<_, _> (Properties.ToolBar.isOverflowOpen, v)
+      let hasOverflowItems                         v = SetConstantValue<_, _> (Properties.ToolBar.hasOverflowItems, v)
+      let isOverflowItem                           v = SetConstantValue<_, _> (Properties.ToolBar.isOverflowItem, v)
+      let overflowMode                             v = SetConstantValue<_, _> (Properties.ToolBar.overflowMode, v)
 
     let toolBarOverflowPanel                     values children =
-      StandardPanelView<ToolBarOverflowPanel> (values, children) :> View
+      StandardPanelView<_, ToolBarOverflowPanel> (values, children) :> View<_>
     module ToolBarOverflowPanel = 
       open Dummy
-      let wrapWidth                                v = SetConstantValue<_> (Properties.ToolBarOverflowPanel.wrapWidth, v)
+      let wrapWidth                                v = SetConstantValue<_, _> (Properties.ToolBarOverflowPanel.wrapWidth, v)
 
     let toolBarPanel                             values children =
-      StandardPanelView<ToolBarPanel> (values, children) :> View
+      StandardPanelView<_, ToolBarPanel> (values, children) :> View<_>
     module ToolBarPanel = 
       open Dummy
 
     let toolBarTray                              values =
-      StandardView<ToolBarTray> (values) :> View
+      StandardView<_, ToolBarTray> (values) :> View<_>
     module ToolBarTray = 
       open Dummy
-      let background                               v = SetConstantValue<_> (Properties.ToolBarTray.background, v)
-      let orientation                              v = SetConstantValue<_> (Properties.ToolBarTray.orientation, v)
-      let isLocked                                 v = SetConstantValue<_> (Properties.ToolBarTray.isLocked, v)
+      let background                               v = SetConstantValue<_, _> (Properties.ToolBarTray.background, v)
+      let orientation                              v = SetConstantValue<_, _> (Properties.ToolBarTray.orientation, v)
+      let isLocked                                 v = SetConstantValue<_, _> (Properties.ToolBarTray.isLocked, v)
 
     let toolTip                                  values child =
-      StandardContentView<ToolTip> (values, child) :> View
+      StandardContentView<_, ToolTip> (values, child) :> View<_>
     module ToolTip = 
       open Dummy
-      let horizontalOffset                         v = SetConstantValue<_> (Properties.ToolTip.horizontalOffset, v)
-      let verticalOffset                           v = SetConstantValue<_> (Properties.ToolTip.verticalOffset, v)
-      let isOpen                                   v = SetConstantValue<_> (Properties.ToolTip.isOpen, v)
-      let hasDropShadow                            v = SetConstantValue<_> (Properties.ToolTip.hasDropShadow, v)
-      let placementTarget                          v = SetConstantValue<_> (Properties.ToolTip.placementTarget, v)
-      let placementRectangle                       v = SetConstantValue<_> (Properties.ToolTip.placementRectangle, v)
-      let placement                                v = SetConstantValue<_> (Properties.ToolTip.placement, v)
-      let customPopupPlacementCallback             v = SetConstantValue<_> (Properties.ToolTip.customPopupPlacementCallback, v)
-      let staysOpen                                v = SetConstantValue<_> (Properties.ToolTip.staysOpen, v)
+      let horizontalOffset                         v = SetConstantValue<_, _> (Properties.ToolTip.horizontalOffset, v)
+      let verticalOffset                           v = SetConstantValue<_, _> (Properties.ToolTip.verticalOffset, v)
+      let isOpen                                   v = SetConstantValue<_, _> (Properties.ToolTip.isOpen, v)
+      let hasDropShadow                            v = SetConstantValue<_, _> (Properties.ToolTip.hasDropShadow, v)
+      let placementTarget                          v = SetConstantValue<_, _> (Properties.ToolTip.placementTarget, v)
+      let placementRectangle                       v = SetConstantValue<_, _> (Properties.ToolTip.placementRectangle, v)
+      let placement                                v = SetConstantValue<_, _> (Properties.ToolTip.placement, v)
+      let customPopupPlacementCallback             v = SetConstantValue<_, _> (Properties.ToolTip.customPopupPlacementCallback, v)
+      let staysOpen                                v = SetConstantValue<_, _> (Properties.ToolTip.staysOpen, v)
       
       let private onOpened_r (o : System.Windows.Controls.ToolTip) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Opened.AddHandler    (System.Windows.RoutedEventHandler h)
       let private onOpened_u (o : System.Windows.Controls.ToolTip) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Opened.RemoveHandler (System.Windows.RoutedEventHandler h)
@@ -3155,23 +3155,23 @@ module Generated =
         OnChangedValue<'TMessage, System.Windows.Controls.ToolTip, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onClosed_rf, onClosed_uf, f)
 
     let track                                    values =
-      StandardView<Track> (values) :> View
+      StandardView<_, Track> (values) :> View<_>
     module Track = 
       open Dummy
-      let orientation                              v = SetConstantValue<_> (Properties.Track.orientation, v)
-      let minimum                                  v = SetConstantValue<_> (Properties.Track.minimum, v)
-      let maximum                                  v = SetConstantValue<_> (Properties.Track.maximum, v)
-      let value                                    v = SetConstantValue<_> (Properties.Track.value, v)
-      let viewportSize                             v = SetConstantValue<_> (Properties.Track.viewportSize, v)
-      let isDirectionReversed                      v = SetConstantValue<_> (Properties.Track.isDirectionReversed, v)
+      let orientation                              v = SetConstantValue<_, _> (Properties.Track.orientation, v)
+      let minimum                                  v = SetConstantValue<_, _> (Properties.Track.minimum, v)
+      let maximum                                  v = SetConstantValue<_, _> (Properties.Track.maximum, v)
+      let value                                    v = SetConstantValue<_, _> (Properties.Track.value, v)
+      let viewportSize                             v = SetConstantValue<_, _> (Properties.Track.viewportSize, v)
+      let isDirectionReversed                      v = SetConstantValue<_, _> (Properties.Track.isDirectionReversed, v)
 
     let treeView                                 values =
-      StandardView<TreeView> (values) :> View
+      StandardView<_, TreeView> (values) :> View<_>
     module TreeView = 
       open Dummy
-      let selectedItem                             v = SetConstantValue<_> (Properties.TreeView.selectedItem, v)
-      let selectedValue                            v = SetConstantValue<_> (Properties.TreeView.selectedValue, v)
-      let selectedValuePath                        v = SetConstantValue<_> (Properties.TreeView.selectedValuePath, v)
+      let selectedItem                             v = SetConstantValue<_, _> (Properties.TreeView.selectedItem, v)
+      let selectedValue                            v = SetConstantValue<_, _> (Properties.TreeView.selectedValue, v)
+      let selectedValuePath                        v = SetConstantValue<_, _> (Properties.TreeView.selectedValuePath, v)
       
       let private onSelectedItemChanged_r (o : System.Windows.Controls.TreeView) (h : obj -> System.Windows.RoutedPropertyChangedEventArgs<System.Object> -> unit) = o.SelectedItemChanged.AddHandler    (System.Windows.RoutedPropertyChangedEventHandler<System.Object> h)
       let private onSelectedItemChanged_u (o : System.Windows.Controls.TreeView) (h : obj -> System.Windows.RoutedPropertyChangedEventArgs<System.Object> -> unit) = o.SelectedItemChanged.RemoveHandler (System.Windows.RoutedPropertyChangedEventHandler<System.Object> h)
@@ -3181,12 +3181,12 @@ module Generated =
         OnChangedValue<'TMessage, System.Windows.Controls.TreeView, System.Windows.RoutedPropertyChangedEventHandler<System.Object>, System.Windows.RoutedPropertyChangedEventArgs<System.Object>> (onSelectedItemChanged_rf, onSelectedItemChanged_uf, f)
 
     let treeViewItem                             values =
-      StandardView<TreeViewItem> (values) :> View
+      StandardView<_, TreeViewItem> (values) :> View<_>
     module TreeViewItem = 
       open Dummy
-      let isExpanded                               v = SetConstantValue<_> (Properties.TreeViewItem.isExpanded, v)
-      let isSelected                               v = SetConstantValue<_> (Properties.TreeViewItem.isSelected, v)
-      let isSelectionActive                        v = SetConstantValue<_> (Properties.TreeViewItem.isSelectionActive, v)
+      let isExpanded                               v = SetConstantValue<_, _> (Properties.TreeViewItem.isExpanded, v)
+      let isSelected                               v = SetConstantValue<_, _> (Properties.TreeViewItem.isSelected, v)
+      let isSelectionActive                        v = SetConstantValue<_, _> (Properties.TreeViewItem.isSelectionActive, v)
       
       let private onExpanded_r (o : System.Windows.Controls.TreeViewItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Expanded.AddHandler    (System.Windows.RoutedEventHandler h)
       let private onExpanded_u (o : System.Windows.Controls.TreeViewItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Expanded.RemoveHandler (System.Windows.RoutedEventHandler h)
@@ -3217,43 +3217,43 @@ module Generated =
         OnChangedValue<'TMessage, System.Windows.Controls.TreeViewItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onUnselected_rf, onUnselected_uf, f)
 
     let uIElement                                values =
-      StandardView<UIElement> (values) :> View
+      StandardView<_, UIElement> (values) :> View<_>
     module UIElement = 
       open Dummy
-      let isMouseDirectlyOver                      v = SetConstantValue<_> (Properties.UIElement.isMouseDirectlyOver, v)
-      let isMouseOver                              v = SetConstantValue<_> (Properties.UIElement.isMouseOver, v)
-      let isStylusOver                             v = SetConstantValue<_> (Properties.UIElement.isStylusOver, v)
-      let isKeyboardFocusWithin                    v = SetConstantValue<_> (Properties.UIElement.isKeyboardFocusWithin, v)
-      let isMouseCaptured                          v = SetConstantValue<_> (Properties.UIElement.isMouseCaptured, v)
-      let isMouseCaptureWithin                     v = SetConstantValue<_> (Properties.UIElement.isMouseCaptureWithin, v)
-      let isStylusDirectlyOver                     v = SetConstantValue<_> (Properties.UIElement.isStylusDirectlyOver, v)
-      let isStylusCaptured                         v = SetConstantValue<_> (Properties.UIElement.isStylusCaptured, v)
-      let isStylusCaptureWithin                    v = SetConstantValue<_> (Properties.UIElement.isStylusCaptureWithin, v)
-      let isKeyboardFocused                        v = SetConstantValue<_> (Properties.UIElement.isKeyboardFocused, v)
-      let areAnyTouchesDirectlyOver                v = SetConstantValue<_> (Properties.UIElement.areAnyTouchesDirectlyOver, v)
-      let areAnyTouchesOver                        v = SetConstantValue<_> (Properties.UIElement.areAnyTouchesOver, v)
-      let areAnyTouchesCaptured                    v = SetConstantValue<_> (Properties.UIElement.areAnyTouchesCaptured, v)
-      let areAnyTouchesCapturedWithin              v = SetConstantValue<_> (Properties.UIElement.areAnyTouchesCapturedWithin, v)
-      let allowDrop                                v = SetConstantValue<_> (Properties.UIElement.allowDrop, v)
-      let renderTransform                          v = SetConstantValue<_> (Properties.UIElement.renderTransform, v)
-      let renderTransformOrigin                    v = SetConstantValue<_> (Properties.UIElement.renderTransformOrigin, v)
-      let opacity                                  v = SetConstantValue<_> (Properties.UIElement.opacity, v)
-      let opacityMask                              v = SetConstantValue<_> (Properties.UIElement.opacityMask, v)
-      let bitmapEffect                             v = SetConstantValue<_> (Properties.UIElement.bitmapEffect, v)
-      let effect                                   v = SetConstantValue<_> (Properties.UIElement.effect, v)
-      let bitmapEffectInput                        v = SetConstantValue<_> (Properties.UIElement.bitmapEffectInput, v)
-      let cacheMode                                v = SetConstantValue<_> (Properties.UIElement.cacheMode, v)
-      let uid                                      v = SetConstantValue<_> (Properties.UIElement.uid, v)
-      let visibility                               v = SetConstantValue<_> (Properties.UIElement.visibility, v)
-      let clipToBounds                             v = SetConstantValue<_> (Properties.UIElement.clipToBounds, v)
-      let clip                                     v = SetConstantValue<_> (Properties.UIElement.clip, v)
-      let snapsToDevicePixels                      v = SetConstantValue<_> (Properties.UIElement.snapsToDevicePixels, v)
-      let isFocused                                v = SetConstantValue<_> (Properties.UIElement.isFocused, v)
-      let isEnabled                                v = SetConstantValue<_> (Properties.UIElement.isEnabled, v)
-      let isHitTestVisible                         v = SetConstantValue<_> (Properties.UIElement.isHitTestVisible, v)
-      let isVisible                                v = SetConstantValue<_> (Properties.UIElement.isVisible, v)
-      let focusable                                v = SetConstantValue<_> (Properties.UIElement.focusable, v)
-      let isManipulationEnabled                    v = SetConstantValue<_> (Properties.UIElement.isManipulationEnabled, v)
+      let isMouseDirectlyOver                      v = SetConstantValue<_, _> (Properties.UIElement.isMouseDirectlyOver, v)
+      let isMouseOver                              v = SetConstantValue<_, _> (Properties.UIElement.isMouseOver, v)
+      let isStylusOver                             v = SetConstantValue<_, _> (Properties.UIElement.isStylusOver, v)
+      let isKeyboardFocusWithin                    v = SetConstantValue<_, _> (Properties.UIElement.isKeyboardFocusWithin, v)
+      let isMouseCaptured                          v = SetConstantValue<_, _> (Properties.UIElement.isMouseCaptured, v)
+      let isMouseCaptureWithin                     v = SetConstantValue<_, _> (Properties.UIElement.isMouseCaptureWithin, v)
+      let isStylusDirectlyOver                     v = SetConstantValue<_, _> (Properties.UIElement.isStylusDirectlyOver, v)
+      let isStylusCaptured                         v = SetConstantValue<_, _> (Properties.UIElement.isStylusCaptured, v)
+      let isStylusCaptureWithin                    v = SetConstantValue<_, _> (Properties.UIElement.isStylusCaptureWithin, v)
+      let isKeyboardFocused                        v = SetConstantValue<_, _> (Properties.UIElement.isKeyboardFocused, v)
+      let areAnyTouchesDirectlyOver                v = SetConstantValue<_, _> (Properties.UIElement.areAnyTouchesDirectlyOver, v)
+      let areAnyTouchesOver                        v = SetConstantValue<_, _> (Properties.UIElement.areAnyTouchesOver, v)
+      let areAnyTouchesCaptured                    v = SetConstantValue<_, _> (Properties.UIElement.areAnyTouchesCaptured, v)
+      let areAnyTouchesCapturedWithin              v = SetConstantValue<_, _> (Properties.UIElement.areAnyTouchesCapturedWithin, v)
+      let allowDrop                                v = SetConstantValue<_, _> (Properties.UIElement.allowDrop, v)
+      let renderTransform                          v = SetConstantValue<_, _> (Properties.UIElement.renderTransform, v)
+      let renderTransformOrigin                    v = SetConstantValue<_, _> (Properties.UIElement.renderTransformOrigin, v)
+      let opacity                                  v = SetConstantValue<_, _> (Properties.UIElement.opacity, v)
+      let opacityMask                              v = SetConstantValue<_, _> (Properties.UIElement.opacityMask, v)
+      let bitmapEffect                             v = SetConstantValue<_, _> (Properties.UIElement.bitmapEffect, v)
+      let effect                                   v = SetConstantValue<_, _> (Properties.UIElement.effect, v)
+      let bitmapEffectInput                        v = SetConstantValue<_, _> (Properties.UIElement.bitmapEffectInput, v)
+      let cacheMode                                v = SetConstantValue<_, _> (Properties.UIElement.cacheMode, v)
+      let uid                                      v = SetConstantValue<_, _> (Properties.UIElement.uid, v)
+      let visibility                               v = SetConstantValue<_, _> (Properties.UIElement.visibility, v)
+      let clipToBounds                             v = SetConstantValue<_, _> (Properties.UIElement.clipToBounds, v)
+      let clip                                     v = SetConstantValue<_, _> (Properties.UIElement.clip, v)
+      let snapsToDevicePixels                      v = SetConstantValue<_, _> (Properties.UIElement.snapsToDevicePixels, v)
+      let isFocused                                v = SetConstantValue<_, _> (Properties.UIElement.isFocused, v)
+      let isEnabled                                v = SetConstantValue<_, _> (Properties.UIElement.isEnabled, v)
+      let isHitTestVisible                         v = SetConstantValue<_, _> (Properties.UIElement.isHitTestVisible, v)
+      let isVisible                                v = SetConstantValue<_, _> (Properties.UIElement.isVisible, v)
+      let focusable                                v = SetConstantValue<_, _> (Properties.UIElement.focusable, v)
+      let isManipulationEnabled                    v = SetConstantValue<_, _> (Properties.UIElement.isManipulationEnabled, v)
       
       let private onPreviewMouseDown_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.PreviewMouseDown.AddHandler    (System.Windows.Input.MouseButtonEventHandler h)
       let private onPreviewMouseDown_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.PreviewMouseDown.RemoveHandler (System.Windows.Input.MouseButtonEventHandler h)
@@ -3928,52 +3928,52 @@ module Generated =
         OnChangedValue<'TMessage, System.Windows.UIElement, System.EventHandler<System.Windows.Input.ManipulationCompletedEventArgs>, System.Windows.Input.ManipulationCompletedEventArgs> (onManipulationCompleted_rf, onManipulationCompleted_uf, f)
 
     let uniformGrid                              values children =
-      StandardPanelView<UniformGrid> (values, children) :> View
+      StandardPanelView<_, UniformGrid> (values, children) :> View<_>
     module UniformGrid = 
       open Dummy
-      let firstColumn                              v = SetConstantValue<_> (Properties.UniformGrid.firstColumn, v)
-      let columns                                  v = SetConstantValue<_> (Properties.UniformGrid.columns, v)
-      let rows                                     v = SetConstantValue<_> (Properties.UniformGrid.rows, v)
+      let firstColumn                              v = SetConstantValue<_, _> (Properties.UniformGrid.firstColumn, v)
+      let columns                                  v = SetConstantValue<_, _> (Properties.UniformGrid.columns, v)
+      let rows                                     v = SetConstantValue<_, _> (Properties.UniformGrid.rows, v)
 
     let userControl                              values child =
-      StandardContentView<UserControl> (values, child) :> View
+      StandardContentView<_, UserControl> (values, child) :> View<_>
     module UserControl = 
       open Dummy
 
     let viewbox                                  values =
-      StandardView<Viewbox> (values) :> View
+      StandardView<_, Viewbox> (values) :> View<_>
     module Viewbox = 
       open Dummy
-      let stretch                                  v = SetConstantValue<_> (Properties.Viewbox.stretch, v)
-      let stretchDirection                         v = SetConstantValue<_> (Properties.Viewbox.stretchDirection, v)
+      let stretch                                  v = SetConstantValue<_, _> (Properties.Viewbox.stretch, v)
+      let stretchDirection                         v = SetConstantValue<_, _> (Properties.Viewbox.stretchDirection, v)
 
     let viewport3D                               values =
-      StandardView<Viewport3D> (values) :> View
+      StandardView<_, Viewport3D> (values) :> View<_>
     module Viewport3D = 
       open Dummy
-      let camera                                   v = SetConstantValue<_> (Properties.Viewport3D.camera, v)
-      let children                                 v = SetConstantValue<_> (Properties.Viewport3D.children, v)
+      let camera                                   v = SetConstantValue<_, _> (Properties.Viewport3D.camera, v)
+      let children                                 v = SetConstantValue<_, _> (Properties.Viewport3D.children, v)
 
     module VirtualizingPanel = 
       open Dummy
-      let isVirtualizing                           v = SetConstantValue<_> (Properties.VirtualizingPanel.isVirtualizing, v)
-      let virtualizationMode                       v = SetConstantValue<_> (Properties.VirtualizingPanel.virtualizationMode, v)
-      let isVirtualizingWhenGrouping               v = SetConstantValue<_> (Properties.VirtualizingPanel.isVirtualizingWhenGrouping, v)
-      let scrollUnit                               v = SetConstantValue<_> (Properties.VirtualizingPanel.scrollUnit, v)
-      let cacheLength                              v = SetConstantValue<_> (Properties.VirtualizingPanel.cacheLength, v)
-      let cacheLengthUnit                          v = SetConstantValue<_> (Properties.VirtualizingPanel.cacheLengthUnit, v)
-      let isContainerVirtualizable                 v = SetConstantValue<_> (Properties.VirtualizingPanel.isContainerVirtualizable, v)
+      let isVirtualizing                           v = SetConstantValue<_, _> (Properties.VirtualizingPanel.isVirtualizing, v)
+      let virtualizationMode                       v = SetConstantValue<_, _> (Properties.VirtualizingPanel.virtualizationMode, v)
+      let isVirtualizingWhenGrouping               v = SetConstantValue<_, _> (Properties.VirtualizingPanel.isVirtualizingWhenGrouping, v)
+      let scrollUnit                               v = SetConstantValue<_, _> (Properties.VirtualizingPanel.scrollUnit, v)
+      let cacheLength                              v = SetConstantValue<_, _> (Properties.VirtualizingPanel.cacheLength, v)
+      let cacheLengthUnit                          v = SetConstantValue<_, _> (Properties.VirtualizingPanel.cacheLengthUnit, v)
+      let isContainerVirtualizable                 v = SetConstantValue<_, _> (Properties.VirtualizingPanel.isContainerVirtualizable, v)
 
     let virtualizingStackPanel                   values children =
-      StandardPanelView<VirtualizingStackPanel> (values, children) :> View
+      StandardPanelView<_, VirtualizingStackPanel> (values, children) :> View<_>
     module VirtualizingStackPanel = 
       open Dummy
-      let isVirtualizing                           v = SetConstantValue<_> (Properties.VirtualizingStackPanel.isVirtualizing, v)
-      let virtualizationMode                       v = SetConstantValue<_> (Properties.VirtualizingStackPanel.virtualizationMode, v)
-      let orientation                              v = SetConstantValue<_> (Properties.VirtualizingStackPanel.orientation, v)
+      let isVirtualizing                           v = SetConstantValue<_, _> (Properties.VirtualizingStackPanel.isVirtualizing, v)
+      let virtualizationMode                       v = SetConstantValue<_, _> (Properties.VirtualizingStackPanel.virtualizationMode, v)
+      let orientation                              v = SetConstantValue<_, _> (Properties.VirtualizingStackPanel.orientation, v)
 
     let webBrowser                               values =
-      StandardView<WebBrowser> (values) :> View
+      StandardView<_, WebBrowser> (values) :> View<_>
     module WebBrowser = 
       open Dummy
       
@@ -3999,23 +3999,23 @@ module Generated =
         OnChangedValue<'TMessage, System.Windows.Controls.WebBrowser, System.Windows.Navigation.LoadCompletedEventHandler, System.Windows.Navigation.NavigationEventArgs> (onLoadCompleted_rf, onLoadCompleted_uf, f)
 
     let window                                   values child =
-      StandardContentView<Window> (values, child) :> View
+      StandardContentView<_, Window> (values, child) :> View<_>
     module Window = 
       open Dummy
-      let taskbarItemInfo                          v = SetConstantValue<_> (Properties.Window.taskbarItemInfo, v)
-      let allowsTransparency                       v = SetConstantValue<_> (Properties.Window.allowsTransparency, v)
-      let title                                    v = SetConstantValue<_> (Properties.Window.title, v)
-      let icon                                     v = SetConstantValue<_> (Properties.Window.icon, v)
-      let sizeToContent                            v = SetConstantValue<_> (Properties.Window.sizeToContent, v)
-      let top                                      v = SetConstantValue<_> (Properties.Window.top, v)
-      let left                                     v = SetConstantValue<_> (Properties.Window.left, v)
-      let showInTaskbar                            v = SetConstantValue<_> (Properties.Window.showInTaskbar, v)
-      let isActive                                 v = SetConstantValue<_> (Properties.Window.isActive, v)
-      let windowStyle                              v = SetConstantValue<_> (Properties.Window.windowStyle, v)
-      let windowState                              v = SetConstantValue<_> (Properties.Window.windowState, v)
-      let resizeMode                               v = SetConstantValue<_> (Properties.Window.resizeMode, v)
-      let topmost                                  v = SetConstantValue<_> (Properties.Window.topmost, v)
-      let showActivated                            v = SetConstantValue<_> (Properties.Window.showActivated, v)
+      let taskbarItemInfo                          v = SetConstantValue<_, _> (Properties.Window.taskbarItemInfo, v)
+      let allowsTransparency                       v = SetConstantValue<_, _> (Properties.Window.allowsTransparency, v)
+      let title                                    v = SetConstantValue<_, _> (Properties.Window.title, v)
+      let icon                                     v = SetConstantValue<_, _> (Properties.Window.icon, v)
+      let sizeToContent                            v = SetConstantValue<_, _> (Properties.Window.sizeToContent, v)
+      let top                                      v = SetConstantValue<_, _> (Properties.Window.top, v)
+      let left                                     v = SetConstantValue<_, _> (Properties.Window.left, v)
+      let showInTaskbar                            v = SetConstantValue<_, _> (Properties.Window.showInTaskbar, v)
+      let isActive                                 v = SetConstantValue<_, _> (Properties.Window.isActive, v)
+      let windowStyle                              v = SetConstantValue<_, _> (Properties.Window.windowStyle, v)
+      let windowState                              v = SetConstantValue<_, _> (Properties.Window.windowState, v)
+      let resizeMode                               v = SetConstantValue<_, _> (Properties.Window.resizeMode, v)
+      let topmost                                  v = SetConstantValue<_, _> (Properties.Window.topmost, v)
+      let showActivated                            v = SetConstantValue<_, _> (Properties.Window.showActivated, v)
       
       let private onSourceInitialized_r (o : System.Windows.Window) (h : obj -> System.EventArgs -> unit) = o.SourceInitialized.AddHandler    (System.EventHandler h)
       let private onSourceInitialized_u (o : System.Windows.Window) (h : obj -> System.EventArgs -> unit) = o.SourceInitialized.RemoveHandler (System.EventHandler h)
@@ -4081,10 +4081,10 @@ module Generated =
         OnChangedValue<'TMessage, System.Windows.Window, System.EventHandler, System.EventArgs> (onContentRendered_rf, onContentRendered_uf, f)
 
     let wrapPanel                                values children =
-      StandardPanelView<WrapPanel> (values, children) :> View
+      StandardPanelView<_, WrapPanel> (values, children) :> View<_>
     module WrapPanel = 
       open Dummy
-      let itemWidth                                v = SetConstantValue<_> (Properties.WrapPanel.itemWidth, v)
-      let itemHeight                               v = SetConstantValue<_> (Properties.WrapPanel.itemHeight, v)
-      let orientation                              v = SetConstantValue<_> (Properties.WrapPanel.orientation, v)
+      let itemWidth                                v = SetConstantValue<_, _> (Properties.WrapPanel.itemWidth, v)
+      let itemHeight                               v = SetConstantValue<_, _> (Properties.WrapPanel.itemHeight, v)
+      let orientation                              v = SetConstantValue<_, _> (Properties.WrapPanel.orientation, v)
 

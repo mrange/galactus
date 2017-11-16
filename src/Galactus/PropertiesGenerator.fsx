@@ -160,20 +160,23 @@ module Generated =
         let name = tp.Name |> fixName
         if tp.IsSubclassOf content then
           writelinef """    let %-40s values child =
-      StandardContentView<%s> (values, child) :> View"""         name 
+      StandardContentView<_, %s> (values, child) :> View<_>"""        
+            name 
             tp.Name
         elif tp.IsSubclassOf panel then
           writelinef """    let %-40s values children =
-      StandardPanelView<%s> (values, children) :> View"""         name
+      StandardPanelView<_, %s> (values, children) :> View<_>"""         
+            name
             tp.Name
         else
           writelinef """    let %-40s values =
-      StandardView<%s> (values) :> View"""         name 
+      StandardView<_, %s> (values) :> View<_>"""         
+            name 
             tp.Name
 
     let pfn (tp : Type) (f : FieldInfo) (dp : DependencyProperty) name =
       writelinef
-        """      let %-40s v = SetConstantValue<_> (Properties.%s.%s, v)"""
+        """      let %-40s v = SetConstantValue<_, _> (Properties.%s.%s, v)"""
         name
         f.DeclaringType.Name
         name

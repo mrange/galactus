@@ -1,6 +1,8 @@
 ﻿namespace Galactus
 
 open System
+open System.Collections.Generic
+open System.Threading
 open System.Reflection
 open System.Windows
 open System.Windows.Controls
@@ -10,10 +12,13 @@ module Core =
   module Details =
     let inline adapt2 f = OptimizedClosures.FSharpFunc<_, _, _>.Adapt f
   open Details
+  open System.Windows.Threading
 
   type MessageEventArgs (message : obj) =
     class
       inherit RoutedEventArgs ()
+
+      member x.Message = message
     end
  
   type MessageEventHandler = delegate of obj*MessageEventArgs -> unit
@@ -38,34 +43,34 @@ module Core =
         dobj.SetValue (dp, box v)
     end
 
-  type [<AbstractClass>] Value () =
+  type [<AbstractClass>] Value<'TMessage> () =
     class
       abstract Update: UIElement -> unit
     end
 
-  type [<AbstractClass>] SetValue (p : Property) =
+  type [<AbstractClass>] SetValue<'TMessage> (p : Property) =
     class
-      inherit Value ()
+      inherit Value<'TMessage> ()
     end
 
-  type [<AbstractClass>] SetValue<'T> (p : Property<'T>) =
+  type [<AbstractClass>] SetValue<'TMessage, 'T> (p : Property<'T>) =
     class
-      inherit SetValue (p)
+      inherit SetValue<'TMessage> (p)
 
       member x.Property = p
     end
 
-  type [<Sealed>] SetConstantValue<'T> (p : Property<'T>, v : 'T) =
+  type [<Sealed>] SetConstantValue<'TMessage, 'T> (p : Property<'T>, v : 'T) =
     class
-      inherit SetValue<'T> (p)
+      inherit SetValue<'TMessage, 'T> (p)
 
       override x.Update (dobj : UIElement) : unit =
         p.Set (dobj, v)
     end
 
-  type [<AbstractClass>] OnChangedValue () =
+  type [<AbstractClass>] OnChangedValue<'TMessage> () =
     class
-      inherit Value ()
+      inherit Value<'TMessage> ()
     end
 
   type [<Sealed>] OnChangedValue< 'TMessage     ,
@@ -76,7 +81,7 @@ module Core =
                                       u : 'T -> (obj -> 'TEventArgs -> unit) -> unit  ,
                                       f : 'T -> 'TEventArgs -> 'TMessage              ) =
     class
-      inherit OnChangedValue ()
+      inherit OnChangedValue<'TMessage> ()
 
       let r = adapt2 r
       let u = adapt2 u
@@ -97,14 +102,14 @@ module Core =
 
     end
 
-  type [<AbstractClass>] View () =
+  type [<AbstractClass>] View<'TMessage> () =
     class
       abstract BuildUp: UIElement -> UIElement
     end
 
-  type [<Sealed>] StandardView<'T when 'T :> UIElement and 'T : (new : unit -> 'T)> (values : Value []) =
+  type [<Sealed>] StandardView<'TMessage, 'T when 'T :> UIElement and 'T : (new : unit -> 'T)> (values : Value<'TMessage> []) =
     class
-      inherit View ()
+      inherit View<'TMessage> ()
       override x.BuildUp dobj =
         let v =
           match dobj with
@@ -117,9 +122,9 @@ module Core =
         upcast v
     end
 
-  type [<Sealed>] StandardPanelView<'T when 'T :> Panel and 'T : (new : unit -> 'T)> (values : Value [], views : View []) =
+  type [<Sealed>] StandardPanelView<'TMessage, 'T when 'T :> Panel and 'T : (new : unit -> 'T)> (values : Value<'TMessage> [], views : View<'TMessage> []) =
     class
-      inherit View ()
+      inherit View<'TMessage> ()
       override x.BuildUp dobj =
         let v =
           match dobj with
@@ -128,8 +133,8 @@ module Core =
 
         let children = v.Children
         let count    = children.Count
-        if count > values.Length then
-          children.RemoveRange (values.Length, count - values.Length)
+        if count > views.Length then
+          children.RemoveRange (values.Length, count - views.Length)
 
         for i = 0 to (views.Length - 1) do
           if i < children.Count then
@@ -146,9 +151,9 @@ module Core =
         upcast v
     end
 
-  type [<Sealed>] StandardContentView<'T when 'T :> ContentControl and 'T : (new : unit -> 'T)> (values : Value [], view : View) =
+  type [<Sealed>] StandardContentView<'TMessage, 'T when 'T :> ContentControl and 'T : (new : unit -> 'T)> (values : Value<'TMessage> [], view : View<'TMessage>) =
     class
-      inherit View ()
+      inherit View<'TMessage> ()
       override x.BuildUp dobj =
         let v =
           match dobj with
@@ -164,11 +169,31 @@ module Core =
         upcast v
     end
 
-  let openWindow (model : 'TModel) (view : 'TModel -> View) (update : 'TModel -> 'TMessage -> 'TModel) =
-    let wnd = Window ()
-    let iv  = view model
-    wnd.Content <- iv.BuildUp (wnd.Content :?> UIElement)
+  let openWindow (model : 'TModel) (view : 'TModel -> View<'TMessage>) (update : 'TModel -> 'TMessage -> 'TModel) =
+    let wnd         = Window ()
+    let disp        = wnd.Dispatcher
+    let invoke (f : unit -> unit) = 
+      disp.BeginInvoke (DispatcherPriority.ApplicationIdle, Action f) |> ignore
+
+    let mutable m   = model
+    let queue       = Queue<'TMessage> 16
+
+    let refresh ()  =
+      let iv        = view m
+      wnd.Content   <- iv.BuildUp (wnd.Content :?> UIElement)
+
+    let proc ()     =
+      while queue.Count > 0 do
+        let msg = queue.Dequeue ()
+        m       <-update model msg
+        refresh ()
+
+    refresh ()
+
     let messageEventHandler (o : obj) (args : MessageEventArgs) : unit =
-      printfn "MessageEvent received: %A - %A" o args
+      let msg = args.Message :?> 'TMessage
+      queue.Enqueue msg
+      invoke proc
     wnd.AddHandler (RoutedEvents.MessageEvent, MessageEventHandler messageEventHandler)
+
     wnd.ShowDialog () |> ignore

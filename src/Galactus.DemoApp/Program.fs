@@ -20,11 +20,12 @@
     stackPanel
       [|StackPanel.orientation Orientation.Vertical|]
       [|
-        textBlock   [|TextBlock.text "Hello"|]
-        textBox     [|TextBox.text   "GG"; TextBoxBase.onTextChanged (fun tb args -> TextChanged "Testing")|]
-        textBox     [|TextBox.text   "GG"|]
-        textButton  [||] "Hello"
-        textButton  [||] info
+        yield textBlock   [|TextBlock.text "Hello"|]
+        yield textBox     [|TextBoxBase.onTextChanged (fun tb args -> TextChanged "Testing")|]
+        if info <> "Testing" then
+          yield textBox     [||]
+        yield textButton  [||] "Hello"
+        yield textButton  [||] info
       |]
 
   let run () =
