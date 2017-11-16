@@ -10,10 +10,12 @@ open System.Windows.Shapes
 open Galactus.Core
 
 module Generated =
+  module Dummy =
+    open System
 
   module Properties =
     module AccessText = 
-      let dummy = ()
+      open Dummy
       let text                                     = Property<System.String> System.Windows.Controls.AccessText.TextProperty
       let fontFamily                               = Property<System.Windows.Media.FontFamily> System.Windows.Controls.AccessText.FontFamilyProperty
       let fontStyle                                = Property<System.Windows.FontStyle> System.Windows.Controls.AccessText.FontStyleProperty
@@ -32,22 +34,22 @@ module Generated =
       let baselineOffset                           = Property<System.Double> System.Windows.Controls.AccessText.BaselineOffsetProperty
 
     module ActiveXHost = 
-      let dummy = ()
+      open Dummy
 
     module AdornedElementPlaceholder = 
-      let dummy = ()
+      open Dummy
 
     module Adorner = 
-      let dummy = ()
+      open Dummy
 
     module AdornerDecorator = 
-      let dummy = ()
+      open Dummy
 
     module AdornerLayer = 
-      let dummy = ()
+      open Dummy
 
     module Border = 
-      let dummy = ()
+      open Dummy
       let borderThickness                          = Property<System.Windows.Thickness> System.Windows.Controls.Border.BorderThicknessProperty
       let padding                                  = Property<System.Windows.Thickness> System.Windows.Controls.Border.PaddingProperty
       let cornerRadius                             = Property<System.Windows.CornerRadius> System.Windows.Controls.Border.CornerRadiusProperty
@@ -55,17 +57,17 @@ module Generated =
       let background                               = Property<System.Windows.Media.Brush> System.Windows.Controls.Border.BackgroundProperty
 
     module BulletDecorator = 
-      let dummy = ()
+      open Dummy
       let background                               = Property<System.Windows.Media.Brush> System.Windows.Controls.Primitives.BulletDecorator.BackgroundProperty
 
     module Button = 
-      let dummy = ()
+      open Dummy
       let isDefault                                = Property<System.Boolean> System.Windows.Controls.Button.IsDefaultProperty
       let isCancel                                 = Property<System.Boolean> System.Windows.Controls.Button.IsCancelProperty
       let isDefaulted                              = Property<System.Boolean> System.Windows.Controls.Button.IsDefaultedProperty
 
     module ButtonBase = 
-      let dummy = ()
+      open Dummy
       let command                                  = Property<System.Windows.Input.ICommand> System.Windows.Controls.Primitives.ButtonBase.CommandProperty
       let commandParameter                         = Property<System.Object> System.Windows.Controls.Primitives.ButtonBase.CommandParameterProperty
       let commandTarget                            = Property<System.Windows.IInputElement> System.Windows.Controls.Primitives.ButtonBase.CommandTargetProperty
@@ -73,7 +75,7 @@ module Generated =
       let clickMode                                = Property<System.Windows.Controls.ClickMode> System.Windows.Controls.Primitives.ButtonBase.ClickModeProperty
 
     module Calendar = 
-      let dummy = ()
+      open Dummy
       let calendarButtonStyle                      = Property<System.Windows.Style> System.Windows.Controls.Calendar.CalendarButtonStyleProperty
       let calendarDayButtonStyle                   = Property<System.Windows.Style> System.Windows.Controls.Calendar.CalendarDayButtonStyleProperty
       let calendarItemStyle                        = Property<System.Windows.Style> System.Windows.Controls.Calendar.CalendarItemStyleProperty
@@ -87,12 +89,12 @@ module Generated =
       let selectionMode                            = Property<System.Windows.Controls.CalendarSelectionMode> System.Windows.Controls.Calendar.SelectionModeProperty
 
     module CalendarButton = 
-      let dummy = ()
+      open Dummy
       let hasSelectedDays                          = Property<System.Boolean> System.Windows.Controls.Primitives.CalendarButton.HasSelectedDaysProperty
       let isInactive                               = Property<System.Boolean> System.Windows.Controls.Primitives.CalendarButton.IsInactiveProperty
 
     module CalendarDayButton = 
-      let dummy = ()
+      open Dummy
       let isToday                                  = Property<System.Boolean> System.Windows.Controls.Primitives.CalendarDayButton.IsTodayProperty
       let isSelected                               = Property<System.Boolean> System.Windows.Controls.Primitives.CalendarDayButton.IsSelectedProperty
       let isInactive                               = Property<System.Boolean> System.Windows.Controls.Primitives.CalendarDayButton.IsInactiveProperty
@@ -100,20 +102,20 @@ module Generated =
       let isHighlighted                            = Property<System.Boolean> System.Windows.Controls.Primitives.CalendarDayButton.IsHighlightedProperty
 
     module CalendarItem = 
-      let dummy = ()
+      open Dummy
 
     module Canvas = 
-      let dummy = ()
+      open Dummy
       let left                                     = Property<System.Double> System.Windows.Controls.Canvas.LeftProperty
       let top                                      = Property<System.Double> System.Windows.Controls.Canvas.TopProperty
       let right                                    = Property<System.Double> System.Windows.Controls.Canvas.RightProperty
       let bottom                                   = Property<System.Double> System.Windows.Controls.Canvas.BottomProperty
 
     module CheckBox = 
-      let dummy = ()
+      open Dummy
 
     module ComboBox = 
-      let dummy = ()
+      open Dummy
       let maxDropDownHeight                        = Property<System.Double> System.Windows.Controls.ComboBox.MaxDropDownHeightProperty
       let isDropDownOpen                           = Property<System.Boolean> System.Windows.Controls.ComboBox.IsDropDownOpenProperty
       let shouldPreserveUserEnteredPrefix          = Property<System.Boolean> System.Windows.Controls.ComboBox.ShouldPreserveUserEnteredPrefixProperty
@@ -126,11 +128,11 @@ module Generated =
       let staysOpenOnEdit                          = Property<System.Boolean> System.Windows.Controls.ComboBox.StaysOpenOnEditProperty
 
     module ComboBoxItem = 
-      let dummy = ()
+      open Dummy
       let isHighlighted                            = Property<System.Boolean> System.Windows.Controls.ComboBoxItem.IsHighlightedProperty
 
     module ContentControl = 
-      let dummy = ()
+      open Dummy
       let content                                  = Property<System.Object> System.Windows.Controls.ContentControl.ContentProperty
       let hasContent                               = Property<System.Boolean> System.Windows.Controls.ContentControl.HasContentProperty
       let contentTemplate                          = Property<System.Windows.DataTemplate> System.Windows.Controls.ContentControl.ContentTemplateProperty
@@ -138,7 +140,7 @@ module Generated =
       let contentStringFormat                      = Property<System.String> System.Windows.Controls.ContentControl.ContentStringFormatProperty
 
     module ContentPresenter = 
-      let dummy = ()
+      open Dummy
       let recognizesAccessKey                      = Property<System.Boolean> System.Windows.Controls.ContentPresenter.RecognizesAccessKeyProperty
       let content                                  = Property<System.Object> System.Windows.Controls.ContentPresenter.ContentProperty
       let contentTemplate                          = Property<System.Windows.DataTemplate> System.Windows.Controls.ContentPresenter.ContentTemplateProperty
@@ -147,7 +149,7 @@ module Generated =
       let contentSource                            = Property<System.String> System.Windows.Controls.ContentPresenter.ContentSourceProperty
 
     module ContextMenu = 
-      let dummy = ()
+      open Dummy
       let horizontalOffset                         = Property<System.Double> System.Windows.Controls.ContextMenu.HorizontalOffsetProperty
       let verticalOffset                           = Property<System.Double> System.Windows.Controls.ContextMenu.VerticalOffsetProperty
       let isOpen                                   = Property<System.Boolean> System.Windows.Controls.ContextMenu.IsOpenProperty
@@ -159,7 +161,7 @@ module Generated =
       let staysOpen                                = Property<System.Boolean> System.Windows.Controls.ContextMenu.StaysOpenProperty
 
     module Control = 
-      let dummy = ()
+      open Dummy
       let borderBrush                              = Property<System.Windows.Media.Brush> System.Windows.Controls.Control.BorderBrushProperty
       let borderThickness                          = Property<System.Windows.Thickness> System.Windows.Controls.Control.BorderThicknessProperty
       let background                               = Property<System.Windows.Media.Brush> System.Windows.Controls.Control.BackgroundProperty
@@ -177,7 +179,7 @@ module Generated =
       let template                                 = Property<System.Windows.Controls.ControlTemplate> System.Windows.Controls.Control.TemplateProperty
 
     module DataGrid = 
-      let dummy = ()
+      open Dummy
       let canUserResizeColumns                     = Property<System.Boolean> System.Windows.Controls.DataGrid.CanUserResizeColumnsProperty
       let columnWidth                              = Property<System.Windows.Controls.DataGridLength> System.Windows.Controls.DataGrid.ColumnWidthProperty
       let minColumnWidth                           = Property<System.Double> System.Windows.Controls.DataGrid.MinColumnWidthProperty
@@ -230,20 +232,20 @@ module Generated =
       let cellsPanelHorizontalOffset               = Property<System.Double> System.Windows.Controls.DataGrid.CellsPanelHorizontalOffsetProperty
 
     module DataGridCell = 
-      let dummy = ()
+      open Dummy
       let column                                   = Property<System.Windows.Controls.DataGridColumn> System.Windows.Controls.DataGridCell.ColumnProperty
       let isEditing                                = Property<System.Boolean> System.Windows.Controls.DataGridCell.IsEditingProperty
       let isReadOnly                               = Property<System.Boolean> System.Windows.Controls.DataGridCell.IsReadOnlyProperty
       let isSelected                               = Property<System.Boolean> System.Windows.Controls.DataGridCell.IsSelectedProperty
 
     module DataGridCellsPanel = 
-      let dummy = ()
+      open Dummy
 
     module DataGridCellsPresenter = 
-      let dummy = ()
+      open Dummy
 
     module DataGridColumnHeader = 
-      let dummy = ()
+      open Dummy
       let separatorBrush                           = Property<System.Windows.Media.Brush> System.Windows.Controls.Primitives.DataGridColumnHeader.SeparatorBrushProperty
       let separatorVisibility                      = Property<System.Windows.Visibility> System.Windows.Controls.Primitives.DataGridColumnHeader.SeparatorVisibilityProperty
       let displayIndex                             = Property<System.Int32> System.Windows.Controls.Primitives.DataGridColumnHeader.DisplayIndexProperty
@@ -252,13 +254,13 @@ module Generated =
       let isFrozen                                 = Property<System.Boolean> System.Windows.Controls.Primitives.DataGridColumnHeader.IsFrozenProperty
 
     module DataGridColumnHeadersPresenter = 
-      let dummy = ()
+      open Dummy
 
     module DataGridDetailsPresenter = 
-      let dummy = ()
+      open Dummy
 
     module DataGridRow = 
-      let dummy = ()
+      open Dummy
       let item                                     = Property<System.Object> System.Windows.Controls.DataGridRow.ItemProperty
       let itemsPanel                               = Property<System.Windows.Controls.ItemsPanelTemplate> System.Windows.Controls.DataGridRow.ItemsPanelProperty
       let header                                   = Property<System.Object> System.Windows.Controls.DataGridRow.HeaderProperty
@@ -275,16 +277,16 @@ module Generated =
       let isNewItem                                = Property<System.Boolean> System.Windows.Controls.DataGridRow.IsNewItemProperty
 
     module DataGridRowHeader = 
-      let dummy = ()
+      open Dummy
       let separatorBrush                           = Property<System.Windows.Media.Brush> System.Windows.Controls.Primitives.DataGridRowHeader.SeparatorBrushProperty
       let separatorVisibility                      = Property<System.Windows.Visibility> System.Windows.Controls.Primitives.DataGridRowHeader.SeparatorVisibilityProperty
       let isRowSelected                            = Property<System.Boolean> System.Windows.Controls.Primitives.DataGridRowHeader.IsRowSelectedProperty
 
     module DataGridRowsPresenter = 
-      let dummy = ()
+      open Dummy
 
     module DatePicker = 
-      let dummy = ()
+      open Dummy
       let calendarStyle                            = Property<System.Windows.Style> System.Windows.Controls.DatePicker.CalendarStyleProperty
       let displayDate                              = Property<System.DateTime> System.Windows.Controls.DatePicker.DisplayDateProperty
       let displayDateEnd                           = Property<System.Nullable<System.DateTime>> System.Windows.Controls.DatePicker.DisplayDateEndProperty
@@ -297,28 +299,28 @@ module Generated =
       let text                                     = Property<System.String> System.Windows.Controls.DatePicker.TextProperty
 
     module DatePickerTextBox = 
-      let dummy = ()
+      open Dummy
 
     module Decorator = 
-      let dummy = ()
+      open Dummy
 
     module DockPanel = 
-      let dummy = ()
+      open Dummy
       let lastChildFill                            = Property<System.Boolean> System.Windows.Controls.DockPanel.LastChildFillProperty
       let dock                                     = Property<System.Windows.Controls.Dock> System.Windows.Controls.DockPanel.DockProperty
 
     module DocumentPageView = 
-      let dummy = ()
+      open Dummy
       let pageNumber                               = Property<System.Int32> System.Windows.Controls.Primitives.DocumentPageView.PageNumberProperty
       let stretch                                  = Property<System.Windows.Media.Stretch> System.Windows.Controls.Primitives.DocumentPageView.StretchProperty
       let stretchDirection                         = Property<System.Windows.Controls.StretchDirection> System.Windows.Controls.Primitives.DocumentPageView.StretchDirectionProperty
 
     module DocumentReference = 
-      let dummy = ()
+      open Dummy
       let source                                   = Property<System.Uri> System.Windows.Documents.DocumentReference.SourceProperty
 
     module DocumentViewer = 
-      let dummy = ()
+      open Dummy
       let horizontalOffset                         = Property<System.Double> System.Windows.Controls.DocumentViewer.HorizontalOffsetProperty
       let verticalOffset                           = Property<System.Double> System.Windows.Controls.DocumentViewer.VerticalOffsetProperty
       let extentWidth                              = Property<System.Double> System.Windows.Controls.DocumentViewer.ExtentWidthProperty
@@ -338,7 +340,7 @@ module Generated =
       let canDecreaseZoom                          = Property<System.Boolean> System.Windows.Controls.DocumentViewer.CanDecreaseZoomProperty
 
     module DocumentViewerBase = 
-      let dummy = ()
+      open Dummy
       let document                                 = Property<System.Windows.Documents.IDocumentPaginatorSource> System.Windows.Controls.Primitives.DocumentViewerBase.DocumentProperty
       let pageCount                                = Property<System.Int32> System.Windows.Controls.Primitives.DocumentViewerBase.PageCountProperty
       let masterPageNumber                         = Property<System.Int32> System.Windows.Controls.Primitives.DocumentViewerBase.MasterPageNumberProperty
@@ -347,15 +349,15 @@ module Generated =
       let isMasterPage                             = Property<System.Boolean> System.Windows.Controls.Primitives.DocumentViewerBase.IsMasterPageProperty
 
     module Ellipse = 
-      let dummy = ()
+      open Dummy
 
     module Expander = 
-      let dummy = ()
+      open Dummy
       let expandDirection                          = Property<System.Windows.Controls.ExpandDirection> System.Windows.Controls.Expander.ExpandDirectionProperty
       let isExpanded                               = Property<System.Boolean> System.Windows.Controls.Expander.IsExpandedProperty
 
     module FixedPage = 
-      let dummy = ()
+      open Dummy
       let printTicket                              = Property<System.Object> System.Windows.Documents.FixedPage.PrintTicketProperty
       let background                               = Property<System.Windows.Media.Brush> System.Windows.Documents.FixedPage.BackgroundProperty
       let left                                     = Property<System.Double> System.Windows.Documents.FixedPage.LeftProperty
@@ -367,7 +369,7 @@ module Generated =
       let navigateUri                              = Property<System.Uri> System.Windows.Documents.FixedPage.NavigateUriProperty
 
     module FlowDocumentPageViewer = 
-      let dummy = ()
+      open Dummy
       let zoom                                     = Property<System.Double> System.Windows.Controls.FlowDocumentPageViewer.ZoomProperty
       let maxZoom                                  = Property<System.Double> System.Windows.Controls.FlowDocumentPageViewer.MaxZoomProperty
       let minZoom                                  = Property<System.Double> System.Windows.Controls.FlowDocumentPageViewer.MinZoomProperty
@@ -380,7 +382,7 @@ module Generated =
       let isInactiveSelectionHighlightEnabled      = Property<System.Boolean> System.Windows.Controls.FlowDocumentPageViewer.IsInactiveSelectionHighlightEnabledProperty
 
     module FlowDocumentReader = 
-      let dummy = ()
+      open Dummy
       let viewingMode                              = Property<System.Windows.Controls.FlowDocumentReaderViewingMode> System.Windows.Controls.FlowDocumentReader.ViewingModeProperty
       let isPageViewEnabled                        = Property<System.Boolean> System.Windows.Controls.FlowDocumentReader.IsPageViewEnabledProperty
       let isTwoPageViewEnabled                     = Property<System.Boolean> System.Windows.Controls.FlowDocumentReader.IsTwoPageViewEnabledProperty
@@ -404,7 +406,7 @@ module Generated =
       let isInactiveSelectionHighlightEnabled      = Property<System.Boolean> System.Windows.Controls.FlowDocumentReader.IsInactiveSelectionHighlightEnabledProperty
 
     module FlowDocumentScrollViewer = 
-      let dummy = ()
+      open Dummy
       let document                                 = Property<System.Windows.Documents.FlowDocument> System.Windows.Controls.FlowDocumentScrollViewer.DocumentProperty
       let zoom                                     = Property<System.Double> System.Windows.Controls.FlowDocumentScrollViewer.ZoomProperty
       let maxZoom                                  = Property<System.Double> System.Windows.Controls.FlowDocumentScrollViewer.MaxZoomProperty
@@ -422,7 +424,7 @@ module Generated =
       let isInactiveSelectionHighlightEnabled      = Property<System.Boolean> System.Windows.Controls.FlowDocumentScrollViewer.IsInactiveSelectionHighlightEnabledProperty
 
     module Frame = 
-      let dummy = ()
+      open Dummy
       let source                                   = Property<System.Uri> System.Windows.Controls.Frame.SourceProperty
       let canGoBack                                = Property<System.Boolean> System.Windows.Controls.Frame.CanGoBackProperty
       let canGoForward                             = Property<System.Boolean> System.Windows.Controls.Frame.CanGoForwardProperty
@@ -433,7 +435,7 @@ module Generated =
       let journalOwnership                         = Property<System.Windows.Navigation.JournalOwnership> System.Windows.Controls.Frame.JournalOwnershipProperty
 
     module FrameworkElement = 
-      let dummy = ()
+      open Dummy
       let style                                    = Property<System.Windows.Style> System.Windows.FrameworkElement.StyleProperty
       let overridesDefaultStyle                    = Property<System.Boolean> System.Windows.FrameworkElement.OverridesDefaultStyleProperty
       let useLayoutRounding                        = Property<System.Boolean> System.Windows.FrameworkElement.UseLayoutRoundingProperty
@@ -463,7 +465,7 @@ module Generated =
       let contextMenu                              = Property<System.Windows.Controls.ContextMenu> System.Windows.FrameworkElement.ContextMenuProperty
 
     module Glyphs = 
-      let dummy = ()
+      open Dummy
       let fill                                     = Property<System.Windows.Media.Brush> System.Windows.Documents.Glyphs.FillProperty
       let indices                                  = Property<System.String> System.Windows.Documents.Glyphs.IndicesProperty
       let unicodeString                            = Property<System.String> System.Windows.Documents.Glyphs.UnicodeStringProperty
@@ -478,7 +480,7 @@ module Generated =
       let deviceFontName                           = Property<System.String> System.Windows.Documents.Glyphs.DeviceFontNameProperty
 
     module Grid = 
-      let dummy = ()
+      open Dummy
       let showGridLines                            = Property<System.Boolean> System.Windows.Controls.Grid.ShowGridLinesProperty
       let column                                   = Property<System.Int32> System.Windows.Controls.Grid.ColumnProperty
       let row                                      = Property<System.Int32> System.Windows.Controls.Grid.RowProperty
@@ -487,7 +489,7 @@ module Generated =
       let isSharedSizeScope                        = Property<System.Boolean> System.Windows.Controls.Grid.IsSharedSizeScopeProperty
 
     module GridSplitter = 
-      let dummy = ()
+      open Dummy
       let resizeDirection                          = Property<System.Windows.Controls.GridResizeDirection> System.Windows.Controls.GridSplitter.ResizeDirectionProperty
       let resizeBehavior                           = Property<System.Windows.Controls.GridResizeBehavior> System.Windows.Controls.GridSplitter.ResizeBehaviorProperty
       let showsPreview                             = Property<System.Boolean> System.Windows.Controls.GridSplitter.ShowsPreviewProperty
@@ -496,12 +498,12 @@ module Generated =
       let dragIncrement                            = Property<System.Double> System.Windows.Controls.GridSplitter.DragIncrementProperty
 
     module GridViewColumnHeader = 
-      let dummy = ()
+      open Dummy
       let column                                   = Property<System.Windows.Controls.GridViewColumn> System.Windows.Controls.GridViewColumnHeader.ColumnProperty
       let role                                     = Property<System.Windows.Controls.GridViewColumnHeaderRole> System.Windows.Controls.GridViewColumnHeader.RoleProperty
 
     module GridViewHeaderRowPresenter = 
-      let dummy = ()
+      open Dummy
       let columnHeaderContainerStyle               = Property<System.Windows.Style> System.Windows.Controls.GridViewHeaderRowPresenter.ColumnHeaderContainerStyleProperty
       let columnHeaderTemplate                     = Property<System.Windows.DataTemplate> System.Windows.Controls.GridViewHeaderRowPresenter.ColumnHeaderTemplateProperty
       let columnHeaderTemplateSelector             = Property<System.Windows.Controls.DataTemplateSelector> System.Windows.Controls.GridViewHeaderRowPresenter.ColumnHeaderTemplateSelectorProperty
@@ -511,21 +513,21 @@ module Generated =
       let columnHeaderToolTip                      = Property<System.Object> System.Windows.Controls.GridViewHeaderRowPresenter.ColumnHeaderToolTipProperty
 
     module GridViewRowPresenter = 
-      let dummy = ()
+      open Dummy
       let content                                  = Property<System.Object> System.Windows.Controls.GridViewRowPresenter.ContentProperty
 
     module GridViewRowPresenterBase = 
-      let dummy = ()
+      open Dummy
       let columns                                  = Property<System.Windows.Controls.GridViewColumnCollection> System.Windows.Controls.Primitives.GridViewRowPresenterBase.ColumnsProperty
 
     module GroupBox = 
-      let dummy = ()
+      open Dummy
 
     module GroupItem = 
-      let dummy = ()
+      open Dummy
 
     module HeaderedContentControl = 
-      let dummy = ()
+      open Dummy
       let header                                   = Property<System.Object> System.Windows.Controls.HeaderedContentControl.HeaderProperty
       let hasHeader                                = Property<System.Boolean> System.Windows.Controls.HeaderedContentControl.HasHeaderProperty
       let headerTemplate                           = Property<System.Windows.DataTemplate> System.Windows.Controls.HeaderedContentControl.HeaderTemplateProperty
@@ -533,7 +535,7 @@ module Generated =
       let headerStringFormat                       = Property<System.String> System.Windows.Controls.HeaderedContentControl.HeaderStringFormatProperty
 
     module HeaderedItemsControl = 
-      let dummy = ()
+      open Dummy
       let header                                   = Property<System.Object> System.Windows.Controls.HeaderedItemsControl.HeaderProperty
       let hasHeader                                = Property<System.Boolean> System.Windows.Controls.HeaderedItemsControl.HasHeaderProperty
       let headerTemplate                           = Property<System.Windows.DataTemplate> System.Windows.Controls.HeaderedItemsControl.HeaderTemplateProperty
@@ -541,13 +543,13 @@ module Generated =
       let headerStringFormat                       = Property<System.String> System.Windows.Controls.HeaderedItemsControl.HeaderStringFormatProperty
 
     module Image = 
-      let dummy = ()
+      open Dummy
       let source                                   = Property<System.Windows.Media.ImageSource> System.Windows.Controls.Image.SourceProperty
       let stretch                                  = Property<System.Windows.Media.Stretch> System.Windows.Controls.Image.StretchProperty
       let stretchDirection                         = Property<System.Windows.Controls.StretchDirection> System.Windows.Controls.Image.StretchDirectionProperty
 
     module InkCanvas = 
-      let dummy = ()
+      open Dummy
       let background                               = Property<System.Windows.Media.Brush> System.Windows.Controls.InkCanvas.BackgroundProperty
       let top                                      = Property<System.Double> System.Windows.Controls.InkCanvas.TopProperty
       let bottom                                   = Property<System.Double> System.Windows.Controls.InkCanvas.BottomProperty
@@ -560,11 +562,11 @@ module Generated =
       let editingModeInverted                      = Property<System.Windows.Controls.InkCanvasEditingMode> System.Windows.Controls.InkCanvas.EditingModeInvertedProperty
 
     module InkPresenter = 
-      let dummy = ()
+      open Dummy
       let strokes                                  = Property<System.Windows.Ink.StrokeCollection> System.Windows.Controls.InkPresenter.StrokesProperty
 
     module ItemsControl = 
-      let dummy = ()
+      open Dummy
       let itemsSource                              = Property<System.Collections.IEnumerable> System.Windows.Controls.ItemsControl.ItemsSourceProperty
       let hasItems                                 = Property<System.Boolean> System.Windows.Controls.ItemsControl.HasItemsProperty
       let displayMemberPath                        = Property<System.String> System.Windows.Controls.ItemsControl.DisplayMemberPathProperty
@@ -583,37 +585,37 @@ module Generated =
       let isTextSearchCaseSensitive                = Property<System.Boolean> System.Windows.Controls.ItemsControl.IsTextSearchCaseSensitiveProperty
 
     module ItemsPresenter = 
-      let dummy = ()
+      open Dummy
 
     module Label = 
-      let dummy = ()
+      open Dummy
       let target                                   = Property<System.Windows.UIElement> System.Windows.Controls.Label.TargetProperty
 
     module Line = 
-      let dummy = ()
+      open Dummy
       let x1                                       = Property<System.Double> System.Windows.Shapes.Line.X1Property
       let y1                                       = Property<System.Double> System.Windows.Shapes.Line.Y1Property
       let x2                                       = Property<System.Double> System.Windows.Shapes.Line.X2Property
       let y2                                       = Property<System.Double> System.Windows.Shapes.Line.Y2Property
 
     module ListBox = 
-      let dummy = ()
+      open Dummy
       let selectionMode                            = Property<System.Windows.Controls.SelectionMode> System.Windows.Controls.ListBox.SelectionModeProperty
       let selectedItems                            = Property<System.Collections.IList> System.Windows.Controls.ListBox.SelectedItemsProperty
 
     module ListBoxItem = 
-      let dummy = ()
+      open Dummy
       let isSelected                               = Property<System.Boolean> System.Windows.Controls.ListBoxItem.IsSelectedProperty
 
     module ListView = 
-      let dummy = ()
+      open Dummy
       let view                                     = Property<System.Windows.Controls.ViewBase> System.Windows.Controls.ListView.ViewProperty
 
     module ListViewItem = 
-      let dummy = ()
+      open Dummy
 
     module MediaElement = 
-      let dummy = ()
+      open Dummy
       let source                                   = Property<System.Uri> System.Windows.Controls.MediaElement.SourceProperty
       let volume                                   = Property<System.Double> System.Windows.Controls.MediaElement.VolumeProperty
       let balance                                  = Property<System.Double> System.Windows.Controls.MediaElement.BalanceProperty
@@ -625,16 +627,16 @@ module Generated =
       let stretchDirection                         = Property<System.Windows.Controls.StretchDirection> System.Windows.Controls.MediaElement.StretchDirectionProperty
 
     module Menu = 
-      let dummy = ()
+      open Dummy
       let isMainMenu                               = Property<System.Boolean> System.Windows.Controls.Menu.IsMainMenuProperty
 
     module MenuBase = 
-      let dummy = ()
+      open Dummy
       let itemContainerTemplateSelector            = Property<System.Windows.Controls.ItemContainerTemplateSelector> System.Windows.Controls.Primitives.MenuBase.ItemContainerTemplateSelectorProperty
       let usesItemContainerTemplate                = Property<System.Boolean> System.Windows.Controls.Primitives.MenuBase.UsesItemContainerTemplateProperty
 
     module MenuItem = 
-      let dummy = ()
+      open Dummy
       let command                                  = Property<System.Windows.Input.ICommand> System.Windows.Controls.MenuItem.CommandProperty
       let commandParameter                         = Property<System.Object> System.Windows.Controls.MenuItem.CommandParameterProperty
       let commandTarget                            = Property<System.Windows.IInputElement> System.Windows.Controls.MenuItem.CommandTargetProperty
@@ -652,10 +654,10 @@ module Generated =
       let usesItemContainerTemplate                = Property<System.Boolean> System.Windows.Controls.MenuItem.UsesItemContainerTemplateProperty
 
     module MultiSelector = 
-      let dummy = ()
+      open Dummy
 
     module NavigationWindow = 
-      let dummy = ()
+      open Dummy
       let sandboxExternalContent                   = Property<System.Boolean> System.Windows.Navigation.NavigationWindow.SandboxExternalContentProperty
       let showsNavigationUI                        = Property<System.Boolean> System.Windows.Navigation.NavigationWindow.ShowsNavigationUIProperty
       let backStack                                = Property<System.Collections.IEnumerable> System.Windows.Navigation.NavigationWindow.BackStackProperty
@@ -665,7 +667,7 @@ module Generated =
       let source                                   = Property<System.Uri> System.Windows.Navigation.NavigationWindow.SourceProperty
 
     module Page = 
-      let dummy = ()
+      open Dummy
       let content                                  = Property<System.Object> System.Windows.Controls.Page.ContentProperty
       let background                               = Property<System.Windows.Media.Brush> System.Windows.Controls.Page.BackgroundProperty
       let title                                    = Property<System.String> System.Windows.Controls.Page.TitleProperty
@@ -676,20 +678,20 @@ module Generated =
       let template                                 = Property<System.Windows.Controls.ControlTemplate> System.Windows.Controls.Page.TemplateProperty
 
     module PageContent = 
-      let dummy = ()
+      open Dummy
       let source                                   = Property<System.Uri> System.Windows.Documents.PageContent.SourceProperty
 
     module PageFunctionBase = 
-      let dummy = ()
+      open Dummy
 
     module Panel = 
-      let dummy = ()
+      open Dummy
       let background                               = Property<System.Windows.Media.Brush> System.Windows.Controls.Panel.BackgroundProperty
       let isItemsHost                              = Property<System.Boolean> System.Windows.Controls.Panel.IsItemsHostProperty
       let zIndex                                   = Property<System.Int32> System.Windows.Controls.Panel.ZIndexProperty
 
     module PasswordBox = 
-      let dummy = ()
+      open Dummy
       let passwordChar                             = Property<System.Char> System.Windows.Controls.PasswordBox.PasswordCharProperty
       let maxLength                                = Property<System.Int32> System.Windows.Controls.PasswordBox.MaxLengthProperty
       let selectionBrush                           = Property<System.Windows.Media.Brush> System.Windows.Controls.PasswordBox.SelectionBrushProperty
@@ -699,21 +701,21 @@ module Generated =
       let isInactiveSelectionHighlightEnabled      = Property<System.Boolean> System.Windows.Controls.PasswordBox.IsInactiveSelectionHighlightEnabledProperty
 
     module Path = 
-      let dummy = ()
+      open Dummy
       let data                                     = Property<System.Windows.Media.Geometry> System.Windows.Shapes.Path.DataProperty
 
     module Polygon = 
-      let dummy = ()
+      open Dummy
       let points                                   = Property<System.Windows.Media.PointCollection> System.Windows.Shapes.Polygon.PointsProperty
       let fillRule                                 = Property<System.Windows.Media.FillRule> System.Windows.Shapes.Polygon.FillRuleProperty
 
     module Polyline = 
-      let dummy = ()
+      open Dummy
       let points                                   = Property<System.Windows.Media.PointCollection> System.Windows.Shapes.Polyline.PointsProperty
       let fillRule                                 = Property<System.Windows.Media.FillRule> System.Windows.Shapes.Polyline.FillRuleProperty
 
     module Popup = 
-      let dummy = ()
+      open Dummy
       let child                                    = Property<System.Windows.UIElement> System.Windows.Controls.Primitives.Popup.ChildProperty
       let isOpen                                   = Property<System.Boolean> System.Windows.Controls.Primitives.Popup.IsOpenProperty
       let placement                                = Property<System.Windows.Controls.Primitives.PlacementMode> System.Windows.Controls.Primitives.Popup.PlacementProperty
@@ -728,16 +730,16 @@ module Generated =
       let hasDropShadow                            = Property<System.Boolean> System.Windows.Controls.Primitives.Popup.HasDropShadowProperty
 
     module ProgressBar = 
-      let dummy = ()
+      open Dummy
       let isIndeterminate                          = Property<System.Boolean> System.Windows.Controls.ProgressBar.IsIndeterminateProperty
       let orientation                              = Property<System.Windows.Controls.Orientation> System.Windows.Controls.ProgressBar.OrientationProperty
 
     module RadioButton = 
-      let dummy = ()
+      open Dummy
       let groupName                                = Property<System.String> System.Windows.Controls.RadioButton.GroupNameProperty
 
     module RangeBase = 
-      let dummy = ()
+      open Dummy
       let minimum                                  = Property<System.Double> System.Windows.Controls.Primitives.RangeBase.MinimumProperty
       let maximum                                  = Property<System.Double> System.Windows.Controls.Primitives.RangeBase.MaximumProperty
       let value                                    = Property<System.Double> System.Windows.Controls.Primitives.RangeBase.ValueProperty
@@ -745,33 +747,33 @@ module Generated =
       let smallChange                              = Property<System.Double> System.Windows.Controls.Primitives.RangeBase.SmallChangeProperty
 
     module Rectangle = 
-      let dummy = ()
+      open Dummy
       let radiusX                                  = Property<System.Double> System.Windows.Shapes.Rectangle.RadiusXProperty
       let radiusY                                  = Property<System.Double> System.Windows.Shapes.Rectangle.RadiusYProperty
 
     module RepeatButton = 
-      let dummy = ()
+      open Dummy
       let delay                                    = Property<System.Int32> System.Windows.Controls.Primitives.RepeatButton.DelayProperty
       let interval                                 = Property<System.Int32> System.Windows.Controls.Primitives.RepeatButton.IntervalProperty
 
     module ResizeGrip = 
-      let dummy = ()
+      open Dummy
 
     module RichTextBox = 
-      let dummy = ()
+      open Dummy
       let isDocumentEnabled                        = Property<System.Boolean> System.Windows.Controls.RichTextBox.IsDocumentEnabledProperty
 
     module ScrollBar = 
-      let dummy = ()
+      open Dummy
       let orientation                              = Property<System.Windows.Controls.Orientation> System.Windows.Controls.Primitives.ScrollBar.OrientationProperty
       let viewportSize                             = Property<System.Double> System.Windows.Controls.Primitives.ScrollBar.ViewportSizeProperty
 
     module ScrollContentPresenter = 
-      let dummy = ()
+      open Dummy
       let canContentScroll                         = Property<System.Boolean> System.Windows.Controls.ScrollContentPresenter.CanContentScrollProperty
 
     module ScrollViewer = 
-      let dummy = ()
+      open Dummy
       let canContentScroll                         = Property<System.Boolean> System.Windows.Controls.ScrollViewer.CanContentScrollProperty
       let horizontalScrollBarVisibility            = Property<System.Windows.Controls.ScrollBarVisibility> System.Windows.Controls.ScrollViewer.HorizontalScrollBarVisibilityProperty
       let verticalScrollBarVisibility              = Property<System.Windows.Controls.ScrollBarVisibility> System.Windows.Controls.ScrollViewer.VerticalScrollBarVisibilityProperty
@@ -793,11 +795,11 @@ module Generated =
       let panningRatio                             = Property<System.Double> System.Windows.Controls.ScrollViewer.PanningRatioProperty
 
     module SelectiveScrollingGrid = 
-      let dummy = ()
+      open Dummy
       let selectiveScrollingOrientation            = Property<System.Windows.Controls.SelectiveScrollingOrientation> System.Windows.Controls.Primitives.SelectiveScrollingGrid.SelectiveScrollingOrientationProperty
 
     module Selector = 
-      let dummy = ()
+      open Dummy
       let isSelectionActive                        = Property<System.Boolean> System.Windows.Controls.Primitives.Selector.IsSelectionActiveProperty
       let isSelected                               = Property<System.Boolean> System.Windows.Controls.Primitives.Selector.IsSelectedProperty
       let isSynchronizedWithCurrentItem            = Property<System.Nullable<System.Boolean>> System.Windows.Controls.Primitives.Selector.IsSynchronizedWithCurrentItemProperty
@@ -807,10 +809,10 @@ module Generated =
       let selectedValuePath                        = Property<System.String> System.Windows.Controls.Primitives.Selector.SelectedValuePathProperty
 
     module Separator = 
-      let dummy = ()
+      open Dummy
 
     module Shape = 
-      let dummy = ()
+      open Dummy
       let stretch                                  = Property<System.Windows.Media.Stretch> System.Windows.Shapes.Shape.StretchProperty
       let fill                                     = Property<System.Windows.Media.Brush> System.Windows.Shapes.Shape.FillProperty
       let stroke                                   = Property<System.Windows.Media.Brush> System.Windows.Shapes.Shape.StrokeProperty
@@ -824,7 +826,7 @@ module Generated =
       let strokeDashArray                          = Property<System.Windows.Media.DoubleCollection> System.Windows.Shapes.Shape.StrokeDashArrayProperty
 
     module Slider = 
-      let dummy = ()
+      open Dummy
       let orientation                              = Property<System.Windows.Controls.Orientation> System.Windows.Controls.Slider.OrientationProperty
       let isDirectionReversed                      = Property<System.Boolean> System.Windows.Controls.Slider.IsDirectionReversedProperty
       let delay                                    = Property<System.Int32> System.Windows.Controls.Slider.DelayProperty
@@ -841,19 +843,19 @@ module Generated =
       let isMoveToPointEnabled                     = Property<System.Boolean> System.Windows.Controls.Slider.IsMoveToPointEnabledProperty
 
     module StackPanel = 
-      let dummy = ()
+      open Dummy
       let orientation                              = Property<System.Windows.Controls.Orientation> System.Windows.Controls.StackPanel.OrientationProperty
 
     module StatusBar = 
-      let dummy = ()
+      open Dummy
       let itemContainerTemplateSelector            = Property<System.Windows.Controls.ItemContainerTemplateSelector> System.Windows.Controls.Primitives.StatusBar.ItemContainerTemplateSelectorProperty
       let usesItemContainerTemplate                = Property<System.Boolean> System.Windows.Controls.Primitives.StatusBar.UsesItemContainerTemplateProperty
 
     module StatusBarItem = 
-      let dummy = ()
+      open Dummy
 
     module StickyNoteControl = 
-      let dummy = ()
+      open Dummy
       let author                                   = Property<System.String> System.Windows.Controls.StickyNoteControl.AuthorProperty
       let isExpanded                               = Property<System.Boolean> System.Windows.Controls.StickyNoteControl.IsExpandedProperty
       let isActive                                 = Property<System.Boolean> System.Windows.Controls.StickyNoteControl.IsActiveProperty
@@ -867,7 +869,7 @@ module Generated =
       let stickyNoteType                           = Property<System.Windows.Controls.StickyNoteType> System.Windows.Controls.StickyNoteControl.StickyNoteTypeProperty
 
     module TabControl = 
-      let dummy = ()
+      open Dummy
       let tabStripPlacement                        = Property<System.Windows.Controls.Dock> System.Windows.Controls.TabControl.TabStripPlacementProperty
       let selectedContent                          = Property<System.Object> System.Windows.Controls.TabControl.SelectedContentProperty
       let selectedContentTemplate                  = Property<System.Windows.DataTemplate> System.Windows.Controls.TabControl.SelectedContentTemplateProperty
@@ -878,15 +880,15 @@ module Generated =
       let contentStringFormat                      = Property<System.String> System.Windows.Controls.TabControl.ContentStringFormatProperty
 
     module TabItem = 
-      let dummy = ()
+      open Dummy
       let isSelected                               = Property<System.Boolean> System.Windows.Controls.TabItem.IsSelectedProperty
       let tabStripPlacement                        = Property<System.Windows.Controls.Dock> System.Windows.Controls.TabItem.TabStripPlacementProperty
 
     module TabPanel = 
-      let dummy = ()
+      open Dummy
 
     module TextBlock = 
-      let dummy = ()
+      open Dummy
       let baselineOffset                           = Property<System.Double> System.Windows.Controls.TextBlock.BaselineOffsetProperty
       let text                                     = Property<System.String> System.Windows.Controls.TextBlock.TextProperty
       let fontFamily                               = Property<System.Windows.Media.FontFamily> System.Windows.Controls.TextBlock.FontFamilyProperty
@@ -907,7 +909,7 @@ module Generated =
       let isHyphenationEnabled                     = Property<System.Boolean> System.Windows.Controls.TextBlock.IsHyphenationEnabledProperty
 
     module TextBox = 
-      let dummy = ()
+      open Dummy
       let textWrapping                             = Property<System.Windows.TextWrapping> System.Windows.Controls.TextBox.TextWrappingProperty
       let minLines                                 = Property<System.Int32> System.Windows.Controls.TextBox.MinLinesProperty
       let maxLines                                 = Property<System.Int32> System.Windows.Controls.TextBox.MaxLinesProperty
@@ -918,7 +920,7 @@ module Generated =
       let textDecorations                          = Property<System.Windows.TextDecorationCollection> System.Windows.Controls.TextBox.TextDecorationsProperty
 
     module TextBoxBase = 
-      let dummy = ()
+      open Dummy
       let isReadOnly                               = Property<System.Boolean> System.Windows.Controls.Primitives.TextBoxBase.IsReadOnlyProperty
       let isReadOnlyCaretVisible                   = Property<System.Boolean> System.Windows.Controls.Primitives.TextBoxBase.IsReadOnlyCaretVisibleProperty
       let acceptsReturn                            = Property<System.Boolean> System.Windows.Controls.Primitives.TextBoxBase.AcceptsReturnProperty
@@ -935,11 +937,11 @@ module Generated =
       let isInactiveSelectionHighlightEnabled      = Property<System.Boolean> System.Windows.Controls.Primitives.TextBoxBase.IsInactiveSelectionHighlightEnabledProperty
 
     module Thumb = 
-      let dummy = ()
+      open Dummy
       let isDragging                               = Property<System.Boolean> System.Windows.Controls.Primitives.Thumb.IsDraggingProperty
 
     module TickBar = 
-      let dummy = ()
+      open Dummy
       let fill                                     = Property<System.Windows.Media.Brush> System.Windows.Controls.Primitives.TickBar.FillProperty
       let minimum                                  = Property<System.Double> System.Windows.Controls.Primitives.TickBar.MinimumProperty
       let maximum                                  = Property<System.Double> System.Windows.Controls.Primitives.TickBar.MaximumProperty
@@ -953,12 +955,12 @@ module Generated =
       let reservedSpace                            = Property<System.Double> System.Windows.Controls.Primitives.TickBar.ReservedSpaceProperty
 
     module ToggleButton = 
-      let dummy = ()
+      open Dummy
       let isChecked                                = Property<System.Nullable<System.Boolean>> System.Windows.Controls.Primitives.ToggleButton.IsCheckedProperty
       let isThreeState                             = Property<System.Boolean> System.Windows.Controls.Primitives.ToggleButton.IsThreeStateProperty
 
     module ToolBar = 
-      let dummy = ()
+      open Dummy
       let orientation                              = Property<System.Windows.Controls.Orientation> System.Windows.Controls.ToolBar.OrientationProperty
       let band                                     = Property<System.Int32> System.Windows.Controls.ToolBar.BandProperty
       let bandIndex                                = Property<System.Int32> System.Windows.Controls.ToolBar.BandIndexProperty
@@ -968,20 +970,20 @@ module Generated =
       let overflowMode                             = Property<System.Windows.Controls.OverflowMode> System.Windows.Controls.ToolBar.OverflowModeProperty
 
     module ToolBarOverflowPanel = 
-      let dummy = ()
+      open Dummy
       let wrapWidth                                = Property<System.Double> System.Windows.Controls.Primitives.ToolBarOverflowPanel.WrapWidthProperty
 
     module ToolBarPanel = 
-      let dummy = ()
+      open Dummy
 
     module ToolBarTray = 
-      let dummy = ()
+      open Dummy
       let background                               = Property<System.Windows.Media.Brush> System.Windows.Controls.ToolBarTray.BackgroundProperty
       let orientation                              = Property<System.Windows.Controls.Orientation> System.Windows.Controls.ToolBarTray.OrientationProperty
       let isLocked                                 = Property<System.Boolean> System.Windows.Controls.ToolBarTray.IsLockedProperty
 
     module ToolTip = 
-      let dummy = ()
+      open Dummy
       let horizontalOffset                         = Property<System.Double> System.Windows.Controls.ToolTip.HorizontalOffsetProperty
       let verticalOffset                           = Property<System.Double> System.Windows.Controls.ToolTip.VerticalOffsetProperty
       let isOpen                                   = Property<System.Boolean> System.Windows.Controls.ToolTip.IsOpenProperty
@@ -993,7 +995,7 @@ module Generated =
       let staysOpen                                = Property<System.Boolean> System.Windows.Controls.ToolTip.StaysOpenProperty
 
     module Track = 
-      let dummy = ()
+      open Dummy
       let orientation                              = Property<System.Windows.Controls.Orientation> System.Windows.Controls.Primitives.Track.OrientationProperty
       let minimum                                  = Property<System.Double> System.Windows.Controls.Primitives.Track.MinimumProperty
       let maximum                                  = Property<System.Double> System.Windows.Controls.Primitives.Track.MaximumProperty
@@ -1002,19 +1004,19 @@ module Generated =
       let isDirectionReversed                      = Property<System.Boolean> System.Windows.Controls.Primitives.Track.IsDirectionReversedProperty
 
     module TreeView = 
-      let dummy = ()
+      open Dummy
       let selectedItem                             = Property<System.Object> System.Windows.Controls.TreeView.SelectedItemProperty
       let selectedValue                            = Property<System.Object> System.Windows.Controls.TreeView.SelectedValueProperty
       let selectedValuePath                        = Property<System.String> System.Windows.Controls.TreeView.SelectedValuePathProperty
 
     module TreeViewItem = 
-      let dummy = ()
+      open Dummy
       let isExpanded                               = Property<System.Boolean> System.Windows.Controls.TreeViewItem.IsExpandedProperty
       let isSelected                               = Property<System.Boolean> System.Windows.Controls.TreeViewItem.IsSelectedProperty
       let isSelectionActive                        = Property<System.Boolean> System.Windows.Controls.TreeViewItem.IsSelectionActiveProperty
 
     module UIElement = 
-      let dummy = ()
+      open Dummy
       let isMouseDirectlyOver                      = Property<System.Boolean> System.Windows.UIElement.IsMouseDirectlyOverProperty
       let isMouseOver                              = Property<System.Boolean> System.Windows.UIElement.IsMouseOverProperty
       let isStylusOver                             = Property<System.Boolean> System.Windows.UIElement.IsStylusOverProperty
@@ -1051,26 +1053,26 @@ module Generated =
       let isManipulationEnabled                    = Property<System.Boolean> System.Windows.UIElement.IsManipulationEnabledProperty
 
     module UniformGrid = 
-      let dummy = ()
+      open Dummy
       let firstColumn                              = Property<System.Int32> System.Windows.Controls.Primitives.UniformGrid.FirstColumnProperty
       let columns                                  = Property<System.Int32> System.Windows.Controls.Primitives.UniformGrid.ColumnsProperty
       let rows                                     = Property<System.Int32> System.Windows.Controls.Primitives.UniformGrid.RowsProperty
 
     module UserControl = 
-      let dummy = ()
+      open Dummy
 
     module Viewbox = 
-      let dummy = ()
+      open Dummy
       let stretch                                  = Property<System.Windows.Media.Stretch> System.Windows.Controls.Viewbox.StretchProperty
       let stretchDirection                         = Property<System.Windows.Controls.StretchDirection> System.Windows.Controls.Viewbox.StretchDirectionProperty
 
     module Viewport3D = 
-      let dummy = ()
+      open Dummy
       let camera                                   = Property<System.Windows.Media.Media3D.Camera> System.Windows.Controls.Viewport3D.CameraProperty
       let children                                 = Property<System.Windows.Media.Media3D.Visual3DCollection> System.Windows.Controls.Viewport3D.ChildrenProperty
 
     module VirtualizingPanel = 
-      let dummy = ()
+      open Dummy
       let isVirtualizing                           = Property<System.Boolean> System.Windows.Controls.VirtualizingPanel.IsVirtualizingProperty
       let virtualizationMode                       = Property<System.Windows.Controls.VirtualizationMode> System.Windows.Controls.VirtualizingPanel.VirtualizationModeProperty
       let isVirtualizingWhenGrouping               = Property<System.Boolean> System.Windows.Controls.VirtualizingPanel.IsVirtualizingWhenGroupingProperty
@@ -1080,16 +1082,16 @@ module Generated =
       let isContainerVirtualizable                 = Property<System.Boolean> System.Windows.Controls.VirtualizingPanel.IsContainerVirtualizableProperty
 
     module VirtualizingStackPanel = 
-      let dummy = ()
+      open Dummy
       let isVirtualizing                           = Property<System.Boolean> System.Windows.Controls.VirtualizingStackPanel.IsVirtualizingProperty
       let virtualizationMode                       = Property<System.Windows.Controls.VirtualizationMode> System.Windows.Controls.VirtualizingStackPanel.VirtualizationModeProperty
       let orientation                              = Property<System.Windows.Controls.Orientation> System.Windows.Controls.VirtualizingStackPanel.OrientationProperty
 
     module WebBrowser = 
-      let dummy = ()
+      open Dummy
 
     module Window = 
-      let dummy = ()
+      open Dummy
       let taskbarItemInfo                          = Property<System.Windows.Shell.TaskbarItemInfo> System.Windows.Window.TaskbarItemInfoProperty
       let allowsTransparency                       = Property<System.Boolean> System.Windows.Window.AllowsTransparencyProperty
       let title                                    = Property<System.String> System.Windows.Window.TitleProperty
@@ -1106,7 +1108,7 @@ module Generated =
       let showActivated                            = Property<System.Boolean> System.Windows.Window.ShowActivatedProperty
 
     module WrapPanel = 
-      let dummy = ()
+      open Dummy
       let itemWidth                                = Property<System.Double> System.Windows.Controls.WrapPanel.ItemWidthProperty
       let itemHeight                               = Property<System.Double> System.Windows.Controls.WrapPanel.ItemHeightProperty
       let orientation                              = Property<System.Windows.Controls.Orientation> System.Windows.Controls.WrapPanel.OrientationProperty
@@ -1115,7 +1117,7 @@ module Generated =
     let accessText                               values =
       StandardView<AccessText> (values) :> View
     module AccessText = 
-      let dummy = ()
+      open Dummy
       let text                                     v = SetConstantValue<_> (Properties.AccessText.text, v)
       let fontFamily                               v = SetConstantValue<_> (Properties.AccessText.fontFamily, v)
       let fontStyle                                v = SetConstantValue<_> (Properties.AccessText.fontStyle, v)
@@ -1134,28 +1136,28 @@ module Generated =
       let baselineOffset                           v = SetConstantValue<_> (Properties.AccessText.baselineOffset, v)
 
     module ActiveXHost = 
-      let dummy = ()
+      open Dummy
 
     let adornedElementPlaceholder                values =
       StandardView<AdornedElementPlaceholder> (values) :> View
     module AdornedElementPlaceholder = 
-      let dummy = ()
+      open Dummy
 
     module Adorner = 
-      let dummy = ()
+      open Dummy
 
     let adornerDecorator                         values =
       StandardView<AdornerDecorator> (values) :> View
     module AdornerDecorator = 
-      let dummy = ()
+      open Dummy
 
     module AdornerLayer = 
-      let dummy = ()
+      open Dummy
 
     let border                                   values =
       StandardView<Border> (values) :> View
     module Border = 
-      let dummy = ()
+      open Dummy
       let borderThickness                          v = SetConstantValue<_> (Properties.Border.borderThickness, v)
       let padding                                  v = SetConstantValue<_> (Properties.Border.padding, v)
       let cornerRadius                             v = SetConstantValue<_> (Properties.Border.cornerRadius, v)
@@ -1165,33 +1167,36 @@ module Generated =
     let bulletDecorator                          values =
       StandardView<BulletDecorator> (values) :> View
     module BulletDecorator = 
-      let dummy = ()
+      open Dummy
       let background                               v = SetConstantValue<_> (Properties.BulletDecorator.background, v)
 
     let button                                   values child =
       StandardContentView<Button> (values, child) :> View
     module Button = 
-      let dummy = ()
+      open Dummy
       let isDefault                                v = SetConstantValue<_> (Properties.Button.isDefault, v)
       let isCancel                                 v = SetConstantValue<_> (Properties.Button.isCancel, v)
       let isDefaulted                              v = SetConstantValue<_> (Properties.Button.isDefaulted, v)
 
     module ButtonBase = 
-      let dummy = ()
+      open Dummy
       let command                                  v = SetConstantValue<_> (Properties.ButtonBase.command, v)
       let commandParameter                         v = SetConstantValue<_> (Properties.ButtonBase.commandParameter, v)
       let commandTarget                            v = SetConstantValue<_> (Properties.ButtonBase.commandTarget, v)
       let isPressed                                v = SetConstantValue<_> (Properties.ButtonBase.isPressed, v)
       let clickMode                                v = SetConstantValue<_> (Properties.ButtonBase.clickMode, v)
+      
+      let private onClick_r (o : System.Windows.Controls.Primitives.ButtonBase) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Click.AddHandler    (System.Windows.RoutedEventHandler h)
+      let private onClick_u (o : System.Windows.Controls.Primitives.ButtonBase) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Click.RemoveHandler (System.Windows.RoutedEventHandler h)
+      let private onClick_rf = onClick_r
+      let private onClick_uf = onClick_u
       let onClick                                  (f : System.Windows.Controls.Primitives.ButtonBase -> System.Windows.RoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.Primitives.ButtonBase) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Click.AddHandler    (System.Windows.RoutedEventHandler h)
-        let u (o : System.Windows.Controls.Primitives.ButtonBase) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Click.RemoveHandler (System.Windows.RoutedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.Primitives.ButtonBase, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.Primitives.ButtonBase, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onClick_rf, onClick_uf, f)
 
     let calendar                                 values =
       StandardView<Calendar> (values) :> View
     module Calendar = 
-      let dummy = ()
+      open Dummy
       let calendarButtonStyle                      v = SetConstantValue<_> (Properties.Calendar.calendarButtonStyle, v)
       let calendarDayButtonStyle                   v = SetConstantValue<_> (Properties.Calendar.calendarDayButtonStyle, v)
       let calendarItemStyle                        v = SetConstantValue<_> (Properties.Calendar.calendarItemStyle, v)
@@ -1203,34 +1208,46 @@ module Generated =
       let isTodayHighlighted                       v = SetConstantValue<_> (Properties.Calendar.isTodayHighlighted, v)
       let selectedDate                             v = SetConstantValue<_> (Properties.Calendar.selectedDate, v)
       let selectionMode                            v = SetConstantValue<_> (Properties.Calendar.selectionMode, v)
+      
+      let private onSelectedDatesChanged_r (o : System.Windows.Controls.Calendar) (h : obj -> System.Windows.Controls.SelectionChangedEventArgs -> unit) = o.SelectedDatesChanged.AddHandler    (System.EventHandler<System.Windows.Controls.SelectionChangedEventArgs> h)
+      let private onSelectedDatesChanged_u (o : System.Windows.Controls.Calendar) (h : obj -> System.Windows.Controls.SelectionChangedEventArgs -> unit) = o.SelectedDatesChanged.RemoveHandler (System.EventHandler<System.Windows.Controls.SelectionChangedEventArgs> h)
+      let private onSelectedDatesChanged_rf = onSelectedDatesChanged_r
+      let private onSelectedDatesChanged_uf = onSelectedDatesChanged_u
       let onSelectedDatesChanged                   (f : System.Windows.Controls.Calendar -> System.Windows.Controls.SelectionChangedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.Calendar) (h : obj -> System.Windows.Controls.SelectionChangedEventArgs -> unit) = o.SelectedDatesChanged.AddHandler    (System.EventHandler<System.Windows.Controls.SelectionChangedEventArgs> h)
-        let u (o : System.Windows.Controls.Calendar) (h : obj -> System.Windows.Controls.SelectionChangedEventArgs -> unit) = o.SelectedDatesChanged.RemoveHandler (System.EventHandler<System.Windows.Controls.SelectionChangedEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.Controls.Calendar, System.EventHandler<System.Windows.Controls.SelectionChangedEventArgs>, System.Windows.Controls.SelectionChangedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.Calendar, System.EventHandler<System.Windows.Controls.SelectionChangedEventArgs>, System.Windows.Controls.SelectionChangedEventArgs> (onSelectedDatesChanged_rf, onSelectedDatesChanged_uf, f)
+      
+      let private onDisplayDateChanged_r (o : System.Windows.Controls.Calendar) (h : obj -> System.Windows.Controls.CalendarDateChangedEventArgs -> unit) = o.DisplayDateChanged.AddHandler    (System.EventHandler<System.Windows.Controls.CalendarDateChangedEventArgs> h)
+      let private onDisplayDateChanged_u (o : System.Windows.Controls.Calendar) (h : obj -> System.Windows.Controls.CalendarDateChangedEventArgs -> unit) = o.DisplayDateChanged.RemoveHandler (System.EventHandler<System.Windows.Controls.CalendarDateChangedEventArgs> h)
+      let private onDisplayDateChanged_rf = onDisplayDateChanged_r
+      let private onDisplayDateChanged_uf = onDisplayDateChanged_u
       let onDisplayDateChanged                     (f : System.Windows.Controls.Calendar -> System.Windows.Controls.CalendarDateChangedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.Calendar) (h : obj -> System.Windows.Controls.CalendarDateChangedEventArgs -> unit) = o.DisplayDateChanged.AddHandler    (System.EventHandler<System.Windows.Controls.CalendarDateChangedEventArgs> h)
-        let u (o : System.Windows.Controls.Calendar) (h : obj -> System.Windows.Controls.CalendarDateChangedEventArgs -> unit) = o.DisplayDateChanged.RemoveHandler (System.EventHandler<System.Windows.Controls.CalendarDateChangedEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.Controls.Calendar, System.EventHandler<System.Windows.Controls.CalendarDateChangedEventArgs>, System.Windows.Controls.CalendarDateChangedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.Calendar, System.EventHandler<System.Windows.Controls.CalendarDateChangedEventArgs>, System.Windows.Controls.CalendarDateChangedEventArgs> (onDisplayDateChanged_rf, onDisplayDateChanged_uf, f)
+      
+      let private onDisplayModeChanged_r (o : System.Windows.Controls.Calendar) (h : obj -> System.Windows.Controls.CalendarModeChangedEventArgs -> unit) = o.DisplayModeChanged.AddHandler    (System.EventHandler<System.Windows.Controls.CalendarModeChangedEventArgs> h)
+      let private onDisplayModeChanged_u (o : System.Windows.Controls.Calendar) (h : obj -> System.Windows.Controls.CalendarModeChangedEventArgs -> unit) = o.DisplayModeChanged.RemoveHandler (System.EventHandler<System.Windows.Controls.CalendarModeChangedEventArgs> h)
+      let private onDisplayModeChanged_rf = onDisplayModeChanged_r
+      let private onDisplayModeChanged_uf = onDisplayModeChanged_u
       let onDisplayModeChanged                     (f : System.Windows.Controls.Calendar -> System.Windows.Controls.CalendarModeChangedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.Calendar) (h : obj -> System.Windows.Controls.CalendarModeChangedEventArgs -> unit) = o.DisplayModeChanged.AddHandler    (System.EventHandler<System.Windows.Controls.CalendarModeChangedEventArgs> h)
-        let u (o : System.Windows.Controls.Calendar) (h : obj -> System.Windows.Controls.CalendarModeChangedEventArgs -> unit) = o.DisplayModeChanged.RemoveHandler (System.EventHandler<System.Windows.Controls.CalendarModeChangedEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.Controls.Calendar, System.EventHandler<System.Windows.Controls.CalendarModeChangedEventArgs>, System.Windows.Controls.CalendarModeChangedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.Calendar, System.EventHandler<System.Windows.Controls.CalendarModeChangedEventArgs>, System.Windows.Controls.CalendarModeChangedEventArgs> (onDisplayModeChanged_rf, onDisplayModeChanged_uf, f)
+      
+      let private onSelectionModeChanged_r (o : System.Windows.Controls.Calendar) (h : obj -> System.EventArgs -> unit) = o.SelectionModeChanged.AddHandler    (System.EventHandler<System.EventArgs> h)
+      let private onSelectionModeChanged_u (o : System.Windows.Controls.Calendar) (h : obj -> System.EventArgs -> unit) = o.SelectionModeChanged.RemoveHandler (System.EventHandler<System.EventArgs> h)
+      let private onSelectionModeChanged_rf = onSelectionModeChanged_r
+      let private onSelectionModeChanged_uf = onSelectionModeChanged_u
       let onSelectionModeChanged                   (f : System.Windows.Controls.Calendar -> System.EventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.Calendar) (h : obj -> System.EventArgs -> unit) = o.SelectionModeChanged.AddHandler    (System.EventHandler<System.EventArgs> h)
-        let u (o : System.Windows.Controls.Calendar) (h : obj -> System.EventArgs -> unit) = o.SelectionModeChanged.RemoveHandler (System.EventHandler<System.EventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.Controls.Calendar, System.EventHandler<System.EventArgs>, System.EventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.Calendar, System.EventHandler<System.EventArgs>, System.EventArgs> (onSelectionModeChanged_rf, onSelectionModeChanged_uf, f)
 
     let calendarButton                           values child =
       StandardContentView<CalendarButton> (values, child) :> View
     module CalendarButton = 
-      let dummy = ()
+      open Dummy
       let hasSelectedDays                          v = SetConstantValue<_> (Properties.CalendarButton.hasSelectedDays, v)
       let isInactive                               v = SetConstantValue<_> (Properties.CalendarButton.isInactive, v)
 
     let calendarDayButton                        values child =
       StandardContentView<CalendarDayButton> (values, child) :> View
     module CalendarDayButton = 
-      let dummy = ()
+      open Dummy
       let isToday                                  v = SetConstantValue<_> (Properties.CalendarDayButton.isToday, v)
       let isSelected                               v = SetConstantValue<_> (Properties.CalendarDayButton.isSelected, v)
       let isInactive                               v = SetConstantValue<_> (Properties.CalendarDayButton.isInactive, v)
@@ -1240,12 +1257,12 @@ module Generated =
     let calendarItem                             values =
       StandardView<CalendarItem> (values) :> View
     module CalendarItem = 
-      let dummy = ()
+      open Dummy
 
     let canvas                                   values children =
       StandardPanelView<Canvas> (values, children) :> View
     module Canvas = 
-      let dummy = ()
+      open Dummy
       let left                                     v = SetConstantValue<_> (Properties.Canvas.left, v)
       let top                                      v = SetConstantValue<_> (Properties.Canvas.top, v)
       let right                                    v = SetConstantValue<_> (Properties.Canvas.right, v)
@@ -1254,12 +1271,12 @@ module Generated =
     let checkBox                                 values child =
       StandardContentView<CheckBox> (values, child) :> View
     module CheckBox = 
-      let dummy = ()
+      open Dummy
 
     let comboBox                                 values =
       StandardView<ComboBox> (values) :> View
     module ComboBox = 
-      let dummy = ()
+      open Dummy
       let maxDropDownHeight                        v = SetConstantValue<_> (Properties.ComboBox.maxDropDownHeight, v)
       let isDropDownOpen                           v = SetConstantValue<_> (Properties.ComboBox.isDropDownOpen, v)
       let shouldPreserveUserEnteredPrefix          v = SetConstantValue<_> (Properties.ComboBox.shouldPreserveUserEnteredPrefix, v)
@@ -1270,25 +1287,31 @@ module Generated =
       let selectionBoxItemTemplate                 v = SetConstantValue<_> (Properties.ComboBox.selectionBoxItemTemplate, v)
       let selectionBoxItemStringFormat             v = SetConstantValue<_> (Properties.ComboBox.selectionBoxItemStringFormat, v)
       let staysOpenOnEdit                          v = SetConstantValue<_> (Properties.ComboBox.staysOpenOnEdit, v)
+      
+      let private onDropDownOpened_r (o : System.Windows.Controls.ComboBox) (h : obj -> System.EventArgs -> unit) = o.DropDownOpened.AddHandler    (System.EventHandler h)
+      let private onDropDownOpened_u (o : System.Windows.Controls.ComboBox) (h : obj -> System.EventArgs -> unit) = o.DropDownOpened.RemoveHandler (System.EventHandler h)
+      let private onDropDownOpened_rf = onDropDownOpened_r
+      let private onDropDownOpened_uf = onDropDownOpened_u
       let onDropDownOpened                         (f : System.Windows.Controls.ComboBox -> System.EventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.ComboBox) (h : obj -> System.EventArgs -> unit) = o.DropDownOpened.AddHandler    (System.EventHandler h)
-        let u (o : System.Windows.Controls.ComboBox) (h : obj -> System.EventArgs -> unit) = o.DropDownOpened.RemoveHandler (System.EventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.ComboBox, System.EventHandler, System.EventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.ComboBox, System.EventHandler, System.EventArgs> (onDropDownOpened_rf, onDropDownOpened_uf, f)
+      
+      let private onDropDownClosed_r (o : System.Windows.Controls.ComboBox) (h : obj -> System.EventArgs -> unit) = o.DropDownClosed.AddHandler    (System.EventHandler h)
+      let private onDropDownClosed_u (o : System.Windows.Controls.ComboBox) (h : obj -> System.EventArgs -> unit) = o.DropDownClosed.RemoveHandler (System.EventHandler h)
+      let private onDropDownClosed_rf = onDropDownClosed_r
+      let private onDropDownClosed_uf = onDropDownClosed_u
       let onDropDownClosed                         (f : System.Windows.Controls.ComboBox -> System.EventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.ComboBox) (h : obj -> System.EventArgs -> unit) = o.DropDownClosed.AddHandler    (System.EventHandler h)
-        let u (o : System.Windows.Controls.ComboBox) (h : obj -> System.EventArgs -> unit) = o.DropDownClosed.RemoveHandler (System.EventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.ComboBox, System.EventHandler, System.EventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.ComboBox, System.EventHandler, System.EventArgs> (onDropDownClosed_rf, onDropDownClosed_uf, f)
 
     let comboBoxItem                             values child =
       StandardContentView<ComboBoxItem> (values, child) :> View
     module ComboBoxItem = 
-      let dummy = ()
+      open Dummy
       let isHighlighted                            v = SetConstantValue<_> (Properties.ComboBoxItem.isHighlighted, v)
 
     let contentControl                           values =
       StandardView<ContentControl> (values) :> View
     module ContentControl = 
-      let dummy = ()
+      open Dummy
       let content                                  v = SetConstantValue<_> (Properties.ContentControl.content, v)
       let hasContent                               v = SetConstantValue<_> (Properties.ContentControl.hasContent, v)
       let contentTemplate                          v = SetConstantValue<_> (Properties.ContentControl.contentTemplate, v)
@@ -1298,7 +1321,7 @@ module Generated =
     let contentPresenter                         values =
       StandardView<ContentPresenter> (values) :> View
     module ContentPresenter = 
-      let dummy = ()
+      open Dummy
       let recognizesAccessKey                      v = SetConstantValue<_> (Properties.ContentPresenter.recognizesAccessKey, v)
       let content                                  v = SetConstantValue<_> (Properties.ContentPresenter.content, v)
       let contentTemplate                          v = SetConstantValue<_> (Properties.ContentPresenter.contentTemplate, v)
@@ -1309,7 +1332,7 @@ module Generated =
     let contextMenu                              values =
       StandardView<ContextMenu> (values) :> View
     module ContextMenu = 
-      let dummy = ()
+      open Dummy
       let horizontalOffset                         v = SetConstantValue<_> (Properties.ContextMenu.horizontalOffset, v)
       let verticalOffset                           v = SetConstantValue<_> (Properties.ContextMenu.verticalOffset, v)
       let isOpen                                   v = SetConstantValue<_> (Properties.ContextMenu.isOpen, v)
@@ -1319,19 +1342,25 @@ module Generated =
       let hasDropShadow                            v = SetConstantValue<_> (Properties.ContextMenu.hasDropShadow, v)
       let customPopupPlacementCallback             v = SetConstantValue<_> (Properties.ContextMenu.customPopupPlacementCallback, v)
       let staysOpen                                v = SetConstantValue<_> (Properties.ContextMenu.staysOpen, v)
+      
+      let private onOpened_r (o : System.Windows.Controls.ContextMenu) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Opened.AddHandler    (System.Windows.RoutedEventHandler h)
+      let private onOpened_u (o : System.Windows.Controls.ContextMenu) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Opened.RemoveHandler (System.Windows.RoutedEventHandler h)
+      let private onOpened_rf = onOpened_r
+      let private onOpened_uf = onOpened_u
       let onOpened                                 (f : System.Windows.Controls.ContextMenu -> System.Windows.RoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.ContextMenu) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Opened.AddHandler    (System.Windows.RoutedEventHandler h)
-        let u (o : System.Windows.Controls.ContextMenu) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Opened.RemoveHandler (System.Windows.RoutedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.ContextMenu, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.ContextMenu, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onOpened_rf, onOpened_uf, f)
+      
+      let private onClosed_r (o : System.Windows.Controls.ContextMenu) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Closed.AddHandler    (System.Windows.RoutedEventHandler h)
+      let private onClosed_u (o : System.Windows.Controls.ContextMenu) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Closed.RemoveHandler (System.Windows.RoutedEventHandler h)
+      let private onClosed_rf = onClosed_r
+      let private onClosed_uf = onClosed_u
       let onClosed                                 (f : System.Windows.Controls.ContextMenu -> System.Windows.RoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.ContextMenu) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Closed.AddHandler    (System.Windows.RoutedEventHandler h)
-        let u (o : System.Windows.Controls.ContextMenu) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Closed.RemoveHandler (System.Windows.RoutedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.ContextMenu, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.ContextMenu, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onClosed_rf, onClosed_uf, f)
 
     let control                                  values =
       StandardView<Control> (values) :> View
     module Control = 
-      let dummy = ()
+      open Dummy
       let borderBrush                              v = SetConstantValue<_> (Properties.Control.borderBrush, v)
       let borderThickness                          v = SetConstantValue<_> (Properties.Control.borderThickness, v)
       let background                               v = SetConstantValue<_> (Properties.Control.background, v)
@@ -1347,19 +1376,25 @@ module Generated =
       let isTabStop                                v = SetConstantValue<_> (Properties.Control.isTabStop, v)
       let padding                                  v = SetConstantValue<_> (Properties.Control.padding, v)
       let template                                 v = SetConstantValue<_> (Properties.Control.template, v)
+      
+      let private onPreviewMouseDoubleClick_r (o : System.Windows.Controls.Control) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.PreviewMouseDoubleClick.AddHandler    (System.Windows.Input.MouseButtonEventHandler h)
+      let private onPreviewMouseDoubleClick_u (o : System.Windows.Controls.Control) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.PreviewMouseDoubleClick.RemoveHandler (System.Windows.Input.MouseButtonEventHandler h)
+      let private onPreviewMouseDoubleClick_rf = onPreviewMouseDoubleClick_r
+      let private onPreviewMouseDoubleClick_uf = onPreviewMouseDoubleClick_u
       let onPreviewMouseDoubleClick                (f : System.Windows.Controls.Control -> System.Windows.Input.MouseButtonEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.Control) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.PreviewMouseDoubleClick.AddHandler    (System.Windows.Input.MouseButtonEventHandler h)
-        let u (o : System.Windows.Controls.Control) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.PreviewMouseDoubleClick.RemoveHandler (System.Windows.Input.MouseButtonEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.Control, System.Windows.Input.MouseButtonEventHandler, System.Windows.Input.MouseButtonEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.Control, System.Windows.Input.MouseButtonEventHandler, System.Windows.Input.MouseButtonEventArgs> (onPreviewMouseDoubleClick_rf, onPreviewMouseDoubleClick_uf, f)
+      
+      let private onMouseDoubleClick_r (o : System.Windows.Controls.Control) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.MouseDoubleClick.AddHandler    (System.Windows.Input.MouseButtonEventHandler h)
+      let private onMouseDoubleClick_u (o : System.Windows.Controls.Control) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.MouseDoubleClick.RemoveHandler (System.Windows.Input.MouseButtonEventHandler h)
+      let private onMouseDoubleClick_rf = onMouseDoubleClick_r
+      let private onMouseDoubleClick_uf = onMouseDoubleClick_u
       let onMouseDoubleClick                       (f : System.Windows.Controls.Control -> System.Windows.Input.MouseButtonEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.Control) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.MouseDoubleClick.AddHandler    (System.Windows.Input.MouseButtonEventHandler h)
-        let u (o : System.Windows.Controls.Control) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.MouseDoubleClick.RemoveHandler (System.Windows.Input.MouseButtonEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.Control, System.Windows.Input.MouseButtonEventHandler, System.Windows.Input.MouseButtonEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.Control, System.Windows.Input.MouseButtonEventHandler, System.Windows.Input.MouseButtonEventArgs> (onMouseDoubleClick_rf, onMouseDoubleClick_uf, f)
 
     let dataGrid                                 values =
       StandardView<DataGrid> (values) :> View
     module DataGrid = 
-      let dummy = ()
+      open Dummy
       let canUserResizeColumns                     v = SetConstantValue<_> (Properties.DataGrid.canUserResizeColumns, v)
       let columnWidth                              v = SetConstantValue<_> (Properties.DataGrid.columnWidth, v)
       let minColumnWidth                           v = SetConstantValue<_> (Properties.DataGrid.minColumnWidth, v)
@@ -1410,130 +1445,205 @@ module Generated =
       let dropLocationIndicatorStyle               v = SetConstantValue<_> (Properties.DataGrid.dropLocationIndicatorStyle, v)
       let clipboardCopyMode                        v = SetConstantValue<_> (Properties.DataGrid.clipboardCopyMode, v)
       let cellsPanelHorizontalOffset               v = SetConstantValue<_> (Properties.DataGrid.cellsPanelHorizontalOffset, v)
+      
+      let private onColumnDisplayIndexChanged_r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridColumnEventArgs -> unit) = o.ColumnDisplayIndexChanged.AddHandler    (System.EventHandler<System.Windows.Controls.DataGridColumnEventArgs> h)
+      let private onColumnDisplayIndexChanged_u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridColumnEventArgs -> unit) = o.ColumnDisplayIndexChanged.RemoveHandler (System.EventHandler<System.Windows.Controls.DataGridColumnEventArgs> h)
+      let private onColumnDisplayIndexChanged_rf = onColumnDisplayIndexChanged_r
+      let private onColumnDisplayIndexChanged_uf = onColumnDisplayIndexChanged_u
       let onColumnDisplayIndexChanged              (f : System.Windows.Controls.DataGrid -> System.Windows.Controls.DataGridColumnEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridColumnEventArgs -> unit) = o.ColumnDisplayIndexChanged.AddHandler    (System.EventHandler<System.Windows.Controls.DataGridColumnEventArgs> h)
-        let u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridColumnEventArgs -> unit) = o.ColumnDisplayIndexChanged.RemoveHandler (System.EventHandler<System.Windows.Controls.DataGridColumnEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.EventHandler<System.Windows.Controls.DataGridColumnEventArgs>, System.Windows.Controls.DataGridColumnEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.EventHandler<System.Windows.Controls.DataGridColumnEventArgs>, System.Windows.Controls.DataGridColumnEventArgs> (onColumnDisplayIndexChanged_rf, onColumnDisplayIndexChanged_uf, f)
+      
+      let private onLoadingRow_r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridRowEventArgs -> unit) = o.LoadingRow.AddHandler    (System.EventHandler<System.Windows.Controls.DataGridRowEventArgs> h)
+      let private onLoadingRow_u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridRowEventArgs -> unit) = o.LoadingRow.RemoveHandler (System.EventHandler<System.Windows.Controls.DataGridRowEventArgs> h)
+      let private onLoadingRow_rf = onLoadingRow_r
+      let private onLoadingRow_uf = onLoadingRow_u
       let onLoadingRow                             (f : System.Windows.Controls.DataGrid -> System.Windows.Controls.DataGridRowEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridRowEventArgs -> unit) = o.LoadingRow.AddHandler    (System.EventHandler<System.Windows.Controls.DataGridRowEventArgs> h)
-        let u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridRowEventArgs -> unit) = o.LoadingRow.RemoveHandler (System.EventHandler<System.Windows.Controls.DataGridRowEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.EventHandler<System.Windows.Controls.DataGridRowEventArgs>, System.Windows.Controls.DataGridRowEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.EventHandler<System.Windows.Controls.DataGridRowEventArgs>, System.Windows.Controls.DataGridRowEventArgs> (onLoadingRow_rf, onLoadingRow_uf, f)
+      
+      let private onUnloadingRow_r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridRowEventArgs -> unit) = o.UnloadingRow.AddHandler    (System.EventHandler<System.Windows.Controls.DataGridRowEventArgs> h)
+      let private onUnloadingRow_u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridRowEventArgs -> unit) = o.UnloadingRow.RemoveHandler (System.EventHandler<System.Windows.Controls.DataGridRowEventArgs> h)
+      let private onUnloadingRow_rf = onUnloadingRow_r
+      let private onUnloadingRow_uf = onUnloadingRow_u
       let onUnloadingRow                           (f : System.Windows.Controls.DataGrid -> System.Windows.Controls.DataGridRowEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridRowEventArgs -> unit) = o.UnloadingRow.AddHandler    (System.EventHandler<System.Windows.Controls.DataGridRowEventArgs> h)
-        let u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridRowEventArgs -> unit) = o.UnloadingRow.RemoveHandler (System.EventHandler<System.Windows.Controls.DataGridRowEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.EventHandler<System.Windows.Controls.DataGridRowEventArgs>, System.Windows.Controls.DataGridRowEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.EventHandler<System.Windows.Controls.DataGridRowEventArgs>, System.Windows.Controls.DataGridRowEventArgs> (onUnloadingRow_rf, onUnloadingRow_uf, f)
+      
+      let private onRowEditEnding_r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridRowEditEndingEventArgs -> unit) = o.RowEditEnding.AddHandler    (System.EventHandler<System.Windows.Controls.DataGridRowEditEndingEventArgs> h)
+      let private onRowEditEnding_u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridRowEditEndingEventArgs -> unit) = o.RowEditEnding.RemoveHandler (System.EventHandler<System.Windows.Controls.DataGridRowEditEndingEventArgs> h)
+      let private onRowEditEnding_rf = onRowEditEnding_r
+      let private onRowEditEnding_uf = onRowEditEnding_u
       let onRowEditEnding                          (f : System.Windows.Controls.DataGrid -> System.Windows.Controls.DataGridRowEditEndingEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridRowEditEndingEventArgs -> unit) = o.RowEditEnding.AddHandler    (System.EventHandler<System.Windows.Controls.DataGridRowEditEndingEventArgs> h)
-        let u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridRowEditEndingEventArgs -> unit) = o.RowEditEnding.RemoveHandler (System.EventHandler<System.Windows.Controls.DataGridRowEditEndingEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.EventHandler<System.Windows.Controls.DataGridRowEditEndingEventArgs>, System.Windows.Controls.DataGridRowEditEndingEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.EventHandler<System.Windows.Controls.DataGridRowEditEndingEventArgs>, System.Windows.Controls.DataGridRowEditEndingEventArgs> (onRowEditEnding_rf, onRowEditEnding_uf, f)
+      
+      let private onCellEditEnding_r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridCellEditEndingEventArgs -> unit) = o.CellEditEnding.AddHandler    (System.EventHandler<System.Windows.Controls.DataGridCellEditEndingEventArgs> h)
+      let private onCellEditEnding_u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridCellEditEndingEventArgs -> unit) = o.CellEditEnding.RemoveHandler (System.EventHandler<System.Windows.Controls.DataGridCellEditEndingEventArgs> h)
+      let private onCellEditEnding_rf = onCellEditEnding_r
+      let private onCellEditEnding_uf = onCellEditEnding_u
       let onCellEditEnding                         (f : System.Windows.Controls.DataGrid -> System.Windows.Controls.DataGridCellEditEndingEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridCellEditEndingEventArgs -> unit) = o.CellEditEnding.AddHandler    (System.EventHandler<System.Windows.Controls.DataGridCellEditEndingEventArgs> h)
-        let u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridCellEditEndingEventArgs -> unit) = o.CellEditEnding.RemoveHandler (System.EventHandler<System.Windows.Controls.DataGridCellEditEndingEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.EventHandler<System.Windows.Controls.DataGridCellEditEndingEventArgs>, System.Windows.Controls.DataGridCellEditEndingEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.EventHandler<System.Windows.Controls.DataGridCellEditEndingEventArgs>, System.Windows.Controls.DataGridCellEditEndingEventArgs> (onCellEditEnding_rf, onCellEditEnding_uf, f)
+      
+      let private onCurrentCellChanged_r (o : System.Windows.Controls.DataGrid) (h : obj -> System.EventArgs -> unit) = o.CurrentCellChanged.AddHandler    (System.EventHandler<System.EventArgs> h)
+      let private onCurrentCellChanged_u (o : System.Windows.Controls.DataGrid) (h : obj -> System.EventArgs -> unit) = o.CurrentCellChanged.RemoveHandler (System.EventHandler<System.EventArgs> h)
+      let private onCurrentCellChanged_rf = onCurrentCellChanged_r
+      let private onCurrentCellChanged_uf = onCurrentCellChanged_u
       let onCurrentCellChanged                     (f : System.Windows.Controls.DataGrid -> System.EventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.DataGrid) (h : obj -> System.EventArgs -> unit) = o.CurrentCellChanged.AddHandler    (System.EventHandler<System.EventArgs> h)
-        let u (o : System.Windows.Controls.DataGrid) (h : obj -> System.EventArgs -> unit) = o.CurrentCellChanged.RemoveHandler (System.EventHandler<System.EventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.EventHandler<System.EventArgs>, System.EventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.EventHandler<System.EventArgs>, System.EventArgs> (onCurrentCellChanged_rf, onCurrentCellChanged_uf, f)
+      
+      let private onBeginningEdit_r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridBeginningEditEventArgs -> unit) = o.BeginningEdit.AddHandler    (System.EventHandler<System.Windows.Controls.DataGridBeginningEditEventArgs> h)
+      let private onBeginningEdit_u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridBeginningEditEventArgs -> unit) = o.BeginningEdit.RemoveHandler (System.EventHandler<System.Windows.Controls.DataGridBeginningEditEventArgs> h)
+      let private onBeginningEdit_rf = onBeginningEdit_r
+      let private onBeginningEdit_uf = onBeginningEdit_u
       let onBeginningEdit                          (f : System.Windows.Controls.DataGrid -> System.Windows.Controls.DataGridBeginningEditEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridBeginningEditEventArgs -> unit) = o.BeginningEdit.AddHandler    (System.EventHandler<System.Windows.Controls.DataGridBeginningEditEventArgs> h)
-        let u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridBeginningEditEventArgs -> unit) = o.BeginningEdit.RemoveHandler (System.EventHandler<System.Windows.Controls.DataGridBeginningEditEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.EventHandler<System.Windows.Controls.DataGridBeginningEditEventArgs>, System.Windows.Controls.DataGridBeginningEditEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.EventHandler<System.Windows.Controls.DataGridBeginningEditEventArgs>, System.Windows.Controls.DataGridBeginningEditEventArgs> (onBeginningEdit_rf, onBeginningEdit_uf, f)
+      
+      let private onPreparingCellForEdit_r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridPreparingCellForEditEventArgs -> unit) = o.PreparingCellForEdit.AddHandler    (System.EventHandler<System.Windows.Controls.DataGridPreparingCellForEditEventArgs> h)
+      let private onPreparingCellForEdit_u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridPreparingCellForEditEventArgs -> unit) = o.PreparingCellForEdit.RemoveHandler (System.EventHandler<System.Windows.Controls.DataGridPreparingCellForEditEventArgs> h)
+      let private onPreparingCellForEdit_rf = onPreparingCellForEdit_r
+      let private onPreparingCellForEdit_uf = onPreparingCellForEdit_u
       let onPreparingCellForEdit                   (f : System.Windows.Controls.DataGrid -> System.Windows.Controls.DataGridPreparingCellForEditEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridPreparingCellForEditEventArgs -> unit) = o.PreparingCellForEdit.AddHandler    (System.EventHandler<System.Windows.Controls.DataGridPreparingCellForEditEventArgs> h)
-        let u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridPreparingCellForEditEventArgs -> unit) = o.PreparingCellForEdit.RemoveHandler (System.EventHandler<System.Windows.Controls.DataGridPreparingCellForEditEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.EventHandler<System.Windows.Controls.DataGridPreparingCellForEditEventArgs>, System.Windows.Controls.DataGridPreparingCellForEditEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.EventHandler<System.Windows.Controls.DataGridPreparingCellForEditEventArgs>, System.Windows.Controls.DataGridPreparingCellForEditEventArgs> (onPreparingCellForEdit_rf, onPreparingCellForEdit_uf, f)
+      
+      let private onAddingNewItem_r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.AddingNewItemEventArgs -> unit) = o.AddingNewItem.AddHandler    (System.EventHandler<System.Windows.Controls.AddingNewItemEventArgs> h)
+      let private onAddingNewItem_u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.AddingNewItemEventArgs -> unit) = o.AddingNewItem.RemoveHandler (System.EventHandler<System.Windows.Controls.AddingNewItemEventArgs> h)
+      let private onAddingNewItem_rf = onAddingNewItem_r
+      let private onAddingNewItem_uf = onAddingNewItem_u
       let onAddingNewItem                          (f : System.Windows.Controls.DataGrid -> System.Windows.Controls.AddingNewItemEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.AddingNewItemEventArgs -> unit) = o.AddingNewItem.AddHandler    (System.EventHandler<System.Windows.Controls.AddingNewItemEventArgs> h)
-        let u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.AddingNewItemEventArgs -> unit) = o.AddingNewItem.RemoveHandler (System.EventHandler<System.Windows.Controls.AddingNewItemEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.EventHandler<System.Windows.Controls.AddingNewItemEventArgs>, System.Windows.Controls.AddingNewItemEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.EventHandler<System.Windows.Controls.AddingNewItemEventArgs>, System.Windows.Controls.AddingNewItemEventArgs> (onAddingNewItem_rf, onAddingNewItem_uf, f)
+      
+      let private onInitializingNewItem_r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.InitializingNewItemEventArgs -> unit) = o.InitializingNewItem.AddHandler    (System.Windows.Controls.InitializingNewItemEventHandler h)
+      let private onInitializingNewItem_u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.InitializingNewItemEventArgs -> unit) = o.InitializingNewItem.RemoveHandler (System.Windows.Controls.InitializingNewItemEventHandler h)
+      let private onInitializingNewItem_rf = onInitializingNewItem_r
+      let private onInitializingNewItem_uf = onInitializingNewItem_u
       let onInitializingNewItem                    (f : System.Windows.Controls.DataGrid -> System.Windows.Controls.InitializingNewItemEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.InitializingNewItemEventArgs -> unit) = o.InitializingNewItem.AddHandler    (System.Windows.Controls.InitializingNewItemEventHandler h)
-        let u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.InitializingNewItemEventArgs -> unit) = o.InitializingNewItem.RemoveHandler (System.Windows.Controls.InitializingNewItemEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.Windows.Controls.InitializingNewItemEventHandler, System.Windows.Controls.InitializingNewItemEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.Windows.Controls.InitializingNewItemEventHandler, System.Windows.Controls.InitializingNewItemEventArgs> (onInitializingNewItem_rf, onInitializingNewItem_uf, f)
+      
+      let private onLoadingRowDetails_r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridRowDetailsEventArgs -> unit) = o.LoadingRowDetails.AddHandler    (System.EventHandler<System.Windows.Controls.DataGridRowDetailsEventArgs> h)
+      let private onLoadingRowDetails_u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridRowDetailsEventArgs -> unit) = o.LoadingRowDetails.RemoveHandler (System.EventHandler<System.Windows.Controls.DataGridRowDetailsEventArgs> h)
+      let private onLoadingRowDetails_rf = onLoadingRowDetails_r
+      let private onLoadingRowDetails_uf = onLoadingRowDetails_u
       let onLoadingRowDetails                      (f : System.Windows.Controls.DataGrid -> System.Windows.Controls.DataGridRowDetailsEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridRowDetailsEventArgs -> unit) = o.LoadingRowDetails.AddHandler    (System.EventHandler<System.Windows.Controls.DataGridRowDetailsEventArgs> h)
-        let u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridRowDetailsEventArgs -> unit) = o.LoadingRowDetails.RemoveHandler (System.EventHandler<System.Windows.Controls.DataGridRowDetailsEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.EventHandler<System.Windows.Controls.DataGridRowDetailsEventArgs>, System.Windows.Controls.DataGridRowDetailsEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.EventHandler<System.Windows.Controls.DataGridRowDetailsEventArgs>, System.Windows.Controls.DataGridRowDetailsEventArgs> (onLoadingRowDetails_rf, onLoadingRowDetails_uf, f)
+      
+      let private onUnloadingRowDetails_r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridRowDetailsEventArgs -> unit) = o.UnloadingRowDetails.AddHandler    (System.EventHandler<System.Windows.Controls.DataGridRowDetailsEventArgs> h)
+      let private onUnloadingRowDetails_u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridRowDetailsEventArgs -> unit) = o.UnloadingRowDetails.RemoveHandler (System.EventHandler<System.Windows.Controls.DataGridRowDetailsEventArgs> h)
+      let private onUnloadingRowDetails_rf = onUnloadingRowDetails_r
+      let private onUnloadingRowDetails_uf = onUnloadingRowDetails_u
       let onUnloadingRowDetails                    (f : System.Windows.Controls.DataGrid -> System.Windows.Controls.DataGridRowDetailsEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridRowDetailsEventArgs -> unit) = o.UnloadingRowDetails.AddHandler    (System.EventHandler<System.Windows.Controls.DataGridRowDetailsEventArgs> h)
-        let u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridRowDetailsEventArgs -> unit) = o.UnloadingRowDetails.RemoveHandler (System.EventHandler<System.Windows.Controls.DataGridRowDetailsEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.EventHandler<System.Windows.Controls.DataGridRowDetailsEventArgs>, System.Windows.Controls.DataGridRowDetailsEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.EventHandler<System.Windows.Controls.DataGridRowDetailsEventArgs>, System.Windows.Controls.DataGridRowDetailsEventArgs> (onUnloadingRowDetails_rf, onUnloadingRowDetails_uf, f)
+      
+      let private onRowDetailsVisibilityChanged_r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridRowDetailsEventArgs -> unit) = o.RowDetailsVisibilityChanged.AddHandler    (System.EventHandler<System.Windows.Controls.DataGridRowDetailsEventArgs> h)
+      let private onRowDetailsVisibilityChanged_u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridRowDetailsEventArgs -> unit) = o.RowDetailsVisibilityChanged.RemoveHandler (System.EventHandler<System.Windows.Controls.DataGridRowDetailsEventArgs> h)
+      let private onRowDetailsVisibilityChanged_rf = onRowDetailsVisibilityChanged_r
+      let private onRowDetailsVisibilityChanged_uf = onRowDetailsVisibilityChanged_u
       let onRowDetailsVisibilityChanged            (f : System.Windows.Controls.DataGrid -> System.Windows.Controls.DataGridRowDetailsEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridRowDetailsEventArgs -> unit) = o.RowDetailsVisibilityChanged.AddHandler    (System.EventHandler<System.Windows.Controls.DataGridRowDetailsEventArgs> h)
-        let u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridRowDetailsEventArgs -> unit) = o.RowDetailsVisibilityChanged.RemoveHandler (System.EventHandler<System.Windows.Controls.DataGridRowDetailsEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.EventHandler<System.Windows.Controls.DataGridRowDetailsEventArgs>, System.Windows.Controls.DataGridRowDetailsEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.EventHandler<System.Windows.Controls.DataGridRowDetailsEventArgs>, System.Windows.Controls.DataGridRowDetailsEventArgs> (onRowDetailsVisibilityChanged_rf, onRowDetailsVisibilityChanged_uf, f)
+      
+      let private onSelectedCellsChanged_r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.SelectedCellsChangedEventArgs -> unit) = o.SelectedCellsChanged.AddHandler    (System.Windows.Controls.SelectedCellsChangedEventHandler h)
+      let private onSelectedCellsChanged_u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.SelectedCellsChangedEventArgs -> unit) = o.SelectedCellsChanged.RemoveHandler (System.Windows.Controls.SelectedCellsChangedEventHandler h)
+      let private onSelectedCellsChanged_rf = onSelectedCellsChanged_r
+      let private onSelectedCellsChanged_uf = onSelectedCellsChanged_u
       let onSelectedCellsChanged                   (f : System.Windows.Controls.DataGrid -> System.Windows.Controls.SelectedCellsChangedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.SelectedCellsChangedEventArgs -> unit) = o.SelectedCellsChanged.AddHandler    (System.Windows.Controls.SelectedCellsChangedEventHandler h)
-        let u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.SelectedCellsChangedEventArgs -> unit) = o.SelectedCellsChanged.RemoveHandler (System.Windows.Controls.SelectedCellsChangedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.Windows.Controls.SelectedCellsChangedEventHandler, System.Windows.Controls.SelectedCellsChangedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.Windows.Controls.SelectedCellsChangedEventHandler, System.Windows.Controls.SelectedCellsChangedEventArgs> (onSelectedCellsChanged_rf, onSelectedCellsChanged_uf, f)
+      
+      let private onSorting_r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridSortingEventArgs -> unit) = o.Sorting.AddHandler    (System.Windows.Controls.DataGridSortingEventHandler h)
+      let private onSorting_u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridSortingEventArgs -> unit) = o.Sorting.RemoveHandler (System.Windows.Controls.DataGridSortingEventHandler h)
+      let private onSorting_rf = onSorting_r
+      let private onSorting_uf = onSorting_u
       let onSorting                                (f : System.Windows.Controls.DataGrid -> System.Windows.Controls.DataGridSortingEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridSortingEventArgs -> unit) = o.Sorting.AddHandler    (System.Windows.Controls.DataGridSortingEventHandler h)
-        let u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridSortingEventArgs -> unit) = o.Sorting.RemoveHandler (System.Windows.Controls.DataGridSortingEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.Windows.Controls.DataGridSortingEventHandler, System.Windows.Controls.DataGridSortingEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.Windows.Controls.DataGridSortingEventHandler, System.Windows.Controls.DataGridSortingEventArgs> (onSorting_rf, onSorting_uf, f)
+      
+      let private onAutoGeneratedColumns_r (o : System.Windows.Controls.DataGrid) (h : obj -> System.EventArgs -> unit) = o.AutoGeneratedColumns.AddHandler    (System.EventHandler h)
+      let private onAutoGeneratedColumns_u (o : System.Windows.Controls.DataGrid) (h : obj -> System.EventArgs -> unit) = o.AutoGeneratedColumns.RemoveHandler (System.EventHandler h)
+      let private onAutoGeneratedColumns_rf = onAutoGeneratedColumns_r
+      let private onAutoGeneratedColumns_uf = onAutoGeneratedColumns_u
       let onAutoGeneratedColumns                   (f : System.Windows.Controls.DataGrid -> System.EventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.DataGrid) (h : obj -> System.EventArgs -> unit) = o.AutoGeneratedColumns.AddHandler    (System.EventHandler h)
-        let u (o : System.Windows.Controls.DataGrid) (h : obj -> System.EventArgs -> unit) = o.AutoGeneratedColumns.RemoveHandler (System.EventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.EventHandler, System.EventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.EventHandler, System.EventArgs> (onAutoGeneratedColumns_rf, onAutoGeneratedColumns_uf, f)
+      
+      let private onAutoGeneratingColumn_r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridAutoGeneratingColumnEventArgs -> unit) = o.AutoGeneratingColumn.AddHandler    (System.EventHandler<System.Windows.Controls.DataGridAutoGeneratingColumnEventArgs> h)
+      let private onAutoGeneratingColumn_u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridAutoGeneratingColumnEventArgs -> unit) = o.AutoGeneratingColumn.RemoveHandler (System.EventHandler<System.Windows.Controls.DataGridAutoGeneratingColumnEventArgs> h)
+      let private onAutoGeneratingColumn_rf = onAutoGeneratingColumn_r
+      let private onAutoGeneratingColumn_uf = onAutoGeneratingColumn_u
       let onAutoGeneratingColumn                   (f : System.Windows.Controls.DataGrid -> System.Windows.Controls.DataGridAutoGeneratingColumnEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridAutoGeneratingColumnEventArgs -> unit) = o.AutoGeneratingColumn.AddHandler    (System.EventHandler<System.Windows.Controls.DataGridAutoGeneratingColumnEventArgs> h)
-        let u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridAutoGeneratingColumnEventArgs -> unit) = o.AutoGeneratingColumn.RemoveHandler (System.EventHandler<System.Windows.Controls.DataGridAutoGeneratingColumnEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.EventHandler<System.Windows.Controls.DataGridAutoGeneratingColumnEventArgs>, System.Windows.Controls.DataGridAutoGeneratingColumnEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.EventHandler<System.Windows.Controls.DataGridAutoGeneratingColumnEventArgs>, System.Windows.Controls.DataGridAutoGeneratingColumnEventArgs> (onAutoGeneratingColumn_rf, onAutoGeneratingColumn_uf, f)
+      
+      let private onColumnReordering_r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridColumnReorderingEventArgs -> unit) = o.ColumnReordering.AddHandler    (System.EventHandler<System.Windows.Controls.DataGridColumnReorderingEventArgs> h)
+      let private onColumnReordering_u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridColumnReorderingEventArgs -> unit) = o.ColumnReordering.RemoveHandler (System.EventHandler<System.Windows.Controls.DataGridColumnReorderingEventArgs> h)
+      let private onColumnReordering_rf = onColumnReordering_r
+      let private onColumnReordering_uf = onColumnReordering_u
       let onColumnReordering                       (f : System.Windows.Controls.DataGrid -> System.Windows.Controls.DataGridColumnReorderingEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridColumnReorderingEventArgs -> unit) = o.ColumnReordering.AddHandler    (System.EventHandler<System.Windows.Controls.DataGridColumnReorderingEventArgs> h)
-        let u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridColumnReorderingEventArgs -> unit) = o.ColumnReordering.RemoveHandler (System.EventHandler<System.Windows.Controls.DataGridColumnReorderingEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.EventHandler<System.Windows.Controls.DataGridColumnReorderingEventArgs>, System.Windows.Controls.DataGridColumnReorderingEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.EventHandler<System.Windows.Controls.DataGridColumnReorderingEventArgs>, System.Windows.Controls.DataGridColumnReorderingEventArgs> (onColumnReordering_rf, onColumnReordering_uf, f)
+      
+      let private onColumnHeaderDragStarted_r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.Primitives.DragStartedEventArgs -> unit) = o.ColumnHeaderDragStarted.AddHandler    (System.EventHandler<System.Windows.Controls.Primitives.DragStartedEventArgs> h)
+      let private onColumnHeaderDragStarted_u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.Primitives.DragStartedEventArgs -> unit) = o.ColumnHeaderDragStarted.RemoveHandler (System.EventHandler<System.Windows.Controls.Primitives.DragStartedEventArgs> h)
+      let private onColumnHeaderDragStarted_rf = onColumnHeaderDragStarted_r
+      let private onColumnHeaderDragStarted_uf = onColumnHeaderDragStarted_u
       let onColumnHeaderDragStarted                (f : System.Windows.Controls.DataGrid -> System.Windows.Controls.Primitives.DragStartedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.Primitives.DragStartedEventArgs -> unit) = o.ColumnHeaderDragStarted.AddHandler    (System.EventHandler<System.Windows.Controls.Primitives.DragStartedEventArgs> h)
-        let u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.Primitives.DragStartedEventArgs -> unit) = o.ColumnHeaderDragStarted.RemoveHandler (System.EventHandler<System.Windows.Controls.Primitives.DragStartedEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.EventHandler<System.Windows.Controls.Primitives.DragStartedEventArgs>, System.Windows.Controls.Primitives.DragStartedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.EventHandler<System.Windows.Controls.Primitives.DragStartedEventArgs>, System.Windows.Controls.Primitives.DragStartedEventArgs> (onColumnHeaderDragStarted_rf, onColumnHeaderDragStarted_uf, f)
+      
+      let private onColumnHeaderDragDelta_r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.Primitives.DragDeltaEventArgs -> unit) = o.ColumnHeaderDragDelta.AddHandler    (System.EventHandler<System.Windows.Controls.Primitives.DragDeltaEventArgs> h)
+      let private onColumnHeaderDragDelta_u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.Primitives.DragDeltaEventArgs -> unit) = o.ColumnHeaderDragDelta.RemoveHandler (System.EventHandler<System.Windows.Controls.Primitives.DragDeltaEventArgs> h)
+      let private onColumnHeaderDragDelta_rf = onColumnHeaderDragDelta_r
+      let private onColumnHeaderDragDelta_uf = onColumnHeaderDragDelta_u
       let onColumnHeaderDragDelta                  (f : System.Windows.Controls.DataGrid -> System.Windows.Controls.Primitives.DragDeltaEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.Primitives.DragDeltaEventArgs -> unit) = o.ColumnHeaderDragDelta.AddHandler    (System.EventHandler<System.Windows.Controls.Primitives.DragDeltaEventArgs> h)
-        let u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.Primitives.DragDeltaEventArgs -> unit) = o.ColumnHeaderDragDelta.RemoveHandler (System.EventHandler<System.Windows.Controls.Primitives.DragDeltaEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.EventHandler<System.Windows.Controls.Primitives.DragDeltaEventArgs>, System.Windows.Controls.Primitives.DragDeltaEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.EventHandler<System.Windows.Controls.Primitives.DragDeltaEventArgs>, System.Windows.Controls.Primitives.DragDeltaEventArgs> (onColumnHeaderDragDelta_rf, onColumnHeaderDragDelta_uf, f)
+      
+      let private onColumnHeaderDragCompleted_r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.Primitives.DragCompletedEventArgs -> unit) = o.ColumnHeaderDragCompleted.AddHandler    (System.EventHandler<System.Windows.Controls.Primitives.DragCompletedEventArgs> h)
+      let private onColumnHeaderDragCompleted_u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.Primitives.DragCompletedEventArgs -> unit) = o.ColumnHeaderDragCompleted.RemoveHandler (System.EventHandler<System.Windows.Controls.Primitives.DragCompletedEventArgs> h)
+      let private onColumnHeaderDragCompleted_rf = onColumnHeaderDragCompleted_r
+      let private onColumnHeaderDragCompleted_uf = onColumnHeaderDragCompleted_u
       let onColumnHeaderDragCompleted              (f : System.Windows.Controls.DataGrid -> System.Windows.Controls.Primitives.DragCompletedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.Primitives.DragCompletedEventArgs -> unit) = o.ColumnHeaderDragCompleted.AddHandler    (System.EventHandler<System.Windows.Controls.Primitives.DragCompletedEventArgs> h)
-        let u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.Primitives.DragCompletedEventArgs -> unit) = o.ColumnHeaderDragCompleted.RemoveHandler (System.EventHandler<System.Windows.Controls.Primitives.DragCompletedEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.EventHandler<System.Windows.Controls.Primitives.DragCompletedEventArgs>, System.Windows.Controls.Primitives.DragCompletedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.EventHandler<System.Windows.Controls.Primitives.DragCompletedEventArgs>, System.Windows.Controls.Primitives.DragCompletedEventArgs> (onColumnHeaderDragCompleted_rf, onColumnHeaderDragCompleted_uf, f)
+      
+      let private onColumnReordered_r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridColumnEventArgs -> unit) = o.ColumnReordered.AddHandler    (System.EventHandler<System.Windows.Controls.DataGridColumnEventArgs> h)
+      let private onColumnReordered_u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridColumnEventArgs -> unit) = o.ColumnReordered.RemoveHandler (System.EventHandler<System.Windows.Controls.DataGridColumnEventArgs> h)
+      let private onColumnReordered_rf = onColumnReordered_r
+      let private onColumnReordered_uf = onColumnReordered_u
       let onColumnReordered                        (f : System.Windows.Controls.DataGrid -> System.Windows.Controls.DataGridColumnEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridColumnEventArgs -> unit) = o.ColumnReordered.AddHandler    (System.EventHandler<System.Windows.Controls.DataGridColumnEventArgs> h)
-        let u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridColumnEventArgs -> unit) = o.ColumnReordered.RemoveHandler (System.EventHandler<System.Windows.Controls.DataGridColumnEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.EventHandler<System.Windows.Controls.DataGridColumnEventArgs>, System.Windows.Controls.DataGridColumnEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.EventHandler<System.Windows.Controls.DataGridColumnEventArgs>, System.Windows.Controls.DataGridColumnEventArgs> (onColumnReordered_rf, onColumnReordered_uf, f)
+      
+      let private onCopyingRowClipboardContent_r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridRowClipboardEventArgs -> unit) = o.CopyingRowClipboardContent.AddHandler    (System.EventHandler<System.Windows.Controls.DataGridRowClipboardEventArgs> h)
+      let private onCopyingRowClipboardContent_u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridRowClipboardEventArgs -> unit) = o.CopyingRowClipboardContent.RemoveHandler (System.EventHandler<System.Windows.Controls.DataGridRowClipboardEventArgs> h)
+      let private onCopyingRowClipboardContent_rf = onCopyingRowClipboardContent_r
+      let private onCopyingRowClipboardContent_uf = onCopyingRowClipboardContent_u
       let onCopyingRowClipboardContent             (f : System.Windows.Controls.DataGrid -> System.Windows.Controls.DataGridRowClipboardEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridRowClipboardEventArgs -> unit) = o.CopyingRowClipboardContent.AddHandler    (System.EventHandler<System.Windows.Controls.DataGridRowClipboardEventArgs> h)
-        let u (o : System.Windows.Controls.DataGrid) (h : obj -> System.Windows.Controls.DataGridRowClipboardEventArgs -> unit) = o.CopyingRowClipboardContent.RemoveHandler (System.EventHandler<System.Windows.Controls.DataGridRowClipboardEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.EventHandler<System.Windows.Controls.DataGridRowClipboardEventArgs>, System.Windows.Controls.DataGridRowClipboardEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.DataGrid, System.EventHandler<System.Windows.Controls.DataGridRowClipboardEventArgs>, System.Windows.Controls.DataGridRowClipboardEventArgs> (onCopyingRowClipboardContent_rf, onCopyingRowClipboardContent_uf, f)
 
     let dataGridCell                             values child =
       StandardContentView<DataGridCell> (values, child) :> View
     module DataGridCell = 
-      let dummy = ()
+      open Dummy
       let column                                   v = SetConstantValue<_> (Properties.DataGridCell.column, v)
       let isEditing                                v = SetConstantValue<_> (Properties.DataGridCell.isEditing, v)
       let isReadOnly                               v = SetConstantValue<_> (Properties.DataGridCell.isReadOnly, v)
       let isSelected                               v = SetConstantValue<_> (Properties.DataGridCell.isSelected, v)
+      
+      let private onSelected_r (o : System.Windows.Controls.DataGridCell) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Selected.AddHandler    (System.Windows.RoutedEventHandler h)
+      let private onSelected_u (o : System.Windows.Controls.DataGridCell) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Selected.RemoveHandler (System.Windows.RoutedEventHandler h)
+      let private onSelected_rf = onSelected_r
+      let private onSelected_uf = onSelected_u
       let onSelected                               (f : System.Windows.Controls.DataGridCell -> System.Windows.RoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.DataGridCell) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Selected.AddHandler    (System.Windows.RoutedEventHandler h)
-        let u (o : System.Windows.Controls.DataGridCell) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Selected.RemoveHandler (System.Windows.RoutedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.DataGridCell, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.DataGridCell, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onSelected_rf, onSelected_uf, f)
+      
+      let private onUnselected_r (o : System.Windows.Controls.DataGridCell) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Unselected.AddHandler    (System.Windows.RoutedEventHandler h)
+      let private onUnselected_u (o : System.Windows.Controls.DataGridCell) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Unselected.RemoveHandler (System.Windows.RoutedEventHandler h)
+      let private onUnselected_rf = onUnselected_r
+      let private onUnselected_uf = onUnselected_u
       let onUnselected                             (f : System.Windows.Controls.DataGridCell -> System.Windows.RoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.DataGridCell) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Unselected.AddHandler    (System.Windows.RoutedEventHandler h)
-        let u (o : System.Windows.Controls.DataGridCell) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Unselected.RemoveHandler (System.Windows.RoutedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.DataGridCell, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.DataGridCell, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onUnselected_rf, onUnselected_uf, f)
 
     let dataGridCellsPanel                       values children =
       StandardPanelView<DataGridCellsPanel> (values, children) :> View
     module DataGridCellsPanel = 
-      let dummy = ()
+      open Dummy
 
     let dataGridCellsPresenter                   values =
       StandardView<DataGridCellsPresenter> (values) :> View
     module DataGridCellsPresenter = 
-      let dummy = ()
+      open Dummy
 
     let dataGridColumnHeader                     values child =
       StandardContentView<DataGridColumnHeader> (values, child) :> View
     module DataGridColumnHeader = 
-      let dummy = ()
+      open Dummy
       let separatorBrush                           v = SetConstantValue<_> (Properties.DataGridColumnHeader.separatorBrush, v)
       let separatorVisibility                      v = SetConstantValue<_> (Properties.DataGridColumnHeader.separatorVisibility, v)
       let displayIndex                             v = SetConstantValue<_> (Properties.DataGridColumnHeader.displayIndex, v)
@@ -1544,17 +1654,17 @@ module Generated =
     let dataGridColumnHeadersPresenter           values =
       StandardView<DataGridColumnHeadersPresenter> (values) :> View
     module DataGridColumnHeadersPresenter = 
-      let dummy = ()
+      open Dummy
 
     let dataGridDetailsPresenter                 values =
       StandardView<DataGridDetailsPresenter> (values) :> View
     module DataGridDetailsPresenter = 
-      let dummy = ()
+      open Dummy
 
     let dataGridRow                              values =
       StandardView<DataGridRow> (values) :> View
     module DataGridRow = 
-      let dummy = ()
+      open Dummy
       let item                                     v = SetConstantValue<_> (Properties.DataGridRow.item, v)
       let itemsPanel                               v = SetConstantValue<_> (Properties.DataGridRow.itemsPanel, v)
       let header                                   v = SetConstantValue<_> (Properties.DataGridRow.header, v)
@@ -1569,19 +1679,25 @@ module Generated =
       let isSelected                               v = SetConstantValue<_> (Properties.DataGridRow.isSelected, v)
       let isEditing                                v = SetConstantValue<_> (Properties.DataGridRow.isEditing, v)
       let isNewItem                                v = SetConstantValue<_> (Properties.DataGridRow.isNewItem, v)
+      
+      let private onSelected_r (o : System.Windows.Controls.DataGridRow) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Selected.AddHandler    (System.Windows.RoutedEventHandler h)
+      let private onSelected_u (o : System.Windows.Controls.DataGridRow) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Selected.RemoveHandler (System.Windows.RoutedEventHandler h)
+      let private onSelected_rf = onSelected_r
+      let private onSelected_uf = onSelected_u
       let onSelected                               (f : System.Windows.Controls.DataGridRow -> System.Windows.RoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.DataGridRow) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Selected.AddHandler    (System.Windows.RoutedEventHandler h)
-        let u (o : System.Windows.Controls.DataGridRow) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Selected.RemoveHandler (System.Windows.RoutedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.DataGridRow, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.DataGridRow, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onSelected_rf, onSelected_uf, f)
+      
+      let private onUnselected_r (o : System.Windows.Controls.DataGridRow) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Unselected.AddHandler    (System.Windows.RoutedEventHandler h)
+      let private onUnselected_u (o : System.Windows.Controls.DataGridRow) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Unselected.RemoveHandler (System.Windows.RoutedEventHandler h)
+      let private onUnselected_rf = onUnselected_r
+      let private onUnselected_uf = onUnselected_u
       let onUnselected                             (f : System.Windows.Controls.DataGridRow -> System.Windows.RoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.DataGridRow) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Unselected.AddHandler    (System.Windows.RoutedEventHandler h)
-        let u (o : System.Windows.Controls.DataGridRow) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Unselected.RemoveHandler (System.Windows.RoutedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.DataGridRow, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.DataGridRow, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onUnselected_rf, onUnselected_uf, f)
 
     let dataGridRowHeader                        values child =
       StandardContentView<DataGridRowHeader> (values, child) :> View
     module DataGridRowHeader = 
-      let dummy = ()
+      open Dummy
       let separatorBrush                           v = SetConstantValue<_> (Properties.DataGridRowHeader.separatorBrush, v)
       let separatorVisibility                      v = SetConstantValue<_> (Properties.DataGridRowHeader.separatorVisibility, v)
       let isRowSelected                            v = SetConstantValue<_> (Properties.DataGridRowHeader.isRowSelected, v)
@@ -1589,12 +1705,12 @@ module Generated =
     let dataGridRowsPresenter                    values children =
       StandardPanelView<DataGridRowsPresenter> (values, children) :> View
     module DataGridRowsPresenter = 
-      let dummy = ()
+      open Dummy
 
     let datePicker                               values =
       StandardView<DatePicker> (values) :> View
     module DatePicker = 
-      let dummy = ()
+      open Dummy
       let calendarStyle                            v = SetConstantValue<_> (Properties.DatePicker.calendarStyle, v)
       let displayDate                              v = SetConstantValue<_> (Properties.DatePicker.displayDate, v)
       let displayDateEnd                           v = SetConstantValue<_> (Properties.DatePicker.displayDateEnd, v)
@@ -1605,66 +1721,84 @@ module Generated =
       let selectedDate                             v = SetConstantValue<_> (Properties.DatePicker.selectedDate, v)
       let selectedDateFormat                       v = SetConstantValue<_> (Properties.DatePicker.selectedDateFormat, v)
       let text                                     v = SetConstantValue<_> (Properties.DatePicker.text, v)
+      
+      let private onCalendarClosed_r (o : System.Windows.Controls.DatePicker) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.CalendarClosed.AddHandler    (System.Windows.RoutedEventHandler h)
+      let private onCalendarClosed_u (o : System.Windows.Controls.DatePicker) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.CalendarClosed.RemoveHandler (System.Windows.RoutedEventHandler h)
+      let private onCalendarClosed_rf = onCalendarClosed_r
+      let private onCalendarClosed_uf = onCalendarClosed_u
       let onCalendarClosed                         (f : System.Windows.Controls.DatePicker -> System.Windows.RoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.DatePicker) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.CalendarClosed.AddHandler    (System.Windows.RoutedEventHandler h)
-        let u (o : System.Windows.Controls.DatePicker) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.CalendarClosed.RemoveHandler (System.Windows.RoutedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.DatePicker, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.DatePicker, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onCalendarClosed_rf, onCalendarClosed_uf, f)
+      
+      let private onCalendarOpened_r (o : System.Windows.Controls.DatePicker) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.CalendarOpened.AddHandler    (System.Windows.RoutedEventHandler h)
+      let private onCalendarOpened_u (o : System.Windows.Controls.DatePicker) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.CalendarOpened.RemoveHandler (System.Windows.RoutedEventHandler h)
+      let private onCalendarOpened_rf = onCalendarOpened_r
+      let private onCalendarOpened_uf = onCalendarOpened_u
       let onCalendarOpened                         (f : System.Windows.Controls.DatePicker -> System.Windows.RoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.DatePicker) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.CalendarOpened.AddHandler    (System.Windows.RoutedEventHandler h)
-        let u (o : System.Windows.Controls.DatePicker) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.CalendarOpened.RemoveHandler (System.Windows.RoutedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.DatePicker, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.DatePicker, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onCalendarOpened_rf, onCalendarOpened_uf, f)
+      
+      let private onDateValidationError_r (o : System.Windows.Controls.DatePicker) (h : obj -> System.Windows.Controls.DatePickerDateValidationErrorEventArgs -> unit) = o.DateValidationError.AddHandler    (System.EventHandler<System.Windows.Controls.DatePickerDateValidationErrorEventArgs> h)
+      let private onDateValidationError_u (o : System.Windows.Controls.DatePicker) (h : obj -> System.Windows.Controls.DatePickerDateValidationErrorEventArgs -> unit) = o.DateValidationError.RemoveHandler (System.EventHandler<System.Windows.Controls.DatePickerDateValidationErrorEventArgs> h)
+      let private onDateValidationError_rf = onDateValidationError_r
+      let private onDateValidationError_uf = onDateValidationError_u
       let onDateValidationError                    (f : System.Windows.Controls.DatePicker -> System.Windows.Controls.DatePickerDateValidationErrorEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.DatePicker) (h : obj -> System.Windows.Controls.DatePickerDateValidationErrorEventArgs -> unit) = o.DateValidationError.AddHandler    (System.EventHandler<System.Windows.Controls.DatePickerDateValidationErrorEventArgs> h)
-        let u (o : System.Windows.Controls.DatePicker) (h : obj -> System.Windows.Controls.DatePickerDateValidationErrorEventArgs -> unit) = o.DateValidationError.RemoveHandler (System.EventHandler<System.Windows.Controls.DatePickerDateValidationErrorEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.Controls.DatePicker, System.EventHandler<System.Windows.Controls.DatePickerDateValidationErrorEventArgs>, System.Windows.Controls.DatePickerDateValidationErrorEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.DatePicker, System.EventHandler<System.Windows.Controls.DatePickerDateValidationErrorEventArgs>, System.Windows.Controls.DatePickerDateValidationErrorEventArgs> (onDateValidationError_rf, onDateValidationError_uf, f)
+      
+      let private onSelectedDateChanged_r (o : System.Windows.Controls.DatePicker) (h : obj -> System.Windows.Controls.SelectionChangedEventArgs -> unit) = o.SelectedDateChanged.AddHandler    (System.EventHandler<System.Windows.Controls.SelectionChangedEventArgs> h)
+      let private onSelectedDateChanged_u (o : System.Windows.Controls.DatePicker) (h : obj -> System.Windows.Controls.SelectionChangedEventArgs -> unit) = o.SelectedDateChanged.RemoveHandler (System.EventHandler<System.Windows.Controls.SelectionChangedEventArgs> h)
+      let private onSelectedDateChanged_rf = onSelectedDateChanged_r
+      let private onSelectedDateChanged_uf = onSelectedDateChanged_u
       let onSelectedDateChanged                    (f : System.Windows.Controls.DatePicker -> System.Windows.Controls.SelectionChangedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.DatePicker) (h : obj -> System.Windows.Controls.SelectionChangedEventArgs -> unit) = o.SelectedDateChanged.AddHandler    (System.EventHandler<System.Windows.Controls.SelectionChangedEventArgs> h)
-        let u (o : System.Windows.Controls.DatePicker) (h : obj -> System.Windows.Controls.SelectionChangedEventArgs -> unit) = o.SelectedDateChanged.RemoveHandler (System.EventHandler<System.Windows.Controls.SelectionChangedEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.Controls.DatePicker, System.EventHandler<System.Windows.Controls.SelectionChangedEventArgs>, System.Windows.Controls.SelectionChangedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.DatePicker, System.EventHandler<System.Windows.Controls.SelectionChangedEventArgs>, System.Windows.Controls.SelectionChangedEventArgs> (onSelectedDateChanged_rf, onSelectedDateChanged_uf, f)
 
     let datePickerTextBox                        values =
       StandardView<DatePickerTextBox> (values) :> View
     module DatePickerTextBox = 
-      let dummy = ()
+      open Dummy
 
     let decorator                                values =
       StandardView<Decorator> (values) :> View
     module Decorator = 
-      let dummy = ()
+      open Dummy
 
     let dockPanel                                values children =
       StandardPanelView<DockPanel> (values, children) :> View
     module DockPanel = 
-      let dummy = ()
+      open Dummy
       let lastChildFill                            v = SetConstantValue<_> (Properties.DockPanel.lastChildFill, v)
       let dock                                     v = SetConstantValue<_> (Properties.DockPanel.dock, v)
 
     let documentPageView                         values =
       StandardView<DocumentPageView> (values) :> View
     module DocumentPageView = 
-      let dummy = ()
+      open Dummy
       let pageNumber                               v = SetConstantValue<_> (Properties.DocumentPageView.pageNumber, v)
       let stretch                                  v = SetConstantValue<_> (Properties.DocumentPageView.stretch, v)
       let stretchDirection                         v = SetConstantValue<_> (Properties.DocumentPageView.stretchDirection, v)
+      
+      let private onPageConnected_r (o : System.Windows.Controls.Primitives.DocumentPageView) (h : obj -> System.EventArgs -> unit) = o.PageConnected.AddHandler    (System.EventHandler h)
+      let private onPageConnected_u (o : System.Windows.Controls.Primitives.DocumentPageView) (h : obj -> System.EventArgs -> unit) = o.PageConnected.RemoveHandler (System.EventHandler h)
+      let private onPageConnected_rf = onPageConnected_r
+      let private onPageConnected_uf = onPageConnected_u
       let onPageConnected                          (f : System.Windows.Controls.Primitives.DocumentPageView -> System.EventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.Primitives.DocumentPageView) (h : obj -> System.EventArgs -> unit) = o.PageConnected.AddHandler    (System.EventHandler h)
-        let u (o : System.Windows.Controls.Primitives.DocumentPageView) (h : obj -> System.EventArgs -> unit) = o.PageConnected.RemoveHandler (System.EventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.Primitives.DocumentPageView, System.EventHandler, System.EventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.Primitives.DocumentPageView, System.EventHandler, System.EventArgs> (onPageConnected_rf, onPageConnected_uf, f)
+      
+      let private onPageDisconnected_r (o : System.Windows.Controls.Primitives.DocumentPageView) (h : obj -> System.EventArgs -> unit) = o.PageDisconnected.AddHandler    (System.EventHandler h)
+      let private onPageDisconnected_u (o : System.Windows.Controls.Primitives.DocumentPageView) (h : obj -> System.EventArgs -> unit) = o.PageDisconnected.RemoveHandler (System.EventHandler h)
+      let private onPageDisconnected_rf = onPageDisconnected_r
+      let private onPageDisconnected_uf = onPageDisconnected_u
       let onPageDisconnected                       (f : System.Windows.Controls.Primitives.DocumentPageView -> System.EventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.Primitives.DocumentPageView) (h : obj -> System.EventArgs -> unit) = o.PageDisconnected.AddHandler    (System.EventHandler h)
-        let u (o : System.Windows.Controls.Primitives.DocumentPageView) (h : obj -> System.EventArgs -> unit) = o.PageDisconnected.RemoveHandler (System.EventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.Primitives.DocumentPageView, System.EventHandler, System.EventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.Primitives.DocumentPageView, System.EventHandler, System.EventArgs> (onPageDisconnected_rf, onPageDisconnected_uf, f)
 
     let documentReference                        values =
       StandardView<DocumentReference> (values) :> View
     module DocumentReference = 
-      let dummy = ()
+      open Dummy
       let source                                   v = SetConstantValue<_> (Properties.DocumentReference.source, v)
 
     let documentViewer                           values =
       StandardView<DocumentViewer> (values) :> View
     module DocumentViewer = 
-      let dummy = ()
+      open Dummy
       let horizontalOffset                         v = SetConstantValue<_> (Properties.DocumentViewer.horizontalOffset, v)
       let verticalOffset                           v = SetConstantValue<_> (Properties.DocumentViewer.verticalOffset, v)
       let extentWidth                              v = SetConstantValue<_> (Properties.DocumentViewer.extentWidth, v)
@@ -1684,42 +1818,51 @@ module Generated =
       let canDecreaseZoom                          v = SetConstantValue<_> (Properties.DocumentViewer.canDecreaseZoom, v)
 
     module DocumentViewerBase = 
-      let dummy = ()
+      open Dummy
       let document                                 v = SetConstantValue<_> (Properties.DocumentViewerBase.document, v)
       let pageCount                                v = SetConstantValue<_> (Properties.DocumentViewerBase.pageCount, v)
       let masterPageNumber                         v = SetConstantValue<_> (Properties.DocumentViewerBase.masterPageNumber, v)
       let canGoToPreviousPage                      v = SetConstantValue<_> (Properties.DocumentViewerBase.canGoToPreviousPage, v)
       let canGoToNextPage                          v = SetConstantValue<_> (Properties.DocumentViewerBase.canGoToNextPage, v)
       let isMasterPage                             v = SetConstantValue<_> (Properties.DocumentViewerBase.isMasterPage, v)
+      
+      let private onPageViewsChanged_r (o : System.Windows.Controls.Primitives.DocumentViewerBase) (h : obj -> System.EventArgs -> unit) = o.PageViewsChanged.AddHandler    (System.EventHandler h)
+      let private onPageViewsChanged_u (o : System.Windows.Controls.Primitives.DocumentViewerBase) (h : obj -> System.EventArgs -> unit) = o.PageViewsChanged.RemoveHandler (System.EventHandler h)
+      let private onPageViewsChanged_rf = onPageViewsChanged_r
+      let private onPageViewsChanged_uf = onPageViewsChanged_u
       let onPageViewsChanged                       (f : System.Windows.Controls.Primitives.DocumentViewerBase -> System.EventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.Primitives.DocumentViewerBase) (h : obj -> System.EventArgs -> unit) = o.PageViewsChanged.AddHandler    (System.EventHandler h)
-        let u (o : System.Windows.Controls.Primitives.DocumentViewerBase) (h : obj -> System.EventArgs -> unit) = o.PageViewsChanged.RemoveHandler (System.EventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.Primitives.DocumentViewerBase, System.EventHandler, System.EventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.Primitives.DocumentViewerBase, System.EventHandler, System.EventArgs> (onPageViewsChanged_rf, onPageViewsChanged_uf, f)
 
     let ellipse                                  values =
       StandardView<Ellipse> (values) :> View
     module Ellipse = 
-      let dummy = ()
+      open Dummy
 
     let expander                                 values child =
       StandardContentView<Expander> (values, child) :> View
     module Expander = 
-      let dummy = ()
+      open Dummy
       let expandDirection                          v = SetConstantValue<_> (Properties.Expander.expandDirection, v)
       let isExpanded                               v = SetConstantValue<_> (Properties.Expander.isExpanded, v)
+      
+      let private onExpanded_r (o : System.Windows.Controls.Expander) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Expanded.AddHandler    (System.Windows.RoutedEventHandler h)
+      let private onExpanded_u (o : System.Windows.Controls.Expander) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Expanded.RemoveHandler (System.Windows.RoutedEventHandler h)
+      let private onExpanded_rf = onExpanded_r
+      let private onExpanded_uf = onExpanded_u
       let onExpanded                               (f : System.Windows.Controls.Expander -> System.Windows.RoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.Expander) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Expanded.AddHandler    (System.Windows.RoutedEventHandler h)
-        let u (o : System.Windows.Controls.Expander) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Expanded.RemoveHandler (System.Windows.RoutedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.Expander, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.Expander, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onExpanded_rf, onExpanded_uf, f)
+      
+      let private onCollapsed_r (o : System.Windows.Controls.Expander) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Collapsed.AddHandler    (System.Windows.RoutedEventHandler h)
+      let private onCollapsed_u (o : System.Windows.Controls.Expander) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Collapsed.RemoveHandler (System.Windows.RoutedEventHandler h)
+      let private onCollapsed_rf = onCollapsed_r
+      let private onCollapsed_uf = onCollapsed_u
       let onCollapsed                              (f : System.Windows.Controls.Expander -> System.Windows.RoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.Expander) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Collapsed.AddHandler    (System.Windows.RoutedEventHandler h)
-        let u (o : System.Windows.Controls.Expander) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Collapsed.RemoveHandler (System.Windows.RoutedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.Expander, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.Expander, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onCollapsed_rf, onCollapsed_uf, f)
 
     let fixedPage                                values =
       StandardView<FixedPage> (values) :> View
     module FixedPage = 
-      let dummy = ()
+      open Dummy
       let printTicket                              v = SetConstantValue<_> (Properties.FixedPage.printTicket, v)
       let background                               v = SetConstantValue<_> (Properties.FixedPage.background, v)
       let left                                     v = SetConstantValue<_> (Properties.FixedPage.left, v)
@@ -1733,7 +1876,7 @@ module Generated =
     let flowDocumentPageViewer                   values =
       StandardView<FlowDocumentPageViewer> (values) :> View
     module FlowDocumentPageViewer = 
-      let dummy = ()
+      open Dummy
       let zoom                                     v = SetConstantValue<_> (Properties.FlowDocumentPageViewer.zoom, v)
       let maxZoom                                  v = SetConstantValue<_> (Properties.FlowDocumentPageViewer.maxZoom, v)
       let minZoom                                  v = SetConstantValue<_> (Properties.FlowDocumentPageViewer.minZoom, v)
@@ -1748,7 +1891,7 @@ module Generated =
     let flowDocumentReader                       values =
       StandardView<FlowDocumentReader> (values) :> View
     module FlowDocumentReader = 
-      let dummy = ()
+      open Dummy
       let viewingMode                              v = SetConstantValue<_> (Properties.FlowDocumentReader.viewingMode, v)
       let isPageViewEnabled                        v = SetConstantValue<_> (Properties.FlowDocumentReader.isPageViewEnabled, v)
       let isTwoPageViewEnabled                     v = SetConstantValue<_> (Properties.FlowDocumentReader.isTwoPageViewEnabled, v)
@@ -1774,7 +1917,7 @@ module Generated =
     let flowDocumentScrollViewer                 values =
       StandardView<FlowDocumentScrollViewer> (values) :> View
     module FlowDocumentScrollViewer = 
-      let dummy = ()
+      open Dummy
       let document                                 v = SetConstantValue<_> (Properties.FlowDocumentScrollViewer.document, v)
       let zoom                                     v = SetConstantValue<_> (Properties.FlowDocumentScrollViewer.zoom, v)
       let maxZoom                                  v = SetConstantValue<_> (Properties.FlowDocumentScrollViewer.maxZoom, v)
@@ -1794,7 +1937,7 @@ module Generated =
     let frame                                    values child =
       StandardContentView<Frame> (values, child) :> View
     module Frame = 
-      let dummy = ()
+      open Dummy
       let source                                   v = SetConstantValue<_> (Properties.Frame.source, v)
       let canGoBack                                v = SetConstantValue<_> (Properties.Frame.canGoBack, v)
       let canGoForward                             v = SetConstantValue<_> (Properties.Frame.canGoForward, v)
@@ -1803,43 +1946,67 @@ module Generated =
       let navigationUIVisibility                   v = SetConstantValue<_> (Properties.Frame.navigationUIVisibility, v)
       let sandboxExternalContent                   v = SetConstantValue<_> (Properties.Frame.sandboxExternalContent, v)
       let journalOwnership                         v = SetConstantValue<_> (Properties.Frame.journalOwnership, v)
+      
+      let private onContentRendered_r (o : System.Windows.Controls.Frame) (h : obj -> System.EventArgs -> unit) = o.ContentRendered.AddHandler    (System.EventHandler h)
+      let private onContentRendered_u (o : System.Windows.Controls.Frame) (h : obj -> System.EventArgs -> unit) = o.ContentRendered.RemoveHandler (System.EventHandler h)
+      let private onContentRendered_rf = onContentRendered_r
+      let private onContentRendered_uf = onContentRendered_u
       let onContentRendered                        (f : System.Windows.Controls.Frame -> System.EventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.Frame) (h : obj -> System.EventArgs -> unit) = o.ContentRendered.AddHandler    (System.EventHandler h)
-        let u (o : System.Windows.Controls.Frame) (h : obj -> System.EventArgs -> unit) = o.ContentRendered.RemoveHandler (System.EventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.Frame, System.EventHandler, System.EventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.Frame, System.EventHandler, System.EventArgs> (onContentRendered_rf, onContentRendered_uf, f)
+      
+      let private onNavigating_r (o : System.Windows.Controls.Frame) (h : obj -> System.Windows.Navigation.NavigatingCancelEventArgs -> unit) = o.Navigating.AddHandler    (System.Windows.Navigation.NavigatingCancelEventHandler h)
+      let private onNavigating_u (o : System.Windows.Controls.Frame) (h : obj -> System.Windows.Navigation.NavigatingCancelEventArgs -> unit) = o.Navigating.RemoveHandler (System.Windows.Navigation.NavigatingCancelEventHandler h)
+      let private onNavigating_rf = onNavigating_r
+      let private onNavigating_uf = onNavigating_u
       let onNavigating                             (f : System.Windows.Controls.Frame -> System.Windows.Navigation.NavigatingCancelEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.Frame) (h : obj -> System.Windows.Navigation.NavigatingCancelEventArgs -> unit) = o.Navigating.AddHandler    (System.Windows.Navigation.NavigatingCancelEventHandler h)
-        let u (o : System.Windows.Controls.Frame) (h : obj -> System.Windows.Navigation.NavigatingCancelEventArgs -> unit) = o.Navigating.RemoveHandler (System.Windows.Navigation.NavigatingCancelEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.Frame, System.Windows.Navigation.NavigatingCancelEventHandler, System.Windows.Navigation.NavigatingCancelEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.Frame, System.Windows.Navigation.NavigatingCancelEventHandler, System.Windows.Navigation.NavigatingCancelEventArgs> (onNavigating_rf, onNavigating_uf, f)
+      
+      let private onNavigationProgress_r (o : System.Windows.Controls.Frame) (h : obj -> System.Windows.Navigation.NavigationProgressEventArgs -> unit) = o.NavigationProgress.AddHandler    (System.Windows.Navigation.NavigationProgressEventHandler h)
+      let private onNavigationProgress_u (o : System.Windows.Controls.Frame) (h : obj -> System.Windows.Navigation.NavigationProgressEventArgs -> unit) = o.NavigationProgress.RemoveHandler (System.Windows.Navigation.NavigationProgressEventHandler h)
+      let private onNavigationProgress_rf = onNavigationProgress_r
+      let private onNavigationProgress_uf = onNavigationProgress_u
       let onNavigationProgress                     (f : System.Windows.Controls.Frame -> System.Windows.Navigation.NavigationProgressEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.Frame) (h : obj -> System.Windows.Navigation.NavigationProgressEventArgs -> unit) = o.NavigationProgress.AddHandler    (System.Windows.Navigation.NavigationProgressEventHandler h)
-        let u (o : System.Windows.Controls.Frame) (h : obj -> System.Windows.Navigation.NavigationProgressEventArgs -> unit) = o.NavigationProgress.RemoveHandler (System.Windows.Navigation.NavigationProgressEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.Frame, System.Windows.Navigation.NavigationProgressEventHandler, System.Windows.Navigation.NavigationProgressEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.Frame, System.Windows.Navigation.NavigationProgressEventHandler, System.Windows.Navigation.NavigationProgressEventArgs> (onNavigationProgress_rf, onNavigationProgress_uf, f)
+      
+      let private onNavigationFailed_r (o : System.Windows.Controls.Frame) (h : obj -> System.Windows.Navigation.NavigationFailedEventArgs -> unit) = o.NavigationFailed.AddHandler    (System.Windows.Navigation.NavigationFailedEventHandler h)
+      let private onNavigationFailed_u (o : System.Windows.Controls.Frame) (h : obj -> System.Windows.Navigation.NavigationFailedEventArgs -> unit) = o.NavigationFailed.RemoveHandler (System.Windows.Navigation.NavigationFailedEventHandler h)
+      let private onNavigationFailed_rf = onNavigationFailed_r
+      let private onNavigationFailed_uf = onNavigationFailed_u
       let onNavigationFailed                       (f : System.Windows.Controls.Frame -> System.Windows.Navigation.NavigationFailedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.Frame) (h : obj -> System.Windows.Navigation.NavigationFailedEventArgs -> unit) = o.NavigationFailed.AddHandler    (System.Windows.Navigation.NavigationFailedEventHandler h)
-        let u (o : System.Windows.Controls.Frame) (h : obj -> System.Windows.Navigation.NavigationFailedEventArgs -> unit) = o.NavigationFailed.RemoveHandler (System.Windows.Navigation.NavigationFailedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.Frame, System.Windows.Navigation.NavigationFailedEventHandler, System.Windows.Navigation.NavigationFailedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.Frame, System.Windows.Navigation.NavigationFailedEventHandler, System.Windows.Navigation.NavigationFailedEventArgs> (onNavigationFailed_rf, onNavigationFailed_uf, f)
+      
+      let private onNavigated_r (o : System.Windows.Controls.Frame) (h : obj -> System.Windows.Navigation.NavigationEventArgs -> unit) = o.Navigated.AddHandler    (System.Windows.Navigation.NavigatedEventHandler h)
+      let private onNavigated_u (o : System.Windows.Controls.Frame) (h : obj -> System.Windows.Navigation.NavigationEventArgs -> unit) = o.Navigated.RemoveHandler (System.Windows.Navigation.NavigatedEventHandler h)
+      let private onNavigated_rf = onNavigated_r
+      let private onNavigated_uf = onNavigated_u
       let onNavigated                              (f : System.Windows.Controls.Frame -> System.Windows.Navigation.NavigationEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.Frame) (h : obj -> System.Windows.Navigation.NavigationEventArgs -> unit) = o.Navigated.AddHandler    (System.Windows.Navigation.NavigatedEventHandler h)
-        let u (o : System.Windows.Controls.Frame) (h : obj -> System.Windows.Navigation.NavigationEventArgs -> unit) = o.Navigated.RemoveHandler (System.Windows.Navigation.NavigatedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.Frame, System.Windows.Navigation.NavigatedEventHandler, System.Windows.Navigation.NavigationEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.Frame, System.Windows.Navigation.NavigatedEventHandler, System.Windows.Navigation.NavigationEventArgs> (onNavigated_rf, onNavigated_uf, f)
+      
+      let private onLoadCompleted_r (o : System.Windows.Controls.Frame) (h : obj -> System.Windows.Navigation.NavigationEventArgs -> unit) = o.LoadCompleted.AddHandler    (System.Windows.Navigation.LoadCompletedEventHandler h)
+      let private onLoadCompleted_u (o : System.Windows.Controls.Frame) (h : obj -> System.Windows.Navigation.NavigationEventArgs -> unit) = o.LoadCompleted.RemoveHandler (System.Windows.Navigation.LoadCompletedEventHandler h)
+      let private onLoadCompleted_rf = onLoadCompleted_r
+      let private onLoadCompleted_uf = onLoadCompleted_u
       let onLoadCompleted                          (f : System.Windows.Controls.Frame -> System.Windows.Navigation.NavigationEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.Frame) (h : obj -> System.Windows.Navigation.NavigationEventArgs -> unit) = o.LoadCompleted.AddHandler    (System.Windows.Navigation.LoadCompletedEventHandler h)
-        let u (o : System.Windows.Controls.Frame) (h : obj -> System.Windows.Navigation.NavigationEventArgs -> unit) = o.LoadCompleted.RemoveHandler (System.Windows.Navigation.LoadCompletedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.Frame, System.Windows.Navigation.LoadCompletedEventHandler, System.Windows.Navigation.NavigationEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.Frame, System.Windows.Navigation.LoadCompletedEventHandler, System.Windows.Navigation.NavigationEventArgs> (onLoadCompleted_rf, onLoadCompleted_uf, f)
+      
+      let private onNavigationStopped_r (o : System.Windows.Controls.Frame) (h : obj -> System.Windows.Navigation.NavigationEventArgs -> unit) = o.NavigationStopped.AddHandler    (System.Windows.Navigation.NavigationStoppedEventHandler h)
+      let private onNavigationStopped_u (o : System.Windows.Controls.Frame) (h : obj -> System.Windows.Navigation.NavigationEventArgs -> unit) = o.NavigationStopped.RemoveHandler (System.Windows.Navigation.NavigationStoppedEventHandler h)
+      let private onNavigationStopped_rf = onNavigationStopped_r
+      let private onNavigationStopped_uf = onNavigationStopped_u
       let onNavigationStopped                      (f : System.Windows.Controls.Frame -> System.Windows.Navigation.NavigationEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.Frame) (h : obj -> System.Windows.Navigation.NavigationEventArgs -> unit) = o.NavigationStopped.AddHandler    (System.Windows.Navigation.NavigationStoppedEventHandler h)
-        let u (o : System.Windows.Controls.Frame) (h : obj -> System.Windows.Navigation.NavigationEventArgs -> unit) = o.NavigationStopped.RemoveHandler (System.Windows.Navigation.NavigationStoppedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.Frame, System.Windows.Navigation.NavigationStoppedEventHandler, System.Windows.Navigation.NavigationEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.Frame, System.Windows.Navigation.NavigationStoppedEventHandler, System.Windows.Navigation.NavigationEventArgs> (onNavigationStopped_rf, onNavigationStopped_uf, f)
+      
+      let private onFragmentNavigation_r (o : System.Windows.Controls.Frame) (h : obj -> System.Windows.Navigation.FragmentNavigationEventArgs -> unit) = o.FragmentNavigation.AddHandler    (System.Windows.Navigation.FragmentNavigationEventHandler h)
+      let private onFragmentNavigation_u (o : System.Windows.Controls.Frame) (h : obj -> System.Windows.Navigation.FragmentNavigationEventArgs -> unit) = o.FragmentNavigation.RemoveHandler (System.Windows.Navigation.FragmentNavigationEventHandler h)
+      let private onFragmentNavigation_rf = onFragmentNavigation_r
+      let private onFragmentNavigation_uf = onFragmentNavigation_u
       let onFragmentNavigation                     (f : System.Windows.Controls.Frame -> System.Windows.Navigation.FragmentNavigationEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.Frame) (h : obj -> System.Windows.Navigation.FragmentNavigationEventArgs -> unit) = o.FragmentNavigation.AddHandler    (System.Windows.Navigation.FragmentNavigationEventHandler h)
-        let u (o : System.Windows.Controls.Frame) (h : obj -> System.Windows.Navigation.FragmentNavigationEventArgs -> unit) = o.FragmentNavigation.RemoveHandler (System.Windows.Navigation.FragmentNavigationEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.Frame, System.Windows.Navigation.FragmentNavigationEventHandler, System.Windows.Navigation.FragmentNavigationEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.Frame, System.Windows.Navigation.FragmentNavigationEventHandler, System.Windows.Navigation.FragmentNavigationEventArgs> (onFragmentNavigation_rf, onFragmentNavigation_uf, f)
 
     let frameworkElement                         values =
       StandardView<FrameworkElement> (values) :> View
     module FrameworkElement = 
-      let dummy = ()
+      open Dummy
       let style                                    v = SetConstantValue<_> (Properties.FrameworkElement.style, v)
       let overridesDefaultStyle                    v = SetConstantValue<_> (Properties.FrameworkElement.overridesDefaultStyle, v)
       let useLayoutRounding                        v = SetConstantValue<_> (Properties.FrameworkElement.useLayoutRounding, v)
@@ -1867,59 +2034,95 @@ module Generated =
       let forceCursor                              v = SetConstantValue<_> (Properties.FrameworkElement.forceCursor, v)
       let toolTip                                  v = SetConstantValue<_> (Properties.FrameworkElement.toolTip, v)
       let contextMenu                              v = SetConstantValue<_> (Properties.FrameworkElement.contextMenu, v)
+      
+      let private onTargetUpdated_r (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.Data.DataTransferEventArgs -> unit) = o.TargetUpdated.AddHandler    (System.EventHandler<System.Windows.Data.DataTransferEventArgs> h)
+      let private onTargetUpdated_u (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.Data.DataTransferEventArgs -> unit) = o.TargetUpdated.RemoveHandler (System.EventHandler<System.Windows.Data.DataTransferEventArgs> h)
+      let private onTargetUpdated_rf = onTargetUpdated_r
+      let private onTargetUpdated_uf = onTargetUpdated_u
       let onTargetUpdated                          (f : System.Windows.FrameworkElement -> System.Windows.Data.DataTransferEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.Data.DataTransferEventArgs -> unit) = o.TargetUpdated.AddHandler    (System.EventHandler<System.Windows.Data.DataTransferEventArgs> h)
-        let u (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.Data.DataTransferEventArgs -> unit) = o.TargetUpdated.RemoveHandler (System.EventHandler<System.Windows.Data.DataTransferEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.FrameworkElement, System.EventHandler<System.Windows.Data.DataTransferEventArgs>, System.Windows.Data.DataTransferEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.FrameworkElement, System.EventHandler<System.Windows.Data.DataTransferEventArgs>, System.Windows.Data.DataTransferEventArgs> (onTargetUpdated_rf, onTargetUpdated_uf, f)
+      
+      let private onSourceUpdated_r (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.Data.DataTransferEventArgs -> unit) = o.SourceUpdated.AddHandler    (System.EventHandler<System.Windows.Data.DataTransferEventArgs> h)
+      let private onSourceUpdated_u (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.Data.DataTransferEventArgs -> unit) = o.SourceUpdated.RemoveHandler (System.EventHandler<System.Windows.Data.DataTransferEventArgs> h)
+      let private onSourceUpdated_rf = onSourceUpdated_r
+      let private onSourceUpdated_uf = onSourceUpdated_u
       let onSourceUpdated                          (f : System.Windows.FrameworkElement -> System.Windows.Data.DataTransferEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.Data.DataTransferEventArgs -> unit) = o.SourceUpdated.AddHandler    (System.EventHandler<System.Windows.Data.DataTransferEventArgs> h)
-        let u (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.Data.DataTransferEventArgs -> unit) = o.SourceUpdated.RemoveHandler (System.EventHandler<System.Windows.Data.DataTransferEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.FrameworkElement, System.EventHandler<System.Windows.Data.DataTransferEventArgs>, System.Windows.Data.DataTransferEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.FrameworkElement, System.EventHandler<System.Windows.Data.DataTransferEventArgs>, System.Windows.Data.DataTransferEventArgs> (onSourceUpdated_rf, onSourceUpdated_uf, f)
+      
+      let private onDataContextChanged_r (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.DataContextChanged.AddHandler    (System.Windows.DependencyPropertyChangedEventHandler h)
+      let private onDataContextChanged_u (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.DataContextChanged.RemoveHandler (System.Windows.DependencyPropertyChangedEventHandler h)
+      let private onDataContextChanged_rf = onDataContextChanged_r
+      let private onDataContextChanged_uf = onDataContextChanged_u
       let onDataContextChanged                     (f : System.Windows.FrameworkElement -> System.Windows.DependencyPropertyChangedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.DataContextChanged.AddHandler    (System.Windows.DependencyPropertyChangedEventHandler h)
-        let u (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.DataContextChanged.RemoveHandler (System.Windows.DependencyPropertyChangedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.FrameworkElement, System.Windows.DependencyPropertyChangedEventHandler, System.Windows.DependencyPropertyChangedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.FrameworkElement, System.Windows.DependencyPropertyChangedEventHandler, System.Windows.DependencyPropertyChangedEventArgs> (onDataContextChanged_rf, onDataContextChanged_uf, f)
+      
+      let private onRequestBringIntoView_r (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.RequestBringIntoViewEventArgs -> unit) = o.RequestBringIntoView.AddHandler    (System.Windows.RequestBringIntoViewEventHandler h)
+      let private onRequestBringIntoView_u (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.RequestBringIntoViewEventArgs -> unit) = o.RequestBringIntoView.RemoveHandler (System.Windows.RequestBringIntoViewEventHandler h)
+      let private onRequestBringIntoView_rf = onRequestBringIntoView_r
+      let private onRequestBringIntoView_uf = onRequestBringIntoView_u
       let onRequestBringIntoView                   (f : System.Windows.FrameworkElement -> System.Windows.RequestBringIntoViewEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.RequestBringIntoViewEventArgs -> unit) = o.RequestBringIntoView.AddHandler    (System.Windows.RequestBringIntoViewEventHandler h)
-        let u (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.RequestBringIntoViewEventArgs -> unit) = o.RequestBringIntoView.RemoveHandler (System.Windows.RequestBringIntoViewEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.FrameworkElement, System.Windows.RequestBringIntoViewEventHandler, System.Windows.RequestBringIntoViewEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.FrameworkElement, System.Windows.RequestBringIntoViewEventHandler, System.Windows.RequestBringIntoViewEventArgs> (onRequestBringIntoView_rf, onRequestBringIntoView_uf, f)
+      
+      let private onSizeChanged_r (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.SizeChangedEventArgs -> unit) = o.SizeChanged.AddHandler    (System.Windows.SizeChangedEventHandler h)
+      let private onSizeChanged_u (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.SizeChangedEventArgs -> unit) = o.SizeChanged.RemoveHandler (System.Windows.SizeChangedEventHandler h)
+      let private onSizeChanged_rf = onSizeChanged_r
+      let private onSizeChanged_uf = onSizeChanged_u
       let onSizeChanged                            (f : System.Windows.FrameworkElement -> System.Windows.SizeChangedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.SizeChangedEventArgs -> unit) = o.SizeChanged.AddHandler    (System.Windows.SizeChangedEventHandler h)
-        let u (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.SizeChangedEventArgs -> unit) = o.SizeChanged.RemoveHandler (System.Windows.SizeChangedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.FrameworkElement, System.Windows.SizeChangedEventHandler, System.Windows.SizeChangedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.FrameworkElement, System.Windows.SizeChangedEventHandler, System.Windows.SizeChangedEventArgs> (onSizeChanged_rf, onSizeChanged_uf, f)
+      
+      let private onInitialized_r (o : System.Windows.FrameworkElement) (h : obj -> System.EventArgs -> unit) = o.Initialized.AddHandler    (System.EventHandler h)
+      let private onInitialized_u (o : System.Windows.FrameworkElement) (h : obj -> System.EventArgs -> unit) = o.Initialized.RemoveHandler (System.EventHandler h)
+      let private onInitialized_rf = onInitialized_r
+      let private onInitialized_uf = onInitialized_u
       let onInitialized                            (f : System.Windows.FrameworkElement -> System.EventArgs-> 'TMessage) = 
-        let r (o : System.Windows.FrameworkElement) (h : obj -> System.EventArgs -> unit) = o.Initialized.AddHandler    (System.EventHandler h)
-        let u (o : System.Windows.FrameworkElement) (h : obj -> System.EventArgs -> unit) = o.Initialized.RemoveHandler (System.EventHandler h)
-        OnChangedValue<'TMessage, System.Windows.FrameworkElement, System.EventHandler, System.EventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.FrameworkElement, System.EventHandler, System.EventArgs> (onInitialized_rf, onInitialized_uf, f)
+      
+      let private onLoaded_r (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Loaded.AddHandler    (System.Windows.RoutedEventHandler h)
+      let private onLoaded_u (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Loaded.RemoveHandler (System.Windows.RoutedEventHandler h)
+      let private onLoaded_rf = onLoaded_r
+      let private onLoaded_uf = onLoaded_u
       let onLoaded                                 (f : System.Windows.FrameworkElement -> System.Windows.RoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Loaded.AddHandler    (System.Windows.RoutedEventHandler h)
-        let u (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Loaded.RemoveHandler (System.Windows.RoutedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.FrameworkElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.FrameworkElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onLoaded_rf, onLoaded_uf, f)
+      
+      let private onUnloaded_r (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Unloaded.AddHandler    (System.Windows.RoutedEventHandler h)
+      let private onUnloaded_u (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Unloaded.RemoveHandler (System.Windows.RoutedEventHandler h)
+      let private onUnloaded_rf = onUnloaded_r
+      let private onUnloaded_uf = onUnloaded_u
       let onUnloaded                               (f : System.Windows.FrameworkElement -> System.Windows.RoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Unloaded.AddHandler    (System.Windows.RoutedEventHandler h)
-        let u (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Unloaded.RemoveHandler (System.Windows.RoutedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.FrameworkElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.FrameworkElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onUnloaded_rf, onUnloaded_uf, f)
+      
+      let private onToolTipOpening_r (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.Controls.ToolTipEventArgs -> unit) = o.ToolTipOpening.AddHandler    (System.Windows.Controls.ToolTipEventHandler h)
+      let private onToolTipOpening_u (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.Controls.ToolTipEventArgs -> unit) = o.ToolTipOpening.RemoveHandler (System.Windows.Controls.ToolTipEventHandler h)
+      let private onToolTipOpening_rf = onToolTipOpening_r
+      let private onToolTipOpening_uf = onToolTipOpening_u
       let onToolTipOpening                         (f : System.Windows.FrameworkElement -> System.Windows.Controls.ToolTipEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.Controls.ToolTipEventArgs -> unit) = o.ToolTipOpening.AddHandler    (System.Windows.Controls.ToolTipEventHandler h)
-        let u (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.Controls.ToolTipEventArgs -> unit) = o.ToolTipOpening.RemoveHandler (System.Windows.Controls.ToolTipEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.FrameworkElement, System.Windows.Controls.ToolTipEventHandler, System.Windows.Controls.ToolTipEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.FrameworkElement, System.Windows.Controls.ToolTipEventHandler, System.Windows.Controls.ToolTipEventArgs> (onToolTipOpening_rf, onToolTipOpening_uf, f)
+      
+      let private onToolTipClosing_r (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.Controls.ToolTipEventArgs -> unit) = o.ToolTipClosing.AddHandler    (System.Windows.Controls.ToolTipEventHandler h)
+      let private onToolTipClosing_u (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.Controls.ToolTipEventArgs -> unit) = o.ToolTipClosing.RemoveHandler (System.Windows.Controls.ToolTipEventHandler h)
+      let private onToolTipClosing_rf = onToolTipClosing_r
+      let private onToolTipClosing_uf = onToolTipClosing_u
       let onToolTipClosing                         (f : System.Windows.FrameworkElement -> System.Windows.Controls.ToolTipEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.Controls.ToolTipEventArgs -> unit) = o.ToolTipClosing.AddHandler    (System.Windows.Controls.ToolTipEventHandler h)
-        let u (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.Controls.ToolTipEventArgs -> unit) = o.ToolTipClosing.RemoveHandler (System.Windows.Controls.ToolTipEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.FrameworkElement, System.Windows.Controls.ToolTipEventHandler, System.Windows.Controls.ToolTipEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.FrameworkElement, System.Windows.Controls.ToolTipEventHandler, System.Windows.Controls.ToolTipEventArgs> (onToolTipClosing_rf, onToolTipClosing_uf, f)
+      
+      let private onContextMenuOpening_r (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.Controls.ContextMenuEventArgs -> unit) = o.ContextMenuOpening.AddHandler    (System.Windows.Controls.ContextMenuEventHandler h)
+      let private onContextMenuOpening_u (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.Controls.ContextMenuEventArgs -> unit) = o.ContextMenuOpening.RemoveHandler (System.Windows.Controls.ContextMenuEventHandler h)
+      let private onContextMenuOpening_rf = onContextMenuOpening_r
+      let private onContextMenuOpening_uf = onContextMenuOpening_u
       let onContextMenuOpening                     (f : System.Windows.FrameworkElement -> System.Windows.Controls.ContextMenuEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.Controls.ContextMenuEventArgs -> unit) = o.ContextMenuOpening.AddHandler    (System.Windows.Controls.ContextMenuEventHandler h)
-        let u (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.Controls.ContextMenuEventArgs -> unit) = o.ContextMenuOpening.RemoveHandler (System.Windows.Controls.ContextMenuEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.FrameworkElement, System.Windows.Controls.ContextMenuEventHandler, System.Windows.Controls.ContextMenuEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.FrameworkElement, System.Windows.Controls.ContextMenuEventHandler, System.Windows.Controls.ContextMenuEventArgs> (onContextMenuOpening_rf, onContextMenuOpening_uf, f)
+      
+      let private onContextMenuClosing_r (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.Controls.ContextMenuEventArgs -> unit) = o.ContextMenuClosing.AddHandler    (System.Windows.Controls.ContextMenuEventHandler h)
+      let private onContextMenuClosing_u (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.Controls.ContextMenuEventArgs -> unit) = o.ContextMenuClosing.RemoveHandler (System.Windows.Controls.ContextMenuEventHandler h)
+      let private onContextMenuClosing_rf = onContextMenuClosing_r
+      let private onContextMenuClosing_uf = onContextMenuClosing_u
       let onContextMenuClosing                     (f : System.Windows.FrameworkElement -> System.Windows.Controls.ContextMenuEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.Controls.ContextMenuEventArgs -> unit) = o.ContextMenuClosing.AddHandler    (System.Windows.Controls.ContextMenuEventHandler h)
-        let u (o : System.Windows.FrameworkElement) (h : obj -> System.Windows.Controls.ContextMenuEventArgs -> unit) = o.ContextMenuClosing.RemoveHandler (System.Windows.Controls.ContextMenuEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.FrameworkElement, System.Windows.Controls.ContextMenuEventHandler, System.Windows.Controls.ContextMenuEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.FrameworkElement, System.Windows.Controls.ContextMenuEventHandler, System.Windows.Controls.ContextMenuEventArgs> (onContextMenuClosing_rf, onContextMenuClosing_uf, f)
 
     let glyphs                                   values =
       StandardView<Glyphs> (values) :> View
     module Glyphs = 
-      let dummy = ()
+      open Dummy
       let fill                                     v = SetConstantValue<_> (Properties.Glyphs.fill, v)
       let indices                                  v = SetConstantValue<_> (Properties.Glyphs.indices, v)
       let unicodeString                            v = SetConstantValue<_> (Properties.Glyphs.unicodeString, v)
@@ -1936,7 +2139,7 @@ module Generated =
     let grid                                     values children =
       StandardPanelView<Grid> (values, children) :> View
     module Grid = 
-      let dummy = ()
+      open Dummy
       let showGridLines                            v = SetConstantValue<_> (Properties.Grid.showGridLines, v)
       let column                                   v = SetConstantValue<_> (Properties.Grid.column, v)
       let row                                      v = SetConstantValue<_> (Properties.Grid.row, v)
@@ -1947,7 +2150,7 @@ module Generated =
     let gridSplitter                             values =
       StandardView<GridSplitter> (values) :> View
     module GridSplitter = 
-      let dummy = ()
+      open Dummy
       let resizeDirection                          v = SetConstantValue<_> (Properties.GridSplitter.resizeDirection, v)
       let resizeBehavior                           v = SetConstantValue<_> (Properties.GridSplitter.resizeBehavior, v)
       let showsPreview                             v = SetConstantValue<_> (Properties.GridSplitter.showsPreview, v)
@@ -1958,14 +2161,14 @@ module Generated =
     let gridViewColumnHeader                     values child =
       StandardContentView<GridViewColumnHeader> (values, child) :> View
     module GridViewColumnHeader = 
-      let dummy = ()
+      open Dummy
       let column                                   v = SetConstantValue<_> (Properties.GridViewColumnHeader.column, v)
       let role                                     v = SetConstantValue<_> (Properties.GridViewColumnHeader.role, v)
 
     let gridViewHeaderRowPresenter               values =
       StandardView<GridViewHeaderRowPresenter> (values) :> View
     module GridViewHeaderRowPresenter = 
-      let dummy = ()
+      open Dummy
       let columnHeaderContainerStyle               v = SetConstantValue<_> (Properties.GridViewHeaderRowPresenter.columnHeaderContainerStyle, v)
       let columnHeaderTemplate                     v = SetConstantValue<_> (Properties.GridViewHeaderRowPresenter.columnHeaderTemplate, v)
       let columnHeaderTemplateSelector             v = SetConstantValue<_> (Properties.GridViewHeaderRowPresenter.columnHeaderTemplateSelector, v)
@@ -1977,27 +2180,27 @@ module Generated =
     let gridViewRowPresenter                     values =
       StandardView<GridViewRowPresenter> (values) :> View
     module GridViewRowPresenter = 
-      let dummy = ()
+      open Dummy
       let content                                  v = SetConstantValue<_> (Properties.GridViewRowPresenter.content, v)
 
     module GridViewRowPresenterBase = 
-      let dummy = ()
+      open Dummy
       let columns                                  v = SetConstantValue<_> (Properties.GridViewRowPresenterBase.columns, v)
 
     let groupBox                                 values child =
       StandardContentView<GroupBox> (values, child) :> View
     module GroupBox = 
-      let dummy = ()
+      open Dummy
 
     let groupItem                                values child =
       StandardContentView<GroupItem> (values, child) :> View
     module GroupItem = 
-      let dummy = ()
+      open Dummy
 
     let headeredContentControl                   values child =
       StandardContentView<HeaderedContentControl> (values, child) :> View
     module HeaderedContentControl = 
-      let dummy = ()
+      open Dummy
       let header                                   v = SetConstantValue<_> (Properties.HeaderedContentControl.header, v)
       let hasHeader                                v = SetConstantValue<_> (Properties.HeaderedContentControl.hasHeader, v)
       let headerTemplate                           v = SetConstantValue<_> (Properties.HeaderedContentControl.headerTemplate, v)
@@ -2007,7 +2210,7 @@ module Generated =
     let headeredItemsControl                     values =
       StandardView<HeaderedItemsControl> (values) :> View
     module HeaderedItemsControl = 
-      let dummy = ()
+      open Dummy
       let header                                   v = SetConstantValue<_> (Properties.HeaderedItemsControl.header, v)
       let hasHeader                                v = SetConstantValue<_> (Properties.HeaderedItemsControl.hasHeader, v)
       let headerTemplate                           v = SetConstantValue<_> (Properties.HeaderedItemsControl.headerTemplate, v)
@@ -2017,23 +2220,29 @@ module Generated =
     let image                                    values =
       StandardView<Image> (values) :> View
     module Image = 
-      let dummy = ()
+      open Dummy
       let source                                   v = SetConstantValue<_> (Properties.Image.source, v)
       let stretch                                  v = SetConstantValue<_> (Properties.Image.stretch, v)
       let stretchDirection                         v = SetConstantValue<_> (Properties.Image.stretchDirection, v)
+      
+      let private onImageFailed_r (o : System.Windows.Controls.Image) (h : obj -> System.Windows.ExceptionRoutedEventArgs -> unit) = o.ImageFailed.AddHandler    (System.EventHandler<System.Windows.ExceptionRoutedEventArgs> h)
+      let private onImageFailed_u (o : System.Windows.Controls.Image) (h : obj -> System.Windows.ExceptionRoutedEventArgs -> unit) = o.ImageFailed.RemoveHandler (System.EventHandler<System.Windows.ExceptionRoutedEventArgs> h)
+      let private onImageFailed_rf = onImageFailed_r
+      let private onImageFailed_uf = onImageFailed_u
       let onImageFailed                            (f : System.Windows.Controls.Image -> System.Windows.ExceptionRoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.Image) (h : obj -> System.Windows.ExceptionRoutedEventArgs -> unit) = o.ImageFailed.AddHandler    (System.EventHandler<System.Windows.ExceptionRoutedEventArgs> h)
-        let u (o : System.Windows.Controls.Image) (h : obj -> System.Windows.ExceptionRoutedEventArgs -> unit) = o.ImageFailed.RemoveHandler (System.EventHandler<System.Windows.ExceptionRoutedEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.Controls.Image, System.EventHandler<System.Windows.ExceptionRoutedEventArgs>, System.Windows.ExceptionRoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.Image, System.EventHandler<System.Windows.ExceptionRoutedEventArgs>, System.Windows.ExceptionRoutedEventArgs> (onImageFailed_rf, onImageFailed_uf, f)
+      
+      let private onDpiChanged_r (o : System.Windows.Controls.Image) (h : obj -> System.Windows.DpiChangedEventArgs -> unit) = o.DpiChanged.AddHandler    (System.Windows.DpiChangedEventHandler h)
+      let private onDpiChanged_u (o : System.Windows.Controls.Image) (h : obj -> System.Windows.DpiChangedEventArgs -> unit) = o.DpiChanged.RemoveHandler (System.Windows.DpiChangedEventHandler h)
+      let private onDpiChanged_rf = onDpiChanged_r
+      let private onDpiChanged_uf = onDpiChanged_u
       let onDpiChanged                             (f : System.Windows.Controls.Image -> System.Windows.DpiChangedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.Image) (h : obj -> System.Windows.DpiChangedEventArgs -> unit) = o.DpiChanged.AddHandler    (System.Windows.DpiChangedEventHandler h)
-        let u (o : System.Windows.Controls.Image) (h : obj -> System.Windows.DpiChangedEventArgs -> unit) = o.DpiChanged.RemoveHandler (System.Windows.DpiChangedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.Image, System.Windows.DpiChangedEventHandler, System.Windows.DpiChangedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.Image, System.Windows.DpiChangedEventHandler, System.Windows.DpiChangedEventArgs> (onDpiChanged_rf, onDpiChanged_uf, f)
 
     let inkCanvas                                values =
       StandardView<InkCanvas> (values) :> View
     module InkCanvas = 
-      let dummy = ()
+      open Dummy
       let background                               v = SetConstantValue<_> (Properties.InkCanvas.background, v)
       let top                                      v = SetConstantValue<_> (Properties.InkCanvas.top, v)
       let bottom                                   v = SetConstantValue<_> (Properties.InkCanvas.bottom, v)
@@ -2044,77 +2253,122 @@ module Generated =
       let activeEditingMode                        v = SetConstantValue<_> (Properties.InkCanvas.activeEditingMode, v)
       let editingMode                              v = SetConstantValue<_> (Properties.InkCanvas.editingMode, v)
       let editingModeInverted                      v = SetConstantValue<_> (Properties.InkCanvas.editingModeInverted, v)
+      
+      let private onStrokeCollected_r (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.Controls.InkCanvasStrokeCollectedEventArgs -> unit) = o.StrokeCollected.AddHandler    (System.Windows.Controls.InkCanvasStrokeCollectedEventHandler h)
+      let private onStrokeCollected_u (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.Controls.InkCanvasStrokeCollectedEventArgs -> unit) = o.StrokeCollected.RemoveHandler (System.Windows.Controls.InkCanvasStrokeCollectedEventHandler h)
+      let private onStrokeCollected_rf = onStrokeCollected_r
+      let private onStrokeCollected_uf = onStrokeCollected_u
       let onStrokeCollected                        (f : System.Windows.Controls.InkCanvas -> System.Windows.Controls.InkCanvasStrokeCollectedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.Controls.InkCanvasStrokeCollectedEventArgs -> unit) = o.StrokeCollected.AddHandler    (System.Windows.Controls.InkCanvasStrokeCollectedEventHandler h)
-        let u (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.Controls.InkCanvasStrokeCollectedEventArgs -> unit) = o.StrokeCollected.RemoveHandler (System.Windows.Controls.InkCanvasStrokeCollectedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.InkCanvas, System.Windows.Controls.InkCanvasStrokeCollectedEventHandler, System.Windows.Controls.InkCanvasStrokeCollectedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.InkCanvas, System.Windows.Controls.InkCanvasStrokeCollectedEventHandler, System.Windows.Controls.InkCanvasStrokeCollectedEventArgs> (onStrokeCollected_rf, onStrokeCollected_uf, f)
+      
+      let private onGesture_r (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.Controls.InkCanvasGestureEventArgs -> unit) = o.Gesture.AddHandler    (System.Windows.Controls.InkCanvasGestureEventHandler h)
+      let private onGesture_u (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.Controls.InkCanvasGestureEventArgs -> unit) = o.Gesture.RemoveHandler (System.Windows.Controls.InkCanvasGestureEventHandler h)
+      let private onGesture_rf = onGesture_r
+      let private onGesture_uf = onGesture_u
       let onGesture                                (f : System.Windows.Controls.InkCanvas -> System.Windows.Controls.InkCanvasGestureEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.Controls.InkCanvasGestureEventArgs -> unit) = o.Gesture.AddHandler    (System.Windows.Controls.InkCanvasGestureEventHandler h)
-        let u (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.Controls.InkCanvasGestureEventArgs -> unit) = o.Gesture.RemoveHandler (System.Windows.Controls.InkCanvasGestureEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.InkCanvas, System.Windows.Controls.InkCanvasGestureEventHandler, System.Windows.Controls.InkCanvasGestureEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.InkCanvas, System.Windows.Controls.InkCanvasGestureEventHandler, System.Windows.Controls.InkCanvasGestureEventArgs> (onGesture_rf, onGesture_uf, f)
+      
+      let private onStrokesReplaced_r (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.Controls.InkCanvasStrokesReplacedEventArgs -> unit) = o.StrokesReplaced.AddHandler    (System.Windows.Controls.InkCanvasStrokesReplacedEventHandler h)
+      let private onStrokesReplaced_u (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.Controls.InkCanvasStrokesReplacedEventArgs -> unit) = o.StrokesReplaced.RemoveHandler (System.Windows.Controls.InkCanvasStrokesReplacedEventHandler h)
+      let private onStrokesReplaced_rf = onStrokesReplaced_r
+      let private onStrokesReplaced_uf = onStrokesReplaced_u
       let onStrokesReplaced                        (f : System.Windows.Controls.InkCanvas -> System.Windows.Controls.InkCanvasStrokesReplacedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.Controls.InkCanvasStrokesReplacedEventArgs -> unit) = o.StrokesReplaced.AddHandler    (System.Windows.Controls.InkCanvasStrokesReplacedEventHandler h)
-        let u (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.Controls.InkCanvasStrokesReplacedEventArgs -> unit) = o.StrokesReplaced.RemoveHandler (System.Windows.Controls.InkCanvasStrokesReplacedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.InkCanvas, System.Windows.Controls.InkCanvasStrokesReplacedEventHandler, System.Windows.Controls.InkCanvasStrokesReplacedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.InkCanvas, System.Windows.Controls.InkCanvasStrokesReplacedEventHandler, System.Windows.Controls.InkCanvasStrokesReplacedEventArgs> (onStrokesReplaced_rf, onStrokesReplaced_uf, f)
+      
+      let private onDefaultDrawingAttributesReplaced_r (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.Ink.DrawingAttributesReplacedEventArgs -> unit) = o.DefaultDrawingAttributesReplaced.AddHandler    (System.Windows.Ink.DrawingAttributesReplacedEventHandler h)
+      let private onDefaultDrawingAttributesReplaced_u (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.Ink.DrawingAttributesReplacedEventArgs -> unit) = o.DefaultDrawingAttributesReplaced.RemoveHandler (System.Windows.Ink.DrawingAttributesReplacedEventHandler h)
+      let private onDefaultDrawingAttributesReplaced_rf = onDefaultDrawingAttributesReplaced_r
+      let private onDefaultDrawingAttributesReplaced_uf = onDefaultDrawingAttributesReplaced_u
       let onDefaultDrawingAttributesReplaced       (f : System.Windows.Controls.InkCanvas -> System.Windows.Ink.DrawingAttributesReplacedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.Ink.DrawingAttributesReplacedEventArgs -> unit) = o.DefaultDrawingAttributesReplaced.AddHandler    (System.Windows.Ink.DrawingAttributesReplacedEventHandler h)
-        let u (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.Ink.DrawingAttributesReplacedEventArgs -> unit) = o.DefaultDrawingAttributesReplaced.RemoveHandler (System.Windows.Ink.DrawingAttributesReplacedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.InkCanvas, System.Windows.Ink.DrawingAttributesReplacedEventHandler, System.Windows.Ink.DrawingAttributesReplacedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.InkCanvas, System.Windows.Ink.DrawingAttributesReplacedEventHandler, System.Windows.Ink.DrawingAttributesReplacedEventArgs> (onDefaultDrawingAttributesReplaced_rf, onDefaultDrawingAttributesReplaced_uf, f)
+      
+      let private onActiveEditingModeChanged_r (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.ActiveEditingModeChanged.AddHandler    (System.Windows.RoutedEventHandler h)
+      let private onActiveEditingModeChanged_u (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.ActiveEditingModeChanged.RemoveHandler (System.Windows.RoutedEventHandler h)
+      let private onActiveEditingModeChanged_rf = onActiveEditingModeChanged_r
+      let private onActiveEditingModeChanged_uf = onActiveEditingModeChanged_u
       let onActiveEditingModeChanged               (f : System.Windows.Controls.InkCanvas -> System.Windows.RoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.ActiveEditingModeChanged.AddHandler    (System.Windows.RoutedEventHandler h)
-        let u (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.ActiveEditingModeChanged.RemoveHandler (System.Windows.RoutedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.InkCanvas, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.InkCanvas, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onActiveEditingModeChanged_rf, onActiveEditingModeChanged_uf, f)
+      
+      let private onEditingModeChanged_r (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.EditingModeChanged.AddHandler    (System.Windows.RoutedEventHandler h)
+      let private onEditingModeChanged_u (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.EditingModeChanged.RemoveHandler (System.Windows.RoutedEventHandler h)
+      let private onEditingModeChanged_rf = onEditingModeChanged_r
+      let private onEditingModeChanged_uf = onEditingModeChanged_u
       let onEditingModeChanged                     (f : System.Windows.Controls.InkCanvas -> System.Windows.RoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.EditingModeChanged.AddHandler    (System.Windows.RoutedEventHandler h)
-        let u (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.EditingModeChanged.RemoveHandler (System.Windows.RoutedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.InkCanvas, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.InkCanvas, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onEditingModeChanged_rf, onEditingModeChanged_uf, f)
+      
+      let private onEditingModeInvertedChanged_r (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.EditingModeInvertedChanged.AddHandler    (System.Windows.RoutedEventHandler h)
+      let private onEditingModeInvertedChanged_u (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.EditingModeInvertedChanged.RemoveHandler (System.Windows.RoutedEventHandler h)
+      let private onEditingModeInvertedChanged_rf = onEditingModeInvertedChanged_r
+      let private onEditingModeInvertedChanged_uf = onEditingModeInvertedChanged_u
       let onEditingModeInvertedChanged             (f : System.Windows.Controls.InkCanvas -> System.Windows.RoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.EditingModeInvertedChanged.AddHandler    (System.Windows.RoutedEventHandler h)
-        let u (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.EditingModeInvertedChanged.RemoveHandler (System.Windows.RoutedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.InkCanvas, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.InkCanvas, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onEditingModeInvertedChanged_rf, onEditingModeInvertedChanged_uf, f)
+      
+      let private onSelectionMoving_r (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.Controls.InkCanvasSelectionEditingEventArgs -> unit) = o.SelectionMoving.AddHandler    (System.Windows.Controls.InkCanvasSelectionEditingEventHandler h)
+      let private onSelectionMoving_u (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.Controls.InkCanvasSelectionEditingEventArgs -> unit) = o.SelectionMoving.RemoveHandler (System.Windows.Controls.InkCanvasSelectionEditingEventHandler h)
+      let private onSelectionMoving_rf = onSelectionMoving_r
+      let private onSelectionMoving_uf = onSelectionMoving_u
       let onSelectionMoving                        (f : System.Windows.Controls.InkCanvas -> System.Windows.Controls.InkCanvasSelectionEditingEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.Controls.InkCanvasSelectionEditingEventArgs -> unit) = o.SelectionMoving.AddHandler    (System.Windows.Controls.InkCanvasSelectionEditingEventHandler h)
-        let u (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.Controls.InkCanvasSelectionEditingEventArgs -> unit) = o.SelectionMoving.RemoveHandler (System.Windows.Controls.InkCanvasSelectionEditingEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.InkCanvas, System.Windows.Controls.InkCanvasSelectionEditingEventHandler, System.Windows.Controls.InkCanvasSelectionEditingEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.InkCanvas, System.Windows.Controls.InkCanvasSelectionEditingEventHandler, System.Windows.Controls.InkCanvasSelectionEditingEventArgs> (onSelectionMoving_rf, onSelectionMoving_uf, f)
+      
+      let private onSelectionMoved_r (o : System.Windows.Controls.InkCanvas) (h : obj -> System.EventArgs -> unit) = o.SelectionMoved.AddHandler    (System.EventHandler h)
+      let private onSelectionMoved_u (o : System.Windows.Controls.InkCanvas) (h : obj -> System.EventArgs -> unit) = o.SelectionMoved.RemoveHandler (System.EventHandler h)
+      let private onSelectionMoved_rf = onSelectionMoved_r
+      let private onSelectionMoved_uf = onSelectionMoved_u
       let onSelectionMoved                         (f : System.Windows.Controls.InkCanvas -> System.EventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.InkCanvas) (h : obj -> System.EventArgs -> unit) = o.SelectionMoved.AddHandler    (System.EventHandler h)
-        let u (o : System.Windows.Controls.InkCanvas) (h : obj -> System.EventArgs -> unit) = o.SelectionMoved.RemoveHandler (System.EventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.InkCanvas, System.EventHandler, System.EventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.InkCanvas, System.EventHandler, System.EventArgs> (onSelectionMoved_rf, onSelectionMoved_uf, f)
+      
+      let private onStrokeErasing_r (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.Controls.InkCanvasStrokeErasingEventArgs -> unit) = o.StrokeErasing.AddHandler    (System.Windows.Controls.InkCanvasStrokeErasingEventHandler h)
+      let private onStrokeErasing_u (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.Controls.InkCanvasStrokeErasingEventArgs -> unit) = o.StrokeErasing.RemoveHandler (System.Windows.Controls.InkCanvasStrokeErasingEventHandler h)
+      let private onStrokeErasing_rf = onStrokeErasing_r
+      let private onStrokeErasing_uf = onStrokeErasing_u
       let onStrokeErasing                          (f : System.Windows.Controls.InkCanvas -> System.Windows.Controls.InkCanvasStrokeErasingEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.Controls.InkCanvasStrokeErasingEventArgs -> unit) = o.StrokeErasing.AddHandler    (System.Windows.Controls.InkCanvasStrokeErasingEventHandler h)
-        let u (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.Controls.InkCanvasStrokeErasingEventArgs -> unit) = o.StrokeErasing.RemoveHandler (System.Windows.Controls.InkCanvasStrokeErasingEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.InkCanvas, System.Windows.Controls.InkCanvasStrokeErasingEventHandler, System.Windows.Controls.InkCanvasStrokeErasingEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.InkCanvas, System.Windows.Controls.InkCanvasStrokeErasingEventHandler, System.Windows.Controls.InkCanvasStrokeErasingEventArgs> (onStrokeErasing_rf, onStrokeErasing_uf, f)
+      
+      let private onStrokeErased_r (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.StrokeErased.AddHandler    (System.Windows.RoutedEventHandler h)
+      let private onStrokeErased_u (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.StrokeErased.RemoveHandler (System.Windows.RoutedEventHandler h)
+      let private onStrokeErased_rf = onStrokeErased_r
+      let private onStrokeErased_uf = onStrokeErased_u
       let onStrokeErased                           (f : System.Windows.Controls.InkCanvas -> System.Windows.RoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.StrokeErased.AddHandler    (System.Windows.RoutedEventHandler h)
-        let u (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.StrokeErased.RemoveHandler (System.Windows.RoutedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.InkCanvas, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.InkCanvas, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onStrokeErased_rf, onStrokeErased_uf, f)
+      
+      let private onSelectionResizing_r (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.Controls.InkCanvasSelectionEditingEventArgs -> unit) = o.SelectionResizing.AddHandler    (System.Windows.Controls.InkCanvasSelectionEditingEventHandler h)
+      let private onSelectionResizing_u (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.Controls.InkCanvasSelectionEditingEventArgs -> unit) = o.SelectionResizing.RemoveHandler (System.Windows.Controls.InkCanvasSelectionEditingEventHandler h)
+      let private onSelectionResizing_rf = onSelectionResizing_r
+      let private onSelectionResizing_uf = onSelectionResizing_u
       let onSelectionResizing                      (f : System.Windows.Controls.InkCanvas -> System.Windows.Controls.InkCanvasSelectionEditingEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.Controls.InkCanvasSelectionEditingEventArgs -> unit) = o.SelectionResizing.AddHandler    (System.Windows.Controls.InkCanvasSelectionEditingEventHandler h)
-        let u (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.Controls.InkCanvasSelectionEditingEventArgs -> unit) = o.SelectionResizing.RemoveHandler (System.Windows.Controls.InkCanvasSelectionEditingEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.InkCanvas, System.Windows.Controls.InkCanvasSelectionEditingEventHandler, System.Windows.Controls.InkCanvasSelectionEditingEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.InkCanvas, System.Windows.Controls.InkCanvasSelectionEditingEventHandler, System.Windows.Controls.InkCanvasSelectionEditingEventArgs> (onSelectionResizing_rf, onSelectionResizing_uf, f)
+      
+      let private onSelectionResized_r (o : System.Windows.Controls.InkCanvas) (h : obj -> System.EventArgs -> unit) = o.SelectionResized.AddHandler    (System.EventHandler h)
+      let private onSelectionResized_u (o : System.Windows.Controls.InkCanvas) (h : obj -> System.EventArgs -> unit) = o.SelectionResized.RemoveHandler (System.EventHandler h)
+      let private onSelectionResized_rf = onSelectionResized_r
+      let private onSelectionResized_uf = onSelectionResized_u
       let onSelectionResized                       (f : System.Windows.Controls.InkCanvas -> System.EventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.InkCanvas) (h : obj -> System.EventArgs -> unit) = o.SelectionResized.AddHandler    (System.EventHandler h)
-        let u (o : System.Windows.Controls.InkCanvas) (h : obj -> System.EventArgs -> unit) = o.SelectionResized.RemoveHandler (System.EventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.InkCanvas, System.EventHandler, System.EventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.InkCanvas, System.EventHandler, System.EventArgs> (onSelectionResized_rf, onSelectionResized_uf, f)
+      
+      let private onSelectionChanging_r (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.Controls.InkCanvasSelectionChangingEventArgs -> unit) = o.SelectionChanging.AddHandler    (System.Windows.Controls.InkCanvasSelectionChangingEventHandler h)
+      let private onSelectionChanging_u (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.Controls.InkCanvasSelectionChangingEventArgs -> unit) = o.SelectionChanging.RemoveHandler (System.Windows.Controls.InkCanvasSelectionChangingEventHandler h)
+      let private onSelectionChanging_rf = onSelectionChanging_r
+      let private onSelectionChanging_uf = onSelectionChanging_u
       let onSelectionChanging                      (f : System.Windows.Controls.InkCanvas -> System.Windows.Controls.InkCanvasSelectionChangingEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.Controls.InkCanvasSelectionChangingEventArgs -> unit) = o.SelectionChanging.AddHandler    (System.Windows.Controls.InkCanvasSelectionChangingEventHandler h)
-        let u (o : System.Windows.Controls.InkCanvas) (h : obj -> System.Windows.Controls.InkCanvasSelectionChangingEventArgs -> unit) = o.SelectionChanging.RemoveHandler (System.Windows.Controls.InkCanvasSelectionChangingEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.InkCanvas, System.Windows.Controls.InkCanvasSelectionChangingEventHandler, System.Windows.Controls.InkCanvasSelectionChangingEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.InkCanvas, System.Windows.Controls.InkCanvasSelectionChangingEventHandler, System.Windows.Controls.InkCanvasSelectionChangingEventArgs> (onSelectionChanging_rf, onSelectionChanging_uf, f)
+      
+      let private onSelectionChanged_r (o : System.Windows.Controls.InkCanvas) (h : obj -> System.EventArgs -> unit) = o.SelectionChanged.AddHandler    (System.EventHandler h)
+      let private onSelectionChanged_u (o : System.Windows.Controls.InkCanvas) (h : obj -> System.EventArgs -> unit) = o.SelectionChanged.RemoveHandler (System.EventHandler h)
+      let private onSelectionChanged_rf = onSelectionChanged_r
+      let private onSelectionChanged_uf = onSelectionChanged_u
       let onSelectionChanged                       (f : System.Windows.Controls.InkCanvas -> System.EventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.InkCanvas) (h : obj -> System.EventArgs -> unit) = o.SelectionChanged.AddHandler    (System.EventHandler h)
-        let u (o : System.Windows.Controls.InkCanvas) (h : obj -> System.EventArgs -> unit) = o.SelectionChanged.RemoveHandler (System.EventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.InkCanvas, System.EventHandler, System.EventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.InkCanvas, System.EventHandler, System.EventArgs> (onSelectionChanged_rf, onSelectionChanged_uf, f)
 
     let inkPresenter                             values =
       StandardView<InkPresenter> (values) :> View
     module InkPresenter = 
-      let dummy = ()
+      open Dummy
       let strokes                                  v = SetConstantValue<_> (Properties.InkPresenter.strokes, v)
 
     let itemsControl                             values =
       StandardView<ItemsControl> (values) :> View
     module ItemsControl = 
-      let dummy = ()
+      open Dummy
       let itemsSource                              v = SetConstantValue<_> (Properties.ItemsControl.itemsSource, v)
       let hasItems                                 v = SetConstantValue<_> (Properties.ItemsControl.hasItems, v)
       let displayMemberPath                        v = SetConstantValue<_> (Properties.ItemsControl.displayMemberPath, v)
@@ -2135,18 +2389,18 @@ module Generated =
     let itemsPresenter                           values =
       StandardView<ItemsPresenter> (values) :> View
     module ItemsPresenter = 
-      let dummy = ()
+      open Dummy
 
     let label                                    values child =
       StandardContentView<Label> (values, child) :> View
     module Label = 
-      let dummy = ()
+      open Dummy
       let target                                   v = SetConstantValue<_> (Properties.Label.target, v)
 
     let line                                     values =
       StandardView<Line> (values) :> View
     module Line = 
-      let dummy = ()
+      open Dummy
       let x1                                       v = SetConstantValue<_> (Properties.Line.x1, v)
       let y1                                       v = SetConstantValue<_> (Properties.Line.y1, v)
       let x2                                       v = SetConstantValue<_> (Properties.Line.x2, v)
@@ -2155,39 +2409,45 @@ module Generated =
     let listBox                                  values =
       StandardView<ListBox> (values) :> View
     module ListBox = 
-      let dummy = ()
+      open Dummy
       let selectionMode                            v = SetConstantValue<_> (Properties.ListBox.selectionMode, v)
       let selectedItems                            v = SetConstantValue<_> (Properties.ListBox.selectedItems, v)
 
     let listBoxItem                              values child =
       StandardContentView<ListBoxItem> (values, child) :> View
     module ListBoxItem = 
-      let dummy = ()
+      open Dummy
       let isSelected                               v = SetConstantValue<_> (Properties.ListBoxItem.isSelected, v)
+      
+      let private onSelected_r (o : System.Windows.Controls.ListBoxItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Selected.AddHandler    (System.Windows.RoutedEventHandler h)
+      let private onSelected_u (o : System.Windows.Controls.ListBoxItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Selected.RemoveHandler (System.Windows.RoutedEventHandler h)
+      let private onSelected_rf = onSelected_r
+      let private onSelected_uf = onSelected_u
       let onSelected                               (f : System.Windows.Controls.ListBoxItem -> System.Windows.RoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.ListBoxItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Selected.AddHandler    (System.Windows.RoutedEventHandler h)
-        let u (o : System.Windows.Controls.ListBoxItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Selected.RemoveHandler (System.Windows.RoutedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.ListBoxItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.ListBoxItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onSelected_rf, onSelected_uf, f)
+      
+      let private onUnselected_r (o : System.Windows.Controls.ListBoxItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Unselected.AddHandler    (System.Windows.RoutedEventHandler h)
+      let private onUnselected_u (o : System.Windows.Controls.ListBoxItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Unselected.RemoveHandler (System.Windows.RoutedEventHandler h)
+      let private onUnselected_rf = onUnselected_r
+      let private onUnselected_uf = onUnselected_u
       let onUnselected                             (f : System.Windows.Controls.ListBoxItem -> System.Windows.RoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.ListBoxItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Unselected.AddHandler    (System.Windows.RoutedEventHandler h)
-        let u (o : System.Windows.Controls.ListBoxItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Unselected.RemoveHandler (System.Windows.RoutedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.ListBoxItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.ListBoxItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onUnselected_rf, onUnselected_uf, f)
 
     let listView                                 values =
       StandardView<ListView> (values) :> View
     module ListView = 
-      let dummy = ()
+      open Dummy
       let view                                     v = SetConstantValue<_> (Properties.ListView.view, v)
 
     let listViewItem                             values child =
       StandardContentView<ListViewItem> (values, child) :> View
     module ListViewItem = 
-      let dummy = ()
+      open Dummy
 
     let mediaElement                             values =
       StandardView<MediaElement> (values) :> View
     module MediaElement = 
-      let dummy = ()
+      open Dummy
       let source                                   v = SetConstantValue<_> (Properties.MediaElement.source, v)
       let volume                                   v = SetConstantValue<_> (Properties.MediaElement.volume, v)
       let balance                                  v = SetConstantValue<_> (Properties.MediaElement.balance, v)
@@ -2197,46 +2457,64 @@ module Generated =
       let loadedBehavior                           v = SetConstantValue<_> (Properties.MediaElement.loadedBehavior, v)
       let stretch                                  v = SetConstantValue<_> (Properties.MediaElement.stretch, v)
       let stretchDirection                         v = SetConstantValue<_> (Properties.MediaElement.stretchDirection, v)
+      
+      let private onMediaFailed_r (o : System.Windows.Controls.MediaElement) (h : obj -> System.Windows.ExceptionRoutedEventArgs -> unit) = o.MediaFailed.AddHandler    (System.EventHandler<System.Windows.ExceptionRoutedEventArgs> h)
+      let private onMediaFailed_u (o : System.Windows.Controls.MediaElement) (h : obj -> System.Windows.ExceptionRoutedEventArgs -> unit) = o.MediaFailed.RemoveHandler (System.EventHandler<System.Windows.ExceptionRoutedEventArgs> h)
+      let private onMediaFailed_rf = onMediaFailed_r
+      let private onMediaFailed_uf = onMediaFailed_u
       let onMediaFailed                            (f : System.Windows.Controls.MediaElement -> System.Windows.ExceptionRoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.MediaElement) (h : obj -> System.Windows.ExceptionRoutedEventArgs -> unit) = o.MediaFailed.AddHandler    (System.EventHandler<System.Windows.ExceptionRoutedEventArgs> h)
-        let u (o : System.Windows.Controls.MediaElement) (h : obj -> System.Windows.ExceptionRoutedEventArgs -> unit) = o.MediaFailed.RemoveHandler (System.EventHandler<System.Windows.ExceptionRoutedEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.Controls.MediaElement, System.EventHandler<System.Windows.ExceptionRoutedEventArgs>, System.Windows.ExceptionRoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.MediaElement, System.EventHandler<System.Windows.ExceptionRoutedEventArgs>, System.Windows.ExceptionRoutedEventArgs> (onMediaFailed_rf, onMediaFailed_uf, f)
+      
+      let private onMediaOpened_r (o : System.Windows.Controls.MediaElement) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.MediaOpened.AddHandler    (System.Windows.RoutedEventHandler h)
+      let private onMediaOpened_u (o : System.Windows.Controls.MediaElement) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.MediaOpened.RemoveHandler (System.Windows.RoutedEventHandler h)
+      let private onMediaOpened_rf = onMediaOpened_r
+      let private onMediaOpened_uf = onMediaOpened_u
       let onMediaOpened                            (f : System.Windows.Controls.MediaElement -> System.Windows.RoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.MediaElement) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.MediaOpened.AddHandler    (System.Windows.RoutedEventHandler h)
-        let u (o : System.Windows.Controls.MediaElement) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.MediaOpened.RemoveHandler (System.Windows.RoutedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.MediaElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.MediaElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onMediaOpened_rf, onMediaOpened_uf, f)
+      
+      let private onBufferingStarted_r (o : System.Windows.Controls.MediaElement) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.BufferingStarted.AddHandler    (System.Windows.RoutedEventHandler h)
+      let private onBufferingStarted_u (o : System.Windows.Controls.MediaElement) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.BufferingStarted.RemoveHandler (System.Windows.RoutedEventHandler h)
+      let private onBufferingStarted_rf = onBufferingStarted_r
+      let private onBufferingStarted_uf = onBufferingStarted_u
       let onBufferingStarted                       (f : System.Windows.Controls.MediaElement -> System.Windows.RoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.MediaElement) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.BufferingStarted.AddHandler    (System.Windows.RoutedEventHandler h)
-        let u (o : System.Windows.Controls.MediaElement) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.BufferingStarted.RemoveHandler (System.Windows.RoutedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.MediaElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.MediaElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onBufferingStarted_rf, onBufferingStarted_uf, f)
+      
+      let private onBufferingEnded_r (o : System.Windows.Controls.MediaElement) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.BufferingEnded.AddHandler    (System.Windows.RoutedEventHandler h)
+      let private onBufferingEnded_u (o : System.Windows.Controls.MediaElement) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.BufferingEnded.RemoveHandler (System.Windows.RoutedEventHandler h)
+      let private onBufferingEnded_rf = onBufferingEnded_r
+      let private onBufferingEnded_uf = onBufferingEnded_u
       let onBufferingEnded                         (f : System.Windows.Controls.MediaElement -> System.Windows.RoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.MediaElement) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.BufferingEnded.AddHandler    (System.Windows.RoutedEventHandler h)
-        let u (o : System.Windows.Controls.MediaElement) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.BufferingEnded.RemoveHandler (System.Windows.RoutedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.MediaElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.MediaElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onBufferingEnded_rf, onBufferingEnded_uf, f)
+      
+      let private onScriptCommand_r (o : System.Windows.Controls.MediaElement) (h : obj -> System.Windows.MediaScriptCommandRoutedEventArgs -> unit) = o.ScriptCommand.AddHandler    (System.EventHandler<System.Windows.MediaScriptCommandRoutedEventArgs> h)
+      let private onScriptCommand_u (o : System.Windows.Controls.MediaElement) (h : obj -> System.Windows.MediaScriptCommandRoutedEventArgs -> unit) = o.ScriptCommand.RemoveHandler (System.EventHandler<System.Windows.MediaScriptCommandRoutedEventArgs> h)
+      let private onScriptCommand_rf = onScriptCommand_r
+      let private onScriptCommand_uf = onScriptCommand_u
       let onScriptCommand                          (f : System.Windows.Controls.MediaElement -> System.Windows.MediaScriptCommandRoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.MediaElement) (h : obj -> System.Windows.MediaScriptCommandRoutedEventArgs -> unit) = o.ScriptCommand.AddHandler    (System.EventHandler<System.Windows.MediaScriptCommandRoutedEventArgs> h)
-        let u (o : System.Windows.Controls.MediaElement) (h : obj -> System.Windows.MediaScriptCommandRoutedEventArgs -> unit) = o.ScriptCommand.RemoveHandler (System.EventHandler<System.Windows.MediaScriptCommandRoutedEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.Controls.MediaElement, System.EventHandler<System.Windows.MediaScriptCommandRoutedEventArgs>, System.Windows.MediaScriptCommandRoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.MediaElement, System.EventHandler<System.Windows.MediaScriptCommandRoutedEventArgs>, System.Windows.MediaScriptCommandRoutedEventArgs> (onScriptCommand_rf, onScriptCommand_uf, f)
+      
+      let private onMediaEnded_r (o : System.Windows.Controls.MediaElement) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.MediaEnded.AddHandler    (System.Windows.RoutedEventHandler h)
+      let private onMediaEnded_u (o : System.Windows.Controls.MediaElement) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.MediaEnded.RemoveHandler (System.Windows.RoutedEventHandler h)
+      let private onMediaEnded_rf = onMediaEnded_r
+      let private onMediaEnded_uf = onMediaEnded_u
       let onMediaEnded                             (f : System.Windows.Controls.MediaElement -> System.Windows.RoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.MediaElement) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.MediaEnded.AddHandler    (System.Windows.RoutedEventHandler h)
-        let u (o : System.Windows.Controls.MediaElement) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.MediaEnded.RemoveHandler (System.Windows.RoutedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.MediaElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.MediaElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onMediaEnded_rf, onMediaEnded_uf, f)
 
     let menu                                     values =
       StandardView<Menu> (values) :> View
     module Menu = 
-      let dummy = ()
+      open Dummy
       let isMainMenu                               v = SetConstantValue<_> (Properties.Menu.isMainMenu, v)
 
     module MenuBase = 
-      let dummy = ()
+      open Dummy
       let itemContainerTemplateSelector            v = SetConstantValue<_> (Properties.MenuBase.itemContainerTemplateSelector, v)
       let usesItemContainerTemplate                v = SetConstantValue<_> (Properties.MenuBase.usesItemContainerTemplate, v)
 
     let menuItem                                 values =
       StandardView<MenuItem> (values) :> View
     module MenuItem = 
-      let dummy = ()
+      open Dummy
       let command                                  v = SetConstantValue<_> (Properties.MenuItem.command, v)
       let commandParameter                         v = SetConstantValue<_> (Properties.MenuItem.commandParameter, v)
       let commandTarget                            v = SetConstantValue<_> (Properties.MenuItem.commandTarget, v)
@@ -2252,34 +2530,49 @@ module Generated =
       let isSuspendingPopupAnimation               v = SetConstantValue<_> (Properties.MenuItem.isSuspendingPopupAnimation, v)
       let itemContainerTemplateSelector            v = SetConstantValue<_> (Properties.MenuItem.itemContainerTemplateSelector, v)
       let usesItemContainerTemplate                v = SetConstantValue<_> (Properties.MenuItem.usesItemContainerTemplate, v)
+      
+      let private onClick_r (o : System.Windows.Controls.MenuItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Click.AddHandler    (System.Windows.RoutedEventHandler h)
+      let private onClick_u (o : System.Windows.Controls.MenuItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Click.RemoveHandler (System.Windows.RoutedEventHandler h)
+      let private onClick_rf = onClick_r
+      let private onClick_uf = onClick_u
       let onClick                                  (f : System.Windows.Controls.MenuItem -> System.Windows.RoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.MenuItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Click.AddHandler    (System.Windows.RoutedEventHandler h)
-        let u (o : System.Windows.Controls.MenuItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Click.RemoveHandler (System.Windows.RoutedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.MenuItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.MenuItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onClick_rf, onClick_uf, f)
+      
+      let private onChecked_r (o : System.Windows.Controls.MenuItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Checked.AddHandler    (System.Windows.RoutedEventHandler h)
+      let private onChecked_u (o : System.Windows.Controls.MenuItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Checked.RemoveHandler (System.Windows.RoutedEventHandler h)
+      let private onChecked_rf = onChecked_r
+      let private onChecked_uf = onChecked_u
       let onChecked                                (f : System.Windows.Controls.MenuItem -> System.Windows.RoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.MenuItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Checked.AddHandler    (System.Windows.RoutedEventHandler h)
-        let u (o : System.Windows.Controls.MenuItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Checked.RemoveHandler (System.Windows.RoutedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.MenuItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.MenuItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onChecked_rf, onChecked_uf, f)
+      
+      let private onUnchecked_r (o : System.Windows.Controls.MenuItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Unchecked.AddHandler    (System.Windows.RoutedEventHandler h)
+      let private onUnchecked_u (o : System.Windows.Controls.MenuItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Unchecked.RemoveHandler (System.Windows.RoutedEventHandler h)
+      let private onUnchecked_rf = onUnchecked_r
+      let private onUnchecked_uf = onUnchecked_u
       let onUnchecked                              (f : System.Windows.Controls.MenuItem -> System.Windows.RoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.MenuItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Unchecked.AddHandler    (System.Windows.RoutedEventHandler h)
-        let u (o : System.Windows.Controls.MenuItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Unchecked.RemoveHandler (System.Windows.RoutedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.MenuItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.MenuItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onUnchecked_rf, onUnchecked_uf, f)
+      
+      let private onSubmenuOpened_r (o : System.Windows.Controls.MenuItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.SubmenuOpened.AddHandler    (System.Windows.RoutedEventHandler h)
+      let private onSubmenuOpened_u (o : System.Windows.Controls.MenuItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.SubmenuOpened.RemoveHandler (System.Windows.RoutedEventHandler h)
+      let private onSubmenuOpened_rf = onSubmenuOpened_r
+      let private onSubmenuOpened_uf = onSubmenuOpened_u
       let onSubmenuOpened                          (f : System.Windows.Controls.MenuItem -> System.Windows.RoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.MenuItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.SubmenuOpened.AddHandler    (System.Windows.RoutedEventHandler h)
-        let u (o : System.Windows.Controls.MenuItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.SubmenuOpened.RemoveHandler (System.Windows.RoutedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.MenuItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.MenuItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onSubmenuOpened_rf, onSubmenuOpened_uf, f)
+      
+      let private onSubmenuClosed_r (o : System.Windows.Controls.MenuItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.SubmenuClosed.AddHandler    (System.Windows.RoutedEventHandler h)
+      let private onSubmenuClosed_u (o : System.Windows.Controls.MenuItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.SubmenuClosed.RemoveHandler (System.Windows.RoutedEventHandler h)
+      let private onSubmenuClosed_rf = onSubmenuClosed_r
+      let private onSubmenuClosed_uf = onSubmenuClosed_u
       let onSubmenuClosed                          (f : System.Windows.Controls.MenuItem -> System.Windows.RoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.MenuItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.SubmenuClosed.AddHandler    (System.Windows.RoutedEventHandler h)
-        let u (o : System.Windows.Controls.MenuItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.SubmenuClosed.RemoveHandler (System.Windows.RoutedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.MenuItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.MenuItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onSubmenuClosed_rf, onSubmenuClosed_uf, f)
 
     module MultiSelector = 
-      let dummy = ()
+      open Dummy
 
     let navigationWindow                         values child =
       StandardContentView<NavigationWindow> (values, child) :> View
     module NavigationWindow = 
-      let dummy = ()
+      open Dummy
       let sandboxExternalContent                   v = SetConstantValue<_> (Properties.NavigationWindow.sandboxExternalContent, v)
       let showsNavigationUI                        v = SetConstantValue<_> (Properties.NavigationWindow.showsNavigationUI, v)
       let backStack                                v = SetConstantValue<_> (Properties.NavigationWindow.backStack, v)
@@ -2287,39 +2580,60 @@ module Generated =
       let canGoBack                                v = SetConstantValue<_> (Properties.NavigationWindow.canGoBack, v)
       let canGoForward                             v = SetConstantValue<_> (Properties.NavigationWindow.canGoForward, v)
       let source                                   v = SetConstantValue<_> (Properties.NavigationWindow.source, v)
+      
+      let private onNavigating_r (o : System.Windows.Navigation.NavigationWindow) (h : obj -> System.Windows.Navigation.NavigatingCancelEventArgs -> unit) = o.Navigating.AddHandler    (System.Windows.Navigation.NavigatingCancelEventHandler h)
+      let private onNavigating_u (o : System.Windows.Navigation.NavigationWindow) (h : obj -> System.Windows.Navigation.NavigatingCancelEventArgs -> unit) = o.Navigating.RemoveHandler (System.Windows.Navigation.NavigatingCancelEventHandler h)
+      let private onNavigating_rf = onNavigating_r
+      let private onNavigating_uf = onNavigating_u
       let onNavigating                             (f : System.Windows.Navigation.NavigationWindow -> System.Windows.Navigation.NavigatingCancelEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Navigation.NavigationWindow) (h : obj -> System.Windows.Navigation.NavigatingCancelEventArgs -> unit) = o.Navigating.AddHandler    (System.Windows.Navigation.NavigatingCancelEventHandler h)
-        let u (o : System.Windows.Navigation.NavigationWindow) (h : obj -> System.Windows.Navigation.NavigatingCancelEventArgs -> unit) = o.Navigating.RemoveHandler (System.Windows.Navigation.NavigatingCancelEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Navigation.NavigationWindow, System.Windows.Navigation.NavigatingCancelEventHandler, System.Windows.Navigation.NavigatingCancelEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Navigation.NavigationWindow, System.Windows.Navigation.NavigatingCancelEventHandler, System.Windows.Navigation.NavigatingCancelEventArgs> (onNavigating_rf, onNavigating_uf, f)
+      
+      let private onNavigationProgress_r (o : System.Windows.Navigation.NavigationWindow) (h : obj -> System.Windows.Navigation.NavigationProgressEventArgs -> unit) = o.NavigationProgress.AddHandler    (System.Windows.Navigation.NavigationProgressEventHandler h)
+      let private onNavigationProgress_u (o : System.Windows.Navigation.NavigationWindow) (h : obj -> System.Windows.Navigation.NavigationProgressEventArgs -> unit) = o.NavigationProgress.RemoveHandler (System.Windows.Navigation.NavigationProgressEventHandler h)
+      let private onNavigationProgress_rf = onNavigationProgress_r
+      let private onNavigationProgress_uf = onNavigationProgress_u
       let onNavigationProgress                     (f : System.Windows.Navigation.NavigationWindow -> System.Windows.Navigation.NavigationProgressEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Navigation.NavigationWindow) (h : obj -> System.Windows.Navigation.NavigationProgressEventArgs -> unit) = o.NavigationProgress.AddHandler    (System.Windows.Navigation.NavigationProgressEventHandler h)
-        let u (o : System.Windows.Navigation.NavigationWindow) (h : obj -> System.Windows.Navigation.NavigationProgressEventArgs -> unit) = o.NavigationProgress.RemoveHandler (System.Windows.Navigation.NavigationProgressEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Navigation.NavigationWindow, System.Windows.Navigation.NavigationProgressEventHandler, System.Windows.Navigation.NavigationProgressEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Navigation.NavigationWindow, System.Windows.Navigation.NavigationProgressEventHandler, System.Windows.Navigation.NavigationProgressEventArgs> (onNavigationProgress_rf, onNavigationProgress_uf, f)
+      
+      let private onNavigationFailed_r (o : System.Windows.Navigation.NavigationWindow) (h : obj -> System.Windows.Navigation.NavigationFailedEventArgs -> unit) = o.NavigationFailed.AddHandler    (System.Windows.Navigation.NavigationFailedEventHandler h)
+      let private onNavigationFailed_u (o : System.Windows.Navigation.NavigationWindow) (h : obj -> System.Windows.Navigation.NavigationFailedEventArgs -> unit) = o.NavigationFailed.RemoveHandler (System.Windows.Navigation.NavigationFailedEventHandler h)
+      let private onNavigationFailed_rf = onNavigationFailed_r
+      let private onNavigationFailed_uf = onNavigationFailed_u
       let onNavigationFailed                       (f : System.Windows.Navigation.NavigationWindow -> System.Windows.Navigation.NavigationFailedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Navigation.NavigationWindow) (h : obj -> System.Windows.Navigation.NavigationFailedEventArgs -> unit) = o.NavigationFailed.AddHandler    (System.Windows.Navigation.NavigationFailedEventHandler h)
-        let u (o : System.Windows.Navigation.NavigationWindow) (h : obj -> System.Windows.Navigation.NavigationFailedEventArgs -> unit) = o.NavigationFailed.RemoveHandler (System.Windows.Navigation.NavigationFailedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Navigation.NavigationWindow, System.Windows.Navigation.NavigationFailedEventHandler, System.Windows.Navigation.NavigationFailedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Navigation.NavigationWindow, System.Windows.Navigation.NavigationFailedEventHandler, System.Windows.Navigation.NavigationFailedEventArgs> (onNavigationFailed_rf, onNavigationFailed_uf, f)
+      
+      let private onNavigated_r (o : System.Windows.Navigation.NavigationWindow) (h : obj -> System.Windows.Navigation.NavigationEventArgs -> unit) = o.Navigated.AddHandler    (System.Windows.Navigation.NavigatedEventHandler h)
+      let private onNavigated_u (o : System.Windows.Navigation.NavigationWindow) (h : obj -> System.Windows.Navigation.NavigationEventArgs -> unit) = o.Navigated.RemoveHandler (System.Windows.Navigation.NavigatedEventHandler h)
+      let private onNavigated_rf = onNavigated_r
+      let private onNavigated_uf = onNavigated_u
       let onNavigated                              (f : System.Windows.Navigation.NavigationWindow -> System.Windows.Navigation.NavigationEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Navigation.NavigationWindow) (h : obj -> System.Windows.Navigation.NavigationEventArgs -> unit) = o.Navigated.AddHandler    (System.Windows.Navigation.NavigatedEventHandler h)
-        let u (o : System.Windows.Navigation.NavigationWindow) (h : obj -> System.Windows.Navigation.NavigationEventArgs -> unit) = o.Navigated.RemoveHandler (System.Windows.Navigation.NavigatedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Navigation.NavigationWindow, System.Windows.Navigation.NavigatedEventHandler, System.Windows.Navigation.NavigationEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Navigation.NavigationWindow, System.Windows.Navigation.NavigatedEventHandler, System.Windows.Navigation.NavigationEventArgs> (onNavigated_rf, onNavigated_uf, f)
+      
+      let private onLoadCompleted_r (o : System.Windows.Navigation.NavigationWindow) (h : obj -> System.Windows.Navigation.NavigationEventArgs -> unit) = o.LoadCompleted.AddHandler    (System.Windows.Navigation.LoadCompletedEventHandler h)
+      let private onLoadCompleted_u (o : System.Windows.Navigation.NavigationWindow) (h : obj -> System.Windows.Navigation.NavigationEventArgs -> unit) = o.LoadCompleted.RemoveHandler (System.Windows.Navigation.LoadCompletedEventHandler h)
+      let private onLoadCompleted_rf = onLoadCompleted_r
+      let private onLoadCompleted_uf = onLoadCompleted_u
       let onLoadCompleted                          (f : System.Windows.Navigation.NavigationWindow -> System.Windows.Navigation.NavigationEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Navigation.NavigationWindow) (h : obj -> System.Windows.Navigation.NavigationEventArgs -> unit) = o.LoadCompleted.AddHandler    (System.Windows.Navigation.LoadCompletedEventHandler h)
-        let u (o : System.Windows.Navigation.NavigationWindow) (h : obj -> System.Windows.Navigation.NavigationEventArgs -> unit) = o.LoadCompleted.RemoveHandler (System.Windows.Navigation.LoadCompletedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Navigation.NavigationWindow, System.Windows.Navigation.LoadCompletedEventHandler, System.Windows.Navigation.NavigationEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Navigation.NavigationWindow, System.Windows.Navigation.LoadCompletedEventHandler, System.Windows.Navigation.NavigationEventArgs> (onLoadCompleted_rf, onLoadCompleted_uf, f)
+      
+      let private onNavigationStopped_r (o : System.Windows.Navigation.NavigationWindow) (h : obj -> System.Windows.Navigation.NavigationEventArgs -> unit) = o.NavigationStopped.AddHandler    (System.Windows.Navigation.NavigationStoppedEventHandler h)
+      let private onNavigationStopped_u (o : System.Windows.Navigation.NavigationWindow) (h : obj -> System.Windows.Navigation.NavigationEventArgs -> unit) = o.NavigationStopped.RemoveHandler (System.Windows.Navigation.NavigationStoppedEventHandler h)
+      let private onNavigationStopped_rf = onNavigationStopped_r
+      let private onNavigationStopped_uf = onNavigationStopped_u
       let onNavigationStopped                      (f : System.Windows.Navigation.NavigationWindow -> System.Windows.Navigation.NavigationEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Navigation.NavigationWindow) (h : obj -> System.Windows.Navigation.NavigationEventArgs -> unit) = o.NavigationStopped.AddHandler    (System.Windows.Navigation.NavigationStoppedEventHandler h)
-        let u (o : System.Windows.Navigation.NavigationWindow) (h : obj -> System.Windows.Navigation.NavigationEventArgs -> unit) = o.NavigationStopped.RemoveHandler (System.Windows.Navigation.NavigationStoppedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Navigation.NavigationWindow, System.Windows.Navigation.NavigationStoppedEventHandler, System.Windows.Navigation.NavigationEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Navigation.NavigationWindow, System.Windows.Navigation.NavigationStoppedEventHandler, System.Windows.Navigation.NavigationEventArgs> (onNavigationStopped_rf, onNavigationStopped_uf, f)
+      
+      let private onFragmentNavigation_r (o : System.Windows.Navigation.NavigationWindow) (h : obj -> System.Windows.Navigation.FragmentNavigationEventArgs -> unit) = o.FragmentNavigation.AddHandler    (System.Windows.Navigation.FragmentNavigationEventHandler h)
+      let private onFragmentNavigation_u (o : System.Windows.Navigation.NavigationWindow) (h : obj -> System.Windows.Navigation.FragmentNavigationEventArgs -> unit) = o.FragmentNavigation.RemoveHandler (System.Windows.Navigation.FragmentNavigationEventHandler h)
+      let private onFragmentNavigation_rf = onFragmentNavigation_r
+      let private onFragmentNavigation_uf = onFragmentNavigation_u
       let onFragmentNavigation                     (f : System.Windows.Navigation.NavigationWindow -> System.Windows.Navigation.FragmentNavigationEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Navigation.NavigationWindow) (h : obj -> System.Windows.Navigation.FragmentNavigationEventArgs -> unit) = o.FragmentNavigation.AddHandler    (System.Windows.Navigation.FragmentNavigationEventHandler h)
-        let u (o : System.Windows.Navigation.NavigationWindow) (h : obj -> System.Windows.Navigation.FragmentNavigationEventArgs -> unit) = o.FragmentNavigation.RemoveHandler (System.Windows.Navigation.FragmentNavigationEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Navigation.NavigationWindow, System.Windows.Navigation.FragmentNavigationEventHandler, System.Windows.Navigation.FragmentNavigationEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Navigation.NavigationWindow, System.Windows.Navigation.FragmentNavigationEventHandler, System.Windows.Navigation.FragmentNavigationEventArgs> (onFragmentNavigation_rf, onFragmentNavigation_uf, f)
 
     let page                                     values =
       StandardView<Page> (values) :> View
     module Page = 
-      let dummy = ()
+      open Dummy
       let content                                  v = SetConstantValue<_> (Properties.Page.content, v)
       let background                               v = SetConstantValue<_> (Properties.Page.background, v)
       let title                                    v = SetConstantValue<_> (Properties.Page.title, v)
@@ -2332,18 +2646,21 @@ module Generated =
     let pageContent                              values =
       StandardView<PageContent> (values) :> View
     module PageContent = 
-      let dummy = ()
+      open Dummy
       let source                                   v = SetConstantValue<_> (Properties.PageContent.source, v)
+      
+      let private onGetPageRootCompleted_r (o : System.Windows.Documents.PageContent) (h : obj -> System.Windows.Documents.GetPageRootCompletedEventArgs -> unit) = o.GetPageRootCompleted.AddHandler    (System.Windows.Documents.GetPageRootCompletedEventHandler h)
+      let private onGetPageRootCompleted_u (o : System.Windows.Documents.PageContent) (h : obj -> System.Windows.Documents.GetPageRootCompletedEventArgs -> unit) = o.GetPageRootCompleted.RemoveHandler (System.Windows.Documents.GetPageRootCompletedEventHandler h)
+      let private onGetPageRootCompleted_rf = onGetPageRootCompleted_r
+      let private onGetPageRootCompleted_uf = onGetPageRootCompleted_u
       let onGetPageRootCompleted                   (f : System.Windows.Documents.PageContent -> System.Windows.Documents.GetPageRootCompletedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Documents.PageContent) (h : obj -> System.Windows.Documents.GetPageRootCompletedEventArgs -> unit) = o.GetPageRootCompleted.AddHandler    (System.Windows.Documents.GetPageRootCompletedEventHandler h)
-        let u (o : System.Windows.Documents.PageContent) (h : obj -> System.Windows.Documents.GetPageRootCompletedEventArgs -> unit) = o.GetPageRootCompleted.RemoveHandler (System.Windows.Documents.GetPageRootCompletedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Documents.PageContent, System.Windows.Documents.GetPageRootCompletedEventHandler, System.Windows.Documents.GetPageRootCompletedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Documents.PageContent, System.Windows.Documents.GetPageRootCompletedEventHandler, System.Windows.Documents.GetPageRootCompletedEventArgs> (onGetPageRootCompleted_rf, onGetPageRootCompleted_uf, f)
 
     module PageFunctionBase = 
-      let dummy = ()
+      open Dummy
 
     module Panel = 
-      let dummy = ()
+      open Dummy
       let background                               v = SetConstantValue<_> (Properties.Panel.background, v)
       let isItemsHost                              v = SetConstantValue<_> (Properties.Panel.isItemsHost, v)
       let zIndex                                   v = SetConstantValue<_> (Properties.Panel.zIndex, v)
@@ -2351,7 +2668,7 @@ module Generated =
     let passwordBox                              values =
       StandardView<PasswordBox> (values) :> View
     module PasswordBox = 
-      let dummy = ()
+      open Dummy
       let passwordChar                             v = SetConstantValue<_> (Properties.PasswordBox.passwordChar, v)
       let maxLength                                v = SetConstantValue<_> (Properties.PasswordBox.maxLength, v)
       let selectionBrush                           v = SetConstantValue<_> (Properties.PasswordBox.selectionBrush, v)
@@ -2359,35 +2676,38 @@ module Generated =
       let caretBrush                               v = SetConstantValue<_> (Properties.PasswordBox.caretBrush, v)
       let isSelectionActive                        v = SetConstantValue<_> (Properties.PasswordBox.isSelectionActive, v)
       let isInactiveSelectionHighlightEnabled      v = SetConstantValue<_> (Properties.PasswordBox.isInactiveSelectionHighlightEnabled, v)
+      
+      let private onPasswordChanged_r (o : System.Windows.Controls.PasswordBox) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.PasswordChanged.AddHandler    (System.Windows.RoutedEventHandler h)
+      let private onPasswordChanged_u (o : System.Windows.Controls.PasswordBox) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.PasswordChanged.RemoveHandler (System.Windows.RoutedEventHandler h)
+      let private onPasswordChanged_rf = onPasswordChanged_r
+      let private onPasswordChanged_uf = onPasswordChanged_u
       let onPasswordChanged                        (f : System.Windows.Controls.PasswordBox -> System.Windows.RoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.PasswordBox) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.PasswordChanged.AddHandler    (System.Windows.RoutedEventHandler h)
-        let u (o : System.Windows.Controls.PasswordBox) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.PasswordChanged.RemoveHandler (System.Windows.RoutedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.PasswordBox, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.PasswordBox, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onPasswordChanged_rf, onPasswordChanged_uf, f)
 
     let path                                     values =
       StandardView<Path> (values) :> View
     module Path = 
-      let dummy = ()
+      open Dummy
       let data                                     v = SetConstantValue<_> (Properties.Path.data, v)
 
     let polygon                                  values =
       StandardView<Polygon> (values) :> View
     module Polygon = 
-      let dummy = ()
+      open Dummy
       let points                                   v = SetConstantValue<_> (Properties.Polygon.points, v)
       let fillRule                                 v = SetConstantValue<_> (Properties.Polygon.fillRule, v)
 
     let polyline                                 values =
       StandardView<Polyline> (values) :> View
     module Polyline = 
-      let dummy = ()
+      open Dummy
       let points                                   v = SetConstantValue<_> (Properties.Polyline.points, v)
       let fillRule                                 v = SetConstantValue<_> (Properties.Polyline.fillRule, v)
 
     let popup                                    values =
       StandardView<Popup> (values) :> View
     module Popup = 
-      let dummy = ()
+      open Dummy
       let child                                    v = SetConstantValue<_> (Properties.Popup.child, v)
       let isOpen                                   v = SetConstantValue<_> (Properties.Popup.isOpen, v)
       let placement                                v = SetConstantValue<_> (Properties.Popup.placement, v)
@@ -2400,86 +2720,98 @@ module Generated =
       let popupAnimation                           v = SetConstantValue<_> (Properties.Popup.popupAnimation, v)
       let allowsTransparency                       v = SetConstantValue<_> (Properties.Popup.allowsTransparency, v)
       let hasDropShadow                            v = SetConstantValue<_> (Properties.Popup.hasDropShadow, v)
+      
+      let private onOpened_r (o : System.Windows.Controls.Primitives.Popup) (h : obj -> System.EventArgs -> unit) = o.Opened.AddHandler    (System.EventHandler h)
+      let private onOpened_u (o : System.Windows.Controls.Primitives.Popup) (h : obj -> System.EventArgs -> unit) = o.Opened.RemoveHandler (System.EventHandler h)
+      let private onOpened_rf = onOpened_r
+      let private onOpened_uf = onOpened_u
       let onOpened                                 (f : System.Windows.Controls.Primitives.Popup -> System.EventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.Primitives.Popup) (h : obj -> System.EventArgs -> unit) = o.Opened.AddHandler    (System.EventHandler h)
-        let u (o : System.Windows.Controls.Primitives.Popup) (h : obj -> System.EventArgs -> unit) = o.Opened.RemoveHandler (System.EventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.Primitives.Popup, System.EventHandler, System.EventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.Primitives.Popup, System.EventHandler, System.EventArgs> (onOpened_rf, onOpened_uf, f)
+      
+      let private onClosed_r (o : System.Windows.Controls.Primitives.Popup) (h : obj -> System.EventArgs -> unit) = o.Closed.AddHandler    (System.EventHandler h)
+      let private onClosed_u (o : System.Windows.Controls.Primitives.Popup) (h : obj -> System.EventArgs -> unit) = o.Closed.RemoveHandler (System.EventHandler h)
+      let private onClosed_rf = onClosed_r
+      let private onClosed_uf = onClosed_u
       let onClosed                                 (f : System.Windows.Controls.Primitives.Popup -> System.EventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.Primitives.Popup) (h : obj -> System.EventArgs -> unit) = o.Closed.AddHandler    (System.EventHandler h)
-        let u (o : System.Windows.Controls.Primitives.Popup) (h : obj -> System.EventArgs -> unit) = o.Closed.RemoveHandler (System.EventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.Primitives.Popup, System.EventHandler, System.EventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.Primitives.Popup, System.EventHandler, System.EventArgs> (onClosed_rf, onClosed_uf, f)
 
     let progressBar                              values =
       StandardView<ProgressBar> (values) :> View
     module ProgressBar = 
-      let dummy = ()
+      open Dummy
       let isIndeterminate                          v = SetConstantValue<_> (Properties.ProgressBar.isIndeterminate, v)
       let orientation                              v = SetConstantValue<_> (Properties.ProgressBar.orientation, v)
 
     let radioButton                              values child =
       StandardContentView<RadioButton> (values, child) :> View
     module RadioButton = 
-      let dummy = ()
+      open Dummy
       let groupName                                v = SetConstantValue<_> (Properties.RadioButton.groupName, v)
 
     module RangeBase = 
-      let dummy = ()
+      open Dummy
       let minimum                                  v = SetConstantValue<_> (Properties.RangeBase.minimum, v)
       let maximum                                  v = SetConstantValue<_> (Properties.RangeBase.maximum, v)
       let value                                    v = SetConstantValue<_> (Properties.RangeBase.value, v)
       let largeChange                              v = SetConstantValue<_> (Properties.RangeBase.largeChange, v)
       let smallChange                              v = SetConstantValue<_> (Properties.RangeBase.smallChange, v)
+      
+      let private onValueChanged_r (o : System.Windows.Controls.Primitives.RangeBase) (h : obj -> System.Windows.RoutedPropertyChangedEventArgs<System.Double> -> unit) = o.ValueChanged.AddHandler    (System.Windows.RoutedPropertyChangedEventHandler<System.Double> h)
+      let private onValueChanged_u (o : System.Windows.Controls.Primitives.RangeBase) (h : obj -> System.Windows.RoutedPropertyChangedEventArgs<System.Double> -> unit) = o.ValueChanged.RemoveHandler (System.Windows.RoutedPropertyChangedEventHandler<System.Double> h)
+      let private onValueChanged_rf = onValueChanged_r
+      let private onValueChanged_uf = onValueChanged_u
       let onValueChanged                           (f : System.Windows.Controls.Primitives.RangeBase -> System.Windows.RoutedPropertyChangedEventArgs<System.Double>-> 'TMessage) = 
-        let r (o : System.Windows.Controls.Primitives.RangeBase) (h : obj -> System.Windows.RoutedPropertyChangedEventArgs<System.Double> -> unit) = o.ValueChanged.AddHandler    (System.Windows.RoutedPropertyChangedEventHandler<System.Double> h)
-        let u (o : System.Windows.Controls.Primitives.RangeBase) (h : obj -> System.Windows.RoutedPropertyChangedEventArgs<System.Double> -> unit) = o.ValueChanged.RemoveHandler (System.Windows.RoutedPropertyChangedEventHandler<System.Double> h)
-        OnChangedValue<'TMessage, System.Windows.Controls.Primitives.RangeBase, System.Windows.RoutedPropertyChangedEventHandler<System.Double>, System.Windows.RoutedPropertyChangedEventArgs<System.Double>> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.Primitives.RangeBase, System.Windows.RoutedPropertyChangedEventHandler<System.Double>, System.Windows.RoutedPropertyChangedEventArgs<System.Double>> (onValueChanged_rf, onValueChanged_uf, f)
 
     let rectangle                                values =
       StandardView<Rectangle> (values) :> View
     module Rectangle = 
-      let dummy = ()
+      open Dummy
       let radiusX                                  v = SetConstantValue<_> (Properties.Rectangle.radiusX, v)
       let radiusY                                  v = SetConstantValue<_> (Properties.Rectangle.radiusY, v)
 
     let repeatButton                             values child =
       StandardContentView<RepeatButton> (values, child) :> View
     module RepeatButton = 
-      let dummy = ()
+      open Dummy
       let delay                                    v = SetConstantValue<_> (Properties.RepeatButton.delay, v)
       let interval                                 v = SetConstantValue<_> (Properties.RepeatButton.interval, v)
 
     let resizeGrip                               values =
       StandardView<ResizeGrip> (values) :> View
     module ResizeGrip = 
-      let dummy = ()
+      open Dummy
 
     let richTextBox                              values =
       StandardView<RichTextBox> (values) :> View
     module RichTextBox = 
-      let dummy = ()
+      open Dummy
       let isDocumentEnabled                        v = SetConstantValue<_> (Properties.RichTextBox.isDocumentEnabled, v)
 
     let scrollBar                                values =
       StandardView<ScrollBar> (values) :> View
     module ScrollBar = 
-      let dummy = ()
+      open Dummy
       let orientation                              v = SetConstantValue<_> (Properties.ScrollBar.orientation, v)
       let viewportSize                             v = SetConstantValue<_> (Properties.ScrollBar.viewportSize, v)
+      
+      let private onScroll_r (o : System.Windows.Controls.Primitives.ScrollBar) (h : obj -> System.Windows.Controls.Primitives.ScrollEventArgs -> unit) = o.Scroll.AddHandler    (System.Windows.Controls.Primitives.ScrollEventHandler h)
+      let private onScroll_u (o : System.Windows.Controls.Primitives.ScrollBar) (h : obj -> System.Windows.Controls.Primitives.ScrollEventArgs -> unit) = o.Scroll.RemoveHandler (System.Windows.Controls.Primitives.ScrollEventHandler h)
+      let private onScroll_rf = onScroll_r
+      let private onScroll_uf = onScroll_u
       let onScroll                                 (f : System.Windows.Controls.Primitives.ScrollBar -> System.Windows.Controls.Primitives.ScrollEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.Primitives.ScrollBar) (h : obj -> System.Windows.Controls.Primitives.ScrollEventArgs -> unit) = o.Scroll.AddHandler    (System.Windows.Controls.Primitives.ScrollEventHandler h)
-        let u (o : System.Windows.Controls.Primitives.ScrollBar) (h : obj -> System.Windows.Controls.Primitives.ScrollEventArgs -> unit) = o.Scroll.RemoveHandler (System.Windows.Controls.Primitives.ScrollEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.Primitives.ScrollBar, System.Windows.Controls.Primitives.ScrollEventHandler, System.Windows.Controls.Primitives.ScrollEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.Primitives.ScrollBar, System.Windows.Controls.Primitives.ScrollEventHandler, System.Windows.Controls.Primitives.ScrollEventArgs> (onScroll_rf, onScroll_uf, f)
 
     let scrollContentPresenter                   values =
       StandardView<ScrollContentPresenter> (values) :> View
     module ScrollContentPresenter = 
-      let dummy = ()
+      open Dummy
       let canContentScroll                         v = SetConstantValue<_> (Properties.ScrollContentPresenter.canContentScroll, v)
 
     let scrollViewer                             values child =
       StandardContentView<ScrollViewer> (values, child) :> View
     module ScrollViewer = 
-      let dummy = ()
+      open Dummy
       let canContentScroll                         v = SetConstantValue<_> (Properties.ScrollViewer.canContentScroll, v)
       let horizontalScrollBarVisibility            v = SetConstantValue<_> (Properties.ScrollViewer.horizontalScrollBarVisibility, v)
       let verticalScrollBarVisibility              v = SetConstantValue<_> (Properties.ScrollViewer.verticalScrollBarVisibility, v)
@@ -2499,19 +2831,22 @@ module Generated =
       let panningMode                              v = SetConstantValue<_> (Properties.ScrollViewer.panningMode, v)
       let panningDeceleration                      v = SetConstantValue<_> (Properties.ScrollViewer.panningDeceleration, v)
       let panningRatio                             v = SetConstantValue<_> (Properties.ScrollViewer.panningRatio, v)
+      
+      let private onScrollChanged_r (o : System.Windows.Controls.ScrollViewer) (h : obj -> System.Windows.Controls.ScrollChangedEventArgs -> unit) = o.ScrollChanged.AddHandler    (System.Windows.Controls.ScrollChangedEventHandler h)
+      let private onScrollChanged_u (o : System.Windows.Controls.ScrollViewer) (h : obj -> System.Windows.Controls.ScrollChangedEventArgs -> unit) = o.ScrollChanged.RemoveHandler (System.Windows.Controls.ScrollChangedEventHandler h)
+      let private onScrollChanged_rf = onScrollChanged_r
+      let private onScrollChanged_uf = onScrollChanged_u
       let onScrollChanged                          (f : System.Windows.Controls.ScrollViewer -> System.Windows.Controls.ScrollChangedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.ScrollViewer) (h : obj -> System.Windows.Controls.ScrollChangedEventArgs -> unit) = o.ScrollChanged.AddHandler    (System.Windows.Controls.ScrollChangedEventHandler h)
-        let u (o : System.Windows.Controls.ScrollViewer) (h : obj -> System.Windows.Controls.ScrollChangedEventArgs -> unit) = o.ScrollChanged.RemoveHandler (System.Windows.Controls.ScrollChangedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.ScrollViewer, System.Windows.Controls.ScrollChangedEventHandler, System.Windows.Controls.ScrollChangedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.ScrollViewer, System.Windows.Controls.ScrollChangedEventHandler, System.Windows.Controls.ScrollChangedEventArgs> (onScrollChanged_rf, onScrollChanged_uf, f)
 
     let selectiveScrollingGrid                   values children =
       StandardPanelView<SelectiveScrollingGrid> (values, children) :> View
     module SelectiveScrollingGrid = 
-      let dummy = ()
+      open Dummy
       let selectiveScrollingOrientation            v = SetConstantValue<_> (Properties.SelectiveScrollingGrid.selectiveScrollingOrientation, v)
 
     module Selector = 
-      let dummy = ()
+      open Dummy
       let isSelectionActive                        v = SetConstantValue<_> (Properties.Selector.isSelectionActive, v)
       let isSelected                               v = SetConstantValue<_> (Properties.Selector.isSelected, v)
       let isSynchronizedWithCurrentItem            v = SetConstantValue<_> (Properties.Selector.isSynchronizedWithCurrentItem, v)
@@ -2519,18 +2854,21 @@ module Generated =
       let selectedItem                             v = SetConstantValue<_> (Properties.Selector.selectedItem, v)
       let selectedValue                            v = SetConstantValue<_> (Properties.Selector.selectedValue, v)
       let selectedValuePath                        v = SetConstantValue<_> (Properties.Selector.selectedValuePath, v)
+      
+      let private onSelectionChanged_r (o : System.Windows.Controls.Primitives.Selector) (h : obj -> System.Windows.Controls.SelectionChangedEventArgs -> unit) = o.SelectionChanged.AddHandler    (System.Windows.Controls.SelectionChangedEventHandler h)
+      let private onSelectionChanged_u (o : System.Windows.Controls.Primitives.Selector) (h : obj -> System.Windows.Controls.SelectionChangedEventArgs -> unit) = o.SelectionChanged.RemoveHandler (System.Windows.Controls.SelectionChangedEventHandler h)
+      let private onSelectionChanged_rf = onSelectionChanged_r
+      let private onSelectionChanged_uf = onSelectionChanged_u
       let onSelectionChanged                       (f : System.Windows.Controls.Primitives.Selector -> System.Windows.Controls.SelectionChangedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.Primitives.Selector) (h : obj -> System.Windows.Controls.SelectionChangedEventArgs -> unit) = o.SelectionChanged.AddHandler    (System.Windows.Controls.SelectionChangedEventHandler h)
-        let u (o : System.Windows.Controls.Primitives.Selector) (h : obj -> System.Windows.Controls.SelectionChangedEventArgs -> unit) = o.SelectionChanged.RemoveHandler (System.Windows.Controls.SelectionChangedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.Primitives.Selector, System.Windows.Controls.SelectionChangedEventHandler, System.Windows.Controls.SelectionChangedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.Primitives.Selector, System.Windows.Controls.SelectionChangedEventHandler, System.Windows.Controls.SelectionChangedEventArgs> (onSelectionChanged_rf, onSelectionChanged_uf, f)
 
     let separator                                values =
       StandardView<Separator> (values) :> View
     module Separator = 
-      let dummy = ()
+      open Dummy
 
     module Shape = 
-      let dummy = ()
+      open Dummy
       let stretch                                  v = SetConstantValue<_> (Properties.Shape.stretch, v)
       let fill                                     v = SetConstantValue<_> (Properties.Shape.fill, v)
       let stroke                                   v = SetConstantValue<_> (Properties.Shape.stroke, v)
@@ -2546,7 +2884,7 @@ module Generated =
     let slider                                   values =
       StandardView<Slider> (values) :> View
     module Slider = 
-      let dummy = ()
+      open Dummy
       let orientation                              v = SetConstantValue<_> (Properties.Slider.orientation, v)
       let isDirectionReversed                      v = SetConstantValue<_> (Properties.Slider.isDirectionReversed, v)
       let delay                                    v = SetConstantValue<_> (Properties.Slider.delay, v)
@@ -2565,23 +2903,23 @@ module Generated =
     let stackPanel                               values children =
       StandardPanelView<StackPanel> (values, children) :> View
     module StackPanel = 
-      let dummy = ()
+      open Dummy
       let orientation                              v = SetConstantValue<_> (Properties.StackPanel.orientation, v)
 
     let statusBar                                values =
       StandardView<StatusBar> (values) :> View
     module StatusBar = 
-      let dummy = ()
+      open Dummy
       let itemContainerTemplateSelector            v = SetConstantValue<_> (Properties.StatusBar.itemContainerTemplateSelector, v)
       let usesItemContainerTemplate                v = SetConstantValue<_> (Properties.StatusBar.usesItemContainerTemplate, v)
 
     let statusBarItem                            values child =
       StandardContentView<StatusBarItem> (values, child) :> View
     module StatusBarItem = 
-      let dummy = ()
+      open Dummy
 
     module StickyNoteControl = 
-      let dummy = ()
+      open Dummy
       let author                                   v = SetConstantValue<_> (Properties.StickyNoteControl.author, v)
       let isExpanded                               v = SetConstantValue<_> (Properties.StickyNoteControl.isExpanded, v)
       let isActive                                 v = SetConstantValue<_> (Properties.StickyNoteControl.isActive, v)
@@ -2597,7 +2935,7 @@ module Generated =
     let tabControl                               values =
       StandardView<TabControl> (values) :> View
     module TabControl = 
-      let dummy = ()
+      open Dummy
       let tabStripPlacement                        v = SetConstantValue<_> (Properties.TabControl.tabStripPlacement, v)
       let selectedContent                          v = SetConstantValue<_> (Properties.TabControl.selectedContent, v)
       let selectedContentTemplate                  v = SetConstantValue<_> (Properties.TabControl.selectedContentTemplate, v)
@@ -2610,19 +2948,19 @@ module Generated =
     let tabItem                                  values child =
       StandardContentView<TabItem> (values, child) :> View
     module TabItem = 
-      let dummy = ()
+      open Dummy
       let isSelected                               v = SetConstantValue<_> (Properties.TabItem.isSelected, v)
       let tabStripPlacement                        v = SetConstantValue<_> (Properties.TabItem.tabStripPlacement, v)
 
     let tabPanel                                 values children =
       StandardPanelView<TabPanel> (values, children) :> View
     module TabPanel = 
-      let dummy = ()
+      open Dummy
 
     let textBlock                                values =
       StandardView<TextBlock> (values) :> View
     module TextBlock = 
-      let dummy = ()
+      open Dummy
       let baselineOffset                           v = SetConstantValue<_> (Properties.TextBlock.baselineOffset, v)
       let text                                     v = SetConstantValue<_> (Properties.TextBlock.text, v)
       let fontFamily                               v = SetConstantValue<_> (Properties.TextBlock.fontFamily, v)
@@ -2645,7 +2983,7 @@ module Generated =
     let textBox                                  values =
       StandardView<TextBox> (values) :> View
     module TextBox = 
-      let dummy = ()
+      open Dummy
       let textWrapping                             v = SetConstantValue<_> (Properties.TextBox.textWrapping, v)
       let minLines                                 v = SetConstantValue<_> (Properties.TextBox.minLines, v)
       let maxLines                                 v = SetConstantValue<_> (Properties.TextBox.maxLines, v)
@@ -2656,7 +2994,7 @@ module Generated =
       let textDecorations                          v = SetConstantValue<_> (Properties.TextBox.textDecorations, v)
 
     module TextBoxBase = 
-      let dummy = ()
+      open Dummy
       let isReadOnly                               v = SetConstantValue<_> (Properties.TextBoxBase.isReadOnly, v)
       let isReadOnlyCaretVisible                   v = SetConstantValue<_> (Properties.TextBoxBase.isReadOnlyCaretVisible, v)
       let acceptsReturn                            v = SetConstantValue<_> (Properties.TextBoxBase.acceptsReturn, v)
@@ -2671,37 +3009,52 @@ module Generated =
       let caretBrush                               v = SetConstantValue<_> (Properties.TextBoxBase.caretBrush, v)
       let isSelectionActive                        v = SetConstantValue<_> (Properties.TextBoxBase.isSelectionActive, v)
       let isInactiveSelectionHighlightEnabled      v = SetConstantValue<_> (Properties.TextBoxBase.isInactiveSelectionHighlightEnabled, v)
+      
+      let private onTextChanged_r (o : System.Windows.Controls.Primitives.TextBoxBase) (h : obj -> System.Windows.Controls.TextChangedEventArgs -> unit) = o.TextChanged.AddHandler    (System.Windows.Controls.TextChangedEventHandler h)
+      let private onTextChanged_u (o : System.Windows.Controls.Primitives.TextBoxBase) (h : obj -> System.Windows.Controls.TextChangedEventArgs -> unit) = o.TextChanged.RemoveHandler (System.Windows.Controls.TextChangedEventHandler h)
+      let private onTextChanged_rf = onTextChanged_r
+      let private onTextChanged_uf = onTextChanged_u
       let onTextChanged                            (f : System.Windows.Controls.Primitives.TextBoxBase -> System.Windows.Controls.TextChangedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.Primitives.TextBoxBase) (h : obj -> System.Windows.Controls.TextChangedEventArgs -> unit) = o.TextChanged.AddHandler    (System.Windows.Controls.TextChangedEventHandler h)
-        let u (o : System.Windows.Controls.Primitives.TextBoxBase) (h : obj -> System.Windows.Controls.TextChangedEventArgs -> unit) = o.TextChanged.RemoveHandler (System.Windows.Controls.TextChangedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.Primitives.TextBoxBase, System.Windows.Controls.TextChangedEventHandler, System.Windows.Controls.TextChangedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.Primitives.TextBoxBase, System.Windows.Controls.TextChangedEventHandler, System.Windows.Controls.TextChangedEventArgs> (onTextChanged_rf, onTextChanged_uf, f)
+      
+      let private onSelectionChanged_r (o : System.Windows.Controls.Primitives.TextBoxBase) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.SelectionChanged.AddHandler    (System.Windows.RoutedEventHandler h)
+      let private onSelectionChanged_u (o : System.Windows.Controls.Primitives.TextBoxBase) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.SelectionChanged.RemoveHandler (System.Windows.RoutedEventHandler h)
+      let private onSelectionChanged_rf = onSelectionChanged_r
+      let private onSelectionChanged_uf = onSelectionChanged_u
       let onSelectionChanged                       (f : System.Windows.Controls.Primitives.TextBoxBase -> System.Windows.RoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.Primitives.TextBoxBase) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.SelectionChanged.AddHandler    (System.Windows.RoutedEventHandler h)
-        let u (o : System.Windows.Controls.Primitives.TextBoxBase) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.SelectionChanged.RemoveHandler (System.Windows.RoutedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.Primitives.TextBoxBase, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.Primitives.TextBoxBase, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onSelectionChanged_rf, onSelectionChanged_uf, f)
 
     let thumb                                    values =
       StandardView<Thumb> (values) :> View
     module Thumb = 
-      let dummy = ()
+      open Dummy
       let isDragging                               v = SetConstantValue<_> (Properties.Thumb.isDragging, v)
+      
+      let private onDragStarted_r (o : System.Windows.Controls.Primitives.Thumb) (h : obj -> System.Windows.Controls.Primitives.DragStartedEventArgs -> unit) = o.DragStarted.AddHandler    (System.Windows.Controls.Primitives.DragStartedEventHandler h)
+      let private onDragStarted_u (o : System.Windows.Controls.Primitives.Thumb) (h : obj -> System.Windows.Controls.Primitives.DragStartedEventArgs -> unit) = o.DragStarted.RemoveHandler (System.Windows.Controls.Primitives.DragStartedEventHandler h)
+      let private onDragStarted_rf = onDragStarted_r
+      let private onDragStarted_uf = onDragStarted_u
       let onDragStarted                            (f : System.Windows.Controls.Primitives.Thumb -> System.Windows.Controls.Primitives.DragStartedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.Primitives.Thumb) (h : obj -> System.Windows.Controls.Primitives.DragStartedEventArgs -> unit) = o.DragStarted.AddHandler    (System.Windows.Controls.Primitives.DragStartedEventHandler h)
-        let u (o : System.Windows.Controls.Primitives.Thumb) (h : obj -> System.Windows.Controls.Primitives.DragStartedEventArgs -> unit) = o.DragStarted.RemoveHandler (System.Windows.Controls.Primitives.DragStartedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.Primitives.Thumb, System.Windows.Controls.Primitives.DragStartedEventHandler, System.Windows.Controls.Primitives.DragStartedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.Primitives.Thumb, System.Windows.Controls.Primitives.DragStartedEventHandler, System.Windows.Controls.Primitives.DragStartedEventArgs> (onDragStarted_rf, onDragStarted_uf, f)
+      
+      let private onDragDelta_r (o : System.Windows.Controls.Primitives.Thumb) (h : obj -> System.Windows.Controls.Primitives.DragDeltaEventArgs -> unit) = o.DragDelta.AddHandler    (System.Windows.Controls.Primitives.DragDeltaEventHandler h)
+      let private onDragDelta_u (o : System.Windows.Controls.Primitives.Thumb) (h : obj -> System.Windows.Controls.Primitives.DragDeltaEventArgs -> unit) = o.DragDelta.RemoveHandler (System.Windows.Controls.Primitives.DragDeltaEventHandler h)
+      let private onDragDelta_rf = onDragDelta_r
+      let private onDragDelta_uf = onDragDelta_u
       let onDragDelta                              (f : System.Windows.Controls.Primitives.Thumb -> System.Windows.Controls.Primitives.DragDeltaEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.Primitives.Thumb) (h : obj -> System.Windows.Controls.Primitives.DragDeltaEventArgs -> unit) = o.DragDelta.AddHandler    (System.Windows.Controls.Primitives.DragDeltaEventHandler h)
-        let u (o : System.Windows.Controls.Primitives.Thumb) (h : obj -> System.Windows.Controls.Primitives.DragDeltaEventArgs -> unit) = o.DragDelta.RemoveHandler (System.Windows.Controls.Primitives.DragDeltaEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.Primitives.Thumb, System.Windows.Controls.Primitives.DragDeltaEventHandler, System.Windows.Controls.Primitives.DragDeltaEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.Primitives.Thumb, System.Windows.Controls.Primitives.DragDeltaEventHandler, System.Windows.Controls.Primitives.DragDeltaEventArgs> (onDragDelta_rf, onDragDelta_uf, f)
+      
+      let private onDragCompleted_r (o : System.Windows.Controls.Primitives.Thumb) (h : obj -> System.Windows.Controls.Primitives.DragCompletedEventArgs -> unit) = o.DragCompleted.AddHandler    (System.Windows.Controls.Primitives.DragCompletedEventHandler h)
+      let private onDragCompleted_u (o : System.Windows.Controls.Primitives.Thumb) (h : obj -> System.Windows.Controls.Primitives.DragCompletedEventArgs -> unit) = o.DragCompleted.RemoveHandler (System.Windows.Controls.Primitives.DragCompletedEventHandler h)
+      let private onDragCompleted_rf = onDragCompleted_r
+      let private onDragCompleted_uf = onDragCompleted_u
       let onDragCompleted                          (f : System.Windows.Controls.Primitives.Thumb -> System.Windows.Controls.Primitives.DragCompletedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.Primitives.Thumb) (h : obj -> System.Windows.Controls.Primitives.DragCompletedEventArgs -> unit) = o.DragCompleted.AddHandler    (System.Windows.Controls.Primitives.DragCompletedEventHandler h)
-        let u (o : System.Windows.Controls.Primitives.Thumb) (h : obj -> System.Windows.Controls.Primitives.DragCompletedEventArgs -> unit) = o.DragCompleted.RemoveHandler (System.Windows.Controls.Primitives.DragCompletedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.Primitives.Thumb, System.Windows.Controls.Primitives.DragCompletedEventHandler, System.Windows.Controls.Primitives.DragCompletedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.Primitives.Thumb, System.Windows.Controls.Primitives.DragCompletedEventHandler, System.Windows.Controls.Primitives.DragCompletedEventArgs> (onDragCompleted_rf, onDragCompleted_uf, f)
 
     let tickBar                                  values =
       StandardView<TickBar> (values) :> View
     module TickBar = 
-      let dummy = ()
+      open Dummy
       let fill                                     v = SetConstantValue<_> (Properties.TickBar.fill, v)
       let minimum                                  v = SetConstantValue<_> (Properties.TickBar.minimum, v)
       let maximum                                  v = SetConstantValue<_> (Properties.TickBar.maximum, v)
@@ -2717,26 +3070,35 @@ module Generated =
     let toggleButton                             values child =
       StandardContentView<ToggleButton> (values, child) :> View
     module ToggleButton = 
-      let dummy = ()
+      open Dummy
       let isChecked                                v = SetConstantValue<_> (Properties.ToggleButton.isChecked, v)
       let isThreeState                             v = SetConstantValue<_> (Properties.ToggleButton.isThreeState, v)
+      
+      let private onChecked_r (o : System.Windows.Controls.Primitives.ToggleButton) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Checked.AddHandler    (System.Windows.RoutedEventHandler h)
+      let private onChecked_u (o : System.Windows.Controls.Primitives.ToggleButton) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Checked.RemoveHandler (System.Windows.RoutedEventHandler h)
+      let private onChecked_rf = onChecked_r
+      let private onChecked_uf = onChecked_u
       let onChecked                                (f : System.Windows.Controls.Primitives.ToggleButton -> System.Windows.RoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.Primitives.ToggleButton) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Checked.AddHandler    (System.Windows.RoutedEventHandler h)
-        let u (o : System.Windows.Controls.Primitives.ToggleButton) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Checked.RemoveHandler (System.Windows.RoutedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.Primitives.ToggleButton, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.Primitives.ToggleButton, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onChecked_rf, onChecked_uf, f)
+      
+      let private onUnchecked_r (o : System.Windows.Controls.Primitives.ToggleButton) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Unchecked.AddHandler    (System.Windows.RoutedEventHandler h)
+      let private onUnchecked_u (o : System.Windows.Controls.Primitives.ToggleButton) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Unchecked.RemoveHandler (System.Windows.RoutedEventHandler h)
+      let private onUnchecked_rf = onUnchecked_r
+      let private onUnchecked_uf = onUnchecked_u
       let onUnchecked                              (f : System.Windows.Controls.Primitives.ToggleButton -> System.Windows.RoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.Primitives.ToggleButton) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Unchecked.AddHandler    (System.Windows.RoutedEventHandler h)
-        let u (o : System.Windows.Controls.Primitives.ToggleButton) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Unchecked.RemoveHandler (System.Windows.RoutedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.Primitives.ToggleButton, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.Primitives.ToggleButton, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onUnchecked_rf, onUnchecked_uf, f)
+      
+      let private onIndeterminate_r (o : System.Windows.Controls.Primitives.ToggleButton) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Indeterminate.AddHandler    (System.Windows.RoutedEventHandler h)
+      let private onIndeterminate_u (o : System.Windows.Controls.Primitives.ToggleButton) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Indeterminate.RemoveHandler (System.Windows.RoutedEventHandler h)
+      let private onIndeterminate_rf = onIndeterminate_r
+      let private onIndeterminate_uf = onIndeterminate_u
       let onIndeterminate                          (f : System.Windows.Controls.Primitives.ToggleButton -> System.Windows.RoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.Primitives.ToggleButton) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Indeterminate.AddHandler    (System.Windows.RoutedEventHandler h)
-        let u (o : System.Windows.Controls.Primitives.ToggleButton) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Indeterminate.RemoveHandler (System.Windows.RoutedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.Primitives.ToggleButton, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.Primitives.ToggleButton, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onIndeterminate_rf, onIndeterminate_uf, f)
 
     let toolBar                                  values =
       StandardView<ToolBar> (values) :> View
     module ToolBar = 
-      let dummy = ()
+      open Dummy
       let orientation                              v = SetConstantValue<_> (Properties.ToolBar.orientation, v)
       let band                                     v = SetConstantValue<_> (Properties.ToolBar.band, v)
       let bandIndex                                v = SetConstantValue<_> (Properties.ToolBar.bandIndex, v)
@@ -2748,18 +3110,18 @@ module Generated =
     let toolBarOverflowPanel                     values children =
       StandardPanelView<ToolBarOverflowPanel> (values, children) :> View
     module ToolBarOverflowPanel = 
-      let dummy = ()
+      open Dummy
       let wrapWidth                                v = SetConstantValue<_> (Properties.ToolBarOverflowPanel.wrapWidth, v)
 
     let toolBarPanel                             values children =
       StandardPanelView<ToolBarPanel> (values, children) :> View
     module ToolBarPanel = 
-      let dummy = ()
+      open Dummy
 
     let toolBarTray                              values =
       StandardView<ToolBarTray> (values) :> View
     module ToolBarTray = 
-      let dummy = ()
+      open Dummy
       let background                               v = SetConstantValue<_> (Properties.ToolBarTray.background, v)
       let orientation                              v = SetConstantValue<_> (Properties.ToolBarTray.orientation, v)
       let isLocked                                 v = SetConstantValue<_> (Properties.ToolBarTray.isLocked, v)
@@ -2767,7 +3129,7 @@ module Generated =
     let toolTip                                  values child =
       StandardContentView<ToolTip> (values, child) :> View
     module ToolTip = 
-      let dummy = ()
+      open Dummy
       let horizontalOffset                         v = SetConstantValue<_> (Properties.ToolTip.horizontalOffset, v)
       let verticalOffset                           v = SetConstantValue<_> (Properties.ToolTip.verticalOffset, v)
       let isOpen                                   v = SetConstantValue<_> (Properties.ToolTip.isOpen, v)
@@ -2777,19 +3139,25 @@ module Generated =
       let placement                                v = SetConstantValue<_> (Properties.ToolTip.placement, v)
       let customPopupPlacementCallback             v = SetConstantValue<_> (Properties.ToolTip.customPopupPlacementCallback, v)
       let staysOpen                                v = SetConstantValue<_> (Properties.ToolTip.staysOpen, v)
+      
+      let private onOpened_r (o : System.Windows.Controls.ToolTip) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Opened.AddHandler    (System.Windows.RoutedEventHandler h)
+      let private onOpened_u (o : System.Windows.Controls.ToolTip) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Opened.RemoveHandler (System.Windows.RoutedEventHandler h)
+      let private onOpened_rf = onOpened_r
+      let private onOpened_uf = onOpened_u
       let onOpened                                 (f : System.Windows.Controls.ToolTip -> System.Windows.RoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.ToolTip) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Opened.AddHandler    (System.Windows.RoutedEventHandler h)
-        let u (o : System.Windows.Controls.ToolTip) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Opened.RemoveHandler (System.Windows.RoutedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.ToolTip, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.ToolTip, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onOpened_rf, onOpened_uf, f)
+      
+      let private onClosed_r (o : System.Windows.Controls.ToolTip) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Closed.AddHandler    (System.Windows.RoutedEventHandler h)
+      let private onClosed_u (o : System.Windows.Controls.ToolTip) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Closed.RemoveHandler (System.Windows.RoutedEventHandler h)
+      let private onClosed_rf = onClosed_r
+      let private onClosed_uf = onClosed_u
       let onClosed                                 (f : System.Windows.Controls.ToolTip -> System.Windows.RoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.ToolTip) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Closed.AddHandler    (System.Windows.RoutedEventHandler h)
-        let u (o : System.Windows.Controls.ToolTip) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Closed.RemoveHandler (System.Windows.RoutedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.ToolTip, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.ToolTip, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onClosed_rf, onClosed_uf, f)
 
     let track                                    values =
       StandardView<Track> (values) :> View
     module Track = 
-      let dummy = ()
+      open Dummy
       let orientation                              v = SetConstantValue<_> (Properties.Track.orientation, v)
       let minimum                                  v = SetConstantValue<_> (Properties.Track.minimum, v)
       let maximum                                  v = SetConstantValue<_> (Properties.Track.maximum, v)
@@ -2800,43 +3168,58 @@ module Generated =
     let treeView                                 values =
       StandardView<TreeView> (values) :> View
     module TreeView = 
-      let dummy = ()
+      open Dummy
       let selectedItem                             v = SetConstantValue<_> (Properties.TreeView.selectedItem, v)
       let selectedValue                            v = SetConstantValue<_> (Properties.TreeView.selectedValue, v)
       let selectedValuePath                        v = SetConstantValue<_> (Properties.TreeView.selectedValuePath, v)
+      
+      let private onSelectedItemChanged_r (o : System.Windows.Controls.TreeView) (h : obj -> System.Windows.RoutedPropertyChangedEventArgs<System.Object> -> unit) = o.SelectedItemChanged.AddHandler    (System.Windows.RoutedPropertyChangedEventHandler<System.Object> h)
+      let private onSelectedItemChanged_u (o : System.Windows.Controls.TreeView) (h : obj -> System.Windows.RoutedPropertyChangedEventArgs<System.Object> -> unit) = o.SelectedItemChanged.RemoveHandler (System.Windows.RoutedPropertyChangedEventHandler<System.Object> h)
+      let private onSelectedItemChanged_rf = onSelectedItemChanged_r
+      let private onSelectedItemChanged_uf = onSelectedItemChanged_u
       let onSelectedItemChanged                    (f : System.Windows.Controls.TreeView -> System.Windows.RoutedPropertyChangedEventArgs<System.Object>-> 'TMessage) = 
-        let r (o : System.Windows.Controls.TreeView) (h : obj -> System.Windows.RoutedPropertyChangedEventArgs<System.Object> -> unit) = o.SelectedItemChanged.AddHandler    (System.Windows.RoutedPropertyChangedEventHandler<System.Object> h)
-        let u (o : System.Windows.Controls.TreeView) (h : obj -> System.Windows.RoutedPropertyChangedEventArgs<System.Object> -> unit) = o.SelectedItemChanged.RemoveHandler (System.Windows.RoutedPropertyChangedEventHandler<System.Object> h)
-        OnChangedValue<'TMessage, System.Windows.Controls.TreeView, System.Windows.RoutedPropertyChangedEventHandler<System.Object>, System.Windows.RoutedPropertyChangedEventArgs<System.Object>> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.TreeView, System.Windows.RoutedPropertyChangedEventHandler<System.Object>, System.Windows.RoutedPropertyChangedEventArgs<System.Object>> (onSelectedItemChanged_rf, onSelectedItemChanged_uf, f)
 
     let treeViewItem                             values =
       StandardView<TreeViewItem> (values) :> View
     module TreeViewItem = 
-      let dummy = ()
+      open Dummy
       let isExpanded                               v = SetConstantValue<_> (Properties.TreeViewItem.isExpanded, v)
       let isSelected                               v = SetConstantValue<_> (Properties.TreeViewItem.isSelected, v)
       let isSelectionActive                        v = SetConstantValue<_> (Properties.TreeViewItem.isSelectionActive, v)
+      
+      let private onExpanded_r (o : System.Windows.Controls.TreeViewItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Expanded.AddHandler    (System.Windows.RoutedEventHandler h)
+      let private onExpanded_u (o : System.Windows.Controls.TreeViewItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Expanded.RemoveHandler (System.Windows.RoutedEventHandler h)
+      let private onExpanded_rf = onExpanded_r
+      let private onExpanded_uf = onExpanded_u
       let onExpanded                               (f : System.Windows.Controls.TreeViewItem -> System.Windows.RoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.TreeViewItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Expanded.AddHandler    (System.Windows.RoutedEventHandler h)
-        let u (o : System.Windows.Controls.TreeViewItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Expanded.RemoveHandler (System.Windows.RoutedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.TreeViewItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.TreeViewItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onExpanded_rf, onExpanded_uf, f)
+      
+      let private onCollapsed_r (o : System.Windows.Controls.TreeViewItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Collapsed.AddHandler    (System.Windows.RoutedEventHandler h)
+      let private onCollapsed_u (o : System.Windows.Controls.TreeViewItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Collapsed.RemoveHandler (System.Windows.RoutedEventHandler h)
+      let private onCollapsed_rf = onCollapsed_r
+      let private onCollapsed_uf = onCollapsed_u
       let onCollapsed                              (f : System.Windows.Controls.TreeViewItem -> System.Windows.RoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.TreeViewItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Collapsed.AddHandler    (System.Windows.RoutedEventHandler h)
-        let u (o : System.Windows.Controls.TreeViewItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Collapsed.RemoveHandler (System.Windows.RoutedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.TreeViewItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.TreeViewItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onCollapsed_rf, onCollapsed_uf, f)
+      
+      let private onSelected_r (o : System.Windows.Controls.TreeViewItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Selected.AddHandler    (System.Windows.RoutedEventHandler h)
+      let private onSelected_u (o : System.Windows.Controls.TreeViewItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Selected.RemoveHandler (System.Windows.RoutedEventHandler h)
+      let private onSelected_rf = onSelected_r
+      let private onSelected_uf = onSelected_u
       let onSelected                               (f : System.Windows.Controls.TreeViewItem -> System.Windows.RoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.TreeViewItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Selected.AddHandler    (System.Windows.RoutedEventHandler h)
-        let u (o : System.Windows.Controls.TreeViewItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Selected.RemoveHandler (System.Windows.RoutedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.TreeViewItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.TreeViewItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onSelected_rf, onSelected_uf, f)
+      
+      let private onUnselected_r (o : System.Windows.Controls.TreeViewItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Unselected.AddHandler    (System.Windows.RoutedEventHandler h)
+      let private onUnselected_u (o : System.Windows.Controls.TreeViewItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Unselected.RemoveHandler (System.Windows.RoutedEventHandler h)
+      let private onUnselected_rf = onUnselected_r
+      let private onUnselected_uf = onUnselected_u
       let onUnselected                             (f : System.Windows.Controls.TreeViewItem -> System.Windows.RoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.TreeViewItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Unselected.AddHandler    (System.Windows.RoutedEventHandler h)
-        let u (o : System.Windows.Controls.TreeViewItem) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.Unselected.RemoveHandler (System.Windows.RoutedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.TreeViewItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.TreeViewItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onUnselected_rf, onUnselected_uf, f)
 
     let uIElement                                values =
       StandardView<UIElement> (values) :> View
     module UIElement = 
-      let dummy = ()
+      open Dummy
       let isMouseDirectlyOver                      v = SetConstantValue<_> (Properties.UIElement.isMouseDirectlyOver, v)
       let isMouseOver                              v = SetConstantValue<_> (Properties.UIElement.isMouseOver, v)
       let isStylusOver                             v = SetConstantValue<_> (Properties.UIElement.isStylusOver, v)
@@ -2871,395 +3254,683 @@ module Generated =
       let isVisible                                v = SetConstantValue<_> (Properties.UIElement.isVisible, v)
       let focusable                                v = SetConstantValue<_> (Properties.UIElement.focusable, v)
       let isManipulationEnabled                    v = SetConstantValue<_> (Properties.UIElement.isManipulationEnabled, v)
+      
+      let private onPreviewMouseDown_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.PreviewMouseDown.AddHandler    (System.Windows.Input.MouseButtonEventHandler h)
+      let private onPreviewMouseDown_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.PreviewMouseDown.RemoveHandler (System.Windows.Input.MouseButtonEventHandler h)
+      let private onPreviewMouseDown_rf = onPreviewMouseDown_r
+      let private onPreviewMouseDown_uf = onPreviewMouseDown_u
       let onPreviewMouseDown                       (f : System.Windows.UIElement -> System.Windows.Input.MouseButtonEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.PreviewMouseDown.AddHandler    (System.Windows.Input.MouseButtonEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.PreviewMouseDown.RemoveHandler (System.Windows.Input.MouseButtonEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.MouseButtonEventHandler, System.Windows.Input.MouseButtonEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.MouseButtonEventHandler, System.Windows.Input.MouseButtonEventArgs> (onPreviewMouseDown_rf, onPreviewMouseDown_uf, f)
+      
+      let private onMouseDown_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.MouseDown.AddHandler    (System.Windows.Input.MouseButtonEventHandler h)
+      let private onMouseDown_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.MouseDown.RemoveHandler (System.Windows.Input.MouseButtonEventHandler h)
+      let private onMouseDown_rf = onMouseDown_r
+      let private onMouseDown_uf = onMouseDown_u
       let onMouseDown                              (f : System.Windows.UIElement -> System.Windows.Input.MouseButtonEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.MouseDown.AddHandler    (System.Windows.Input.MouseButtonEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.MouseDown.RemoveHandler (System.Windows.Input.MouseButtonEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.MouseButtonEventHandler, System.Windows.Input.MouseButtonEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.MouseButtonEventHandler, System.Windows.Input.MouseButtonEventArgs> (onMouseDown_rf, onMouseDown_uf, f)
+      
+      let private onPreviewMouseUp_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.PreviewMouseUp.AddHandler    (System.Windows.Input.MouseButtonEventHandler h)
+      let private onPreviewMouseUp_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.PreviewMouseUp.RemoveHandler (System.Windows.Input.MouseButtonEventHandler h)
+      let private onPreviewMouseUp_rf = onPreviewMouseUp_r
+      let private onPreviewMouseUp_uf = onPreviewMouseUp_u
       let onPreviewMouseUp                         (f : System.Windows.UIElement -> System.Windows.Input.MouseButtonEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.PreviewMouseUp.AddHandler    (System.Windows.Input.MouseButtonEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.PreviewMouseUp.RemoveHandler (System.Windows.Input.MouseButtonEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.MouseButtonEventHandler, System.Windows.Input.MouseButtonEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.MouseButtonEventHandler, System.Windows.Input.MouseButtonEventArgs> (onPreviewMouseUp_rf, onPreviewMouseUp_uf, f)
+      
+      let private onMouseUp_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.MouseUp.AddHandler    (System.Windows.Input.MouseButtonEventHandler h)
+      let private onMouseUp_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.MouseUp.RemoveHandler (System.Windows.Input.MouseButtonEventHandler h)
+      let private onMouseUp_rf = onMouseUp_r
+      let private onMouseUp_uf = onMouseUp_u
       let onMouseUp                                (f : System.Windows.UIElement -> System.Windows.Input.MouseButtonEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.MouseUp.AddHandler    (System.Windows.Input.MouseButtonEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.MouseUp.RemoveHandler (System.Windows.Input.MouseButtonEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.MouseButtonEventHandler, System.Windows.Input.MouseButtonEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.MouseButtonEventHandler, System.Windows.Input.MouseButtonEventArgs> (onMouseUp_rf, onMouseUp_uf, f)
+      
+      let private onPreviewMouseLeftButtonDown_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.PreviewMouseLeftButtonDown.AddHandler    (System.Windows.Input.MouseButtonEventHandler h)
+      let private onPreviewMouseLeftButtonDown_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.PreviewMouseLeftButtonDown.RemoveHandler (System.Windows.Input.MouseButtonEventHandler h)
+      let private onPreviewMouseLeftButtonDown_rf = onPreviewMouseLeftButtonDown_r
+      let private onPreviewMouseLeftButtonDown_uf = onPreviewMouseLeftButtonDown_u
       let onPreviewMouseLeftButtonDown             (f : System.Windows.UIElement -> System.Windows.Input.MouseButtonEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.PreviewMouseLeftButtonDown.AddHandler    (System.Windows.Input.MouseButtonEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.PreviewMouseLeftButtonDown.RemoveHandler (System.Windows.Input.MouseButtonEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.MouseButtonEventHandler, System.Windows.Input.MouseButtonEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.MouseButtonEventHandler, System.Windows.Input.MouseButtonEventArgs> (onPreviewMouseLeftButtonDown_rf, onPreviewMouseLeftButtonDown_uf, f)
+      
+      let private onMouseLeftButtonDown_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.MouseLeftButtonDown.AddHandler    (System.Windows.Input.MouseButtonEventHandler h)
+      let private onMouseLeftButtonDown_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.MouseLeftButtonDown.RemoveHandler (System.Windows.Input.MouseButtonEventHandler h)
+      let private onMouseLeftButtonDown_rf = onMouseLeftButtonDown_r
+      let private onMouseLeftButtonDown_uf = onMouseLeftButtonDown_u
       let onMouseLeftButtonDown                    (f : System.Windows.UIElement -> System.Windows.Input.MouseButtonEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.MouseLeftButtonDown.AddHandler    (System.Windows.Input.MouseButtonEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.MouseLeftButtonDown.RemoveHandler (System.Windows.Input.MouseButtonEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.MouseButtonEventHandler, System.Windows.Input.MouseButtonEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.MouseButtonEventHandler, System.Windows.Input.MouseButtonEventArgs> (onMouseLeftButtonDown_rf, onMouseLeftButtonDown_uf, f)
+      
+      let private onPreviewMouseLeftButtonUp_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.PreviewMouseLeftButtonUp.AddHandler    (System.Windows.Input.MouseButtonEventHandler h)
+      let private onPreviewMouseLeftButtonUp_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.PreviewMouseLeftButtonUp.RemoveHandler (System.Windows.Input.MouseButtonEventHandler h)
+      let private onPreviewMouseLeftButtonUp_rf = onPreviewMouseLeftButtonUp_r
+      let private onPreviewMouseLeftButtonUp_uf = onPreviewMouseLeftButtonUp_u
       let onPreviewMouseLeftButtonUp               (f : System.Windows.UIElement -> System.Windows.Input.MouseButtonEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.PreviewMouseLeftButtonUp.AddHandler    (System.Windows.Input.MouseButtonEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.PreviewMouseLeftButtonUp.RemoveHandler (System.Windows.Input.MouseButtonEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.MouseButtonEventHandler, System.Windows.Input.MouseButtonEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.MouseButtonEventHandler, System.Windows.Input.MouseButtonEventArgs> (onPreviewMouseLeftButtonUp_rf, onPreviewMouseLeftButtonUp_uf, f)
+      
+      let private onMouseLeftButtonUp_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.MouseLeftButtonUp.AddHandler    (System.Windows.Input.MouseButtonEventHandler h)
+      let private onMouseLeftButtonUp_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.MouseLeftButtonUp.RemoveHandler (System.Windows.Input.MouseButtonEventHandler h)
+      let private onMouseLeftButtonUp_rf = onMouseLeftButtonUp_r
+      let private onMouseLeftButtonUp_uf = onMouseLeftButtonUp_u
       let onMouseLeftButtonUp                      (f : System.Windows.UIElement -> System.Windows.Input.MouseButtonEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.MouseLeftButtonUp.AddHandler    (System.Windows.Input.MouseButtonEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.MouseLeftButtonUp.RemoveHandler (System.Windows.Input.MouseButtonEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.MouseButtonEventHandler, System.Windows.Input.MouseButtonEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.MouseButtonEventHandler, System.Windows.Input.MouseButtonEventArgs> (onMouseLeftButtonUp_rf, onMouseLeftButtonUp_uf, f)
+      
+      let private onPreviewMouseRightButtonDown_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.PreviewMouseRightButtonDown.AddHandler    (System.Windows.Input.MouseButtonEventHandler h)
+      let private onPreviewMouseRightButtonDown_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.PreviewMouseRightButtonDown.RemoveHandler (System.Windows.Input.MouseButtonEventHandler h)
+      let private onPreviewMouseRightButtonDown_rf = onPreviewMouseRightButtonDown_r
+      let private onPreviewMouseRightButtonDown_uf = onPreviewMouseRightButtonDown_u
       let onPreviewMouseRightButtonDown            (f : System.Windows.UIElement -> System.Windows.Input.MouseButtonEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.PreviewMouseRightButtonDown.AddHandler    (System.Windows.Input.MouseButtonEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.PreviewMouseRightButtonDown.RemoveHandler (System.Windows.Input.MouseButtonEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.MouseButtonEventHandler, System.Windows.Input.MouseButtonEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.MouseButtonEventHandler, System.Windows.Input.MouseButtonEventArgs> (onPreviewMouseRightButtonDown_rf, onPreviewMouseRightButtonDown_uf, f)
+      
+      let private onMouseRightButtonDown_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.MouseRightButtonDown.AddHandler    (System.Windows.Input.MouseButtonEventHandler h)
+      let private onMouseRightButtonDown_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.MouseRightButtonDown.RemoveHandler (System.Windows.Input.MouseButtonEventHandler h)
+      let private onMouseRightButtonDown_rf = onMouseRightButtonDown_r
+      let private onMouseRightButtonDown_uf = onMouseRightButtonDown_u
       let onMouseRightButtonDown                   (f : System.Windows.UIElement -> System.Windows.Input.MouseButtonEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.MouseRightButtonDown.AddHandler    (System.Windows.Input.MouseButtonEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.MouseRightButtonDown.RemoveHandler (System.Windows.Input.MouseButtonEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.MouseButtonEventHandler, System.Windows.Input.MouseButtonEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.MouseButtonEventHandler, System.Windows.Input.MouseButtonEventArgs> (onMouseRightButtonDown_rf, onMouseRightButtonDown_uf, f)
+      
+      let private onPreviewMouseRightButtonUp_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.PreviewMouseRightButtonUp.AddHandler    (System.Windows.Input.MouseButtonEventHandler h)
+      let private onPreviewMouseRightButtonUp_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.PreviewMouseRightButtonUp.RemoveHandler (System.Windows.Input.MouseButtonEventHandler h)
+      let private onPreviewMouseRightButtonUp_rf = onPreviewMouseRightButtonUp_r
+      let private onPreviewMouseRightButtonUp_uf = onPreviewMouseRightButtonUp_u
       let onPreviewMouseRightButtonUp              (f : System.Windows.UIElement -> System.Windows.Input.MouseButtonEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.PreviewMouseRightButtonUp.AddHandler    (System.Windows.Input.MouseButtonEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.PreviewMouseRightButtonUp.RemoveHandler (System.Windows.Input.MouseButtonEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.MouseButtonEventHandler, System.Windows.Input.MouseButtonEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.MouseButtonEventHandler, System.Windows.Input.MouseButtonEventArgs> (onPreviewMouseRightButtonUp_rf, onPreviewMouseRightButtonUp_uf, f)
+      
+      let private onMouseRightButtonUp_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.MouseRightButtonUp.AddHandler    (System.Windows.Input.MouseButtonEventHandler h)
+      let private onMouseRightButtonUp_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.MouseRightButtonUp.RemoveHandler (System.Windows.Input.MouseButtonEventHandler h)
+      let private onMouseRightButtonUp_rf = onMouseRightButtonUp_r
+      let private onMouseRightButtonUp_uf = onMouseRightButtonUp_u
       let onMouseRightButtonUp                     (f : System.Windows.UIElement -> System.Windows.Input.MouseButtonEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.MouseRightButtonUp.AddHandler    (System.Windows.Input.MouseButtonEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseButtonEventArgs -> unit) = o.MouseRightButtonUp.RemoveHandler (System.Windows.Input.MouseButtonEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.MouseButtonEventHandler, System.Windows.Input.MouseButtonEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.MouseButtonEventHandler, System.Windows.Input.MouseButtonEventArgs> (onMouseRightButtonUp_rf, onMouseRightButtonUp_uf, f)
+      
+      let private onPreviewMouseMove_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseEventArgs -> unit) = o.PreviewMouseMove.AddHandler    (System.Windows.Input.MouseEventHandler h)
+      let private onPreviewMouseMove_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseEventArgs -> unit) = o.PreviewMouseMove.RemoveHandler (System.Windows.Input.MouseEventHandler h)
+      let private onPreviewMouseMove_rf = onPreviewMouseMove_r
+      let private onPreviewMouseMove_uf = onPreviewMouseMove_u
       let onPreviewMouseMove                       (f : System.Windows.UIElement -> System.Windows.Input.MouseEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseEventArgs -> unit) = o.PreviewMouseMove.AddHandler    (System.Windows.Input.MouseEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseEventArgs -> unit) = o.PreviewMouseMove.RemoveHandler (System.Windows.Input.MouseEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.MouseEventHandler, System.Windows.Input.MouseEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.MouseEventHandler, System.Windows.Input.MouseEventArgs> (onPreviewMouseMove_rf, onPreviewMouseMove_uf, f)
+      
+      let private onMouseMove_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseEventArgs -> unit) = o.MouseMove.AddHandler    (System.Windows.Input.MouseEventHandler h)
+      let private onMouseMove_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseEventArgs -> unit) = o.MouseMove.RemoveHandler (System.Windows.Input.MouseEventHandler h)
+      let private onMouseMove_rf = onMouseMove_r
+      let private onMouseMove_uf = onMouseMove_u
       let onMouseMove                              (f : System.Windows.UIElement -> System.Windows.Input.MouseEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseEventArgs -> unit) = o.MouseMove.AddHandler    (System.Windows.Input.MouseEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseEventArgs -> unit) = o.MouseMove.RemoveHandler (System.Windows.Input.MouseEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.MouseEventHandler, System.Windows.Input.MouseEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.MouseEventHandler, System.Windows.Input.MouseEventArgs> (onMouseMove_rf, onMouseMove_uf, f)
+      
+      let private onPreviewMouseWheel_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseWheelEventArgs -> unit) = o.PreviewMouseWheel.AddHandler    (System.Windows.Input.MouseWheelEventHandler h)
+      let private onPreviewMouseWheel_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseWheelEventArgs -> unit) = o.PreviewMouseWheel.RemoveHandler (System.Windows.Input.MouseWheelEventHandler h)
+      let private onPreviewMouseWheel_rf = onPreviewMouseWheel_r
+      let private onPreviewMouseWheel_uf = onPreviewMouseWheel_u
       let onPreviewMouseWheel                      (f : System.Windows.UIElement -> System.Windows.Input.MouseWheelEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseWheelEventArgs -> unit) = o.PreviewMouseWheel.AddHandler    (System.Windows.Input.MouseWheelEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseWheelEventArgs -> unit) = o.PreviewMouseWheel.RemoveHandler (System.Windows.Input.MouseWheelEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.MouseWheelEventHandler, System.Windows.Input.MouseWheelEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.MouseWheelEventHandler, System.Windows.Input.MouseWheelEventArgs> (onPreviewMouseWheel_rf, onPreviewMouseWheel_uf, f)
+      
+      let private onMouseWheel_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseWheelEventArgs -> unit) = o.MouseWheel.AddHandler    (System.Windows.Input.MouseWheelEventHandler h)
+      let private onMouseWheel_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseWheelEventArgs -> unit) = o.MouseWheel.RemoveHandler (System.Windows.Input.MouseWheelEventHandler h)
+      let private onMouseWheel_rf = onMouseWheel_r
+      let private onMouseWheel_uf = onMouseWheel_u
       let onMouseWheel                             (f : System.Windows.UIElement -> System.Windows.Input.MouseWheelEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseWheelEventArgs -> unit) = o.MouseWheel.AddHandler    (System.Windows.Input.MouseWheelEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseWheelEventArgs -> unit) = o.MouseWheel.RemoveHandler (System.Windows.Input.MouseWheelEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.MouseWheelEventHandler, System.Windows.Input.MouseWheelEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.MouseWheelEventHandler, System.Windows.Input.MouseWheelEventArgs> (onMouseWheel_rf, onMouseWheel_uf, f)
+      
+      let private onMouseEnter_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseEventArgs -> unit) = o.MouseEnter.AddHandler    (System.Windows.Input.MouseEventHandler h)
+      let private onMouseEnter_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseEventArgs -> unit) = o.MouseEnter.RemoveHandler (System.Windows.Input.MouseEventHandler h)
+      let private onMouseEnter_rf = onMouseEnter_r
+      let private onMouseEnter_uf = onMouseEnter_u
       let onMouseEnter                             (f : System.Windows.UIElement -> System.Windows.Input.MouseEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseEventArgs -> unit) = o.MouseEnter.AddHandler    (System.Windows.Input.MouseEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseEventArgs -> unit) = o.MouseEnter.RemoveHandler (System.Windows.Input.MouseEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.MouseEventHandler, System.Windows.Input.MouseEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.MouseEventHandler, System.Windows.Input.MouseEventArgs> (onMouseEnter_rf, onMouseEnter_uf, f)
+      
+      let private onMouseLeave_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseEventArgs -> unit) = o.MouseLeave.AddHandler    (System.Windows.Input.MouseEventHandler h)
+      let private onMouseLeave_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseEventArgs -> unit) = o.MouseLeave.RemoveHandler (System.Windows.Input.MouseEventHandler h)
+      let private onMouseLeave_rf = onMouseLeave_r
+      let private onMouseLeave_uf = onMouseLeave_u
       let onMouseLeave                             (f : System.Windows.UIElement -> System.Windows.Input.MouseEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseEventArgs -> unit) = o.MouseLeave.AddHandler    (System.Windows.Input.MouseEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseEventArgs -> unit) = o.MouseLeave.RemoveHandler (System.Windows.Input.MouseEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.MouseEventHandler, System.Windows.Input.MouseEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.MouseEventHandler, System.Windows.Input.MouseEventArgs> (onMouseLeave_rf, onMouseLeave_uf, f)
+      
+      let private onGotMouseCapture_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseEventArgs -> unit) = o.GotMouseCapture.AddHandler    (System.Windows.Input.MouseEventHandler h)
+      let private onGotMouseCapture_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseEventArgs -> unit) = o.GotMouseCapture.RemoveHandler (System.Windows.Input.MouseEventHandler h)
+      let private onGotMouseCapture_rf = onGotMouseCapture_r
+      let private onGotMouseCapture_uf = onGotMouseCapture_u
       let onGotMouseCapture                        (f : System.Windows.UIElement -> System.Windows.Input.MouseEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseEventArgs -> unit) = o.GotMouseCapture.AddHandler    (System.Windows.Input.MouseEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseEventArgs -> unit) = o.GotMouseCapture.RemoveHandler (System.Windows.Input.MouseEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.MouseEventHandler, System.Windows.Input.MouseEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.MouseEventHandler, System.Windows.Input.MouseEventArgs> (onGotMouseCapture_rf, onGotMouseCapture_uf, f)
+      
+      let private onLostMouseCapture_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseEventArgs -> unit) = o.LostMouseCapture.AddHandler    (System.Windows.Input.MouseEventHandler h)
+      let private onLostMouseCapture_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseEventArgs -> unit) = o.LostMouseCapture.RemoveHandler (System.Windows.Input.MouseEventHandler h)
+      let private onLostMouseCapture_rf = onLostMouseCapture_r
+      let private onLostMouseCapture_uf = onLostMouseCapture_u
       let onLostMouseCapture                       (f : System.Windows.UIElement -> System.Windows.Input.MouseEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseEventArgs -> unit) = o.LostMouseCapture.AddHandler    (System.Windows.Input.MouseEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.MouseEventArgs -> unit) = o.LostMouseCapture.RemoveHandler (System.Windows.Input.MouseEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.MouseEventHandler, System.Windows.Input.MouseEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.MouseEventHandler, System.Windows.Input.MouseEventArgs> (onLostMouseCapture_rf, onLostMouseCapture_uf, f)
+      
+      let private onQueryCursor_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.QueryCursorEventArgs -> unit) = o.QueryCursor.AddHandler    (System.Windows.Input.QueryCursorEventHandler h)
+      let private onQueryCursor_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.QueryCursorEventArgs -> unit) = o.QueryCursor.RemoveHandler (System.Windows.Input.QueryCursorEventHandler h)
+      let private onQueryCursor_rf = onQueryCursor_r
+      let private onQueryCursor_uf = onQueryCursor_u
       let onQueryCursor                            (f : System.Windows.UIElement -> System.Windows.Input.QueryCursorEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.QueryCursorEventArgs -> unit) = o.QueryCursor.AddHandler    (System.Windows.Input.QueryCursorEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.QueryCursorEventArgs -> unit) = o.QueryCursor.RemoveHandler (System.Windows.Input.QueryCursorEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.QueryCursorEventHandler, System.Windows.Input.QueryCursorEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.QueryCursorEventHandler, System.Windows.Input.QueryCursorEventArgs> (onQueryCursor_rf, onQueryCursor_uf, f)
+      
+      let private onPreviewStylusDown_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusDownEventArgs -> unit) = o.PreviewStylusDown.AddHandler    (System.Windows.Input.StylusDownEventHandler h)
+      let private onPreviewStylusDown_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusDownEventArgs -> unit) = o.PreviewStylusDown.RemoveHandler (System.Windows.Input.StylusDownEventHandler h)
+      let private onPreviewStylusDown_rf = onPreviewStylusDown_r
+      let private onPreviewStylusDown_uf = onPreviewStylusDown_u
       let onPreviewStylusDown                      (f : System.Windows.UIElement -> System.Windows.Input.StylusDownEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusDownEventArgs -> unit) = o.PreviewStylusDown.AddHandler    (System.Windows.Input.StylusDownEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusDownEventArgs -> unit) = o.PreviewStylusDown.RemoveHandler (System.Windows.Input.StylusDownEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusDownEventHandler, System.Windows.Input.StylusDownEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusDownEventHandler, System.Windows.Input.StylusDownEventArgs> (onPreviewStylusDown_rf, onPreviewStylusDown_uf, f)
+      
+      let private onStylusDown_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusDownEventArgs -> unit) = o.StylusDown.AddHandler    (System.Windows.Input.StylusDownEventHandler h)
+      let private onStylusDown_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusDownEventArgs -> unit) = o.StylusDown.RemoveHandler (System.Windows.Input.StylusDownEventHandler h)
+      let private onStylusDown_rf = onStylusDown_r
+      let private onStylusDown_uf = onStylusDown_u
       let onStylusDown                             (f : System.Windows.UIElement -> System.Windows.Input.StylusDownEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusDownEventArgs -> unit) = o.StylusDown.AddHandler    (System.Windows.Input.StylusDownEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusDownEventArgs -> unit) = o.StylusDown.RemoveHandler (System.Windows.Input.StylusDownEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusDownEventHandler, System.Windows.Input.StylusDownEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusDownEventHandler, System.Windows.Input.StylusDownEventArgs> (onStylusDown_rf, onStylusDown_uf, f)
+      
+      let private onPreviewStylusUp_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.PreviewStylusUp.AddHandler    (System.Windows.Input.StylusEventHandler h)
+      let private onPreviewStylusUp_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.PreviewStylusUp.RemoveHandler (System.Windows.Input.StylusEventHandler h)
+      let private onPreviewStylusUp_rf = onPreviewStylusUp_r
+      let private onPreviewStylusUp_uf = onPreviewStylusUp_u
       let onPreviewStylusUp                        (f : System.Windows.UIElement -> System.Windows.Input.StylusEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.PreviewStylusUp.AddHandler    (System.Windows.Input.StylusEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.PreviewStylusUp.RemoveHandler (System.Windows.Input.StylusEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusEventHandler, System.Windows.Input.StylusEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusEventHandler, System.Windows.Input.StylusEventArgs> (onPreviewStylusUp_rf, onPreviewStylusUp_uf, f)
+      
+      let private onStylusUp_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.StylusUp.AddHandler    (System.Windows.Input.StylusEventHandler h)
+      let private onStylusUp_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.StylusUp.RemoveHandler (System.Windows.Input.StylusEventHandler h)
+      let private onStylusUp_rf = onStylusUp_r
+      let private onStylusUp_uf = onStylusUp_u
       let onStylusUp                               (f : System.Windows.UIElement -> System.Windows.Input.StylusEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.StylusUp.AddHandler    (System.Windows.Input.StylusEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.StylusUp.RemoveHandler (System.Windows.Input.StylusEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusEventHandler, System.Windows.Input.StylusEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusEventHandler, System.Windows.Input.StylusEventArgs> (onStylusUp_rf, onStylusUp_uf, f)
+      
+      let private onPreviewStylusMove_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.PreviewStylusMove.AddHandler    (System.Windows.Input.StylusEventHandler h)
+      let private onPreviewStylusMove_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.PreviewStylusMove.RemoveHandler (System.Windows.Input.StylusEventHandler h)
+      let private onPreviewStylusMove_rf = onPreviewStylusMove_r
+      let private onPreviewStylusMove_uf = onPreviewStylusMove_u
       let onPreviewStylusMove                      (f : System.Windows.UIElement -> System.Windows.Input.StylusEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.PreviewStylusMove.AddHandler    (System.Windows.Input.StylusEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.PreviewStylusMove.RemoveHandler (System.Windows.Input.StylusEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusEventHandler, System.Windows.Input.StylusEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusEventHandler, System.Windows.Input.StylusEventArgs> (onPreviewStylusMove_rf, onPreviewStylusMove_uf, f)
+      
+      let private onStylusMove_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.StylusMove.AddHandler    (System.Windows.Input.StylusEventHandler h)
+      let private onStylusMove_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.StylusMove.RemoveHandler (System.Windows.Input.StylusEventHandler h)
+      let private onStylusMove_rf = onStylusMove_r
+      let private onStylusMove_uf = onStylusMove_u
       let onStylusMove                             (f : System.Windows.UIElement -> System.Windows.Input.StylusEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.StylusMove.AddHandler    (System.Windows.Input.StylusEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.StylusMove.RemoveHandler (System.Windows.Input.StylusEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusEventHandler, System.Windows.Input.StylusEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusEventHandler, System.Windows.Input.StylusEventArgs> (onStylusMove_rf, onStylusMove_uf, f)
+      
+      let private onPreviewStylusInAirMove_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.PreviewStylusInAirMove.AddHandler    (System.Windows.Input.StylusEventHandler h)
+      let private onPreviewStylusInAirMove_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.PreviewStylusInAirMove.RemoveHandler (System.Windows.Input.StylusEventHandler h)
+      let private onPreviewStylusInAirMove_rf = onPreviewStylusInAirMove_r
+      let private onPreviewStylusInAirMove_uf = onPreviewStylusInAirMove_u
       let onPreviewStylusInAirMove                 (f : System.Windows.UIElement -> System.Windows.Input.StylusEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.PreviewStylusInAirMove.AddHandler    (System.Windows.Input.StylusEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.PreviewStylusInAirMove.RemoveHandler (System.Windows.Input.StylusEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusEventHandler, System.Windows.Input.StylusEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusEventHandler, System.Windows.Input.StylusEventArgs> (onPreviewStylusInAirMove_rf, onPreviewStylusInAirMove_uf, f)
+      
+      let private onStylusInAirMove_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.StylusInAirMove.AddHandler    (System.Windows.Input.StylusEventHandler h)
+      let private onStylusInAirMove_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.StylusInAirMove.RemoveHandler (System.Windows.Input.StylusEventHandler h)
+      let private onStylusInAirMove_rf = onStylusInAirMove_r
+      let private onStylusInAirMove_uf = onStylusInAirMove_u
       let onStylusInAirMove                        (f : System.Windows.UIElement -> System.Windows.Input.StylusEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.StylusInAirMove.AddHandler    (System.Windows.Input.StylusEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.StylusInAirMove.RemoveHandler (System.Windows.Input.StylusEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusEventHandler, System.Windows.Input.StylusEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusEventHandler, System.Windows.Input.StylusEventArgs> (onStylusInAirMove_rf, onStylusInAirMove_uf, f)
+      
+      let private onStylusEnter_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.StylusEnter.AddHandler    (System.Windows.Input.StylusEventHandler h)
+      let private onStylusEnter_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.StylusEnter.RemoveHandler (System.Windows.Input.StylusEventHandler h)
+      let private onStylusEnter_rf = onStylusEnter_r
+      let private onStylusEnter_uf = onStylusEnter_u
       let onStylusEnter                            (f : System.Windows.UIElement -> System.Windows.Input.StylusEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.StylusEnter.AddHandler    (System.Windows.Input.StylusEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.StylusEnter.RemoveHandler (System.Windows.Input.StylusEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusEventHandler, System.Windows.Input.StylusEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusEventHandler, System.Windows.Input.StylusEventArgs> (onStylusEnter_rf, onStylusEnter_uf, f)
+      
+      let private onStylusLeave_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.StylusLeave.AddHandler    (System.Windows.Input.StylusEventHandler h)
+      let private onStylusLeave_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.StylusLeave.RemoveHandler (System.Windows.Input.StylusEventHandler h)
+      let private onStylusLeave_rf = onStylusLeave_r
+      let private onStylusLeave_uf = onStylusLeave_u
       let onStylusLeave                            (f : System.Windows.UIElement -> System.Windows.Input.StylusEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.StylusLeave.AddHandler    (System.Windows.Input.StylusEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.StylusLeave.RemoveHandler (System.Windows.Input.StylusEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusEventHandler, System.Windows.Input.StylusEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusEventHandler, System.Windows.Input.StylusEventArgs> (onStylusLeave_rf, onStylusLeave_uf, f)
+      
+      let private onPreviewStylusInRange_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.PreviewStylusInRange.AddHandler    (System.Windows.Input.StylusEventHandler h)
+      let private onPreviewStylusInRange_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.PreviewStylusInRange.RemoveHandler (System.Windows.Input.StylusEventHandler h)
+      let private onPreviewStylusInRange_rf = onPreviewStylusInRange_r
+      let private onPreviewStylusInRange_uf = onPreviewStylusInRange_u
       let onPreviewStylusInRange                   (f : System.Windows.UIElement -> System.Windows.Input.StylusEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.PreviewStylusInRange.AddHandler    (System.Windows.Input.StylusEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.PreviewStylusInRange.RemoveHandler (System.Windows.Input.StylusEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusEventHandler, System.Windows.Input.StylusEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusEventHandler, System.Windows.Input.StylusEventArgs> (onPreviewStylusInRange_rf, onPreviewStylusInRange_uf, f)
+      
+      let private onStylusInRange_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.StylusInRange.AddHandler    (System.Windows.Input.StylusEventHandler h)
+      let private onStylusInRange_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.StylusInRange.RemoveHandler (System.Windows.Input.StylusEventHandler h)
+      let private onStylusInRange_rf = onStylusInRange_r
+      let private onStylusInRange_uf = onStylusInRange_u
       let onStylusInRange                          (f : System.Windows.UIElement -> System.Windows.Input.StylusEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.StylusInRange.AddHandler    (System.Windows.Input.StylusEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.StylusInRange.RemoveHandler (System.Windows.Input.StylusEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusEventHandler, System.Windows.Input.StylusEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusEventHandler, System.Windows.Input.StylusEventArgs> (onStylusInRange_rf, onStylusInRange_uf, f)
+      
+      let private onPreviewStylusOutOfRange_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.PreviewStylusOutOfRange.AddHandler    (System.Windows.Input.StylusEventHandler h)
+      let private onPreviewStylusOutOfRange_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.PreviewStylusOutOfRange.RemoveHandler (System.Windows.Input.StylusEventHandler h)
+      let private onPreviewStylusOutOfRange_rf = onPreviewStylusOutOfRange_r
+      let private onPreviewStylusOutOfRange_uf = onPreviewStylusOutOfRange_u
       let onPreviewStylusOutOfRange                (f : System.Windows.UIElement -> System.Windows.Input.StylusEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.PreviewStylusOutOfRange.AddHandler    (System.Windows.Input.StylusEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.PreviewStylusOutOfRange.RemoveHandler (System.Windows.Input.StylusEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusEventHandler, System.Windows.Input.StylusEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusEventHandler, System.Windows.Input.StylusEventArgs> (onPreviewStylusOutOfRange_rf, onPreviewStylusOutOfRange_uf, f)
+      
+      let private onStylusOutOfRange_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.StylusOutOfRange.AddHandler    (System.Windows.Input.StylusEventHandler h)
+      let private onStylusOutOfRange_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.StylusOutOfRange.RemoveHandler (System.Windows.Input.StylusEventHandler h)
+      let private onStylusOutOfRange_rf = onStylusOutOfRange_r
+      let private onStylusOutOfRange_uf = onStylusOutOfRange_u
       let onStylusOutOfRange                       (f : System.Windows.UIElement -> System.Windows.Input.StylusEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.StylusOutOfRange.AddHandler    (System.Windows.Input.StylusEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.StylusOutOfRange.RemoveHandler (System.Windows.Input.StylusEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusEventHandler, System.Windows.Input.StylusEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusEventHandler, System.Windows.Input.StylusEventArgs> (onStylusOutOfRange_rf, onStylusOutOfRange_uf, f)
+      
+      let private onPreviewStylusSystemGesture_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusSystemGestureEventArgs -> unit) = o.PreviewStylusSystemGesture.AddHandler    (System.Windows.Input.StylusSystemGestureEventHandler h)
+      let private onPreviewStylusSystemGesture_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusSystemGestureEventArgs -> unit) = o.PreviewStylusSystemGesture.RemoveHandler (System.Windows.Input.StylusSystemGestureEventHandler h)
+      let private onPreviewStylusSystemGesture_rf = onPreviewStylusSystemGesture_r
+      let private onPreviewStylusSystemGesture_uf = onPreviewStylusSystemGesture_u
       let onPreviewStylusSystemGesture             (f : System.Windows.UIElement -> System.Windows.Input.StylusSystemGestureEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusSystemGestureEventArgs -> unit) = o.PreviewStylusSystemGesture.AddHandler    (System.Windows.Input.StylusSystemGestureEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusSystemGestureEventArgs -> unit) = o.PreviewStylusSystemGesture.RemoveHandler (System.Windows.Input.StylusSystemGestureEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusSystemGestureEventHandler, System.Windows.Input.StylusSystemGestureEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusSystemGestureEventHandler, System.Windows.Input.StylusSystemGestureEventArgs> (onPreviewStylusSystemGesture_rf, onPreviewStylusSystemGesture_uf, f)
+      
+      let private onStylusSystemGesture_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusSystemGestureEventArgs -> unit) = o.StylusSystemGesture.AddHandler    (System.Windows.Input.StylusSystemGestureEventHandler h)
+      let private onStylusSystemGesture_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusSystemGestureEventArgs -> unit) = o.StylusSystemGesture.RemoveHandler (System.Windows.Input.StylusSystemGestureEventHandler h)
+      let private onStylusSystemGesture_rf = onStylusSystemGesture_r
+      let private onStylusSystemGesture_uf = onStylusSystemGesture_u
       let onStylusSystemGesture                    (f : System.Windows.UIElement -> System.Windows.Input.StylusSystemGestureEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusSystemGestureEventArgs -> unit) = o.StylusSystemGesture.AddHandler    (System.Windows.Input.StylusSystemGestureEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusSystemGestureEventArgs -> unit) = o.StylusSystemGesture.RemoveHandler (System.Windows.Input.StylusSystemGestureEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusSystemGestureEventHandler, System.Windows.Input.StylusSystemGestureEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusSystemGestureEventHandler, System.Windows.Input.StylusSystemGestureEventArgs> (onStylusSystemGesture_rf, onStylusSystemGesture_uf, f)
+      
+      let private onGotStylusCapture_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.GotStylusCapture.AddHandler    (System.Windows.Input.StylusEventHandler h)
+      let private onGotStylusCapture_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.GotStylusCapture.RemoveHandler (System.Windows.Input.StylusEventHandler h)
+      let private onGotStylusCapture_rf = onGotStylusCapture_r
+      let private onGotStylusCapture_uf = onGotStylusCapture_u
       let onGotStylusCapture                       (f : System.Windows.UIElement -> System.Windows.Input.StylusEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.GotStylusCapture.AddHandler    (System.Windows.Input.StylusEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.GotStylusCapture.RemoveHandler (System.Windows.Input.StylusEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusEventHandler, System.Windows.Input.StylusEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusEventHandler, System.Windows.Input.StylusEventArgs> (onGotStylusCapture_rf, onGotStylusCapture_uf, f)
+      
+      let private onLostStylusCapture_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.LostStylusCapture.AddHandler    (System.Windows.Input.StylusEventHandler h)
+      let private onLostStylusCapture_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.LostStylusCapture.RemoveHandler (System.Windows.Input.StylusEventHandler h)
+      let private onLostStylusCapture_rf = onLostStylusCapture_r
+      let private onLostStylusCapture_uf = onLostStylusCapture_u
       let onLostStylusCapture                      (f : System.Windows.UIElement -> System.Windows.Input.StylusEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.LostStylusCapture.AddHandler    (System.Windows.Input.StylusEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusEventArgs -> unit) = o.LostStylusCapture.RemoveHandler (System.Windows.Input.StylusEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusEventHandler, System.Windows.Input.StylusEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusEventHandler, System.Windows.Input.StylusEventArgs> (onLostStylusCapture_rf, onLostStylusCapture_uf, f)
+      
+      let private onStylusButtonDown_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusButtonEventArgs -> unit) = o.StylusButtonDown.AddHandler    (System.Windows.Input.StylusButtonEventHandler h)
+      let private onStylusButtonDown_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusButtonEventArgs -> unit) = o.StylusButtonDown.RemoveHandler (System.Windows.Input.StylusButtonEventHandler h)
+      let private onStylusButtonDown_rf = onStylusButtonDown_r
+      let private onStylusButtonDown_uf = onStylusButtonDown_u
       let onStylusButtonDown                       (f : System.Windows.UIElement -> System.Windows.Input.StylusButtonEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusButtonEventArgs -> unit) = o.StylusButtonDown.AddHandler    (System.Windows.Input.StylusButtonEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusButtonEventArgs -> unit) = o.StylusButtonDown.RemoveHandler (System.Windows.Input.StylusButtonEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusButtonEventHandler, System.Windows.Input.StylusButtonEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusButtonEventHandler, System.Windows.Input.StylusButtonEventArgs> (onStylusButtonDown_rf, onStylusButtonDown_uf, f)
+      
+      let private onStylusButtonUp_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusButtonEventArgs -> unit) = o.StylusButtonUp.AddHandler    (System.Windows.Input.StylusButtonEventHandler h)
+      let private onStylusButtonUp_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusButtonEventArgs -> unit) = o.StylusButtonUp.RemoveHandler (System.Windows.Input.StylusButtonEventHandler h)
+      let private onStylusButtonUp_rf = onStylusButtonUp_r
+      let private onStylusButtonUp_uf = onStylusButtonUp_u
       let onStylusButtonUp                         (f : System.Windows.UIElement -> System.Windows.Input.StylusButtonEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusButtonEventArgs -> unit) = o.StylusButtonUp.AddHandler    (System.Windows.Input.StylusButtonEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusButtonEventArgs -> unit) = o.StylusButtonUp.RemoveHandler (System.Windows.Input.StylusButtonEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusButtonEventHandler, System.Windows.Input.StylusButtonEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusButtonEventHandler, System.Windows.Input.StylusButtonEventArgs> (onStylusButtonUp_rf, onStylusButtonUp_uf, f)
+      
+      let private onPreviewStylusButtonDown_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusButtonEventArgs -> unit) = o.PreviewStylusButtonDown.AddHandler    (System.Windows.Input.StylusButtonEventHandler h)
+      let private onPreviewStylusButtonDown_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusButtonEventArgs -> unit) = o.PreviewStylusButtonDown.RemoveHandler (System.Windows.Input.StylusButtonEventHandler h)
+      let private onPreviewStylusButtonDown_rf = onPreviewStylusButtonDown_r
+      let private onPreviewStylusButtonDown_uf = onPreviewStylusButtonDown_u
       let onPreviewStylusButtonDown                (f : System.Windows.UIElement -> System.Windows.Input.StylusButtonEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusButtonEventArgs -> unit) = o.PreviewStylusButtonDown.AddHandler    (System.Windows.Input.StylusButtonEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusButtonEventArgs -> unit) = o.PreviewStylusButtonDown.RemoveHandler (System.Windows.Input.StylusButtonEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusButtonEventHandler, System.Windows.Input.StylusButtonEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusButtonEventHandler, System.Windows.Input.StylusButtonEventArgs> (onPreviewStylusButtonDown_rf, onPreviewStylusButtonDown_uf, f)
+      
+      let private onPreviewStylusButtonUp_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusButtonEventArgs -> unit) = o.PreviewStylusButtonUp.AddHandler    (System.Windows.Input.StylusButtonEventHandler h)
+      let private onPreviewStylusButtonUp_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusButtonEventArgs -> unit) = o.PreviewStylusButtonUp.RemoveHandler (System.Windows.Input.StylusButtonEventHandler h)
+      let private onPreviewStylusButtonUp_rf = onPreviewStylusButtonUp_r
+      let private onPreviewStylusButtonUp_uf = onPreviewStylusButtonUp_u
       let onPreviewStylusButtonUp                  (f : System.Windows.UIElement -> System.Windows.Input.StylusButtonEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusButtonEventArgs -> unit) = o.PreviewStylusButtonUp.AddHandler    (System.Windows.Input.StylusButtonEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.StylusButtonEventArgs -> unit) = o.PreviewStylusButtonUp.RemoveHandler (System.Windows.Input.StylusButtonEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusButtonEventHandler, System.Windows.Input.StylusButtonEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.StylusButtonEventHandler, System.Windows.Input.StylusButtonEventArgs> (onPreviewStylusButtonUp_rf, onPreviewStylusButtonUp_uf, f)
+      
+      let private onPreviewKeyDown_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.KeyEventArgs -> unit) = o.PreviewKeyDown.AddHandler    (System.Windows.Input.KeyEventHandler h)
+      let private onPreviewKeyDown_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.KeyEventArgs -> unit) = o.PreviewKeyDown.RemoveHandler (System.Windows.Input.KeyEventHandler h)
+      let private onPreviewKeyDown_rf = onPreviewKeyDown_r
+      let private onPreviewKeyDown_uf = onPreviewKeyDown_u
       let onPreviewKeyDown                         (f : System.Windows.UIElement -> System.Windows.Input.KeyEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.KeyEventArgs -> unit) = o.PreviewKeyDown.AddHandler    (System.Windows.Input.KeyEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.KeyEventArgs -> unit) = o.PreviewKeyDown.RemoveHandler (System.Windows.Input.KeyEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.KeyEventHandler, System.Windows.Input.KeyEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.KeyEventHandler, System.Windows.Input.KeyEventArgs> (onPreviewKeyDown_rf, onPreviewKeyDown_uf, f)
+      
+      let private onKeyDown_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.KeyEventArgs -> unit) = o.KeyDown.AddHandler    (System.Windows.Input.KeyEventHandler h)
+      let private onKeyDown_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.KeyEventArgs -> unit) = o.KeyDown.RemoveHandler (System.Windows.Input.KeyEventHandler h)
+      let private onKeyDown_rf = onKeyDown_r
+      let private onKeyDown_uf = onKeyDown_u
       let onKeyDown                                (f : System.Windows.UIElement -> System.Windows.Input.KeyEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.KeyEventArgs -> unit) = o.KeyDown.AddHandler    (System.Windows.Input.KeyEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.KeyEventArgs -> unit) = o.KeyDown.RemoveHandler (System.Windows.Input.KeyEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.KeyEventHandler, System.Windows.Input.KeyEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.KeyEventHandler, System.Windows.Input.KeyEventArgs> (onKeyDown_rf, onKeyDown_uf, f)
+      
+      let private onPreviewKeyUp_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.KeyEventArgs -> unit) = o.PreviewKeyUp.AddHandler    (System.Windows.Input.KeyEventHandler h)
+      let private onPreviewKeyUp_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.KeyEventArgs -> unit) = o.PreviewKeyUp.RemoveHandler (System.Windows.Input.KeyEventHandler h)
+      let private onPreviewKeyUp_rf = onPreviewKeyUp_r
+      let private onPreviewKeyUp_uf = onPreviewKeyUp_u
       let onPreviewKeyUp                           (f : System.Windows.UIElement -> System.Windows.Input.KeyEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.KeyEventArgs -> unit) = o.PreviewKeyUp.AddHandler    (System.Windows.Input.KeyEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.KeyEventArgs -> unit) = o.PreviewKeyUp.RemoveHandler (System.Windows.Input.KeyEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.KeyEventHandler, System.Windows.Input.KeyEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.KeyEventHandler, System.Windows.Input.KeyEventArgs> (onPreviewKeyUp_rf, onPreviewKeyUp_uf, f)
+      
+      let private onKeyUp_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.KeyEventArgs -> unit) = o.KeyUp.AddHandler    (System.Windows.Input.KeyEventHandler h)
+      let private onKeyUp_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.KeyEventArgs -> unit) = o.KeyUp.RemoveHandler (System.Windows.Input.KeyEventHandler h)
+      let private onKeyUp_rf = onKeyUp_r
+      let private onKeyUp_uf = onKeyUp_u
       let onKeyUp                                  (f : System.Windows.UIElement -> System.Windows.Input.KeyEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.KeyEventArgs -> unit) = o.KeyUp.AddHandler    (System.Windows.Input.KeyEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.KeyEventArgs -> unit) = o.KeyUp.RemoveHandler (System.Windows.Input.KeyEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.KeyEventHandler, System.Windows.Input.KeyEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.KeyEventHandler, System.Windows.Input.KeyEventArgs> (onKeyUp_rf, onKeyUp_uf, f)
+      
+      let private onPreviewGotKeyboardFocus_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.KeyboardFocusChangedEventArgs -> unit) = o.PreviewGotKeyboardFocus.AddHandler    (System.Windows.Input.KeyboardFocusChangedEventHandler h)
+      let private onPreviewGotKeyboardFocus_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.KeyboardFocusChangedEventArgs -> unit) = o.PreviewGotKeyboardFocus.RemoveHandler (System.Windows.Input.KeyboardFocusChangedEventHandler h)
+      let private onPreviewGotKeyboardFocus_rf = onPreviewGotKeyboardFocus_r
+      let private onPreviewGotKeyboardFocus_uf = onPreviewGotKeyboardFocus_u
       let onPreviewGotKeyboardFocus                (f : System.Windows.UIElement -> System.Windows.Input.KeyboardFocusChangedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.KeyboardFocusChangedEventArgs -> unit) = o.PreviewGotKeyboardFocus.AddHandler    (System.Windows.Input.KeyboardFocusChangedEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.KeyboardFocusChangedEventArgs -> unit) = o.PreviewGotKeyboardFocus.RemoveHandler (System.Windows.Input.KeyboardFocusChangedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.KeyboardFocusChangedEventHandler, System.Windows.Input.KeyboardFocusChangedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.KeyboardFocusChangedEventHandler, System.Windows.Input.KeyboardFocusChangedEventArgs> (onPreviewGotKeyboardFocus_rf, onPreviewGotKeyboardFocus_uf, f)
+      
+      let private onGotKeyboardFocus_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.KeyboardFocusChangedEventArgs -> unit) = o.GotKeyboardFocus.AddHandler    (System.Windows.Input.KeyboardFocusChangedEventHandler h)
+      let private onGotKeyboardFocus_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.KeyboardFocusChangedEventArgs -> unit) = o.GotKeyboardFocus.RemoveHandler (System.Windows.Input.KeyboardFocusChangedEventHandler h)
+      let private onGotKeyboardFocus_rf = onGotKeyboardFocus_r
+      let private onGotKeyboardFocus_uf = onGotKeyboardFocus_u
       let onGotKeyboardFocus                       (f : System.Windows.UIElement -> System.Windows.Input.KeyboardFocusChangedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.KeyboardFocusChangedEventArgs -> unit) = o.GotKeyboardFocus.AddHandler    (System.Windows.Input.KeyboardFocusChangedEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.KeyboardFocusChangedEventArgs -> unit) = o.GotKeyboardFocus.RemoveHandler (System.Windows.Input.KeyboardFocusChangedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.KeyboardFocusChangedEventHandler, System.Windows.Input.KeyboardFocusChangedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.KeyboardFocusChangedEventHandler, System.Windows.Input.KeyboardFocusChangedEventArgs> (onGotKeyboardFocus_rf, onGotKeyboardFocus_uf, f)
+      
+      let private onPreviewLostKeyboardFocus_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.KeyboardFocusChangedEventArgs -> unit) = o.PreviewLostKeyboardFocus.AddHandler    (System.Windows.Input.KeyboardFocusChangedEventHandler h)
+      let private onPreviewLostKeyboardFocus_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.KeyboardFocusChangedEventArgs -> unit) = o.PreviewLostKeyboardFocus.RemoveHandler (System.Windows.Input.KeyboardFocusChangedEventHandler h)
+      let private onPreviewLostKeyboardFocus_rf = onPreviewLostKeyboardFocus_r
+      let private onPreviewLostKeyboardFocus_uf = onPreviewLostKeyboardFocus_u
       let onPreviewLostKeyboardFocus               (f : System.Windows.UIElement -> System.Windows.Input.KeyboardFocusChangedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.KeyboardFocusChangedEventArgs -> unit) = o.PreviewLostKeyboardFocus.AddHandler    (System.Windows.Input.KeyboardFocusChangedEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.KeyboardFocusChangedEventArgs -> unit) = o.PreviewLostKeyboardFocus.RemoveHandler (System.Windows.Input.KeyboardFocusChangedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.KeyboardFocusChangedEventHandler, System.Windows.Input.KeyboardFocusChangedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.KeyboardFocusChangedEventHandler, System.Windows.Input.KeyboardFocusChangedEventArgs> (onPreviewLostKeyboardFocus_rf, onPreviewLostKeyboardFocus_uf, f)
+      
+      let private onLostKeyboardFocus_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.KeyboardFocusChangedEventArgs -> unit) = o.LostKeyboardFocus.AddHandler    (System.Windows.Input.KeyboardFocusChangedEventHandler h)
+      let private onLostKeyboardFocus_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.KeyboardFocusChangedEventArgs -> unit) = o.LostKeyboardFocus.RemoveHandler (System.Windows.Input.KeyboardFocusChangedEventHandler h)
+      let private onLostKeyboardFocus_rf = onLostKeyboardFocus_r
+      let private onLostKeyboardFocus_uf = onLostKeyboardFocus_u
       let onLostKeyboardFocus                      (f : System.Windows.UIElement -> System.Windows.Input.KeyboardFocusChangedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.KeyboardFocusChangedEventArgs -> unit) = o.LostKeyboardFocus.AddHandler    (System.Windows.Input.KeyboardFocusChangedEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.KeyboardFocusChangedEventArgs -> unit) = o.LostKeyboardFocus.RemoveHandler (System.Windows.Input.KeyboardFocusChangedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.KeyboardFocusChangedEventHandler, System.Windows.Input.KeyboardFocusChangedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.KeyboardFocusChangedEventHandler, System.Windows.Input.KeyboardFocusChangedEventArgs> (onLostKeyboardFocus_rf, onLostKeyboardFocus_uf, f)
+      
+      let private onPreviewTextInput_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TextCompositionEventArgs -> unit) = o.PreviewTextInput.AddHandler    (System.Windows.Input.TextCompositionEventHandler h)
+      let private onPreviewTextInput_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TextCompositionEventArgs -> unit) = o.PreviewTextInput.RemoveHandler (System.Windows.Input.TextCompositionEventHandler h)
+      let private onPreviewTextInput_rf = onPreviewTextInput_r
+      let private onPreviewTextInput_uf = onPreviewTextInput_u
       let onPreviewTextInput                       (f : System.Windows.UIElement -> System.Windows.Input.TextCompositionEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TextCompositionEventArgs -> unit) = o.PreviewTextInput.AddHandler    (System.Windows.Input.TextCompositionEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TextCompositionEventArgs -> unit) = o.PreviewTextInput.RemoveHandler (System.Windows.Input.TextCompositionEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.TextCompositionEventHandler, System.Windows.Input.TextCompositionEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.TextCompositionEventHandler, System.Windows.Input.TextCompositionEventArgs> (onPreviewTextInput_rf, onPreviewTextInput_uf, f)
+      
+      let private onTextInput_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TextCompositionEventArgs -> unit) = o.TextInput.AddHandler    (System.Windows.Input.TextCompositionEventHandler h)
+      let private onTextInput_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TextCompositionEventArgs -> unit) = o.TextInput.RemoveHandler (System.Windows.Input.TextCompositionEventHandler h)
+      let private onTextInput_rf = onTextInput_r
+      let private onTextInput_uf = onTextInput_u
       let onTextInput                              (f : System.Windows.UIElement -> System.Windows.Input.TextCompositionEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TextCompositionEventArgs -> unit) = o.TextInput.AddHandler    (System.Windows.Input.TextCompositionEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TextCompositionEventArgs -> unit) = o.TextInput.RemoveHandler (System.Windows.Input.TextCompositionEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.TextCompositionEventHandler, System.Windows.Input.TextCompositionEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.Input.TextCompositionEventHandler, System.Windows.Input.TextCompositionEventArgs> (onTextInput_rf, onTextInput_uf, f)
+      
+      let private onPreviewQueryContinueDrag_r (o : System.Windows.UIElement) (h : obj -> System.Windows.QueryContinueDragEventArgs -> unit) = o.PreviewQueryContinueDrag.AddHandler    (System.Windows.QueryContinueDragEventHandler h)
+      let private onPreviewQueryContinueDrag_u (o : System.Windows.UIElement) (h : obj -> System.Windows.QueryContinueDragEventArgs -> unit) = o.PreviewQueryContinueDrag.RemoveHandler (System.Windows.QueryContinueDragEventHandler h)
+      let private onPreviewQueryContinueDrag_rf = onPreviewQueryContinueDrag_r
+      let private onPreviewQueryContinueDrag_uf = onPreviewQueryContinueDrag_u
       let onPreviewQueryContinueDrag               (f : System.Windows.UIElement -> System.Windows.QueryContinueDragEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.QueryContinueDragEventArgs -> unit) = o.PreviewQueryContinueDrag.AddHandler    (System.Windows.QueryContinueDragEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.QueryContinueDragEventArgs -> unit) = o.PreviewQueryContinueDrag.RemoveHandler (System.Windows.QueryContinueDragEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.QueryContinueDragEventHandler, System.Windows.QueryContinueDragEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.QueryContinueDragEventHandler, System.Windows.QueryContinueDragEventArgs> (onPreviewQueryContinueDrag_rf, onPreviewQueryContinueDrag_uf, f)
+      
+      let private onQueryContinueDrag_r (o : System.Windows.UIElement) (h : obj -> System.Windows.QueryContinueDragEventArgs -> unit) = o.QueryContinueDrag.AddHandler    (System.Windows.QueryContinueDragEventHandler h)
+      let private onQueryContinueDrag_u (o : System.Windows.UIElement) (h : obj -> System.Windows.QueryContinueDragEventArgs -> unit) = o.QueryContinueDrag.RemoveHandler (System.Windows.QueryContinueDragEventHandler h)
+      let private onQueryContinueDrag_rf = onQueryContinueDrag_r
+      let private onQueryContinueDrag_uf = onQueryContinueDrag_u
       let onQueryContinueDrag                      (f : System.Windows.UIElement -> System.Windows.QueryContinueDragEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.QueryContinueDragEventArgs -> unit) = o.QueryContinueDrag.AddHandler    (System.Windows.QueryContinueDragEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.QueryContinueDragEventArgs -> unit) = o.QueryContinueDrag.RemoveHandler (System.Windows.QueryContinueDragEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.QueryContinueDragEventHandler, System.Windows.QueryContinueDragEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.QueryContinueDragEventHandler, System.Windows.QueryContinueDragEventArgs> (onQueryContinueDrag_rf, onQueryContinueDrag_uf, f)
+      
+      let private onPreviewGiveFeedback_r (o : System.Windows.UIElement) (h : obj -> System.Windows.GiveFeedbackEventArgs -> unit) = o.PreviewGiveFeedback.AddHandler    (System.Windows.GiveFeedbackEventHandler h)
+      let private onPreviewGiveFeedback_u (o : System.Windows.UIElement) (h : obj -> System.Windows.GiveFeedbackEventArgs -> unit) = o.PreviewGiveFeedback.RemoveHandler (System.Windows.GiveFeedbackEventHandler h)
+      let private onPreviewGiveFeedback_rf = onPreviewGiveFeedback_r
+      let private onPreviewGiveFeedback_uf = onPreviewGiveFeedback_u
       let onPreviewGiveFeedback                    (f : System.Windows.UIElement -> System.Windows.GiveFeedbackEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.GiveFeedbackEventArgs -> unit) = o.PreviewGiveFeedback.AddHandler    (System.Windows.GiveFeedbackEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.GiveFeedbackEventArgs -> unit) = o.PreviewGiveFeedback.RemoveHandler (System.Windows.GiveFeedbackEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.GiveFeedbackEventHandler, System.Windows.GiveFeedbackEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.GiveFeedbackEventHandler, System.Windows.GiveFeedbackEventArgs> (onPreviewGiveFeedback_rf, onPreviewGiveFeedback_uf, f)
+      
+      let private onGiveFeedback_r (o : System.Windows.UIElement) (h : obj -> System.Windows.GiveFeedbackEventArgs -> unit) = o.GiveFeedback.AddHandler    (System.Windows.GiveFeedbackEventHandler h)
+      let private onGiveFeedback_u (o : System.Windows.UIElement) (h : obj -> System.Windows.GiveFeedbackEventArgs -> unit) = o.GiveFeedback.RemoveHandler (System.Windows.GiveFeedbackEventHandler h)
+      let private onGiveFeedback_rf = onGiveFeedback_r
+      let private onGiveFeedback_uf = onGiveFeedback_u
       let onGiveFeedback                           (f : System.Windows.UIElement -> System.Windows.GiveFeedbackEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.GiveFeedbackEventArgs -> unit) = o.GiveFeedback.AddHandler    (System.Windows.GiveFeedbackEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.GiveFeedbackEventArgs -> unit) = o.GiveFeedback.RemoveHandler (System.Windows.GiveFeedbackEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.GiveFeedbackEventHandler, System.Windows.GiveFeedbackEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.GiveFeedbackEventHandler, System.Windows.GiveFeedbackEventArgs> (onGiveFeedback_rf, onGiveFeedback_uf, f)
+      
+      let private onPreviewDragEnter_r (o : System.Windows.UIElement) (h : obj -> System.Windows.DragEventArgs -> unit) = o.PreviewDragEnter.AddHandler    (System.Windows.DragEventHandler h)
+      let private onPreviewDragEnter_u (o : System.Windows.UIElement) (h : obj -> System.Windows.DragEventArgs -> unit) = o.PreviewDragEnter.RemoveHandler (System.Windows.DragEventHandler h)
+      let private onPreviewDragEnter_rf = onPreviewDragEnter_r
+      let private onPreviewDragEnter_uf = onPreviewDragEnter_u
       let onPreviewDragEnter                       (f : System.Windows.UIElement -> System.Windows.DragEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.DragEventArgs -> unit) = o.PreviewDragEnter.AddHandler    (System.Windows.DragEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.DragEventArgs -> unit) = o.PreviewDragEnter.RemoveHandler (System.Windows.DragEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.DragEventHandler, System.Windows.DragEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.DragEventHandler, System.Windows.DragEventArgs> (onPreviewDragEnter_rf, onPreviewDragEnter_uf, f)
+      
+      let private onDragEnter_r (o : System.Windows.UIElement) (h : obj -> System.Windows.DragEventArgs -> unit) = o.DragEnter.AddHandler    (System.Windows.DragEventHandler h)
+      let private onDragEnter_u (o : System.Windows.UIElement) (h : obj -> System.Windows.DragEventArgs -> unit) = o.DragEnter.RemoveHandler (System.Windows.DragEventHandler h)
+      let private onDragEnter_rf = onDragEnter_r
+      let private onDragEnter_uf = onDragEnter_u
       let onDragEnter                              (f : System.Windows.UIElement -> System.Windows.DragEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.DragEventArgs -> unit) = o.DragEnter.AddHandler    (System.Windows.DragEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.DragEventArgs -> unit) = o.DragEnter.RemoveHandler (System.Windows.DragEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.DragEventHandler, System.Windows.DragEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.DragEventHandler, System.Windows.DragEventArgs> (onDragEnter_rf, onDragEnter_uf, f)
+      
+      let private onPreviewDragOver_r (o : System.Windows.UIElement) (h : obj -> System.Windows.DragEventArgs -> unit) = o.PreviewDragOver.AddHandler    (System.Windows.DragEventHandler h)
+      let private onPreviewDragOver_u (o : System.Windows.UIElement) (h : obj -> System.Windows.DragEventArgs -> unit) = o.PreviewDragOver.RemoveHandler (System.Windows.DragEventHandler h)
+      let private onPreviewDragOver_rf = onPreviewDragOver_r
+      let private onPreviewDragOver_uf = onPreviewDragOver_u
       let onPreviewDragOver                        (f : System.Windows.UIElement -> System.Windows.DragEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.DragEventArgs -> unit) = o.PreviewDragOver.AddHandler    (System.Windows.DragEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.DragEventArgs -> unit) = o.PreviewDragOver.RemoveHandler (System.Windows.DragEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.DragEventHandler, System.Windows.DragEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.DragEventHandler, System.Windows.DragEventArgs> (onPreviewDragOver_rf, onPreviewDragOver_uf, f)
+      
+      let private onDragOver_r (o : System.Windows.UIElement) (h : obj -> System.Windows.DragEventArgs -> unit) = o.DragOver.AddHandler    (System.Windows.DragEventHandler h)
+      let private onDragOver_u (o : System.Windows.UIElement) (h : obj -> System.Windows.DragEventArgs -> unit) = o.DragOver.RemoveHandler (System.Windows.DragEventHandler h)
+      let private onDragOver_rf = onDragOver_r
+      let private onDragOver_uf = onDragOver_u
       let onDragOver                               (f : System.Windows.UIElement -> System.Windows.DragEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.DragEventArgs -> unit) = o.DragOver.AddHandler    (System.Windows.DragEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.DragEventArgs -> unit) = o.DragOver.RemoveHandler (System.Windows.DragEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.DragEventHandler, System.Windows.DragEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.DragEventHandler, System.Windows.DragEventArgs> (onDragOver_rf, onDragOver_uf, f)
+      
+      let private onPreviewDragLeave_r (o : System.Windows.UIElement) (h : obj -> System.Windows.DragEventArgs -> unit) = o.PreviewDragLeave.AddHandler    (System.Windows.DragEventHandler h)
+      let private onPreviewDragLeave_u (o : System.Windows.UIElement) (h : obj -> System.Windows.DragEventArgs -> unit) = o.PreviewDragLeave.RemoveHandler (System.Windows.DragEventHandler h)
+      let private onPreviewDragLeave_rf = onPreviewDragLeave_r
+      let private onPreviewDragLeave_uf = onPreviewDragLeave_u
       let onPreviewDragLeave                       (f : System.Windows.UIElement -> System.Windows.DragEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.DragEventArgs -> unit) = o.PreviewDragLeave.AddHandler    (System.Windows.DragEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.DragEventArgs -> unit) = o.PreviewDragLeave.RemoveHandler (System.Windows.DragEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.DragEventHandler, System.Windows.DragEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.DragEventHandler, System.Windows.DragEventArgs> (onPreviewDragLeave_rf, onPreviewDragLeave_uf, f)
+      
+      let private onDragLeave_r (o : System.Windows.UIElement) (h : obj -> System.Windows.DragEventArgs -> unit) = o.DragLeave.AddHandler    (System.Windows.DragEventHandler h)
+      let private onDragLeave_u (o : System.Windows.UIElement) (h : obj -> System.Windows.DragEventArgs -> unit) = o.DragLeave.RemoveHandler (System.Windows.DragEventHandler h)
+      let private onDragLeave_rf = onDragLeave_r
+      let private onDragLeave_uf = onDragLeave_u
       let onDragLeave                              (f : System.Windows.UIElement -> System.Windows.DragEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.DragEventArgs -> unit) = o.DragLeave.AddHandler    (System.Windows.DragEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.DragEventArgs -> unit) = o.DragLeave.RemoveHandler (System.Windows.DragEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.DragEventHandler, System.Windows.DragEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.DragEventHandler, System.Windows.DragEventArgs> (onDragLeave_rf, onDragLeave_uf, f)
+      
+      let private onPreviewDrop_r (o : System.Windows.UIElement) (h : obj -> System.Windows.DragEventArgs -> unit) = o.PreviewDrop.AddHandler    (System.Windows.DragEventHandler h)
+      let private onPreviewDrop_u (o : System.Windows.UIElement) (h : obj -> System.Windows.DragEventArgs -> unit) = o.PreviewDrop.RemoveHandler (System.Windows.DragEventHandler h)
+      let private onPreviewDrop_rf = onPreviewDrop_r
+      let private onPreviewDrop_uf = onPreviewDrop_u
       let onPreviewDrop                            (f : System.Windows.UIElement -> System.Windows.DragEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.DragEventArgs -> unit) = o.PreviewDrop.AddHandler    (System.Windows.DragEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.DragEventArgs -> unit) = o.PreviewDrop.RemoveHandler (System.Windows.DragEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.DragEventHandler, System.Windows.DragEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.DragEventHandler, System.Windows.DragEventArgs> (onPreviewDrop_rf, onPreviewDrop_uf, f)
+      
+      let private onDrop_r (o : System.Windows.UIElement) (h : obj -> System.Windows.DragEventArgs -> unit) = o.Drop.AddHandler    (System.Windows.DragEventHandler h)
+      let private onDrop_u (o : System.Windows.UIElement) (h : obj -> System.Windows.DragEventArgs -> unit) = o.Drop.RemoveHandler (System.Windows.DragEventHandler h)
+      let private onDrop_rf = onDrop_r
+      let private onDrop_uf = onDrop_u
       let onDrop                                   (f : System.Windows.UIElement -> System.Windows.DragEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.DragEventArgs -> unit) = o.Drop.AddHandler    (System.Windows.DragEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.DragEventArgs -> unit) = o.Drop.RemoveHandler (System.Windows.DragEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.DragEventHandler, System.Windows.DragEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.DragEventHandler, System.Windows.DragEventArgs> (onDrop_rf, onDrop_uf, f)
+      
+      let private onPreviewTouchDown_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TouchEventArgs -> unit) = o.PreviewTouchDown.AddHandler    (System.EventHandler<System.Windows.Input.TouchEventArgs> h)
+      let private onPreviewTouchDown_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TouchEventArgs -> unit) = o.PreviewTouchDown.RemoveHandler (System.EventHandler<System.Windows.Input.TouchEventArgs> h)
+      let private onPreviewTouchDown_rf = onPreviewTouchDown_r
+      let private onPreviewTouchDown_uf = onPreviewTouchDown_u
       let onPreviewTouchDown                       (f : System.Windows.UIElement -> System.Windows.Input.TouchEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TouchEventArgs -> unit) = o.PreviewTouchDown.AddHandler    (System.EventHandler<System.Windows.Input.TouchEventArgs> h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TouchEventArgs -> unit) = o.PreviewTouchDown.RemoveHandler (System.EventHandler<System.Windows.Input.TouchEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.EventHandler<System.Windows.Input.TouchEventArgs>, System.Windows.Input.TouchEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.EventHandler<System.Windows.Input.TouchEventArgs>, System.Windows.Input.TouchEventArgs> (onPreviewTouchDown_rf, onPreviewTouchDown_uf, f)
+      
+      let private onTouchDown_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TouchEventArgs -> unit) = o.TouchDown.AddHandler    (System.EventHandler<System.Windows.Input.TouchEventArgs> h)
+      let private onTouchDown_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TouchEventArgs -> unit) = o.TouchDown.RemoveHandler (System.EventHandler<System.Windows.Input.TouchEventArgs> h)
+      let private onTouchDown_rf = onTouchDown_r
+      let private onTouchDown_uf = onTouchDown_u
       let onTouchDown                              (f : System.Windows.UIElement -> System.Windows.Input.TouchEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TouchEventArgs -> unit) = o.TouchDown.AddHandler    (System.EventHandler<System.Windows.Input.TouchEventArgs> h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TouchEventArgs -> unit) = o.TouchDown.RemoveHandler (System.EventHandler<System.Windows.Input.TouchEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.EventHandler<System.Windows.Input.TouchEventArgs>, System.Windows.Input.TouchEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.EventHandler<System.Windows.Input.TouchEventArgs>, System.Windows.Input.TouchEventArgs> (onTouchDown_rf, onTouchDown_uf, f)
+      
+      let private onPreviewTouchMove_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TouchEventArgs -> unit) = o.PreviewTouchMove.AddHandler    (System.EventHandler<System.Windows.Input.TouchEventArgs> h)
+      let private onPreviewTouchMove_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TouchEventArgs -> unit) = o.PreviewTouchMove.RemoveHandler (System.EventHandler<System.Windows.Input.TouchEventArgs> h)
+      let private onPreviewTouchMove_rf = onPreviewTouchMove_r
+      let private onPreviewTouchMove_uf = onPreviewTouchMove_u
       let onPreviewTouchMove                       (f : System.Windows.UIElement -> System.Windows.Input.TouchEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TouchEventArgs -> unit) = o.PreviewTouchMove.AddHandler    (System.EventHandler<System.Windows.Input.TouchEventArgs> h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TouchEventArgs -> unit) = o.PreviewTouchMove.RemoveHandler (System.EventHandler<System.Windows.Input.TouchEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.EventHandler<System.Windows.Input.TouchEventArgs>, System.Windows.Input.TouchEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.EventHandler<System.Windows.Input.TouchEventArgs>, System.Windows.Input.TouchEventArgs> (onPreviewTouchMove_rf, onPreviewTouchMove_uf, f)
+      
+      let private onTouchMove_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TouchEventArgs -> unit) = o.TouchMove.AddHandler    (System.EventHandler<System.Windows.Input.TouchEventArgs> h)
+      let private onTouchMove_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TouchEventArgs -> unit) = o.TouchMove.RemoveHandler (System.EventHandler<System.Windows.Input.TouchEventArgs> h)
+      let private onTouchMove_rf = onTouchMove_r
+      let private onTouchMove_uf = onTouchMove_u
       let onTouchMove                              (f : System.Windows.UIElement -> System.Windows.Input.TouchEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TouchEventArgs -> unit) = o.TouchMove.AddHandler    (System.EventHandler<System.Windows.Input.TouchEventArgs> h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TouchEventArgs -> unit) = o.TouchMove.RemoveHandler (System.EventHandler<System.Windows.Input.TouchEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.EventHandler<System.Windows.Input.TouchEventArgs>, System.Windows.Input.TouchEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.EventHandler<System.Windows.Input.TouchEventArgs>, System.Windows.Input.TouchEventArgs> (onTouchMove_rf, onTouchMove_uf, f)
+      
+      let private onPreviewTouchUp_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TouchEventArgs -> unit) = o.PreviewTouchUp.AddHandler    (System.EventHandler<System.Windows.Input.TouchEventArgs> h)
+      let private onPreviewTouchUp_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TouchEventArgs -> unit) = o.PreviewTouchUp.RemoveHandler (System.EventHandler<System.Windows.Input.TouchEventArgs> h)
+      let private onPreviewTouchUp_rf = onPreviewTouchUp_r
+      let private onPreviewTouchUp_uf = onPreviewTouchUp_u
       let onPreviewTouchUp                         (f : System.Windows.UIElement -> System.Windows.Input.TouchEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TouchEventArgs -> unit) = o.PreviewTouchUp.AddHandler    (System.EventHandler<System.Windows.Input.TouchEventArgs> h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TouchEventArgs -> unit) = o.PreviewTouchUp.RemoveHandler (System.EventHandler<System.Windows.Input.TouchEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.EventHandler<System.Windows.Input.TouchEventArgs>, System.Windows.Input.TouchEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.EventHandler<System.Windows.Input.TouchEventArgs>, System.Windows.Input.TouchEventArgs> (onPreviewTouchUp_rf, onPreviewTouchUp_uf, f)
+      
+      let private onTouchUp_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TouchEventArgs -> unit) = o.TouchUp.AddHandler    (System.EventHandler<System.Windows.Input.TouchEventArgs> h)
+      let private onTouchUp_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TouchEventArgs -> unit) = o.TouchUp.RemoveHandler (System.EventHandler<System.Windows.Input.TouchEventArgs> h)
+      let private onTouchUp_rf = onTouchUp_r
+      let private onTouchUp_uf = onTouchUp_u
       let onTouchUp                                (f : System.Windows.UIElement -> System.Windows.Input.TouchEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TouchEventArgs -> unit) = o.TouchUp.AddHandler    (System.EventHandler<System.Windows.Input.TouchEventArgs> h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TouchEventArgs -> unit) = o.TouchUp.RemoveHandler (System.EventHandler<System.Windows.Input.TouchEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.EventHandler<System.Windows.Input.TouchEventArgs>, System.Windows.Input.TouchEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.EventHandler<System.Windows.Input.TouchEventArgs>, System.Windows.Input.TouchEventArgs> (onTouchUp_rf, onTouchUp_uf, f)
+      
+      let private onGotTouchCapture_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TouchEventArgs -> unit) = o.GotTouchCapture.AddHandler    (System.EventHandler<System.Windows.Input.TouchEventArgs> h)
+      let private onGotTouchCapture_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TouchEventArgs -> unit) = o.GotTouchCapture.RemoveHandler (System.EventHandler<System.Windows.Input.TouchEventArgs> h)
+      let private onGotTouchCapture_rf = onGotTouchCapture_r
+      let private onGotTouchCapture_uf = onGotTouchCapture_u
       let onGotTouchCapture                        (f : System.Windows.UIElement -> System.Windows.Input.TouchEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TouchEventArgs -> unit) = o.GotTouchCapture.AddHandler    (System.EventHandler<System.Windows.Input.TouchEventArgs> h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TouchEventArgs -> unit) = o.GotTouchCapture.RemoveHandler (System.EventHandler<System.Windows.Input.TouchEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.EventHandler<System.Windows.Input.TouchEventArgs>, System.Windows.Input.TouchEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.EventHandler<System.Windows.Input.TouchEventArgs>, System.Windows.Input.TouchEventArgs> (onGotTouchCapture_rf, onGotTouchCapture_uf, f)
+      
+      let private onLostTouchCapture_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TouchEventArgs -> unit) = o.LostTouchCapture.AddHandler    (System.EventHandler<System.Windows.Input.TouchEventArgs> h)
+      let private onLostTouchCapture_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TouchEventArgs -> unit) = o.LostTouchCapture.RemoveHandler (System.EventHandler<System.Windows.Input.TouchEventArgs> h)
+      let private onLostTouchCapture_rf = onLostTouchCapture_r
+      let private onLostTouchCapture_uf = onLostTouchCapture_u
       let onLostTouchCapture                       (f : System.Windows.UIElement -> System.Windows.Input.TouchEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TouchEventArgs -> unit) = o.LostTouchCapture.AddHandler    (System.EventHandler<System.Windows.Input.TouchEventArgs> h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TouchEventArgs -> unit) = o.LostTouchCapture.RemoveHandler (System.EventHandler<System.Windows.Input.TouchEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.EventHandler<System.Windows.Input.TouchEventArgs>, System.Windows.Input.TouchEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.EventHandler<System.Windows.Input.TouchEventArgs>, System.Windows.Input.TouchEventArgs> (onLostTouchCapture_rf, onLostTouchCapture_uf, f)
+      
+      let private onTouchEnter_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TouchEventArgs -> unit) = o.TouchEnter.AddHandler    (System.EventHandler<System.Windows.Input.TouchEventArgs> h)
+      let private onTouchEnter_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TouchEventArgs -> unit) = o.TouchEnter.RemoveHandler (System.EventHandler<System.Windows.Input.TouchEventArgs> h)
+      let private onTouchEnter_rf = onTouchEnter_r
+      let private onTouchEnter_uf = onTouchEnter_u
       let onTouchEnter                             (f : System.Windows.UIElement -> System.Windows.Input.TouchEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TouchEventArgs -> unit) = o.TouchEnter.AddHandler    (System.EventHandler<System.Windows.Input.TouchEventArgs> h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TouchEventArgs -> unit) = o.TouchEnter.RemoveHandler (System.EventHandler<System.Windows.Input.TouchEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.EventHandler<System.Windows.Input.TouchEventArgs>, System.Windows.Input.TouchEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.EventHandler<System.Windows.Input.TouchEventArgs>, System.Windows.Input.TouchEventArgs> (onTouchEnter_rf, onTouchEnter_uf, f)
+      
+      let private onTouchLeave_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TouchEventArgs -> unit) = o.TouchLeave.AddHandler    (System.EventHandler<System.Windows.Input.TouchEventArgs> h)
+      let private onTouchLeave_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TouchEventArgs -> unit) = o.TouchLeave.RemoveHandler (System.EventHandler<System.Windows.Input.TouchEventArgs> h)
+      let private onTouchLeave_rf = onTouchLeave_r
+      let private onTouchLeave_uf = onTouchLeave_u
       let onTouchLeave                             (f : System.Windows.UIElement -> System.Windows.Input.TouchEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TouchEventArgs -> unit) = o.TouchLeave.AddHandler    (System.EventHandler<System.Windows.Input.TouchEventArgs> h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.TouchEventArgs -> unit) = o.TouchLeave.RemoveHandler (System.EventHandler<System.Windows.Input.TouchEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.EventHandler<System.Windows.Input.TouchEventArgs>, System.Windows.Input.TouchEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.EventHandler<System.Windows.Input.TouchEventArgs>, System.Windows.Input.TouchEventArgs> (onTouchLeave_rf, onTouchLeave_uf, f)
+      
+      let private onIsMouseDirectlyOverChanged_r (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsMouseDirectlyOverChanged.AddHandler    (System.Windows.DependencyPropertyChangedEventHandler h)
+      let private onIsMouseDirectlyOverChanged_u (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsMouseDirectlyOverChanged.RemoveHandler (System.Windows.DependencyPropertyChangedEventHandler h)
+      let private onIsMouseDirectlyOverChanged_rf = onIsMouseDirectlyOverChanged_r
+      let private onIsMouseDirectlyOverChanged_uf = onIsMouseDirectlyOverChanged_u
       let onIsMouseDirectlyOverChanged             (f : System.Windows.UIElement -> System.Windows.DependencyPropertyChangedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsMouseDirectlyOverChanged.AddHandler    (System.Windows.DependencyPropertyChangedEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsMouseDirectlyOverChanged.RemoveHandler (System.Windows.DependencyPropertyChangedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.DependencyPropertyChangedEventHandler, System.Windows.DependencyPropertyChangedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.DependencyPropertyChangedEventHandler, System.Windows.DependencyPropertyChangedEventArgs> (onIsMouseDirectlyOverChanged_rf, onIsMouseDirectlyOverChanged_uf, f)
+      
+      let private onIsKeyboardFocusWithinChanged_r (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsKeyboardFocusWithinChanged.AddHandler    (System.Windows.DependencyPropertyChangedEventHandler h)
+      let private onIsKeyboardFocusWithinChanged_u (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsKeyboardFocusWithinChanged.RemoveHandler (System.Windows.DependencyPropertyChangedEventHandler h)
+      let private onIsKeyboardFocusWithinChanged_rf = onIsKeyboardFocusWithinChanged_r
+      let private onIsKeyboardFocusWithinChanged_uf = onIsKeyboardFocusWithinChanged_u
       let onIsKeyboardFocusWithinChanged           (f : System.Windows.UIElement -> System.Windows.DependencyPropertyChangedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsKeyboardFocusWithinChanged.AddHandler    (System.Windows.DependencyPropertyChangedEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsKeyboardFocusWithinChanged.RemoveHandler (System.Windows.DependencyPropertyChangedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.DependencyPropertyChangedEventHandler, System.Windows.DependencyPropertyChangedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.DependencyPropertyChangedEventHandler, System.Windows.DependencyPropertyChangedEventArgs> (onIsKeyboardFocusWithinChanged_rf, onIsKeyboardFocusWithinChanged_uf, f)
+      
+      let private onIsMouseCapturedChanged_r (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsMouseCapturedChanged.AddHandler    (System.Windows.DependencyPropertyChangedEventHandler h)
+      let private onIsMouseCapturedChanged_u (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsMouseCapturedChanged.RemoveHandler (System.Windows.DependencyPropertyChangedEventHandler h)
+      let private onIsMouseCapturedChanged_rf = onIsMouseCapturedChanged_r
+      let private onIsMouseCapturedChanged_uf = onIsMouseCapturedChanged_u
       let onIsMouseCapturedChanged                 (f : System.Windows.UIElement -> System.Windows.DependencyPropertyChangedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsMouseCapturedChanged.AddHandler    (System.Windows.DependencyPropertyChangedEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsMouseCapturedChanged.RemoveHandler (System.Windows.DependencyPropertyChangedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.DependencyPropertyChangedEventHandler, System.Windows.DependencyPropertyChangedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.DependencyPropertyChangedEventHandler, System.Windows.DependencyPropertyChangedEventArgs> (onIsMouseCapturedChanged_rf, onIsMouseCapturedChanged_uf, f)
+      
+      let private onIsMouseCaptureWithinChanged_r (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsMouseCaptureWithinChanged.AddHandler    (System.Windows.DependencyPropertyChangedEventHandler h)
+      let private onIsMouseCaptureWithinChanged_u (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsMouseCaptureWithinChanged.RemoveHandler (System.Windows.DependencyPropertyChangedEventHandler h)
+      let private onIsMouseCaptureWithinChanged_rf = onIsMouseCaptureWithinChanged_r
+      let private onIsMouseCaptureWithinChanged_uf = onIsMouseCaptureWithinChanged_u
       let onIsMouseCaptureWithinChanged            (f : System.Windows.UIElement -> System.Windows.DependencyPropertyChangedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsMouseCaptureWithinChanged.AddHandler    (System.Windows.DependencyPropertyChangedEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsMouseCaptureWithinChanged.RemoveHandler (System.Windows.DependencyPropertyChangedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.DependencyPropertyChangedEventHandler, System.Windows.DependencyPropertyChangedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.DependencyPropertyChangedEventHandler, System.Windows.DependencyPropertyChangedEventArgs> (onIsMouseCaptureWithinChanged_rf, onIsMouseCaptureWithinChanged_uf, f)
+      
+      let private onIsStylusDirectlyOverChanged_r (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsStylusDirectlyOverChanged.AddHandler    (System.Windows.DependencyPropertyChangedEventHandler h)
+      let private onIsStylusDirectlyOverChanged_u (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsStylusDirectlyOverChanged.RemoveHandler (System.Windows.DependencyPropertyChangedEventHandler h)
+      let private onIsStylusDirectlyOverChanged_rf = onIsStylusDirectlyOverChanged_r
+      let private onIsStylusDirectlyOverChanged_uf = onIsStylusDirectlyOverChanged_u
       let onIsStylusDirectlyOverChanged            (f : System.Windows.UIElement -> System.Windows.DependencyPropertyChangedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsStylusDirectlyOverChanged.AddHandler    (System.Windows.DependencyPropertyChangedEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsStylusDirectlyOverChanged.RemoveHandler (System.Windows.DependencyPropertyChangedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.DependencyPropertyChangedEventHandler, System.Windows.DependencyPropertyChangedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.DependencyPropertyChangedEventHandler, System.Windows.DependencyPropertyChangedEventArgs> (onIsStylusDirectlyOverChanged_rf, onIsStylusDirectlyOverChanged_uf, f)
+      
+      let private onIsStylusCapturedChanged_r (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsStylusCapturedChanged.AddHandler    (System.Windows.DependencyPropertyChangedEventHandler h)
+      let private onIsStylusCapturedChanged_u (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsStylusCapturedChanged.RemoveHandler (System.Windows.DependencyPropertyChangedEventHandler h)
+      let private onIsStylusCapturedChanged_rf = onIsStylusCapturedChanged_r
+      let private onIsStylusCapturedChanged_uf = onIsStylusCapturedChanged_u
       let onIsStylusCapturedChanged                (f : System.Windows.UIElement -> System.Windows.DependencyPropertyChangedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsStylusCapturedChanged.AddHandler    (System.Windows.DependencyPropertyChangedEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsStylusCapturedChanged.RemoveHandler (System.Windows.DependencyPropertyChangedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.DependencyPropertyChangedEventHandler, System.Windows.DependencyPropertyChangedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.DependencyPropertyChangedEventHandler, System.Windows.DependencyPropertyChangedEventArgs> (onIsStylusCapturedChanged_rf, onIsStylusCapturedChanged_uf, f)
+      
+      let private onIsStylusCaptureWithinChanged_r (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsStylusCaptureWithinChanged.AddHandler    (System.Windows.DependencyPropertyChangedEventHandler h)
+      let private onIsStylusCaptureWithinChanged_u (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsStylusCaptureWithinChanged.RemoveHandler (System.Windows.DependencyPropertyChangedEventHandler h)
+      let private onIsStylusCaptureWithinChanged_rf = onIsStylusCaptureWithinChanged_r
+      let private onIsStylusCaptureWithinChanged_uf = onIsStylusCaptureWithinChanged_u
       let onIsStylusCaptureWithinChanged           (f : System.Windows.UIElement -> System.Windows.DependencyPropertyChangedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsStylusCaptureWithinChanged.AddHandler    (System.Windows.DependencyPropertyChangedEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsStylusCaptureWithinChanged.RemoveHandler (System.Windows.DependencyPropertyChangedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.DependencyPropertyChangedEventHandler, System.Windows.DependencyPropertyChangedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.DependencyPropertyChangedEventHandler, System.Windows.DependencyPropertyChangedEventArgs> (onIsStylusCaptureWithinChanged_rf, onIsStylusCaptureWithinChanged_uf, f)
+      
+      let private onIsKeyboardFocusedChanged_r (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsKeyboardFocusedChanged.AddHandler    (System.Windows.DependencyPropertyChangedEventHandler h)
+      let private onIsKeyboardFocusedChanged_u (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsKeyboardFocusedChanged.RemoveHandler (System.Windows.DependencyPropertyChangedEventHandler h)
+      let private onIsKeyboardFocusedChanged_rf = onIsKeyboardFocusedChanged_r
+      let private onIsKeyboardFocusedChanged_uf = onIsKeyboardFocusedChanged_u
       let onIsKeyboardFocusedChanged               (f : System.Windows.UIElement -> System.Windows.DependencyPropertyChangedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsKeyboardFocusedChanged.AddHandler    (System.Windows.DependencyPropertyChangedEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsKeyboardFocusedChanged.RemoveHandler (System.Windows.DependencyPropertyChangedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.DependencyPropertyChangedEventHandler, System.Windows.DependencyPropertyChangedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.DependencyPropertyChangedEventHandler, System.Windows.DependencyPropertyChangedEventArgs> (onIsKeyboardFocusedChanged_rf, onIsKeyboardFocusedChanged_uf, f)
+      
+      let private onLayoutUpdated_r (o : System.Windows.UIElement) (h : obj -> System.EventArgs -> unit) = o.LayoutUpdated.AddHandler    (System.EventHandler h)
+      let private onLayoutUpdated_u (o : System.Windows.UIElement) (h : obj -> System.EventArgs -> unit) = o.LayoutUpdated.RemoveHandler (System.EventHandler h)
+      let private onLayoutUpdated_rf = onLayoutUpdated_r
+      let private onLayoutUpdated_uf = onLayoutUpdated_u
       let onLayoutUpdated                          (f : System.Windows.UIElement -> System.EventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.EventArgs -> unit) = o.LayoutUpdated.AddHandler    (System.EventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.EventArgs -> unit) = o.LayoutUpdated.RemoveHandler (System.EventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.EventHandler, System.EventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.EventHandler, System.EventArgs> (onLayoutUpdated_rf, onLayoutUpdated_uf, f)
+      
+      let private onGotFocus_r (o : System.Windows.UIElement) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.GotFocus.AddHandler    (System.Windows.RoutedEventHandler h)
+      let private onGotFocus_u (o : System.Windows.UIElement) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.GotFocus.RemoveHandler (System.Windows.RoutedEventHandler h)
+      let private onGotFocus_rf = onGotFocus_r
+      let private onGotFocus_uf = onGotFocus_u
       let onGotFocus                               (f : System.Windows.UIElement -> System.Windows.RoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.GotFocus.AddHandler    (System.Windows.RoutedEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.GotFocus.RemoveHandler (System.Windows.RoutedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onGotFocus_rf, onGotFocus_uf, f)
+      
+      let private onLostFocus_r (o : System.Windows.UIElement) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.LostFocus.AddHandler    (System.Windows.RoutedEventHandler h)
+      let private onLostFocus_u (o : System.Windows.UIElement) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.LostFocus.RemoveHandler (System.Windows.RoutedEventHandler h)
+      let private onLostFocus_rf = onLostFocus_r
+      let private onLostFocus_uf = onLostFocus_u
       let onLostFocus                              (f : System.Windows.UIElement -> System.Windows.RoutedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.LostFocus.AddHandler    (System.Windows.RoutedEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.RoutedEventArgs -> unit) = o.LostFocus.RemoveHandler (System.Windows.RoutedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (onLostFocus_rf, onLostFocus_uf, f)
+      
+      let private onIsEnabledChanged_r (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsEnabledChanged.AddHandler    (System.Windows.DependencyPropertyChangedEventHandler h)
+      let private onIsEnabledChanged_u (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsEnabledChanged.RemoveHandler (System.Windows.DependencyPropertyChangedEventHandler h)
+      let private onIsEnabledChanged_rf = onIsEnabledChanged_r
+      let private onIsEnabledChanged_uf = onIsEnabledChanged_u
       let onIsEnabledChanged                       (f : System.Windows.UIElement -> System.Windows.DependencyPropertyChangedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsEnabledChanged.AddHandler    (System.Windows.DependencyPropertyChangedEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsEnabledChanged.RemoveHandler (System.Windows.DependencyPropertyChangedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.DependencyPropertyChangedEventHandler, System.Windows.DependencyPropertyChangedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.DependencyPropertyChangedEventHandler, System.Windows.DependencyPropertyChangedEventArgs> (onIsEnabledChanged_rf, onIsEnabledChanged_uf, f)
+      
+      let private onIsHitTestVisibleChanged_r (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsHitTestVisibleChanged.AddHandler    (System.Windows.DependencyPropertyChangedEventHandler h)
+      let private onIsHitTestVisibleChanged_u (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsHitTestVisibleChanged.RemoveHandler (System.Windows.DependencyPropertyChangedEventHandler h)
+      let private onIsHitTestVisibleChanged_rf = onIsHitTestVisibleChanged_r
+      let private onIsHitTestVisibleChanged_uf = onIsHitTestVisibleChanged_u
       let onIsHitTestVisibleChanged                (f : System.Windows.UIElement -> System.Windows.DependencyPropertyChangedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsHitTestVisibleChanged.AddHandler    (System.Windows.DependencyPropertyChangedEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsHitTestVisibleChanged.RemoveHandler (System.Windows.DependencyPropertyChangedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.DependencyPropertyChangedEventHandler, System.Windows.DependencyPropertyChangedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.DependencyPropertyChangedEventHandler, System.Windows.DependencyPropertyChangedEventArgs> (onIsHitTestVisibleChanged_rf, onIsHitTestVisibleChanged_uf, f)
+      
+      let private onIsVisibleChanged_r (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsVisibleChanged.AddHandler    (System.Windows.DependencyPropertyChangedEventHandler h)
+      let private onIsVisibleChanged_u (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsVisibleChanged.RemoveHandler (System.Windows.DependencyPropertyChangedEventHandler h)
+      let private onIsVisibleChanged_rf = onIsVisibleChanged_r
+      let private onIsVisibleChanged_uf = onIsVisibleChanged_u
       let onIsVisibleChanged                       (f : System.Windows.UIElement -> System.Windows.DependencyPropertyChangedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsVisibleChanged.AddHandler    (System.Windows.DependencyPropertyChangedEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.IsVisibleChanged.RemoveHandler (System.Windows.DependencyPropertyChangedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.DependencyPropertyChangedEventHandler, System.Windows.DependencyPropertyChangedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.DependencyPropertyChangedEventHandler, System.Windows.DependencyPropertyChangedEventArgs> (onIsVisibleChanged_rf, onIsVisibleChanged_uf, f)
+      
+      let private onFocusableChanged_r (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.FocusableChanged.AddHandler    (System.Windows.DependencyPropertyChangedEventHandler h)
+      let private onFocusableChanged_u (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.FocusableChanged.RemoveHandler (System.Windows.DependencyPropertyChangedEventHandler h)
+      let private onFocusableChanged_rf = onFocusableChanged_r
+      let private onFocusableChanged_uf = onFocusableChanged_u
       let onFocusableChanged                       (f : System.Windows.UIElement -> System.Windows.DependencyPropertyChangedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.FocusableChanged.AddHandler    (System.Windows.DependencyPropertyChangedEventHandler h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.DependencyPropertyChangedEventArgs -> unit) = o.FocusableChanged.RemoveHandler (System.Windows.DependencyPropertyChangedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.DependencyPropertyChangedEventHandler, System.Windows.DependencyPropertyChangedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.Windows.DependencyPropertyChangedEventHandler, System.Windows.DependencyPropertyChangedEventArgs> (onFocusableChanged_rf, onFocusableChanged_uf, f)
+      
+      let private onManipulationStarting_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.ManipulationStartingEventArgs -> unit) = o.ManipulationStarting.AddHandler    (System.EventHandler<System.Windows.Input.ManipulationStartingEventArgs> h)
+      let private onManipulationStarting_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.ManipulationStartingEventArgs -> unit) = o.ManipulationStarting.RemoveHandler (System.EventHandler<System.Windows.Input.ManipulationStartingEventArgs> h)
+      let private onManipulationStarting_rf = onManipulationStarting_r
+      let private onManipulationStarting_uf = onManipulationStarting_u
       let onManipulationStarting                   (f : System.Windows.UIElement -> System.Windows.Input.ManipulationStartingEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.ManipulationStartingEventArgs -> unit) = o.ManipulationStarting.AddHandler    (System.EventHandler<System.Windows.Input.ManipulationStartingEventArgs> h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.ManipulationStartingEventArgs -> unit) = o.ManipulationStarting.RemoveHandler (System.EventHandler<System.Windows.Input.ManipulationStartingEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.EventHandler<System.Windows.Input.ManipulationStartingEventArgs>, System.Windows.Input.ManipulationStartingEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.EventHandler<System.Windows.Input.ManipulationStartingEventArgs>, System.Windows.Input.ManipulationStartingEventArgs> (onManipulationStarting_rf, onManipulationStarting_uf, f)
+      
+      let private onManipulationStarted_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.ManipulationStartedEventArgs -> unit) = o.ManipulationStarted.AddHandler    (System.EventHandler<System.Windows.Input.ManipulationStartedEventArgs> h)
+      let private onManipulationStarted_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.ManipulationStartedEventArgs -> unit) = o.ManipulationStarted.RemoveHandler (System.EventHandler<System.Windows.Input.ManipulationStartedEventArgs> h)
+      let private onManipulationStarted_rf = onManipulationStarted_r
+      let private onManipulationStarted_uf = onManipulationStarted_u
       let onManipulationStarted                    (f : System.Windows.UIElement -> System.Windows.Input.ManipulationStartedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.ManipulationStartedEventArgs -> unit) = o.ManipulationStarted.AddHandler    (System.EventHandler<System.Windows.Input.ManipulationStartedEventArgs> h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.ManipulationStartedEventArgs -> unit) = o.ManipulationStarted.RemoveHandler (System.EventHandler<System.Windows.Input.ManipulationStartedEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.EventHandler<System.Windows.Input.ManipulationStartedEventArgs>, System.Windows.Input.ManipulationStartedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.EventHandler<System.Windows.Input.ManipulationStartedEventArgs>, System.Windows.Input.ManipulationStartedEventArgs> (onManipulationStarted_rf, onManipulationStarted_uf, f)
+      
+      let private onManipulationDelta_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.ManipulationDeltaEventArgs -> unit) = o.ManipulationDelta.AddHandler    (System.EventHandler<System.Windows.Input.ManipulationDeltaEventArgs> h)
+      let private onManipulationDelta_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.ManipulationDeltaEventArgs -> unit) = o.ManipulationDelta.RemoveHandler (System.EventHandler<System.Windows.Input.ManipulationDeltaEventArgs> h)
+      let private onManipulationDelta_rf = onManipulationDelta_r
+      let private onManipulationDelta_uf = onManipulationDelta_u
       let onManipulationDelta                      (f : System.Windows.UIElement -> System.Windows.Input.ManipulationDeltaEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.ManipulationDeltaEventArgs -> unit) = o.ManipulationDelta.AddHandler    (System.EventHandler<System.Windows.Input.ManipulationDeltaEventArgs> h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.ManipulationDeltaEventArgs -> unit) = o.ManipulationDelta.RemoveHandler (System.EventHandler<System.Windows.Input.ManipulationDeltaEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.EventHandler<System.Windows.Input.ManipulationDeltaEventArgs>, System.Windows.Input.ManipulationDeltaEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.EventHandler<System.Windows.Input.ManipulationDeltaEventArgs>, System.Windows.Input.ManipulationDeltaEventArgs> (onManipulationDelta_rf, onManipulationDelta_uf, f)
+      
+      let private onManipulationInertiaStarting_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.ManipulationInertiaStartingEventArgs -> unit) = o.ManipulationInertiaStarting.AddHandler    (System.EventHandler<System.Windows.Input.ManipulationInertiaStartingEventArgs> h)
+      let private onManipulationInertiaStarting_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.ManipulationInertiaStartingEventArgs -> unit) = o.ManipulationInertiaStarting.RemoveHandler (System.EventHandler<System.Windows.Input.ManipulationInertiaStartingEventArgs> h)
+      let private onManipulationInertiaStarting_rf = onManipulationInertiaStarting_r
+      let private onManipulationInertiaStarting_uf = onManipulationInertiaStarting_u
       let onManipulationInertiaStarting            (f : System.Windows.UIElement -> System.Windows.Input.ManipulationInertiaStartingEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.ManipulationInertiaStartingEventArgs -> unit) = o.ManipulationInertiaStarting.AddHandler    (System.EventHandler<System.Windows.Input.ManipulationInertiaStartingEventArgs> h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.ManipulationInertiaStartingEventArgs -> unit) = o.ManipulationInertiaStarting.RemoveHandler (System.EventHandler<System.Windows.Input.ManipulationInertiaStartingEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.EventHandler<System.Windows.Input.ManipulationInertiaStartingEventArgs>, System.Windows.Input.ManipulationInertiaStartingEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.EventHandler<System.Windows.Input.ManipulationInertiaStartingEventArgs>, System.Windows.Input.ManipulationInertiaStartingEventArgs> (onManipulationInertiaStarting_rf, onManipulationInertiaStarting_uf, f)
+      
+      let private onManipulationBoundaryFeedback_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.ManipulationBoundaryFeedbackEventArgs -> unit) = o.ManipulationBoundaryFeedback.AddHandler    (System.EventHandler<System.Windows.Input.ManipulationBoundaryFeedbackEventArgs> h)
+      let private onManipulationBoundaryFeedback_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.ManipulationBoundaryFeedbackEventArgs -> unit) = o.ManipulationBoundaryFeedback.RemoveHandler (System.EventHandler<System.Windows.Input.ManipulationBoundaryFeedbackEventArgs> h)
+      let private onManipulationBoundaryFeedback_rf = onManipulationBoundaryFeedback_r
+      let private onManipulationBoundaryFeedback_uf = onManipulationBoundaryFeedback_u
       let onManipulationBoundaryFeedback           (f : System.Windows.UIElement -> System.Windows.Input.ManipulationBoundaryFeedbackEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.ManipulationBoundaryFeedbackEventArgs -> unit) = o.ManipulationBoundaryFeedback.AddHandler    (System.EventHandler<System.Windows.Input.ManipulationBoundaryFeedbackEventArgs> h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.ManipulationBoundaryFeedbackEventArgs -> unit) = o.ManipulationBoundaryFeedback.RemoveHandler (System.EventHandler<System.Windows.Input.ManipulationBoundaryFeedbackEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.EventHandler<System.Windows.Input.ManipulationBoundaryFeedbackEventArgs>, System.Windows.Input.ManipulationBoundaryFeedbackEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.EventHandler<System.Windows.Input.ManipulationBoundaryFeedbackEventArgs>, System.Windows.Input.ManipulationBoundaryFeedbackEventArgs> (onManipulationBoundaryFeedback_rf, onManipulationBoundaryFeedback_uf, f)
+      
+      let private onManipulationCompleted_r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.ManipulationCompletedEventArgs -> unit) = o.ManipulationCompleted.AddHandler    (System.EventHandler<System.Windows.Input.ManipulationCompletedEventArgs> h)
+      let private onManipulationCompleted_u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.ManipulationCompletedEventArgs -> unit) = o.ManipulationCompleted.RemoveHandler (System.EventHandler<System.Windows.Input.ManipulationCompletedEventArgs> h)
+      let private onManipulationCompleted_rf = onManipulationCompleted_r
+      let private onManipulationCompleted_uf = onManipulationCompleted_u
       let onManipulationCompleted                  (f : System.Windows.UIElement -> System.Windows.Input.ManipulationCompletedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.ManipulationCompletedEventArgs -> unit) = o.ManipulationCompleted.AddHandler    (System.EventHandler<System.Windows.Input.ManipulationCompletedEventArgs> h)
-        let u (o : System.Windows.UIElement) (h : obj -> System.Windows.Input.ManipulationCompletedEventArgs -> unit) = o.ManipulationCompleted.RemoveHandler (System.EventHandler<System.Windows.Input.ManipulationCompletedEventArgs> h)
-        OnChangedValue<'TMessage, System.Windows.UIElement, System.EventHandler<System.Windows.Input.ManipulationCompletedEventArgs>, System.Windows.Input.ManipulationCompletedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.UIElement, System.EventHandler<System.Windows.Input.ManipulationCompletedEventArgs>, System.Windows.Input.ManipulationCompletedEventArgs> (onManipulationCompleted_rf, onManipulationCompleted_uf, f)
 
     let uniformGrid                              values children =
       StandardPanelView<UniformGrid> (values, children) :> View
     module UniformGrid = 
-      let dummy = ()
+      open Dummy
       let firstColumn                              v = SetConstantValue<_> (Properties.UniformGrid.firstColumn, v)
       let columns                                  v = SetConstantValue<_> (Properties.UniformGrid.columns, v)
       let rows                                     v = SetConstantValue<_> (Properties.UniformGrid.rows, v)
@@ -3267,24 +3938,24 @@ module Generated =
     let userControl                              values child =
       StandardContentView<UserControl> (values, child) :> View
     module UserControl = 
-      let dummy = ()
+      open Dummy
 
     let viewbox                                  values =
       StandardView<Viewbox> (values) :> View
     module Viewbox = 
-      let dummy = ()
+      open Dummy
       let stretch                                  v = SetConstantValue<_> (Properties.Viewbox.stretch, v)
       let stretchDirection                         v = SetConstantValue<_> (Properties.Viewbox.stretchDirection, v)
 
     let viewport3D                               values =
       StandardView<Viewport3D> (values) :> View
     module Viewport3D = 
-      let dummy = ()
+      open Dummy
       let camera                                   v = SetConstantValue<_> (Properties.Viewport3D.camera, v)
       let children                                 v = SetConstantValue<_> (Properties.Viewport3D.children, v)
 
     module VirtualizingPanel = 
-      let dummy = ()
+      open Dummy
       let isVirtualizing                           v = SetConstantValue<_> (Properties.VirtualizingPanel.isVirtualizing, v)
       let virtualizationMode                       v = SetConstantValue<_> (Properties.VirtualizingPanel.virtualizationMode, v)
       let isVirtualizingWhenGrouping               v = SetConstantValue<_> (Properties.VirtualizingPanel.isVirtualizingWhenGrouping, v)
@@ -3296,7 +3967,7 @@ module Generated =
     let virtualizingStackPanel                   values children =
       StandardPanelView<VirtualizingStackPanel> (values, children) :> View
     module VirtualizingStackPanel = 
-      let dummy = ()
+      open Dummy
       let isVirtualizing                           v = SetConstantValue<_> (Properties.VirtualizingStackPanel.isVirtualizing, v)
       let virtualizationMode                       v = SetConstantValue<_> (Properties.VirtualizingStackPanel.virtualizationMode, v)
       let orientation                              v = SetConstantValue<_> (Properties.VirtualizingStackPanel.orientation, v)
@@ -3304,24 +3975,33 @@ module Generated =
     let webBrowser                               values =
       StandardView<WebBrowser> (values) :> View
     module WebBrowser = 
-      let dummy = ()
+      open Dummy
+      
+      let private onNavigating_r (o : System.Windows.Controls.WebBrowser) (h : obj -> System.Windows.Navigation.NavigatingCancelEventArgs -> unit) = o.Navigating.AddHandler    (System.Windows.Navigation.NavigatingCancelEventHandler h)
+      let private onNavigating_u (o : System.Windows.Controls.WebBrowser) (h : obj -> System.Windows.Navigation.NavigatingCancelEventArgs -> unit) = o.Navigating.RemoveHandler (System.Windows.Navigation.NavigatingCancelEventHandler h)
+      let private onNavigating_rf = onNavigating_r
+      let private onNavigating_uf = onNavigating_u
       let onNavigating                             (f : System.Windows.Controls.WebBrowser -> System.Windows.Navigation.NavigatingCancelEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.WebBrowser) (h : obj -> System.Windows.Navigation.NavigatingCancelEventArgs -> unit) = o.Navigating.AddHandler    (System.Windows.Navigation.NavigatingCancelEventHandler h)
-        let u (o : System.Windows.Controls.WebBrowser) (h : obj -> System.Windows.Navigation.NavigatingCancelEventArgs -> unit) = o.Navigating.RemoveHandler (System.Windows.Navigation.NavigatingCancelEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.WebBrowser, System.Windows.Navigation.NavigatingCancelEventHandler, System.Windows.Navigation.NavigatingCancelEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.WebBrowser, System.Windows.Navigation.NavigatingCancelEventHandler, System.Windows.Navigation.NavigatingCancelEventArgs> (onNavigating_rf, onNavigating_uf, f)
+      
+      let private onNavigated_r (o : System.Windows.Controls.WebBrowser) (h : obj -> System.Windows.Navigation.NavigationEventArgs -> unit) = o.Navigated.AddHandler    (System.Windows.Navigation.NavigatedEventHandler h)
+      let private onNavigated_u (o : System.Windows.Controls.WebBrowser) (h : obj -> System.Windows.Navigation.NavigationEventArgs -> unit) = o.Navigated.RemoveHandler (System.Windows.Navigation.NavigatedEventHandler h)
+      let private onNavigated_rf = onNavigated_r
+      let private onNavigated_uf = onNavigated_u
       let onNavigated                              (f : System.Windows.Controls.WebBrowser -> System.Windows.Navigation.NavigationEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.WebBrowser) (h : obj -> System.Windows.Navigation.NavigationEventArgs -> unit) = o.Navigated.AddHandler    (System.Windows.Navigation.NavigatedEventHandler h)
-        let u (o : System.Windows.Controls.WebBrowser) (h : obj -> System.Windows.Navigation.NavigationEventArgs -> unit) = o.Navigated.RemoveHandler (System.Windows.Navigation.NavigatedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.WebBrowser, System.Windows.Navigation.NavigatedEventHandler, System.Windows.Navigation.NavigationEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.WebBrowser, System.Windows.Navigation.NavigatedEventHandler, System.Windows.Navigation.NavigationEventArgs> (onNavigated_rf, onNavigated_uf, f)
+      
+      let private onLoadCompleted_r (o : System.Windows.Controls.WebBrowser) (h : obj -> System.Windows.Navigation.NavigationEventArgs -> unit) = o.LoadCompleted.AddHandler    (System.Windows.Navigation.LoadCompletedEventHandler h)
+      let private onLoadCompleted_u (o : System.Windows.Controls.WebBrowser) (h : obj -> System.Windows.Navigation.NavigationEventArgs -> unit) = o.LoadCompleted.RemoveHandler (System.Windows.Navigation.LoadCompletedEventHandler h)
+      let private onLoadCompleted_rf = onLoadCompleted_r
+      let private onLoadCompleted_uf = onLoadCompleted_u
       let onLoadCompleted                          (f : System.Windows.Controls.WebBrowser -> System.Windows.Navigation.NavigationEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Controls.WebBrowser) (h : obj -> System.Windows.Navigation.NavigationEventArgs -> unit) = o.LoadCompleted.AddHandler    (System.Windows.Navigation.LoadCompletedEventHandler h)
-        let u (o : System.Windows.Controls.WebBrowser) (h : obj -> System.Windows.Navigation.NavigationEventArgs -> unit) = o.LoadCompleted.RemoveHandler (System.Windows.Navigation.LoadCompletedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Controls.WebBrowser, System.Windows.Navigation.LoadCompletedEventHandler, System.Windows.Navigation.NavigationEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Controls.WebBrowser, System.Windows.Navigation.LoadCompletedEventHandler, System.Windows.Navigation.NavigationEventArgs> (onLoadCompleted_rf, onLoadCompleted_uf, f)
 
     let window                                   values child =
       StandardContentView<Window> (values, child) :> View
     module Window = 
-      let dummy = ()
+      open Dummy
       let taskbarItemInfo                          v = SetConstantValue<_> (Properties.Window.taskbarItemInfo, v)
       let allowsTransparency                       v = SetConstantValue<_> (Properties.Window.allowsTransparency, v)
       let title                                    v = SetConstantValue<_> (Properties.Window.title, v)
@@ -3336,47 +4016,74 @@ module Generated =
       let resizeMode                               v = SetConstantValue<_> (Properties.Window.resizeMode, v)
       let topmost                                  v = SetConstantValue<_> (Properties.Window.topmost, v)
       let showActivated                            v = SetConstantValue<_> (Properties.Window.showActivated, v)
+      
+      let private onSourceInitialized_r (o : System.Windows.Window) (h : obj -> System.EventArgs -> unit) = o.SourceInitialized.AddHandler    (System.EventHandler h)
+      let private onSourceInitialized_u (o : System.Windows.Window) (h : obj -> System.EventArgs -> unit) = o.SourceInitialized.RemoveHandler (System.EventHandler h)
+      let private onSourceInitialized_rf = onSourceInitialized_r
+      let private onSourceInitialized_uf = onSourceInitialized_u
       let onSourceInitialized                      (f : System.Windows.Window -> System.EventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Window) (h : obj -> System.EventArgs -> unit) = o.SourceInitialized.AddHandler    (System.EventHandler h)
-        let u (o : System.Windows.Window) (h : obj -> System.EventArgs -> unit) = o.SourceInitialized.RemoveHandler (System.EventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Window, System.EventHandler, System.EventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Window, System.EventHandler, System.EventArgs> (onSourceInitialized_rf, onSourceInitialized_uf, f)
+      
+      let private onDpiChanged_r (o : System.Windows.Window) (h : obj -> System.Windows.DpiChangedEventArgs -> unit) = o.DpiChanged.AddHandler    (System.Windows.DpiChangedEventHandler h)
+      let private onDpiChanged_u (o : System.Windows.Window) (h : obj -> System.Windows.DpiChangedEventArgs -> unit) = o.DpiChanged.RemoveHandler (System.Windows.DpiChangedEventHandler h)
+      let private onDpiChanged_rf = onDpiChanged_r
+      let private onDpiChanged_uf = onDpiChanged_u
       let onDpiChanged                             (f : System.Windows.Window -> System.Windows.DpiChangedEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Window) (h : obj -> System.Windows.DpiChangedEventArgs -> unit) = o.DpiChanged.AddHandler    (System.Windows.DpiChangedEventHandler h)
-        let u (o : System.Windows.Window) (h : obj -> System.Windows.DpiChangedEventArgs -> unit) = o.DpiChanged.RemoveHandler (System.Windows.DpiChangedEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Window, System.Windows.DpiChangedEventHandler, System.Windows.DpiChangedEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Window, System.Windows.DpiChangedEventHandler, System.Windows.DpiChangedEventArgs> (onDpiChanged_rf, onDpiChanged_uf, f)
+      
+      let private onActivated_r (o : System.Windows.Window) (h : obj -> System.EventArgs -> unit) = o.Activated.AddHandler    (System.EventHandler h)
+      let private onActivated_u (o : System.Windows.Window) (h : obj -> System.EventArgs -> unit) = o.Activated.RemoveHandler (System.EventHandler h)
+      let private onActivated_rf = onActivated_r
+      let private onActivated_uf = onActivated_u
       let onActivated                              (f : System.Windows.Window -> System.EventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Window) (h : obj -> System.EventArgs -> unit) = o.Activated.AddHandler    (System.EventHandler h)
-        let u (o : System.Windows.Window) (h : obj -> System.EventArgs -> unit) = o.Activated.RemoveHandler (System.EventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Window, System.EventHandler, System.EventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Window, System.EventHandler, System.EventArgs> (onActivated_rf, onActivated_uf, f)
+      
+      let private onDeactivated_r (o : System.Windows.Window) (h : obj -> System.EventArgs -> unit) = o.Deactivated.AddHandler    (System.EventHandler h)
+      let private onDeactivated_u (o : System.Windows.Window) (h : obj -> System.EventArgs -> unit) = o.Deactivated.RemoveHandler (System.EventHandler h)
+      let private onDeactivated_rf = onDeactivated_r
+      let private onDeactivated_uf = onDeactivated_u
       let onDeactivated                            (f : System.Windows.Window -> System.EventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Window) (h : obj -> System.EventArgs -> unit) = o.Deactivated.AddHandler    (System.EventHandler h)
-        let u (o : System.Windows.Window) (h : obj -> System.EventArgs -> unit) = o.Deactivated.RemoveHandler (System.EventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Window, System.EventHandler, System.EventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Window, System.EventHandler, System.EventArgs> (onDeactivated_rf, onDeactivated_uf, f)
+      
+      let private onStateChanged_r (o : System.Windows.Window) (h : obj -> System.EventArgs -> unit) = o.StateChanged.AddHandler    (System.EventHandler h)
+      let private onStateChanged_u (o : System.Windows.Window) (h : obj -> System.EventArgs -> unit) = o.StateChanged.RemoveHandler (System.EventHandler h)
+      let private onStateChanged_rf = onStateChanged_r
+      let private onStateChanged_uf = onStateChanged_u
       let onStateChanged                           (f : System.Windows.Window -> System.EventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Window) (h : obj -> System.EventArgs -> unit) = o.StateChanged.AddHandler    (System.EventHandler h)
-        let u (o : System.Windows.Window) (h : obj -> System.EventArgs -> unit) = o.StateChanged.RemoveHandler (System.EventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Window, System.EventHandler, System.EventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Window, System.EventHandler, System.EventArgs> (onStateChanged_rf, onStateChanged_uf, f)
+      
+      let private onLocationChanged_r (o : System.Windows.Window) (h : obj -> System.EventArgs -> unit) = o.LocationChanged.AddHandler    (System.EventHandler h)
+      let private onLocationChanged_u (o : System.Windows.Window) (h : obj -> System.EventArgs -> unit) = o.LocationChanged.RemoveHandler (System.EventHandler h)
+      let private onLocationChanged_rf = onLocationChanged_r
+      let private onLocationChanged_uf = onLocationChanged_u
       let onLocationChanged                        (f : System.Windows.Window -> System.EventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Window) (h : obj -> System.EventArgs -> unit) = o.LocationChanged.AddHandler    (System.EventHandler h)
-        let u (o : System.Windows.Window) (h : obj -> System.EventArgs -> unit) = o.LocationChanged.RemoveHandler (System.EventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Window, System.EventHandler, System.EventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Window, System.EventHandler, System.EventArgs> (onLocationChanged_rf, onLocationChanged_uf, f)
+      
+      let private onClosing_r (o : System.Windows.Window) (h : obj -> System.ComponentModel.CancelEventArgs -> unit) = o.Closing.AddHandler    (System.ComponentModel.CancelEventHandler h)
+      let private onClosing_u (o : System.Windows.Window) (h : obj -> System.ComponentModel.CancelEventArgs -> unit) = o.Closing.RemoveHandler (System.ComponentModel.CancelEventHandler h)
+      let private onClosing_rf = onClosing_r
+      let private onClosing_uf = onClosing_u
       let onClosing                                (f : System.Windows.Window -> System.ComponentModel.CancelEventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Window) (h : obj -> System.ComponentModel.CancelEventArgs -> unit) = o.Closing.AddHandler    (System.ComponentModel.CancelEventHandler h)
-        let u (o : System.Windows.Window) (h : obj -> System.ComponentModel.CancelEventArgs -> unit) = o.Closing.RemoveHandler (System.ComponentModel.CancelEventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Window, System.ComponentModel.CancelEventHandler, System.ComponentModel.CancelEventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Window, System.ComponentModel.CancelEventHandler, System.ComponentModel.CancelEventArgs> (onClosing_rf, onClosing_uf, f)
+      
+      let private onClosed_r (o : System.Windows.Window) (h : obj -> System.EventArgs -> unit) = o.Closed.AddHandler    (System.EventHandler h)
+      let private onClosed_u (o : System.Windows.Window) (h : obj -> System.EventArgs -> unit) = o.Closed.RemoveHandler (System.EventHandler h)
+      let private onClosed_rf = onClosed_r
+      let private onClosed_uf = onClosed_u
       let onClosed                                 (f : System.Windows.Window -> System.EventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Window) (h : obj -> System.EventArgs -> unit) = o.Closed.AddHandler    (System.EventHandler h)
-        let u (o : System.Windows.Window) (h : obj -> System.EventArgs -> unit) = o.Closed.RemoveHandler (System.EventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Window, System.EventHandler, System.EventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Window, System.EventHandler, System.EventArgs> (onClosed_rf, onClosed_uf, f)
+      
+      let private onContentRendered_r (o : System.Windows.Window) (h : obj -> System.EventArgs -> unit) = o.ContentRendered.AddHandler    (System.EventHandler h)
+      let private onContentRendered_u (o : System.Windows.Window) (h : obj -> System.EventArgs -> unit) = o.ContentRendered.RemoveHandler (System.EventHandler h)
+      let private onContentRendered_rf = onContentRendered_r
+      let private onContentRendered_uf = onContentRendered_u
       let onContentRendered                        (f : System.Windows.Window -> System.EventArgs-> 'TMessage) = 
-        let r (o : System.Windows.Window) (h : obj -> System.EventArgs -> unit) = o.ContentRendered.AddHandler    (System.EventHandler h)
-        let u (o : System.Windows.Window) (h : obj -> System.EventArgs -> unit) = o.ContentRendered.RemoveHandler (System.EventHandler h)
-        OnChangedValue<'TMessage, System.Windows.Window, System.EventHandler, System.EventArgs> (r, u, f)
+        OnChangedValue<'TMessage, System.Windows.Window, System.EventHandler, System.EventArgs> (onContentRendered_rf, onContentRendered_uf, f)
 
     let wrapPanel                                values children =
       StandardPanelView<WrapPanel> (values, children) :> View
     module WrapPanel = 
-      let dummy = ()
+      open Dummy
       let itemWidth                                v = SetConstantValue<_> (Properties.WrapPanel.itemWidth, v)
       let itemHeight                               v = SetConstantValue<_> (Properties.WrapPanel.itemHeight, v)
       let orientation                              v = SetConstantValue<_> (Properties.WrapPanel.orientation, v)

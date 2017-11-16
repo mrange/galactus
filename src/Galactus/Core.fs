@@ -16,7 +16,7 @@ module Core =
       inherit RoutedEventArgs ()
     end
  
-  type MessageEventHandler                    = delegate of (obj*MessageEventArgs) -> unit
+  type MessageEventHandler = delegate of obj*MessageEventArgs -> unit
 
   module RoutedEvents =
     let ownerType () = (MethodInfo.GetCurrentMethod()).DeclaringType
@@ -168,7 +168,7 @@ module Core =
     let wnd = Window ()
     let iv  = view model
     wnd.Content <- iv.BuildUp (wnd.Content :?> UIElement)
-    let messageEventHandler (o : obj, args : MessageEventArgs) =
+    let messageEventHandler (o : obj) (args : MessageEventArgs) : unit =
       printfn "MessageEvent received: %A - %A" o args
     wnd.AddHandler (RoutedEvents.MessageEvent, MessageEventHandler messageEventHandler)
     wnd.ShowDialog () |> ignore

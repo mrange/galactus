@@ -99,6 +99,8 @@ open System.Windows.Shapes
 open Galactus.Core
 
 module Generated =
+  module Dummy =
+    open System
 """
 
   let generate name all tfn pfn efn =
@@ -120,7 +122,7 @@ module Generated =
 
       // TODO: Handle namespaces
       writelinef """    module %s = """ tp.Name
-      writeline  """      let dummy = ()"""
+      writeline  """      open Dummy"""
 
       for f in dps do
         let dp    = f.GetValue null :?> DependencyProperty
@@ -177,24 +179,36 @@ module Generated =
         name
 
     let efn (tp : Type) (e : EventInfo) handler args name =
-      writelinef """      let %-40s (f : %s -> %s-> 'TMessage) = 
-        let r (o : %s) (h : obj -> %s -> unit) = o.%s.AddHandler    (%s h)
-        let u (o : %s) (h : obj -> %s -> unit) = o.%s.RemoveHandler (%s h)
-        OnChangedValue<'TMessage, %s, %s, %s> (r, u, f)"""     
-        ("on" + name)
-        (toString tp)
-        (toString args)
+      let ename = "on" + name
+      writelinef """      
+      let private %s_r (o : %s) (h : obj -> %s -> unit) = o.%s.AddHandler    (%s h)
+      let private %s_u (o : %s) (h : obj -> %s -> unit) = o.%s.RemoveHandler (%s h)
+      let private %s_rf = %s_r
+      let private %s_uf = %s_u
+      let %-40s (f : %s -> %s-> 'TMessage) = 
+        OnChangedValue<'TMessage, %s, %s, %s> (%s_rf, %s_uf, f)"""     
+        ename
         (toString tp)
         (toString args)
         name
         (toString handler)
+        ename
         (toString tp)
         (toString args)
         name
         (toString handler)
+        ename
+        ename
+        ename
+        ename
+        ename
+        (toString tp)
+        (toString args)
         (toString tp)
         (toString handler)
         (toString args)
+        ename
+        ename
 
 //"""      """
     generate "Controls" false tfn pfn efn
