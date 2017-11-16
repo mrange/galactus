@@ -16,8 +16,7 @@ module Core =
       inherit RoutedEventArgs ()
     end
  
-  type EventHandler<'T when 'T :> EventArgs>  = delegate of (obj*'T) -> unit
-  type MessageEventHandler                    = EventHandler<MessageEventArgs>
+  type MessageEventHandler                    = delegate of (obj*MessageEventArgs) -> unit
 
   module RoutedEvents =
     let ownerType () = (MethodInfo.GetCurrentMethod()).DeclaringType
@@ -37,31 +36,6 @@ module Core =
 
       member x.Set (dobj : UIElement, v : 'T) : unit =
         dobj.SetValue (dp, box v)
-    end
-
-  type [<AbstractClass>] Event (re : RoutedEvent) =
-    class
-      member x.RoutedEvent = re
-    end
-
-  type [<Sealed>] Event<'TEventHandler, 
-                        'TEventArgs   when  'TEventHandler  :> Delegate
-//                                      and   'TEventHandler  : delegate<obj*'TEventArgs, unit>
-                                      and   'TEventArgs     :> RoutedEventArgs
-                        > (re : RoutedEvent) =
-    class
-      inherit Event (re)
-
-      member x.Register (dobj : UIElement, hnd : 'TEventHandler) : unit =
-        dobj.AddHandler (re, hnd)
-
-      member x.Register (dobj : UIElement, hnd : EventHandler<'TEventArgs>) : unit =
-        dobj.AddHandler (re, box hnd :?> 'TEventHandler)
-
-      member x.Raise (dobj : UIElement, args : 'TEventArgs) : unit =
-        args.RoutedEvent <- re
-        dobj.RaiseEvent args
-
     end
 
   type [<AbstractClass>] Value () =
@@ -89,35 +63,38 @@ module Core =
         p.Set (dobj, v)
     end
 
-  type [<AbstractClass>] OnChangedValue (e : Event) =
+  type [<AbstractClass>] OnChangedValue () =
     class
       inherit Value ()
     end
 
   type [<Sealed>] OnChangedValue< 'TMessage     ,
                                   'T            ,
-                                  'TEventHandler, 
+                                  'TEventHandler,
                                   'TEventArgs   when  'T              :> UIElement
-                                                and   'TEventHandler  :> Delegate 
-//                                                and   'TEventHandler  : delegate<obj*'TEventArgs, unit>
-                                                and   'TEventArgs     :> RoutedEventArgs
-                                  > (e : Event<'TEventHandler, 'TEventArgs>, f : 'T -> 'TEventArgs -> 'TMessage) =
+                                  > ( r : 'T -> (obj -> 'TEventArgs -> unit) -> unit  ,
+                                      u : 'T -> (obj -> 'TEventArgs -> unit) -> unit  ,
+                                      f : 'T -> 'TEventArgs -> 'TMessage              ) =
     class
-      inherit OnChangedValue (e)
+      inherit OnChangedValue ()
 
+      let r = adapt2 r
+      let u = adapt2 u
       let f = adapt2 f
 
-      member x.Event = e
-
-      member x.Raised (o : obj, args : 'TEventArgs) : unit =
+      let onChange (o : obj) (args : 'TEventArgs) : unit =
         let v     = o :?> 'T
         let msg   = f.Invoke (v, args)
         let args  = MessageEventArgs (box msg)
         args.RoutedEvent <- RoutedEvents.MessageEvent
         v.RaiseEvent args
 
+      let onChangef : obj -> 'TEventArgs -> unit = onChange
+
       override x.Update (dobj : UIElement) : unit =
-        e.Register (dobj, x.Raised)
+        let v = dobj :?> 'T
+        r.Invoke (v, onChangef)
+
     end
 
   type [<AbstractClass>] View () =

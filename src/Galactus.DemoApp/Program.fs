@@ -2,7 +2,6 @@
   open Galactus.Core
   open Galactus.Generated.Controls
   open System.Windows.Controls
-  open System.Windows
 
   let textButton values text = button values (textBlock [|TextBlock.text text|])
 
@@ -22,7 +21,7 @@
       [|StackPanel.orientation Orientation.Vertical|]
       [|
         textBlock   [|TextBlock.text "Hello"|]
-        textBox     [|TextBox.text   "GG"; TextBoxBase.textChanged (fun tb args -> TextChanged "Testing")|]
+        textBox     [|TextBox.text   "GG"; TextBoxBase.onTextChanged (fun tb args -> TextChanged "Testing")|]
         textBox     [|TextBox.text   "GG"|]
         textButton  [||] "Hello"
         textButton  [||] info

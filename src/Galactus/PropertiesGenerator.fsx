@@ -24,6 +24,11 @@ let assemblies          =
     typeof<Panel>.Assembly
   |]
 
+let blackList = 
+  [|
+    typeof<HwndHost>
+  |]
+
 let generate () =
   let fixName (s : string) =
     if s.Length > 0 then
@@ -68,11 +73,15 @@ let generate () =
   let types =
     assemblies
     |> Array.collect (fun assembly -> assembly.ExportedTypes |> Seq.toArray)
-    |> Array.filter  (fun tp       -> tp = uiElement || tp.IsSubclassOf uiElement)
-    |> Array.filter  (fun tp       -> not tp.IsGenericType)
+    |> Array.filter  (fun tp       -> 
+                        let c0 = tp = uiElement || tp.IsSubclassOf uiElement
+                        let c1 = not tp.IsGenericType
+                        let c2 = blackList |> Array.contains tp |> not
+                        c0 && c1 && c2
+                      )
     |> Array.sortBy  (fun tp       -> tp.Name)
 
-  use generatedFile = File.CreateText (@"C:\temp\Galactus\Galactus\Generated.fs")
+  use generatedFile = File.CreateText (@"C:\temp\GitHub\galactus\src\Galactus\Generated.fs")
   generatedFile.NewLine   <- "\n"
 
   let writeline s   = generatedFile.WriteLine (s : string)
@@ -99,18 +108,15 @@ module Generated =
       tfn tp
 
       let bfs =
-        BindingFlags.Static
-        ||| if all then BindingFlags.FlattenHierarchy else BindingFlags.DeclaredOnly
+        if all then BindingFlags.FlattenHierarchy else BindingFlags.DeclaredOnly
         ||| BindingFlags.Public
-        ||| BindingFlags.GetField
 
       let dps =
-        tp.GetFields (bfs)
-        |> Array.filter (fun dp -> dp.Name.EndsWith "Property" && dp.FieldType = dependencyProperty)
+        tp.GetFields (BindingFlags.Static ||| bfs)
+        |> Array.filter (fun f -> f.Name.EndsWith "Property" && f.FieldType = dependencyProperty)
 
       let es =
-        tp.GetFields (bfs)
-        |> Array.filter (fun dp -> dp.Name.EndsWith "Event" && dp.FieldType = routedEvent)
+        tp.GetEvents (BindingFlags.Instance ||| bfs)
 
       // TODO: Handle namespaces
       writelinef """    module %s = """ tp.Name
@@ -121,13 +127,13 @@ module Generated =
         let name  = f.Name |> removeTrailing "Property" |> fixName
         pfn tp f dp name
 
-      for f in es do
-        let re    = f.GetValue null :?> RoutedEvent
-        let name  = f.Name |> removeTrailing "Event" |> fixName
-        let mi    = re.HandlerType.GetMethod "Invoke"
+      for e in es do
+        let name  = e.Name
+        let eh    = e.EventHandlerType
+        let mi    = eh.GetMethod "Invoke"
         let ps    = mi.GetParameters ()
         let p     = ps.[1]
-        efn tp f re p.ParameterType name
+        efn tp e eh p.ParameterType name
 
       writeline ""
 
@@ -147,38 +153,20 @@ module Generated =
     generate "Properties" false noType pfn noEvent
 
   do
-    let efn (tp : Type) (f : FieldInfo) (re : RoutedEvent) args name =
-      writelinef
-        """      let %-40s = Event<%s, %s> %s.%s"""
-        name
-        (toString re.HandlerType)
-        (toString args)
-        (toString tp)
-        f.Name
-
-    generate "Events" false noType noProperty efn
-
-  do
     let tfn (tp : Type) =
       if not tp.IsAbstract && (tp.GetConstructor [||] |> isNull |> not) then
         let name = tp.Name |> fixName
         if tp.IsSubclassOf content then
-          writelinef """
-    let %-40s values child =
-      StandardContentView<%s> (values, child) :> View
-"""         name 
+          writelinef """    let %-40s values child =
+      StandardContentView<%s> (values, child) :> View"""         name 
             tp.Name
         elif tp.IsSubclassOf panel then
-          writelinef """
-    let %-40s values children =
-      StandardPanelView<%s> (values, children) :> View
-"""         name
+          writelinef """    let %-40s values children =
+      StandardPanelView<%s> (values, children) :> View"""         name
             tp.Name
         else
-          writelinef """
-    let %-40s values =
-      StandardView<%s> (values) :> View
-"""         name 
+          writelinef """    let %-40s values =
+      StandardView<%s> (values) :> View"""         name 
             tp.Name
 
     let pfn (tp : Type) (f : FieldInfo) (dp : DependencyProperty) name =
@@ -188,17 +176,25 @@ module Generated =
         f.DeclaringType.Name
         name
 
-    let efn (tp : Type) (f : FieldInfo) (re : RoutedEvent) args name =
-      writelinef
-        """      let %-40s (f : %s -> %s-> 'TMessage) = OnChangedValue<'TMessage, %s, %s, %s> (Events.%s.%s, f)"""
-        name
+    let efn (tp : Type) (e : EventInfo) handler args name =
+      writelinef """      let %-40s (f : %s -> %s-> 'TMessage) = 
+        let r (o : %s) (h : obj -> %s -> unit) = o.%s.AddHandler    (%s h)
+        let u (o : %s) (h : obj -> %s -> unit) = o.%s.RemoveHandler (%s h)
+        OnChangedValue<'TMessage, %s, %s, %s> (r, u, f)"""     
+        ("on" + name)
         (toString tp)
         (toString args)
         (toString tp)
-        (toString re.HandlerType)
         (toString args)
-        f.DeclaringType.Name
         name
+        (toString handler)
+        (toString tp)
+        (toString args)
+        name
+        (toString handler)
+        (toString tp)
+        (toString handler)
+        (toString args)
 
 //"""      """
     generate "Controls" false tfn pfn efn
