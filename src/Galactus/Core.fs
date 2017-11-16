@@ -56,7 +56,7 @@ module Core =
         dobj.AddHandler (re, hnd)
 
       member x.Register (dobj : UIElement, hnd : EventHandler<'TEventArgs>) : unit =
-        dobj.AddHandler (re, hnd)
+        dobj.AddHandler (re, box hnd :?> 'TEventHandler)
 
       member x.Raise (dobj : UIElement, args : 'TEventArgs) : unit =
         args.RoutedEvent <- re

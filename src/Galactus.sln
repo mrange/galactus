@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Galactus", "Galactus\Galactus.fsproj", "{180C4E28-334C-48A0-A558-F5862C8B649E}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Galactus.DemoApp", "Galactus\Galactus.DemoApp\Galactus.DemoApp.fsproj", "{6DA6E2E4-3FB7-4DB3-9A26-019D1FFF10F5}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Galactus.DemoApp", "Galactus.DemoApp\Galactus.DemoApp.fsproj", "{6DA6E2E4-3FB7-4DB3-9A26-019D1FFF10F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -122,7 +122,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Galactus.fsproj">
+    <ProjectReference Include="..\Galactus\Galactus.fsproj">
       <Name>Galactus</Name>
       <Project>{180c4e28-334c-48a0-a558-f5862c8b649e}</Project>
       <Private>True</Private>
