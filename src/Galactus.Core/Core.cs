@@ -272,4 +272,52 @@
     }
   }
 
+  public static class Properties
+  {
+    public static class TextBoxBase
+    {
+      public static readonly IProperty<System.Windows.Controls.Primitives.TextBoxBase, System.Boolean> isReadOnly = new Property<System.Windows.Controls.Primitives.TextBoxBase, System.Boolean> (System.Windows.Controls.Primitives.TextBoxBase.IsReadOnlyProperty);
+    }
+
+    public static class TextBox
+    {
+      public static readonly IProperty<System.Windows.Controls.TextBox, System.String> text = new Property<System.Windows.Controls.TextBox, System.String> (System.Windows.Controls.TextBox.TextProperty);
+    }
+  }
+
+  public static class Controls<TMessage>
+  {
+    public static class TextBoxBase
+    {
+      public static IValue<TMessage, System.Windows.Controls.Primitives.TextBoxBase> isReadOnly(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.TextBoxBase, System.Boolean> (Properties.TextBoxBase.isReadOnly, v);
+    }
+
+    public static class TextBox
+    {
+      public static IValue<TMessage, System.Windows.Controls.TextBox> text(System.String v) => new SetValue<TMessage, System.Windows.Controls.TextBox, System.String> (Properties.TextBox.text, v);
+    }
+
+    public static IView<TMessage> textBox(params IValue<TMessage, System.Windows.Controls.TextBox>[] vs) => new StandardView<TMessage, System.Windows.Controls.TextBox> (vs);
+
+  }
+}
+
+namespace Testing
+{
+  using Galactus.Core;
+  using static Galactus.Core.Controls<MyMessage>;
+
+  public class MyMessage
+  {
+
+  }
+
+  public static class Test
+  {
+    public static void F ()
+    {
+      var view = textBox(TextBox.text("Hello"), TextBoxBase.isReadOnly(true));
+    }
+  }
+
 }
