@@ -9,9 +9,6 @@ open System.Windows.Controls
 
 module Core =
 
-  module Details =
-    let inline adapt2 f = OptimizedClosures.FSharpFunc<_, _, _>.Adapt f
-  open Details
   open System.Windows.Threading
 
   type MessageEventArgs (message : obj) =
@@ -36,16 +33,38 @@ module Core =
     class
       inherit Property (dp)
 
-      member x.Get (dobj : UIElement) : 'T =
-        dobj.GetValue dp :?> 'T
+      member x.Get (ui : UIElement) : 'T =
+        ui.GetValue dp :?> 'T
 
-      member x.Set (dobj : UIElement, v : 'T) : unit =
-        dobj.SetValue (dp, box v)
+      member x.Set (ui : UIElement, v : 'T) : unit =
+        ui.SetValue (dp, box v)
     end
+
+  type UpdateContext () =
+    class
+    end
+
+  type ParentInfo =
+    | ReusedInstance
+    | NewInstance
+
+  module Details =
+    let inline adapt2 f = OptimizedClosures.FSharpFunc<_, _, _>.Adapt f
+    let inline getInstance< 'T  when  'T :> UIElement 
+                                and   'T : (new : unit -> 'T)
+                          > (ui : UIElement) = 
+      match ui with
+      | :? 'T as tv -> ReusedInstance, tv
+      | _           -> NewInstance   , new 'T ()
+    let inline uiElement (o : obj) =
+      match o with
+      | :? UIElement as ui  -> ui
+      | _                   -> null
+  open Details
 
   type [<AbstractClass>] Value<'TMessage> () =
     class
-      abstract Update: UIElement -> unit
+      abstract Update: UpdateContext*ParentInfo*UIElement -> unit
     end
 
   type [<AbstractClass>] SetValue<'TMessage> (p : Property) =
@@ -64,8 +83,8 @@ module Core =
     class
       inherit SetValue<'TMessage, 'T> (p)
 
-      override x.Update (dobj : UIElement) : unit =
-        p.Set (dobj, v)
+      override x.Update (ctx, pi, ui) : unit =
+        p.Set (ui, v)
     end
 
   type [<AbstractClass>] OnChangedValue<'TMessage> () =
@@ -96,42 +115,42 @@ module Core =
 
       let onChangef : obj -> 'TEventArgs -> unit = onChange
 
-      override x.Update (dobj : UIElement) : unit =
-        let v = dobj :?> 'T
+      override x.Update (ctx, pi, ui) : unit =
+        let v = ui :?> 'T
         r.Invoke (v, onChangef)
 
     end
 
   type [<AbstractClass>] View<'TMessage> () =
     class
-      abstract BuildUp: UIElement -> UIElement
+      abstract Update: UpdateContext*ParentInfo*UIElement -> UIElement
     end
 
-  type [<Sealed>] StandardView<'TMessage, 'T when 'T :> UIElement and 'T : (new : unit -> 'T)> (values : Value<'TMessage> []) =
+  type [<Sealed>] StandardView< 'TMessage , 
+                                'T        when 'T :> UIElement 
+                                          and 'T : (new : unit -> 'T)
+                              > (values : Value<'TMessage> []) =
     class
       inherit View<'TMessage> ()
-      override x.BuildUp dobj =
-        let v =
-          match dobj with
-          | :? 'T as tv -> tv
-          | _           -> new 'T ()
+      override x.Update (ctx, pi, ui) =
+        let pi, ui = getInstance<'T> ui
 
         for value in values do
-          value.Update v
+          value.Update (ctx, pi, ui)
 
-        upcast v
+        upcast ui
     end
 
-  type [<Sealed>] StandardPanelView<'TMessage, 'T when 'T :> Panel and 'T : (new : unit -> 'T)> (values : Value<'TMessage> [], views : View<'TMessage> []) =
+  type [<Sealed>] StandardPanelView<  'TMessage , 
+                                      'T        when 'T :> Panel 
+                                                and  'T : (new : unit -> 'T)
+                                    > (values : Value<'TMessage> [], views : View<'TMessage> []) =
     class
       inherit View<'TMessage> ()
-      override x.BuildUp dobj =
-        let v =
-          match dobj with
-          | :? 'T as tv -> tv
-          | _           -> new 'T ()
+      override x.Update (ctx, pi, ui) =
+        let pi, ui = getInstance<'T> ui
 
-        let children = v.Children
+        let children = ui.Children
         let count    = children.Count
         if count > views.Length then
           children.RemoveRange (values.Length, count - views.Length)
@@ -140,33 +159,33 @@ module Core =
           if i < children.Count then
             let child = children.[i]
             let view  = views.[i]
-            children.[i] <- view.BuildUp child
+            children.[i] <- view.Update (ctx, pi, child)
           else
             let view  = views.[i]
-            children.Add (view.BuildUp null) |> ignore
+            children.Add (view.Update (ctx, pi, null)) |> ignore
 
         for value in values do
-          value.Update v
+          value.Update (ctx, pi, ui)
 
-        upcast v
+        upcast ui
     end
 
-  type [<Sealed>] StandardContentView<'TMessage, 'T when 'T :> ContentControl and 'T : (new : unit -> 'T)> (values : Value<'TMessage> [], view : View<'TMessage>) =
+  type [<Sealed>] StandardContentView<  'TMessage , 
+                                        'T        when 'T :> ContentControl 
+                                                  and  'T : (new : unit -> 'T)
+                                      > (values : Value<'TMessage> [], view : View<'TMessage>) =
     class
       inherit View<'TMessage> ()
-      override x.BuildUp dobj =
-        let v =
-          match dobj with
-          | :? 'T as tv -> tv
-          | _           -> new 'T ()
+      override x.Update (ctx, pi, ui) =
+        let pi, ui = getInstance<'T> ui
 
-        let child = v.Content :?> UIElement
-        v.Content <- view.BuildUp child
+        let child = uiElement ui.Content
+        ui.Content <- view.Update (ctx, pi, child)
 
         for value in values do
-          value.Update v
+          value.Update (ctx, pi, ui)
 
-        upcast v
+        upcast ui
     end
 
   let openWindow (model : 'TModel) (view : 'TModel -> View<'TMessage>) (update : 'TModel -> 'TMessage -> 'TModel) =
@@ -180,7 +199,10 @@ module Core =
 
     let refresh ()  =
       let iv        = view m
-      wnd.Content   <- iv.BuildUp (wnd.Content :?> UIElement)
+      let ctx       = UpdateContext ()
+      let ui        = uiElement wnd.Content
+      let pi        = if isNull ui then NewInstance else ReusedInstance
+      wnd.Content   <- iv.Update (ctx, pi, ui)
 
     let proc ()     =
       while queue.Count > 0 do
