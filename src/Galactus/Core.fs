@@ -128,7 +128,7 @@ module Core =
 
   type [<Sealed>] StandardView< 'TMessage , 
                                 'T        when 'T :> UIElement 
-                                          and 'T : (new : unit -> 'T)
+                                          and  'T : (new : unit -> 'T)
                               > (values : Value<'TMessage> []) =
     class
       inherit View<'TMessage> ()
@@ -156,7 +156,7 @@ module Core =
           children.RemoveRange (values.Length, count - views.Length)
 
         for i = 0 to (views.Length - 1) do
-          if i < children.Count then
+          if i < count then
             let child = children.[i]
             let view  = views.[i]
             children.[i] <- view.Update (ctx, pi, child)
@@ -201,21 +201,21 @@ module Core =
       let iv        = view m
       let ctx       = UpdateContext ()
       let ui        = uiElement wnd.Content
-      let pi        = if isNull ui then NewInstance else ReusedInstance
+      let pi        = ReusedInstance
       wnd.Content   <- iv.Update (ctx, pi, ui)
 
     let proc ()     =
       while queue.Count > 0 do
         let msg = queue.Dequeue ()
         m       <-update model msg
-        refresh ()
+      refresh ()
 
     refresh ()
 
-    let messageEventHandler (o : obj) (args : MessageEventArgs) : unit =
+    let onMessage (o : obj) (args : MessageEventArgs) : unit =
       let msg = args.Message :?> 'TMessage
       queue.Enqueue msg
       invoke proc
-    wnd.AddHandler (RoutedEvents.MessageEvent, MessageEventHandler messageEventHandler)
+    wnd.AddHandler (RoutedEvents.MessageEvent, MessageEventHandler onMessage)
 
     wnd.ShowDialog () |> ignore
