@@ -97,6 +97,7 @@
     {
       // TODO: Handle nulls
       property = p;
+      value    = v;
     }
 
     public IProperty<TUI, T> Property => property;
@@ -105,6 +106,52 @@
     {
       // TODO: Cast unnecessary but doesn't cost that much compared to set in general
       property.Set ((TUI)ui, value);
+    }
+  }
+
+  public interface IOnChangedValue<TMessage, in TUI> : IValue<TMessage, TUI>
+    where TUI : UIElement
+  {
+  }
+
+  public delegate void RegisterOnChange<in TUI, out TEventArgs> (TUI ui, Action<object, TEventArgs> onChange)
+    where TUI : UIElement
+    ;
+
+  public delegate TMessage OnChange<TMessage, in TUI, in TEventArgs> (TUI uiElement, TEventArgs args)
+    where TUI : UIElement
+    ;
+
+  public sealed class OnChangedValue<TMessage, TUI, TEventHandler, TEventArgs> : IOnChangedValue<TMessage, TUI>
+    where TUI : UIElement
+  {
+    readonly RegisterOnChange<TUI, TEventArgs>    register    ;
+    readonly OnChange<TMessage, TUI, TEventArgs>  onChange    ;
+    readonly Action<object, TEventArgs>           onChangePre ;
+
+    public OnChangedValue(RegisterOnChange<TUI, TEventArgs> r, OnChange<TMessage, TUI, TEventArgs> oc)
+    {
+      // TODO: Handle NULLs
+      register    = r       ;
+      onChange    = oc      ;
+      onChangePre = OnChange;
+    }
+
+    void OnChange(object o, TEventArgs args)
+    {
+      var ui    = (TUI)o;
+      var msg   = onChange(ui, args);
+      var margs = new MessageEventArgs(msg)
+      {
+        RoutedEvent = RoutedEvents.MessageEvent
+      };
+      ui.RaiseEvent(margs);
+    }
+
+    public void Update(UpdateContext ctx, ParentInfo pi, UIElement ui)
+    {
+      // TODO: Handle re-register
+      register((TUI)ui, onChangePre);
     }
   }
 
@@ -196,15 +243,14 @@
       var tui = v.Instance  ;
 
       var children  = tui.Children  ;
-      var count     = children.Count;
-      if (count > views.Length)
+      if (children.Count > views.Length)
       {
-        children.RemoveRange(views.Length, count - views.Length);
+        children.RemoveRange(views.Length, children.Count - views.Length);
       }
 
       for (var i = 0; i < views.Length; ++i)
       {
-        if (i < count)
+        if (i < children.Count)
         {
           var child   = children[i] ;
           var view    = views[i]    ;
@@ -213,7 +259,7 @@
         else
         {
           var view    = views[i]    ;
-          children[i] = view.Update(ctx, tpi, null);
+          children.Add (view.Update(ctx, tpi, null));
         }
       }
 
@@ -228,8 +274,8 @@
 
   public delegate IView<TMessage> DelayedPanelView<TMessage> (params IView<TMessage>[] cs);
 
-  public delegate IView<TMEssage>  View<TModel, TMEssage>   (TModel model);
-  public delegate TModel           Update<TModel, TMEssage> (TModel model, TMEssage message);
+  public delegate IView<TMessage> View<in TModel, TMessage>   (TModel model);
+  public delegate TModel          Update<TModel, in TMessage> (TModel model, TMessage message);
 
   public static class Hosts
   {

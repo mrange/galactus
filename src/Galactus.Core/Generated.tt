@@ -76,6 +76,7 @@ namespace Galactus.Standard
 
   var content             = typeof (System.Windows.Controls.ContentControl) ;
   var dependencyProperty  = typeof (System.Windows.DependencyProperty)      ;
+  var eventArgs           = typeof (System.EventArgs)                       ;
   var panel               = typeof (System.Windows.Controls.Panel)          ;
   var uiElement           = typeof (System.Windows.UIElement)               ;
 
@@ -160,6 +161,8 @@ namespace Galactus.Standard
     {
 <#
   var etn = TypeName(tp);
+#>
+<#
   foreach (var f in dps)
   {
     var dp    = (System.Windows.DependencyProperty)f.GetValue(null);
@@ -168,6 +171,27 @@ namespace Galactus.Standard
 #>
       public static IValue<TMessage, <#=etn#>> <#=pn#>(<#=dptn#> v) => new SetValue<TMessage, <#=etn#>, <#=dptn#>>(Properties.<#=FixName(tp.Name)#>.<#=pn#>, v);
 <#
+  }
+#>
+
+<#
+  foreach (var e in evts)
+  {
+    var name  = e.Name                  ;
+    var eh    = e.EventHandlerType      ;
+    var mi    = eh.GetMethod("Invoke")  ;
+    var ps    = mi.GetParameters()      ;
+    var p     = ps[1]                   ;
+    var pt    = p.ParameterType         ;
+    var ehn   = TypeName(eh)            ;
+    var ean   = TypeName(pt)            ;
+    if (pt.IsSubclassOf(eventArgs))
+    {
+#>
+      public static IValue<TMessage, <#=etn#>> on<#=RemoveTrailing("Changed", name)#> (OnChange<TMessage, <#=etn#>, <#=ean#>> onChange) =>
+        new OnChangedValue<TMessage, <#=etn#>, <#=ehn#>, <#=ean#>> ((ui, a) => ui.<#=name#> += a.Invoke, onChange);
+<#
+    }
   }
 #>
 
