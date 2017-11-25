@@ -287,12 +287,12 @@
 
   public static class Controls<TMessage>
   {
-    public static class TextBoxBase
+    public class TextBoxBase
     {
       public static IValue<TMessage, System.Windows.Controls.Primitives.TextBoxBase> isReadOnly(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.TextBoxBase, System.Boolean> (Properties.TextBoxBase.isReadOnly, v);
     }
 
-    public static class TextBox
+    public class TextBox : TextBoxBase
     {
       public static IValue<TMessage, System.Windows.Controls.TextBox> text(System.String v) => new SetValue<TMessage, System.Windows.Controls.TextBox, System.String> (Properties.TextBox.text, v);
     }
@@ -305,6 +305,9 @@
 namespace Testing
 {
   using Galactus.Core;
+  using System.Collections.Generic;
+  using System.Linq;
+
   using static Galactus.Core.Controls<MyMessage>;
 
   public class MyMessage
@@ -316,7 +319,9 @@ namespace Testing
   {
     public static void F ()
     {
-      var view = textBox(TextBox.text("Hello"), TextBoxBase.isReadOnly(true));
+//      var ll = (new Type[0]).OrderBy
+      var hs = new HashSet<string> ();
+      var view = textBox(TextBox.text("Hello"), TextBox.isReadOnly(true));
     }
   }
 

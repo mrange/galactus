@@ -1,0 +1,80 @@
+﻿<#@ assembly    name        ="System.Core"                  #>
+<#@ assembly    name        ="WindowsBase"                  #>
+<#@ assembly    name        ="PresentationCore"             #>
+<#@ assembly    name        ="PresentationFramework"        #>
+
+<#@ import      namespace   ="System.Collections.Generic"   #>
+<#@ import      namespace   ="System.Linq"                  #>
+<#@ import      namespace   ="System.Reflection"            #>
+
+namespace Galactus.Standard
+{
+  using Galactus.Core;
+
+<#
+  var dependencyProperty  = typeof (System.Windows.DependencyProperty);
+  var panel               = typeof (System.Windows.Controls.Panel)    ;
+  var uiElement           = typeof (System.Windows.UIElement)         ;
+
+  var assemblies = new [] {
+      uiElement.Assembly
+    , panel.Assembly
+  };
+
+  var blackList = new HashSet<Type> (new Type[] {
+//      typeof (System.Windows.Interop.HwndHost)
+  });
+
+  var types = assemblies
+    .SelectMany(a => a.ExportedTypes)
+    .Where(t => t == uiElement || t.IsSubclassOf(uiElement))
+    .Where(t => !t.IsGenericType)
+    .Where(t => !blackList.Contains(t))
+    .OrderBy(t => t.Name)
+    ;
+#>
+
+  public static class Properties
+  {
+<#
+  foreach (var tp in types)
+  {
+    var bt    = tp.BaseType;
+    var bfs   = BindingFlags.DeclaredOnly | BindingFlags.Public;
+
+    var dps   = tp
+      .GetFields(BindingFlags.Static | bfs)
+      .Where(f => f.Name.EndsWith("Property") && f.FieldType == dependencyProperty)
+      .ToArray()
+      ;
+
+    var evts  = tp
+      .GetEvents (BindingFlags.Instance | bfs)
+      ;
+
+#>
+    public class <#=tp.Name#><#= tp == uiElement ? "" : " : " + bt.Name #>
+    {
+      public static readonly IProperty<System.Windows.Controls.Primitives.TextBoxBase, System.Boolean> isReadOnly = new Property<System.Windows.Controls.Primitives.TextBoxBase, System.Boolean>(System.Windows.Controls.Primitives.TextBoxBase.IsReadOnlyProperty);
+    }
+
+<#
+  }
+#>
+  }
+
+  public static class Controls<TMessage>
+  {
+    public class TextBoxBase
+    {
+      public static IValue<TMessage, System.Windows.Controls.Primitives.TextBoxBase> isReadOnly(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.TextBoxBase, System.Boolean>(Properties.TextBoxBase.isReadOnly, v);
+    }
+
+    public class TextBox : TextBoxBase
+    {
+      public static IValue<TMessage, System.Windows.Controls.TextBox> text(System.String v) => new SetValue<TMessage, System.Windows.Controls.TextBox, System.String>(Properties.TextBox.text, v);
+    }
+
+    public static IView<TMessage> textBox(params IValue<TMessage, System.Windows.Controls.TextBox>[] vs) => new StandardView<TMessage, System.Windows.Controls.TextBox>(vs);
+  }
+}
