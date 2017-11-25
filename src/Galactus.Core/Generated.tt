@@ -3,6 +3,8 @@
 <#@ assembly    name        ="PresentationCore"             #>
 <#@ assembly    name        ="PresentationFramework"        #>
 
+<#@ import      namespace   ="System"                       #>
+<#@ import      namespace   ="System.Text"                  #>
 <#@ import      namespace   ="System.Collections.Generic"   #>
 <#@ import      namespace   ="System.Linq"                  #>
 <#@ import      namespace   ="System.Reflection"            #>
@@ -12,9 +14,70 @@ namespace Galactus.Standard
   using Galactus.Core;
 
 <#
-  var dependencyProperty  = typeof (System.Windows.DependencyProperty);
-  var panel               = typeof (System.Windows.Controls.Panel)    ;
-  var uiElement           = typeof (System.Windows.UIElement)         ;
+  string FixName(string s)
+  {
+    if (s.Length > 0)
+    {
+      var c = s[0];
+      return Char.IsLower(c)
+        ? s
+        : (Char.ToLowerInvariant(c)).ToString () + s.Substring(1)
+        ;
+    }
+    else
+    {
+      return s;
+    }
+  }
+
+  string RemoveTrailing(string t, string s)
+  {
+    var i = s.LastIndexOf(t);
+    return i > 0
+      ? s.Substring(0, i)
+      : s
+      ;
+  }
+
+  string TypeName(Type t)
+  {
+    var sb = new StringBuilder(16);
+
+    void Loop(Type tp)
+    {
+      if (tp.IsGenericType)
+      {
+        var itps  = tp.GetGenericArguments();
+        var gtp   = tp.GetGenericTypeDefinition();
+        var tpn   = RemoveTrailing("`" + itps.Length, gtp.FullName);
+        sb
+          .Append(tpn)
+          .Append('<')
+          ;
+        for (var i = 0; i < itps.Length; ++i)
+        {
+          if (i > 0) sb.Append(", ");
+          Loop(itps[i]);
+        }
+        sb
+          .Append('>')
+          ;
+      }
+      else
+      {
+        sb.Append(tp.FullName);
+      }
+    }
+
+    Loop(t);
+
+    return sb.ToString();
+  }
+
+  var content             = typeof (System.Windows.Controls.ContentControl) ;
+  var dependencyProperty  = typeof (System.Windows.DependencyProperty)      ;
+  var panel               = typeof (System.Windows.Controls.Panel)          ;
+  var uiElement           = typeof (System.Windows.UIElement)               ;
 
   var assemblies = new [] {
       uiElement.Assembly
@@ -53,9 +116,20 @@ namespace Galactus.Standard
       ;
 
 #>
-    public class <#=tp.Name#><#= tp == uiElement ? "" : " : " + bt.Name #>
+    public class <#=FixName(tp.Name)#><#= tp == uiElement ? "" : " : " + FixName(bt.Name) #>
     {
-      public static readonly IProperty<System.Windows.Controls.Primitives.TextBoxBase, System.Boolean> isReadOnly = new Property<System.Windows.Controls.Primitives.TextBoxBase, System.Boolean>(System.Windows.Controls.Primitives.TextBoxBase.IsReadOnlyProperty);
+<#
+  var etn = TypeName(tp);
+  foreach (var f in dps)
+  {
+    var dp    = (System.Windows.DependencyProperty)f.GetValue(null);
+    var pn    = FixName(RemoveTrailing("Property", f.Name));
+    var dptn  = TypeName(dp.PropertyType);
+#>
+      public static readonly IProperty<<#=etn#>, <#=dptn#>> <#=pn#> = new Property<<#=etn#>, <#=dptn#>>(<#=etn#>.<#=f.Name#>);
+<#
+  }
+#>
     }
 
 <#
@@ -65,16 +139,65 @@ namespace Galactus.Standard
 
   public static class Controls<TMessage>
   {
-    public class TextBoxBase
+<#
+  foreach (var tp in types)
+  {
+    var bt    = tp.BaseType;
+    var bfs   = BindingFlags.DeclaredOnly | BindingFlags.Public;
+
+    var dps   = tp
+      .GetFields(BindingFlags.Static | bfs)
+      .Where(f => f.Name.EndsWith("Property") && f.FieldType == dependencyProperty)
+      .ToArray()
+      ;
+
+    var evts  = tp
+      .GetEvents (BindingFlags.Instance | bfs)
+      ;
+
+#>
+    public class <#=FixName(tp.Name)#><#= tp == uiElement ? "" : " : " + FixName(bt.Name) #>
     {
-      public static IValue<TMessage, System.Windows.Controls.Primitives.TextBoxBase> isReadOnly(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.TextBoxBase, System.Boolean>(Properties.TextBoxBase.isReadOnly, v);
+<#
+  var etn = TypeName(tp);
+  foreach (var f in dps)
+  {
+    var dp    = (System.Windows.DependencyProperty)f.GetValue(null);
+    var pn    = FixName(RemoveTrailing("Property", f.Name));
+    var dptn  = TypeName(dp.PropertyType);
+#>
+      public static IValue<TMessage, <#=etn#>> <#=pn#>(<#=dptn#> v) => new SetValue<TMessage, <#=etn#>, <#=dptn#>>(Properties.<#=FixName(tp.Name)#>.<#=pn#>, v);
+<#
+  }
+#>
+
+<#
+  if (!tp.IsAbstract && tp.GetConstructor(new Type [] {}) != null)
+  {
+  if (tp.IsSubclassOf(content))
+  {
+#>
+      public static DelayedContentView<TMessage> View(params IValue<TMessage, <#=etn#>>[] vs) => c => new StandardContentView<TMessage, <#=etn#>>(vs, c);
+<#
+  }
+  else if (tp.IsSubclassOf(panel))
+  {
+#>
+      public static DelayedPanelView<TMessage> View(params IValue<TMessage, <#=etn#>>[] vs) => cs => new StandardPanelView<TMessage, <#=etn#>>(vs, cs);
+<#
+  }
+  else
+  {
+#>
+      public static IView<TMessage> View(params IValue<TMessage, <#=etn#>>[] vs) => new StandardView<TMessage, <#=etn#>>(vs);
+<#
+  }
+  }
+#>
     }
 
-    public class TextBox : TextBoxBase
-    {
-      public static IValue<TMessage, System.Windows.Controls.TextBox> text(System.String v) => new SetValue<TMessage, System.Windows.Controls.TextBox, System.String>(Properties.TextBox.text, v);
-    }
-
-    public static IView<TMessage> textBox(params IValue<TMessage, System.Windows.Controls.TextBox>[] vs) => new StandardView<TMessage, System.Windows.Controls.TextBox>(vs);
+<#
+  }
+#>
   }
 }

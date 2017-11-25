@@ -86,6 +86,7 @@
     IProperty<TUI, T> Property { get; }
   }
 
+
   public sealed class SetValue<TMessage, TUI, T> : ISetValue<TMessage, TUI, T>
     where TUI : UIElement
   {
@@ -172,6 +173,8 @@
     }
   }
 
+  public delegate IView<TMessage> DelayedContentView<TMessage> (IView<TMessage> c);
+
   public sealed class StandardPanelView<TMessage, TUI>
     : IView<TMessage>
     where TUI: Panel, new()
@@ -223,6 +226,8 @@
     }
   }
 
+  public delegate IView<TMessage> DelayedPanelView<TMessage> (params IView<TMessage>[] cs);
+
   public delegate IView<TMEssage>  View<TModel, TMEssage>   (TModel model);
   public delegate TModel           Update<TModel, TMEssage> (TModel model, TMEssage message);
 
@@ -271,58 +276,8 @@
       wnd.ShowDialog ();
     }
   }
-
-  public static class Properties
-  {
-    public static class TextBoxBase
-    {
-      public static readonly IProperty<System.Windows.Controls.Primitives.TextBoxBase, System.Boolean> isReadOnly = new Property<System.Windows.Controls.Primitives.TextBoxBase, System.Boolean> (System.Windows.Controls.Primitives.TextBoxBase.IsReadOnlyProperty);
-    }
-
-    public static class TextBox
-    {
-      public static readonly IProperty<System.Windows.Controls.TextBox, System.String> text = new Property<System.Windows.Controls.TextBox, System.String> (System.Windows.Controls.TextBox.TextProperty);
-    }
-  }
-
-  public static class Controls<TMessage>
-  {
-    public class TextBoxBase
-    {
-      public static IValue<TMessage, System.Windows.Controls.Primitives.TextBoxBase> isReadOnly(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.TextBoxBase, System.Boolean> (Properties.TextBoxBase.isReadOnly, v);
-    }
-
-    public class TextBox : TextBoxBase
-    {
-      public static IValue<TMessage, System.Windows.Controls.TextBox> text(System.String v) => new SetValue<TMessage, System.Windows.Controls.TextBox, System.String> (Properties.TextBox.text, v);
-    }
-
-    public static IView<TMessage> textBox(params IValue<TMessage, System.Windows.Controls.TextBox>[] vs) => new StandardView<TMessage, System.Windows.Controls.TextBox> (vs);
-
-  }
 }
 
 namespace Testing
 {
-  using Galactus.Core;
-  using System.Collections.Generic;
-  using System.Linq;
-
-  using static Galactus.Core.Controls<MyMessage>;
-
-  public class MyMessage
-  {
-
-  }
-
-  public static class Test
-  {
-    public static void F ()
-    {
-//      var ll = (new Type[0]).OrderBy
-      var hs = new HashSet<string> ();
-      var view = textBox(TextBox.text("Hello"), TextBox.isReadOnly(true));
-    }
-  }
-
 }
