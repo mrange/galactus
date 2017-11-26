@@ -5,9 +5,9 @@ namespace Galactus.Standard
   using Galactus.Core;
 
 
-  public static class Properties
+  public static partial class Properties
   {
-    public class accessText : frameworkElement
+    public partial class accessText : frameworkElement
     {
       public static readonly IProperty<System.Windows.Controls.AccessText, System.String> text = new Property<System.Windows.Controls.AccessText, System.String>(System.Windows.Controls.AccessText.TextProperty);
       public static readonly IProperty<System.Windows.Controls.AccessText, System.Windows.Media.FontFamily> fontFamily = new Property<System.Windows.Controls.AccessText, System.Windows.Media.FontFamily>(System.Windows.Controls.AccessText.FontFamilyProperty);
@@ -27,27 +27,27 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.AccessText, System.Double> baselineOffset = new Property<System.Windows.Controls.AccessText, System.Double>(System.Windows.Controls.AccessText.BaselineOffsetProperty);
     }
 
-    public class activeXHost : hwndHost
+    public partial class activeXHost : hwndHost
     {
     }
 
-    public class adornedElementPlaceholder : frameworkElement
+    public partial class adornedElementPlaceholder : frameworkElement
     {
     }
 
-    public class adorner : frameworkElement
+    public partial class adorner : frameworkElement
     {
     }
 
-    public class adornerDecorator : decorator
+    public partial class adornerDecorator : decorator
     {
     }
 
-    public class adornerLayer : frameworkElement
+    public partial class adornerLayer : frameworkElement
     {
     }
 
-    public class border : decorator
+    public partial class border : decorator
     {
       public static readonly IProperty<System.Windows.Controls.Border, System.Windows.Thickness> borderThickness = new Property<System.Windows.Controls.Border, System.Windows.Thickness>(System.Windows.Controls.Border.BorderThicknessProperty);
       public static readonly IProperty<System.Windows.Controls.Border, System.Windows.Thickness> padding = new Property<System.Windows.Controls.Border, System.Windows.Thickness>(System.Windows.Controls.Border.PaddingProperty);
@@ -56,19 +56,19 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.Border, System.Windows.Media.Brush> background = new Property<System.Windows.Controls.Border, System.Windows.Media.Brush>(System.Windows.Controls.Border.BackgroundProperty);
     }
 
-    public class bulletDecorator : decorator
+    public partial class bulletDecorator : decorator
     {
       public static readonly IProperty<System.Windows.Controls.Primitives.BulletDecorator, System.Windows.Media.Brush> background = new Property<System.Windows.Controls.Primitives.BulletDecorator, System.Windows.Media.Brush>(System.Windows.Controls.Primitives.BulletDecorator.BackgroundProperty);
     }
 
-    public class button : buttonBase
+    public partial class button : buttonBase
     {
       public static readonly IProperty<System.Windows.Controls.Button, System.Boolean> isDefault = new Property<System.Windows.Controls.Button, System.Boolean>(System.Windows.Controls.Button.IsDefaultProperty);
       public static readonly IProperty<System.Windows.Controls.Button, System.Boolean> isCancel = new Property<System.Windows.Controls.Button, System.Boolean>(System.Windows.Controls.Button.IsCancelProperty);
       public static readonly IProperty<System.Windows.Controls.Button, System.Boolean> isDefaulted = new Property<System.Windows.Controls.Button, System.Boolean>(System.Windows.Controls.Button.IsDefaultedProperty);
     }
 
-    public class buttonBase : contentControl
+    public partial class buttonBase : contentControl
     {
       public static readonly IProperty<System.Windows.Controls.Primitives.ButtonBase, System.Windows.Input.ICommand> command = new Property<System.Windows.Controls.Primitives.ButtonBase, System.Windows.Input.ICommand>(System.Windows.Controls.Primitives.ButtonBase.CommandProperty);
       public static readonly IProperty<System.Windows.Controls.Primitives.ButtonBase, System.Object> commandParameter = new Property<System.Windows.Controls.Primitives.ButtonBase, System.Object>(System.Windows.Controls.Primitives.ButtonBase.CommandParameterProperty);
@@ -77,7 +77,7 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.Primitives.ButtonBase, System.Windows.Controls.ClickMode> clickMode = new Property<System.Windows.Controls.Primitives.ButtonBase, System.Windows.Controls.ClickMode>(System.Windows.Controls.Primitives.ButtonBase.ClickModeProperty);
     }
 
-    public class calendar : control
+    public partial class calendar : control
     {
       public static readonly IProperty<System.Windows.Controls.Calendar, System.Windows.Style> calendarButtonStyle = new Property<System.Windows.Controls.Calendar, System.Windows.Style>(System.Windows.Controls.Calendar.CalendarButtonStyleProperty);
       public static readonly IProperty<System.Windows.Controls.Calendar, System.Windows.Style> calendarDayButtonStyle = new Property<System.Windows.Controls.Calendar, System.Windows.Style>(System.Windows.Controls.Calendar.CalendarDayButtonStyleProperty);
@@ -92,13 +92,13 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.Calendar, System.Windows.Controls.CalendarSelectionMode> selectionMode = new Property<System.Windows.Controls.Calendar, System.Windows.Controls.CalendarSelectionMode>(System.Windows.Controls.Calendar.SelectionModeProperty);
     }
 
-    public class calendarButton : button
+    public partial class calendarButton : button
     {
       public static readonly IProperty<System.Windows.Controls.Primitives.CalendarButton, System.Boolean> hasSelectedDays = new Property<System.Windows.Controls.Primitives.CalendarButton, System.Boolean>(System.Windows.Controls.Primitives.CalendarButton.HasSelectedDaysProperty);
       public static readonly IProperty<System.Windows.Controls.Primitives.CalendarButton, System.Boolean> isInactive = new Property<System.Windows.Controls.Primitives.CalendarButton, System.Boolean>(System.Windows.Controls.Primitives.CalendarButton.IsInactiveProperty);
     }
 
-    public class calendarDayButton : button
+    public partial class calendarDayButton : button
     {
       public static readonly IProperty<System.Windows.Controls.Primitives.CalendarDayButton, System.Boolean> isToday = new Property<System.Windows.Controls.Primitives.CalendarDayButton, System.Boolean>(System.Windows.Controls.Primitives.CalendarDayButton.IsTodayProperty);
       public static readonly IProperty<System.Windows.Controls.Primitives.CalendarDayButton, System.Boolean> isSelected = new Property<System.Windows.Controls.Primitives.CalendarDayButton, System.Boolean>(System.Windows.Controls.Primitives.CalendarDayButton.IsSelectedProperty);
@@ -107,11 +107,11 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.Primitives.CalendarDayButton, System.Boolean> isHighlighted = new Property<System.Windows.Controls.Primitives.CalendarDayButton, System.Boolean>(System.Windows.Controls.Primitives.CalendarDayButton.IsHighlightedProperty);
     }
 
-    public class calendarItem : control
+    public partial class calendarItem : control
     {
     }
 
-    public class canvas : panel
+    public partial class canvas : panel
     {
       public static readonly IProperty<System.Windows.Controls.Canvas, System.Double> left = new Property<System.Windows.Controls.Canvas, System.Double>(System.Windows.Controls.Canvas.LeftProperty);
       public static readonly IProperty<System.Windows.Controls.Canvas, System.Double> top = new Property<System.Windows.Controls.Canvas, System.Double>(System.Windows.Controls.Canvas.TopProperty);
@@ -119,11 +119,11 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.Canvas, System.Double> bottom = new Property<System.Windows.Controls.Canvas, System.Double>(System.Windows.Controls.Canvas.BottomProperty);
     }
 
-    public class checkBox : toggleButton
+    public partial class checkBox : toggleButton
     {
     }
 
-    public class comboBox : selector
+    public partial class comboBox : selector
     {
       public static readonly IProperty<System.Windows.Controls.ComboBox, System.Double> maxDropDownHeight = new Property<System.Windows.Controls.ComboBox, System.Double>(System.Windows.Controls.ComboBox.MaxDropDownHeightProperty);
       public static readonly IProperty<System.Windows.Controls.ComboBox, System.Boolean> isDropDownOpen = new Property<System.Windows.Controls.ComboBox, System.Boolean>(System.Windows.Controls.ComboBox.IsDropDownOpenProperty);
@@ -137,12 +137,12 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.ComboBox, System.Boolean> staysOpenOnEdit = new Property<System.Windows.Controls.ComboBox, System.Boolean>(System.Windows.Controls.ComboBox.StaysOpenOnEditProperty);
     }
 
-    public class comboBoxItem : listBoxItem
+    public partial class comboBoxItem : listBoxItem
     {
       public static readonly IProperty<System.Windows.Controls.ComboBoxItem, System.Boolean> isHighlighted = new Property<System.Windows.Controls.ComboBoxItem, System.Boolean>(System.Windows.Controls.ComboBoxItem.IsHighlightedProperty);
     }
 
-    public class contentControl : control
+    public partial class contentControl : control
     {
       public static readonly IProperty<System.Windows.Controls.ContentControl, System.Object> content = new Property<System.Windows.Controls.ContentControl, System.Object>(System.Windows.Controls.ContentControl.ContentProperty);
       public static readonly IProperty<System.Windows.Controls.ContentControl, System.Boolean> hasContent = new Property<System.Windows.Controls.ContentControl, System.Boolean>(System.Windows.Controls.ContentControl.HasContentProperty);
@@ -151,7 +151,7 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.ContentControl, System.String> contentStringFormat = new Property<System.Windows.Controls.ContentControl, System.String>(System.Windows.Controls.ContentControl.ContentStringFormatProperty);
     }
 
-    public class contentPresenter : frameworkElement
+    public partial class contentPresenter : frameworkElement
     {
       public static readonly IProperty<System.Windows.Controls.ContentPresenter, System.Boolean> recognizesAccessKey = new Property<System.Windows.Controls.ContentPresenter, System.Boolean>(System.Windows.Controls.ContentPresenter.RecognizesAccessKeyProperty);
       public static readonly IProperty<System.Windows.Controls.ContentPresenter, System.Object> content = new Property<System.Windows.Controls.ContentPresenter, System.Object>(System.Windows.Controls.ContentPresenter.ContentProperty);
@@ -161,7 +161,7 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.ContentPresenter, System.String> contentSource = new Property<System.Windows.Controls.ContentPresenter, System.String>(System.Windows.Controls.ContentPresenter.ContentSourceProperty);
     }
 
-    public class contextMenu : menuBase
+    public partial class contextMenu : menuBase
     {
       public static readonly IProperty<System.Windows.Controls.ContextMenu, System.Double> horizontalOffset = new Property<System.Windows.Controls.ContextMenu, System.Double>(System.Windows.Controls.ContextMenu.HorizontalOffsetProperty);
       public static readonly IProperty<System.Windows.Controls.ContextMenu, System.Double> verticalOffset = new Property<System.Windows.Controls.ContextMenu, System.Double>(System.Windows.Controls.ContextMenu.VerticalOffsetProperty);
@@ -174,7 +174,7 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.ContextMenu, System.Boolean> staysOpen = new Property<System.Windows.Controls.ContextMenu, System.Boolean>(System.Windows.Controls.ContextMenu.StaysOpenProperty);
     }
 
-    public class control : frameworkElement
+    public partial class control : frameworkElement
     {
       public static readonly IProperty<System.Windows.Controls.Control, System.Windows.Media.Brush> borderBrush = new Property<System.Windows.Controls.Control, System.Windows.Media.Brush>(System.Windows.Controls.Control.BorderBrushProperty);
       public static readonly IProperty<System.Windows.Controls.Control, System.Windows.Thickness> borderThickness = new Property<System.Windows.Controls.Control, System.Windows.Thickness>(System.Windows.Controls.Control.BorderThicknessProperty);
@@ -193,7 +193,7 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.Control, System.Windows.Controls.ControlTemplate> template = new Property<System.Windows.Controls.Control, System.Windows.Controls.ControlTemplate>(System.Windows.Controls.Control.TemplateProperty);
     }
 
-    public class dataGrid : multiSelector
+    public partial class dataGrid : multiSelector
     {
       public static readonly IProperty<System.Windows.Controls.DataGrid, System.Boolean> canUserResizeColumns = new Property<System.Windows.Controls.DataGrid, System.Boolean>(System.Windows.Controls.DataGrid.CanUserResizeColumnsProperty);
       public static readonly IProperty<System.Windows.Controls.DataGrid, System.Windows.Controls.DataGridLength> columnWidth = new Property<System.Windows.Controls.DataGrid, System.Windows.Controls.DataGridLength>(System.Windows.Controls.DataGrid.ColumnWidthProperty);
@@ -247,7 +247,7 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.DataGrid, System.Double> cellsPanelHorizontalOffset = new Property<System.Windows.Controls.DataGrid, System.Double>(System.Windows.Controls.DataGrid.CellsPanelHorizontalOffsetProperty);
     }
 
-    public class dataGridCell : contentControl
+    public partial class dataGridCell : contentControl
     {
       public static readonly IProperty<System.Windows.Controls.DataGridCell, System.Windows.Controls.DataGridColumn> column = new Property<System.Windows.Controls.DataGridCell, System.Windows.Controls.DataGridColumn>(System.Windows.Controls.DataGridCell.ColumnProperty);
       public static readonly IProperty<System.Windows.Controls.DataGridCell, System.Boolean> isEditing = new Property<System.Windows.Controls.DataGridCell, System.Boolean>(System.Windows.Controls.DataGridCell.IsEditingProperty);
@@ -255,15 +255,15 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.DataGridCell, System.Boolean> isSelected = new Property<System.Windows.Controls.DataGridCell, System.Boolean>(System.Windows.Controls.DataGridCell.IsSelectedProperty);
     }
 
-    public class dataGridCellsPanel : virtualizingPanel
+    public partial class dataGridCellsPanel : virtualizingPanel
     {
     }
 
-    public class dataGridCellsPresenter : itemsControl
+    public partial class dataGridCellsPresenter : itemsControl
     {
     }
 
-    public class dataGridColumnHeader : buttonBase
+    public partial class dataGridColumnHeader : buttonBase
     {
       public static readonly IProperty<System.Windows.Controls.Primitives.DataGridColumnHeader, System.Windows.Media.Brush> separatorBrush = new Property<System.Windows.Controls.Primitives.DataGridColumnHeader, System.Windows.Media.Brush>(System.Windows.Controls.Primitives.DataGridColumnHeader.SeparatorBrushProperty);
       public static readonly IProperty<System.Windows.Controls.Primitives.DataGridColumnHeader, System.Windows.Visibility> separatorVisibility = new Property<System.Windows.Controls.Primitives.DataGridColumnHeader, System.Windows.Visibility>(System.Windows.Controls.Primitives.DataGridColumnHeader.SeparatorVisibilityProperty);
@@ -273,15 +273,15 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.Primitives.DataGridColumnHeader, System.Boolean> isFrozen = new Property<System.Windows.Controls.Primitives.DataGridColumnHeader, System.Boolean>(System.Windows.Controls.Primitives.DataGridColumnHeader.IsFrozenProperty);
     }
 
-    public class dataGridColumnHeadersPresenter : itemsControl
+    public partial class dataGridColumnHeadersPresenter : itemsControl
     {
     }
 
-    public class dataGridDetailsPresenter : contentPresenter
+    public partial class dataGridDetailsPresenter : contentPresenter
     {
     }
 
-    public class dataGridRow : control
+    public partial class dataGridRow : control
     {
       public static readonly IProperty<System.Windows.Controls.DataGridRow, System.Object> item = new Property<System.Windows.Controls.DataGridRow, System.Object>(System.Windows.Controls.DataGridRow.ItemProperty);
       public static readonly IProperty<System.Windows.Controls.DataGridRow, System.Windows.Controls.ItemsPanelTemplate> itemsPanel = new Property<System.Windows.Controls.DataGridRow, System.Windows.Controls.ItemsPanelTemplate>(System.Windows.Controls.DataGridRow.ItemsPanelProperty);
@@ -299,18 +299,18 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.DataGridRow, System.Boolean> isNewItem = new Property<System.Windows.Controls.DataGridRow, System.Boolean>(System.Windows.Controls.DataGridRow.IsNewItemProperty);
     }
 
-    public class dataGridRowHeader : buttonBase
+    public partial class dataGridRowHeader : buttonBase
     {
       public static readonly IProperty<System.Windows.Controls.Primitives.DataGridRowHeader, System.Windows.Media.Brush> separatorBrush = new Property<System.Windows.Controls.Primitives.DataGridRowHeader, System.Windows.Media.Brush>(System.Windows.Controls.Primitives.DataGridRowHeader.SeparatorBrushProperty);
       public static readonly IProperty<System.Windows.Controls.Primitives.DataGridRowHeader, System.Windows.Visibility> separatorVisibility = new Property<System.Windows.Controls.Primitives.DataGridRowHeader, System.Windows.Visibility>(System.Windows.Controls.Primitives.DataGridRowHeader.SeparatorVisibilityProperty);
       public static readonly IProperty<System.Windows.Controls.Primitives.DataGridRowHeader, System.Boolean> isRowSelected = new Property<System.Windows.Controls.Primitives.DataGridRowHeader, System.Boolean>(System.Windows.Controls.Primitives.DataGridRowHeader.IsRowSelectedProperty);
     }
 
-    public class dataGridRowsPresenter : virtualizingStackPanel
+    public partial class dataGridRowsPresenter : virtualizingStackPanel
     {
     }
 
-    public class datePicker : control
+    public partial class datePicker : control
     {
       public static readonly IProperty<System.Windows.Controls.DatePicker, System.Windows.Style> calendarStyle = new Property<System.Windows.Controls.DatePicker, System.Windows.Style>(System.Windows.Controls.DatePicker.CalendarStyleProperty);
       public static readonly IProperty<System.Windows.Controls.DatePicker, System.DateTime> displayDate = new Property<System.Windows.Controls.DatePicker, System.DateTime>(System.Windows.Controls.DatePicker.DisplayDateProperty);
@@ -324,33 +324,33 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.DatePicker, System.String> text = new Property<System.Windows.Controls.DatePicker, System.String>(System.Windows.Controls.DatePicker.TextProperty);
     }
 
-    public class datePickerTextBox : textBox
+    public partial class datePickerTextBox : textBox
     {
     }
 
-    public class decorator : frameworkElement
+    public partial class decorator : frameworkElement
     {
     }
 
-    public class dockPanel : panel
+    public partial class dockPanel : panel
     {
       public static readonly IProperty<System.Windows.Controls.DockPanel, System.Boolean> lastChildFill = new Property<System.Windows.Controls.DockPanel, System.Boolean>(System.Windows.Controls.DockPanel.LastChildFillProperty);
       public static readonly IProperty<System.Windows.Controls.DockPanel, System.Windows.Controls.Dock> dock = new Property<System.Windows.Controls.DockPanel, System.Windows.Controls.Dock>(System.Windows.Controls.DockPanel.DockProperty);
     }
 
-    public class documentPageView : frameworkElement
+    public partial class documentPageView : frameworkElement
     {
       public static readonly IProperty<System.Windows.Controls.Primitives.DocumentPageView, System.Int32> pageNumber = new Property<System.Windows.Controls.Primitives.DocumentPageView, System.Int32>(System.Windows.Controls.Primitives.DocumentPageView.PageNumberProperty);
       public static readonly IProperty<System.Windows.Controls.Primitives.DocumentPageView, System.Windows.Media.Stretch> stretch = new Property<System.Windows.Controls.Primitives.DocumentPageView, System.Windows.Media.Stretch>(System.Windows.Controls.Primitives.DocumentPageView.StretchProperty);
       public static readonly IProperty<System.Windows.Controls.Primitives.DocumentPageView, System.Windows.Controls.StretchDirection> stretchDirection = new Property<System.Windows.Controls.Primitives.DocumentPageView, System.Windows.Controls.StretchDirection>(System.Windows.Controls.Primitives.DocumentPageView.StretchDirectionProperty);
     }
 
-    public class documentReference : frameworkElement
+    public partial class documentReference : frameworkElement
     {
       public static readonly IProperty<System.Windows.Documents.DocumentReference, System.Uri> source = new Property<System.Windows.Documents.DocumentReference, System.Uri>(System.Windows.Documents.DocumentReference.SourceProperty);
     }
 
-    public class documentViewer : documentViewerBase
+    public partial class documentViewer : documentViewerBase
     {
       public static readonly IProperty<System.Windows.Controls.DocumentViewer, System.Double> horizontalOffset = new Property<System.Windows.Controls.DocumentViewer, System.Double>(System.Windows.Controls.DocumentViewer.HorizontalOffsetProperty);
       public static readonly IProperty<System.Windows.Controls.DocumentViewer, System.Double> verticalOffset = new Property<System.Windows.Controls.DocumentViewer, System.Double>(System.Windows.Controls.DocumentViewer.VerticalOffsetProperty);
@@ -371,7 +371,7 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.DocumentViewer, System.Boolean> canDecreaseZoom = new Property<System.Windows.Controls.DocumentViewer, System.Boolean>(System.Windows.Controls.DocumentViewer.CanDecreaseZoomProperty);
     }
 
-    public class documentViewerBase : control
+    public partial class documentViewerBase : control
     {
       public static readonly IProperty<System.Windows.Controls.Primitives.DocumentViewerBase, System.Windows.Documents.IDocumentPaginatorSource> document = new Property<System.Windows.Controls.Primitives.DocumentViewerBase, System.Windows.Documents.IDocumentPaginatorSource>(System.Windows.Controls.Primitives.DocumentViewerBase.DocumentProperty);
       public static readonly IProperty<System.Windows.Controls.Primitives.DocumentViewerBase, System.Int32> pageCount = new Property<System.Windows.Controls.Primitives.DocumentViewerBase, System.Int32>(System.Windows.Controls.Primitives.DocumentViewerBase.PageCountProperty);
@@ -381,17 +381,17 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.Primitives.DocumentViewerBase, System.Boolean> isMasterPage = new Property<System.Windows.Controls.Primitives.DocumentViewerBase, System.Boolean>(System.Windows.Controls.Primitives.DocumentViewerBase.IsMasterPageProperty);
     }
 
-    public class ellipse : shape
+    public partial class ellipse : shape
     {
     }
 
-    public class expander : headeredContentControl
+    public partial class expander : headeredContentControl
     {
       public static readonly IProperty<System.Windows.Controls.Expander, System.Windows.Controls.ExpandDirection> expandDirection = new Property<System.Windows.Controls.Expander, System.Windows.Controls.ExpandDirection>(System.Windows.Controls.Expander.ExpandDirectionProperty);
       public static readonly IProperty<System.Windows.Controls.Expander, System.Boolean> isExpanded = new Property<System.Windows.Controls.Expander, System.Boolean>(System.Windows.Controls.Expander.IsExpandedProperty);
     }
 
-    public class fixedPage : frameworkElement
+    public partial class fixedPage : frameworkElement
     {
       public static readonly IProperty<System.Windows.Documents.FixedPage, System.Object> printTicket = new Property<System.Windows.Documents.FixedPage, System.Object>(System.Windows.Documents.FixedPage.PrintTicketProperty);
       public static readonly IProperty<System.Windows.Documents.FixedPage, System.Windows.Media.Brush> background = new Property<System.Windows.Documents.FixedPage, System.Windows.Media.Brush>(System.Windows.Documents.FixedPage.BackgroundProperty);
@@ -404,7 +404,7 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Documents.FixedPage, System.Uri> navigateUri = new Property<System.Windows.Documents.FixedPage, System.Uri>(System.Windows.Documents.FixedPage.NavigateUriProperty);
     }
 
-    public class flowDocumentPageViewer : documentViewerBase
+    public partial class flowDocumentPageViewer : documentViewerBase
     {
       public static readonly IProperty<System.Windows.Controls.FlowDocumentPageViewer, System.Double> zoom = new Property<System.Windows.Controls.FlowDocumentPageViewer, System.Double>(System.Windows.Controls.FlowDocumentPageViewer.ZoomProperty);
       public static readonly IProperty<System.Windows.Controls.FlowDocumentPageViewer, System.Double> maxZoom = new Property<System.Windows.Controls.FlowDocumentPageViewer, System.Double>(System.Windows.Controls.FlowDocumentPageViewer.MaxZoomProperty);
@@ -418,7 +418,7 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.FlowDocumentPageViewer, System.Boolean> isInactiveSelectionHighlightEnabled = new Property<System.Windows.Controls.FlowDocumentPageViewer, System.Boolean>(System.Windows.Controls.FlowDocumentPageViewer.IsInactiveSelectionHighlightEnabledProperty);
     }
 
-    public class flowDocumentReader : control
+    public partial class flowDocumentReader : control
     {
       public static readonly IProperty<System.Windows.Controls.FlowDocumentReader, System.Windows.Controls.FlowDocumentReaderViewingMode> viewingMode = new Property<System.Windows.Controls.FlowDocumentReader, System.Windows.Controls.FlowDocumentReaderViewingMode>(System.Windows.Controls.FlowDocumentReader.ViewingModeProperty);
       public static readonly IProperty<System.Windows.Controls.FlowDocumentReader, System.Boolean> isPageViewEnabled = new Property<System.Windows.Controls.FlowDocumentReader, System.Boolean>(System.Windows.Controls.FlowDocumentReader.IsPageViewEnabledProperty);
@@ -443,7 +443,7 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.FlowDocumentReader, System.Boolean> isInactiveSelectionHighlightEnabled = new Property<System.Windows.Controls.FlowDocumentReader, System.Boolean>(System.Windows.Controls.FlowDocumentReader.IsInactiveSelectionHighlightEnabledProperty);
     }
 
-    public class flowDocumentScrollViewer : control
+    public partial class flowDocumentScrollViewer : control
     {
       public static readonly IProperty<System.Windows.Controls.FlowDocumentScrollViewer, System.Windows.Documents.FlowDocument> document = new Property<System.Windows.Controls.FlowDocumentScrollViewer, System.Windows.Documents.FlowDocument>(System.Windows.Controls.FlowDocumentScrollViewer.DocumentProperty);
       public static readonly IProperty<System.Windows.Controls.FlowDocumentScrollViewer, System.Double> zoom = new Property<System.Windows.Controls.FlowDocumentScrollViewer, System.Double>(System.Windows.Controls.FlowDocumentScrollViewer.ZoomProperty);
@@ -462,7 +462,7 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.FlowDocumentScrollViewer, System.Boolean> isInactiveSelectionHighlightEnabled = new Property<System.Windows.Controls.FlowDocumentScrollViewer, System.Boolean>(System.Windows.Controls.FlowDocumentScrollViewer.IsInactiveSelectionHighlightEnabledProperty);
     }
 
-    public class frame : contentControl
+    public partial class frame : contentControl
     {
       public static readonly IProperty<System.Windows.Controls.Frame, System.Uri> source = new Property<System.Windows.Controls.Frame, System.Uri>(System.Windows.Controls.Frame.SourceProperty);
       public static readonly IProperty<System.Windows.Controls.Frame, System.Boolean> canGoBack = new Property<System.Windows.Controls.Frame, System.Boolean>(System.Windows.Controls.Frame.CanGoBackProperty);
@@ -474,7 +474,7 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.Frame, System.Windows.Navigation.JournalOwnership> journalOwnership = new Property<System.Windows.Controls.Frame, System.Windows.Navigation.JournalOwnership>(System.Windows.Controls.Frame.JournalOwnershipProperty);
     }
 
-    public class frameworkElement : uIElement
+    public partial class frameworkElement : uIElement
     {
       public static readonly IProperty<System.Windows.FrameworkElement, System.Windows.Style> style = new Property<System.Windows.FrameworkElement, System.Windows.Style>(System.Windows.FrameworkElement.StyleProperty);
       public static readonly IProperty<System.Windows.FrameworkElement, System.Boolean> overridesDefaultStyle = new Property<System.Windows.FrameworkElement, System.Boolean>(System.Windows.FrameworkElement.OverridesDefaultStyleProperty);
@@ -505,7 +505,7 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.FrameworkElement, System.Windows.Controls.ContextMenu> contextMenu = new Property<System.Windows.FrameworkElement, System.Windows.Controls.ContextMenu>(System.Windows.FrameworkElement.ContextMenuProperty);
     }
 
-    public class glyphs : frameworkElement
+    public partial class glyphs : frameworkElement
     {
       public static readonly IProperty<System.Windows.Documents.Glyphs, System.Windows.Media.Brush> fill = new Property<System.Windows.Documents.Glyphs, System.Windows.Media.Brush>(System.Windows.Documents.Glyphs.FillProperty);
       public static readonly IProperty<System.Windows.Documents.Glyphs, System.String> indices = new Property<System.Windows.Documents.Glyphs, System.String>(System.Windows.Documents.Glyphs.IndicesProperty);
@@ -521,7 +521,7 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Documents.Glyphs, System.String> deviceFontName = new Property<System.Windows.Documents.Glyphs, System.String>(System.Windows.Documents.Glyphs.DeviceFontNameProperty);
     }
 
-    public class grid : panel
+    public partial class grid : panel
     {
       public static readonly IProperty<System.Windows.Controls.Grid, System.Boolean> showGridLines = new Property<System.Windows.Controls.Grid, System.Boolean>(System.Windows.Controls.Grid.ShowGridLinesProperty);
       public static readonly IProperty<System.Windows.Controls.Grid, System.Int32> column = new Property<System.Windows.Controls.Grid, System.Int32>(System.Windows.Controls.Grid.ColumnProperty);
@@ -531,7 +531,7 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.Grid, System.Boolean> isSharedSizeScope = new Property<System.Windows.Controls.Grid, System.Boolean>(System.Windows.Controls.Grid.IsSharedSizeScopeProperty);
     }
 
-    public class gridSplitter : thumb
+    public partial class gridSplitter : thumb
     {
       public static readonly IProperty<System.Windows.Controls.GridSplitter, System.Windows.Controls.GridResizeDirection> resizeDirection = new Property<System.Windows.Controls.GridSplitter, System.Windows.Controls.GridResizeDirection>(System.Windows.Controls.GridSplitter.ResizeDirectionProperty);
       public static readonly IProperty<System.Windows.Controls.GridSplitter, System.Windows.Controls.GridResizeBehavior> resizeBehavior = new Property<System.Windows.Controls.GridSplitter, System.Windows.Controls.GridResizeBehavior>(System.Windows.Controls.GridSplitter.ResizeBehaviorProperty);
@@ -541,13 +541,13 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.GridSplitter, System.Double> dragIncrement = new Property<System.Windows.Controls.GridSplitter, System.Double>(System.Windows.Controls.GridSplitter.DragIncrementProperty);
     }
 
-    public class gridViewColumnHeader : buttonBase
+    public partial class gridViewColumnHeader : buttonBase
     {
       public static readonly IProperty<System.Windows.Controls.GridViewColumnHeader, System.Windows.Controls.GridViewColumn> column = new Property<System.Windows.Controls.GridViewColumnHeader, System.Windows.Controls.GridViewColumn>(System.Windows.Controls.GridViewColumnHeader.ColumnProperty);
       public static readonly IProperty<System.Windows.Controls.GridViewColumnHeader, System.Windows.Controls.GridViewColumnHeaderRole> role = new Property<System.Windows.Controls.GridViewColumnHeader, System.Windows.Controls.GridViewColumnHeaderRole>(System.Windows.Controls.GridViewColumnHeader.RoleProperty);
     }
 
-    public class gridViewHeaderRowPresenter : gridViewRowPresenterBase
+    public partial class gridViewHeaderRowPresenter : gridViewRowPresenterBase
     {
       public static readonly IProperty<System.Windows.Controls.GridViewHeaderRowPresenter, System.Windows.Style> columnHeaderContainerStyle = new Property<System.Windows.Controls.GridViewHeaderRowPresenter, System.Windows.Style>(System.Windows.Controls.GridViewHeaderRowPresenter.ColumnHeaderContainerStyleProperty);
       public static readonly IProperty<System.Windows.Controls.GridViewHeaderRowPresenter, System.Windows.DataTemplate> columnHeaderTemplate = new Property<System.Windows.Controls.GridViewHeaderRowPresenter, System.Windows.DataTemplate>(System.Windows.Controls.GridViewHeaderRowPresenter.ColumnHeaderTemplateProperty);
@@ -558,25 +558,25 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.GridViewHeaderRowPresenter, System.Object> columnHeaderToolTip = new Property<System.Windows.Controls.GridViewHeaderRowPresenter, System.Object>(System.Windows.Controls.GridViewHeaderRowPresenter.ColumnHeaderToolTipProperty);
     }
 
-    public class gridViewRowPresenter : gridViewRowPresenterBase
+    public partial class gridViewRowPresenter : gridViewRowPresenterBase
     {
       public static readonly IProperty<System.Windows.Controls.GridViewRowPresenter, System.Object> content = new Property<System.Windows.Controls.GridViewRowPresenter, System.Object>(System.Windows.Controls.GridViewRowPresenter.ContentProperty);
     }
 
-    public class gridViewRowPresenterBase : frameworkElement
+    public partial class gridViewRowPresenterBase : frameworkElement
     {
       public static readonly IProperty<System.Windows.Controls.Primitives.GridViewRowPresenterBase, System.Windows.Controls.GridViewColumnCollection> columns = new Property<System.Windows.Controls.Primitives.GridViewRowPresenterBase, System.Windows.Controls.GridViewColumnCollection>(System.Windows.Controls.Primitives.GridViewRowPresenterBase.ColumnsProperty);
     }
 
-    public class groupBox : headeredContentControl
+    public partial class groupBox : headeredContentControl
     {
     }
 
-    public class groupItem : contentControl
+    public partial class groupItem : contentControl
     {
     }
 
-    public class headeredContentControl : contentControl
+    public partial class headeredContentControl : contentControl
     {
       public static readonly IProperty<System.Windows.Controls.HeaderedContentControl, System.Object> header = new Property<System.Windows.Controls.HeaderedContentControl, System.Object>(System.Windows.Controls.HeaderedContentControl.HeaderProperty);
       public static readonly IProperty<System.Windows.Controls.HeaderedContentControl, System.Boolean> hasHeader = new Property<System.Windows.Controls.HeaderedContentControl, System.Boolean>(System.Windows.Controls.HeaderedContentControl.HasHeaderProperty);
@@ -585,7 +585,7 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.HeaderedContentControl, System.String> headerStringFormat = new Property<System.Windows.Controls.HeaderedContentControl, System.String>(System.Windows.Controls.HeaderedContentControl.HeaderStringFormatProperty);
     }
 
-    public class headeredItemsControl : itemsControl
+    public partial class headeredItemsControl : itemsControl
     {
       public static readonly IProperty<System.Windows.Controls.HeaderedItemsControl, System.Object> header = new Property<System.Windows.Controls.HeaderedItemsControl, System.Object>(System.Windows.Controls.HeaderedItemsControl.HeaderProperty);
       public static readonly IProperty<System.Windows.Controls.HeaderedItemsControl, System.Boolean> hasHeader = new Property<System.Windows.Controls.HeaderedItemsControl, System.Boolean>(System.Windows.Controls.HeaderedItemsControl.HasHeaderProperty);
@@ -594,18 +594,18 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.HeaderedItemsControl, System.String> headerStringFormat = new Property<System.Windows.Controls.HeaderedItemsControl, System.String>(System.Windows.Controls.HeaderedItemsControl.HeaderStringFormatProperty);
     }
 
-    public class hwndHost : frameworkElement
+    public partial class hwndHost : frameworkElement
     {
     }
 
-    public class image : frameworkElement
+    public partial class image : frameworkElement
     {
       public static readonly IProperty<System.Windows.Controls.Image, System.Windows.Media.ImageSource> source = new Property<System.Windows.Controls.Image, System.Windows.Media.ImageSource>(System.Windows.Controls.Image.SourceProperty);
       public static readonly IProperty<System.Windows.Controls.Image, System.Windows.Media.Stretch> stretch = new Property<System.Windows.Controls.Image, System.Windows.Media.Stretch>(System.Windows.Controls.Image.StretchProperty);
       public static readonly IProperty<System.Windows.Controls.Image, System.Windows.Controls.StretchDirection> stretchDirection = new Property<System.Windows.Controls.Image, System.Windows.Controls.StretchDirection>(System.Windows.Controls.Image.StretchDirectionProperty);
     }
 
-    public class inkCanvas : frameworkElement
+    public partial class inkCanvas : frameworkElement
     {
       public static readonly IProperty<System.Windows.Controls.InkCanvas, System.Windows.Media.Brush> background = new Property<System.Windows.Controls.InkCanvas, System.Windows.Media.Brush>(System.Windows.Controls.InkCanvas.BackgroundProperty);
       public static readonly IProperty<System.Windows.Controls.InkCanvas, System.Double> top = new Property<System.Windows.Controls.InkCanvas, System.Double>(System.Windows.Controls.InkCanvas.TopProperty);
@@ -619,12 +619,12 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.InkCanvas, System.Windows.Controls.InkCanvasEditingMode> editingModeInverted = new Property<System.Windows.Controls.InkCanvas, System.Windows.Controls.InkCanvasEditingMode>(System.Windows.Controls.InkCanvas.EditingModeInvertedProperty);
     }
 
-    public class inkPresenter : decorator
+    public partial class inkPresenter : decorator
     {
       public static readonly IProperty<System.Windows.Controls.InkPresenter, System.Windows.Ink.StrokeCollection> strokes = new Property<System.Windows.Controls.InkPresenter, System.Windows.Ink.StrokeCollection>(System.Windows.Controls.InkPresenter.StrokesProperty);
     }
 
-    public class itemsControl : control
+    public partial class itemsControl : control
     {
       public static readonly IProperty<System.Windows.Controls.ItemsControl, System.Collections.IEnumerable> itemsSource = new Property<System.Windows.Controls.ItemsControl, System.Collections.IEnumerable>(System.Windows.Controls.ItemsControl.ItemsSourceProperty);
       public static readonly IProperty<System.Windows.Controls.ItemsControl, System.Boolean> hasItems = new Property<System.Windows.Controls.ItemsControl, System.Boolean>(System.Windows.Controls.ItemsControl.HasItemsProperty);
@@ -644,16 +644,16 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.ItemsControl, System.Boolean> isTextSearchCaseSensitive = new Property<System.Windows.Controls.ItemsControl, System.Boolean>(System.Windows.Controls.ItemsControl.IsTextSearchCaseSensitiveProperty);
     }
 
-    public class itemsPresenter : frameworkElement
+    public partial class itemsPresenter : frameworkElement
     {
     }
 
-    public class label : contentControl
+    public partial class label : contentControl
     {
       public static readonly IProperty<System.Windows.Controls.Label, System.Windows.UIElement> target = new Property<System.Windows.Controls.Label, System.Windows.UIElement>(System.Windows.Controls.Label.TargetProperty);
     }
 
-    public class line : shape
+    public partial class line : shape
     {
       public static readonly IProperty<System.Windows.Shapes.Line, System.Double> x1 = new Property<System.Windows.Shapes.Line, System.Double>(System.Windows.Shapes.Line.X1Property);
       public static readonly IProperty<System.Windows.Shapes.Line, System.Double> y1 = new Property<System.Windows.Shapes.Line, System.Double>(System.Windows.Shapes.Line.Y1Property);
@@ -661,27 +661,27 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Shapes.Line, System.Double> y2 = new Property<System.Windows.Shapes.Line, System.Double>(System.Windows.Shapes.Line.Y2Property);
     }
 
-    public class listBox : selector
+    public partial class listBox : selector
     {
       public static readonly IProperty<System.Windows.Controls.ListBox, System.Windows.Controls.SelectionMode> selectionMode = new Property<System.Windows.Controls.ListBox, System.Windows.Controls.SelectionMode>(System.Windows.Controls.ListBox.SelectionModeProperty);
       public static readonly IProperty<System.Windows.Controls.ListBox, System.Collections.IList> selectedItems = new Property<System.Windows.Controls.ListBox, System.Collections.IList>(System.Windows.Controls.ListBox.SelectedItemsProperty);
     }
 
-    public class listBoxItem : contentControl
+    public partial class listBoxItem : contentControl
     {
       public static readonly IProperty<System.Windows.Controls.ListBoxItem, System.Boolean> isSelected = new Property<System.Windows.Controls.ListBoxItem, System.Boolean>(System.Windows.Controls.ListBoxItem.IsSelectedProperty);
     }
 
-    public class listView : listBox
+    public partial class listView : listBox
     {
       public static readonly IProperty<System.Windows.Controls.ListView, System.Windows.Controls.ViewBase> view = new Property<System.Windows.Controls.ListView, System.Windows.Controls.ViewBase>(System.Windows.Controls.ListView.ViewProperty);
     }
 
-    public class listViewItem : listBoxItem
+    public partial class listViewItem : listBoxItem
     {
     }
 
-    public class mediaElement : frameworkElement
+    public partial class mediaElement : frameworkElement
     {
       public static readonly IProperty<System.Windows.Controls.MediaElement, System.Uri> source = new Property<System.Windows.Controls.MediaElement, System.Uri>(System.Windows.Controls.MediaElement.SourceProperty);
       public static readonly IProperty<System.Windows.Controls.MediaElement, System.Double> volume = new Property<System.Windows.Controls.MediaElement, System.Double>(System.Windows.Controls.MediaElement.VolumeProperty);
@@ -694,18 +694,18 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.MediaElement, System.Windows.Controls.StretchDirection> stretchDirection = new Property<System.Windows.Controls.MediaElement, System.Windows.Controls.StretchDirection>(System.Windows.Controls.MediaElement.StretchDirectionProperty);
     }
 
-    public class menu : menuBase
+    public partial class menu : menuBase
     {
       public static readonly IProperty<System.Windows.Controls.Menu, System.Boolean> isMainMenu = new Property<System.Windows.Controls.Menu, System.Boolean>(System.Windows.Controls.Menu.IsMainMenuProperty);
     }
 
-    public class menuBase : itemsControl
+    public partial class menuBase : itemsControl
     {
       public static readonly IProperty<System.Windows.Controls.Primitives.MenuBase, System.Windows.Controls.ItemContainerTemplateSelector> itemContainerTemplateSelector = new Property<System.Windows.Controls.Primitives.MenuBase, System.Windows.Controls.ItemContainerTemplateSelector>(System.Windows.Controls.Primitives.MenuBase.ItemContainerTemplateSelectorProperty);
       public static readonly IProperty<System.Windows.Controls.Primitives.MenuBase, System.Boolean> usesItemContainerTemplate = new Property<System.Windows.Controls.Primitives.MenuBase, System.Boolean>(System.Windows.Controls.Primitives.MenuBase.UsesItemContainerTemplateProperty);
     }
 
-    public class menuItem : headeredItemsControl
+    public partial class menuItem : headeredItemsControl
     {
       public static readonly IProperty<System.Windows.Controls.MenuItem, System.Windows.Input.ICommand> command = new Property<System.Windows.Controls.MenuItem, System.Windows.Input.ICommand>(System.Windows.Controls.MenuItem.CommandProperty);
       public static readonly IProperty<System.Windows.Controls.MenuItem, System.Object> commandParameter = new Property<System.Windows.Controls.MenuItem, System.Object>(System.Windows.Controls.MenuItem.CommandParameterProperty);
@@ -724,11 +724,11 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.MenuItem, System.Boolean> usesItemContainerTemplate = new Property<System.Windows.Controls.MenuItem, System.Boolean>(System.Windows.Controls.MenuItem.UsesItemContainerTemplateProperty);
     }
 
-    public class multiSelector : selector
+    public partial class multiSelector : selector
     {
     }
 
-    public class navigationWindow : window
+    public partial class navigationWindow : window
     {
       public static readonly IProperty<System.Windows.Navigation.NavigationWindow, System.Boolean> sandboxExternalContent = new Property<System.Windows.Navigation.NavigationWindow, System.Boolean>(System.Windows.Navigation.NavigationWindow.SandboxExternalContentProperty);
       public static readonly IProperty<System.Windows.Navigation.NavigationWindow, System.Boolean> showsNavigationUI = new Property<System.Windows.Navigation.NavigationWindow, System.Boolean>(System.Windows.Navigation.NavigationWindow.ShowsNavigationUIProperty);
@@ -739,7 +739,7 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Navigation.NavigationWindow, System.Uri> source = new Property<System.Windows.Navigation.NavigationWindow, System.Uri>(System.Windows.Navigation.NavigationWindow.SourceProperty);
     }
 
-    public class page : frameworkElement
+    public partial class page : frameworkElement
     {
       public static readonly IProperty<System.Windows.Controls.Page, System.Object> content = new Property<System.Windows.Controls.Page, System.Object>(System.Windows.Controls.Page.ContentProperty);
       public static readonly IProperty<System.Windows.Controls.Page, System.Windows.Media.Brush> background = new Property<System.Windows.Controls.Page, System.Windows.Media.Brush>(System.Windows.Controls.Page.BackgroundProperty);
@@ -751,23 +751,23 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.Page, System.Windows.Controls.ControlTemplate> template = new Property<System.Windows.Controls.Page, System.Windows.Controls.ControlTemplate>(System.Windows.Controls.Page.TemplateProperty);
     }
 
-    public class pageContent : frameworkElement
+    public partial class pageContent : frameworkElement
     {
       public static readonly IProperty<System.Windows.Documents.PageContent, System.Uri> source = new Property<System.Windows.Documents.PageContent, System.Uri>(System.Windows.Documents.PageContent.SourceProperty);
     }
 
-    public class pageFunctionBase : page
+    public partial class pageFunctionBase : page
     {
     }
 
-    public class panel : frameworkElement
+    public partial class panel : frameworkElement
     {
       public static readonly IProperty<System.Windows.Controls.Panel, System.Windows.Media.Brush> background = new Property<System.Windows.Controls.Panel, System.Windows.Media.Brush>(System.Windows.Controls.Panel.BackgroundProperty);
       public static readonly IProperty<System.Windows.Controls.Panel, System.Boolean> isItemsHost = new Property<System.Windows.Controls.Panel, System.Boolean>(System.Windows.Controls.Panel.IsItemsHostProperty);
       public static readonly IProperty<System.Windows.Controls.Panel, System.Int32> zIndex = new Property<System.Windows.Controls.Panel, System.Int32>(System.Windows.Controls.Panel.ZIndexProperty);
     }
 
-    public class passwordBox : control
+    public partial class passwordBox : control
     {
       public static readonly IProperty<System.Windows.Controls.PasswordBox, System.Char> passwordChar = new Property<System.Windows.Controls.PasswordBox, System.Char>(System.Windows.Controls.PasswordBox.PasswordCharProperty);
       public static readonly IProperty<System.Windows.Controls.PasswordBox, System.Int32> maxLength = new Property<System.Windows.Controls.PasswordBox, System.Int32>(System.Windows.Controls.PasswordBox.MaxLengthProperty);
@@ -778,24 +778,24 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.PasswordBox, System.Boolean> isInactiveSelectionHighlightEnabled = new Property<System.Windows.Controls.PasswordBox, System.Boolean>(System.Windows.Controls.PasswordBox.IsInactiveSelectionHighlightEnabledProperty);
     }
 
-    public class path : shape
+    public partial class path : shape
     {
       public static readonly IProperty<System.Windows.Shapes.Path, System.Windows.Media.Geometry> data = new Property<System.Windows.Shapes.Path, System.Windows.Media.Geometry>(System.Windows.Shapes.Path.DataProperty);
     }
 
-    public class polygon : shape
+    public partial class polygon : shape
     {
       public static readonly IProperty<System.Windows.Shapes.Polygon, System.Windows.Media.PointCollection> points = new Property<System.Windows.Shapes.Polygon, System.Windows.Media.PointCollection>(System.Windows.Shapes.Polygon.PointsProperty);
       public static readonly IProperty<System.Windows.Shapes.Polygon, System.Windows.Media.FillRule> fillRule = new Property<System.Windows.Shapes.Polygon, System.Windows.Media.FillRule>(System.Windows.Shapes.Polygon.FillRuleProperty);
     }
 
-    public class polyline : shape
+    public partial class polyline : shape
     {
       public static readonly IProperty<System.Windows.Shapes.Polyline, System.Windows.Media.PointCollection> points = new Property<System.Windows.Shapes.Polyline, System.Windows.Media.PointCollection>(System.Windows.Shapes.Polyline.PointsProperty);
       public static readonly IProperty<System.Windows.Shapes.Polyline, System.Windows.Media.FillRule> fillRule = new Property<System.Windows.Shapes.Polyline, System.Windows.Media.FillRule>(System.Windows.Shapes.Polyline.FillRuleProperty);
     }
 
-    public class popup : frameworkElement
+    public partial class popup : frameworkElement
     {
       public static readonly IProperty<System.Windows.Controls.Primitives.Popup, System.Windows.UIElement> child = new Property<System.Windows.Controls.Primitives.Popup, System.Windows.UIElement>(System.Windows.Controls.Primitives.Popup.ChildProperty);
       public static readonly IProperty<System.Windows.Controls.Primitives.Popup, System.Boolean> isOpen = new Property<System.Windows.Controls.Primitives.Popup, System.Boolean>(System.Windows.Controls.Primitives.Popup.IsOpenProperty);
@@ -811,18 +811,18 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.Primitives.Popup, System.Boolean> hasDropShadow = new Property<System.Windows.Controls.Primitives.Popup, System.Boolean>(System.Windows.Controls.Primitives.Popup.HasDropShadowProperty);
     }
 
-    public class progressBar : rangeBase
+    public partial class progressBar : rangeBase
     {
       public static readonly IProperty<System.Windows.Controls.ProgressBar, System.Boolean> isIndeterminate = new Property<System.Windows.Controls.ProgressBar, System.Boolean>(System.Windows.Controls.ProgressBar.IsIndeterminateProperty);
       public static readonly IProperty<System.Windows.Controls.ProgressBar, System.Windows.Controls.Orientation> orientation = new Property<System.Windows.Controls.ProgressBar, System.Windows.Controls.Orientation>(System.Windows.Controls.ProgressBar.OrientationProperty);
     }
 
-    public class radioButton : toggleButton
+    public partial class radioButton : toggleButton
     {
       public static readonly IProperty<System.Windows.Controls.RadioButton, System.String> groupName = new Property<System.Windows.Controls.RadioButton, System.String>(System.Windows.Controls.RadioButton.GroupNameProperty);
     }
 
-    public class rangeBase : control
+    public partial class rangeBase : control
     {
       public static readonly IProperty<System.Windows.Controls.Primitives.RangeBase, System.Double> minimum = new Property<System.Windows.Controls.Primitives.RangeBase, System.Double>(System.Windows.Controls.Primitives.RangeBase.MinimumProperty);
       public static readonly IProperty<System.Windows.Controls.Primitives.RangeBase, System.Double> maximum = new Property<System.Windows.Controls.Primitives.RangeBase, System.Double>(System.Windows.Controls.Primitives.RangeBase.MaximumProperty);
@@ -831,39 +831,39 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.Primitives.RangeBase, System.Double> smallChange = new Property<System.Windows.Controls.Primitives.RangeBase, System.Double>(System.Windows.Controls.Primitives.RangeBase.SmallChangeProperty);
     }
 
-    public class rectangle : shape
+    public partial class rectangle : shape
     {
       public static readonly IProperty<System.Windows.Shapes.Rectangle, System.Double> radiusX = new Property<System.Windows.Shapes.Rectangle, System.Double>(System.Windows.Shapes.Rectangle.RadiusXProperty);
       public static readonly IProperty<System.Windows.Shapes.Rectangle, System.Double> radiusY = new Property<System.Windows.Shapes.Rectangle, System.Double>(System.Windows.Shapes.Rectangle.RadiusYProperty);
     }
 
-    public class repeatButton : buttonBase
+    public partial class repeatButton : buttonBase
     {
       public static readonly IProperty<System.Windows.Controls.Primitives.RepeatButton, System.Int32> delay = new Property<System.Windows.Controls.Primitives.RepeatButton, System.Int32>(System.Windows.Controls.Primitives.RepeatButton.DelayProperty);
       public static readonly IProperty<System.Windows.Controls.Primitives.RepeatButton, System.Int32> interval = new Property<System.Windows.Controls.Primitives.RepeatButton, System.Int32>(System.Windows.Controls.Primitives.RepeatButton.IntervalProperty);
     }
 
-    public class resizeGrip : control
+    public partial class resizeGrip : control
     {
     }
 
-    public class richTextBox : textBoxBase
+    public partial class richTextBox : textBoxBase
     {
       public static readonly IProperty<System.Windows.Controls.RichTextBox, System.Boolean> isDocumentEnabled = new Property<System.Windows.Controls.RichTextBox, System.Boolean>(System.Windows.Controls.RichTextBox.IsDocumentEnabledProperty);
     }
 
-    public class scrollBar : rangeBase
+    public partial class scrollBar : rangeBase
     {
       public static readonly IProperty<System.Windows.Controls.Primitives.ScrollBar, System.Windows.Controls.Orientation> orientation = new Property<System.Windows.Controls.Primitives.ScrollBar, System.Windows.Controls.Orientation>(System.Windows.Controls.Primitives.ScrollBar.OrientationProperty);
       public static readonly IProperty<System.Windows.Controls.Primitives.ScrollBar, System.Double> viewportSize = new Property<System.Windows.Controls.Primitives.ScrollBar, System.Double>(System.Windows.Controls.Primitives.ScrollBar.ViewportSizeProperty);
     }
 
-    public class scrollContentPresenter : contentPresenter
+    public partial class scrollContentPresenter : contentPresenter
     {
       public static readonly IProperty<System.Windows.Controls.ScrollContentPresenter, System.Boolean> canContentScroll = new Property<System.Windows.Controls.ScrollContentPresenter, System.Boolean>(System.Windows.Controls.ScrollContentPresenter.CanContentScrollProperty);
     }
 
-    public class scrollViewer : contentControl
+    public partial class scrollViewer : contentControl
     {
       public static readonly IProperty<System.Windows.Controls.ScrollViewer, System.Boolean> canContentScroll = new Property<System.Windows.Controls.ScrollViewer, System.Boolean>(System.Windows.Controls.ScrollViewer.CanContentScrollProperty);
       public static readonly IProperty<System.Windows.Controls.ScrollViewer, System.Windows.Controls.ScrollBarVisibility> horizontalScrollBarVisibility = new Property<System.Windows.Controls.ScrollViewer, System.Windows.Controls.ScrollBarVisibility>(System.Windows.Controls.ScrollViewer.HorizontalScrollBarVisibilityProperty);
@@ -886,12 +886,12 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.ScrollViewer, System.Double> panningRatio = new Property<System.Windows.Controls.ScrollViewer, System.Double>(System.Windows.Controls.ScrollViewer.PanningRatioProperty);
     }
 
-    public class selectiveScrollingGrid : grid
+    public partial class selectiveScrollingGrid : grid
     {
       public static readonly IProperty<System.Windows.Controls.Primitives.SelectiveScrollingGrid, System.Windows.Controls.SelectiveScrollingOrientation> selectiveScrollingOrientation = new Property<System.Windows.Controls.Primitives.SelectiveScrollingGrid, System.Windows.Controls.SelectiveScrollingOrientation>(System.Windows.Controls.Primitives.SelectiveScrollingGrid.SelectiveScrollingOrientationProperty);
     }
 
-    public class selector : itemsControl
+    public partial class selector : itemsControl
     {
       public static readonly IProperty<System.Windows.Controls.Primitives.Selector, System.Boolean> isSelectionActive = new Property<System.Windows.Controls.Primitives.Selector, System.Boolean>(System.Windows.Controls.Primitives.Selector.IsSelectionActiveProperty);
       public static readonly IProperty<System.Windows.Controls.Primitives.Selector, System.Boolean> isSelected = new Property<System.Windows.Controls.Primitives.Selector, System.Boolean>(System.Windows.Controls.Primitives.Selector.IsSelectedProperty);
@@ -902,11 +902,11 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.Primitives.Selector, System.String> selectedValuePath = new Property<System.Windows.Controls.Primitives.Selector, System.String>(System.Windows.Controls.Primitives.Selector.SelectedValuePathProperty);
     }
 
-    public class separator : control
+    public partial class separator : control
     {
     }
 
-    public class shape : frameworkElement
+    public partial class shape : frameworkElement
     {
       public static readonly IProperty<System.Windows.Shapes.Shape, System.Windows.Media.Stretch> stretch = new Property<System.Windows.Shapes.Shape, System.Windows.Media.Stretch>(System.Windows.Shapes.Shape.StretchProperty);
       public static readonly IProperty<System.Windows.Shapes.Shape, System.Windows.Media.Brush> fill = new Property<System.Windows.Shapes.Shape, System.Windows.Media.Brush>(System.Windows.Shapes.Shape.FillProperty);
@@ -921,7 +921,7 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Shapes.Shape, System.Windows.Media.DoubleCollection> strokeDashArray = new Property<System.Windows.Shapes.Shape, System.Windows.Media.DoubleCollection>(System.Windows.Shapes.Shape.StrokeDashArrayProperty);
     }
 
-    public class slider : rangeBase
+    public partial class slider : rangeBase
     {
       public static readonly IProperty<System.Windows.Controls.Slider, System.Windows.Controls.Orientation> orientation = new Property<System.Windows.Controls.Slider, System.Windows.Controls.Orientation>(System.Windows.Controls.Slider.OrientationProperty);
       public static readonly IProperty<System.Windows.Controls.Slider, System.Boolean> isDirectionReversed = new Property<System.Windows.Controls.Slider, System.Boolean>(System.Windows.Controls.Slider.IsDirectionReversedProperty);
@@ -939,22 +939,22 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.Slider, System.Boolean> isMoveToPointEnabled = new Property<System.Windows.Controls.Slider, System.Boolean>(System.Windows.Controls.Slider.IsMoveToPointEnabledProperty);
     }
 
-    public class stackPanel : panel
+    public partial class stackPanel : panel
     {
       public static readonly IProperty<System.Windows.Controls.StackPanel, System.Windows.Controls.Orientation> orientation = new Property<System.Windows.Controls.StackPanel, System.Windows.Controls.Orientation>(System.Windows.Controls.StackPanel.OrientationProperty);
     }
 
-    public class statusBar : itemsControl
+    public partial class statusBar : itemsControl
     {
       public static readonly IProperty<System.Windows.Controls.Primitives.StatusBar, System.Windows.Controls.ItemContainerTemplateSelector> itemContainerTemplateSelector = new Property<System.Windows.Controls.Primitives.StatusBar, System.Windows.Controls.ItemContainerTemplateSelector>(System.Windows.Controls.Primitives.StatusBar.ItemContainerTemplateSelectorProperty);
       public static readonly IProperty<System.Windows.Controls.Primitives.StatusBar, System.Boolean> usesItemContainerTemplate = new Property<System.Windows.Controls.Primitives.StatusBar, System.Boolean>(System.Windows.Controls.Primitives.StatusBar.UsesItemContainerTemplateProperty);
     }
 
-    public class statusBarItem : contentControl
+    public partial class statusBarItem : contentControl
     {
     }
 
-    public class stickyNoteControl : control
+    public partial class stickyNoteControl : control
     {
       public static readonly IProperty<System.Windows.Controls.StickyNoteControl, System.String> author = new Property<System.Windows.Controls.StickyNoteControl, System.String>(System.Windows.Controls.StickyNoteControl.AuthorProperty);
       public static readonly IProperty<System.Windows.Controls.StickyNoteControl, System.Boolean> isExpanded = new Property<System.Windows.Controls.StickyNoteControl, System.Boolean>(System.Windows.Controls.StickyNoteControl.IsExpandedProperty);
@@ -969,7 +969,7 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.StickyNoteControl, System.Windows.Controls.StickyNoteType> stickyNoteType = new Property<System.Windows.Controls.StickyNoteControl, System.Windows.Controls.StickyNoteType>(System.Windows.Controls.StickyNoteControl.StickyNoteTypeProperty);
     }
 
-    public class tabControl : selector
+    public partial class tabControl : selector
     {
       public static readonly IProperty<System.Windows.Controls.TabControl, System.Windows.Controls.Dock> tabStripPlacement = new Property<System.Windows.Controls.TabControl, System.Windows.Controls.Dock>(System.Windows.Controls.TabControl.TabStripPlacementProperty);
       public static readonly IProperty<System.Windows.Controls.TabControl, System.Object> selectedContent = new Property<System.Windows.Controls.TabControl, System.Object>(System.Windows.Controls.TabControl.SelectedContentProperty);
@@ -981,17 +981,17 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.TabControl, System.String> contentStringFormat = new Property<System.Windows.Controls.TabControl, System.String>(System.Windows.Controls.TabControl.ContentStringFormatProperty);
     }
 
-    public class tabItem : headeredContentControl
+    public partial class tabItem : headeredContentControl
     {
       public static readonly IProperty<System.Windows.Controls.TabItem, System.Boolean> isSelected = new Property<System.Windows.Controls.TabItem, System.Boolean>(System.Windows.Controls.TabItem.IsSelectedProperty);
       public static readonly IProperty<System.Windows.Controls.TabItem, System.Windows.Controls.Dock> tabStripPlacement = new Property<System.Windows.Controls.TabItem, System.Windows.Controls.Dock>(System.Windows.Controls.TabItem.TabStripPlacementProperty);
     }
 
-    public class tabPanel : panel
+    public partial class tabPanel : panel
     {
     }
 
-    public class textBlock : frameworkElement
+    public partial class textBlock : frameworkElement
     {
       public static readonly IProperty<System.Windows.Controls.TextBlock, System.Double> baselineOffset = new Property<System.Windows.Controls.TextBlock, System.Double>(System.Windows.Controls.TextBlock.BaselineOffsetProperty);
       public static readonly IProperty<System.Windows.Controls.TextBlock, System.String> text = new Property<System.Windows.Controls.TextBlock, System.String>(System.Windows.Controls.TextBlock.TextProperty);
@@ -1013,7 +1013,7 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.TextBlock, System.Boolean> isHyphenationEnabled = new Property<System.Windows.Controls.TextBlock, System.Boolean>(System.Windows.Controls.TextBlock.IsHyphenationEnabledProperty);
     }
 
-    public class textBox : textBoxBase
+    public partial class textBox : textBoxBase
     {
       public static readonly IProperty<System.Windows.Controls.TextBox, System.Windows.TextWrapping> textWrapping = new Property<System.Windows.Controls.TextBox, System.Windows.TextWrapping>(System.Windows.Controls.TextBox.TextWrappingProperty);
       public static readonly IProperty<System.Windows.Controls.TextBox, System.Int32> minLines = new Property<System.Windows.Controls.TextBox, System.Int32>(System.Windows.Controls.TextBox.MinLinesProperty);
@@ -1025,7 +1025,7 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.TextBox, System.Windows.TextDecorationCollection> textDecorations = new Property<System.Windows.Controls.TextBox, System.Windows.TextDecorationCollection>(System.Windows.Controls.TextBox.TextDecorationsProperty);
     }
 
-    public class textBoxBase : control
+    public partial class textBoxBase : control
     {
       public static readonly IProperty<System.Windows.Controls.Primitives.TextBoxBase, System.Boolean> isReadOnly = new Property<System.Windows.Controls.Primitives.TextBoxBase, System.Boolean>(System.Windows.Controls.Primitives.TextBoxBase.IsReadOnlyProperty);
       public static readonly IProperty<System.Windows.Controls.Primitives.TextBoxBase, System.Boolean> isReadOnlyCaretVisible = new Property<System.Windows.Controls.Primitives.TextBoxBase, System.Boolean>(System.Windows.Controls.Primitives.TextBoxBase.IsReadOnlyCaretVisibleProperty);
@@ -1043,12 +1043,12 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.Primitives.TextBoxBase, System.Boolean> isInactiveSelectionHighlightEnabled = new Property<System.Windows.Controls.Primitives.TextBoxBase, System.Boolean>(System.Windows.Controls.Primitives.TextBoxBase.IsInactiveSelectionHighlightEnabledProperty);
     }
 
-    public class thumb : control
+    public partial class thumb : control
     {
       public static readonly IProperty<System.Windows.Controls.Primitives.Thumb, System.Boolean> isDragging = new Property<System.Windows.Controls.Primitives.Thumb, System.Boolean>(System.Windows.Controls.Primitives.Thumb.IsDraggingProperty);
     }
 
-    public class tickBar : frameworkElement
+    public partial class tickBar : frameworkElement
     {
       public static readonly IProperty<System.Windows.Controls.Primitives.TickBar, System.Windows.Media.Brush> fill = new Property<System.Windows.Controls.Primitives.TickBar, System.Windows.Media.Brush>(System.Windows.Controls.Primitives.TickBar.FillProperty);
       public static readonly IProperty<System.Windows.Controls.Primitives.TickBar, System.Double> minimum = new Property<System.Windows.Controls.Primitives.TickBar, System.Double>(System.Windows.Controls.Primitives.TickBar.MinimumProperty);
@@ -1063,13 +1063,13 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.Primitives.TickBar, System.Double> reservedSpace = new Property<System.Windows.Controls.Primitives.TickBar, System.Double>(System.Windows.Controls.Primitives.TickBar.ReservedSpaceProperty);
     }
 
-    public class toggleButton : buttonBase
+    public partial class toggleButton : buttonBase
     {
       public static readonly IProperty<System.Windows.Controls.Primitives.ToggleButton, System.Nullable<System.Boolean>> isChecked = new Property<System.Windows.Controls.Primitives.ToggleButton, System.Nullable<System.Boolean>>(System.Windows.Controls.Primitives.ToggleButton.IsCheckedProperty);
       public static readonly IProperty<System.Windows.Controls.Primitives.ToggleButton, System.Boolean> isThreeState = new Property<System.Windows.Controls.Primitives.ToggleButton, System.Boolean>(System.Windows.Controls.Primitives.ToggleButton.IsThreeStateProperty);
     }
 
-    public class toolBar : headeredItemsControl
+    public partial class toolBar : headeredItemsControl
     {
       public static readonly IProperty<System.Windows.Controls.ToolBar, System.Windows.Controls.Orientation> orientation = new Property<System.Windows.Controls.ToolBar, System.Windows.Controls.Orientation>(System.Windows.Controls.ToolBar.OrientationProperty);
       public static readonly IProperty<System.Windows.Controls.ToolBar, System.Int32> band = new Property<System.Windows.Controls.ToolBar, System.Int32>(System.Windows.Controls.ToolBar.BandProperty);
@@ -1080,23 +1080,23 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.ToolBar, System.Windows.Controls.OverflowMode> overflowMode = new Property<System.Windows.Controls.ToolBar, System.Windows.Controls.OverflowMode>(System.Windows.Controls.ToolBar.OverflowModeProperty);
     }
 
-    public class toolBarOverflowPanel : panel
+    public partial class toolBarOverflowPanel : panel
     {
       public static readonly IProperty<System.Windows.Controls.Primitives.ToolBarOverflowPanel, System.Double> wrapWidth = new Property<System.Windows.Controls.Primitives.ToolBarOverflowPanel, System.Double>(System.Windows.Controls.Primitives.ToolBarOverflowPanel.WrapWidthProperty);
     }
 
-    public class toolBarPanel : stackPanel
+    public partial class toolBarPanel : stackPanel
     {
     }
 
-    public class toolBarTray : frameworkElement
+    public partial class toolBarTray : frameworkElement
     {
       public static readonly IProperty<System.Windows.Controls.ToolBarTray, System.Windows.Media.Brush> background = new Property<System.Windows.Controls.ToolBarTray, System.Windows.Media.Brush>(System.Windows.Controls.ToolBarTray.BackgroundProperty);
       public static readonly IProperty<System.Windows.Controls.ToolBarTray, System.Windows.Controls.Orientation> orientation = new Property<System.Windows.Controls.ToolBarTray, System.Windows.Controls.Orientation>(System.Windows.Controls.ToolBarTray.OrientationProperty);
       public static readonly IProperty<System.Windows.Controls.ToolBarTray, System.Boolean> isLocked = new Property<System.Windows.Controls.ToolBarTray, System.Boolean>(System.Windows.Controls.ToolBarTray.IsLockedProperty);
     }
 
-    public class toolTip : contentControl
+    public partial class toolTip : contentControl
     {
       public static readonly IProperty<System.Windows.Controls.ToolTip, System.Double> horizontalOffset = new Property<System.Windows.Controls.ToolTip, System.Double>(System.Windows.Controls.ToolTip.HorizontalOffsetProperty);
       public static readonly IProperty<System.Windows.Controls.ToolTip, System.Double> verticalOffset = new Property<System.Windows.Controls.ToolTip, System.Double>(System.Windows.Controls.ToolTip.VerticalOffsetProperty);
@@ -1109,7 +1109,7 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.ToolTip, System.Boolean> staysOpen = new Property<System.Windows.Controls.ToolTip, System.Boolean>(System.Windows.Controls.ToolTip.StaysOpenProperty);
     }
 
-    public class track : frameworkElement
+    public partial class track : frameworkElement
     {
       public static readonly IProperty<System.Windows.Controls.Primitives.Track, System.Windows.Controls.Orientation> orientation = new Property<System.Windows.Controls.Primitives.Track, System.Windows.Controls.Orientation>(System.Windows.Controls.Primitives.Track.OrientationProperty);
       public static readonly IProperty<System.Windows.Controls.Primitives.Track, System.Double> minimum = new Property<System.Windows.Controls.Primitives.Track, System.Double>(System.Windows.Controls.Primitives.Track.MinimumProperty);
@@ -1119,21 +1119,21 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.Primitives.Track, System.Boolean> isDirectionReversed = new Property<System.Windows.Controls.Primitives.Track, System.Boolean>(System.Windows.Controls.Primitives.Track.IsDirectionReversedProperty);
     }
 
-    public class treeView : itemsControl
+    public partial class treeView : itemsControl
     {
       public static readonly IProperty<System.Windows.Controls.TreeView, System.Object> selectedItem = new Property<System.Windows.Controls.TreeView, System.Object>(System.Windows.Controls.TreeView.SelectedItemProperty);
       public static readonly IProperty<System.Windows.Controls.TreeView, System.Object> selectedValue = new Property<System.Windows.Controls.TreeView, System.Object>(System.Windows.Controls.TreeView.SelectedValueProperty);
       public static readonly IProperty<System.Windows.Controls.TreeView, System.String> selectedValuePath = new Property<System.Windows.Controls.TreeView, System.String>(System.Windows.Controls.TreeView.SelectedValuePathProperty);
     }
 
-    public class treeViewItem : headeredItemsControl
+    public partial class treeViewItem : headeredItemsControl
     {
       public static readonly IProperty<System.Windows.Controls.TreeViewItem, System.Boolean> isExpanded = new Property<System.Windows.Controls.TreeViewItem, System.Boolean>(System.Windows.Controls.TreeViewItem.IsExpandedProperty);
       public static readonly IProperty<System.Windows.Controls.TreeViewItem, System.Boolean> isSelected = new Property<System.Windows.Controls.TreeViewItem, System.Boolean>(System.Windows.Controls.TreeViewItem.IsSelectedProperty);
       public static readonly IProperty<System.Windows.Controls.TreeViewItem, System.Boolean> isSelectionActive = new Property<System.Windows.Controls.TreeViewItem, System.Boolean>(System.Windows.Controls.TreeViewItem.IsSelectionActiveProperty);
     }
 
-    public class uIElement
+    public partial class uIElement
     {
       public static readonly IProperty<System.Windows.UIElement, System.Boolean> isMouseDirectlyOver = new Property<System.Windows.UIElement, System.Boolean>(System.Windows.UIElement.IsMouseDirectlyOverProperty);
       public static readonly IProperty<System.Windows.UIElement, System.Boolean> isMouseOver = new Property<System.Windows.UIElement, System.Boolean>(System.Windows.UIElement.IsMouseOverProperty);
@@ -1171,34 +1171,34 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.UIElement, System.Boolean> isManipulationEnabled = new Property<System.Windows.UIElement, System.Boolean>(System.Windows.UIElement.IsManipulationEnabledProperty);
     }
 
-    public class uniformGrid : panel
+    public partial class uniformGrid : panel
     {
       public static readonly IProperty<System.Windows.Controls.Primitives.UniformGrid, System.Int32> firstColumn = new Property<System.Windows.Controls.Primitives.UniformGrid, System.Int32>(System.Windows.Controls.Primitives.UniformGrid.FirstColumnProperty);
       public static readonly IProperty<System.Windows.Controls.Primitives.UniformGrid, System.Int32> columns = new Property<System.Windows.Controls.Primitives.UniformGrid, System.Int32>(System.Windows.Controls.Primitives.UniformGrid.ColumnsProperty);
       public static readonly IProperty<System.Windows.Controls.Primitives.UniformGrid, System.Int32> rows = new Property<System.Windows.Controls.Primitives.UniformGrid, System.Int32>(System.Windows.Controls.Primitives.UniformGrid.RowsProperty);
     }
 
-    public class userControl : contentControl
+    public partial class userControl : contentControl
     {
     }
 
-    public class webBrowser : activeXHost
+    public partial class webBrowser : activeXHost
     {
     }
 
-    public class viewbox : decorator
+    public partial class viewbox : decorator
     {
       public static readonly IProperty<System.Windows.Controls.Viewbox, System.Windows.Media.Stretch> stretch = new Property<System.Windows.Controls.Viewbox, System.Windows.Media.Stretch>(System.Windows.Controls.Viewbox.StretchProperty);
       public static readonly IProperty<System.Windows.Controls.Viewbox, System.Windows.Controls.StretchDirection> stretchDirection = new Property<System.Windows.Controls.Viewbox, System.Windows.Controls.StretchDirection>(System.Windows.Controls.Viewbox.StretchDirectionProperty);
     }
 
-    public class viewport3D : frameworkElement
+    public partial class viewport3D : frameworkElement
     {
       public static readonly IProperty<System.Windows.Controls.Viewport3D, System.Windows.Media.Media3D.Camera> camera = new Property<System.Windows.Controls.Viewport3D, System.Windows.Media.Media3D.Camera>(System.Windows.Controls.Viewport3D.CameraProperty);
       public static readonly IProperty<System.Windows.Controls.Viewport3D, System.Windows.Media.Media3D.Visual3DCollection> children = new Property<System.Windows.Controls.Viewport3D, System.Windows.Media.Media3D.Visual3DCollection>(System.Windows.Controls.Viewport3D.ChildrenProperty);
     }
 
-    public class window : contentControl
+    public partial class window : contentControl
     {
       public static readonly IProperty<System.Windows.Window, System.Windows.Shell.TaskbarItemInfo> taskbarItemInfo = new Property<System.Windows.Window, System.Windows.Shell.TaskbarItemInfo>(System.Windows.Window.TaskbarItemInfoProperty);
       public static readonly IProperty<System.Windows.Window, System.Boolean> allowsTransparency = new Property<System.Windows.Window, System.Boolean>(System.Windows.Window.AllowsTransparencyProperty);
@@ -1216,7 +1216,7 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Window, System.Boolean> showActivated = new Property<System.Windows.Window, System.Boolean>(System.Windows.Window.ShowActivatedProperty);
     }
 
-    public class virtualizingPanel : panel
+    public partial class virtualizingPanel : panel
     {
       public static readonly IProperty<System.Windows.Controls.VirtualizingPanel, System.Boolean> isVirtualizing = new Property<System.Windows.Controls.VirtualizingPanel, System.Boolean>(System.Windows.Controls.VirtualizingPanel.IsVirtualizingProperty);
       public static readonly IProperty<System.Windows.Controls.VirtualizingPanel, System.Windows.Controls.VirtualizationMode> virtualizationMode = new Property<System.Windows.Controls.VirtualizingPanel, System.Windows.Controls.VirtualizationMode>(System.Windows.Controls.VirtualizingPanel.VirtualizationModeProperty);
@@ -1227,14 +1227,14 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.VirtualizingPanel, System.Boolean> isContainerVirtualizable = new Property<System.Windows.Controls.VirtualizingPanel, System.Boolean>(System.Windows.Controls.VirtualizingPanel.IsContainerVirtualizableProperty);
     }
 
-    public class virtualizingStackPanel : virtualizingPanel
+    public partial class virtualizingStackPanel : virtualizingPanel
     {
       public static readonly IProperty<System.Windows.Controls.VirtualizingStackPanel, System.Boolean> isVirtualizing = new Property<System.Windows.Controls.VirtualizingStackPanel, System.Boolean>(System.Windows.Controls.VirtualizingStackPanel.IsVirtualizingProperty);
       public static readonly IProperty<System.Windows.Controls.VirtualizingStackPanel, System.Windows.Controls.VirtualizationMode> virtualizationMode = new Property<System.Windows.Controls.VirtualizingStackPanel, System.Windows.Controls.VirtualizationMode>(System.Windows.Controls.VirtualizingStackPanel.VirtualizationModeProperty);
       public static readonly IProperty<System.Windows.Controls.VirtualizingStackPanel, System.Windows.Controls.Orientation> orientation = new Property<System.Windows.Controls.VirtualizingStackPanel, System.Windows.Controls.Orientation>(System.Windows.Controls.VirtualizingStackPanel.OrientationProperty);
     }
 
-    public class wrapPanel : panel
+    public partial class wrapPanel : panel
     {
       public static readonly IProperty<System.Windows.Controls.WrapPanel, System.Double> itemWidth = new Property<System.Windows.Controls.WrapPanel, System.Double>(System.Windows.Controls.WrapPanel.ItemWidthProperty);
       public static readonly IProperty<System.Windows.Controls.WrapPanel, System.Double> itemHeight = new Property<System.Windows.Controls.WrapPanel, System.Double>(System.Windows.Controls.WrapPanel.ItemHeightProperty);
@@ -1243,210 +1243,210 @@ namespace Galactus.Standard
 
   }
 
-  public static class Events
+  public static partial class Events
   {
-    public class accessText : frameworkElement
+    public partial class accessText : frameworkElement
     {
     }
 
-    public class activeXHost : hwndHost
+    public partial class activeXHost : hwndHost
     {
     }
 
-    public class adornedElementPlaceholder : frameworkElement
+    public partial class adornedElementPlaceholder : frameworkElement
     {
     }
 
-    public class adorner : frameworkElement
+    public partial class adorner : frameworkElement
     {
     }
 
-    public class adornerDecorator : decorator
+    public partial class adornerDecorator : decorator
     {
     }
 
-    public class adornerLayer : frameworkElement
+    public partial class adornerLayer : frameworkElement
     {
     }
 
-    public class border : decorator
+    public partial class border : decorator
     {
     }
 
-    public class bulletDecorator : decorator
+    public partial class bulletDecorator : decorator
     {
     }
 
-    public class button : buttonBase
+    public partial class button : buttonBase
     {
     }
 
-    public class buttonBase : contentControl
+    public partial class buttonBase : contentControl
     {
       public static readonly IEvent<System.Windows.Controls.Primitives.ButtonBase, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> click = new Event<System.Windows.Controls.Primitives.ButtonBase, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.Primitives.ButtonBase.ClickEvent);
     }
 
-    public class calendar : control
+    public partial class calendar : control
     {
       public static readonly IEvent<System.Windows.Controls.Calendar, System.EventHandler<System.Windows.Controls.SelectionChangedEventArgs>, System.Windows.Controls.SelectionChangedEventArgs> selectedDatesChanged = new Event<System.Windows.Controls.Calendar, System.EventHandler<System.Windows.Controls.SelectionChangedEventArgs>, System.Windows.Controls.SelectionChangedEventArgs>(System.Windows.Controls.Calendar.SelectedDatesChangedEvent);
     }
 
-    public class calendarButton : button
+    public partial class calendarButton : button
     {
     }
 
-    public class calendarDayButton : button
+    public partial class calendarDayButton : button
     {
     }
 
-    public class calendarItem : control
+    public partial class calendarItem : control
     {
     }
 
-    public class canvas : panel
+    public partial class canvas : panel
     {
     }
 
-    public class checkBox : toggleButton
+    public partial class checkBox : toggleButton
     {
     }
 
-    public class comboBox : selector
+    public partial class comboBox : selector
     {
     }
 
-    public class comboBoxItem : listBoxItem
+    public partial class comboBoxItem : listBoxItem
     {
     }
 
-    public class contentControl : control
+    public partial class contentControl : control
     {
     }
 
-    public class contentPresenter : frameworkElement
+    public partial class contentPresenter : frameworkElement
     {
     }
 
-    public class contextMenu : menuBase
+    public partial class contextMenu : menuBase
     {
       public static readonly IEvent<System.Windows.Controls.ContextMenu, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> opened = new Event<System.Windows.Controls.ContextMenu, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.ContextMenu.OpenedEvent);
       public static readonly IEvent<System.Windows.Controls.ContextMenu, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> closed = new Event<System.Windows.Controls.ContextMenu, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.ContextMenu.ClosedEvent);
     }
 
-    public class control : frameworkElement
+    public partial class control : frameworkElement
     {
       public static readonly IEvent<System.Windows.Controls.Control, System.Windows.Input.MouseButtonEventHandler, System.Windows.Input.MouseButtonEventArgs> previewMouseDoubleClick = new Event<System.Windows.Controls.Control, System.Windows.Input.MouseButtonEventHandler, System.Windows.Input.MouseButtonEventArgs>(System.Windows.Controls.Control.PreviewMouseDoubleClickEvent);
       public static readonly IEvent<System.Windows.Controls.Control, System.Windows.Input.MouseButtonEventHandler, System.Windows.Input.MouseButtonEventArgs> mouseDoubleClick = new Event<System.Windows.Controls.Control, System.Windows.Input.MouseButtonEventHandler, System.Windows.Input.MouseButtonEventArgs>(System.Windows.Controls.Control.MouseDoubleClickEvent);
     }
 
-    public class dataGrid : multiSelector
+    public partial class dataGrid : multiSelector
     {
     }
 
-    public class dataGridCell : contentControl
+    public partial class dataGridCell : contentControl
     {
       public static readonly IEvent<System.Windows.Controls.DataGridCell, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> selected = new Event<System.Windows.Controls.DataGridCell, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.DataGridCell.SelectedEvent);
       public static readonly IEvent<System.Windows.Controls.DataGridCell, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> unselected = new Event<System.Windows.Controls.DataGridCell, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.DataGridCell.UnselectedEvent);
     }
 
-    public class dataGridCellsPanel : virtualizingPanel
+    public partial class dataGridCellsPanel : virtualizingPanel
     {
     }
 
-    public class dataGridCellsPresenter : itemsControl
+    public partial class dataGridCellsPresenter : itemsControl
     {
     }
 
-    public class dataGridColumnHeader : buttonBase
+    public partial class dataGridColumnHeader : buttonBase
     {
     }
 
-    public class dataGridColumnHeadersPresenter : itemsControl
+    public partial class dataGridColumnHeadersPresenter : itemsControl
     {
     }
 
-    public class dataGridDetailsPresenter : contentPresenter
+    public partial class dataGridDetailsPresenter : contentPresenter
     {
     }
 
-    public class dataGridRow : control
+    public partial class dataGridRow : control
     {
       public static readonly IEvent<System.Windows.Controls.DataGridRow, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> selected = new Event<System.Windows.Controls.DataGridRow, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.DataGridRow.SelectedEvent);
       public static readonly IEvent<System.Windows.Controls.DataGridRow, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> unselected = new Event<System.Windows.Controls.DataGridRow, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.DataGridRow.UnselectedEvent);
     }
 
-    public class dataGridRowHeader : buttonBase
+    public partial class dataGridRowHeader : buttonBase
     {
     }
 
-    public class dataGridRowsPresenter : virtualizingStackPanel
+    public partial class dataGridRowsPresenter : virtualizingStackPanel
     {
     }
 
-    public class datePicker : control
+    public partial class datePicker : control
     {
       public static readonly IEvent<System.Windows.Controls.DatePicker, System.EventHandler<System.Windows.Controls.SelectionChangedEventArgs>, System.Windows.Controls.SelectionChangedEventArgs> selectedDateChanged = new Event<System.Windows.Controls.DatePicker, System.EventHandler<System.Windows.Controls.SelectionChangedEventArgs>, System.Windows.Controls.SelectionChangedEventArgs>(System.Windows.Controls.DatePicker.SelectedDateChangedEvent);
     }
 
-    public class datePickerTextBox : textBox
+    public partial class datePickerTextBox : textBox
     {
     }
 
-    public class decorator : frameworkElement
+    public partial class decorator : frameworkElement
     {
     }
 
-    public class dockPanel : panel
+    public partial class dockPanel : panel
     {
     }
 
-    public class documentPageView : frameworkElement
+    public partial class documentPageView : frameworkElement
     {
     }
 
-    public class documentReference : frameworkElement
+    public partial class documentReference : frameworkElement
     {
     }
 
-    public class documentViewer : documentViewerBase
+    public partial class documentViewer : documentViewerBase
     {
     }
 
-    public class documentViewerBase : control
+    public partial class documentViewerBase : control
     {
     }
 
-    public class ellipse : shape
+    public partial class ellipse : shape
     {
     }
 
-    public class expander : headeredContentControl
+    public partial class expander : headeredContentControl
     {
       public static readonly IEvent<System.Windows.Controls.Expander, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> expanded = new Event<System.Windows.Controls.Expander, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.Expander.ExpandedEvent);
       public static readonly IEvent<System.Windows.Controls.Expander, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> collapsed = new Event<System.Windows.Controls.Expander, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.Expander.CollapsedEvent);
     }
 
-    public class fixedPage : frameworkElement
+    public partial class fixedPage : frameworkElement
     {
     }
 
-    public class flowDocumentPageViewer : documentViewerBase
+    public partial class flowDocumentPageViewer : documentViewerBase
     {
     }
 
-    public class flowDocumentReader : control
+    public partial class flowDocumentReader : control
     {
     }
 
-    public class flowDocumentScrollViewer : control
+    public partial class flowDocumentScrollViewer : control
     {
     }
 
-    public class frame : contentControl
+    public partial class frame : contentControl
     {
     }
 
-    public class frameworkElement : uIElement
+    public partial class frameworkElement : uIElement
     {
       public static readonly IEvent<System.Windows.FrameworkElement, System.Windows.RequestBringIntoViewEventHandler, System.Windows.RequestBringIntoViewEventArgs> requestBringIntoView = new Event<System.Windows.FrameworkElement, System.Windows.RequestBringIntoViewEventHandler, System.Windows.RequestBringIntoViewEventArgs>(System.Windows.FrameworkElement.RequestBringIntoViewEvent);
       public static readonly IEvent<System.Windows.FrameworkElement, System.Windows.SizeChangedEventHandler, System.Windows.SizeChangedEventArgs> sizeChanged = new Event<System.Windows.FrameworkElement, System.Windows.SizeChangedEventHandler, System.Windows.SizeChangedEventArgs>(System.Windows.FrameworkElement.SizeChangedEvent);
@@ -1458,62 +1458,62 @@ namespace Galactus.Standard
       public static readonly IEvent<System.Windows.FrameworkElement, System.Windows.Controls.ContextMenuEventHandler, System.Windows.Controls.ContextMenuEventArgs> contextMenuClosing = new Event<System.Windows.FrameworkElement, System.Windows.Controls.ContextMenuEventHandler, System.Windows.Controls.ContextMenuEventArgs>(System.Windows.FrameworkElement.ContextMenuClosingEvent);
     }
 
-    public class glyphs : frameworkElement
+    public partial class glyphs : frameworkElement
     {
     }
 
-    public class grid : panel
+    public partial class grid : panel
     {
     }
 
-    public class gridSplitter : thumb
+    public partial class gridSplitter : thumb
     {
     }
 
-    public class gridViewColumnHeader : buttonBase
+    public partial class gridViewColumnHeader : buttonBase
     {
     }
 
-    public class gridViewHeaderRowPresenter : gridViewRowPresenterBase
+    public partial class gridViewHeaderRowPresenter : gridViewRowPresenterBase
     {
     }
 
-    public class gridViewRowPresenter : gridViewRowPresenterBase
+    public partial class gridViewRowPresenter : gridViewRowPresenterBase
     {
     }
 
-    public class gridViewRowPresenterBase : frameworkElement
+    public partial class gridViewRowPresenterBase : frameworkElement
     {
     }
 
-    public class groupBox : headeredContentControl
+    public partial class groupBox : headeredContentControl
     {
     }
 
-    public class groupItem : contentControl
+    public partial class groupItem : contentControl
     {
     }
 
-    public class headeredContentControl : contentControl
+    public partial class headeredContentControl : contentControl
     {
     }
 
-    public class headeredItemsControl : itemsControl
+    public partial class headeredItemsControl : itemsControl
     {
     }
 
-    public class hwndHost : frameworkElement
+    public partial class hwndHost : frameworkElement
     {
       public static readonly IEvent<System.Windows.Interop.HwndHost, System.Windows.DpiChangedEventHandler, System.Windows.DpiChangedEventArgs> dpiChanged = new Event<System.Windows.Interop.HwndHost, System.Windows.DpiChangedEventHandler, System.Windows.DpiChangedEventArgs>(System.Windows.Interop.HwndHost.DpiChangedEvent);
     }
 
-    public class image : frameworkElement
+    public partial class image : frameworkElement
     {
       public static readonly IEvent<System.Windows.Controls.Image, System.Windows.DpiChangedEventHandler, System.Windows.DpiChangedEventArgs> dpiChanged = new Event<System.Windows.Controls.Image, System.Windows.DpiChangedEventHandler, System.Windows.DpiChangedEventArgs>(System.Windows.Controls.Image.DpiChangedEvent);
       public static readonly IEvent<System.Windows.Controls.Image, System.EventHandler<System.Windows.ExceptionRoutedEventArgs>, System.Windows.ExceptionRoutedEventArgs> imageFailed = new Event<System.Windows.Controls.Image, System.EventHandler<System.Windows.ExceptionRoutedEventArgs>, System.Windows.ExceptionRoutedEventArgs>(System.Windows.Controls.Image.ImageFailedEvent);
     }
 
-    public class inkCanvas : frameworkElement
+    public partial class inkCanvas : frameworkElement
     {
       public static readonly IEvent<System.Windows.Controls.InkCanvas, System.Windows.Controls.InkCanvasStrokeCollectedEventHandler, System.Windows.Controls.InkCanvasStrokeCollectedEventArgs> strokeCollected = new Event<System.Windows.Controls.InkCanvas, System.Windows.Controls.InkCanvasStrokeCollectedEventHandler, System.Windows.Controls.InkCanvasStrokeCollectedEventArgs>(System.Windows.Controls.InkCanvas.StrokeCollectedEvent);
       public static readonly IEvent<System.Windows.Controls.InkCanvas, System.Windows.Controls.InkCanvasGestureEventHandler, System.Windows.Controls.InkCanvasGestureEventArgs> gesture = new Event<System.Windows.Controls.InkCanvas, System.Windows.Controls.InkCanvasGestureEventHandler, System.Windows.Controls.InkCanvasGestureEventArgs>(System.Windows.Controls.InkCanvas.GestureEvent);
@@ -1523,45 +1523,45 @@ namespace Galactus.Standard
       public static readonly IEvent<System.Windows.Controls.InkCanvas, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> strokeErased = new Event<System.Windows.Controls.InkCanvas, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.InkCanvas.StrokeErasedEvent);
     }
 
-    public class inkPresenter : decorator
+    public partial class inkPresenter : decorator
     {
     }
 
-    public class itemsControl : control
+    public partial class itemsControl : control
     {
     }
 
-    public class itemsPresenter : frameworkElement
+    public partial class itemsPresenter : frameworkElement
     {
     }
 
-    public class label : contentControl
+    public partial class label : contentControl
     {
     }
 
-    public class line : shape
+    public partial class line : shape
     {
     }
 
-    public class listBox : selector
+    public partial class listBox : selector
     {
     }
 
-    public class listBoxItem : contentControl
+    public partial class listBoxItem : contentControl
     {
       public static readonly IEvent<System.Windows.Controls.ListBoxItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> selected = new Event<System.Windows.Controls.ListBoxItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.ListBoxItem.SelectedEvent);
       public static readonly IEvent<System.Windows.Controls.ListBoxItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> unselected = new Event<System.Windows.Controls.ListBoxItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.ListBoxItem.UnselectedEvent);
     }
 
-    public class listView : listBox
+    public partial class listView : listBox
     {
     }
 
-    public class listViewItem : listBoxItem
+    public partial class listViewItem : listBoxItem
     {
     }
 
-    public class mediaElement : frameworkElement
+    public partial class mediaElement : frameworkElement
     {
       public static readonly IEvent<System.Windows.Controls.MediaElement, System.EventHandler<System.Windows.ExceptionRoutedEventArgs>, System.Windows.ExceptionRoutedEventArgs> mediaFailed = new Event<System.Windows.Controls.MediaElement, System.EventHandler<System.Windows.ExceptionRoutedEventArgs>, System.Windows.ExceptionRoutedEventArgs>(System.Windows.Controls.MediaElement.MediaFailedEvent);
       public static readonly IEvent<System.Windows.Controls.MediaElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> mediaOpened = new Event<System.Windows.Controls.MediaElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.MediaElement.MediaOpenedEvent);
@@ -1571,15 +1571,15 @@ namespace Galactus.Standard
       public static readonly IEvent<System.Windows.Controls.MediaElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> mediaEnded = new Event<System.Windows.Controls.MediaElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.MediaElement.MediaEndedEvent);
     }
 
-    public class menu : menuBase
+    public partial class menu : menuBase
     {
     }
 
-    public class menuBase : itemsControl
+    public partial class menuBase : itemsControl
     {
     }
 
-    public class menuItem : headeredItemsControl
+    public partial class menuItem : headeredItemsControl
     {
       public static readonly IEvent<System.Windows.Controls.MenuItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> click = new Event<System.Windows.Controls.MenuItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.MenuItem.ClickEvent);
       public static readonly IEvent<System.Windows.Controls.MenuItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> checked_ = new Event<System.Windows.Controls.MenuItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.MenuItem.CheckedEvent);
@@ -1588,209 +1588,209 @@ namespace Galactus.Standard
       public static readonly IEvent<System.Windows.Controls.MenuItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> submenuClosed = new Event<System.Windows.Controls.MenuItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.MenuItem.SubmenuClosedEvent);
     }
 
-    public class multiSelector : selector
+    public partial class multiSelector : selector
     {
     }
 
-    public class navigationWindow : window
+    public partial class navigationWindow : window
     {
     }
 
-    public class page : frameworkElement
+    public partial class page : frameworkElement
     {
     }
 
-    public class pageContent : frameworkElement
+    public partial class pageContent : frameworkElement
     {
     }
 
-    public class pageFunctionBase : page
+    public partial class pageFunctionBase : page
     {
     }
 
-    public class panel : frameworkElement
+    public partial class panel : frameworkElement
     {
     }
 
-    public class passwordBox : control
+    public partial class passwordBox : control
     {
       public static readonly IEvent<System.Windows.Controls.PasswordBox, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> passwordChanged = new Event<System.Windows.Controls.PasswordBox, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.PasswordBox.PasswordChangedEvent);
     }
 
-    public class path : shape
+    public partial class path : shape
     {
     }
 
-    public class polygon : shape
+    public partial class polygon : shape
     {
     }
 
-    public class polyline : shape
+    public partial class polyline : shape
     {
     }
 
-    public class popup : frameworkElement
+    public partial class popup : frameworkElement
     {
     }
 
-    public class progressBar : rangeBase
+    public partial class progressBar : rangeBase
     {
     }
 
-    public class radioButton : toggleButton
+    public partial class radioButton : toggleButton
     {
     }
 
-    public class rangeBase : control
+    public partial class rangeBase : control
     {
       public static readonly IEvent<System.Windows.Controls.Primitives.RangeBase, System.Windows.RoutedPropertyChangedEventHandler<System.Double>, System.Windows.RoutedPropertyChangedEventArgs<System.Double>> valueChanged = new Event<System.Windows.Controls.Primitives.RangeBase, System.Windows.RoutedPropertyChangedEventHandler<System.Double>, System.Windows.RoutedPropertyChangedEventArgs<System.Double>>(System.Windows.Controls.Primitives.RangeBase.ValueChangedEvent);
     }
 
-    public class rectangle : shape
+    public partial class rectangle : shape
     {
     }
 
-    public class repeatButton : buttonBase
+    public partial class repeatButton : buttonBase
     {
     }
 
-    public class resizeGrip : control
+    public partial class resizeGrip : control
     {
     }
 
-    public class richTextBox : textBoxBase
+    public partial class richTextBox : textBoxBase
     {
     }
 
-    public class scrollBar : rangeBase
+    public partial class scrollBar : rangeBase
     {
       public static readonly IEvent<System.Windows.Controls.Primitives.ScrollBar, System.Windows.Controls.Primitives.ScrollEventHandler, System.Windows.Controls.Primitives.ScrollEventArgs> scroll = new Event<System.Windows.Controls.Primitives.ScrollBar, System.Windows.Controls.Primitives.ScrollEventHandler, System.Windows.Controls.Primitives.ScrollEventArgs>(System.Windows.Controls.Primitives.ScrollBar.ScrollEvent);
     }
 
-    public class scrollContentPresenter : contentPresenter
+    public partial class scrollContentPresenter : contentPresenter
     {
     }
 
-    public class scrollViewer : contentControl
+    public partial class scrollViewer : contentControl
     {
       public static readonly IEvent<System.Windows.Controls.ScrollViewer, System.Windows.Controls.ScrollChangedEventHandler, System.Windows.Controls.ScrollChangedEventArgs> scrollChanged = new Event<System.Windows.Controls.ScrollViewer, System.Windows.Controls.ScrollChangedEventHandler, System.Windows.Controls.ScrollChangedEventArgs>(System.Windows.Controls.ScrollViewer.ScrollChangedEvent);
     }
 
-    public class selectiveScrollingGrid : grid
+    public partial class selectiveScrollingGrid : grid
     {
     }
 
-    public class selector : itemsControl
+    public partial class selector : itemsControl
     {
       public static readonly IEvent<System.Windows.Controls.Primitives.Selector, System.Windows.Controls.SelectionChangedEventHandler, System.Windows.Controls.SelectionChangedEventArgs> selectionChanged = new Event<System.Windows.Controls.Primitives.Selector, System.Windows.Controls.SelectionChangedEventHandler, System.Windows.Controls.SelectionChangedEventArgs>(System.Windows.Controls.Primitives.Selector.SelectionChangedEvent);
       public static readonly IEvent<System.Windows.Controls.Primitives.Selector, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> selected = new Event<System.Windows.Controls.Primitives.Selector, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.Primitives.Selector.SelectedEvent);
       public static readonly IEvent<System.Windows.Controls.Primitives.Selector, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> unselected = new Event<System.Windows.Controls.Primitives.Selector, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.Primitives.Selector.UnselectedEvent);
     }
 
-    public class separator : control
+    public partial class separator : control
     {
     }
 
-    public class shape : frameworkElement
+    public partial class shape : frameworkElement
     {
     }
 
-    public class slider : rangeBase
+    public partial class slider : rangeBase
     {
     }
 
-    public class stackPanel : panel
+    public partial class stackPanel : panel
     {
     }
 
-    public class statusBar : itemsControl
+    public partial class statusBar : itemsControl
     {
     }
 
-    public class statusBarItem : contentControl
+    public partial class statusBarItem : contentControl
     {
     }
 
-    public class stickyNoteControl : control
+    public partial class stickyNoteControl : control
     {
     }
 
-    public class tabControl : selector
+    public partial class tabControl : selector
     {
     }
 
-    public class tabItem : headeredContentControl
+    public partial class tabItem : headeredContentControl
     {
     }
 
-    public class tabPanel : panel
+    public partial class tabPanel : panel
     {
     }
 
-    public class textBlock : frameworkElement
+    public partial class textBlock : frameworkElement
     {
     }
 
-    public class textBox : textBoxBase
+    public partial class textBox : textBoxBase
     {
     }
 
-    public class textBoxBase : control
+    public partial class textBoxBase : control
     {
       public static readonly IEvent<System.Windows.Controls.Primitives.TextBoxBase, System.Windows.Controls.TextChangedEventHandler, System.Windows.Controls.TextChangedEventArgs> textChanged = new Event<System.Windows.Controls.Primitives.TextBoxBase, System.Windows.Controls.TextChangedEventHandler, System.Windows.Controls.TextChangedEventArgs>(System.Windows.Controls.Primitives.TextBoxBase.TextChangedEvent);
       public static readonly IEvent<System.Windows.Controls.Primitives.TextBoxBase, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> selectionChanged = new Event<System.Windows.Controls.Primitives.TextBoxBase, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.Primitives.TextBoxBase.SelectionChangedEvent);
     }
 
-    public class thumb : control
+    public partial class thumb : control
     {
       public static readonly IEvent<System.Windows.Controls.Primitives.Thumb, System.Windows.Controls.Primitives.DragStartedEventHandler, System.Windows.Controls.Primitives.DragStartedEventArgs> dragStarted = new Event<System.Windows.Controls.Primitives.Thumb, System.Windows.Controls.Primitives.DragStartedEventHandler, System.Windows.Controls.Primitives.DragStartedEventArgs>(System.Windows.Controls.Primitives.Thumb.DragStartedEvent);
       public static readonly IEvent<System.Windows.Controls.Primitives.Thumb, System.Windows.Controls.Primitives.DragDeltaEventHandler, System.Windows.Controls.Primitives.DragDeltaEventArgs> dragDelta = new Event<System.Windows.Controls.Primitives.Thumb, System.Windows.Controls.Primitives.DragDeltaEventHandler, System.Windows.Controls.Primitives.DragDeltaEventArgs>(System.Windows.Controls.Primitives.Thumb.DragDeltaEvent);
       public static readonly IEvent<System.Windows.Controls.Primitives.Thumb, System.Windows.Controls.Primitives.DragCompletedEventHandler, System.Windows.Controls.Primitives.DragCompletedEventArgs> dragCompleted = new Event<System.Windows.Controls.Primitives.Thumb, System.Windows.Controls.Primitives.DragCompletedEventHandler, System.Windows.Controls.Primitives.DragCompletedEventArgs>(System.Windows.Controls.Primitives.Thumb.DragCompletedEvent);
     }
 
-    public class tickBar : frameworkElement
+    public partial class tickBar : frameworkElement
     {
     }
 
-    public class toggleButton : buttonBase
+    public partial class toggleButton : buttonBase
     {
       public static readonly IEvent<System.Windows.Controls.Primitives.ToggleButton, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> checked_ = new Event<System.Windows.Controls.Primitives.ToggleButton, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.Primitives.ToggleButton.CheckedEvent);
       public static readonly IEvent<System.Windows.Controls.Primitives.ToggleButton, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> unchecked_ = new Event<System.Windows.Controls.Primitives.ToggleButton, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.Primitives.ToggleButton.UncheckedEvent);
       public static readonly IEvent<System.Windows.Controls.Primitives.ToggleButton, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> indeterminate = new Event<System.Windows.Controls.Primitives.ToggleButton, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.Primitives.ToggleButton.IndeterminateEvent);
     }
 
-    public class toolBar : headeredItemsControl
+    public partial class toolBar : headeredItemsControl
     {
     }
 
-    public class toolBarOverflowPanel : panel
+    public partial class toolBarOverflowPanel : panel
     {
     }
 
-    public class toolBarPanel : stackPanel
+    public partial class toolBarPanel : stackPanel
     {
     }
 
-    public class toolBarTray : frameworkElement
+    public partial class toolBarTray : frameworkElement
     {
     }
 
-    public class toolTip : contentControl
+    public partial class toolTip : contentControl
     {
       public static readonly IEvent<System.Windows.Controls.ToolTip, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> opened = new Event<System.Windows.Controls.ToolTip, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.ToolTip.OpenedEvent);
       public static readonly IEvent<System.Windows.Controls.ToolTip, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> closed = new Event<System.Windows.Controls.ToolTip, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.ToolTip.ClosedEvent);
     }
 
-    public class track : frameworkElement
+    public partial class track : frameworkElement
     {
     }
 
-    public class treeView : itemsControl
+    public partial class treeView : itemsControl
     {
       public static readonly IEvent<System.Windows.Controls.TreeView, System.Windows.RoutedPropertyChangedEventHandler<System.Object>, System.Windows.RoutedPropertyChangedEventArgs<System.Object>> selectedItemChanged = new Event<System.Windows.Controls.TreeView, System.Windows.RoutedPropertyChangedEventHandler<System.Object>, System.Windows.RoutedPropertyChangedEventArgs<System.Object>>(System.Windows.Controls.TreeView.SelectedItemChangedEvent);
     }
 
-    public class treeViewItem : headeredItemsControl
+    public partial class treeViewItem : headeredItemsControl
     {
       public static readonly IEvent<System.Windows.Controls.TreeViewItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> expanded = new Event<System.Windows.Controls.TreeViewItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.TreeViewItem.ExpandedEvent);
       public static readonly IEvent<System.Windows.Controls.TreeViewItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> collapsed = new Event<System.Windows.Controls.TreeViewItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.TreeViewItem.CollapsedEvent);
@@ -1798,7 +1798,7 @@ namespace Galactus.Standard
       public static readonly IEvent<System.Windows.Controls.TreeViewItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> unselected = new Event<System.Windows.Controls.TreeViewItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.TreeViewItem.UnselectedEvent);
     }
 
-    public class uIElement
+    public partial class uIElement
     {
       public static readonly IEvent<System.Windows.UIElement, System.Windows.Input.MouseButtonEventHandler, System.Windows.Input.MouseButtonEventArgs> previewMouseDown = new Event<System.Windows.UIElement, System.Windows.Input.MouseButtonEventHandler, System.Windows.Input.MouseButtonEventArgs>(System.Windows.UIElement.PreviewMouseDownEvent);
       public static readonly IEvent<System.Windows.UIElement, System.Windows.Input.MouseButtonEventHandler, System.Windows.Input.MouseButtonEventArgs> mouseDown = new Event<System.Windows.UIElement, System.Windows.Input.MouseButtonEventHandler, System.Windows.Input.MouseButtonEventArgs>(System.Windows.UIElement.MouseDownEvent);
@@ -1885,49 +1885,49 @@ namespace Galactus.Standard
       public static readonly IEvent<System.Windows.UIElement, System.EventHandler<System.Windows.Input.ManipulationCompletedEventArgs>, System.Windows.Input.ManipulationCompletedEventArgs> manipulationCompleted = new Event<System.Windows.UIElement, System.EventHandler<System.Windows.Input.ManipulationCompletedEventArgs>, System.Windows.Input.ManipulationCompletedEventArgs>(System.Windows.UIElement.ManipulationCompletedEvent);
     }
 
-    public class uniformGrid : panel
+    public partial class uniformGrid : panel
     {
     }
 
-    public class userControl : contentControl
+    public partial class userControl : contentControl
     {
     }
 
-    public class webBrowser : activeXHost
+    public partial class webBrowser : activeXHost
     {
     }
 
-    public class viewbox : decorator
+    public partial class viewbox : decorator
     {
     }
 
-    public class viewport3D : frameworkElement
+    public partial class viewport3D : frameworkElement
     {
     }
 
-    public class window : contentControl
+    public partial class window : contentControl
     {
       public static readonly IEvent<System.Windows.Window, System.Windows.DpiChangedEventHandler, System.Windows.DpiChangedEventArgs> dpiChanged = new Event<System.Windows.Window, System.Windows.DpiChangedEventHandler, System.Windows.DpiChangedEventArgs>(System.Windows.Window.DpiChangedEvent);
     }
 
-    public class virtualizingPanel : panel
+    public partial class virtualizingPanel : panel
     {
     }
 
-    public class virtualizingStackPanel : virtualizingPanel
+    public partial class virtualizingStackPanel : virtualizingPanel
     {
       public static readonly IEvent<System.Windows.Controls.VirtualizingStackPanel, System.Windows.Controls.CleanUpVirtualizedItemEventHandler, System.Windows.Controls.CleanUpVirtualizedItemEventArgs> cleanUpVirtualizedItem = new Event<System.Windows.Controls.VirtualizingStackPanel, System.Windows.Controls.CleanUpVirtualizedItemEventHandler, System.Windows.Controls.CleanUpVirtualizedItemEventArgs>(System.Windows.Controls.VirtualizingStackPanel.CleanUpVirtualizedItemEvent);
     }
 
-    public class wrapPanel : panel
+    public partial class wrapPanel : panel
     {
     }
 
   }
 
-  public static class Controls<TMessage>
+  public static partial class Controls<TMessage>
   {
-    public class accessText : frameworkElement
+    public partial class accessText : frameworkElement
     {
       public static IValue<TMessage, System.Windows.Controls.AccessText> text(System.String v) => new SetValue<TMessage, System.Windows.Controls.AccessText, System.String>(Properties.accessText.text, v);
       public static IValue<TMessage, System.Windows.Controls.AccessText> fontFamily(System.Windows.Media.FontFamily v) => new SetValue<TMessage, System.Windows.Controls.AccessText, System.Windows.Media.FontFamily>(Properties.accessText.fontFamily, v);
@@ -1950,39 +1950,39 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.AccessText>[] vs) => new StandardView<TMessage, System.Windows.Controls.AccessText>(vs);
     }
 
-    public class activeXHost : hwndHost
+    public partial class activeXHost : hwndHost
     {
 
 
     }
 
-    public class adornedElementPlaceholder : frameworkElement
+    public partial class adornedElementPlaceholder : frameworkElement
     {
 
 
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.AdornedElementPlaceholder>[] vs) => new StandardView<TMessage, System.Windows.Controls.AdornedElementPlaceholder>(vs);
     }
 
-    public class adorner : frameworkElement
+    public partial class adorner : frameworkElement
     {
 
 
     }
 
-    public class adornerDecorator : decorator
+    public partial class adornerDecorator : decorator
     {
 
 
-      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Documents.AdornerDecorator>[] vs) => new StandardView<TMessage, System.Windows.Documents.AdornerDecorator>(vs);
+      public static DelayedDecoratorView<TMessage> View(params IValue<TMessage, System.Windows.Documents.AdornerDecorator>[] vs) => c => new StandardDecoratorView<TMessage, System.Windows.Documents.AdornerDecorator>(vs, c);
     }
 
-    public class adornerLayer : frameworkElement
+    public partial class adornerLayer : frameworkElement
     {
 
 
     }
 
-    public class border : decorator
+    public partial class border : decorator
     {
       public static IValue<TMessage, System.Windows.Controls.Border> borderThickness(System.Windows.Thickness v) => new SetValue<TMessage, System.Windows.Controls.Border, System.Windows.Thickness>(Properties.border.borderThickness, v);
       public static IValue<TMessage, System.Windows.Controls.Border> padding(System.Windows.Thickness v) => new SetValue<TMessage, System.Windows.Controls.Border, System.Windows.Thickness>(Properties.border.padding, v);
@@ -1991,18 +1991,18 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.Border> background(System.Windows.Media.Brush v) => new SetValue<TMessage, System.Windows.Controls.Border, System.Windows.Media.Brush>(Properties.border.background, v);
 
 
-      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Border>[] vs) => new StandardView<TMessage, System.Windows.Controls.Border>(vs);
+      public static DelayedDecoratorView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Border>[] vs) => c => new StandardDecoratorView<TMessage, System.Windows.Controls.Border>(vs, c);
     }
 
-    public class bulletDecorator : decorator
+    public partial class bulletDecorator : decorator
     {
       public static IValue<TMessage, System.Windows.Controls.Primitives.BulletDecorator> background(System.Windows.Media.Brush v) => new SetValue<TMessage, System.Windows.Controls.Primitives.BulletDecorator, System.Windows.Media.Brush>(Properties.bulletDecorator.background, v);
 
 
-      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.BulletDecorator>[] vs) => new StandardView<TMessage, System.Windows.Controls.Primitives.BulletDecorator>(vs);
+      public static DelayedDecoratorView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.BulletDecorator>[] vs) => c => new StandardDecoratorView<TMessage, System.Windows.Controls.Primitives.BulletDecorator>(vs, c);
     }
 
-    public class button : buttonBase
+    public partial class button : buttonBase
     {
       public static IValue<TMessage, System.Windows.Controls.Button> isDefault(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Button, System.Boolean>(Properties.button.isDefault, v);
       public static IValue<TMessage, System.Windows.Controls.Button> isCancel(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Button, System.Boolean>(Properties.button.isCancel, v);
@@ -2012,7 +2012,7 @@ namespace Galactus.Standard
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Button>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.Button>(vs, c);
     }
 
-    public class buttonBase : contentControl
+    public partial class buttonBase : contentControl
     {
       public static IValue<TMessage, System.Windows.Controls.Primitives.ButtonBase> command(System.Windows.Input.ICommand v) => new SetValue<TMessage, System.Windows.Controls.Primitives.ButtonBase, System.Windows.Input.ICommand>(Properties.buttonBase.command, v);
       public static IValue<TMessage, System.Windows.Controls.Primitives.ButtonBase> commandParameter(System.Object v) => new SetValue<TMessage, System.Windows.Controls.Primitives.ButtonBase, System.Object>(Properties.buttonBase.commandParameter, v);
@@ -2025,7 +2025,7 @@ namespace Galactus.Standard
 
     }
 
-    public class calendar : control
+    public partial class calendar : control
     {
       public static IValue<TMessage, System.Windows.Controls.Calendar> calendarButtonStyle(System.Windows.Style v) => new SetValue<TMessage, System.Windows.Controls.Calendar, System.Windows.Style>(Properties.calendar.calendarButtonStyle, v);
       public static IValue<TMessage, System.Windows.Controls.Calendar> calendarDayButtonStyle(System.Windows.Style v) => new SetValue<TMessage, System.Windows.Controls.Calendar, System.Windows.Style>(Properties.calendar.calendarDayButtonStyle, v);
@@ -2045,7 +2045,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Calendar>[] vs) => new StandardView<TMessage, System.Windows.Controls.Calendar>(vs);
     }
 
-    public class calendarButton : button
+    public partial class calendarButton : button
     {
       public static IValue<TMessage, System.Windows.Controls.Primitives.CalendarButton> hasSelectedDays(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.CalendarButton, System.Boolean>(Properties.calendarButton.hasSelectedDays, v);
       public static IValue<TMessage, System.Windows.Controls.Primitives.CalendarButton> isInactive(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.CalendarButton, System.Boolean>(Properties.calendarButton.isInactive, v);
@@ -2054,7 +2054,7 @@ namespace Galactus.Standard
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.CalendarButton>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.Primitives.CalendarButton>(vs, c);
     }
 
-    public class calendarDayButton : button
+    public partial class calendarDayButton : button
     {
       public static IValue<TMessage, System.Windows.Controls.Primitives.CalendarDayButton> isToday(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.CalendarDayButton, System.Boolean>(Properties.calendarDayButton.isToday, v);
       public static IValue<TMessage, System.Windows.Controls.Primitives.CalendarDayButton> isSelected(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.CalendarDayButton, System.Boolean>(Properties.calendarDayButton.isSelected, v);
@@ -2066,14 +2066,14 @@ namespace Galactus.Standard
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.CalendarDayButton>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.Primitives.CalendarDayButton>(vs, c);
     }
 
-    public class calendarItem : control
+    public partial class calendarItem : control
     {
 
 
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.CalendarItem>[] vs) => new StandardView<TMessage, System.Windows.Controls.Primitives.CalendarItem>(vs);
     }
 
-    public class canvas : panel
+    public partial class canvas : panel
     {
       public static IValue<TMessage, System.Windows.Controls.Canvas> left(System.Double v) => new SetValue<TMessage, System.Windows.Controls.Canvas, System.Double>(Properties.canvas.left, v);
       public static IValue<TMessage, System.Windows.Controls.Canvas> top(System.Double v) => new SetValue<TMessage, System.Windows.Controls.Canvas, System.Double>(Properties.canvas.top, v);
@@ -2084,14 +2084,14 @@ namespace Galactus.Standard
       public static DelayedPanelView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Canvas>[] vs) => cs => new StandardPanelView<TMessage, System.Windows.Controls.Canvas>(vs, cs);
     }
 
-    public class checkBox : toggleButton
+    public partial class checkBox : toggleButton
     {
 
 
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.CheckBox>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.CheckBox>(vs, c);
     }
 
-    public class comboBox : selector
+    public partial class comboBox : selector
     {
       public static IValue<TMessage, System.Windows.Controls.ComboBox> maxDropDownHeight(System.Double v) => new SetValue<TMessage, System.Windows.Controls.ComboBox, System.Double>(Properties.comboBox.maxDropDownHeight, v);
       public static IValue<TMessage, System.Windows.Controls.ComboBox> isDropDownOpen(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.ComboBox, System.Boolean>(Properties.comboBox.isDropDownOpen, v);
@@ -2108,7 +2108,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.ComboBox>[] vs) => new StandardView<TMessage, System.Windows.Controls.ComboBox>(vs);
     }
 
-    public class comboBoxItem : listBoxItem
+    public partial class comboBoxItem : listBoxItem
     {
       public static IValue<TMessage, System.Windows.Controls.ComboBoxItem> isHighlighted(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.ComboBoxItem, System.Boolean>(Properties.comboBoxItem.isHighlighted, v);
 
@@ -2116,7 +2116,7 @@ namespace Galactus.Standard
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.ComboBoxItem>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.ComboBoxItem>(vs, c);
     }
 
-    public class contentControl : control
+    public partial class contentControl : control
     {
       public static IValue<TMessage, System.Windows.Controls.ContentControl> content(System.Object v) => new SetValue<TMessage, System.Windows.Controls.ContentControl, System.Object>(Properties.contentControl.content, v);
       public static IValue<TMessage, System.Windows.Controls.ContentControl> hasContent(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.ContentControl, System.Boolean>(Properties.contentControl.hasContent, v);
@@ -2128,7 +2128,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.ContentControl>[] vs) => new StandardView<TMessage, System.Windows.Controls.ContentControl>(vs);
     }
 
-    public class contentPresenter : frameworkElement
+    public partial class contentPresenter : frameworkElement
     {
       public static IValue<TMessage, System.Windows.Controls.ContentPresenter> recognizesAccessKey(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.ContentPresenter, System.Boolean>(Properties.contentPresenter.recognizesAccessKey, v);
       public static IValue<TMessage, System.Windows.Controls.ContentPresenter> content(System.Object v) => new SetValue<TMessage, System.Windows.Controls.ContentPresenter, System.Object>(Properties.contentPresenter.content, v);
@@ -2141,7 +2141,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.ContentPresenter>[] vs) => new StandardView<TMessage, System.Windows.Controls.ContentPresenter>(vs);
     }
 
-    public class contextMenu : menuBase
+    public partial class contextMenu : menuBase
     {
       public static IValue<TMessage, System.Windows.Controls.ContextMenu> horizontalOffset(System.Double v) => new SetValue<TMessage, System.Windows.Controls.ContextMenu, System.Double>(Properties.contextMenu.horizontalOffset, v);
       public static IValue<TMessage, System.Windows.Controls.ContextMenu> verticalOffset(System.Double v) => new SetValue<TMessage, System.Windows.Controls.ContextMenu, System.Double>(Properties.contextMenu.verticalOffset, v);
@@ -2161,7 +2161,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.ContextMenu>[] vs) => new StandardView<TMessage, System.Windows.Controls.ContextMenu>(vs);
     }
 
-    public class control : frameworkElement
+    public partial class control : frameworkElement
     {
       public static IValue<TMessage, System.Windows.Controls.Control> borderBrush(System.Windows.Media.Brush v) => new SetValue<TMessage, System.Windows.Controls.Control, System.Windows.Media.Brush>(Properties.control.borderBrush, v);
       public static IValue<TMessage, System.Windows.Controls.Control> borderThickness(System.Windows.Thickness v) => new SetValue<TMessage, System.Windows.Controls.Control, System.Windows.Thickness>(Properties.control.borderThickness, v);
@@ -2187,7 +2187,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Control>[] vs) => new StandardView<TMessage, System.Windows.Controls.Control>(vs);
     }
 
-    public class dataGrid : multiSelector
+    public partial class dataGrid : multiSelector
     {
       public static IValue<TMessage, System.Windows.Controls.DataGrid> canUserResizeColumns(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.DataGrid, System.Boolean>(Properties.dataGrid.canUserResizeColumns, v);
       public static IValue<TMessage, System.Windows.Controls.DataGrid> columnWidth(System.Windows.Controls.DataGridLength v) => new SetValue<TMessage, System.Windows.Controls.DataGrid, System.Windows.Controls.DataGridLength>(Properties.dataGrid.columnWidth, v);
@@ -2244,7 +2244,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.DataGrid>[] vs) => new StandardView<TMessage, System.Windows.Controls.DataGrid>(vs);
     }
 
-    public class dataGridCell : contentControl
+    public partial class dataGridCell : contentControl
     {
       public static IValue<TMessage, System.Windows.Controls.DataGridCell> column(System.Windows.Controls.DataGridColumn v) => new SetValue<TMessage, System.Windows.Controls.DataGridCell, System.Windows.Controls.DataGridColumn>(Properties.dataGridCell.column, v);
       public static IValue<TMessage, System.Windows.Controls.DataGridCell> isEditing(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.DataGridCell, System.Boolean>(Properties.dataGridCell.isEditing, v);
@@ -2259,21 +2259,21 @@ namespace Galactus.Standard
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.DataGridCell>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.DataGridCell>(vs, c);
     }
 
-    public class dataGridCellsPanel : virtualizingPanel
+    public partial class dataGridCellsPanel : virtualizingPanel
     {
 
 
       public static DelayedPanelView<TMessage> View(params IValue<TMessage, System.Windows.Controls.DataGridCellsPanel>[] vs) => cs => new StandardPanelView<TMessage, System.Windows.Controls.DataGridCellsPanel>(vs, cs);
     }
 
-    public class dataGridCellsPresenter : itemsControl
+    public partial class dataGridCellsPresenter : itemsControl
     {
 
 
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.DataGridCellsPresenter>[] vs) => new StandardView<TMessage, System.Windows.Controls.Primitives.DataGridCellsPresenter>(vs);
     }
 
-    public class dataGridColumnHeader : buttonBase
+    public partial class dataGridColumnHeader : buttonBase
     {
       public static IValue<TMessage, System.Windows.Controls.Primitives.DataGridColumnHeader> separatorBrush(System.Windows.Media.Brush v) => new SetValue<TMessage, System.Windows.Controls.Primitives.DataGridColumnHeader, System.Windows.Media.Brush>(Properties.dataGridColumnHeader.separatorBrush, v);
       public static IValue<TMessage, System.Windows.Controls.Primitives.DataGridColumnHeader> separatorVisibility(System.Windows.Visibility v) => new SetValue<TMessage, System.Windows.Controls.Primitives.DataGridColumnHeader, System.Windows.Visibility>(Properties.dataGridColumnHeader.separatorVisibility, v);
@@ -2286,21 +2286,21 @@ namespace Galactus.Standard
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.DataGridColumnHeader>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.Primitives.DataGridColumnHeader>(vs, c);
     }
 
-    public class dataGridColumnHeadersPresenter : itemsControl
+    public partial class dataGridColumnHeadersPresenter : itemsControl
     {
 
 
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.DataGridColumnHeadersPresenter>[] vs) => new StandardView<TMessage, System.Windows.Controls.Primitives.DataGridColumnHeadersPresenter>(vs);
     }
 
-    public class dataGridDetailsPresenter : contentPresenter
+    public partial class dataGridDetailsPresenter : contentPresenter
     {
 
 
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.DataGridDetailsPresenter>[] vs) => new StandardView<TMessage, System.Windows.Controls.Primitives.DataGridDetailsPresenter>(vs);
     }
 
-    public class dataGridRow : control
+    public partial class dataGridRow : control
     {
       public static IValue<TMessage, System.Windows.Controls.DataGridRow> item(System.Object v) => new SetValue<TMessage, System.Windows.Controls.DataGridRow, System.Object>(Properties.dataGridRow.item, v);
       public static IValue<TMessage, System.Windows.Controls.DataGridRow> itemsPanel(System.Windows.Controls.ItemsPanelTemplate v) => new SetValue<TMessage, System.Windows.Controls.DataGridRow, System.Windows.Controls.ItemsPanelTemplate>(Properties.dataGridRow.itemsPanel, v);
@@ -2325,7 +2325,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.DataGridRow>[] vs) => new StandardView<TMessage, System.Windows.Controls.DataGridRow>(vs);
     }
 
-    public class dataGridRowHeader : buttonBase
+    public partial class dataGridRowHeader : buttonBase
     {
       public static IValue<TMessage, System.Windows.Controls.Primitives.DataGridRowHeader> separatorBrush(System.Windows.Media.Brush v) => new SetValue<TMessage, System.Windows.Controls.Primitives.DataGridRowHeader, System.Windows.Media.Brush>(Properties.dataGridRowHeader.separatorBrush, v);
       public static IValue<TMessage, System.Windows.Controls.Primitives.DataGridRowHeader> separatorVisibility(System.Windows.Visibility v) => new SetValue<TMessage, System.Windows.Controls.Primitives.DataGridRowHeader, System.Windows.Visibility>(Properties.dataGridRowHeader.separatorVisibility, v);
@@ -2335,14 +2335,14 @@ namespace Galactus.Standard
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.DataGridRowHeader>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.Primitives.DataGridRowHeader>(vs, c);
     }
 
-    public class dataGridRowsPresenter : virtualizingStackPanel
+    public partial class dataGridRowsPresenter : virtualizingStackPanel
     {
 
 
       public static DelayedPanelView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.DataGridRowsPresenter>[] vs) => cs => new StandardPanelView<TMessage, System.Windows.Controls.Primitives.DataGridRowsPresenter>(vs, cs);
     }
 
-    public class datePicker : control
+    public partial class datePicker : control
     {
       public static IValue<TMessage, System.Windows.Controls.DatePicker> calendarStyle(System.Windows.Style v) => new SetValue<TMessage, System.Windows.Controls.DatePicker, System.Windows.Style>(Properties.datePicker.calendarStyle, v);
       public static IValue<TMessage, System.Windows.Controls.DatePicker> displayDate(System.DateTime v) => new SetValue<TMessage, System.Windows.Controls.DatePicker, System.DateTime>(Properties.datePicker.displayDate, v);
@@ -2361,21 +2361,21 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.DatePicker>[] vs) => new StandardView<TMessage, System.Windows.Controls.DatePicker>(vs);
     }
 
-    public class datePickerTextBox : textBox
+    public partial class datePickerTextBox : textBox
     {
 
 
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.DatePickerTextBox>[] vs) => new StandardView<TMessage, System.Windows.Controls.Primitives.DatePickerTextBox>(vs);
     }
 
-    public class decorator : frameworkElement
+    public partial class decorator : frameworkElement
     {
 
 
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Decorator>[] vs) => new StandardView<TMessage, System.Windows.Controls.Decorator>(vs);
     }
 
-    public class dockPanel : panel
+    public partial class dockPanel : panel
     {
       public static IValue<TMessage, System.Windows.Controls.DockPanel> lastChildFill(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.DockPanel, System.Boolean>(Properties.dockPanel.lastChildFill, v);
       public static IValue<TMessage, System.Windows.Controls.DockPanel> dock(System.Windows.Controls.Dock v) => new SetValue<TMessage, System.Windows.Controls.DockPanel, System.Windows.Controls.Dock>(Properties.dockPanel.dock, v);
@@ -2384,7 +2384,7 @@ namespace Galactus.Standard
       public static DelayedPanelView<TMessage> View(params IValue<TMessage, System.Windows.Controls.DockPanel>[] vs) => cs => new StandardPanelView<TMessage, System.Windows.Controls.DockPanel>(vs, cs);
     }
 
-    public class documentPageView : frameworkElement
+    public partial class documentPageView : frameworkElement
     {
       public static IValue<TMessage, System.Windows.Controls.Primitives.DocumentPageView> pageNumber(System.Int32 v) => new SetValue<TMessage, System.Windows.Controls.Primitives.DocumentPageView, System.Int32>(Properties.documentPageView.pageNumber, v);
       public static IValue<TMessage, System.Windows.Controls.Primitives.DocumentPageView> stretch(System.Windows.Media.Stretch v) => new SetValue<TMessage, System.Windows.Controls.Primitives.DocumentPageView, System.Windows.Media.Stretch>(Properties.documentPageView.stretch, v);
@@ -2394,7 +2394,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.DocumentPageView>[] vs) => new StandardView<TMessage, System.Windows.Controls.Primitives.DocumentPageView>(vs);
     }
 
-    public class documentReference : frameworkElement
+    public partial class documentReference : frameworkElement
     {
       public static IValue<TMessage, System.Windows.Documents.DocumentReference> source(System.Uri v) => new SetValue<TMessage, System.Windows.Documents.DocumentReference, System.Uri>(Properties.documentReference.source, v);
 
@@ -2402,7 +2402,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Documents.DocumentReference>[] vs) => new StandardView<TMessage, System.Windows.Documents.DocumentReference>(vs);
     }
 
-    public class documentViewer : documentViewerBase
+    public partial class documentViewer : documentViewerBase
     {
       public static IValue<TMessage, System.Windows.Controls.DocumentViewer> horizontalOffset(System.Double v) => new SetValue<TMessage, System.Windows.Controls.DocumentViewer, System.Double>(Properties.documentViewer.horizontalOffset, v);
       public static IValue<TMessage, System.Windows.Controls.DocumentViewer> verticalOffset(System.Double v) => new SetValue<TMessage, System.Windows.Controls.DocumentViewer, System.Double>(Properties.documentViewer.verticalOffset, v);
@@ -2426,7 +2426,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.DocumentViewer>[] vs) => new StandardView<TMessage, System.Windows.Controls.DocumentViewer>(vs);
     }
 
-    public class documentViewerBase : control
+    public partial class documentViewerBase : control
     {
       public static IValue<TMessage, System.Windows.Controls.Primitives.DocumentViewerBase> document(System.Windows.Documents.IDocumentPaginatorSource v) => new SetValue<TMessage, System.Windows.Controls.Primitives.DocumentViewerBase, System.Windows.Documents.IDocumentPaginatorSource>(Properties.documentViewerBase.document, v);
       public static IValue<TMessage, System.Windows.Controls.Primitives.DocumentViewerBase> pageCount(System.Int32 v) => new SetValue<TMessage, System.Windows.Controls.Primitives.DocumentViewerBase, System.Int32>(Properties.documentViewerBase.pageCount, v);
@@ -2438,14 +2438,14 @@ namespace Galactus.Standard
 
     }
 
-    public class ellipse : shape
+    public partial class ellipse : shape
     {
 
 
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Shapes.Ellipse>[] vs) => new StandardView<TMessage, System.Windows.Shapes.Ellipse>(vs);
     }
 
-    public class expander : headeredContentControl
+    public partial class expander : headeredContentControl
     {
       public static IValue<TMessage, System.Windows.Controls.Expander> expandDirection(System.Windows.Controls.ExpandDirection v) => new SetValue<TMessage, System.Windows.Controls.Expander, System.Windows.Controls.ExpandDirection>(Properties.expander.expandDirection, v);
       public static IValue<TMessage, System.Windows.Controls.Expander> isExpanded(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Expander, System.Boolean>(Properties.expander.isExpanded, v);
@@ -2458,7 +2458,7 @@ namespace Galactus.Standard
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Expander>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.Expander>(vs, c);
     }
 
-    public class fixedPage : frameworkElement
+    public partial class fixedPage : frameworkElement
     {
       public static IValue<TMessage, System.Windows.Documents.FixedPage> printTicket(System.Object v) => new SetValue<TMessage, System.Windows.Documents.FixedPage, System.Object>(Properties.fixedPage.printTicket, v);
       public static IValue<TMessage, System.Windows.Documents.FixedPage> background(System.Windows.Media.Brush v) => new SetValue<TMessage, System.Windows.Documents.FixedPage, System.Windows.Media.Brush>(Properties.fixedPage.background, v);
@@ -2474,7 +2474,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Documents.FixedPage>[] vs) => new StandardView<TMessage, System.Windows.Documents.FixedPage>(vs);
     }
 
-    public class flowDocumentPageViewer : documentViewerBase
+    public partial class flowDocumentPageViewer : documentViewerBase
     {
       public static IValue<TMessage, System.Windows.Controls.FlowDocumentPageViewer> zoom(System.Double v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentPageViewer, System.Double>(Properties.flowDocumentPageViewer.zoom, v);
       public static IValue<TMessage, System.Windows.Controls.FlowDocumentPageViewer> maxZoom(System.Double v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentPageViewer, System.Double>(Properties.flowDocumentPageViewer.maxZoom, v);
@@ -2491,7 +2491,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.FlowDocumentPageViewer>[] vs) => new StandardView<TMessage, System.Windows.Controls.FlowDocumentPageViewer>(vs);
     }
 
-    public class flowDocumentReader : control
+    public partial class flowDocumentReader : control
     {
       public static IValue<TMessage, System.Windows.Controls.FlowDocumentReader> viewingMode(System.Windows.Controls.FlowDocumentReaderViewingMode v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentReader, System.Windows.Controls.FlowDocumentReaderViewingMode>(Properties.flowDocumentReader.viewingMode, v);
       public static IValue<TMessage, System.Windows.Controls.FlowDocumentReader> isPageViewEnabled(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentReader, System.Boolean>(Properties.flowDocumentReader.isPageViewEnabled, v);
@@ -2519,7 +2519,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.FlowDocumentReader>[] vs) => new StandardView<TMessage, System.Windows.Controls.FlowDocumentReader>(vs);
     }
 
-    public class flowDocumentScrollViewer : control
+    public partial class flowDocumentScrollViewer : control
     {
       public static IValue<TMessage, System.Windows.Controls.FlowDocumentScrollViewer> document(System.Windows.Documents.FlowDocument v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentScrollViewer, System.Windows.Documents.FlowDocument>(Properties.flowDocumentScrollViewer.document, v);
       public static IValue<TMessage, System.Windows.Controls.FlowDocumentScrollViewer> zoom(System.Double v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentScrollViewer, System.Double>(Properties.flowDocumentScrollViewer.zoom, v);
@@ -2541,7 +2541,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.FlowDocumentScrollViewer>[] vs) => new StandardView<TMessage, System.Windows.Controls.FlowDocumentScrollViewer>(vs);
     }
 
-    public class frame : contentControl
+    public partial class frame : contentControl
     {
       public static IValue<TMessage, System.Windows.Controls.Frame> source(System.Uri v) => new SetValue<TMessage, System.Windows.Controls.Frame, System.Uri>(Properties.frame.source, v);
       public static IValue<TMessage, System.Windows.Controls.Frame> canGoBack(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Frame, System.Boolean>(Properties.frame.canGoBack, v);
@@ -2556,7 +2556,7 @@ namespace Galactus.Standard
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Frame>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.Frame>(vs, c);
     }
 
-    public class frameworkElement : uIElement
+    public partial class frameworkElement : uIElement
     {
       public static IValue<TMessage, System.Windows.FrameworkElement> style(System.Windows.Style v) => new SetValue<TMessage, System.Windows.FrameworkElement, System.Windows.Style>(Properties.frameworkElement.style, v);
       public static IValue<TMessage, System.Windows.FrameworkElement> overridesDefaultStyle(System.Boolean v) => new SetValue<TMessage, System.Windows.FrameworkElement, System.Boolean>(Properties.frameworkElement.overridesDefaultStyle, v);
@@ -2606,7 +2606,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.FrameworkElement>[] vs) => new StandardView<TMessage, System.Windows.FrameworkElement>(vs);
     }
 
-    public class glyphs : frameworkElement
+    public partial class glyphs : frameworkElement
     {
       public static IValue<TMessage, System.Windows.Documents.Glyphs> fill(System.Windows.Media.Brush v) => new SetValue<TMessage, System.Windows.Documents.Glyphs, System.Windows.Media.Brush>(Properties.glyphs.fill, v);
       public static IValue<TMessage, System.Windows.Documents.Glyphs> indices(System.String v) => new SetValue<TMessage, System.Windows.Documents.Glyphs, System.String>(Properties.glyphs.indices, v);
@@ -2625,7 +2625,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Documents.Glyphs>[] vs) => new StandardView<TMessage, System.Windows.Documents.Glyphs>(vs);
     }
 
-    public class grid : panel
+    public partial class grid : panel
     {
       public static IValue<TMessage, System.Windows.Controls.Grid> showGridLines(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Grid, System.Boolean>(Properties.grid.showGridLines, v);
       public static IValue<TMessage, System.Windows.Controls.Grid> column(System.Int32 v) => new SetValue<TMessage, System.Windows.Controls.Grid, System.Int32>(Properties.grid.column, v);
@@ -2638,7 +2638,7 @@ namespace Galactus.Standard
       public static DelayedPanelView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Grid>[] vs) => cs => new StandardPanelView<TMessage, System.Windows.Controls.Grid>(vs, cs);
     }
 
-    public class gridSplitter : thumb
+    public partial class gridSplitter : thumb
     {
       public static IValue<TMessage, System.Windows.Controls.GridSplitter> resizeDirection(System.Windows.Controls.GridResizeDirection v) => new SetValue<TMessage, System.Windows.Controls.GridSplitter, System.Windows.Controls.GridResizeDirection>(Properties.gridSplitter.resizeDirection, v);
       public static IValue<TMessage, System.Windows.Controls.GridSplitter> resizeBehavior(System.Windows.Controls.GridResizeBehavior v) => new SetValue<TMessage, System.Windows.Controls.GridSplitter, System.Windows.Controls.GridResizeBehavior>(Properties.gridSplitter.resizeBehavior, v);
@@ -2651,7 +2651,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.GridSplitter>[] vs) => new StandardView<TMessage, System.Windows.Controls.GridSplitter>(vs);
     }
 
-    public class gridViewColumnHeader : buttonBase
+    public partial class gridViewColumnHeader : buttonBase
     {
       public static IValue<TMessage, System.Windows.Controls.GridViewColumnHeader> column(System.Windows.Controls.GridViewColumn v) => new SetValue<TMessage, System.Windows.Controls.GridViewColumnHeader, System.Windows.Controls.GridViewColumn>(Properties.gridViewColumnHeader.column, v);
       public static IValue<TMessage, System.Windows.Controls.GridViewColumnHeader> role(System.Windows.Controls.GridViewColumnHeaderRole v) => new SetValue<TMessage, System.Windows.Controls.GridViewColumnHeader, System.Windows.Controls.GridViewColumnHeaderRole>(Properties.gridViewColumnHeader.role, v);
@@ -2660,7 +2660,7 @@ namespace Galactus.Standard
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.GridViewColumnHeader>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.GridViewColumnHeader>(vs, c);
     }
 
-    public class gridViewHeaderRowPresenter : gridViewRowPresenterBase
+    public partial class gridViewHeaderRowPresenter : gridViewRowPresenterBase
     {
       public static IValue<TMessage, System.Windows.Controls.GridViewHeaderRowPresenter> columnHeaderContainerStyle(System.Windows.Style v) => new SetValue<TMessage, System.Windows.Controls.GridViewHeaderRowPresenter, System.Windows.Style>(Properties.gridViewHeaderRowPresenter.columnHeaderContainerStyle, v);
       public static IValue<TMessage, System.Windows.Controls.GridViewHeaderRowPresenter> columnHeaderTemplate(System.Windows.DataTemplate v) => new SetValue<TMessage, System.Windows.Controls.GridViewHeaderRowPresenter, System.Windows.DataTemplate>(Properties.gridViewHeaderRowPresenter.columnHeaderTemplate, v);
@@ -2674,7 +2674,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.GridViewHeaderRowPresenter>[] vs) => new StandardView<TMessage, System.Windows.Controls.GridViewHeaderRowPresenter>(vs);
     }
 
-    public class gridViewRowPresenter : gridViewRowPresenterBase
+    public partial class gridViewRowPresenter : gridViewRowPresenterBase
     {
       public static IValue<TMessage, System.Windows.Controls.GridViewRowPresenter> content(System.Object v) => new SetValue<TMessage, System.Windows.Controls.GridViewRowPresenter, System.Object>(Properties.gridViewRowPresenter.content, v);
 
@@ -2682,28 +2682,28 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.GridViewRowPresenter>[] vs) => new StandardView<TMessage, System.Windows.Controls.GridViewRowPresenter>(vs);
     }
 
-    public class gridViewRowPresenterBase : frameworkElement
+    public partial class gridViewRowPresenterBase : frameworkElement
     {
       public static IValue<TMessage, System.Windows.Controls.Primitives.GridViewRowPresenterBase> columns(System.Windows.Controls.GridViewColumnCollection v) => new SetValue<TMessage, System.Windows.Controls.Primitives.GridViewRowPresenterBase, System.Windows.Controls.GridViewColumnCollection>(Properties.gridViewRowPresenterBase.columns, v);
 
 
     }
 
-    public class groupBox : headeredContentControl
+    public partial class groupBox : headeredContentControl
     {
 
 
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.GroupBox>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.GroupBox>(vs, c);
     }
 
-    public class groupItem : contentControl
+    public partial class groupItem : contentControl
     {
 
 
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.GroupItem>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.GroupItem>(vs, c);
     }
 
-    public class headeredContentControl : contentControl
+    public partial class headeredContentControl : contentControl
     {
       public static IValue<TMessage, System.Windows.Controls.HeaderedContentControl> header(System.Object v) => new SetValue<TMessage, System.Windows.Controls.HeaderedContentControl, System.Object>(Properties.headeredContentControl.header, v);
       public static IValue<TMessage, System.Windows.Controls.HeaderedContentControl> hasHeader(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.HeaderedContentControl, System.Boolean>(Properties.headeredContentControl.hasHeader, v);
@@ -2715,7 +2715,7 @@ namespace Galactus.Standard
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.HeaderedContentControl>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.HeaderedContentControl>(vs, c);
     }
 
-    public class headeredItemsControl : itemsControl
+    public partial class headeredItemsControl : itemsControl
     {
       public static IValue<TMessage, System.Windows.Controls.HeaderedItemsControl> header(System.Object v) => new SetValue<TMessage, System.Windows.Controls.HeaderedItemsControl, System.Object>(Properties.headeredItemsControl.header, v);
       public static IValue<TMessage, System.Windows.Controls.HeaderedItemsControl> hasHeader(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.HeaderedItemsControl, System.Boolean>(Properties.headeredItemsControl.hasHeader, v);
@@ -2727,7 +2727,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.HeaderedItemsControl>[] vs) => new StandardView<TMessage, System.Windows.Controls.HeaderedItemsControl>(vs);
     }
 
-    public class hwndHost : frameworkElement
+    public partial class hwndHost : frameworkElement
     {
 
       public static IValue<TMessage, System.Windows.Interop.HwndHost> onDpiChanged (OnChange<TMessage, System.Windows.Interop.HwndHost, System.Windows.DpiChangedEventArgs> onChange) =>
@@ -2735,7 +2735,7 @@ namespace Galactus.Standard
 
     }
 
-    public class image : frameworkElement
+    public partial class image : frameworkElement
     {
       public static IValue<TMessage, System.Windows.Controls.Image> source(System.Windows.Media.ImageSource v) => new SetValue<TMessage, System.Windows.Controls.Image, System.Windows.Media.ImageSource>(Properties.image.source, v);
       public static IValue<TMessage, System.Windows.Controls.Image> stretch(System.Windows.Media.Stretch v) => new SetValue<TMessage, System.Windows.Controls.Image, System.Windows.Media.Stretch>(Properties.image.stretch, v);
@@ -2749,7 +2749,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Image>[] vs) => new StandardView<TMessage, System.Windows.Controls.Image>(vs);
     }
 
-    public class inkCanvas : frameworkElement
+    public partial class inkCanvas : frameworkElement
     {
       public static IValue<TMessage, System.Windows.Controls.InkCanvas> background(System.Windows.Media.Brush v) => new SetValue<TMessage, System.Windows.Controls.InkCanvas, System.Windows.Media.Brush>(Properties.inkCanvas.background, v);
       public static IValue<TMessage, System.Windows.Controls.InkCanvas> top(System.Double v) => new SetValue<TMessage, System.Windows.Controls.InkCanvas, System.Double>(Properties.inkCanvas.top, v);
@@ -2778,15 +2778,15 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.InkCanvas>[] vs) => new StandardView<TMessage, System.Windows.Controls.InkCanvas>(vs);
     }
 
-    public class inkPresenter : decorator
+    public partial class inkPresenter : decorator
     {
       public static IValue<TMessage, System.Windows.Controls.InkPresenter> strokes(System.Windows.Ink.StrokeCollection v) => new SetValue<TMessage, System.Windows.Controls.InkPresenter, System.Windows.Ink.StrokeCollection>(Properties.inkPresenter.strokes, v);
 
 
-      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.InkPresenter>[] vs) => new StandardView<TMessage, System.Windows.Controls.InkPresenter>(vs);
+      public static DelayedDecoratorView<TMessage> View(params IValue<TMessage, System.Windows.Controls.InkPresenter>[] vs) => c => new StandardDecoratorView<TMessage, System.Windows.Controls.InkPresenter>(vs, c);
     }
 
-    public class itemsControl : control
+    public partial class itemsControl : control
     {
       public static IValue<TMessage, System.Windows.Controls.ItemsControl> itemsSource(System.Collections.IEnumerable v) => new SetValue<TMessage, System.Windows.Controls.ItemsControl, System.Collections.IEnumerable>(Properties.itemsControl.itemsSource, v);
       public static IValue<TMessage, System.Windows.Controls.ItemsControl> hasItems(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.ItemsControl, System.Boolean>(Properties.itemsControl.hasItems, v);
@@ -2809,14 +2809,14 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.ItemsControl>[] vs) => new StandardView<TMessage, System.Windows.Controls.ItemsControl>(vs);
     }
 
-    public class itemsPresenter : frameworkElement
+    public partial class itemsPresenter : frameworkElement
     {
 
 
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.ItemsPresenter>[] vs) => new StandardView<TMessage, System.Windows.Controls.ItemsPresenter>(vs);
     }
 
-    public class label : contentControl
+    public partial class label : contentControl
     {
       public static IValue<TMessage, System.Windows.Controls.Label> target(System.Windows.UIElement v) => new SetValue<TMessage, System.Windows.Controls.Label, System.Windows.UIElement>(Properties.label.target, v);
 
@@ -2824,7 +2824,7 @@ namespace Galactus.Standard
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Label>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.Label>(vs, c);
     }
 
-    public class line : shape
+    public partial class line : shape
     {
       public static IValue<TMessage, System.Windows.Shapes.Line> x1(System.Double v) => new SetValue<TMessage, System.Windows.Shapes.Line, System.Double>(Properties.line.x1, v);
       public static IValue<TMessage, System.Windows.Shapes.Line> y1(System.Double v) => new SetValue<TMessage, System.Windows.Shapes.Line, System.Double>(Properties.line.y1, v);
@@ -2835,7 +2835,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Shapes.Line>[] vs) => new StandardView<TMessage, System.Windows.Shapes.Line>(vs);
     }
 
-    public class listBox : selector
+    public partial class listBox : selector
     {
       public static IValue<TMessage, System.Windows.Controls.ListBox> selectionMode(System.Windows.Controls.SelectionMode v) => new SetValue<TMessage, System.Windows.Controls.ListBox, System.Windows.Controls.SelectionMode>(Properties.listBox.selectionMode, v);
       public static IValue<TMessage, System.Windows.Controls.ListBox> selectedItems(System.Collections.IList v) => new SetValue<TMessage, System.Windows.Controls.ListBox, System.Collections.IList>(Properties.listBox.selectedItems, v);
@@ -2844,7 +2844,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.ListBox>[] vs) => new StandardView<TMessage, System.Windows.Controls.ListBox>(vs);
     }
 
-    public class listBoxItem : contentControl
+    public partial class listBoxItem : contentControl
     {
       public static IValue<TMessage, System.Windows.Controls.ListBoxItem> isSelected(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.ListBoxItem, System.Boolean>(Properties.listBoxItem.isSelected, v);
 
@@ -2856,7 +2856,7 @@ namespace Galactus.Standard
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.ListBoxItem>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.ListBoxItem>(vs, c);
     }
 
-    public class listView : listBox
+    public partial class listView : listBox
     {
       public static IValue<TMessage, System.Windows.Controls.ListView> view(System.Windows.Controls.ViewBase v) => new SetValue<TMessage, System.Windows.Controls.ListView, System.Windows.Controls.ViewBase>(Properties.listView.view, v);
 
@@ -2864,14 +2864,14 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.ListView>[] vs) => new StandardView<TMessage, System.Windows.Controls.ListView>(vs);
     }
 
-    public class listViewItem : listBoxItem
+    public partial class listViewItem : listBoxItem
     {
 
 
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.ListViewItem>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.ListViewItem>(vs, c);
     }
 
-    public class mediaElement : frameworkElement
+    public partial class mediaElement : frameworkElement
     {
       public static IValue<TMessage, System.Windows.Controls.MediaElement> source(System.Uri v) => new SetValue<TMessage, System.Windows.Controls.MediaElement, System.Uri>(Properties.mediaElement.source, v);
       public static IValue<TMessage, System.Windows.Controls.MediaElement> volume(System.Double v) => new SetValue<TMessage, System.Windows.Controls.MediaElement, System.Double>(Properties.mediaElement.volume, v);
@@ -2899,7 +2899,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.MediaElement>[] vs) => new StandardView<TMessage, System.Windows.Controls.MediaElement>(vs);
     }
 
-    public class menu : menuBase
+    public partial class menu : menuBase
     {
       public static IValue<TMessage, System.Windows.Controls.Menu> isMainMenu(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Menu, System.Boolean>(Properties.menu.isMainMenu, v);
 
@@ -2907,7 +2907,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Menu>[] vs) => new StandardView<TMessage, System.Windows.Controls.Menu>(vs);
     }
 
-    public class menuBase : itemsControl
+    public partial class menuBase : itemsControl
     {
       public static IValue<TMessage, System.Windows.Controls.Primitives.MenuBase> itemContainerTemplateSelector(System.Windows.Controls.ItemContainerTemplateSelector v) => new SetValue<TMessage, System.Windows.Controls.Primitives.MenuBase, System.Windows.Controls.ItemContainerTemplateSelector>(Properties.menuBase.itemContainerTemplateSelector, v);
       public static IValue<TMessage, System.Windows.Controls.Primitives.MenuBase> usesItemContainerTemplate(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.MenuBase, System.Boolean>(Properties.menuBase.usesItemContainerTemplate, v);
@@ -2915,7 +2915,7 @@ namespace Galactus.Standard
 
     }
 
-    public class menuItem : headeredItemsControl
+    public partial class menuItem : headeredItemsControl
     {
       public static IValue<TMessage, System.Windows.Controls.MenuItem> command(System.Windows.Input.ICommand v) => new SetValue<TMessage, System.Windows.Controls.MenuItem, System.Windows.Input.ICommand>(Properties.menuItem.command, v);
       public static IValue<TMessage, System.Windows.Controls.MenuItem> commandParameter(System.Object v) => new SetValue<TMessage, System.Windows.Controls.MenuItem, System.Object>(Properties.menuItem.commandParameter, v);
@@ -2947,13 +2947,13 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.MenuItem>[] vs) => new StandardView<TMessage, System.Windows.Controls.MenuItem>(vs);
     }
 
-    public class multiSelector : selector
+    public partial class multiSelector : selector
     {
 
 
     }
 
-    public class navigationWindow : window
+    public partial class navigationWindow : window
     {
       public static IValue<TMessage, System.Windows.Navigation.NavigationWindow> sandboxExternalContent(System.Boolean v) => new SetValue<TMessage, System.Windows.Navigation.NavigationWindow, System.Boolean>(Properties.navigationWindow.sandboxExternalContent, v);
       public static IValue<TMessage, System.Windows.Navigation.NavigationWindow> showsNavigationUI(System.Boolean v) => new SetValue<TMessage, System.Windows.Navigation.NavigationWindow, System.Boolean>(Properties.navigationWindow.showsNavigationUI, v);
@@ -2967,7 +2967,7 @@ namespace Galactus.Standard
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Navigation.NavigationWindow>[] vs) => c => new StandardContentView<TMessage, System.Windows.Navigation.NavigationWindow>(vs, c);
     }
 
-    public class page : frameworkElement
+    public partial class page : frameworkElement
     {
       public static IValue<TMessage, System.Windows.Controls.Page> content(System.Object v) => new SetValue<TMessage, System.Windows.Controls.Page, System.Object>(Properties.page.content, v);
       public static IValue<TMessage, System.Windows.Controls.Page> background(System.Windows.Media.Brush v) => new SetValue<TMessage, System.Windows.Controls.Page, System.Windows.Media.Brush>(Properties.page.background, v);
@@ -2982,7 +2982,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Page>[] vs) => new StandardView<TMessage, System.Windows.Controls.Page>(vs);
     }
 
-    public class pageContent : frameworkElement
+    public partial class pageContent : frameworkElement
     {
       public static IValue<TMessage, System.Windows.Documents.PageContent> source(System.Uri v) => new SetValue<TMessage, System.Windows.Documents.PageContent, System.Uri>(Properties.pageContent.source, v);
 
@@ -2990,13 +2990,13 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Documents.PageContent>[] vs) => new StandardView<TMessage, System.Windows.Documents.PageContent>(vs);
     }
 
-    public class pageFunctionBase : page
+    public partial class pageFunctionBase : page
     {
 
 
     }
 
-    public class panel : frameworkElement
+    public partial class panel : frameworkElement
     {
       public static IValue<TMessage, System.Windows.Controls.Panel> background(System.Windows.Media.Brush v) => new SetValue<TMessage, System.Windows.Controls.Panel, System.Windows.Media.Brush>(Properties.panel.background, v);
       public static IValue<TMessage, System.Windows.Controls.Panel> isItemsHost(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Panel, System.Boolean>(Properties.panel.isItemsHost, v);
@@ -3005,7 +3005,7 @@ namespace Galactus.Standard
 
     }
 
-    public class passwordBox : control
+    public partial class passwordBox : control
     {
       public static IValue<TMessage, System.Windows.Controls.PasswordBox> passwordChar(System.Char v) => new SetValue<TMessage, System.Windows.Controls.PasswordBox, System.Char>(Properties.passwordBox.passwordChar, v);
       public static IValue<TMessage, System.Windows.Controls.PasswordBox> maxLength(System.Int32 v) => new SetValue<TMessage, System.Windows.Controls.PasswordBox, System.Int32>(Properties.passwordBox.maxLength, v);
@@ -3021,7 +3021,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.PasswordBox>[] vs) => new StandardView<TMessage, System.Windows.Controls.PasswordBox>(vs);
     }
 
-    public class path : shape
+    public partial class path : shape
     {
       public static IValue<TMessage, System.Windows.Shapes.Path> data(System.Windows.Media.Geometry v) => new SetValue<TMessage, System.Windows.Shapes.Path, System.Windows.Media.Geometry>(Properties.path.data, v);
 
@@ -3029,7 +3029,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Shapes.Path>[] vs) => new StandardView<TMessage, System.Windows.Shapes.Path>(vs);
     }
 
-    public class polygon : shape
+    public partial class polygon : shape
     {
       public static IValue<TMessage, System.Windows.Shapes.Polygon> points(System.Windows.Media.PointCollection v) => new SetValue<TMessage, System.Windows.Shapes.Polygon, System.Windows.Media.PointCollection>(Properties.polygon.points, v);
       public static IValue<TMessage, System.Windows.Shapes.Polygon> fillRule(System.Windows.Media.FillRule v) => new SetValue<TMessage, System.Windows.Shapes.Polygon, System.Windows.Media.FillRule>(Properties.polygon.fillRule, v);
@@ -3038,7 +3038,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Shapes.Polygon>[] vs) => new StandardView<TMessage, System.Windows.Shapes.Polygon>(vs);
     }
 
-    public class polyline : shape
+    public partial class polyline : shape
     {
       public static IValue<TMessage, System.Windows.Shapes.Polyline> points(System.Windows.Media.PointCollection v) => new SetValue<TMessage, System.Windows.Shapes.Polyline, System.Windows.Media.PointCollection>(Properties.polyline.points, v);
       public static IValue<TMessage, System.Windows.Shapes.Polyline> fillRule(System.Windows.Media.FillRule v) => new SetValue<TMessage, System.Windows.Shapes.Polyline, System.Windows.Media.FillRule>(Properties.polyline.fillRule, v);
@@ -3047,7 +3047,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Shapes.Polyline>[] vs) => new StandardView<TMessage, System.Windows.Shapes.Polyline>(vs);
     }
 
-    public class popup : frameworkElement
+    public partial class popup : frameworkElement
     {
       public static IValue<TMessage, System.Windows.Controls.Primitives.Popup> child(System.Windows.UIElement v) => new SetValue<TMessage, System.Windows.Controls.Primitives.Popup, System.Windows.UIElement>(Properties.popup.child, v);
       public static IValue<TMessage, System.Windows.Controls.Primitives.Popup> isOpen(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.Popup, System.Boolean>(Properties.popup.isOpen, v);
@@ -3066,7 +3066,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.Popup>[] vs) => new StandardView<TMessage, System.Windows.Controls.Primitives.Popup>(vs);
     }
 
-    public class progressBar : rangeBase
+    public partial class progressBar : rangeBase
     {
       public static IValue<TMessage, System.Windows.Controls.ProgressBar> isIndeterminate(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.ProgressBar, System.Boolean>(Properties.progressBar.isIndeterminate, v);
       public static IValue<TMessage, System.Windows.Controls.ProgressBar> orientation(System.Windows.Controls.Orientation v) => new SetValue<TMessage, System.Windows.Controls.ProgressBar, System.Windows.Controls.Orientation>(Properties.progressBar.orientation, v);
@@ -3075,7 +3075,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.ProgressBar>[] vs) => new StandardView<TMessage, System.Windows.Controls.ProgressBar>(vs);
     }
 
-    public class radioButton : toggleButton
+    public partial class radioButton : toggleButton
     {
       public static IValue<TMessage, System.Windows.Controls.RadioButton> groupName(System.String v) => new SetValue<TMessage, System.Windows.Controls.RadioButton, System.String>(Properties.radioButton.groupName, v);
 
@@ -3083,7 +3083,7 @@ namespace Galactus.Standard
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.RadioButton>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.RadioButton>(vs, c);
     }
 
-    public class rangeBase : control
+    public partial class rangeBase : control
     {
       public static IValue<TMessage, System.Windows.Controls.Primitives.RangeBase> minimum(System.Double v) => new SetValue<TMessage, System.Windows.Controls.Primitives.RangeBase, System.Double>(Properties.rangeBase.minimum, v);
       public static IValue<TMessage, System.Windows.Controls.Primitives.RangeBase> maximum(System.Double v) => new SetValue<TMessage, System.Windows.Controls.Primitives.RangeBase, System.Double>(Properties.rangeBase.maximum, v);
@@ -3096,7 +3096,7 @@ namespace Galactus.Standard
 
     }
 
-    public class rectangle : shape
+    public partial class rectangle : shape
     {
       public static IValue<TMessage, System.Windows.Shapes.Rectangle> radiusX(System.Double v) => new SetValue<TMessage, System.Windows.Shapes.Rectangle, System.Double>(Properties.rectangle.radiusX, v);
       public static IValue<TMessage, System.Windows.Shapes.Rectangle> radiusY(System.Double v) => new SetValue<TMessage, System.Windows.Shapes.Rectangle, System.Double>(Properties.rectangle.radiusY, v);
@@ -3105,7 +3105,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Shapes.Rectangle>[] vs) => new StandardView<TMessage, System.Windows.Shapes.Rectangle>(vs);
     }
 
-    public class repeatButton : buttonBase
+    public partial class repeatButton : buttonBase
     {
       public static IValue<TMessage, System.Windows.Controls.Primitives.RepeatButton> delay(System.Int32 v) => new SetValue<TMessage, System.Windows.Controls.Primitives.RepeatButton, System.Int32>(Properties.repeatButton.delay, v);
       public static IValue<TMessage, System.Windows.Controls.Primitives.RepeatButton> interval(System.Int32 v) => new SetValue<TMessage, System.Windows.Controls.Primitives.RepeatButton, System.Int32>(Properties.repeatButton.interval, v);
@@ -3114,14 +3114,14 @@ namespace Galactus.Standard
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.RepeatButton>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.Primitives.RepeatButton>(vs, c);
     }
 
-    public class resizeGrip : control
+    public partial class resizeGrip : control
     {
 
 
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.ResizeGrip>[] vs) => new StandardView<TMessage, System.Windows.Controls.Primitives.ResizeGrip>(vs);
     }
 
-    public class richTextBox : textBoxBase
+    public partial class richTextBox : textBoxBase
     {
       public static IValue<TMessage, System.Windows.Controls.RichTextBox> isDocumentEnabled(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.RichTextBox, System.Boolean>(Properties.richTextBox.isDocumentEnabled, v);
 
@@ -3129,7 +3129,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.RichTextBox>[] vs) => new StandardView<TMessage, System.Windows.Controls.RichTextBox>(vs);
     }
 
-    public class scrollBar : rangeBase
+    public partial class scrollBar : rangeBase
     {
       public static IValue<TMessage, System.Windows.Controls.Primitives.ScrollBar> orientation(System.Windows.Controls.Orientation v) => new SetValue<TMessage, System.Windows.Controls.Primitives.ScrollBar, System.Windows.Controls.Orientation>(Properties.scrollBar.orientation, v);
       public static IValue<TMessage, System.Windows.Controls.Primitives.ScrollBar> viewportSize(System.Double v) => new SetValue<TMessage, System.Windows.Controls.Primitives.ScrollBar, System.Double>(Properties.scrollBar.viewportSize, v);
@@ -3140,7 +3140,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.ScrollBar>[] vs) => new StandardView<TMessage, System.Windows.Controls.Primitives.ScrollBar>(vs);
     }
 
-    public class scrollContentPresenter : contentPresenter
+    public partial class scrollContentPresenter : contentPresenter
     {
       public static IValue<TMessage, System.Windows.Controls.ScrollContentPresenter> canContentScroll(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.ScrollContentPresenter, System.Boolean>(Properties.scrollContentPresenter.canContentScroll, v);
 
@@ -3148,7 +3148,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.ScrollContentPresenter>[] vs) => new StandardView<TMessage, System.Windows.Controls.ScrollContentPresenter>(vs);
     }
 
-    public class scrollViewer : contentControl
+    public partial class scrollViewer : contentControl
     {
       public static IValue<TMessage, System.Windows.Controls.ScrollViewer> canContentScroll(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.ScrollViewer, System.Boolean>(Properties.scrollViewer.canContentScroll, v);
       public static IValue<TMessage, System.Windows.Controls.ScrollViewer> horizontalScrollBarVisibility(System.Windows.Controls.ScrollBarVisibility v) => new SetValue<TMessage, System.Windows.Controls.ScrollViewer, System.Windows.Controls.ScrollBarVisibility>(Properties.scrollViewer.horizontalScrollBarVisibility, v);
@@ -3176,7 +3176,7 @@ namespace Galactus.Standard
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.ScrollViewer>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.ScrollViewer>(vs, c);
     }
 
-    public class selectiveScrollingGrid : grid
+    public partial class selectiveScrollingGrid : grid
     {
       public static IValue<TMessage, System.Windows.Controls.Primitives.SelectiveScrollingGrid> selectiveScrollingOrientation(System.Windows.Controls.SelectiveScrollingOrientation v) => new SetValue<TMessage, System.Windows.Controls.Primitives.SelectiveScrollingGrid, System.Windows.Controls.SelectiveScrollingOrientation>(Properties.selectiveScrollingGrid.selectiveScrollingOrientation, v);
 
@@ -3184,7 +3184,7 @@ namespace Galactus.Standard
       public static DelayedPanelView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.SelectiveScrollingGrid>[] vs) => cs => new StandardPanelView<TMessage, System.Windows.Controls.Primitives.SelectiveScrollingGrid>(vs, cs);
     }
 
-    public class selector : itemsControl
+    public partial class selector : itemsControl
     {
       public static IValue<TMessage, System.Windows.Controls.Primitives.Selector> isSelectionActive(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.Selector, System.Boolean>(Properties.selector.isSelectionActive, v);
       public static IValue<TMessage, System.Windows.Controls.Primitives.Selector> isSelected(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.Selector, System.Boolean>(Properties.selector.isSelected, v);
@@ -3203,14 +3203,14 @@ namespace Galactus.Standard
 
     }
 
-    public class separator : control
+    public partial class separator : control
     {
 
 
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Separator>[] vs) => new StandardView<TMessage, System.Windows.Controls.Separator>(vs);
     }
 
-    public class shape : frameworkElement
+    public partial class shape : frameworkElement
     {
       public static IValue<TMessage, System.Windows.Shapes.Shape> stretch(System.Windows.Media.Stretch v) => new SetValue<TMessage, System.Windows.Shapes.Shape, System.Windows.Media.Stretch>(Properties.shape.stretch, v);
       public static IValue<TMessage, System.Windows.Shapes.Shape> fill(System.Windows.Media.Brush v) => new SetValue<TMessage, System.Windows.Shapes.Shape, System.Windows.Media.Brush>(Properties.shape.fill, v);
@@ -3227,7 +3227,7 @@ namespace Galactus.Standard
 
     }
 
-    public class slider : rangeBase
+    public partial class slider : rangeBase
     {
       public static IValue<TMessage, System.Windows.Controls.Slider> orientation(System.Windows.Controls.Orientation v) => new SetValue<TMessage, System.Windows.Controls.Slider, System.Windows.Controls.Orientation>(Properties.slider.orientation, v);
       public static IValue<TMessage, System.Windows.Controls.Slider> isDirectionReversed(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Slider, System.Boolean>(Properties.slider.isDirectionReversed, v);
@@ -3248,7 +3248,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Slider>[] vs) => new StandardView<TMessage, System.Windows.Controls.Slider>(vs);
     }
 
-    public class stackPanel : panel
+    public partial class stackPanel : panel
     {
       public static IValue<TMessage, System.Windows.Controls.StackPanel> orientation(System.Windows.Controls.Orientation v) => new SetValue<TMessage, System.Windows.Controls.StackPanel, System.Windows.Controls.Orientation>(Properties.stackPanel.orientation, v);
 
@@ -3256,7 +3256,7 @@ namespace Galactus.Standard
       public static DelayedPanelView<TMessage> View(params IValue<TMessage, System.Windows.Controls.StackPanel>[] vs) => cs => new StandardPanelView<TMessage, System.Windows.Controls.StackPanel>(vs, cs);
     }
 
-    public class statusBar : itemsControl
+    public partial class statusBar : itemsControl
     {
       public static IValue<TMessage, System.Windows.Controls.Primitives.StatusBar> itemContainerTemplateSelector(System.Windows.Controls.ItemContainerTemplateSelector v) => new SetValue<TMessage, System.Windows.Controls.Primitives.StatusBar, System.Windows.Controls.ItemContainerTemplateSelector>(Properties.statusBar.itemContainerTemplateSelector, v);
       public static IValue<TMessage, System.Windows.Controls.Primitives.StatusBar> usesItemContainerTemplate(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.StatusBar, System.Boolean>(Properties.statusBar.usesItemContainerTemplate, v);
@@ -3265,14 +3265,14 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.StatusBar>[] vs) => new StandardView<TMessage, System.Windows.Controls.Primitives.StatusBar>(vs);
     }
 
-    public class statusBarItem : contentControl
+    public partial class statusBarItem : contentControl
     {
 
 
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.StatusBarItem>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.Primitives.StatusBarItem>(vs, c);
     }
 
-    public class stickyNoteControl : control
+    public partial class stickyNoteControl : control
     {
       public static IValue<TMessage, System.Windows.Controls.StickyNoteControl> author(System.String v) => new SetValue<TMessage, System.Windows.Controls.StickyNoteControl, System.String>(Properties.stickyNoteControl.author, v);
       public static IValue<TMessage, System.Windows.Controls.StickyNoteControl> isExpanded(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.StickyNoteControl, System.Boolean>(Properties.stickyNoteControl.isExpanded, v);
@@ -3289,7 +3289,7 @@ namespace Galactus.Standard
 
     }
 
-    public class tabControl : selector
+    public partial class tabControl : selector
     {
       public static IValue<TMessage, System.Windows.Controls.TabControl> tabStripPlacement(System.Windows.Controls.Dock v) => new SetValue<TMessage, System.Windows.Controls.TabControl, System.Windows.Controls.Dock>(Properties.tabControl.tabStripPlacement, v);
       public static IValue<TMessage, System.Windows.Controls.TabControl> selectedContent(System.Object v) => new SetValue<TMessage, System.Windows.Controls.TabControl, System.Object>(Properties.tabControl.selectedContent, v);
@@ -3304,7 +3304,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.TabControl>[] vs) => new StandardView<TMessage, System.Windows.Controls.TabControl>(vs);
     }
 
-    public class tabItem : headeredContentControl
+    public partial class tabItem : headeredContentControl
     {
       public static IValue<TMessage, System.Windows.Controls.TabItem> isSelected(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.TabItem, System.Boolean>(Properties.tabItem.isSelected, v);
       public static IValue<TMessage, System.Windows.Controls.TabItem> tabStripPlacement(System.Windows.Controls.Dock v) => new SetValue<TMessage, System.Windows.Controls.TabItem, System.Windows.Controls.Dock>(Properties.tabItem.tabStripPlacement, v);
@@ -3313,14 +3313,14 @@ namespace Galactus.Standard
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.TabItem>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.TabItem>(vs, c);
     }
 
-    public class tabPanel : panel
+    public partial class tabPanel : panel
     {
 
 
       public static DelayedPanelView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.TabPanel>[] vs) => cs => new StandardPanelView<TMessage, System.Windows.Controls.Primitives.TabPanel>(vs, cs);
     }
 
-    public class textBlock : frameworkElement
+    public partial class textBlock : frameworkElement
     {
       public static IValue<TMessage, System.Windows.Controls.TextBlock> baselineOffset(System.Double v) => new SetValue<TMessage, System.Windows.Controls.TextBlock, System.Double>(Properties.textBlock.baselineOffset, v);
       public static IValue<TMessage, System.Windows.Controls.TextBlock> text(System.String v) => new SetValue<TMessage, System.Windows.Controls.TextBlock, System.String>(Properties.textBlock.text, v);
@@ -3345,7 +3345,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.TextBlock>[] vs) => new StandardView<TMessage, System.Windows.Controls.TextBlock>(vs);
     }
 
-    public class textBox : textBoxBase
+    public partial class textBox : textBoxBase
     {
       public static IValue<TMessage, System.Windows.Controls.TextBox> textWrapping(System.Windows.TextWrapping v) => new SetValue<TMessage, System.Windows.Controls.TextBox, System.Windows.TextWrapping>(Properties.textBox.textWrapping, v);
       public static IValue<TMessage, System.Windows.Controls.TextBox> minLines(System.Int32 v) => new SetValue<TMessage, System.Windows.Controls.TextBox, System.Int32>(Properties.textBox.minLines, v);
@@ -3360,7 +3360,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.TextBox>[] vs) => new StandardView<TMessage, System.Windows.Controls.TextBox>(vs);
     }
 
-    public class textBoxBase : control
+    public partial class textBoxBase : control
     {
       public static IValue<TMessage, System.Windows.Controls.Primitives.TextBoxBase> isReadOnly(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.TextBoxBase, System.Boolean>(Properties.textBoxBase.isReadOnly, v);
       public static IValue<TMessage, System.Windows.Controls.Primitives.TextBoxBase> isReadOnlyCaretVisible(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.TextBoxBase, System.Boolean>(Properties.textBoxBase.isReadOnlyCaretVisible, v);
@@ -3384,7 +3384,7 @@ namespace Galactus.Standard
 
     }
 
-    public class thumb : control
+    public partial class thumb : control
     {
       public static IValue<TMessage, System.Windows.Controls.Primitives.Thumb> isDragging(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.Thumb, System.Boolean>(Properties.thumb.isDragging, v);
 
@@ -3398,7 +3398,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.Thumb>[] vs) => new StandardView<TMessage, System.Windows.Controls.Primitives.Thumb>(vs);
     }
 
-    public class tickBar : frameworkElement
+    public partial class tickBar : frameworkElement
     {
       public static IValue<TMessage, System.Windows.Controls.Primitives.TickBar> fill(System.Windows.Media.Brush v) => new SetValue<TMessage, System.Windows.Controls.Primitives.TickBar, System.Windows.Media.Brush>(Properties.tickBar.fill, v);
       public static IValue<TMessage, System.Windows.Controls.Primitives.TickBar> minimum(System.Double v) => new SetValue<TMessage, System.Windows.Controls.Primitives.TickBar, System.Double>(Properties.tickBar.minimum, v);
@@ -3416,7 +3416,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.TickBar>[] vs) => new StandardView<TMessage, System.Windows.Controls.Primitives.TickBar>(vs);
     }
 
-    public class toggleButton : buttonBase
+    public partial class toggleButton : buttonBase
     {
       public static IValue<TMessage, System.Windows.Controls.Primitives.ToggleButton> isChecked(System.Nullable<System.Boolean> v) => new SetValue<TMessage, System.Windows.Controls.Primitives.ToggleButton, System.Nullable<System.Boolean>>(Properties.toggleButton.isChecked, v);
       public static IValue<TMessage, System.Windows.Controls.Primitives.ToggleButton> isThreeState(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.ToggleButton, System.Boolean>(Properties.toggleButton.isThreeState, v);
@@ -3431,7 +3431,7 @@ namespace Galactus.Standard
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.ToggleButton>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.Primitives.ToggleButton>(vs, c);
     }
 
-    public class toolBar : headeredItemsControl
+    public partial class toolBar : headeredItemsControl
     {
       public static IValue<TMessage, System.Windows.Controls.ToolBar> orientation(System.Windows.Controls.Orientation v) => new SetValue<TMessage, System.Windows.Controls.ToolBar, System.Windows.Controls.Orientation>(Properties.toolBar.orientation, v);
       public static IValue<TMessage, System.Windows.Controls.ToolBar> band(System.Int32 v) => new SetValue<TMessage, System.Windows.Controls.ToolBar, System.Int32>(Properties.toolBar.band, v);
@@ -3445,7 +3445,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.ToolBar>[] vs) => new StandardView<TMessage, System.Windows.Controls.ToolBar>(vs);
     }
 
-    public class toolBarOverflowPanel : panel
+    public partial class toolBarOverflowPanel : panel
     {
       public static IValue<TMessage, System.Windows.Controls.Primitives.ToolBarOverflowPanel> wrapWidth(System.Double v) => new SetValue<TMessage, System.Windows.Controls.Primitives.ToolBarOverflowPanel, System.Double>(Properties.toolBarOverflowPanel.wrapWidth, v);
 
@@ -3453,14 +3453,14 @@ namespace Galactus.Standard
       public static DelayedPanelView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.ToolBarOverflowPanel>[] vs) => cs => new StandardPanelView<TMessage, System.Windows.Controls.Primitives.ToolBarOverflowPanel>(vs, cs);
     }
 
-    public class toolBarPanel : stackPanel
+    public partial class toolBarPanel : stackPanel
     {
 
 
       public static DelayedPanelView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.ToolBarPanel>[] vs) => cs => new StandardPanelView<TMessage, System.Windows.Controls.Primitives.ToolBarPanel>(vs, cs);
     }
 
-    public class toolBarTray : frameworkElement
+    public partial class toolBarTray : frameworkElement
     {
       public static IValue<TMessage, System.Windows.Controls.ToolBarTray> background(System.Windows.Media.Brush v) => new SetValue<TMessage, System.Windows.Controls.ToolBarTray, System.Windows.Media.Brush>(Properties.toolBarTray.background, v);
       public static IValue<TMessage, System.Windows.Controls.ToolBarTray> orientation(System.Windows.Controls.Orientation v) => new SetValue<TMessage, System.Windows.Controls.ToolBarTray, System.Windows.Controls.Orientation>(Properties.toolBarTray.orientation, v);
@@ -3470,7 +3470,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.ToolBarTray>[] vs) => new StandardView<TMessage, System.Windows.Controls.ToolBarTray>(vs);
     }
 
-    public class toolTip : contentControl
+    public partial class toolTip : contentControl
     {
       public static IValue<TMessage, System.Windows.Controls.ToolTip> horizontalOffset(System.Double v) => new SetValue<TMessage, System.Windows.Controls.ToolTip, System.Double>(Properties.toolTip.horizontalOffset, v);
       public static IValue<TMessage, System.Windows.Controls.ToolTip> verticalOffset(System.Double v) => new SetValue<TMessage, System.Windows.Controls.ToolTip, System.Double>(Properties.toolTip.verticalOffset, v);
@@ -3490,7 +3490,7 @@ namespace Galactus.Standard
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.ToolTip>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.ToolTip>(vs, c);
     }
 
-    public class track : frameworkElement
+    public partial class track : frameworkElement
     {
       public static IValue<TMessage, System.Windows.Controls.Primitives.Track> orientation(System.Windows.Controls.Orientation v) => new SetValue<TMessage, System.Windows.Controls.Primitives.Track, System.Windows.Controls.Orientation>(Properties.track.orientation, v);
       public static IValue<TMessage, System.Windows.Controls.Primitives.Track> minimum(System.Double v) => new SetValue<TMessage, System.Windows.Controls.Primitives.Track, System.Double>(Properties.track.minimum, v);
@@ -3503,7 +3503,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.Track>[] vs) => new StandardView<TMessage, System.Windows.Controls.Primitives.Track>(vs);
     }
 
-    public class treeView : itemsControl
+    public partial class treeView : itemsControl
     {
       public static IValue<TMessage, System.Windows.Controls.TreeView> selectedItem(System.Object v) => new SetValue<TMessage, System.Windows.Controls.TreeView, System.Object>(Properties.treeView.selectedItem, v);
       public static IValue<TMessage, System.Windows.Controls.TreeView> selectedValue(System.Object v) => new SetValue<TMessage, System.Windows.Controls.TreeView, System.Object>(Properties.treeView.selectedValue, v);
@@ -3515,7 +3515,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.TreeView>[] vs) => new StandardView<TMessage, System.Windows.Controls.TreeView>(vs);
     }
 
-    public class treeViewItem : headeredItemsControl
+    public partial class treeViewItem : headeredItemsControl
     {
       public static IValue<TMessage, System.Windows.Controls.TreeViewItem> isExpanded(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.TreeViewItem, System.Boolean>(Properties.treeViewItem.isExpanded, v);
       public static IValue<TMessage, System.Windows.Controls.TreeViewItem> isSelected(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.TreeViewItem, System.Boolean>(Properties.treeViewItem.isSelected, v);
@@ -3533,7 +3533,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.TreeViewItem>[] vs) => new StandardView<TMessage, System.Windows.Controls.TreeViewItem>(vs);
     }
 
-    public class uIElement
+    public partial class uIElement
     {
       public static IValue<TMessage, System.Windows.UIElement> isMouseDirectlyOver(System.Boolean v) => new SetValue<TMessage, System.Windows.UIElement, System.Boolean>(Properties.uIElement.isMouseDirectlyOver, v);
       public static IValue<TMessage, System.Windows.UIElement> isMouseOver(System.Boolean v) => new SetValue<TMessage, System.Windows.UIElement, System.Boolean>(Properties.uIElement.isMouseOver, v);
@@ -3740,7 +3740,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.UIElement>[] vs) => new StandardView<TMessage, System.Windows.UIElement>(vs);
     }
 
-    public class uniformGrid : panel
+    public partial class uniformGrid : panel
     {
       public static IValue<TMessage, System.Windows.Controls.Primitives.UniformGrid> firstColumn(System.Int32 v) => new SetValue<TMessage, System.Windows.Controls.Primitives.UniformGrid, System.Int32>(Properties.uniformGrid.firstColumn, v);
       public static IValue<TMessage, System.Windows.Controls.Primitives.UniformGrid> columns(System.Int32 v) => new SetValue<TMessage, System.Windows.Controls.Primitives.UniformGrid, System.Int32>(Properties.uniformGrid.columns, v);
@@ -3750,30 +3750,30 @@ namespace Galactus.Standard
       public static DelayedPanelView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.UniformGrid>[] vs) => cs => new StandardPanelView<TMessage, System.Windows.Controls.Primitives.UniformGrid>(vs, cs);
     }
 
-    public class userControl : contentControl
+    public partial class userControl : contentControl
     {
 
 
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.UserControl>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.UserControl>(vs, c);
     }
 
-    public class webBrowser : activeXHost
+    public partial class webBrowser : activeXHost
     {
 
 
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.WebBrowser>[] vs) => new StandardView<TMessage, System.Windows.Controls.WebBrowser>(vs);
     }
 
-    public class viewbox : decorator
+    public partial class viewbox : decorator
     {
       public static IValue<TMessage, System.Windows.Controls.Viewbox> stretch(System.Windows.Media.Stretch v) => new SetValue<TMessage, System.Windows.Controls.Viewbox, System.Windows.Media.Stretch>(Properties.viewbox.stretch, v);
       public static IValue<TMessage, System.Windows.Controls.Viewbox> stretchDirection(System.Windows.Controls.StretchDirection v) => new SetValue<TMessage, System.Windows.Controls.Viewbox, System.Windows.Controls.StretchDirection>(Properties.viewbox.stretchDirection, v);
 
 
-      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Viewbox>[] vs) => new StandardView<TMessage, System.Windows.Controls.Viewbox>(vs);
+      public static DelayedDecoratorView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Viewbox>[] vs) => c => new StandardDecoratorView<TMessage, System.Windows.Controls.Viewbox>(vs, c);
     }
 
-    public class viewport3D : frameworkElement
+    public partial class viewport3D : frameworkElement
     {
       public static IValue<TMessage, System.Windows.Controls.Viewport3D> camera(System.Windows.Media.Media3D.Camera v) => new SetValue<TMessage, System.Windows.Controls.Viewport3D, System.Windows.Media.Media3D.Camera>(Properties.viewport3D.camera, v);
       public static IValue<TMessage, System.Windows.Controls.Viewport3D> children(System.Windows.Media.Media3D.Visual3DCollection v) => new SetValue<TMessage, System.Windows.Controls.Viewport3D, System.Windows.Media.Media3D.Visual3DCollection>(Properties.viewport3D.children, v);
@@ -3782,7 +3782,7 @@ namespace Galactus.Standard
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Viewport3D>[] vs) => new StandardView<TMessage, System.Windows.Controls.Viewport3D>(vs);
     }
 
-    public class window : contentControl
+    public partial class window : contentControl
     {
       public static IValue<TMessage, System.Windows.Window> taskbarItemInfo(System.Windows.Shell.TaskbarItemInfo v) => new SetValue<TMessage, System.Windows.Window, System.Windows.Shell.TaskbarItemInfo>(Properties.window.taskbarItemInfo, v);
       public static IValue<TMessage, System.Windows.Window> allowsTransparency(System.Boolean v) => new SetValue<TMessage, System.Windows.Window, System.Boolean>(Properties.window.allowsTransparency, v);
@@ -3805,7 +3805,7 @@ namespace Galactus.Standard
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Window>[] vs) => c => new StandardContentView<TMessage, System.Windows.Window>(vs, c);
     }
 
-    public class virtualizingPanel : panel
+    public partial class virtualizingPanel : panel
     {
       public static IValue<TMessage, System.Windows.Controls.VirtualizingPanel> isVirtualizing(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.VirtualizingPanel, System.Boolean>(Properties.virtualizingPanel.isVirtualizing, v);
       public static IValue<TMessage, System.Windows.Controls.VirtualizingPanel> virtualizationMode(System.Windows.Controls.VirtualizationMode v) => new SetValue<TMessage, System.Windows.Controls.VirtualizingPanel, System.Windows.Controls.VirtualizationMode>(Properties.virtualizingPanel.virtualizationMode, v);
@@ -3818,7 +3818,7 @@ namespace Galactus.Standard
 
     }
 
-    public class virtualizingStackPanel : virtualizingPanel
+    public partial class virtualizingStackPanel : virtualizingPanel
     {
       public static IValue<TMessage, System.Windows.Controls.VirtualizingStackPanel> isVirtualizing(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.VirtualizingStackPanel, System.Boolean>(Properties.virtualizingStackPanel.isVirtualizing, v);
       public static IValue<TMessage, System.Windows.Controls.VirtualizingStackPanel> virtualizationMode(System.Windows.Controls.VirtualizationMode v) => new SetValue<TMessage, System.Windows.Controls.VirtualizingStackPanel, System.Windows.Controls.VirtualizationMode>(Properties.virtualizingStackPanel.virtualizationMode, v);
@@ -3830,7 +3830,7 @@ namespace Galactus.Standard
       public static DelayedPanelView<TMessage> View(params IValue<TMessage, System.Windows.Controls.VirtualizingStackPanel>[] vs) => cs => new StandardPanelView<TMessage, System.Windows.Controls.VirtualizingStackPanel>(vs, cs);
     }
 
-    public class wrapPanel : panel
+    public partial class wrapPanel : panel
     {
       public static IValue<TMessage, System.Windows.Controls.WrapPanel> itemWidth(System.Double v) => new SetValue<TMessage, System.Windows.Controls.WrapPanel, System.Double>(Properties.wrapPanel.itemWidth, v);
       public static IValue<TMessage, System.Windows.Controls.WrapPanel> itemHeight(System.Double v) => new SetValue<TMessage, System.Windows.Controls.WrapPanel, System.Double>(Properties.wrapPanel.itemHeight, v);

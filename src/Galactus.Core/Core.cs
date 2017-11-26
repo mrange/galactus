@@ -251,6 +251,15 @@
     UIElement Update(UpdateContext ctx, ParentInfo pi, UIElement ui);
   }
 
+  public sealed class EmptyView<TMessage>
+    : IView<TMessage>
+  {
+    public UIElement Update(UpdateContext ctx, ParentInfo pi, UIElement ui)
+    {
+      return null;
+    }
+  }
+
   public sealed class StandardView<TMessage, TUI>
     : IView<TMessage>
     where TUI: UIElement, new()
@@ -313,6 +322,41 @@
 
   public delegate IView<TMessage> DelayedContentView<TMessage> (IView<TMessage> c);
 
+  public sealed class StandardDecoratorView<TMessage, TUI>
+    : IView<TMessage>
+    where TUI: Decorator, new()
+  {
+    readonly IValue<TMessage, TUI>[]  values;
+    readonly IView<TMessage>          view  ;
+
+    public StandardDecoratorView(IValue<TMessage, TUI>[] vs, IView<TMessage> c)
+    {
+      // TODO: Handle nulls
+      values = vs ?? new IValue<TMessage, TUI>[0];
+      view   = c;
+    }
+
+    public UIElement Update(UpdateContext ctx, ParentInfo pi, UIElement ui)
+    {
+      var v = GetInstance<TUI>(ui);
+
+      var tpi = v.ParentInfo;
+      var tui = v.Instance  ;
+
+      var child   = tui.Child as UIElement;
+      tui.Child   = view.Update(ctx, pi, child);
+
+      foreach (var value in values)
+      {
+        value.Update(ctx, tpi, tui);
+      }
+
+      return tui;
+    }
+  }
+
+  public delegate IView<TMessage> DelayedDecoratorView<TMessage> (IView<TMessage> c);
+
   public sealed class StandardPanelView<TMessage, TUI>
     : IView<TMessage>
     where TUI: Panel, new()
@@ -334,24 +378,47 @@
       var tui = v.Instance  ;
 
       var children  = tui.Children  ;
-      if (children.Count > views.Length)
-      {
-        children.RemoveRange(views.Length, children.Count - views.Length);
-      }
 
-      for (var i = 0; i < views.Length; ++i)
+      var ci = 0;
+      var vi = 0;
+
+      while (vi < views.Length)
       {
-        if (i < children.Count)
+        if (ci < children.Count)
         {
-          var child   = children[i] ;
-          var view    = views[i]    ;
-          children[i] = view.Update(ctx, tpi, child);
+          var child     = children[ci];
+          var view      = views[vi]   ;
+          var cui       = view.Update(ctx, tpi, child);
+          if (cui != null)
+          {
+            children[ci] = cui;
+            ++ci;
+          }
+          else
+          {
+
+          }
         }
         else
         {
-          var view    = views[i]    ;
-          children.Add(view.Update(ctx, tpi, null));
+          var view      = views[vi]     ;
+          var cui       = view.Update(ctx, tpi, null);
+          if (cui != null)
+          {
+            children.Add(view.Update(ctx, tpi, null));
+            ++ci;
+          }
+          else
+          {
+
+          }
         }
+        ++vi;
+      }
+
+      if (children.Count > ci)
+      {
+        children.RemoveRange(ci, children.Count - ci);
       }
 
       foreach (var value in values)
@@ -406,7 +473,7 @@
     }
   }
 
-  // Hosts
+  // Hosts  
 
   public static class Hosts
   {
@@ -421,11 +488,12 @@
       void Refresh()
       {
         ctx.TearDown ();
-        var nv  = view(current)             ;
-        var cnt = wnd.Content as UIElement  ;
-        var pi  = ParentInfo.ReusedInstance ;
+        var nv      = view(current)             ;
+        var cnt     = wnd.Content as UIElement  ;
+        var pi      = ParentInfo.ReusedInstance ;
 
-        wnd.Content = nv.Update(ctx, pi, cnt);
+        wnd.Content = null                      ;
+        wnd.Content = nv.Update(ctx, pi, cnt)   ;
       }
 
       void Process()

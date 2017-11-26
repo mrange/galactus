@@ -74,12 +74,13 @@ namespace Galactus.Standard
     return sb.ToString();
   }
 
-  var content             = typeof (System.Windows.Controls.ContentControl) ;
-  var dependencyProperty  = typeof (System.Windows.DependencyProperty)      ;
-  var routedEvent         = typeof (System.Windows.RoutedEvent)             ;
-  var eventArgs           = typeof (System.EventArgs)                       ;
-  var panel               = typeof (System.Windows.Controls.Panel)          ;
-  var uiElement           = typeof (System.Windows.UIElement)               ;
+  var content             = typeof (System.Windows.Controls.ContentControl)   ;
+  var decorator           = typeof (System.Windows.Controls.Decorator)        ;
+  var dependencyProperty  = typeof (System.Windows.DependencyProperty)        ;
+  var routedEvent         = typeof (System.Windows.RoutedEvent)               ;
+  var eventArgs           = typeof (System.EventArgs)                         ;
+  var panel               = typeof (System.Windows.Controls.Panel)            ;
+  var uiElement           = typeof (System.Windows.UIElement)                 ;
 
   var assemblies = new [] {
       uiElement.Assembly
@@ -99,7 +100,7 @@ namespace Galactus.Standard
     ;
 #>
 
-  public static class Properties
+  public static partial class Properties
   {
 <#
   foreach (var tp in types)
@@ -116,7 +117,7 @@ namespace Galactus.Standard
   var etn = TypeName(tp);
   var etsn= FixName(tp.Name);
 #>
-    public class <#=etsn#><#= tp == uiElement ? "" : " : " + FixName(bt.Name) #>
+    public partial class <#=etsn#><#= tp == uiElement ? "" : " : " + FixName(bt.Name) #>
     {
 <#
   foreach (var f in dps)
@@ -136,7 +137,7 @@ namespace Galactus.Standard
 #>
   }
 
-  public static class Events
+  public static partial class Events
   {
 <#
   foreach (var tp in types)
@@ -153,7 +154,7 @@ namespace Galactus.Standard
   var etn = TypeName(tp);
   var etsn= FixName(tp.Name);
 #>
-    public class <#=etsn#><#= tp == uiElement ? "" : " : " + FixName(bt.Name) #>
+    public partial class <#=etsn#><#= tp == uiElement ? "" : " : " + FixName(bt.Name) #>
     {
 <#
   foreach (var f in evts)
@@ -179,7 +180,7 @@ namespace Galactus.Standard
 #>
   }
 
-  public static class Controls<TMessage>
+  public static partial class Controls<TMessage>
   {
 <#
   foreach (var tp in types)
@@ -202,7 +203,7 @@ namespace Galactus.Standard
   var etn = TypeName(tp);
   var etsn= FixName(tp.Name);
 #>
-    public class <#=etsn#><#= tp == uiElement ? "" : " : " + FixName(bt.Name) #>
+    public partial class <#=etsn#><#= tp == uiElement ? "" : " : " + FixName(bt.Name) #>
     {
 <#
   foreach (var f in dps)
@@ -243,6 +244,12 @@ namespace Galactus.Standard
   {
 #>
       public static DelayedContentView<TMessage> View(params IValue<TMessage, <#=etn#>>[] vs) => c => new StandardContentView<TMessage, <#=etn#>>(vs, c);
+<#
+  }
+  else if (tp.IsSubclassOf(decorator))
+  {
+#>
+      public static DelayedDecoratorView<TMessage> View(params IValue<TMessage, <#=etn#>>[] vs) => c => new StandardDecoratorView<TMessage, <#=etn#>>(vs, c);
 <#
   }
   else if (tp.IsSubclassOf(panel))

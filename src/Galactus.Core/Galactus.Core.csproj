@@ -55,6 +55,7 @@
       <DependentUpon>Generated.tt</DependentUpon>
     </Compile>
     <Compile Include="NonCohesive.cs" />
+    <Compile Include="NonGenerated.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

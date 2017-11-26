@@ -10,9 +10,8 @@
     public static (ParentInfo ParentInfo, T Instance) GetInstance<T> (object o)
       where T : class, new ()
     {
-      var v = o as T;
-      return v != null
-        ? (ParentInfo.ReusedInstance, v)
+      return o != null && o.GetType () == typeof (T)
+        ? (ParentInfo.ReusedInstance, (T)o)
         : (ParentInfo.NewInstance   , new T ())
         ;
     }
