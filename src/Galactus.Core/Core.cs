@@ -6,6 +6,8 @@
   using System.Windows.Controls;
   using static NonCohesive;
 
+  // Common
+
   public sealed class MessageEventArgs : RoutedEventArgs
   {
     public readonly object Message;
@@ -25,8 +27,17 @@
 
   public static class DependencyProperties
   {
-    public static readonly DependencyProperty DummyProperty = DependencyProperty.RegisterAttached("Dummy", typeof(object), typeof(DependencyProperties));
+    public static readonly DependencyProperty DummyProperty = DependencyProperty.RegisterAttached("Dummy" , typeof(object), typeof(DependencyProperties));
+
+    public static readonly DependencyProperty NameProperty  = DependencyProperty.RegisterAttached("Name"  , typeof(string), typeof(DependencyProperties));
   }
+
+  public sealed class UpdateContext
+  {
+
+  }
+
+  // Properties
 
   public interface IProperty
   {
@@ -63,10 +74,7 @@
     }
   }
 
-  public sealed class UpdateContext
-  {
-
-  }
+  // Values
 
   public enum ParentInfo
   {
@@ -85,7 +93,6 @@
   {
     IProperty<TUI, T> Property { get; }
   }
-
 
   public sealed class SetValue<TMessage, TUI, T> : ISetValue<TMessage, TUI, T>
     where TUI : UIElement
@@ -154,6 +161,41 @@
       register((TUI)ui, onChangePre);
     }
   }
+
+  public sealed class InitOnlyValue<TMessage, TUI> : IValue<TMessage, TUI>
+    where TUI : UIElement
+  {
+    readonly IValue<TMessage, TUI> value;
+
+    public InitOnlyValue(IValue<TMessage, TUI> v)
+    {
+      // TODO: Handle nulls
+      value = v;
+    }
+
+    public void Update(UpdateContext ctx, ParentInfo pi, UIElement ui)
+    {
+      switch (pi)
+      {
+      case ParentInfo.NewInstance:
+        value.Update(ctx, pi, ui);
+        break;
+      case ParentInfo.ReusedInstance:
+        break;
+      }
+    }
+  }
+
+  public static class ValueExtensions
+  {
+    public static IValue<TMessage, TUI> Init<TMessage, TUI>(this IValue<TMessage, TUI> v)
+      where TUI : UIElement
+    {
+      return new InitOnlyValue<TMessage, TUI>(v);
+    }
+  }
+
+  // Views
 
   public interface IView<TMessage>
   {
@@ -277,6 +319,46 @@
   public delegate IView<TMessage> View<in TModel, TMessage>   (TModel model);
   public delegate TModel          Update<TModel, in TMessage> (TModel model, TMessage message);
 
+  public sealed class NamedView<TMessage> : IView<TMessage>
+  {
+    readonly IView<TMessage> view;
+    readonly string          name;
+
+    public NamedView(IView<TMessage> v, string n)
+    {
+      // TODO: Handle nulls
+      view = v      ;
+      name = n ?? "";
+    }
+
+    public UIElement Update(UpdateContext ctx, ParentInfo pi, UIElement ui)
+    {
+      var nui = 
+        ui != null && (string)ui.GetValue(DependencyProperties.NameProperty) == name
+        ? ui
+        : null
+        ;
+
+      var nnui = view.Update(ctx, pi, nui);
+      if (nnui != null)
+      {
+        nnui.SetValue(DependencyProperties.NameProperty, name);
+      }
+
+      return nnui;
+    }
+  }
+
+  public static class ViewExtensions
+  {
+    public static IView<TMessage> Named<TMessage>(this IView<TMessage> v, string n)
+    {
+      return new NamedView<TMessage>(v, n);
+    }
+  }
+
+  // Hosts
+
   public static class Hosts
   {
     public static void OpenWindow<TModel, TMessage>(TModel model, View<TModel, TMessage> view, Update<TModel, TMessage> update)
@@ -322,8 +404,4 @@
       wnd.ShowDialog ();
     }
   }
-}
-
-namespace Testing
-{
 }
