@@ -16,17 +16,17 @@ namespace Galactus.Standard
 <#
   string FixName(string s)
   {
-    if (s.Length > 0)
+    var name = s.Length > 0
+      ? (Char.IsLower(s[0]) ? s : (Char.ToLowerInvariant(s[0])).ToString () + s.Substring(1))
+      : s;
+
+    switch (name)
     {
-      var c = s[0];
-      return Char.IsLower(c)
-        ? s
-        : (Char.ToLowerInvariant(c)).ToString () + s.Substring(1)
-        ;
-    }
-    else
-    {
-      return s;
+    case "checked":
+    case "unchecked":
+      return name + "_";
+    default:
+      return name;
     }
   }
 
@@ -76,6 +76,7 @@ namespace Galactus.Standard
 
   var content             = typeof (System.Windows.Controls.ContentControl) ;
   var dependencyProperty  = typeof (System.Windows.DependencyProperty)      ;
+  var routedEvent         = typeof (System.Windows.RoutedEvent)             ;
   var eventArgs           = typeof (System.EventArgs)                       ;
   var panel               = typeof (System.Windows.Controls.Panel)          ;
   var uiElement           = typeof (System.Windows.UIElement)               ;
@@ -112,15 +113,12 @@ namespace Galactus.Standard
       .ToArray()
       ;
 
-    var evts  = tp
-      .GetEvents (BindingFlags.Instance | bfs)
-      ;
-
+  var etn = TypeName(tp);
+  var etsn= FixName(tp.Name);
 #>
-    public class <#=FixName(tp.Name)#><#= tp == uiElement ? "" : " : " + FixName(bt.Name) #>
+    public class <#=etsn#><#= tp == uiElement ? "" : " : " + FixName(bt.Name) #>
     {
 <#
-  var etn = TypeName(tp);
   foreach (var f in dps)
   {
     var dp    = (System.Windows.DependencyProperty)f.GetValue(null);
@@ -128,6 +126,49 @@ namespace Galactus.Standard
     var dptn  = TypeName(dp.PropertyType);
 #>
       public static readonly IProperty<<#=etn#>, <#=dptn#>> <#=pn#> = new Property<<#=etn#>, <#=dptn#>>(<#=etn#>.<#=f.Name#>);
+<#
+  }
+#>
+    }
+
+<#
+  }
+#>
+  }
+
+  public static class Events
+  {
+<#
+  foreach (var tp in types)
+  {
+    var bt    = tp.BaseType;
+    var bfs   = BindingFlags.DeclaredOnly | BindingFlags.Public;
+
+    var evts  = tp
+      .GetFields(BindingFlags.Static | bfs)
+      .Where(f => f.Name.EndsWith("Event") && f.FieldType == routedEvent)
+      .ToArray()
+      ;
+
+  var etn = TypeName(tp);
+  var etsn= FixName(tp.Name);
+#>
+    public class <#=etsn#><#= tp == uiElement ? "" : " : " + FixName(bt.Name) #>
+    {
+<#
+  foreach (var f in evts)
+  {
+    var e     = (System.Windows.RoutedEvent)f.GetValue(null);
+    var en    = FixName(RemoveTrailing("Event", f.Name))    ;
+    var eht   = e.HandlerType                               ;
+    var mi    = eht.GetMethod("Invoke")                     ;
+    var ps    = mi.GetParameters()                          ;
+    var p     = ps[1]                                       ;
+    var eat   = p.ParameterType                             ;
+    var ehn   = TypeName(eht)                               ;
+    var ean   = TypeName(eat)                               ;
+#>
+      public static readonly IEvent<<#=etn#>, <#=ehn#>, <#=ean#>> <#=en#> = new Event<<#=etn#>, <#=ehn#>, <#=ean#>>(<#=etn#>.<#=f.Name#>);
 <#
   }
 #>
@@ -153,15 +194,16 @@ namespace Galactus.Standard
       ;
 
     var evts  = tp
-      .GetEvents (BindingFlags.Instance | bfs)
+      .GetFields(BindingFlags.Static | bfs)
+      .Where(f => f.Name.EndsWith("Event") && f.FieldType == routedEvent)
+      .ToArray()
       ;
 
-#>
-    public class <#=FixName(tp.Name)#><#= tp == uiElement ? "" : " : " + FixName(bt.Name) #>
-    {
-<#
   var etn = TypeName(tp);
+  var etsn= FixName(tp.Name);
 #>
+    public class <#=etsn#><#= tp == uiElement ? "" : " : " + FixName(bt.Name) #>
+    {
 <#
   foreach (var f in dps)
   {
@@ -169,29 +211,28 @@ namespace Galactus.Standard
     var pn    = FixName(RemoveTrailing("Property", f.Name));
     var dptn  = TypeName(dp.PropertyType);
 #>
-      public static IValue<TMessage, <#=etn#>> <#=pn#>(<#=dptn#> v) => new SetValue<TMessage, <#=etn#>, <#=dptn#>>(Properties.<#=FixName(tp.Name)#>.<#=pn#>, v);
+      public static IValue<TMessage, <#=etn#>> <#=pn#>(<#=dptn#> v) => new SetValue<TMessage, <#=etn#>, <#=dptn#>>(Properties.<#=etsn#>.<#=pn#>, v);
 <#
   }
 #>
 
 <#
-  foreach (var e in evts)
+  foreach (var f in evts)
   {
-    var name  = e.Name                  ;
-    var eh    = e.EventHandlerType      ;
-    var mi    = eh.GetMethod("Invoke")  ;
-    var ps    = mi.GetParameters()      ;
-    var p     = ps[1]                   ;
-    var pt    = p.ParameterType         ;
-    var ehn   = TypeName(eh)            ;
-    var ean   = TypeName(pt)            ;
-    if (pt.IsSubclassOf(eventArgs))
-    {
+    var e     = (System.Windows.RoutedEvent)f.GetValue(null);
+    var en    = FixName(RemoveTrailing("Event", f.Name))    ;
+    var eht   = e.HandlerType                               ;
+    var mi    = eht.GetMethod("Invoke")                     ;
+    var ps    = mi.GetParameters()                          ;
+    var p     = ps[1]                                       ;
+    var eat   = p.ParameterType                             ;
+    var ehn   = TypeName(eht)                               ;
+    var ean   = TypeName(eat)                               ;
+    // TODO: Handle the case when ehn = EventHandler<TEventArgs>
 #>
-      public static IValue<TMessage, <#=etn#>> on<#=RemoveTrailing("Changed", name)#> (OnChange<TMessage, <#=etn#>, <#=ean#>> onChange) =>
-        new OnChangedValue<TMessage, <#=etn#>, <#=ehn#>, <#=ean#>> ((ui, a) => ui.<#=name#> += a.Invoke, onChange);
+      public static IValue<TMessage, <#=etn#>> on<#=RemoveTrailing("Event", f.Name)#> (OnChange<TMessage, <#=etn#>, <#=ean#>> onChange) =>
+        new OnChangedValue<TMessage, <#=etn#>, <#=ehn#>, <#=ean#>> (Events.<#=etsn#>.<#=en#>, h => (<#=ehn#>)h.Invoke, onChange);
 <#
-    }
   }
 #>
 

@@ -22,6 +22,8 @@
 
   public static class RoutedEvents
   {
+    public static readonly RoutedEvent DummyEvent   = EventManager.RegisterRoutedEvent("Dummy"  , RoutingStrategy.Bubble, typeof(MessageEventHandler), typeof(RoutedEvents));
+
     public static readonly RoutedEvent MessageEvent = EventManager.RegisterRoutedEvent("Message", RoutingStrategy.Bubble, typeof(MessageEventHandler), typeof(RoutedEvents));
   }
 
@@ -34,6 +36,24 @@
 
   public sealed class UpdateContext
   {
+    readonly List<Action> tearDowns = new List<Action>(16);
+
+    public void OnTearDown(Action action)
+    {
+      // TODO: Handle nulls
+      tearDowns.Add(action);
+    }
+
+    public void TearDown()
+    {
+      for (var iter = tearDowns.Count - 1; iter >= 0; --iter)
+      {
+        var a = tearDowns[iter];
+        a();
+      }
+
+      tearDowns.Clear();
+    }
 
   }
 
@@ -74,6 +94,33 @@
     }
   }
 
+  // Events
+
+  public interface IEvent
+  {
+    RoutedEvent RoutedEvent { get; }
+  }
+
+  public interface IEvent<in TUI, in TEventHandler, in TEventArgs> : IEvent
+    where TUI         : UIElement
+    where TEventArgs  : RoutedEventArgs
+  {
+  }
+
+  public sealed class Event<TUI, TEventHandler, TEventArgs> : IEvent<TUI, TEventHandler, TEventArgs>
+    where TUI         : UIElement
+    where TEventArgs  : RoutedEventArgs
+  {
+    readonly RoutedEvent routedEvent;
+
+    public Event(RoutedEvent re)
+    {
+      routedEvent = re ?? RoutedEvents.DummyEvent;
+    }
+
+    public RoutedEvent RoutedEvent => routedEvent;
+  }
+
   // Values
 
   public enum ParentInfo
@@ -112,7 +159,7 @@
     public void Update(UpdateContext ctx, ParentInfo pi, UIElement ui)
     {
       // TODO: Cast unnecessary but doesn't cost that much compared to set in general
-      property.Set ((TUI)ui, value);
+      property.Set((TUI)ui, value);
     }
   }
 
@@ -121,27 +168,28 @@
   {
   }
 
-  public delegate void RegisterOnChange<in TUI, out TEventArgs> (TUI ui, Action<object, TEventArgs> onChange)
-    where TUI : UIElement
+  public delegate Delegate EventHandlerMapper<TEventArgs>(EventHandler<TEventArgs> handler)
+    where TEventArgs : RoutedEventArgs
     ;
 
-  public delegate TMessage OnChange<TMessage, in TUI, in TEventArgs> (TUI uiElement, TEventArgs args)
+  public delegate TMessage OnChange<TMessage, in TUI, in TEventArgs>(TUI uiElement, TEventArgs args)
     where TUI : UIElement
     ;
 
   public sealed class OnChangedValue<TMessage, TUI, TEventHandler, TEventArgs> : IOnChangedValue<TMessage, TUI>
-    where TUI : UIElement
+    where TUI         : UIElement
+    where TEventArgs  : RoutedEventArgs
   {
-    readonly RegisterOnChange<TUI, TEventArgs>    register    ;
-    readonly OnChange<TMessage, TUI, TEventArgs>  onChange    ;
-    readonly Action<object, TEventArgs>           onChangePre ;
+    readonly IEvent<TUI, TEventHandler, TEventArgs>   event_          ;
+    readonly OnChange<TMessage, TUI, TEventArgs>      onChange        ;
+    readonly Delegate                                 onChangeHandler ;
 
-    public OnChangedValue(RegisterOnChange<TUI, TEventArgs> r, OnChange<TMessage, TUI, TEventArgs> oc)
+    public OnChangedValue(IEvent<TUI, TEventHandler, TEventArgs> e, EventHandlerMapper<TEventArgs> m, OnChange<TMessage, TUI, TEventArgs> oc)
     {
       // TODO: Handle NULLs
-      register    = r       ;
-      onChange    = oc      ;
-      onChangePre = OnChange;
+      event_          = e           ;
+      onChange        = oc          ;
+      onChangeHandler = m(OnChange) ;
     }
 
     void OnChange(object o, TEventArgs args)
@@ -157,8 +205,9 @@
 
     public void Update(UpdateContext ctx, ParentInfo pi, UIElement ui)
     {
-      // TODO: Handle re-register
-      register((TUI)ui, onChangePre);
+      // TODO: Handle nulls
+      ui.AddHandler(event_.RoutedEvent, onChangeHandler);
+      ctx.OnTearDown(() => ui.RemoveHandler(event_.RoutedEvent, onChangeHandler));
     }
   }
 
@@ -301,7 +350,7 @@
         else
         {
           var view    = views[i]    ;
-          children.Add (view.Update(ctx, tpi, null));
+          children.Add(view.Update(ctx, tpi, null));
         }
       }
 
@@ -364,14 +413,15 @@
     public static void OpenWindow<TModel, TMessage>(TModel model, View<TModel, TMessage> view, Update<TModel, TMessage> update)
     {
       var wnd     = new Window()            ;
+      var ctx     = new UpdateContext()     ;
       var disp    = wnd.Dispatcher          ;
       var current = model                   ;
       var queue   = new Queue<TMessage>(16) ;
 
       void Refresh()
       {
+        ctx.TearDown ();
         var nv  = view(current)             ;
-        var ctx = new UpdateContext()       ;
         var cnt = wnd.Content as UIElement  ;
         var pi  = ParentInfo.ReusedInstance ;
 
@@ -383,14 +433,14 @@
         while (queue.Count > 0)
         {
           var msg = queue.Dequeue ();
-          current = update (current, msg);
+          current = update(current, msg);
         }
 
         Refresh();
       }
       var process = new Action(Process);
 
-      void OnMessage (object o, MessageEventArgs args)
+      void OnMessage(object o, MessageEventArgs args)
       {
         var msg = (TMessage)args.Message;
         queue.Enqueue(msg);
@@ -398,10 +448,12 @@
       }
       var onMessage = new MessageEventHandler(OnMessage);
 
-      Refresh ();
+      Refresh();
       wnd.AddHandler(RoutedEvents.MessageEvent, onMessage);
 
-      wnd.ShowDialog ();
+      wnd.ShowDialog();
+      queue.Clear();
+      ctx.TearDown();
     }
   }
 }
