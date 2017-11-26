@@ -39,6 +39,7 @@
         (stackPanel.orientation(Orientation.Vertical))
         ( textButton("Hello", button.onClick((o, args) => new MyMessage("Yello")))
         , textButton("There")
+        , textBox.View(textBox.text("Hello").Init())
         , stackPanel.View
           (stackPanel.orientation(Orientation.Horizontal))
           ( textBlock.View(padding, textBlock.text("Some text"))
