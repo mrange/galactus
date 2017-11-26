@@ -1,0 +1,181 @@
+﻿<#
+  var records = new []
+  {
+      R("AddressInfo"
+      , M("string", "FirstName")
+      , M("string", "LastName")
+      , M("string", "CarryOver")
+      , M("string", "Street")
+      , M("string", "Zip")
+      , M("string", "City")
+      , M("string", "County")
+      , M("string", "Country")
+      )
+    , R("Model"
+      , M("bool"        , "SeparateDeliveryAddress")
+      , M("AddressInfo" , "InvoiceAddress")
+      , M("AddressInfo" , "DeliveryAddress")
+      )
+  };
+#>
+namespace Galactus.App.Test
+{
+  using Galactus.Core;
+  using System.Text;
+
+<#
+  var isFirst = true;
+  foreach (var record in records)
+  {
+#>
+  public sealed partial class <#=record.Name#>
+  {
+<#
+  foreach (var member in record.Members)
+  {
+#>
+    public readonly <#=member.Type#> <#=member.Name#>;
+<#
+  }
+#>
+
+    public <#=record.Name#>(
+<#  
+  isFirst = true;
+  foreach (var member in record.Members)
+  {
+#>
+      <#= isFirst ? "  " : ", " #><#=member.Type#> <#=CamelCase(member.Name)#>
+<#
+    isFirst = false;
+  }
+#>
+      )
+    {
+<#
+  foreach (var member in record.Members)
+  {
+#>
+      <#=member.Name#> = <#=CamelCase(member.Name)#>;
+<#
+  }
+#>
+    }
+ 
+  public override string ToString()
+  {
+    var sb = new StringBuilder(16);
+    sb.Append("{ <#=record.Name#>");
+<#
+  foreach (var member in record.Members)
+  {
+#>
+    sb.Append(", <#=member.Name#>: ");
+    sb.Append(<#=member.Name#>);
+<#
+  }
+#>
+    sb.Append(" }");
+    return sb.ToString();
+  }
+
+<#
+  foreach (var member in record.Members)
+  {
+#>
+    public <#=record.Name#> With_<#=member.Name#>(<#=member.Type#> <#=CamelCase(member.Name)#>)
+    {
+      return new <#=record.Name#>(
+<#  
+  isFirst = true;
+  foreach (var imember in record.Members)
+  {
+  if (imember != member)
+  {
+#>
+      <#= isFirst ? "  " : ", " #><#=imember.Name#>
+<#
+  }
+  else
+  {
+#>
+      <#= isFirst ? "  " : ", " #><#=CamelCase(member.Name)#>
+<#
+  }
+    isFirst = false;
+  }
+#>
+      );
+    }
+
+    sealed class <#=member.Name#>Lens : Lens<<#=record.Name#>, <#=member.Type#>>
+    {
+      public override void BuildPath(StringBuilder sb)
+      {
+        sb.Append("<#=member.Name#>");
+      }
+
+      public override <#=member.Type#> Get(<#=record.Name#> m)
+      {
+        return m.<#=member.Name#>;
+      }
+
+      public override <#=record.Name#> Set(<#=record.Name#> m, <#=member.Type#> p)
+      {
+        return m.With_<#=member.Name#>(p);
+      }
+    }
+
+    public readonly static Lens<<#=record.Name#>, <#=member.Type#>> <#=CamelCase(member.Name)#> = new <#=member.Name#>Lens();
+
+<#
+  }
+#>
+
+  }
+
+<#
+  }
+#>
+}
+<#+
+  sealed class Member
+  {
+    public readonly string Type;
+    public readonly string Name;
+
+    public Member(string type, string name)
+    {
+      Type    = type    ?? "<NoType>"   ;
+      Name    = name    ?? "<NoName>"   ;
+    }
+  }
+
+  sealed class Record
+  {
+    public readonly string    Name    ;
+    public readonly Member[]  Members ;
+
+    public Record(string name, params Member[] members)
+    {
+      Name    = name    ?? "<NoName>"   ;
+      Members = members ?? new Member[0];
+    }
+  }
+
+  static Member M(string type, string name)             => new Member(type, name);
+  static Record R(string name, params Member[] members) => new Record(name, members);
+
+  static string CamelCase(string s)
+  {
+    if (s != null && s.Length > 0)
+    {
+      return Char.ToLowerInvariant(s[0]).ToString() + s.Substring(1);
+    }
+    else
+    {
+      return s ?? "";
+    }
+  }
+
+#>

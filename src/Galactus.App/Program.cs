@@ -3,9 +3,10 @@
   using Galactus.Core;
   using System;
   using System.Windows.Controls;
-  using static Galactus.Standard.Controls<IMessage>;
   using System.Windows;
   using System.Windows.Media;
+
+  using static Galactus.Standard.Controls<IMessage>;
 
   public class Address
   {
