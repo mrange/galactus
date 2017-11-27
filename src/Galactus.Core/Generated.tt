@@ -122,6 +122,7 @@ namespace Galactus.Standard
 <#
   foreach (var f in dps)
   {
+    // TODO: Figure out if attached
     var dp    = (System.Windows.DependencyProperty)f.GetValue(null);
     var pn    = FixName(RemoveTrailing("Property", f.Name));
     var dptn  = TypeName(dp.PropertyType);
@@ -169,6 +170,7 @@ namespace Galactus.Standard
     var eat   = p.ParameterType                             ;
     var ehn   = TypeName(eht)                               ;
     var ean   = TypeName(eat)                               ;
+    // TODO: Specialized direct/non-direct events
     var tn    = ers == System.Windows.RoutingStrategy.Direct
       ? etn
       : "System.Windows.UIElement"
@@ -213,6 +215,7 @@ namespace Galactus.Standard
 <#
   foreach (var f in dps)
   {
+    // TODO: Figure out if attached
     var dp    = (System.Windows.DependencyProperty)f.GetValue(null);
     var pn    = FixName(RemoveTrailing("Property", f.Name));
     var dptn  = TypeName(dp.PropertyType);
@@ -235,6 +238,7 @@ namespace Galactus.Standard
     var eat   = p.ParameterType                             ;
     var ehn   = TypeName(eht)                               ;
     var ean   = TypeName(eat)                               ;
+    // TODO: Specialized direct/non-direct events
     var tn    = ers == System.Windows.RoutingStrategy.Direct
       ? etn
       : "System.Windows.UIElement"
