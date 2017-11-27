@@ -52,20 +52,20 @@
           ;
       }
 
-      IView<Message> addressInfo(string lbl, Lens<Customer, AddressInfo> a)
+      IView<Message> addressInfo(string lbl, Lens<Customer, AddressInfo> l)
       {
         return labeledGroup(
             lbl
           , stackPanel.View
             (stackPanel.orientation(Orientation.Vertical))
-            ( labeledTextBox("First Name" , a.To(AddressInfo.firstName))
-            , labeledTextBox("Last Name"  , a.To(AddressInfo.lastName))
-            , labeledTextBox("Carry Over" , a.To(AddressInfo.carryOver))
-            , labeledTextBox("Street"     , a.To(AddressInfo.street))
-            , labeledTextBox("Zip"        , a.To(AddressInfo.zip))
-            , labeledTextBox("City"       , a.To(AddressInfo.city))
-            , labeledTextBox("County"     , a.To(AddressInfo.county))
-            , labeledTextBox("Country"    , a.To(AddressInfo.county))
+            ( labeledTextBox("First Name" , l.To(AddressInfo.firstName))
+            , labeledTextBox("Last Name"  , l.To(AddressInfo.lastName))
+            , labeledTextBox("Carry Over" , l.To(AddressInfo.carryOver))
+            , labeledTextBox("Street"     , l.To(AddressInfo.street))
+            , labeledTextBox("Zip"        , l.To(AddressInfo.zip))
+            , labeledTextBox("City"       , l.To(AddressInfo.city))
+            , labeledTextBox("County"     , l.To(AddressInfo.county))
+            , labeledTextBox("Country"    , l.To(AddressInfo.county))
             ));
       }
 

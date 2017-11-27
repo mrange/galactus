@@ -22,7 +22,7 @@
 
   public static class RoutedEvents
   {
-    public static readonly RoutedEvent DummyEvent   = EventManager.RegisterRoutedEvent("Dummy"  , RoutingStrategy.Bubble, typeof(MessageEventHandler), typeof(RoutedEvents));
+    public static readonly RoutedEvent DummyEvent   = EventManager.RegisterRoutedEvent("Dummy"  , RoutingStrategy.Direct, typeof(MessageEventHandler), typeof(RoutedEvents));
 
     public static readonly RoutedEvent MessageEvent = EventManager.RegisterRoutedEvent("Message", RoutingStrategy.Bubble, typeof(MessageEventHandler), typeof(RoutedEvents));
   }
@@ -206,6 +206,8 @@
     public void Update(UpdateContext ctx, ParentInfo pi, UIElement ui)
     {
       // TODO: Handle nulls
+      // TODO: How to handle events more efficiently?
+
       ui.AddHandler(event_.RoutedEvent, onChangeHandler);
       ctx.OnTearDown(() => ui.RemoveHandler(event_.RoutedEvent, onChangeHandler));
     }
@@ -251,13 +253,24 @@
     UIElement Update(UpdateContext ctx, ParentInfo pi, UIElement ui);
   }
 
+  public sealed class Empty : UIElement
+  {
+    public Empty ()
+    {
+      Visibility = Visibility.Collapsed;
+    }
+  }
+
   public sealed class EmptyView<TMessage>
     : IView<TMessage>
   {
     public UIElement Update(UpdateContext ctx, ParentInfo pi, UIElement ui)
     {
-      // TODO: Return an actual UIElement
-      return null;
+      var v = GetInstance<Empty>(ui);
+      var tpi = v.ParentInfo;
+      var tui = v.Instance  ;
+
+      return tui;
     }
   }
 
@@ -310,7 +323,11 @@
       var tui = v.Instance  ;
 
       var content = tui.Content as UIElement;
-      tui.Content = view.Update(ctx, pi, content);
+      var ncontent= view.Update(ctx, pi, content);
+      if (!ReferenceEquals(content, ncontent))
+      {
+        tui.Content = ncontent;
+      }
 
       foreach (var value in values)
       {
@@ -345,7 +362,11 @@
       var tui = v.Instance  ;
 
       var child   = tui.Child as UIElement;
-      tui.Child   = view.Update(ctx, pi, child);
+      var nchild  = view.Update(ctx, pi, child);
+      if (!ReferenceEquals(child, nchild))
+      {
+        tui.Child = nchild;
+      }
 
       foreach (var value in values)
       {
@@ -378,48 +399,43 @@
       var tpi = v.ParentInfo;
       var tui = v.Instance  ;
 
-      var children  = tui.Children  ;
+      // TODO: How to rebuild this more efficiently?
 
-      var ci = 0;
-      var vi = 0;
-
-      while (vi < views.Length)
+      var tchildren = tui.Children;
+      var children  = new List<UIElement>(Math.Max(tchildren.Count, views.Length));
       {
-        if (ci < children.Count)
+        var cc = tchildren.Count;
+        for (var iter = 0; iter < cc; ++iter)
         {
-          var child     = children[ci];
-          var view      = views[vi]   ;
+          children.Add(tchildren[iter]);
+        }
+      }
+      tchildren.Clear();
+
+      for (var iter = 0; iter < views.Length; ++iter)
+      {
+        if (iter < children.Count)
+        {
+          var child     = children[iter];
+          var view      = views[iter]   ;
           var cui       = view.Update(ctx, tpi, child);
-          if (cui != null)
-          {
-            children[ci] = cui;
-            ++ci;
-          }
-          else
-          {
-
-          }
+          children[iter]= cui;
         }
-        else
-        {
-          var view      = views[vi]     ;
+        else 
+        { 
+          var view      = views[iter]   ;
           var cui       = view.Update(ctx, tpi, null);
-          if (cui != null)
-          {
-            children.Add(view.Update(ctx, tpi, null));
-            ++ci;
-          }
-          else
-          {
-
-          }
+          children.Add(view.Update(ctx, tpi, null));
         }
-        ++vi;
       }
 
-      if (children.Count > ci)
+      for (var iter = 0; iter < children.Count; ++iter)
       {
-        children.RemoveRange(ci, children.Count - ci);
+        var child = children[iter];
+        if (child != null)
+        {
+          tchildren.Add(child);
+        }
       }
 
       foreach (var value in values)
