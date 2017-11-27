@@ -98,7 +98,7 @@
         // Do nothing
       }
       else
-      { 
+      {
         ui.SetValue(dependencyProperty, v);
       }
     }
@@ -436,8 +436,8 @@
           var cui       = view.Update(ctx, tpi, child);
           children[iter]= cui;
         }
-        else 
-        { 
+        else
+        {
           var view      = views[iter]   ;
           var cui       = view.Update(ctx, tpi, null);
           children.Add(view.Update(ctx, tpi, null));
@@ -481,7 +481,7 @@
 
     public UIElement Update(UpdateContext ctx, ParentInfo pi, UIElement ui)
     {
-      var nui = 
+      var nui =
         ui != null && (string)ui.GetValue(DependencyProperties.NameProperty) == name
         ? ui
         : null
@@ -502,7 +502,7 @@
     }
   }
 
-  // Hosts  
+  // Hosts
 
   public static class Hosts
   {

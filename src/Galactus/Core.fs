@@ -17,7 +17,7 @@ module Core =
 
       member x.Message = message
     end
- 
+
   type MessageEventHandler = delegate of obj*MessageEventArgs -> unit
 
   module RoutedEvents =
@@ -50,9 +50,9 @@ module Core =
 
   module Details =
     let inline adapt2 f = OptimizedClosures.FSharpFunc<_, _, _>.Adapt f
-    let inline getInstance< 'T  when  'T :> UIElement 
+    let inline getInstance< 'T  when  'T :> UIElement
                                 and   'T : (new : unit -> 'T)
-                          > (ui : UIElement) = 
+                          > (ui : UIElement) =
       match ui with
       | :? 'T as tv -> ReusedInstance, tv
       | _           -> NewInstance   , new 'T ()
@@ -126,8 +126,8 @@ module Core =
       abstract Update: UpdateContext*ParentInfo*UIElement -> UIElement
     end
 
-  type [<Sealed>] StandardView< 'TMessage , 
-                                'T        when 'T :> UIElement 
+  type [<Sealed>] StandardView< 'TMessage ,
+                                'T        when 'T :> UIElement
                                           and  'T : (new : unit -> 'T)
                               > (values : Value<'TMessage> []) =
     class
@@ -141,8 +141,8 @@ module Core =
         upcast ui
     end
 
-  type [<Sealed>] StandardPanelView<  'TMessage , 
-                                      'T        when 'T :> Panel 
+  type [<Sealed>] StandardPanelView<  'TMessage ,
+                                      'T        when 'T :> Panel
                                                 and  'T : (new : unit -> 'T)
                                     > (values : Value<'TMessage> [], views : View<'TMessage> []) =
     class
@@ -170,8 +170,8 @@ module Core =
         upcast ui
     end
 
-  type [<Sealed>] StandardContentView<  'TMessage , 
-                                        'T        when 'T :> ContentControl 
+  type [<Sealed>] StandardContentView<  'TMessage ,
+                                        'T        when 'T :> ContentControl
                                                   and  'T : (new : unit -> 'T)
                                       > (values : Value<'TMessage> [], view : View<'TMessage>) =
     class
@@ -191,7 +191,7 @@ module Core =
   let openWindow (model : 'TModel) (view : 'TModel -> View<'TMessage>) (update : 'TModel -> 'TMessage -> 'TModel) =
     let wnd         = Window ()
     let disp        = wnd.Dispatcher
-    let invoke (f : unit -> unit) = 
+    let invoke (f : unit -> unit) =
       disp.BeginInvoke (DispatcherPriority.ApplicationIdle, Action f) |> ignore
 
     let mutable m   = model

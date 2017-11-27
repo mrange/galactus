@@ -52,7 +52,7 @@
   sealed class MapLens<M, P, PP> : Lens<M, PP>
   {
     readonly Lens<M, P>   lens;
-    readonly Func<P, PP>  to  ; 
+    readonly Func<P, PP>  to  ;
     readonly Func<PP, P>  from;
 
     public MapLens(Lens<M, P> l, Func<P, PP> t, Func<PP, P> f)

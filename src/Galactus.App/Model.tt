@@ -65,7 +65,7 @@ namespace <#=namespace_#>
 #>
 
     public <#=record.Name#>(
-<#  
+<#
   isFirst = true;
   foreach (var member in record.Members)
   {
@@ -86,10 +86,10 @@ namespace <#=namespace_#>
   }
 #>
     }
- 
+
     public <#=record.Name#>()
       : this(
-<#  
+<#
   isFirst = true;
   foreach (var member in record.Members)
   {
@@ -103,7 +103,7 @@ namespace <#=namespace_#>
       )
     {
     }
- 
+
     public readonly static <#=record.Name#> Zero = new <#=record.Name#>();
 
     public override string ToString()
@@ -130,7 +130,7 @@ namespace <#=namespace_#>
     public <#=record.Name#> With_<#=member.Name#>(<#=member.Type#> <#=CamelCase(member.Name)#>)
     {
       return new <#=record.Name#>(
-<#  
+<#
   isFirst = true;
   foreach (var imember in record.Members)
   {

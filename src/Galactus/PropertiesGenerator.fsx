@@ -24,7 +24,7 @@ let assemblies          =
     typeof<Panel>.Assembly
   |]
 
-let blackList = 
+let blackList =
   [|
     typeof<HwndHost>
   |]
@@ -73,7 +73,7 @@ let generate () =
   let types =
     assemblies
     |> Array.collect (fun assembly -> assembly.ExportedTypes |> Seq.toArray)
-    |> Array.filter  (fun tp       -> 
+    |> Array.filter  (fun tp       ->
                         let c0 = tp = uiElement || tp.IsSubclassOf uiElement
                         let c1 = not tp.IsGenericType
                         let c2 = blackList |> Array.contains tp |> not
@@ -160,18 +160,18 @@ module Generated =
         let name = tp.Name |> fixName
         if tp.IsSubclassOf content then
           writelinef """    let %-40s values child =
-      StandardContentView<_, %s> (values, child) :> View<_>"""        
-            name 
+      StandardContentView<_, %s> (values, child) :> View<_>"""
+            name
             tp.Name
         elif tp.IsSubclassOf panel then
           writelinef """    let %-40s values children =
-      StandardPanelView<_, %s> (values, children) :> View<_>"""         
+      StandardPanelView<_, %s> (values, children) :> View<_>"""
             name
             tp.Name
         else
           writelinef """    let %-40s values =
-      StandardView<_, %s> (values) :> View<_>"""         
-            name 
+      StandardView<_, %s> (values) :> View<_>"""
+            name
             tp.Name
 
     let pfn (tp : Type) (f : FieldInfo) (dp : DependencyProperty) name =
@@ -183,13 +183,13 @@ module Generated =
 
     let efn (tp : Type) (e : EventInfo) handler args name =
       let ename = "on" + name
-      writelinef """      
+      writelinef """
       let private %s_r (o : %s) (h : obj -> %s -> unit) = o.%s.AddHandler    (%s h)
       let private %s_u (o : %s) (h : obj -> %s -> unit) = o.%s.RemoveHandler (%s h)
       let private %s_rf = %s_r
       let private %s_uf = %s_u
-      let %-40s (f : %s -> %s-> 'TMessage) = 
-        OnChangedValue<'TMessage, %s, %s, %s> (%s_rf, %s_uf, f)"""     
+      let %-40s (f : %s -> %s-> 'TMessage) =
+        OnChangedValue<'TMessage, %s, %s, %s> (%s_rf, %s_uf, f)"""
         ename
         (toString tp)
         (toString args)
