@@ -1,4 +1,4 @@
-﻿namespace Galactus.App.Test
+﻿namespace Galactus.App.Model
 {
   using Galactus.Core;
   using System.Text;
@@ -35,29 +35,45 @@
       Country = country;
     }
  
-  public override string ToString()
-  {
-    var sb = new StringBuilder(16);
-    sb.Append("{ AddressInfo");
-    sb.Append(", FirstName: ");
-    sb.Append(FirstName);
-    sb.Append(", LastName: ");
-    sb.Append(LastName);
-    sb.Append(", CarryOver: ");
-    sb.Append(CarryOver);
-    sb.Append(", Street: ");
-    sb.Append(Street);
-    sb.Append(", Zip: ");
-    sb.Append(Zip);
-    sb.Append(", City: ");
-    sb.Append(City);
-    sb.Append(", County: ");
-    sb.Append(County);
-    sb.Append(", Country: ");
-    sb.Append(Country);
-    sb.Append(" }");
-    return sb.ToString();
-  }
+    public AddressInfo()
+      : this(
+        ""
+      , ""
+      , ""
+      , ""
+      , ""
+      , ""
+      , ""
+      , ""
+      )
+    {
+    }
+ 
+    public readonly static AddressInfo Zero = new AddressInfo();
+
+    public override string ToString()
+    {
+      var sb = new StringBuilder(16);
+      sb.Append("{ AddressInfo");
+      sb.Append(", FirstName: ");
+      sb.Append(FirstName);
+      sb.Append(", LastName: ");
+      sb.Append(LastName);
+      sb.Append(", CarryOver: ");
+      sb.Append(CarryOver);
+      sb.Append(", Street: ");
+      sb.Append(Street);
+      sb.Append(", Zip: ");
+      sb.Append(Zip);
+      sb.Append(", City: ");
+      sb.Append(City);
+      sb.Append(", County: ");
+      sb.Append(County);
+      sb.Append(", Country: ");
+      sb.Append(Country);
+      sb.Append(" }");
+      return sb.ToString();
+    }
 
     public AddressInfo With_FirstName(string firstName)
     {
@@ -334,13 +350,13 @@
 
   }
 
-  public sealed partial class Model
+  public sealed partial class Customer
   {
     public readonly bool SeparateDeliveryAddress;
     public readonly AddressInfo InvoiceAddress;
     public readonly AddressInfo DeliveryAddress;
 
-    public Model(
+    public Customer(
         bool separateDeliveryAddress
       , AddressInfo invoiceAddress
       , AddressInfo deliveryAddress
@@ -351,106 +367,117 @@
       DeliveryAddress = deliveryAddress;
     }
  
-  public override string ToString()
-  {
-    var sb = new StringBuilder(16);
-    sb.Append("{ Model");
-    sb.Append(", SeparateDeliveryAddress: ");
-    sb.Append(SeparateDeliveryAddress);
-    sb.Append(", InvoiceAddress: ");
-    sb.Append(InvoiceAddress);
-    sb.Append(", DeliveryAddress: ");
-    sb.Append(DeliveryAddress);
-    sb.Append(" }");
-    return sb.ToString();
-  }
-
-    public Model With_SeparateDeliveryAddress(bool separateDeliveryAddress)
+    public Customer()
+      : this(
+        default(bool)
+      , AddressInfo.Zero
+      , AddressInfo.Zero
+      )
     {
-      return new Model(
+    }
+ 
+    public readonly static Customer Zero = new Customer();
+
+    public override string ToString()
+    {
+      var sb = new StringBuilder(16);
+      sb.Append("{ Customer");
+      sb.Append(", SeparateDeliveryAddress: ");
+      sb.Append(SeparateDeliveryAddress);
+      sb.Append(", InvoiceAddress: ");
+      sb.Append(InvoiceAddress);
+      sb.Append(", DeliveryAddress: ");
+      sb.Append(DeliveryAddress);
+      sb.Append(" }");
+      return sb.ToString();
+    }
+
+    public Customer With_SeparateDeliveryAddress(bool separateDeliveryAddress)
+    {
+      return new Customer(
         separateDeliveryAddress
       , InvoiceAddress
       , DeliveryAddress
       );
     }
 
-    sealed class SeparateDeliveryAddressLens : Lens<Model, bool>
+    sealed class SeparateDeliveryAddressLens : Lens<Customer, bool>
     {
       public override void BuildPath(StringBuilder sb)
       {
         sb.Append("SeparateDeliveryAddress");
       }
 
-      public override bool Get(Model m)
+      public override bool Get(Customer m)
       {
         return m.SeparateDeliveryAddress;
       }
 
-      public override Model Set(Model m, bool p)
+      public override Customer Set(Customer m, bool p)
       {
         return m.With_SeparateDeliveryAddress(p);
       }
     }
 
-    public readonly static Lens<Model, bool> separateDeliveryAddress = new SeparateDeliveryAddressLens();
+    public readonly static Lens<Customer, bool> separateDeliveryAddress = new SeparateDeliveryAddressLens();
 
-    public Model With_InvoiceAddress(AddressInfo invoiceAddress)
+    public Customer With_InvoiceAddress(AddressInfo invoiceAddress)
     {
-      return new Model(
+      return new Customer(
         SeparateDeliveryAddress
       , invoiceAddress
       , DeliveryAddress
       );
     }
 
-    sealed class InvoiceAddressLens : Lens<Model, AddressInfo>
+    sealed class InvoiceAddressLens : Lens<Customer, AddressInfo>
     {
       public override void BuildPath(StringBuilder sb)
       {
         sb.Append("InvoiceAddress");
       }
 
-      public override AddressInfo Get(Model m)
+      public override AddressInfo Get(Customer m)
       {
         return m.InvoiceAddress;
       }
 
-      public override Model Set(Model m, AddressInfo p)
+      public override Customer Set(Customer m, AddressInfo p)
       {
         return m.With_InvoiceAddress(p);
       }
     }
 
-    public readonly static Lens<Model, AddressInfo> invoiceAddress = new InvoiceAddressLens();
+    public readonly static Lens<Customer, AddressInfo> invoiceAddress = new InvoiceAddressLens();
 
-    public Model With_DeliveryAddress(AddressInfo deliveryAddress)
+    public Customer With_DeliveryAddress(AddressInfo deliveryAddress)
     {
-      return new Model(
+      return new Customer(
         SeparateDeliveryAddress
       , InvoiceAddress
       , deliveryAddress
       );
     }
 
-    sealed class DeliveryAddressLens : Lens<Model, AddressInfo>
+    sealed class DeliveryAddressLens : Lens<Customer, AddressInfo>
     {
       public override void BuildPath(StringBuilder sb)
       {
         sb.Append("DeliveryAddress");
       }
 
-      public override AddressInfo Get(Model m)
+      public override AddressInfo Get(Customer m)
       {
         return m.DeliveryAddress;
       }
 
-      public override Model Set(Model m, AddressInfo p)
+      public override Customer Set(Customer m, AddressInfo p)
       {
         return m.With_DeliveryAddress(p);
       }
     }
 
-    public readonly static Lens<Model, AddressInfo> deliveryAddress = new DeliveryAddressLens();
+    public readonly static Lens<Customer, AddressInfo> deliveryAddress = new DeliveryAddressLens();
 
 
   }

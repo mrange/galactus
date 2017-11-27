@@ -1,5 +1,8 @@
-﻿<#
-  var records = new []
+﻿<#@ assembly    name        ="System.Core"                  #>
+<#@ import      namespace   ="System.Linq"                  #>
+<#
+  var namespace_  = "Galactus.App.Model";
+  var records     = new []
   {
       R("AddressInfo"
       , M("string", "FirstName")
@@ -11,19 +14,41 @@
       , M("string", "County")
       , M("string", "Country")
       )
-    , R("Model"
+    , R("Customer"
       , M("bool"        , "SeparateDeliveryAddress")
       , M("AddressInfo" , "InvoiceAddress")
       , M("AddressInfo" , "DeliveryAddress")
       )
   };
 #>
-namespace Galactus.App.Test
+namespace <#=namespace_#>
 {
   using Galactus.Core;
   using System.Text;
 
 <#
+  string DefaultValueOfType(string type)
+  {
+    var isRecord = records.FirstOrDefault(r => r.Name == type) != null;
+
+    if (isRecord)
+    {
+      return type + ".Zero";
+    }
+    else
+    {
+      switch(type)
+      {
+      case "string":
+      case "System.String":
+        return @"""""";
+      default:
+        return "default(" + type + ")";
+      }
+    }
+  }
+
+
   var isFirst = true;
   foreach (var record in records)
   {
@@ -62,22 +87,41 @@ namespace Galactus.App.Test
 #>
     }
  
-  public override string ToString()
+    public <#=record.Name#>()
+      : this(
+<#  
+  isFirst = true;
+  foreach (var member in record.Members)
   {
-    var sb = new StringBuilder(16);
-    sb.Append("{ <#=record.Name#>");
+    var defaultValue = member.DefaultValue ?? DefaultValueOfType(member.Type);
+#>
+      <#= isFirst ? "  " : ", " #><#=defaultValue#>
+<#
+    isFirst = false;
+  }
+#>
+      )
+    {
+    }
+ 
+    public readonly static <#=record.Name#> Zero = new <#=record.Name#>();
+
+    public override string ToString()
+    {
+      var sb = new StringBuilder(16);
+      sb.Append("{ <#=record.Name#>");
 <#
   foreach (var member in record.Members)
   {
 #>
-    sb.Append(", <#=member.Name#>: ");
-    sb.Append(<#=member.Name#>);
+      sb.Append(", <#=member.Name#>: ");
+      sb.Append(<#=member.Name#>);
 <#
   }
 #>
-    sb.Append(" }");
-    return sb.ToString();
-  }
+      sb.Append(" }");
+      return sb.ToString();
+    }
 
 <#
   foreach (var member in record.Members)
@@ -141,13 +185,15 @@ namespace Galactus.App.Test
 <#+
   sealed class Member
   {
-    public readonly string Type;
-    public readonly string Name;
+    public readonly string Type         ;
+    public readonly string Name         ;
+    public readonly string DefaultValue ;
 
-    public Member(string type, string name)
+    public Member(string type, string name, string defaultValue)
     {
-      Type    = type    ?? "<NoType>"   ;
-      Name    = name    ?? "<NoName>"   ;
+      Type          = type    ?? "<NoType>" ;
+      Name          = name    ?? "<NoName>" ;
+      DefaultValue  = defaultValue          ;
     }
   }
 
@@ -163,7 +209,7 @@ namespace Galactus.App.Test
     }
   }
 
-  static Member M(string type, string name)             => new Member(type, name);
+  static Member M(string type, string name, string defaultValue = null) => new Member(type, name, defaultValue);
   static Record R(string name, params Member[] members) => new Record(name, members);
 
   static string CamelCase(string s)
