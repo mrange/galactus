@@ -32,6 +32,18 @@
     public static readonly DependencyProperty DummyProperty = DependencyProperty.RegisterAttached("Dummy" , typeof(object), typeof(DependencyProperties));
 
     public static readonly DependencyProperty NameProperty  = DependencyProperty.RegisterAttached("Name"  , typeof(string), typeof(DependencyProperties));
+
+    public static readonly DependencyProperty LensProperty  = DependencyProperty.RegisterAttached("Lens"  , typeof(ILens) , typeof(DependencyProperties));
+
+    public static ILens GetLens(DependencyObject dobj)
+    {
+      return (ILens)dobj?.GetValue(LensProperty);
+    }
+
+    public static void SetLens(DependencyObject dobj, ILens l)
+    {
+      dobj?.SetValue(LensProperty, l);
+    }
   }
 
   public sealed class UpdateContext

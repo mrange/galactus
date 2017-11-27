@@ -3,7 +3,12 @@
   using System;
   using System.Text;
 
-  public abstract class Lens<M, P>
+  public interface ILens
+  {
+
+  }
+
+  public abstract class Lens<M, P> : ILens
   {
     public abstract P Get(M m);
     public abstract M Set(M m, P p);

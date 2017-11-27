@@ -46,7 +46,7 @@
           , textBox.View
             ( textBox.text(l.Get(customer))
             , textBox.minWidth(80)
-            , textBox.tag(l)
+            , uIElement.lens(l)
             )
           )
           ;
@@ -72,7 +72,7 @@
       var textBoxHandler = uIElement.onLostFocus((ui, args) => c =>
         {
           var ltb = args.OriginalSource as TextBox;
-          var ll  = ltb?.Tag as Lens<Customer, string>;
+          var ll  = DependencyProperties.GetLens(ltb) as Lens<Customer, string>;
           return ll?.Set(c, ltb.Text) ?? c;
         });
 
@@ -95,7 +95,6 @@
 
     public static void Run()
     {
-      var vs = new string[0];
       Hosts.OpenWindow(new Customer(), View, Update);
     }
   }
