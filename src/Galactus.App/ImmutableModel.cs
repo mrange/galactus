@@ -41,12 +41,12 @@
       IView<Message> labeledTextBox(string lbl, Lens<Customer, string> l)
       {
         return stackPanel.View
-          (stackPanel.orientation(Orientation.Horizontal), margin)
+          ( stackPanel.orientation(Orientation.Horizontal), margin)
           ( textBlock.View(textBlock.text(lbl), textBlock.width(80))
           , textBox.View
             ( textBox.text(l.Get(customer))
             , textBox.minWidth(80)
-            , textBox.onLostFocus((ui, args) => c => l.Set(c, ((TextBox)ui).Text))
+            , textBox.tag(l)
             )
           )
           ;
@@ -69,8 +69,17 @@
             ));
       }
 
+      var textBoxHandler = uIElement.onLostFocus((ui, args) => c =>
+        {
+          var ltb = args.OriginalSource as TextBox;
+          var ll  = ltb?.Tag as Lens<Customer, string>;
+          return ll?.Set(c, ltb.Text) ?? c;
+        });
+
       return stackPanel.View
-        (stackPanel.orientation(Orientation.Vertical))
+        ( stackPanel.orientation(Orientation.Vertical)
+        , textBoxHandler
+        )
         ( labeledCheckBox("Separate Delivery Address?", Customer.separateDeliveryAddress)
         , addressInfo("Invoice Address" , Customer.invoiceAddress)
         , customer.SeparateDeliveryAddress ? addressInfo("Delivery Address", Customer.deliveryAddress) : empty.View

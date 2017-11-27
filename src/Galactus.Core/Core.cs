@@ -67,8 +67,9 @@
   public interface IProperty<in TUI, T> : IProperty
     where TUI : UIElement
   {
-    T     Get(TUI ui);
-    void  Set(TUI ui, T v);
+    T    Get  (TUI ui);
+    void Set  (TUI ui, T v);
+    void Clear(TUI ui);
   }
 
   public sealed class Property<TUI, T> : IProperty<TUI, T>
@@ -90,7 +91,21 @@
 
     public void Set(TUI ui, T v)
     {
-      ui.SetValue(dependencyProperty, v);
+      var lv    = ui.ReadLocalValue(dependencyProperty);
+      object nv = v;
+      if (ReferenceEquals(lv, nv) || lv != null && nv != null && lv.Equals(nv))
+      {
+        // Do nothing
+      }
+      else
+      { 
+        ui.SetValue(dependencyProperty, v);
+      }
+    }
+
+    public void Clear(TUI ui)
+    {
+      ui.ClearValue(dependencyProperty);
     }
   }
 
@@ -208,7 +223,7 @@
       // TODO: Handle nulls
       // TODO: How to handle events more efficiently?
 
-      ui.AddHandler(event_.RoutedEvent, onChangeHandler);
+      ui.AddHandler(event_.RoutedEvent, onChangeHandler, true);
       ctx.OnTearDown(() => ui.RemoveHandler(event_.RoutedEvent, onChangeHandler));
     }
   }
@@ -473,10 +488,7 @@
         ;
 
       var nnui = view.Update(ctx, pi, nui);
-      if (nnui != null)
-      {
-        nnui.SetValue(DependencyProperties.NameProperty, name);
-      }
+      nnui?.SetValue(DependencyProperties.NameProperty, name);
 
       return nnui;
     }

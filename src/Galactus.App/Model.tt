@@ -214,7 +214,7 @@ namespace <#=namespace_#>
 
   static string CamelCase(string s)
   {
-    if (s != null && s.Length > 0)
+    if (s?.Length > 0)
     {
       return Char.ToLowerInvariant(s[0]).ToString() + s.Substring(1);
     }
