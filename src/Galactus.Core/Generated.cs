@@ -1283,7 +1283,7 @@ namespace Galactus.Standard
 
     public partial class buttonBase : contentControl
     {
-      public static readonly IEvent<System.Windows.Controls.Primitives.ButtonBase, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> click = new Event<System.Windows.Controls.Primitives.ButtonBase, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.Primitives.ButtonBase.ClickEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> click = new Event<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.Primitives.ButtonBase.ClickEvent);
     }
 
     public partial class calendar : control
@@ -1329,8 +1329,8 @@ namespace Galactus.Standard
 
     public partial class contextMenu : menuBase
     {
-      public static readonly IEvent<System.Windows.Controls.ContextMenu, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> opened = new Event<System.Windows.Controls.ContextMenu, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.ContextMenu.OpenedEvent);
-      public static readonly IEvent<System.Windows.Controls.ContextMenu, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> closed = new Event<System.Windows.Controls.ContextMenu, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.ContextMenu.ClosedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> opened = new Event<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.ContextMenu.OpenedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> closed = new Event<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.ContextMenu.ClosedEvent);
     }
 
     public partial class control : frameworkElement
@@ -1345,8 +1345,8 @@ namespace Galactus.Standard
 
     public partial class dataGridCell : contentControl
     {
-      public static readonly IEvent<System.Windows.Controls.DataGridCell, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> selected = new Event<System.Windows.Controls.DataGridCell, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.DataGridCell.SelectedEvent);
-      public static readonly IEvent<System.Windows.Controls.DataGridCell, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> unselected = new Event<System.Windows.Controls.DataGridCell, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.DataGridCell.UnselectedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> selected = new Event<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.DataGridCell.SelectedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> unselected = new Event<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.DataGridCell.UnselectedEvent);
     }
 
     public partial class dataGridCellsPanel : virtualizingPanel
@@ -1371,8 +1371,8 @@ namespace Galactus.Standard
 
     public partial class dataGridRow : control
     {
-      public static readonly IEvent<System.Windows.Controls.DataGridRow, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> selected = new Event<System.Windows.Controls.DataGridRow, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.DataGridRow.SelectedEvent);
-      public static readonly IEvent<System.Windows.Controls.DataGridRow, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> unselected = new Event<System.Windows.Controls.DataGridRow, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.DataGridRow.UnselectedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> selected = new Event<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.DataGridRow.SelectedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> unselected = new Event<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.DataGridRow.UnselectedEvent);
     }
 
     public partial class dataGridRowHeader : buttonBase
@@ -1422,8 +1422,8 @@ namespace Galactus.Standard
 
     public partial class expander : headeredContentControl
     {
-      public static readonly IEvent<System.Windows.Controls.Expander, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> expanded = new Event<System.Windows.Controls.Expander, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.Expander.ExpandedEvent);
-      public static readonly IEvent<System.Windows.Controls.Expander, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> collapsed = new Event<System.Windows.Controls.Expander, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.Expander.CollapsedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> expanded = new Event<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.Expander.ExpandedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> collapsed = new Event<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.Expander.CollapsedEvent);
     }
 
     public partial class fixedPage : frameworkElement
@@ -1448,14 +1448,14 @@ namespace Galactus.Standard
 
     public partial class frameworkElement : uIElement
     {
-      public static readonly IEvent<System.Windows.FrameworkElement, System.Windows.RequestBringIntoViewEventHandler, System.Windows.RequestBringIntoViewEventArgs> requestBringIntoView = new Event<System.Windows.FrameworkElement, System.Windows.RequestBringIntoViewEventHandler, System.Windows.RequestBringIntoViewEventArgs>(System.Windows.FrameworkElement.RequestBringIntoViewEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.RequestBringIntoViewEventHandler, System.Windows.RequestBringIntoViewEventArgs> requestBringIntoView = new Event<System.Windows.UIElement, System.Windows.RequestBringIntoViewEventHandler, System.Windows.RequestBringIntoViewEventArgs>(System.Windows.FrameworkElement.RequestBringIntoViewEvent);
       public static readonly IEvent<System.Windows.FrameworkElement, System.Windows.SizeChangedEventHandler, System.Windows.SizeChangedEventArgs> sizeChanged = new Event<System.Windows.FrameworkElement, System.Windows.SizeChangedEventHandler, System.Windows.SizeChangedEventArgs>(System.Windows.FrameworkElement.SizeChangedEvent);
       public static readonly IEvent<System.Windows.FrameworkElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> loaded = new Event<System.Windows.FrameworkElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.FrameworkElement.LoadedEvent);
       public static readonly IEvent<System.Windows.FrameworkElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> unloaded = new Event<System.Windows.FrameworkElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.FrameworkElement.UnloadedEvent);
       public static readonly IEvent<System.Windows.FrameworkElement, System.Windows.Controls.ToolTipEventHandler, System.Windows.Controls.ToolTipEventArgs> toolTipOpening = new Event<System.Windows.FrameworkElement, System.Windows.Controls.ToolTipEventHandler, System.Windows.Controls.ToolTipEventArgs>(System.Windows.FrameworkElement.ToolTipOpeningEvent);
       public static readonly IEvent<System.Windows.FrameworkElement, System.Windows.Controls.ToolTipEventHandler, System.Windows.Controls.ToolTipEventArgs> toolTipClosing = new Event<System.Windows.FrameworkElement, System.Windows.Controls.ToolTipEventHandler, System.Windows.Controls.ToolTipEventArgs>(System.Windows.FrameworkElement.ToolTipClosingEvent);
-      public static readonly IEvent<System.Windows.FrameworkElement, System.Windows.Controls.ContextMenuEventHandler, System.Windows.Controls.ContextMenuEventArgs> contextMenuOpening = new Event<System.Windows.FrameworkElement, System.Windows.Controls.ContextMenuEventHandler, System.Windows.Controls.ContextMenuEventArgs>(System.Windows.FrameworkElement.ContextMenuOpeningEvent);
-      public static readonly IEvent<System.Windows.FrameworkElement, System.Windows.Controls.ContextMenuEventHandler, System.Windows.Controls.ContextMenuEventArgs> contextMenuClosing = new Event<System.Windows.FrameworkElement, System.Windows.Controls.ContextMenuEventHandler, System.Windows.Controls.ContextMenuEventArgs>(System.Windows.FrameworkElement.ContextMenuClosingEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.Controls.ContextMenuEventHandler, System.Windows.Controls.ContextMenuEventArgs> contextMenuOpening = new Event<System.Windows.UIElement, System.Windows.Controls.ContextMenuEventHandler, System.Windows.Controls.ContextMenuEventArgs>(System.Windows.FrameworkElement.ContextMenuOpeningEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.Controls.ContextMenuEventHandler, System.Windows.Controls.ContextMenuEventArgs> contextMenuClosing = new Event<System.Windows.UIElement, System.Windows.Controls.ContextMenuEventHandler, System.Windows.Controls.ContextMenuEventArgs>(System.Windows.FrameworkElement.ContextMenuClosingEvent);
     }
 
     public partial class glyphs : frameworkElement
@@ -1504,23 +1504,23 @@ namespace Galactus.Standard
 
     public partial class hwndHost : frameworkElement
     {
-      public static readonly IEvent<System.Windows.Interop.HwndHost, System.Windows.DpiChangedEventHandler, System.Windows.DpiChangedEventArgs> dpiChanged = new Event<System.Windows.Interop.HwndHost, System.Windows.DpiChangedEventHandler, System.Windows.DpiChangedEventArgs>(System.Windows.Interop.HwndHost.DpiChangedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.DpiChangedEventHandler, System.Windows.DpiChangedEventArgs> dpiChanged = new Event<System.Windows.UIElement, System.Windows.DpiChangedEventHandler, System.Windows.DpiChangedEventArgs>(System.Windows.Interop.HwndHost.DpiChangedEvent);
     }
 
     public partial class image : frameworkElement
     {
-      public static readonly IEvent<System.Windows.Controls.Image, System.Windows.DpiChangedEventHandler, System.Windows.DpiChangedEventArgs> dpiChanged = new Event<System.Windows.Controls.Image, System.Windows.DpiChangedEventHandler, System.Windows.DpiChangedEventArgs>(System.Windows.Controls.Image.DpiChangedEvent);
-      public static readonly IEvent<System.Windows.Controls.Image, System.EventHandler<System.Windows.ExceptionRoutedEventArgs>, System.Windows.ExceptionRoutedEventArgs> imageFailed = new Event<System.Windows.Controls.Image, System.EventHandler<System.Windows.ExceptionRoutedEventArgs>, System.Windows.ExceptionRoutedEventArgs>(System.Windows.Controls.Image.ImageFailedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.DpiChangedEventHandler, System.Windows.DpiChangedEventArgs> dpiChanged = new Event<System.Windows.UIElement, System.Windows.DpiChangedEventHandler, System.Windows.DpiChangedEventArgs>(System.Windows.Controls.Image.DpiChangedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.EventHandler<System.Windows.ExceptionRoutedEventArgs>, System.Windows.ExceptionRoutedEventArgs> imageFailed = new Event<System.Windows.UIElement, System.EventHandler<System.Windows.ExceptionRoutedEventArgs>, System.Windows.ExceptionRoutedEventArgs>(System.Windows.Controls.Image.ImageFailedEvent);
     }
 
     public partial class inkCanvas : frameworkElement
     {
-      public static readonly IEvent<System.Windows.Controls.InkCanvas, System.Windows.Controls.InkCanvasStrokeCollectedEventHandler, System.Windows.Controls.InkCanvasStrokeCollectedEventArgs> strokeCollected = new Event<System.Windows.Controls.InkCanvas, System.Windows.Controls.InkCanvasStrokeCollectedEventHandler, System.Windows.Controls.InkCanvasStrokeCollectedEventArgs>(System.Windows.Controls.InkCanvas.StrokeCollectedEvent);
-      public static readonly IEvent<System.Windows.Controls.InkCanvas, System.Windows.Controls.InkCanvasGestureEventHandler, System.Windows.Controls.InkCanvasGestureEventArgs> gesture = new Event<System.Windows.Controls.InkCanvas, System.Windows.Controls.InkCanvasGestureEventHandler, System.Windows.Controls.InkCanvasGestureEventArgs>(System.Windows.Controls.InkCanvas.GestureEvent);
-      public static readonly IEvent<System.Windows.Controls.InkCanvas, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> activeEditingModeChanged = new Event<System.Windows.Controls.InkCanvas, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.InkCanvas.ActiveEditingModeChangedEvent);
-      public static readonly IEvent<System.Windows.Controls.InkCanvas, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> editingModeChanged = new Event<System.Windows.Controls.InkCanvas, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.InkCanvas.EditingModeChangedEvent);
-      public static readonly IEvent<System.Windows.Controls.InkCanvas, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> editingModeInvertedChanged = new Event<System.Windows.Controls.InkCanvas, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.InkCanvas.EditingModeInvertedChangedEvent);
-      public static readonly IEvent<System.Windows.Controls.InkCanvas, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> strokeErased = new Event<System.Windows.Controls.InkCanvas, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.InkCanvas.StrokeErasedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.Controls.InkCanvasStrokeCollectedEventHandler, System.Windows.Controls.InkCanvasStrokeCollectedEventArgs> strokeCollected = new Event<System.Windows.UIElement, System.Windows.Controls.InkCanvasStrokeCollectedEventHandler, System.Windows.Controls.InkCanvasStrokeCollectedEventArgs>(System.Windows.Controls.InkCanvas.StrokeCollectedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.Controls.InkCanvasGestureEventHandler, System.Windows.Controls.InkCanvasGestureEventArgs> gesture = new Event<System.Windows.UIElement, System.Windows.Controls.InkCanvasGestureEventHandler, System.Windows.Controls.InkCanvasGestureEventArgs>(System.Windows.Controls.InkCanvas.GestureEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> activeEditingModeChanged = new Event<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.InkCanvas.ActiveEditingModeChangedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> editingModeChanged = new Event<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.InkCanvas.EditingModeChangedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> editingModeInvertedChanged = new Event<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.InkCanvas.EditingModeInvertedChangedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> strokeErased = new Event<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.InkCanvas.StrokeErasedEvent);
     }
 
     public partial class inkPresenter : decorator
@@ -1549,8 +1549,8 @@ namespace Galactus.Standard
 
     public partial class listBoxItem : contentControl
     {
-      public static readonly IEvent<System.Windows.Controls.ListBoxItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> selected = new Event<System.Windows.Controls.ListBoxItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.ListBoxItem.SelectedEvent);
-      public static readonly IEvent<System.Windows.Controls.ListBoxItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> unselected = new Event<System.Windows.Controls.ListBoxItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.ListBoxItem.UnselectedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> selected = new Event<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.ListBoxItem.SelectedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> unselected = new Event<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.ListBoxItem.UnselectedEvent);
     }
 
     public partial class listView : listBox
@@ -1563,12 +1563,12 @@ namespace Galactus.Standard
 
     public partial class mediaElement : frameworkElement
     {
-      public static readonly IEvent<System.Windows.Controls.MediaElement, System.EventHandler<System.Windows.ExceptionRoutedEventArgs>, System.Windows.ExceptionRoutedEventArgs> mediaFailed = new Event<System.Windows.Controls.MediaElement, System.EventHandler<System.Windows.ExceptionRoutedEventArgs>, System.Windows.ExceptionRoutedEventArgs>(System.Windows.Controls.MediaElement.MediaFailedEvent);
-      public static readonly IEvent<System.Windows.Controls.MediaElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> mediaOpened = new Event<System.Windows.Controls.MediaElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.MediaElement.MediaOpenedEvent);
-      public static readonly IEvent<System.Windows.Controls.MediaElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> bufferingStarted = new Event<System.Windows.Controls.MediaElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.MediaElement.BufferingStartedEvent);
-      public static readonly IEvent<System.Windows.Controls.MediaElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> bufferingEnded = new Event<System.Windows.Controls.MediaElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.MediaElement.BufferingEndedEvent);
-      public static readonly IEvent<System.Windows.Controls.MediaElement, System.EventHandler<System.Windows.MediaScriptCommandRoutedEventArgs>, System.Windows.MediaScriptCommandRoutedEventArgs> scriptCommand = new Event<System.Windows.Controls.MediaElement, System.EventHandler<System.Windows.MediaScriptCommandRoutedEventArgs>, System.Windows.MediaScriptCommandRoutedEventArgs>(System.Windows.Controls.MediaElement.ScriptCommandEvent);
-      public static readonly IEvent<System.Windows.Controls.MediaElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> mediaEnded = new Event<System.Windows.Controls.MediaElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.MediaElement.MediaEndedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.EventHandler<System.Windows.ExceptionRoutedEventArgs>, System.Windows.ExceptionRoutedEventArgs> mediaFailed = new Event<System.Windows.UIElement, System.EventHandler<System.Windows.ExceptionRoutedEventArgs>, System.Windows.ExceptionRoutedEventArgs>(System.Windows.Controls.MediaElement.MediaFailedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> mediaOpened = new Event<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.MediaElement.MediaOpenedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> bufferingStarted = new Event<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.MediaElement.BufferingStartedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> bufferingEnded = new Event<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.MediaElement.BufferingEndedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.EventHandler<System.Windows.MediaScriptCommandRoutedEventArgs>, System.Windows.MediaScriptCommandRoutedEventArgs> scriptCommand = new Event<System.Windows.UIElement, System.EventHandler<System.Windows.MediaScriptCommandRoutedEventArgs>, System.Windows.MediaScriptCommandRoutedEventArgs>(System.Windows.Controls.MediaElement.ScriptCommandEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> mediaEnded = new Event<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.MediaElement.MediaEndedEvent);
     }
 
     public partial class menu : menuBase
@@ -1581,11 +1581,11 @@ namespace Galactus.Standard
 
     public partial class menuItem : headeredItemsControl
     {
-      public static readonly IEvent<System.Windows.Controls.MenuItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> click = new Event<System.Windows.Controls.MenuItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.MenuItem.ClickEvent);
-      public static readonly IEvent<System.Windows.Controls.MenuItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> checked_ = new Event<System.Windows.Controls.MenuItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.MenuItem.CheckedEvent);
-      public static readonly IEvent<System.Windows.Controls.MenuItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> unchecked_ = new Event<System.Windows.Controls.MenuItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.MenuItem.UncheckedEvent);
-      public static readonly IEvent<System.Windows.Controls.MenuItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> submenuOpened = new Event<System.Windows.Controls.MenuItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.MenuItem.SubmenuOpenedEvent);
-      public static readonly IEvent<System.Windows.Controls.MenuItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> submenuClosed = new Event<System.Windows.Controls.MenuItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.MenuItem.SubmenuClosedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> click = new Event<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.MenuItem.ClickEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> checked_ = new Event<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.MenuItem.CheckedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> unchecked_ = new Event<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.MenuItem.UncheckedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> submenuOpened = new Event<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.MenuItem.SubmenuOpenedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> submenuClosed = new Event<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.MenuItem.SubmenuClosedEvent);
     }
 
     public partial class multiSelector : selector
@@ -1614,7 +1614,7 @@ namespace Galactus.Standard
 
     public partial class passwordBox : control
     {
-      public static readonly IEvent<System.Windows.Controls.PasswordBox, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> passwordChanged = new Event<System.Windows.Controls.PasswordBox, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.PasswordBox.PasswordChangedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> passwordChanged = new Event<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.PasswordBox.PasswordChangedEvent);
     }
 
     public partial class path : shape
@@ -1643,7 +1643,7 @@ namespace Galactus.Standard
 
     public partial class rangeBase : control
     {
-      public static readonly IEvent<System.Windows.Controls.Primitives.RangeBase, System.Windows.RoutedPropertyChangedEventHandler<System.Double>, System.Windows.RoutedPropertyChangedEventArgs<System.Double>> valueChanged = new Event<System.Windows.Controls.Primitives.RangeBase, System.Windows.RoutedPropertyChangedEventHandler<System.Double>, System.Windows.RoutedPropertyChangedEventArgs<System.Double>>(System.Windows.Controls.Primitives.RangeBase.ValueChangedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.RoutedPropertyChangedEventHandler<System.Double>, System.Windows.RoutedPropertyChangedEventArgs<System.Double>> valueChanged = new Event<System.Windows.UIElement, System.Windows.RoutedPropertyChangedEventHandler<System.Double>, System.Windows.RoutedPropertyChangedEventArgs<System.Double>>(System.Windows.Controls.Primitives.RangeBase.ValueChangedEvent);
     }
 
     public partial class rectangle : shape
@@ -1664,7 +1664,7 @@ namespace Galactus.Standard
 
     public partial class scrollBar : rangeBase
     {
-      public static readonly IEvent<System.Windows.Controls.Primitives.ScrollBar, System.Windows.Controls.Primitives.ScrollEventHandler, System.Windows.Controls.Primitives.ScrollEventArgs> scroll = new Event<System.Windows.Controls.Primitives.ScrollBar, System.Windows.Controls.Primitives.ScrollEventHandler, System.Windows.Controls.Primitives.ScrollEventArgs>(System.Windows.Controls.Primitives.ScrollBar.ScrollEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.Controls.Primitives.ScrollEventHandler, System.Windows.Controls.Primitives.ScrollEventArgs> scroll = new Event<System.Windows.UIElement, System.Windows.Controls.Primitives.ScrollEventHandler, System.Windows.Controls.Primitives.ScrollEventArgs>(System.Windows.Controls.Primitives.ScrollBar.ScrollEvent);
     }
 
     public partial class scrollContentPresenter : contentPresenter
@@ -1673,7 +1673,7 @@ namespace Galactus.Standard
 
     public partial class scrollViewer : contentControl
     {
-      public static readonly IEvent<System.Windows.Controls.ScrollViewer, System.Windows.Controls.ScrollChangedEventHandler, System.Windows.Controls.ScrollChangedEventArgs> scrollChanged = new Event<System.Windows.Controls.ScrollViewer, System.Windows.Controls.ScrollChangedEventHandler, System.Windows.Controls.ScrollChangedEventArgs>(System.Windows.Controls.ScrollViewer.ScrollChangedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.Controls.ScrollChangedEventHandler, System.Windows.Controls.ScrollChangedEventArgs> scrollChanged = new Event<System.Windows.UIElement, System.Windows.Controls.ScrollChangedEventHandler, System.Windows.Controls.ScrollChangedEventArgs>(System.Windows.Controls.ScrollViewer.ScrollChangedEvent);
     }
 
     public partial class selectiveScrollingGrid : grid
@@ -1682,9 +1682,9 @@ namespace Galactus.Standard
 
     public partial class selector : itemsControl
     {
-      public static readonly IEvent<System.Windows.Controls.Primitives.Selector, System.Windows.Controls.SelectionChangedEventHandler, System.Windows.Controls.SelectionChangedEventArgs> selectionChanged = new Event<System.Windows.Controls.Primitives.Selector, System.Windows.Controls.SelectionChangedEventHandler, System.Windows.Controls.SelectionChangedEventArgs>(System.Windows.Controls.Primitives.Selector.SelectionChangedEvent);
-      public static readonly IEvent<System.Windows.Controls.Primitives.Selector, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> selected = new Event<System.Windows.Controls.Primitives.Selector, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.Primitives.Selector.SelectedEvent);
-      public static readonly IEvent<System.Windows.Controls.Primitives.Selector, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> unselected = new Event<System.Windows.Controls.Primitives.Selector, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.Primitives.Selector.UnselectedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.Controls.SelectionChangedEventHandler, System.Windows.Controls.SelectionChangedEventArgs> selectionChanged = new Event<System.Windows.UIElement, System.Windows.Controls.SelectionChangedEventHandler, System.Windows.Controls.SelectionChangedEventArgs>(System.Windows.Controls.Primitives.Selector.SelectionChangedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> selected = new Event<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.Primitives.Selector.SelectedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> unselected = new Event<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.Primitives.Selector.UnselectedEvent);
     }
 
     public partial class separator : control
@@ -1737,15 +1737,15 @@ namespace Galactus.Standard
 
     public partial class textBoxBase : control
     {
-      public static readonly IEvent<System.Windows.Controls.Primitives.TextBoxBase, System.Windows.Controls.TextChangedEventHandler, System.Windows.Controls.TextChangedEventArgs> textChanged = new Event<System.Windows.Controls.Primitives.TextBoxBase, System.Windows.Controls.TextChangedEventHandler, System.Windows.Controls.TextChangedEventArgs>(System.Windows.Controls.Primitives.TextBoxBase.TextChangedEvent);
-      public static readonly IEvent<System.Windows.Controls.Primitives.TextBoxBase, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> selectionChanged = new Event<System.Windows.Controls.Primitives.TextBoxBase, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.Primitives.TextBoxBase.SelectionChangedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.Controls.TextChangedEventHandler, System.Windows.Controls.TextChangedEventArgs> textChanged = new Event<System.Windows.UIElement, System.Windows.Controls.TextChangedEventHandler, System.Windows.Controls.TextChangedEventArgs>(System.Windows.Controls.Primitives.TextBoxBase.TextChangedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> selectionChanged = new Event<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.Primitives.TextBoxBase.SelectionChangedEvent);
     }
 
     public partial class thumb : control
     {
-      public static readonly IEvent<System.Windows.Controls.Primitives.Thumb, System.Windows.Controls.Primitives.DragStartedEventHandler, System.Windows.Controls.Primitives.DragStartedEventArgs> dragStarted = new Event<System.Windows.Controls.Primitives.Thumb, System.Windows.Controls.Primitives.DragStartedEventHandler, System.Windows.Controls.Primitives.DragStartedEventArgs>(System.Windows.Controls.Primitives.Thumb.DragStartedEvent);
-      public static readonly IEvent<System.Windows.Controls.Primitives.Thumb, System.Windows.Controls.Primitives.DragDeltaEventHandler, System.Windows.Controls.Primitives.DragDeltaEventArgs> dragDelta = new Event<System.Windows.Controls.Primitives.Thumb, System.Windows.Controls.Primitives.DragDeltaEventHandler, System.Windows.Controls.Primitives.DragDeltaEventArgs>(System.Windows.Controls.Primitives.Thumb.DragDeltaEvent);
-      public static readonly IEvent<System.Windows.Controls.Primitives.Thumb, System.Windows.Controls.Primitives.DragCompletedEventHandler, System.Windows.Controls.Primitives.DragCompletedEventArgs> dragCompleted = new Event<System.Windows.Controls.Primitives.Thumb, System.Windows.Controls.Primitives.DragCompletedEventHandler, System.Windows.Controls.Primitives.DragCompletedEventArgs>(System.Windows.Controls.Primitives.Thumb.DragCompletedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.Controls.Primitives.DragStartedEventHandler, System.Windows.Controls.Primitives.DragStartedEventArgs> dragStarted = new Event<System.Windows.UIElement, System.Windows.Controls.Primitives.DragStartedEventHandler, System.Windows.Controls.Primitives.DragStartedEventArgs>(System.Windows.Controls.Primitives.Thumb.DragStartedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.Controls.Primitives.DragDeltaEventHandler, System.Windows.Controls.Primitives.DragDeltaEventArgs> dragDelta = new Event<System.Windows.UIElement, System.Windows.Controls.Primitives.DragDeltaEventHandler, System.Windows.Controls.Primitives.DragDeltaEventArgs>(System.Windows.Controls.Primitives.Thumb.DragDeltaEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.Controls.Primitives.DragCompletedEventHandler, System.Windows.Controls.Primitives.DragCompletedEventArgs> dragCompleted = new Event<System.Windows.UIElement, System.Windows.Controls.Primitives.DragCompletedEventHandler, System.Windows.Controls.Primitives.DragCompletedEventArgs>(System.Windows.Controls.Primitives.Thumb.DragCompletedEvent);
     }
 
     public partial class tickBar : frameworkElement
@@ -1754,9 +1754,9 @@ namespace Galactus.Standard
 
     public partial class toggleButton : buttonBase
     {
-      public static readonly IEvent<System.Windows.Controls.Primitives.ToggleButton, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> checked_ = new Event<System.Windows.Controls.Primitives.ToggleButton, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.Primitives.ToggleButton.CheckedEvent);
-      public static readonly IEvent<System.Windows.Controls.Primitives.ToggleButton, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> unchecked_ = new Event<System.Windows.Controls.Primitives.ToggleButton, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.Primitives.ToggleButton.UncheckedEvent);
-      public static readonly IEvent<System.Windows.Controls.Primitives.ToggleButton, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> indeterminate = new Event<System.Windows.Controls.Primitives.ToggleButton, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.Primitives.ToggleButton.IndeterminateEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> checked_ = new Event<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.Primitives.ToggleButton.CheckedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> unchecked_ = new Event<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.Primitives.ToggleButton.UncheckedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> indeterminate = new Event<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.Primitives.ToggleButton.IndeterminateEvent);
     }
 
     public partial class toolBar : headeredItemsControl
@@ -1777,8 +1777,8 @@ namespace Galactus.Standard
 
     public partial class toolTip : contentControl
     {
-      public static readonly IEvent<System.Windows.Controls.ToolTip, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> opened = new Event<System.Windows.Controls.ToolTip, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.ToolTip.OpenedEvent);
-      public static readonly IEvent<System.Windows.Controls.ToolTip, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> closed = new Event<System.Windows.Controls.ToolTip, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.ToolTip.ClosedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> opened = new Event<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.ToolTip.OpenedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> closed = new Event<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.ToolTip.ClosedEvent);
     }
 
     public partial class track : frameworkElement
@@ -1787,15 +1787,15 @@ namespace Galactus.Standard
 
     public partial class treeView : itemsControl
     {
-      public static readonly IEvent<System.Windows.Controls.TreeView, System.Windows.RoutedPropertyChangedEventHandler<System.Object>, System.Windows.RoutedPropertyChangedEventArgs<System.Object>> selectedItemChanged = new Event<System.Windows.Controls.TreeView, System.Windows.RoutedPropertyChangedEventHandler<System.Object>, System.Windows.RoutedPropertyChangedEventArgs<System.Object>>(System.Windows.Controls.TreeView.SelectedItemChangedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.RoutedPropertyChangedEventHandler<System.Object>, System.Windows.RoutedPropertyChangedEventArgs<System.Object>> selectedItemChanged = new Event<System.Windows.UIElement, System.Windows.RoutedPropertyChangedEventHandler<System.Object>, System.Windows.RoutedPropertyChangedEventArgs<System.Object>>(System.Windows.Controls.TreeView.SelectedItemChangedEvent);
     }
 
     public partial class treeViewItem : headeredItemsControl
     {
-      public static readonly IEvent<System.Windows.Controls.TreeViewItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> expanded = new Event<System.Windows.Controls.TreeViewItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.TreeViewItem.ExpandedEvent);
-      public static readonly IEvent<System.Windows.Controls.TreeViewItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> collapsed = new Event<System.Windows.Controls.TreeViewItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.TreeViewItem.CollapsedEvent);
-      public static readonly IEvent<System.Windows.Controls.TreeViewItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> selected = new Event<System.Windows.Controls.TreeViewItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.TreeViewItem.SelectedEvent);
-      public static readonly IEvent<System.Windows.Controls.TreeViewItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> unselected = new Event<System.Windows.Controls.TreeViewItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.TreeViewItem.UnselectedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> expanded = new Event<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.TreeViewItem.ExpandedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> collapsed = new Event<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.TreeViewItem.CollapsedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> selected = new Event<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.TreeViewItem.SelectedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> unselected = new Event<System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs>(System.Windows.Controls.TreeViewItem.UnselectedEvent);
     }
 
     public partial class uIElement
@@ -1907,7 +1907,7 @@ namespace Galactus.Standard
 
     public partial class window : contentControl
     {
-      public static readonly IEvent<System.Windows.Window, System.Windows.DpiChangedEventHandler, System.Windows.DpiChangedEventArgs> dpiChanged = new Event<System.Windows.Window, System.Windows.DpiChangedEventHandler, System.Windows.DpiChangedEventArgs>(System.Windows.Window.DpiChangedEvent);
+      public static readonly IEvent<System.Windows.UIElement, System.Windows.DpiChangedEventHandler, System.Windows.DpiChangedEventArgs> dpiChanged = new Event<System.Windows.UIElement, System.Windows.DpiChangedEventHandler, System.Windows.DpiChangedEventArgs>(System.Windows.Window.DpiChangedEvent);
     }
 
     public partial class virtualizingPanel : panel
@@ -2020,8 +2020,8 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.Primitives.ButtonBase> isPressed(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.ButtonBase, System.Boolean>(Properties.buttonBase.isPressed, v);
       public static IValue<TMessage, System.Windows.Controls.Primitives.ButtonBase> clickMode(System.Windows.Controls.ClickMode v) => new SetValue<TMessage, System.Windows.Controls.Primitives.ButtonBase, System.Windows.Controls.ClickMode>(Properties.buttonBase.clickMode, v);
 
-      public static IValue<TMessage, System.Windows.Controls.Primitives.ButtonBase> onClick (OnChange<TMessage, System.Windows.Controls.Primitives.ButtonBase, System.Windows.RoutedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.Primitives.ButtonBase, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.buttonBase.click, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onClick (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.buttonBase.click, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
 
     }
 
@@ -2153,10 +2153,10 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.ContextMenu> customPopupPlacementCallback(System.Windows.Controls.Primitives.CustomPopupPlacementCallback v) => new SetValue<TMessage, System.Windows.Controls.ContextMenu, System.Windows.Controls.Primitives.CustomPopupPlacementCallback>(Properties.contextMenu.customPopupPlacementCallback, v);
       public static IValue<TMessage, System.Windows.Controls.ContextMenu> staysOpen(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.ContextMenu, System.Boolean>(Properties.contextMenu.staysOpen, v);
 
-      public static IValue<TMessage, System.Windows.Controls.ContextMenu> onOpened (OnChange<TMessage, System.Windows.Controls.ContextMenu, System.Windows.RoutedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.ContextMenu, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.contextMenu.opened, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
-      public static IValue<TMessage, System.Windows.Controls.ContextMenu> onClosed (OnChange<TMessage, System.Windows.Controls.ContextMenu, System.Windows.RoutedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.ContextMenu, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.contextMenu.closed, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onOpened (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.contextMenu.opened, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onClosed (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.contextMenu.closed, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
 
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.ContextMenu>[] vs) => new StandardView<TMessage, System.Windows.Controls.ContextMenu>(vs);
     }
@@ -2251,10 +2251,10 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.DataGridCell> isReadOnly(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.DataGridCell, System.Boolean>(Properties.dataGridCell.isReadOnly, v);
       public static IValue<TMessage, System.Windows.Controls.DataGridCell> isSelected(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.DataGridCell, System.Boolean>(Properties.dataGridCell.isSelected, v);
 
-      public static IValue<TMessage, System.Windows.Controls.DataGridCell> onSelected (OnChange<TMessage, System.Windows.Controls.DataGridCell, System.Windows.RoutedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.DataGridCell, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.dataGridCell.selected, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
-      public static IValue<TMessage, System.Windows.Controls.DataGridCell> onUnselected (OnChange<TMessage, System.Windows.Controls.DataGridCell, System.Windows.RoutedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.DataGridCell, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.dataGridCell.unselected, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onSelected (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.dataGridCell.selected, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onUnselected (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.dataGridCell.unselected, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
 
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.DataGridCell>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.DataGridCell>(vs, c);
     }
@@ -2317,10 +2317,10 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.DataGridRow> isEditing(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.DataGridRow, System.Boolean>(Properties.dataGridRow.isEditing, v);
       public static IValue<TMessage, System.Windows.Controls.DataGridRow> isNewItem(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.DataGridRow, System.Boolean>(Properties.dataGridRow.isNewItem, v);
 
-      public static IValue<TMessage, System.Windows.Controls.DataGridRow> onSelected (OnChange<TMessage, System.Windows.Controls.DataGridRow, System.Windows.RoutedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.DataGridRow, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.dataGridRow.selected, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
-      public static IValue<TMessage, System.Windows.Controls.DataGridRow> onUnselected (OnChange<TMessage, System.Windows.Controls.DataGridRow, System.Windows.RoutedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.DataGridRow, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.dataGridRow.unselected, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onSelected (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.dataGridRow.selected, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onUnselected (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.dataGridRow.unselected, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
 
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.DataGridRow>[] vs) => new StandardView<TMessage, System.Windows.Controls.DataGridRow>(vs);
     }
@@ -2450,10 +2450,10 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.Expander> expandDirection(System.Windows.Controls.ExpandDirection v) => new SetValue<TMessage, System.Windows.Controls.Expander, System.Windows.Controls.ExpandDirection>(Properties.expander.expandDirection, v);
       public static IValue<TMessage, System.Windows.Controls.Expander> isExpanded(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Expander, System.Boolean>(Properties.expander.isExpanded, v);
 
-      public static IValue<TMessage, System.Windows.Controls.Expander> onExpanded (OnChange<TMessage, System.Windows.Controls.Expander, System.Windows.RoutedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.Expander, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.expander.expanded, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
-      public static IValue<TMessage, System.Windows.Controls.Expander> onCollapsed (OnChange<TMessage, System.Windows.Controls.Expander, System.Windows.RoutedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.Expander, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.expander.collapsed, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onExpanded (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.expander.expanded, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onCollapsed (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.expander.collapsed, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
 
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Expander>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.Expander>(vs, c);
     }
@@ -2586,8 +2586,8 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.FrameworkElement> toolTip(System.Object v) => new SetValue<TMessage, System.Windows.FrameworkElement, System.Object>(Properties.frameworkElement.toolTip, v);
       public static IValue<TMessage, System.Windows.FrameworkElement> contextMenu(System.Windows.Controls.ContextMenu v) => new SetValue<TMessage, System.Windows.FrameworkElement, System.Windows.Controls.ContextMenu>(Properties.frameworkElement.contextMenu, v);
 
-      public static IValue<TMessage, System.Windows.FrameworkElement> onRequestBringIntoView (OnChange<TMessage, System.Windows.FrameworkElement, System.Windows.RequestBringIntoViewEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.FrameworkElement, System.Windows.RequestBringIntoViewEventHandler, System.Windows.RequestBringIntoViewEventArgs> (Events.frameworkElement.requestBringIntoView, h => (System.Windows.RequestBringIntoViewEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onRequestBringIntoView (OnChange<TMessage, System.Windows.UIElement, System.Windows.RequestBringIntoViewEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RequestBringIntoViewEventHandler, System.Windows.RequestBringIntoViewEventArgs> (Events.frameworkElement.requestBringIntoView, h => (System.Windows.RequestBringIntoViewEventHandler)h.Invoke, onChange);
       public static IValue<TMessage, System.Windows.FrameworkElement> onSizeChanged (OnChange<TMessage, System.Windows.FrameworkElement, System.Windows.SizeChangedEventArgs> onChange) =>
         new OnChangedValue<TMessage, System.Windows.FrameworkElement, System.Windows.SizeChangedEventHandler, System.Windows.SizeChangedEventArgs> (Events.frameworkElement.sizeChanged, h => (System.Windows.SizeChangedEventHandler)h.Invoke, onChange);
       public static IValue<TMessage, System.Windows.FrameworkElement> onLoaded (OnChange<TMessage, System.Windows.FrameworkElement, System.Windows.RoutedEventArgs> onChange) =>
@@ -2598,10 +2598,10 @@ namespace Galactus.Standard
         new OnChangedValue<TMessage, System.Windows.FrameworkElement, System.Windows.Controls.ToolTipEventHandler, System.Windows.Controls.ToolTipEventArgs> (Events.frameworkElement.toolTipOpening, h => (System.Windows.Controls.ToolTipEventHandler)h.Invoke, onChange);
       public static IValue<TMessage, System.Windows.FrameworkElement> onToolTipClosing (OnChange<TMessage, System.Windows.FrameworkElement, System.Windows.Controls.ToolTipEventArgs> onChange) =>
         new OnChangedValue<TMessage, System.Windows.FrameworkElement, System.Windows.Controls.ToolTipEventHandler, System.Windows.Controls.ToolTipEventArgs> (Events.frameworkElement.toolTipClosing, h => (System.Windows.Controls.ToolTipEventHandler)h.Invoke, onChange);
-      public static IValue<TMessage, System.Windows.FrameworkElement> onContextMenuOpening (OnChange<TMessage, System.Windows.FrameworkElement, System.Windows.Controls.ContextMenuEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.FrameworkElement, System.Windows.Controls.ContextMenuEventHandler, System.Windows.Controls.ContextMenuEventArgs> (Events.frameworkElement.contextMenuOpening, h => (System.Windows.Controls.ContextMenuEventHandler)h.Invoke, onChange);
-      public static IValue<TMessage, System.Windows.FrameworkElement> onContextMenuClosing (OnChange<TMessage, System.Windows.FrameworkElement, System.Windows.Controls.ContextMenuEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.FrameworkElement, System.Windows.Controls.ContextMenuEventHandler, System.Windows.Controls.ContextMenuEventArgs> (Events.frameworkElement.contextMenuClosing, h => (System.Windows.Controls.ContextMenuEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onContextMenuOpening (OnChange<TMessage, System.Windows.UIElement, System.Windows.Controls.ContextMenuEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.Controls.ContextMenuEventHandler, System.Windows.Controls.ContextMenuEventArgs> (Events.frameworkElement.contextMenuOpening, h => (System.Windows.Controls.ContextMenuEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onContextMenuClosing (OnChange<TMessage, System.Windows.UIElement, System.Windows.Controls.ContextMenuEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.Controls.ContextMenuEventHandler, System.Windows.Controls.ContextMenuEventArgs> (Events.frameworkElement.contextMenuClosing, h => (System.Windows.Controls.ContextMenuEventHandler)h.Invoke, onChange);
 
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.FrameworkElement>[] vs) => new StandardView<TMessage, System.Windows.FrameworkElement>(vs);
     }
@@ -2730,8 +2730,8 @@ namespace Galactus.Standard
     public partial class hwndHost : frameworkElement
     {
 
-      public static IValue<TMessage, System.Windows.Interop.HwndHost> onDpiChanged (OnChange<TMessage, System.Windows.Interop.HwndHost, System.Windows.DpiChangedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Interop.HwndHost, System.Windows.DpiChangedEventHandler, System.Windows.DpiChangedEventArgs> (Events.hwndHost.dpiChanged, h => (System.Windows.DpiChangedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onDpiChanged (OnChange<TMessage, System.Windows.UIElement, System.Windows.DpiChangedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.DpiChangedEventHandler, System.Windows.DpiChangedEventArgs> (Events.hwndHost.dpiChanged, h => (System.Windows.DpiChangedEventHandler)h.Invoke, onChange);
 
     }
 
@@ -2741,10 +2741,10 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.Image> stretch(System.Windows.Media.Stretch v) => new SetValue<TMessage, System.Windows.Controls.Image, System.Windows.Media.Stretch>(Properties.image.stretch, v);
       public static IValue<TMessage, System.Windows.Controls.Image> stretchDirection(System.Windows.Controls.StretchDirection v) => new SetValue<TMessage, System.Windows.Controls.Image, System.Windows.Controls.StretchDirection>(Properties.image.stretchDirection, v);
 
-      public static IValue<TMessage, System.Windows.Controls.Image> onDpiChanged (OnChange<TMessage, System.Windows.Controls.Image, System.Windows.DpiChangedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.Image, System.Windows.DpiChangedEventHandler, System.Windows.DpiChangedEventArgs> (Events.image.dpiChanged, h => (System.Windows.DpiChangedEventHandler)h.Invoke, onChange);
-      public static IValue<TMessage, System.Windows.Controls.Image> onImageFailed (OnChange<TMessage, System.Windows.Controls.Image, System.Windows.ExceptionRoutedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.Image, System.EventHandler<System.Windows.ExceptionRoutedEventArgs>, System.Windows.ExceptionRoutedEventArgs> (Events.image.imageFailed, h => (System.EventHandler<System.Windows.ExceptionRoutedEventArgs>)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onDpiChanged (OnChange<TMessage, System.Windows.UIElement, System.Windows.DpiChangedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.DpiChangedEventHandler, System.Windows.DpiChangedEventArgs> (Events.image.dpiChanged, h => (System.Windows.DpiChangedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onImageFailed (OnChange<TMessage, System.Windows.UIElement, System.Windows.ExceptionRoutedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.EventHandler<System.Windows.ExceptionRoutedEventArgs>, System.Windows.ExceptionRoutedEventArgs> (Events.image.imageFailed, h => (System.EventHandler<System.Windows.ExceptionRoutedEventArgs>)h.Invoke, onChange);
 
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Image>[] vs) => new StandardView<TMessage, System.Windows.Controls.Image>(vs);
     }
@@ -2762,18 +2762,18 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.InkCanvas> editingMode(System.Windows.Controls.InkCanvasEditingMode v) => new SetValue<TMessage, System.Windows.Controls.InkCanvas, System.Windows.Controls.InkCanvasEditingMode>(Properties.inkCanvas.editingMode, v);
       public static IValue<TMessage, System.Windows.Controls.InkCanvas> editingModeInverted(System.Windows.Controls.InkCanvasEditingMode v) => new SetValue<TMessage, System.Windows.Controls.InkCanvas, System.Windows.Controls.InkCanvasEditingMode>(Properties.inkCanvas.editingModeInverted, v);
 
-      public static IValue<TMessage, System.Windows.Controls.InkCanvas> onStrokeCollected (OnChange<TMessage, System.Windows.Controls.InkCanvas, System.Windows.Controls.InkCanvasStrokeCollectedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.InkCanvas, System.Windows.Controls.InkCanvasStrokeCollectedEventHandler, System.Windows.Controls.InkCanvasStrokeCollectedEventArgs> (Events.inkCanvas.strokeCollected, h => (System.Windows.Controls.InkCanvasStrokeCollectedEventHandler)h.Invoke, onChange);
-      public static IValue<TMessage, System.Windows.Controls.InkCanvas> onGesture (OnChange<TMessage, System.Windows.Controls.InkCanvas, System.Windows.Controls.InkCanvasGestureEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.InkCanvas, System.Windows.Controls.InkCanvasGestureEventHandler, System.Windows.Controls.InkCanvasGestureEventArgs> (Events.inkCanvas.gesture, h => (System.Windows.Controls.InkCanvasGestureEventHandler)h.Invoke, onChange);
-      public static IValue<TMessage, System.Windows.Controls.InkCanvas> onActiveEditingModeChanged (OnChange<TMessage, System.Windows.Controls.InkCanvas, System.Windows.RoutedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.InkCanvas, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.inkCanvas.activeEditingModeChanged, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
-      public static IValue<TMessage, System.Windows.Controls.InkCanvas> onEditingModeChanged (OnChange<TMessage, System.Windows.Controls.InkCanvas, System.Windows.RoutedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.InkCanvas, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.inkCanvas.editingModeChanged, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
-      public static IValue<TMessage, System.Windows.Controls.InkCanvas> onEditingModeInvertedChanged (OnChange<TMessage, System.Windows.Controls.InkCanvas, System.Windows.RoutedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.InkCanvas, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.inkCanvas.editingModeInvertedChanged, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
-      public static IValue<TMessage, System.Windows.Controls.InkCanvas> onStrokeErased (OnChange<TMessage, System.Windows.Controls.InkCanvas, System.Windows.RoutedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.InkCanvas, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.inkCanvas.strokeErased, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onStrokeCollected (OnChange<TMessage, System.Windows.UIElement, System.Windows.Controls.InkCanvasStrokeCollectedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.Controls.InkCanvasStrokeCollectedEventHandler, System.Windows.Controls.InkCanvasStrokeCollectedEventArgs> (Events.inkCanvas.strokeCollected, h => (System.Windows.Controls.InkCanvasStrokeCollectedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onGesture (OnChange<TMessage, System.Windows.UIElement, System.Windows.Controls.InkCanvasGestureEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.Controls.InkCanvasGestureEventHandler, System.Windows.Controls.InkCanvasGestureEventArgs> (Events.inkCanvas.gesture, h => (System.Windows.Controls.InkCanvasGestureEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onActiveEditingModeChanged (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.inkCanvas.activeEditingModeChanged, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onEditingModeChanged (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.inkCanvas.editingModeChanged, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onEditingModeInvertedChanged (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.inkCanvas.editingModeInvertedChanged, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onStrokeErased (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.inkCanvas.strokeErased, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
 
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.InkCanvas>[] vs) => new StandardView<TMessage, System.Windows.Controls.InkCanvas>(vs);
     }
@@ -2848,10 +2848,10 @@ namespace Galactus.Standard
     {
       public static IValue<TMessage, System.Windows.Controls.ListBoxItem> isSelected(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.ListBoxItem, System.Boolean>(Properties.listBoxItem.isSelected, v);
 
-      public static IValue<TMessage, System.Windows.Controls.ListBoxItem> onSelected (OnChange<TMessage, System.Windows.Controls.ListBoxItem, System.Windows.RoutedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.ListBoxItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.listBoxItem.selected, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
-      public static IValue<TMessage, System.Windows.Controls.ListBoxItem> onUnselected (OnChange<TMessage, System.Windows.Controls.ListBoxItem, System.Windows.RoutedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.ListBoxItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.listBoxItem.unselected, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onSelected (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.listBoxItem.selected, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onUnselected (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.listBoxItem.unselected, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
 
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.ListBoxItem>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.ListBoxItem>(vs, c);
     }
@@ -2883,18 +2883,18 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.MediaElement> stretch(System.Windows.Media.Stretch v) => new SetValue<TMessage, System.Windows.Controls.MediaElement, System.Windows.Media.Stretch>(Properties.mediaElement.stretch, v);
       public static IValue<TMessage, System.Windows.Controls.MediaElement> stretchDirection(System.Windows.Controls.StretchDirection v) => new SetValue<TMessage, System.Windows.Controls.MediaElement, System.Windows.Controls.StretchDirection>(Properties.mediaElement.stretchDirection, v);
 
-      public static IValue<TMessage, System.Windows.Controls.MediaElement> onMediaFailed (OnChange<TMessage, System.Windows.Controls.MediaElement, System.Windows.ExceptionRoutedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.MediaElement, System.EventHandler<System.Windows.ExceptionRoutedEventArgs>, System.Windows.ExceptionRoutedEventArgs> (Events.mediaElement.mediaFailed, h => (System.EventHandler<System.Windows.ExceptionRoutedEventArgs>)h.Invoke, onChange);
-      public static IValue<TMessage, System.Windows.Controls.MediaElement> onMediaOpened (OnChange<TMessage, System.Windows.Controls.MediaElement, System.Windows.RoutedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.MediaElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.mediaElement.mediaOpened, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
-      public static IValue<TMessage, System.Windows.Controls.MediaElement> onBufferingStarted (OnChange<TMessage, System.Windows.Controls.MediaElement, System.Windows.RoutedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.MediaElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.mediaElement.bufferingStarted, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
-      public static IValue<TMessage, System.Windows.Controls.MediaElement> onBufferingEnded (OnChange<TMessage, System.Windows.Controls.MediaElement, System.Windows.RoutedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.MediaElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.mediaElement.bufferingEnded, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
-      public static IValue<TMessage, System.Windows.Controls.MediaElement> onScriptCommand (OnChange<TMessage, System.Windows.Controls.MediaElement, System.Windows.MediaScriptCommandRoutedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.MediaElement, System.EventHandler<System.Windows.MediaScriptCommandRoutedEventArgs>, System.Windows.MediaScriptCommandRoutedEventArgs> (Events.mediaElement.scriptCommand, h => (System.EventHandler<System.Windows.MediaScriptCommandRoutedEventArgs>)h.Invoke, onChange);
-      public static IValue<TMessage, System.Windows.Controls.MediaElement> onMediaEnded (OnChange<TMessage, System.Windows.Controls.MediaElement, System.Windows.RoutedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.MediaElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.mediaElement.mediaEnded, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onMediaFailed (OnChange<TMessage, System.Windows.UIElement, System.Windows.ExceptionRoutedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.EventHandler<System.Windows.ExceptionRoutedEventArgs>, System.Windows.ExceptionRoutedEventArgs> (Events.mediaElement.mediaFailed, h => (System.EventHandler<System.Windows.ExceptionRoutedEventArgs>)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onMediaOpened (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.mediaElement.mediaOpened, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onBufferingStarted (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.mediaElement.bufferingStarted, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onBufferingEnded (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.mediaElement.bufferingEnded, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onScriptCommand (OnChange<TMessage, System.Windows.UIElement, System.Windows.MediaScriptCommandRoutedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.EventHandler<System.Windows.MediaScriptCommandRoutedEventArgs>, System.Windows.MediaScriptCommandRoutedEventArgs> (Events.mediaElement.scriptCommand, h => (System.EventHandler<System.Windows.MediaScriptCommandRoutedEventArgs>)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onMediaEnded (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.mediaElement.mediaEnded, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
 
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.MediaElement>[] vs) => new StandardView<TMessage, System.Windows.Controls.MediaElement>(vs);
     }
@@ -2933,16 +2933,16 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.MenuItem> itemContainerTemplateSelector(System.Windows.Controls.ItemContainerTemplateSelector v) => new SetValue<TMessage, System.Windows.Controls.MenuItem, System.Windows.Controls.ItemContainerTemplateSelector>(Properties.menuItem.itemContainerTemplateSelector, v);
       public static IValue<TMessage, System.Windows.Controls.MenuItem> usesItemContainerTemplate(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.MenuItem, System.Boolean>(Properties.menuItem.usesItemContainerTemplate, v);
 
-      public static IValue<TMessage, System.Windows.Controls.MenuItem> onClick (OnChange<TMessage, System.Windows.Controls.MenuItem, System.Windows.RoutedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.MenuItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.menuItem.click, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
-      public static IValue<TMessage, System.Windows.Controls.MenuItem> onChecked (OnChange<TMessage, System.Windows.Controls.MenuItem, System.Windows.RoutedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.MenuItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.menuItem.checked_, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
-      public static IValue<TMessage, System.Windows.Controls.MenuItem> onUnchecked (OnChange<TMessage, System.Windows.Controls.MenuItem, System.Windows.RoutedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.MenuItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.menuItem.unchecked_, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
-      public static IValue<TMessage, System.Windows.Controls.MenuItem> onSubmenuOpened (OnChange<TMessage, System.Windows.Controls.MenuItem, System.Windows.RoutedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.MenuItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.menuItem.submenuOpened, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
-      public static IValue<TMessage, System.Windows.Controls.MenuItem> onSubmenuClosed (OnChange<TMessage, System.Windows.Controls.MenuItem, System.Windows.RoutedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.MenuItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.menuItem.submenuClosed, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onClick (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.menuItem.click, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onChecked (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.menuItem.checked_, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onUnchecked (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.menuItem.unchecked_, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onSubmenuOpened (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.menuItem.submenuOpened, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onSubmenuClosed (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.menuItem.submenuClosed, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
 
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.MenuItem>[] vs) => new StandardView<TMessage, System.Windows.Controls.MenuItem>(vs);
     }
@@ -3015,8 +3015,8 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.PasswordBox> isSelectionActive(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.PasswordBox, System.Boolean>(Properties.passwordBox.isSelectionActive, v);
       public static IValue<TMessage, System.Windows.Controls.PasswordBox> isInactiveSelectionHighlightEnabled(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.PasswordBox, System.Boolean>(Properties.passwordBox.isInactiveSelectionHighlightEnabled, v);
 
-      public static IValue<TMessage, System.Windows.Controls.PasswordBox> onPasswordChanged (OnChange<TMessage, System.Windows.Controls.PasswordBox, System.Windows.RoutedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.PasswordBox, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.passwordBox.passwordChanged, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onPasswordChanged (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.passwordBox.passwordChanged, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
 
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.PasswordBox>[] vs) => new StandardView<TMessage, System.Windows.Controls.PasswordBox>(vs);
     }
@@ -3091,8 +3091,8 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.Primitives.RangeBase> largeChange(System.Double v) => new SetValue<TMessage, System.Windows.Controls.Primitives.RangeBase, System.Double>(Properties.rangeBase.largeChange, v);
       public static IValue<TMessage, System.Windows.Controls.Primitives.RangeBase> smallChange(System.Double v) => new SetValue<TMessage, System.Windows.Controls.Primitives.RangeBase, System.Double>(Properties.rangeBase.smallChange, v);
 
-      public static IValue<TMessage, System.Windows.Controls.Primitives.RangeBase> onValueChanged (OnChange<TMessage, System.Windows.Controls.Primitives.RangeBase, System.Windows.RoutedPropertyChangedEventArgs<System.Double>> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.Primitives.RangeBase, System.Windows.RoutedPropertyChangedEventHandler<System.Double>, System.Windows.RoutedPropertyChangedEventArgs<System.Double>> (Events.rangeBase.valueChanged, h => (System.Windows.RoutedPropertyChangedEventHandler<System.Double>)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onValueChanged (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedPropertyChangedEventArgs<System.Double>> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedPropertyChangedEventHandler<System.Double>, System.Windows.RoutedPropertyChangedEventArgs<System.Double>> (Events.rangeBase.valueChanged, h => (System.Windows.RoutedPropertyChangedEventHandler<System.Double>)h.Invoke, onChange);
 
     }
 
@@ -3134,8 +3134,8 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.Primitives.ScrollBar> orientation(System.Windows.Controls.Orientation v) => new SetValue<TMessage, System.Windows.Controls.Primitives.ScrollBar, System.Windows.Controls.Orientation>(Properties.scrollBar.orientation, v);
       public static IValue<TMessage, System.Windows.Controls.Primitives.ScrollBar> viewportSize(System.Double v) => new SetValue<TMessage, System.Windows.Controls.Primitives.ScrollBar, System.Double>(Properties.scrollBar.viewportSize, v);
 
-      public static IValue<TMessage, System.Windows.Controls.Primitives.ScrollBar> onScroll (OnChange<TMessage, System.Windows.Controls.Primitives.ScrollBar, System.Windows.Controls.Primitives.ScrollEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.Primitives.ScrollBar, System.Windows.Controls.Primitives.ScrollEventHandler, System.Windows.Controls.Primitives.ScrollEventArgs> (Events.scrollBar.scroll, h => (System.Windows.Controls.Primitives.ScrollEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onScroll (OnChange<TMessage, System.Windows.UIElement, System.Windows.Controls.Primitives.ScrollEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.Controls.Primitives.ScrollEventHandler, System.Windows.Controls.Primitives.ScrollEventArgs> (Events.scrollBar.scroll, h => (System.Windows.Controls.Primitives.ScrollEventHandler)h.Invoke, onChange);
 
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.ScrollBar>[] vs) => new StandardView<TMessage, System.Windows.Controls.Primitives.ScrollBar>(vs);
     }
@@ -3170,8 +3170,8 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.ScrollViewer> panningDeceleration(System.Double v) => new SetValue<TMessage, System.Windows.Controls.ScrollViewer, System.Double>(Properties.scrollViewer.panningDeceleration, v);
       public static IValue<TMessage, System.Windows.Controls.ScrollViewer> panningRatio(System.Double v) => new SetValue<TMessage, System.Windows.Controls.ScrollViewer, System.Double>(Properties.scrollViewer.panningRatio, v);
 
-      public static IValue<TMessage, System.Windows.Controls.ScrollViewer> onScrollChanged (OnChange<TMessage, System.Windows.Controls.ScrollViewer, System.Windows.Controls.ScrollChangedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.ScrollViewer, System.Windows.Controls.ScrollChangedEventHandler, System.Windows.Controls.ScrollChangedEventArgs> (Events.scrollViewer.scrollChanged, h => (System.Windows.Controls.ScrollChangedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onScrollChanged (OnChange<TMessage, System.Windows.UIElement, System.Windows.Controls.ScrollChangedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.Controls.ScrollChangedEventHandler, System.Windows.Controls.ScrollChangedEventArgs> (Events.scrollViewer.scrollChanged, h => (System.Windows.Controls.ScrollChangedEventHandler)h.Invoke, onChange);
 
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.ScrollViewer>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.ScrollViewer>(vs, c);
     }
@@ -3194,12 +3194,12 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.Primitives.Selector> selectedValue(System.Object v) => new SetValue<TMessage, System.Windows.Controls.Primitives.Selector, System.Object>(Properties.selector.selectedValue, v);
       public static IValue<TMessage, System.Windows.Controls.Primitives.Selector> selectedValuePath(System.String v) => new SetValue<TMessage, System.Windows.Controls.Primitives.Selector, System.String>(Properties.selector.selectedValuePath, v);
 
-      public static IValue<TMessage, System.Windows.Controls.Primitives.Selector> onSelectionChanged (OnChange<TMessage, System.Windows.Controls.Primitives.Selector, System.Windows.Controls.SelectionChangedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.Primitives.Selector, System.Windows.Controls.SelectionChangedEventHandler, System.Windows.Controls.SelectionChangedEventArgs> (Events.selector.selectionChanged, h => (System.Windows.Controls.SelectionChangedEventHandler)h.Invoke, onChange);
-      public static IValue<TMessage, System.Windows.Controls.Primitives.Selector> onSelected (OnChange<TMessage, System.Windows.Controls.Primitives.Selector, System.Windows.RoutedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.Primitives.Selector, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.selector.selected, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
-      public static IValue<TMessage, System.Windows.Controls.Primitives.Selector> onUnselected (OnChange<TMessage, System.Windows.Controls.Primitives.Selector, System.Windows.RoutedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.Primitives.Selector, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.selector.unselected, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onSelectionChanged (OnChange<TMessage, System.Windows.UIElement, System.Windows.Controls.SelectionChangedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.Controls.SelectionChangedEventHandler, System.Windows.Controls.SelectionChangedEventArgs> (Events.selector.selectionChanged, h => (System.Windows.Controls.SelectionChangedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onSelected (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.selector.selected, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onUnselected (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.selector.unselected, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
 
     }
 
@@ -3377,10 +3377,10 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.Primitives.TextBoxBase> isSelectionActive(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.TextBoxBase, System.Boolean>(Properties.textBoxBase.isSelectionActive, v);
       public static IValue<TMessage, System.Windows.Controls.Primitives.TextBoxBase> isInactiveSelectionHighlightEnabled(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.TextBoxBase, System.Boolean>(Properties.textBoxBase.isInactiveSelectionHighlightEnabled, v);
 
-      public static IValue<TMessage, System.Windows.Controls.Primitives.TextBoxBase> onTextChanged (OnChange<TMessage, System.Windows.Controls.Primitives.TextBoxBase, System.Windows.Controls.TextChangedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.Primitives.TextBoxBase, System.Windows.Controls.TextChangedEventHandler, System.Windows.Controls.TextChangedEventArgs> (Events.textBoxBase.textChanged, h => (System.Windows.Controls.TextChangedEventHandler)h.Invoke, onChange);
-      public static IValue<TMessage, System.Windows.Controls.Primitives.TextBoxBase> onSelectionChanged (OnChange<TMessage, System.Windows.Controls.Primitives.TextBoxBase, System.Windows.RoutedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.Primitives.TextBoxBase, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.textBoxBase.selectionChanged, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onTextChanged (OnChange<TMessage, System.Windows.UIElement, System.Windows.Controls.TextChangedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.Controls.TextChangedEventHandler, System.Windows.Controls.TextChangedEventArgs> (Events.textBoxBase.textChanged, h => (System.Windows.Controls.TextChangedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onSelectionChanged (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.textBoxBase.selectionChanged, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
 
     }
 
@@ -3388,12 +3388,12 @@ namespace Galactus.Standard
     {
       public static IValue<TMessage, System.Windows.Controls.Primitives.Thumb> isDragging(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.Thumb, System.Boolean>(Properties.thumb.isDragging, v);
 
-      public static IValue<TMessage, System.Windows.Controls.Primitives.Thumb> onDragStarted (OnChange<TMessage, System.Windows.Controls.Primitives.Thumb, System.Windows.Controls.Primitives.DragStartedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.Primitives.Thumb, System.Windows.Controls.Primitives.DragStartedEventHandler, System.Windows.Controls.Primitives.DragStartedEventArgs> (Events.thumb.dragStarted, h => (System.Windows.Controls.Primitives.DragStartedEventHandler)h.Invoke, onChange);
-      public static IValue<TMessage, System.Windows.Controls.Primitives.Thumb> onDragDelta (OnChange<TMessage, System.Windows.Controls.Primitives.Thumb, System.Windows.Controls.Primitives.DragDeltaEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.Primitives.Thumb, System.Windows.Controls.Primitives.DragDeltaEventHandler, System.Windows.Controls.Primitives.DragDeltaEventArgs> (Events.thumb.dragDelta, h => (System.Windows.Controls.Primitives.DragDeltaEventHandler)h.Invoke, onChange);
-      public static IValue<TMessage, System.Windows.Controls.Primitives.Thumb> onDragCompleted (OnChange<TMessage, System.Windows.Controls.Primitives.Thumb, System.Windows.Controls.Primitives.DragCompletedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.Primitives.Thumb, System.Windows.Controls.Primitives.DragCompletedEventHandler, System.Windows.Controls.Primitives.DragCompletedEventArgs> (Events.thumb.dragCompleted, h => (System.Windows.Controls.Primitives.DragCompletedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onDragStarted (OnChange<TMessage, System.Windows.UIElement, System.Windows.Controls.Primitives.DragStartedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.Controls.Primitives.DragStartedEventHandler, System.Windows.Controls.Primitives.DragStartedEventArgs> (Events.thumb.dragStarted, h => (System.Windows.Controls.Primitives.DragStartedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onDragDelta (OnChange<TMessage, System.Windows.UIElement, System.Windows.Controls.Primitives.DragDeltaEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.Controls.Primitives.DragDeltaEventHandler, System.Windows.Controls.Primitives.DragDeltaEventArgs> (Events.thumb.dragDelta, h => (System.Windows.Controls.Primitives.DragDeltaEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onDragCompleted (OnChange<TMessage, System.Windows.UIElement, System.Windows.Controls.Primitives.DragCompletedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.Controls.Primitives.DragCompletedEventHandler, System.Windows.Controls.Primitives.DragCompletedEventArgs> (Events.thumb.dragCompleted, h => (System.Windows.Controls.Primitives.DragCompletedEventHandler)h.Invoke, onChange);
 
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.Thumb>[] vs) => new StandardView<TMessage, System.Windows.Controls.Primitives.Thumb>(vs);
     }
@@ -3421,12 +3421,12 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.Primitives.ToggleButton> isChecked(System.Nullable<System.Boolean> v) => new SetValue<TMessage, System.Windows.Controls.Primitives.ToggleButton, System.Nullable<System.Boolean>>(Properties.toggleButton.isChecked, v);
       public static IValue<TMessage, System.Windows.Controls.Primitives.ToggleButton> isThreeState(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.ToggleButton, System.Boolean>(Properties.toggleButton.isThreeState, v);
 
-      public static IValue<TMessage, System.Windows.Controls.Primitives.ToggleButton> onChecked (OnChange<TMessage, System.Windows.Controls.Primitives.ToggleButton, System.Windows.RoutedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.Primitives.ToggleButton, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.toggleButton.checked_, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
-      public static IValue<TMessage, System.Windows.Controls.Primitives.ToggleButton> onUnchecked (OnChange<TMessage, System.Windows.Controls.Primitives.ToggleButton, System.Windows.RoutedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.Primitives.ToggleButton, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.toggleButton.unchecked_, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
-      public static IValue<TMessage, System.Windows.Controls.Primitives.ToggleButton> onIndeterminate (OnChange<TMessage, System.Windows.Controls.Primitives.ToggleButton, System.Windows.RoutedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.Primitives.ToggleButton, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.toggleButton.indeterminate, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onChecked (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.toggleButton.checked_, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onUnchecked (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.toggleButton.unchecked_, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onIndeterminate (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.toggleButton.indeterminate, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
 
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.ToggleButton>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.Primitives.ToggleButton>(vs, c);
     }
@@ -3482,10 +3482,10 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.ToolTip> customPopupPlacementCallback(System.Windows.Controls.Primitives.CustomPopupPlacementCallback v) => new SetValue<TMessage, System.Windows.Controls.ToolTip, System.Windows.Controls.Primitives.CustomPopupPlacementCallback>(Properties.toolTip.customPopupPlacementCallback, v);
       public static IValue<TMessage, System.Windows.Controls.ToolTip> staysOpen(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.ToolTip, System.Boolean>(Properties.toolTip.staysOpen, v);
 
-      public static IValue<TMessage, System.Windows.Controls.ToolTip> onOpened (OnChange<TMessage, System.Windows.Controls.ToolTip, System.Windows.RoutedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.ToolTip, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.toolTip.opened, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
-      public static IValue<TMessage, System.Windows.Controls.ToolTip> onClosed (OnChange<TMessage, System.Windows.Controls.ToolTip, System.Windows.RoutedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.ToolTip, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.toolTip.closed, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onOpened (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.toolTip.opened, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onClosed (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.toolTip.closed, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
 
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.ToolTip>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.ToolTip>(vs, c);
     }
@@ -3509,8 +3509,8 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.TreeView> selectedValue(System.Object v) => new SetValue<TMessage, System.Windows.Controls.TreeView, System.Object>(Properties.treeView.selectedValue, v);
       public static IValue<TMessage, System.Windows.Controls.TreeView> selectedValuePath(System.String v) => new SetValue<TMessage, System.Windows.Controls.TreeView, System.String>(Properties.treeView.selectedValuePath, v);
 
-      public static IValue<TMessage, System.Windows.Controls.TreeView> onSelectedItemChanged (OnChange<TMessage, System.Windows.Controls.TreeView, System.Windows.RoutedPropertyChangedEventArgs<System.Object>> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.TreeView, System.Windows.RoutedPropertyChangedEventHandler<System.Object>, System.Windows.RoutedPropertyChangedEventArgs<System.Object>> (Events.treeView.selectedItemChanged, h => (System.Windows.RoutedPropertyChangedEventHandler<System.Object>)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onSelectedItemChanged (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedPropertyChangedEventArgs<System.Object>> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedPropertyChangedEventHandler<System.Object>, System.Windows.RoutedPropertyChangedEventArgs<System.Object>> (Events.treeView.selectedItemChanged, h => (System.Windows.RoutedPropertyChangedEventHandler<System.Object>)h.Invoke, onChange);
 
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.TreeView>[] vs) => new StandardView<TMessage, System.Windows.Controls.TreeView>(vs);
     }
@@ -3521,14 +3521,14 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.TreeViewItem> isSelected(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.TreeViewItem, System.Boolean>(Properties.treeViewItem.isSelected, v);
       public static IValue<TMessage, System.Windows.Controls.TreeViewItem> isSelectionActive(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.TreeViewItem, System.Boolean>(Properties.treeViewItem.isSelectionActive, v);
 
-      public static IValue<TMessage, System.Windows.Controls.TreeViewItem> onExpanded (OnChange<TMessage, System.Windows.Controls.TreeViewItem, System.Windows.RoutedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.TreeViewItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.treeViewItem.expanded, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
-      public static IValue<TMessage, System.Windows.Controls.TreeViewItem> onCollapsed (OnChange<TMessage, System.Windows.Controls.TreeViewItem, System.Windows.RoutedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.TreeViewItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.treeViewItem.collapsed, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
-      public static IValue<TMessage, System.Windows.Controls.TreeViewItem> onSelected (OnChange<TMessage, System.Windows.Controls.TreeViewItem, System.Windows.RoutedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.TreeViewItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.treeViewItem.selected, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
-      public static IValue<TMessage, System.Windows.Controls.TreeViewItem> onUnselected (OnChange<TMessage, System.Windows.Controls.TreeViewItem, System.Windows.RoutedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Controls.TreeViewItem, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.treeViewItem.unselected, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onExpanded (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.treeViewItem.expanded, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onCollapsed (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.treeViewItem.collapsed, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onSelected (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.treeViewItem.selected, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onUnselected (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.treeViewItem.unselected, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
 
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.TreeViewItem>[] vs) => new StandardView<TMessage, System.Windows.Controls.TreeViewItem>(vs);
     }
@@ -3799,8 +3799,8 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Window> topmost(System.Boolean v) => new SetValue<TMessage, System.Windows.Window, System.Boolean>(Properties.window.topmost, v);
       public static IValue<TMessage, System.Windows.Window> showActivated(System.Boolean v) => new SetValue<TMessage, System.Windows.Window, System.Boolean>(Properties.window.showActivated, v);
 
-      public static IValue<TMessage, System.Windows.Window> onDpiChanged (OnChange<TMessage, System.Windows.Window, System.Windows.DpiChangedEventArgs> onChange) =>
-        new OnChangedValue<TMessage, System.Windows.Window, System.Windows.DpiChangedEventHandler, System.Windows.DpiChangedEventArgs> (Events.window.dpiChanged, h => (System.Windows.DpiChangedEventHandler)h.Invoke, onChange);
+      public static IValue<TMessage, System.Windows.UIElement> onDpiChanged (OnChange<TMessage, System.Windows.UIElement, System.Windows.DpiChangedEventArgs> onChange) =>
+        new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.DpiChangedEventHandler, System.Windows.DpiChangedEventArgs> (Events.window.dpiChanged, h => (System.Windows.DpiChangedEventHandler)h.Invoke, onChange);
 
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Window>[] vs) => c => new StandardContentView<TMessage, System.Windows.Window>(vs, c);
     }

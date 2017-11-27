@@ -169,7 +169,10 @@ namespace Galactus.Standard
     var eat   = p.ParameterType                             ;
     var ehn   = TypeName(eht)                               ;
     var ean   = TypeName(eat)                               ;
-    var tn    = etn                                         ;
+    var tn    = ers == System.Windows.RoutingStrategy.Direct
+      ? etn
+      : "System.Windows.UIElement"
+      ;
 #>
       public static readonly IEvent<<#=tn#>, <#=ehn#>, <#=ean#>> <#=en#> = new Event<<#=tn#>, <#=ehn#>, <#=ean#>>(<#=etn#>.<#=f.Name#>);
 <#
@@ -232,7 +235,10 @@ namespace Galactus.Standard
     var eat   = p.ParameterType                             ;
     var ehn   = TypeName(eht)                               ;
     var ean   = TypeName(eat)                               ;
-    var tn    = etn                                         ;
+    var tn    = ers == System.Windows.RoutingStrategy.Direct
+      ? etn
+      : "System.Windows.UIElement"
+      ;
     // TODO: Handle the case when ehn = EventHandler<TEventArgs>
 #>
       public static IValue<TMessage, <#=tn#>> on<#=RemoveTrailing("Event", f.Name)#> (OnChange<TMessage, <#=tn#>, <#=ean#>> onChange) =>
