@@ -235,6 +235,7 @@
       // TODO: Handle nulls
       // TODO: How to handle events more efficiently?
 
+      // TODO: Whether to handle events that already been handled should be configurable
       ui.AddHandler(event_.RoutedEvent, onChangeHandler, true);
       ctx.OnTearDown(() => ui.RemoveHandler(event_.RoutedEvent, onChangeHandler));
     }

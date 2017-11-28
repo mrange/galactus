@@ -52,20 +52,18 @@
           ;
       }
 
-      IView<Message> addressInfo(string lbl, Lens<Customer, AddressInfo> l)
+      IView<Message> address(string lbl, Lens<Customer, Address> l)
       {
         return labeledGroup(
             lbl
           , stackPanel.View
             (stackPanel.orientation(Orientation.Vertical))
-            ( labeledTextBox("First Name" , l.To(AddressInfo.firstName))
-            , labeledTextBox("Last Name"  , l.To(AddressInfo.lastName))
-            , labeledTextBox("Carry Over" , l.To(AddressInfo.carryOver))
-            , labeledTextBox("Street"     , l.To(AddressInfo.street))
-            , labeledTextBox("Zip"        , l.To(AddressInfo.zip))
-            , labeledTextBox("City"       , l.To(AddressInfo.city))
-            , labeledTextBox("County"     , l.To(AddressInfo.county))
-            , labeledTextBox("Country"    , l.To(AddressInfo.county))
+            ( labeledTextBox("Carry Over" , l.To(Address.carryOver))
+            , labeledTextBox("Street"     , l.To(Address.street))
+            , labeledTextBox("Zip"        , l.To(Address.zip))
+            , labeledTextBox("City"       , l.To(Address.city))
+            , labeledTextBox("County"     , l.To(Address.county))
+            , labeledTextBox("Country"    , l.To(Address.county))
             ));
       }
 
@@ -80,10 +78,12 @@
         ( stackPanel.orientation(Orientation.Vertical)
         , textBoxHandler
         )
-        ( labeledCheckBox("Separate Delivery Address?", Customer.separateDeliveryAddress)
-        , addressInfo("Invoice Address" , Customer.invoiceAddress)
-        , customer.SeparateDeliveryAddress ? addressInfo("Delivery Address", Customer.deliveryAddress) : empty.View
-        , addressInfo("Invoice Address" , Customer.invoiceAddress)
+        ( labeledTextBox("First Name" , Customer.firstName  )
+        , labeledTextBox("Last Name"  , Customer.lastName   )
+        , labeledCheckBox("Separate Delivery Address?", Customer.separateDeliveryAddress)
+        , address("Invoice Address" , Customer.invoiceAddress)
+        , customer.SeparateDeliveryAddress ? address("Delivery Address", Customer.deliveryAddress) : empty.View
+        , address("Invoice Address" , Customer.invoiceAddress)
         )
         ;
     }
@@ -95,7 +95,18 @@
 
     public static void Run()
     {
-      Hosts.OpenWindow(new Customer(), View, Update);
+      var addressInfo   = new Address();
+      var customer      = new Customer();
+
+      var setCarryOver  = Address.carryOver.Set("Melinda Gates");
+      var newCustomer   = Lens.SetAll
+        ( customer
+        , Customer.firstName      .Set("Bill")
+        , Customer.lastName       .Set("Gates")
+        , Customer.invoiceAddress .Set(setCarryOver)
+        , Customer.deliveryAddress.Set(setCarryOver)
+        );
+      Hosts.OpenWindow(newCustomer, View, Update);
     }
   }
 }

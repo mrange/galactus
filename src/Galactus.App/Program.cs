@@ -8,8 +8,8 @@ namespace Galactus.App
     static void Main(string[] args)
     {
       //MutableModel.Program.Run();
-      //ImmutableModel.Program.Run();
-      Demo.Program.Run();
+      ImmutableModel.Program.Run();
+      //Demo.Program.Run();
     }
   }
 }

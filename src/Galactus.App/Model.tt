@@ -4,20 +4,20 @@
   var namespace_  = "Galactus.App.Model";
   var records     = new []
   {
-      R("AddressInfo"
-      , M("string", "FirstName")
-      , M("string", "LastName")
-      , M("string", "CarryOver")
-      , M("string", "Street")
-      , M("string", "Zip")
-      , M("string", "City")
-      , M("string", "County")
-      , M("string", "Country")
+      R("Address"
+      , M("string"      , "CarryOver"               )
+      , M("string"      , "Street"                  )
+      , M("string"      , "Zip"                     )
+      , M("string"      , "City"                    )
+      , M("string"      , "County"                  )
+      , M("string"      , "Country"                 )
       )
     , R("Customer"
-      , M("bool"        , "SeparateDeliveryAddress")
-      , M("AddressInfo" , "InvoiceAddress")
-      , M("AddressInfo" , "DeliveryAddress")
+      , M("string"      , "FirstName"               )
+      , M("string"      , "LastName"                )
+      , M("bool"        , "SeparateDeliveryAddress" )
+      , M("Address"     , "InvoiceAddress"          )
+      , M("Address"     , "DeliveryAddress"         )
       )
   };
 #>

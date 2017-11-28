@@ -3,10 +3,8 @@
   using Galactus.Core;
   using System.Text;
 
-  public sealed partial class AddressInfo
+  public sealed partial class Address
   {
-    public readonly string FirstName;
-    public readonly string LastName;
     public readonly string CarryOver;
     public readonly string Street;
     public readonly string Zip;
@@ -14,10 +12,8 @@
     public readonly string County;
     public readonly string Country;
 
-    public AddressInfo(
-        string firstName
-      , string lastName
-      , string carryOver
+    public Address(
+        string carryOver
       , string street
       , string zip
       , string city
@@ -25,8 +21,6 @@
       , string country
       )
     {
-      FirstName = firstName;
-      LastName = lastName;
       CarryOver = carryOver;
       Street = street;
       Zip = zip;
@@ -34,12 +28,10 @@
       County = county;
       Country = country;
     }
- 
-    public AddressInfo()
+
+    public Address()
       : this(
         ""
-      , ""
-      , ""
       , ""
       , ""
       , ""
@@ -48,17 +40,13 @@
       )
     {
     }
- 
-    public readonly static AddressInfo Zero = new AddressInfo();
+
+    public readonly static Address Zero = new Address();
 
     public override string ToString()
     {
       var sb = new StringBuilder(16);
-      sb.Append("{ AddressInfo");
-      sb.Append(", FirstName: ");
-      sb.Append(FirstName);
-      sb.Append(", LastName: ");
-      sb.Append(LastName);
+      sb.Append("{ Address");
       sb.Append(", CarryOver: ");
       sb.Append(CarryOver);
       sb.Append(", Street: ");
@@ -75,12 +63,10 @@
       return sb.ToString();
     }
 
-    public AddressInfo With_FirstName(string firstName)
+    public Address With_CarryOver(string carryOver)
     {
-      return new AddressInfo(
-        firstName
-      , LastName
-      , CarryOver
+      return new Address(
+        carryOver
       , Street
       , Zip
       , City
@@ -89,100 +75,30 @@
       );
     }
 
-    sealed class FirstNameLens : Lens<AddressInfo, string>
-    {
-      public override void BuildPath(StringBuilder sb)
-      {
-        sb.Append("FirstName");
-      }
-
-      public override string Get(AddressInfo m)
-      {
-        return m.FirstName;
-      }
-
-      public override AddressInfo Set(AddressInfo m, string p)
-      {
-        return m.With_FirstName(p);
-      }
-    }
-
-    public readonly static Lens<AddressInfo, string> firstName = new FirstNameLens();
-
-    public AddressInfo With_LastName(string lastName)
-    {
-      return new AddressInfo(
-        FirstName
-      , lastName
-      , CarryOver
-      , Street
-      , Zip
-      , City
-      , County
-      , Country
-      );
-    }
-
-    sealed class LastNameLens : Lens<AddressInfo, string>
-    {
-      public override void BuildPath(StringBuilder sb)
-      {
-        sb.Append("LastName");
-      }
-
-      public override string Get(AddressInfo m)
-      {
-        return m.LastName;
-      }
-
-      public override AddressInfo Set(AddressInfo m, string p)
-      {
-        return m.With_LastName(p);
-      }
-    }
-
-    public readonly static Lens<AddressInfo, string> lastName = new LastNameLens();
-
-    public AddressInfo With_CarryOver(string carryOver)
-    {
-      return new AddressInfo(
-        FirstName
-      , LastName
-      , carryOver
-      , Street
-      , Zip
-      , City
-      , County
-      , Country
-      );
-    }
-
-    sealed class CarryOverLens : Lens<AddressInfo, string>
+    sealed class CarryOverLens : Lens<Address, string>
     {
       public override void BuildPath(StringBuilder sb)
       {
         sb.Append("CarryOver");
       }
 
-      public override string Get(AddressInfo m)
+      public override string Get(Address m)
       {
         return m.CarryOver;
       }
 
-      public override AddressInfo Set(AddressInfo m, string p)
+      public override Address Set(Address m, string p)
       {
         return m.With_CarryOver(p);
       }
     }
 
-    public readonly static Lens<AddressInfo, string> carryOver = new CarryOverLens();
+    public readonly static Lens<Address, string> carryOver = new CarryOverLens();
 
-    public AddressInfo With_Street(string street)
+    public Address With_Street(string street)
     {
-      return new AddressInfo(
-        FirstName
-      , LastName
-      , CarryOver
+      return new Address(
+        CarryOver
       , street
       , Zip
       , City
@@ -191,32 +107,30 @@
       );
     }
 
-    sealed class StreetLens : Lens<AddressInfo, string>
+    sealed class StreetLens : Lens<Address, string>
     {
       public override void BuildPath(StringBuilder sb)
       {
         sb.Append("Street");
       }
 
-      public override string Get(AddressInfo m)
+      public override string Get(Address m)
       {
         return m.Street;
       }
 
-      public override AddressInfo Set(AddressInfo m, string p)
+      public override Address Set(Address m, string p)
       {
         return m.With_Street(p);
       }
     }
 
-    public readonly static Lens<AddressInfo, string> street = new StreetLens();
+    public readonly static Lens<Address, string> street = new StreetLens();
 
-    public AddressInfo With_Zip(string zip)
+    public Address With_Zip(string zip)
     {
-      return new AddressInfo(
-        FirstName
-      , LastName
-      , CarryOver
+      return new Address(
+        CarryOver
       , Street
       , zip
       , City
@@ -225,32 +139,30 @@
       );
     }
 
-    sealed class ZipLens : Lens<AddressInfo, string>
+    sealed class ZipLens : Lens<Address, string>
     {
       public override void BuildPath(StringBuilder sb)
       {
         sb.Append("Zip");
       }
 
-      public override string Get(AddressInfo m)
+      public override string Get(Address m)
       {
         return m.Zip;
       }
 
-      public override AddressInfo Set(AddressInfo m, string p)
+      public override Address Set(Address m, string p)
       {
         return m.With_Zip(p);
       }
     }
 
-    public readonly static Lens<AddressInfo, string> zip = new ZipLens();
+    public readonly static Lens<Address, string> zip = new ZipLens();
 
-    public AddressInfo With_City(string city)
+    public Address With_City(string city)
     {
-      return new AddressInfo(
-        FirstName
-      , LastName
-      , CarryOver
+      return new Address(
+        CarryOver
       , Street
       , Zip
       , city
@@ -259,32 +171,30 @@
       );
     }
 
-    sealed class CityLens : Lens<AddressInfo, string>
+    sealed class CityLens : Lens<Address, string>
     {
       public override void BuildPath(StringBuilder sb)
       {
         sb.Append("City");
       }
 
-      public override string Get(AddressInfo m)
+      public override string Get(Address m)
       {
         return m.City;
       }
 
-      public override AddressInfo Set(AddressInfo m, string p)
+      public override Address Set(Address m, string p)
       {
         return m.With_City(p);
       }
     }
 
-    public readonly static Lens<AddressInfo, string> city = new CityLens();
+    public readonly static Lens<Address, string> city = new CityLens();
 
-    public AddressInfo With_County(string county)
+    public Address With_County(string county)
     {
-      return new AddressInfo(
-        FirstName
-      , LastName
-      , CarryOver
+      return new Address(
+        CarryOver
       , Street
       , Zip
       , City
@@ -293,32 +203,30 @@
       );
     }
 
-    sealed class CountyLens : Lens<AddressInfo, string>
+    sealed class CountyLens : Lens<Address, string>
     {
       public override void BuildPath(StringBuilder sb)
       {
         sb.Append("County");
       }
 
-      public override string Get(AddressInfo m)
+      public override string Get(Address m)
       {
         return m.County;
       }
 
-      public override AddressInfo Set(AddressInfo m, string p)
+      public override Address Set(Address m, string p)
       {
         return m.With_County(p);
       }
     }
 
-    public readonly static Lens<AddressInfo, string> county = new CountyLens();
+    public readonly static Lens<Address, string> county = new CountyLens();
 
-    public AddressInfo With_Country(string country)
+    public Address With_Country(string country)
     {
-      return new AddressInfo(
-        FirstName
-      , LastName
-      , CarryOver
+      return new Address(
+        CarryOver
       , Street
       , Zip
       , City
@@ -327,61 +235,73 @@
       );
     }
 
-    sealed class CountryLens : Lens<AddressInfo, string>
+    sealed class CountryLens : Lens<Address, string>
     {
       public override void BuildPath(StringBuilder sb)
       {
         sb.Append("Country");
       }
 
-      public override string Get(AddressInfo m)
+      public override string Get(Address m)
       {
         return m.Country;
       }
 
-      public override AddressInfo Set(AddressInfo m, string p)
+      public override Address Set(Address m, string p)
       {
         return m.With_Country(p);
       }
     }
 
-    public readonly static Lens<AddressInfo, string> country = new CountryLens();
+    public readonly static Lens<Address, string> country = new CountryLens();
 
 
   }
 
   public sealed partial class Customer
   {
+    public readonly string FirstName;
+    public readonly string LastName;
     public readonly bool SeparateDeliveryAddress;
-    public readonly AddressInfo InvoiceAddress;
-    public readonly AddressInfo DeliveryAddress;
+    public readonly Address InvoiceAddress;
+    public readonly Address DeliveryAddress;
 
     public Customer(
-        bool separateDeliveryAddress
-      , AddressInfo invoiceAddress
-      , AddressInfo deliveryAddress
+        string firstName
+      , string lastName
+      , bool separateDeliveryAddress
+      , Address invoiceAddress
+      , Address deliveryAddress
       )
     {
+      FirstName = firstName;
+      LastName = lastName;
       SeparateDeliveryAddress = separateDeliveryAddress;
       InvoiceAddress = invoiceAddress;
       DeliveryAddress = deliveryAddress;
     }
- 
+
     public Customer()
       : this(
-        default(bool)
-      , AddressInfo.Zero
-      , AddressInfo.Zero
+        ""
+      , ""
+      , default(bool)
+      , Address.Zero
+      , Address.Zero
       )
     {
     }
- 
+
     public readonly static Customer Zero = new Customer();
 
     public override string ToString()
     {
       var sb = new StringBuilder(16);
       sb.Append("{ Customer");
+      sb.Append(", FirstName: ");
+      sb.Append(FirstName);
+      sb.Append(", LastName: ");
+      sb.Append(LastName);
       sb.Append(", SeparateDeliveryAddress: ");
       sb.Append(SeparateDeliveryAddress);
       sb.Append(", InvoiceAddress: ");
@@ -392,10 +312,74 @@
       return sb.ToString();
     }
 
+    public Customer With_FirstName(string firstName)
+    {
+      return new Customer(
+        firstName
+      , LastName
+      , SeparateDeliveryAddress
+      , InvoiceAddress
+      , DeliveryAddress
+      );
+    }
+
+    sealed class FirstNameLens : Lens<Customer, string>
+    {
+      public override void BuildPath(StringBuilder sb)
+      {
+        sb.Append("FirstName");
+      }
+
+      public override string Get(Customer m)
+      {
+        return m.FirstName;
+      }
+
+      public override Customer Set(Customer m, string p)
+      {
+        return m.With_FirstName(p);
+      }
+    }
+
+    public readonly static Lens<Customer, string> firstName = new FirstNameLens();
+
+    public Customer With_LastName(string lastName)
+    {
+      return new Customer(
+        FirstName
+      , lastName
+      , SeparateDeliveryAddress
+      , InvoiceAddress
+      , DeliveryAddress
+      );
+    }
+
+    sealed class LastNameLens : Lens<Customer, string>
+    {
+      public override void BuildPath(StringBuilder sb)
+      {
+        sb.Append("LastName");
+      }
+
+      public override string Get(Customer m)
+      {
+        return m.LastName;
+      }
+
+      public override Customer Set(Customer m, string p)
+      {
+        return m.With_LastName(p);
+      }
+    }
+
+    public readonly static Lens<Customer, string> lastName = new LastNameLens();
+
     public Customer With_SeparateDeliveryAddress(bool separateDeliveryAddress)
     {
       return new Customer(
-        separateDeliveryAddress
+        FirstName
+      , LastName
+      , separateDeliveryAddress
       , InvoiceAddress
       , DeliveryAddress
       );
@@ -421,63 +405,67 @@
 
     public readonly static Lens<Customer, bool> separateDeliveryAddress = new SeparateDeliveryAddressLens();
 
-    public Customer With_InvoiceAddress(AddressInfo invoiceAddress)
+    public Customer With_InvoiceAddress(Address invoiceAddress)
     {
       return new Customer(
-        SeparateDeliveryAddress
+        FirstName
+      , LastName
+      , SeparateDeliveryAddress
       , invoiceAddress
       , DeliveryAddress
       );
     }
 
-    sealed class InvoiceAddressLens : Lens<Customer, AddressInfo>
+    sealed class InvoiceAddressLens : Lens<Customer, Address>
     {
       public override void BuildPath(StringBuilder sb)
       {
         sb.Append("InvoiceAddress");
       }
 
-      public override AddressInfo Get(Customer m)
+      public override Address Get(Customer m)
       {
         return m.InvoiceAddress;
       }
 
-      public override Customer Set(Customer m, AddressInfo p)
+      public override Customer Set(Customer m, Address p)
       {
         return m.With_InvoiceAddress(p);
       }
     }
 
-    public readonly static Lens<Customer, AddressInfo> invoiceAddress = new InvoiceAddressLens();
+    public readonly static Lens<Customer, Address> invoiceAddress = new InvoiceAddressLens();
 
-    public Customer With_DeliveryAddress(AddressInfo deliveryAddress)
+    public Customer With_DeliveryAddress(Address deliveryAddress)
     {
       return new Customer(
-        SeparateDeliveryAddress
+        FirstName
+      , LastName
+      , SeparateDeliveryAddress
       , InvoiceAddress
       , deliveryAddress
       );
     }
 
-    sealed class DeliveryAddressLens : Lens<Customer, AddressInfo>
+    sealed class DeliveryAddressLens : Lens<Customer, Address>
     {
       public override void BuildPath(StringBuilder sb)
       {
         sb.Append("DeliveryAddress");
       }
 
-      public override AddressInfo Get(Customer m)
+      public override Address Get(Customer m)
       {
         return m.DeliveryAddress;
       }
 
-      public override Customer Set(Customer m, AddressInfo p)
+      public override Customer Set(Customer m, Address p)
       {
         return m.With_DeliveryAddress(p);
       }
     }
 
-    public readonly static Lens<Customer, AddressInfo> deliveryAddress = new DeliveryAddressLens();
+    public readonly static Lens<Customer, Address> deliveryAddress = new DeliveryAddressLens();
 
 
   }
