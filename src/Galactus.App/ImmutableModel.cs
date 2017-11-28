@@ -19,13 +19,23 @@
 
       IView<Message> labeledGroup(string lbl, IView<Message> view)
       {
-        return border.View
-          ( border.borderThickness(new Thickness(2.0))
-          , border.borderBrush(Brushes.LimeGreen)
-          , border.padding(new Thickness(4.0))
-          , margin
-          )
-          (view).Named(lbl);
+        return grid.View
+          (frameworkElement.margin(new Thickness(4,12,4,4)))
+          ( border.View
+            ( border.borderThickness(new Thickness(2.0))
+            , border.borderBrush(Brushes.LimeGreen)
+            , border.padding(new Thickness(4.0))
+            )
+            (view)
+          , textBlock.View
+            ( textBlock.text(lbl)
+            , textBlock.padding(new Thickness(4,0,4,0))
+            , textBlock.background(Brushes.White)
+            , textBlock.verticalAlignment(VerticalAlignment.Top)
+            , textBlock.horizontalAlignment(HorizontalAlignment.Left)
+            , textBlock.renderTransform(new TranslateTransform(10, -8))
+            )
+          ).Named(lbl);
       }
 
       IView<Message> labeledCheckBox(string lbl, Lens<Customer, bool> l)
@@ -41,7 +51,9 @@
       IView<Message> labeledTextBox(string lbl, Lens<Customer, string> l)
       {
         return stackPanel.View
-          ( stackPanel.orientation(Orientation.Horizontal), margin)
+          ( stackPanel.orientation(Orientation.Horizontal)
+          , margin
+          )
           ( textBlock.View(textBlock.text(lbl), textBlock.width(80))
           , textBox.View
             ( textBox.text(l.Get(customer))
@@ -54,17 +66,19 @@
 
       IView<Message> address(string lbl, Lens<Customer, Address> l)
       {
-        return labeledGroup(
-            lbl
+        return labeledGroup
+          ( lbl
           , stackPanel.View
-            (stackPanel.orientation(Orientation.Vertical))
-            ( labeledTextBox("Carry Over" , l.To(Address.carryOver))
-            , labeledTextBox("Street"     , l.To(Address.street))
-            , labeledTextBox("Zip"        , l.To(Address.zip))
-            , labeledTextBox("City"       , l.To(Address.city))
-            , labeledTextBox("County"     , l.To(Address.county))
-            , labeledTextBox("Country"    , l.To(Address.county))
-            ));
+              ( stackPanel.orientation(Orientation.Vertical)
+              )
+              ( labeledTextBox("Carry Over" , l.To(Address.carryOver))
+              , labeledTextBox("Street"     , l.To(Address.street))
+              , labeledTextBox("Zip"        , l.To(Address.zip))
+              , labeledTextBox("City"       , l.To(Address.city))
+              , labeledTextBox("County"     , l.To(Address.county))
+              , labeledTextBox("Country"    , l.To(Address.county))
+              )
+          );
       }
 
       var textBoxHandler = uIElement.onLostFocus((ui, args) => c =>
@@ -74,16 +88,19 @@
           return ll?.Set(c, ltb.Text) ?? c;
         });
 
-      return stackPanel.View
-        ( stackPanel.orientation(Orientation.Vertical)
+      return scrollViewer.View
+        ( frameworkElement.layoutTransform(new ScaleTransform(2.0, 2.0))
         , textBoxHandler
         )
-        ( labeledTextBox("First Name" , Customer.firstName  )
-        , labeledTextBox("Last Name"  , Customer.lastName   )
-        , labeledCheckBox("Separate Delivery Address?", Customer.separateDeliveryAddress)
-        , address("Invoice Address" , Customer.invoiceAddress)
-        , customer.SeparateDeliveryAddress ? address("Delivery Address", Customer.deliveryAddress) : empty.View
-        , address("Invoice Address" , Customer.invoiceAddress)
+        ( stackPanel.View
+            (stackPanel.orientation(Orientation.Vertical))
+            ( labeledTextBox("First Name" , Customer.firstName  )
+            , labeledTextBox("Last Name"  , Customer.lastName   )
+            , labeledCheckBox("Separate Delivery Address?", Customer.separateDeliveryAddress)
+            , address("Invoice Address" , Customer.invoiceAddress)
+            , customer.SeparateDeliveryAddress ? address("Delivery Address", Customer.deliveryAddress) : empty.View
+            , address("Invoice Address" , Customer.invoiceAddress)
+            )
         )
         ;
     }

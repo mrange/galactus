@@ -14,6 +14,23 @@ namespace Galactus.Standard
   using Galactus.Core;
 
 <#
+  bool IsSubclassOfOrEqual(Type l, Type r)
+  {
+    return l == r || l.IsSubclassOf(r);
+  }
+
+  Type GetParameterType(MethodInfo mi, int i)
+  {
+    if (mi != null)
+    {
+      return mi.GetParameters()[i].ParameterType;
+    }
+    else
+    {
+      return null;
+    }
+  }
+
   string FixName(string s)
   {
     var name = s.Length > 0
@@ -74,6 +91,7 @@ namespace Galactus.Standard
     return sb.ToString();
   }
 
+  var dependencyObject    = typeof (System.Windows.DependencyObject)          ;
   var content             = typeof (System.Windows.Controls.ContentControl)   ;
   var decorator           = typeof (System.Windows.Controls.Decorator)        ;
   var dependencyProperty  = typeof (System.Windows.DependencyProperty)        ;
@@ -81,6 +99,18 @@ namespace Galactus.Standard
   var eventArgs           = typeof (System.EventArgs)                         ;
   var panel               = typeof (System.Windows.Controls.Panel)            ;
   var uiElement           = typeof (System.Windows.UIElement)                 ;
+
+  Type MinUIElement(Type t)
+  {
+    if (t.IsSubclassOf(uiElement))
+    {
+      return t;
+    }
+    else
+    {
+      return uiElement;
+    }
+  }
 
   var assemblies = new [] {
       uiElement.Assembly
@@ -93,7 +123,7 @@ namespace Galactus.Standard
 
   var types = assemblies
     .SelectMany(a => a.ExportedTypes)
-    .Where(t => t == uiElement || t.IsSubclassOf(uiElement))
+    .Where(t => IsSubclassOfOrEqual(t, uiElement))
     .Where(t => !t.IsGenericType)
     .Where(t => !blackList.Contains(t))
     .OrderBy(t => t.Name)
@@ -122,13 +152,25 @@ namespace Galactus.Standard
 <#
   foreach (var f in dps)
   {
-    // TODO: Figure out if attached
     var dp    = (System.Windows.DependencyProperty)f.GetValue(null);
-    var pn    = FixName(RemoveTrailing("Property", f.Name));
-    var dptn  = TypeName(dp.PropertyType);
+    var dpr   = dp.ReadOnly;
+    var dpn   = RemoveTrailing("Property", f.Name);
+    var dpas  = tp.GetMethod("Set" + dpn, BindingFlags.Static | BindingFlags.Public);
+    var dpasto= GetParameterType(dpas, 0);
+    var dpast = GetParameterType(dpas, 1);
+    var pn    = FixName(dpn);
+    var dpt   = dp.PropertyType;
+    var dptn  = TypeName(dpt);
+    var tn    = dpas != null && IsSubclassOfOrEqual(dpasto, dependencyObject) && dpast == dpt
+      ? TypeName(MinUIElement(dpasto))
+      : etn
+      ;
+    if (!dpr)
+    {
 #>
-      public static readonly IProperty<<#=etn#>, <#=dptn#>> <#=pn#> = new Property<<#=etn#>, <#=dptn#>>(<#=etn#>.<#=f.Name#>);
+      public static readonly IProperty<<#=tn#>, <#=dptn#>> <#=pn#> = new Property<<#=tn#>, <#=dptn#>>(<#=etn#>.<#=f.Name#>);
 <#
+    }
   }
 #>
     }
@@ -215,13 +257,25 @@ namespace Galactus.Standard
 <#
   foreach (var f in dps)
   {
-    // TODO: Figure out if attached
     var dp    = (System.Windows.DependencyProperty)f.GetValue(null);
-    var pn    = FixName(RemoveTrailing("Property", f.Name));
-    var dptn  = TypeName(dp.PropertyType);
+    var dpr   = dp.ReadOnly;
+    var dpn   = RemoveTrailing("Property", f.Name);
+    var dpas  = tp.GetMethod("Set" + dpn, BindingFlags.Static | BindingFlags.Public);
+    var dpasto= GetParameterType(dpas, 0);
+    var dpast = GetParameterType(dpas, 1);
+    var pn    = FixName(dpn);
+    var dpt   = dp.PropertyType;
+    var dptn  = TypeName(dpt);
+    var tn    = dpas != null && IsSubclassOfOrEqual(dpasto, dependencyObject) && dpast == dpt
+      ? TypeName(MinUIElement(dpasto))
+      : etn
+      ;
+    if (!dpr)
+    {
 #>
-      public static IValue<TMessage, <#=etn#>> <#=pn#>(<#=dptn#> v) => new SetValue<TMessage, <#=etn#>, <#=dptn#>>(Properties.<#=etsn#>.<#=pn#>, v);
+      public static IValue<TMessage, <#=tn#>> <#=pn#>(<#=dptn#> v) => new SetValue<TMessage, <#=tn#>, <#=dptn#>>(Properties.<#=etsn#>.<#=pn#>, v);
 <#
+    }
   }
 #>
 
@@ -254,19 +308,19 @@ namespace Galactus.Standard
 <#
   if (!tp.IsAbstract && tp.GetConstructor(new Type [] {}) != null)
   {
-  if (tp.IsSubclassOf(content))
+  if (IsSubclassOfOrEqual(tp, content))
   {
 #>
       public static DelayedContentView<TMessage> View(params IValue<TMessage, <#=etn#>>[] vs) => c => new StandardContentView<TMessage, <#=etn#>>(vs, c);
 <#
   }
-  else if (tp.IsSubclassOf(decorator))
+  else if (IsSubclassOfOrEqual(tp, decorator))
   {
 #>
       public static DelayedDecoratorView<TMessage> View(params IValue<TMessage, <#=etn#>>[] vs) => c => new StandardDecoratorView<TMessage, <#=etn#>>(vs, c);
 <#
   }
-  else if (tp.IsSubclassOf(panel))
+  else if (IsSubclassOfOrEqual(tp, panel))
   {
 #>
       public static DelayedPanelView<TMessage> View(params IValue<TMessage, <#=etn#>>[] vs) => cs => new StandardPanelView<TMessage, <#=etn#>>(vs, cs);

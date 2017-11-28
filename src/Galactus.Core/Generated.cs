@@ -65,7 +65,6 @@ namespace Galactus.Standard
     {
       public static readonly IProperty<System.Windows.Controls.Button, System.Boolean> isDefault = new Property<System.Windows.Controls.Button, System.Boolean>(System.Windows.Controls.Button.IsDefaultProperty);
       public static readonly IProperty<System.Windows.Controls.Button, System.Boolean> isCancel = new Property<System.Windows.Controls.Button, System.Boolean>(System.Windows.Controls.Button.IsCancelProperty);
-      public static readonly IProperty<System.Windows.Controls.Button, System.Boolean> isDefaulted = new Property<System.Windows.Controls.Button, System.Boolean>(System.Windows.Controls.Button.IsDefaultedProperty);
     }
 
     public partial class buttonBase : contentControl
@@ -73,7 +72,6 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.Primitives.ButtonBase, System.Windows.Input.ICommand> command = new Property<System.Windows.Controls.Primitives.ButtonBase, System.Windows.Input.ICommand>(System.Windows.Controls.Primitives.ButtonBase.CommandProperty);
       public static readonly IProperty<System.Windows.Controls.Primitives.ButtonBase, System.Object> commandParameter = new Property<System.Windows.Controls.Primitives.ButtonBase, System.Object>(System.Windows.Controls.Primitives.ButtonBase.CommandParameterProperty);
       public static readonly IProperty<System.Windows.Controls.Primitives.ButtonBase, System.Windows.IInputElement> commandTarget = new Property<System.Windows.Controls.Primitives.ButtonBase, System.Windows.IInputElement>(System.Windows.Controls.Primitives.ButtonBase.CommandTargetProperty);
-      public static readonly IProperty<System.Windows.Controls.Primitives.ButtonBase, System.Boolean> isPressed = new Property<System.Windows.Controls.Primitives.ButtonBase, System.Boolean>(System.Windows.Controls.Primitives.ButtonBase.IsPressedProperty);
       public static readonly IProperty<System.Windows.Controls.Primitives.ButtonBase, System.Windows.Controls.ClickMode> clickMode = new Property<System.Windows.Controls.Primitives.ButtonBase, System.Windows.Controls.ClickMode>(System.Windows.Controls.Primitives.ButtonBase.ClickModeProperty);
     }
 
@@ -94,17 +92,10 @@ namespace Galactus.Standard
 
     public partial class calendarButton : button
     {
-      public static readonly IProperty<System.Windows.Controls.Primitives.CalendarButton, System.Boolean> hasSelectedDays = new Property<System.Windows.Controls.Primitives.CalendarButton, System.Boolean>(System.Windows.Controls.Primitives.CalendarButton.HasSelectedDaysProperty);
-      public static readonly IProperty<System.Windows.Controls.Primitives.CalendarButton, System.Boolean> isInactive = new Property<System.Windows.Controls.Primitives.CalendarButton, System.Boolean>(System.Windows.Controls.Primitives.CalendarButton.IsInactiveProperty);
     }
 
     public partial class calendarDayButton : button
     {
-      public static readonly IProperty<System.Windows.Controls.Primitives.CalendarDayButton, System.Boolean> isToday = new Property<System.Windows.Controls.Primitives.CalendarDayButton, System.Boolean>(System.Windows.Controls.Primitives.CalendarDayButton.IsTodayProperty);
-      public static readonly IProperty<System.Windows.Controls.Primitives.CalendarDayButton, System.Boolean> isSelected = new Property<System.Windows.Controls.Primitives.CalendarDayButton, System.Boolean>(System.Windows.Controls.Primitives.CalendarDayButton.IsSelectedProperty);
-      public static readonly IProperty<System.Windows.Controls.Primitives.CalendarDayButton, System.Boolean> isInactive = new Property<System.Windows.Controls.Primitives.CalendarDayButton, System.Boolean>(System.Windows.Controls.Primitives.CalendarDayButton.IsInactiveProperty);
-      public static readonly IProperty<System.Windows.Controls.Primitives.CalendarDayButton, System.Boolean> isBlackedOut = new Property<System.Windows.Controls.Primitives.CalendarDayButton, System.Boolean>(System.Windows.Controls.Primitives.CalendarDayButton.IsBlackedOutProperty);
-      public static readonly IProperty<System.Windows.Controls.Primitives.CalendarDayButton, System.Boolean> isHighlighted = new Property<System.Windows.Controls.Primitives.CalendarDayButton, System.Boolean>(System.Windows.Controls.Primitives.CalendarDayButton.IsHighlightedProperty);
     }
 
     public partial class calendarItem : control
@@ -113,10 +104,10 @@ namespace Galactus.Standard
 
     public partial class canvas : panel
     {
-      public static readonly IProperty<System.Windows.Controls.Canvas, System.Double> left = new Property<System.Windows.Controls.Canvas, System.Double>(System.Windows.Controls.Canvas.LeftProperty);
-      public static readonly IProperty<System.Windows.Controls.Canvas, System.Double> top = new Property<System.Windows.Controls.Canvas, System.Double>(System.Windows.Controls.Canvas.TopProperty);
-      public static readonly IProperty<System.Windows.Controls.Canvas, System.Double> right = new Property<System.Windows.Controls.Canvas, System.Double>(System.Windows.Controls.Canvas.RightProperty);
-      public static readonly IProperty<System.Windows.Controls.Canvas, System.Double> bottom = new Property<System.Windows.Controls.Canvas, System.Double>(System.Windows.Controls.Canvas.BottomProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Double> left = new Property<System.Windows.UIElement, System.Double>(System.Windows.Controls.Canvas.LeftProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Double> top = new Property<System.Windows.UIElement, System.Double>(System.Windows.Controls.Canvas.TopProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Double> right = new Property<System.Windows.UIElement, System.Double>(System.Windows.Controls.Canvas.RightProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Double> bottom = new Property<System.Windows.UIElement, System.Double>(System.Windows.Controls.Canvas.BottomProperty);
     }
 
     public partial class checkBox : toggleButton
@@ -131,21 +122,16 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.ComboBox, System.Boolean> isEditable = new Property<System.Windows.Controls.ComboBox, System.Boolean>(System.Windows.Controls.ComboBox.IsEditableProperty);
       public static readonly IProperty<System.Windows.Controls.ComboBox, System.String> text = new Property<System.Windows.Controls.ComboBox, System.String>(System.Windows.Controls.ComboBox.TextProperty);
       public static readonly IProperty<System.Windows.Controls.ComboBox, System.Boolean> isReadOnly = new Property<System.Windows.Controls.ComboBox, System.Boolean>(System.Windows.Controls.ComboBox.IsReadOnlyProperty);
-      public static readonly IProperty<System.Windows.Controls.ComboBox, System.Object> selectionBoxItem = new Property<System.Windows.Controls.ComboBox, System.Object>(System.Windows.Controls.ComboBox.SelectionBoxItemProperty);
-      public static readonly IProperty<System.Windows.Controls.ComboBox, System.Windows.DataTemplate> selectionBoxItemTemplate = new Property<System.Windows.Controls.ComboBox, System.Windows.DataTemplate>(System.Windows.Controls.ComboBox.SelectionBoxItemTemplateProperty);
-      public static readonly IProperty<System.Windows.Controls.ComboBox, System.String> selectionBoxItemStringFormat = new Property<System.Windows.Controls.ComboBox, System.String>(System.Windows.Controls.ComboBox.SelectionBoxItemStringFormatProperty);
       public static readonly IProperty<System.Windows.Controls.ComboBox, System.Boolean> staysOpenOnEdit = new Property<System.Windows.Controls.ComboBox, System.Boolean>(System.Windows.Controls.ComboBox.StaysOpenOnEditProperty);
     }
 
     public partial class comboBoxItem : listBoxItem
     {
-      public static readonly IProperty<System.Windows.Controls.ComboBoxItem, System.Boolean> isHighlighted = new Property<System.Windows.Controls.ComboBoxItem, System.Boolean>(System.Windows.Controls.ComboBoxItem.IsHighlightedProperty);
     }
 
     public partial class contentControl : control
     {
       public static readonly IProperty<System.Windows.Controls.ContentControl, System.Object> content = new Property<System.Windows.Controls.ContentControl, System.Object>(System.Windows.Controls.ContentControl.ContentProperty);
-      public static readonly IProperty<System.Windows.Controls.ContentControl, System.Boolean> hasContent = new Property<System.Windows.Controls.ContentControl, System.Boolean>(System.Windows.Controls.ContentControl.HasContentProperty);
       public static readonly IProperty<System.Windows.Controls.ContentControl, System.Windows.DataTemplate> contentTemplate = new Property<System.Windows.Controls.ContentControl, System.Windows.DataTemplate>(System.Windows.Controls.ContentControl.ContentTemplateProperty);
       public static readonly IProperty<System.Windows.Controls.ContentControl, System.Windows.Controls.DataTemplateSelector> contentTemplateSelector = new Property<System.Windows.Controls.ContentControl, System.Windows.Controls.DataTemplateSelector>(System.Windows.Controls.ContentControl.ContentTemplateSelectorProperty);
       public static readonly IProperty<System.Windows.Controls.ContentControl, System.String> contentStringFormat = new Property<System.Windows.Controls.ContentControl, System.String>(System.Windows.Controls.ContentControl.ContentStringFormatProperty);
@@ -210,7 +196,6 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.DataGrid, System.Double> rowHeight = new Property<System.Windows.Controls.DataGrid, System.Double>(System.Windows.Controls.DataGrid.RowHeightProperty);
       public static readonly IProperty<System.Windows.Controls.DataGrid, System.Double> minRowHeight = new Property<System.Windows.Controls.DataGrid, System.Double>(System.Windows.Controls.DataGrid.MinRowHeightProperty);
       public static readonly IProperty<System.Windows.Controls.DataGrid, System.Double> rowHeaderWidth = new Property<System.Windows.Controls.DataGrid, System.Double>(System.Windows.Controls.DataGrid.RowHeaderWidthProperty);
-      public static readonly IProperty<System.Windows.Controls.DataGrid, System.Double> rowHeaderActualWidth = new Property<System.Windows.Controls.DataGrid, System.Double>(System.Windows.Controls.DataGrid.RowHeaderActualWidthProperty);
       public static readonly IProperty<System.Windows.Controls.DataGrid, System.Double> columnHeaderHeight = new Property<System.Windows.Controls.DataGrid, System.Double>(System.Windows.Controls.DataGrid.ColumnHeaderHeightProperty);
       public static readonly IProperty<System.Windows.Controls.DataGrid, System.Windows.Controls.DataGridHeadersVisibility> headersVisibility = new Property<System.Windows.Controls.DataGrid, System.Windows.Controls.DataGridHeadersVisibility>(System.Windows.Controls.DataGrid.HeadersVisibilityProperty);
       public static readonly IProperty<System.Windows.Controls.DataGrid, System.Windows.Style> cellStyle = new Property<System.Windows.Controls.DataGrid, System.Windows.Style>(System.Windows.Controls.DataGrid.CellStyleProperty);
@@ -231,27 +216,22 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.DataGrid, System.Windows.DataTemplate> rowDetailsTemplate = new Property<System.Windows.Controls.DataGrid, System.Windows.DataTemplate>(System.Windows.Controls.DataGrid.RowDetailsTemplateProperty);
       public static readonly IProperty<System.Windows.Controls.DataGrid, System.Windows.Controls.DataTemplateSelector> rowDetailsTemplateSelector = new Property<System.Windows.Controls.DataGrid, System.Windows.Controls.DataTemplateSelector>(System.Windows.Controls.DataGrid.RowDetailsTemplateSelectorProperty);
       public static readonly IProperty<System.Windows.Controls.DataGrid, System.Boolean> canUserResizeRows = new Property<System.Windows.Controls.DataGrid, System.Boolean>(System.Windows.Controls.DataGrid.CanUserResizeRowsProperty);
-      public static readonly IProperty<System.Windows.Controls.DataGrid, System.Windows.Thickness> newItemMargin = new Property<System.Windows.Controls.DataGrid, System.Windows.Thickness>(System.Windows.Controls.DataGrid.NewItemMarginProperty);
       public static readonly IProperty<System.Windows.Controls.DataGrid, System.Windows.Controls.DataGridSelectionMode> selectionMode = new Property<System.Windows.Controls.DataGrid, System.Windows.Controls.DataGridSelectionMode>(System.Windows.Controls.DataGrid.SelectionModeProperty);
       public static readonly IProperty<System.Windows.Controls.DataGrid, System.Windows.Controls.DataGridSelectionUnit> selectionUnit = new Property<System.Windows.Controls.DataGrid, System.Windows.Controls.DataGridSelectionUnit>(System.Windows.Controls.DataGrid.SelectionUnitProperty);
       public static readonly IProperty<System.Windows.Controls.DataGrid, System.Boolean> canUserSortColumns = new Property<System.Windows.Controls.DataGrid, System.Boolean>(System.Windows.Controls.DataGrid.CanUserSortColumnsProperty);
       public static readonly IProperty<System.Windows.Controls.DataGrid, System.Boolean> autoGenerateColumns = new Property<System.Windows.Controls.DataGrid, System.Boolean>(System.Windows.Controls.DataGrid.AutoGenerateColumnsProperty);
       public static readonly IProperty<System.Windows.Controls.DataGrid, System.Int32> frozenColumnCount = new Property<System.Windows.Controls.DataGrid, System.Int32>(System.Windows.Controls.DataGrid.FrozenColumnCountProperty);
-      public static readonly IProperty<System.Windows.Controls.DataGrid, System.Double> nonFrozenColumnsViewportHorizontalOffset = new Property<System.Windows.Controls.DataGrid, System.Double>(System.Windows.Controls.DataGrid.NonFrozenColumnsViewportHorizontalOffsetProperty);
       public static readonly IProperty<System.Windows.Controls.DataGrid, System.Boolean> enableRowVirtualization = new Property<System.Windows.Controls.DataGrid, System.Boolean>(System.Windows.Controls.DataGrid.EnableRowVirtualizationProperty);
       public static readonly IProperty<System.Windows.Controls.DataGrid, System.Boolean> enableColumnVirtualization = new Property<System.Windows.Controls.DataGrid, System.Boolean>(System.Windows.Controls.DataGrid.EnableColumnVirtualizationProperty);
       public static readonly IProperty<System.Windows.Controls.DataGrid, System.Boolean> canUserReorderColumns = new Property<System.Windows.Controls.DataGrid, System.Boolean>(System.Windows.Controls.DataGrid.CanUserReorderColumnsProperty);
       public static readonly IProperty<System.Windows.Controls.DataGrid, System.Windows.Style> dragIndicatorStyle = new Property<System.Windows.Controls.DataGrid, System.Windows.Style>(System.Windows.Controls.DataGrid.DragIndicatorStyleProperty);
       public static readonly IProperty<System.Windows.Controls.DataGrid, System.Windows.Style> dropLocationIndicatorStyle = new Property<System.Windows.Controls.DataGrid, System.Windows.Style>(System.Windows.Controls.DataGrid.DropLocationIndicatorStyleProperty);
       public static readonly IProperty<System.Windows.Controls.DataGrid, System.Windows.Controls.DataGridClipboardCopyMode> clipboardCopyMode = new Property<System.Windows.Controls.DataGrid, System.Windows.Controls.DataGridClipboardCopyMode>(System.Windows.Controls.DataGrid.ClipboardCopyModeProperty);
-      public static readonly IProperty<System.Windows.Controls.DataGrid, System.Double> cellsPanelHorizontalOffset = new Property<System.Windows.Controls.DataGrid, System.Double>(System.Windows.Controls.DataGrid.CellsPanelHorizontalOffsetProperty);
     }
 
     public partial class dataGridCell : contentControl
     {
-      public static readonly IProperty<System.Windows.Controls.DataGridCell, System.Windows.Controls.DataGridColumn> column = new Property<System.Windows.Controls.DataGridCell, System.Windows.Controls.DataGridColumn>(System.Windows.Controls.DataGridCell.ColumnProperty);
       public static readonly IProperty<System.Windows.Controls.DataGridCell, System.Boolean> isEditing = new Property<System.Windows.Controls.DataGridCell, System.Boolean>(System.Windows.Controls.DataGridCell.IsEditingProperty);
-      public static readonly IProperty<System.Windows.Controls.DataGridCell, System.Boolean> isReadOnly = new Property<System.Windows.Controls.DataGridCell, System.Boolean>(System.Windows.Controls.DataGridCell.IsReadOnlyProperty);
       public static readonly IProperty<System.Windows.Controls.DataGridCell, System.Boolean> isSelected = new Property<System.Windows.Controls.DataGridCell, System.Boolean>(System.Windows.Controls.DataGridCell.IsSelectedProperty);
     }
 
@@ -267,10 +247,6 @@ namespace Galactus.Standard
     {
       public static readonly IProperty<System.Windows.Controls.Primitives.DataGridColumnHeader, System.Windows.Media.Brush> separatorBrush = new Property<System.Windows.Controls.Primitives.DataGridColumnHeader, System.Windows.Media.Brush>(System.Windows.Controls.Primitives.DataGridColumnHeader.SeparatorBrushProperty);
       public static readonly IProperty<System.Windows.Controls.Primitives.DataGridColumnHeader, System.Windows.Visibility> separatorVisibility = new Property<System.Windows.Controls.Primitives.DataGridColumnHeader, System.Windows.Visibility>(System.Windows.Controls.Primitives.DataGridColumnHeader.SeparatorVisibilityProperty);
-      public static readonly IProperty<System.Windows.Controls.Primitives.DataGridColumnHeader, System.Int32> displayIndex = new Property<System.Windows.Controls.Primitives.DataGridColumnHeader, System.Int32>(System.Windows.Controls.Primitives.DataGridColumnHeader.DisplayIndexProperty);
-      public static readonly IProperty<System.Windows.Controls.Primitives.DataGridColumnHeader, System.Boolean> canUserSort = new Property<System.Windows.Controls.Primitives.DataGridColumnHeader, System.Boolean>(System.Windows.Controls.Primitives.DataGridColumnHeader.CanUserSortProperty);
-      public static readonly IProperty<System.Windows.Controls.Primitives.DataGridColumnHeader, System.Nullable<System.ComponentModel.ListSortDirection>> sortDirection = new Property<System.Windows.Controls.Primitives.DataGridColumnHeader, System.Nullable<System.ComponentModel.ListSortDirection>>(System.Windows.Controls.Primitives.DataGridColumnHeader.SortDirectionProperty);
-      public static readonly IProperty<System.Windows.Controls.Primitives.DataGridColumnHeader, System.Boolean> isFrozen = new Property<System.Windows.Controls.Primitives.DataGridColumnHeader, System.Boolean>(System.Windows.Controls.Primitives.DataGridColumnHeader.IsFrozenProperty);
     }
 
     public partial class dataGridColumnHeadersPresenter : itemsControl
@@ -293,17 +269,13 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.DataGridRow, System.Windows.DataTemplate> detailsTemplate = new Property<System.Windows.Controls.DataGridRow, System.Windows.DataTemplate>(System.Windows.Controls.DataGridRow.DetailsTemplateProperty);
       public static readonly IProperty<System.Windows.Controls.DataGridRow, System.Windows.Controls.DataTemplateSelector> detailsTemplateSelector = new Property<System.Windows.Controls.DataGridRow, System.Windows.Controls.DataTemplateSelector>(System.Windows.Controls.DataGridRow.DetailsTemplateSelectorProperty);
       public static readonly IProperty<System.Windows.Controls.DataGridRow, System.Windows.Visibility> detailsVisibility = new Property<System.Windows.Controls.DataGridRow, System.Windows.Visibility>(System.Windows.Controls.DataGridRow.DetailsVisibilityProperty);
-      public static readonly IProperty<System.Windows.Controls.DataGridRow, System.Int32> alternationIndex = new Property<System.Windows.Controls.DataGridRow, System.Int32>(System.Windows.Controls.DataGridRow.AlternationIndexProperty);
       public static readonly IProperty<System.Windows.Controls.DataGridRow, System.Boolean> isSelected = new Property<System.Windows.Controls.DataGridRow, System.Boolean>(System.Windows.Controls.DataGridRow.IsSelectedProperty);
-      public static readonly IProperty<System.Windows.Controls.DataGridRow, System.Boolean> isEditing = new Property<System.Windows.Controls.DataGridRow, System.Boolean>(System.Windows.Controls.DataGridRow.IsEditingProperty);
-      public static readonly IProperty<System.Windows.Controls.DataGridRow, System.Boolean> isNewItem = new Property<System.Windows.Controls.DataGridRow, System.Boolean>(System.Windows.Controls.DataGridRow.IsNewItemProperty);
     }
 
     public partial class dataGridRowHeader : buttonBase
     {
       public static readonly IProperty<System.Windows.Controls.Primitives.DataGridRowHeader, System.Windows.Media.Brush> separatorBrush = new Property<System.Windows.Controls.Primitives.DataGridRowHeader, System.Windows.Media.Brush>(System.Windows.Controls.Primitives.DataGridRowHeader.SeparatorBrushProperty);
       public static readonly IProperty<System.Windows.Controls.Primitives.DataGridRowHeader, System.Windows.Visibility> separatorVisibility = new Property<System.Windows.Controls.Primitives.DataGridRowHeader, System.Windows.Visibility>(System.Windows.Controls.Primitives.DataGridRowHeader.SeparatorVisibilityProperty);
-      public static readonly IProperty<System.Windows.Controls.Primitives.DataGridRowHeader, System.Boolean> isRowSelected = new Property<System.Windows.Controls.Primitives.DataGridRowHeader, System.Boolean>(System.Windows.Controls.Primitives.DataGridRowHeader.IsRowSelectedProperty);
     }
 
     public partial class dataGridRowsPresenter : virtualizingStackPanel
@@ -335,7 +307,7 @@ namespace Galactus.Standard
     public partial class dockPanel : panel
     {
       public static readonly IProperty<System.Windows.Controls.DockPanel, System.Boolean> lastChildFill = new Property<System.Windows.Controls.DockPanel, System.Boolean>(System.Windows.Controls.DockPanel.LastChildFillProperty);
-      public static readonly IProperty<System.Windows.Controls.DockPanel, System.Windows.Controls.Dock> dock = new Property<System.Windows.Controls.DockPanel, System.Windows.Controls.Dock>(System.Windows.Controls.DockPanel.DockProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Windows.Controls.Dock> dock = new Property<System.Windows.UIElement, System.Windows.Controls.Dock>(System.Windows.Controls.DockPanel.DockProperty);
     }
 
     public partial class documentPageView : frameworkElement
@@ -354,31 +326,17 @@ namespace Galactus.Standard
     {
       public static readonly IProperty<System.Windows.Controls.DocumentViewer, System.Double> horizontalOffset = new Property<System.Windows.Controls.DocumentViewer, System.Double>(System.Windows.Controls.DocumentViewer.HorizontalOffsetProperty);
       public static readonly IProperty<System.Windows.Controls.DocumentViewer, System.Double> verticalOffset = new Property<System.Windows.Controls.DocumentViewer, System.Double>(System.Windows.Controls.DocumentViewer.VerticalOffsetProperty);
-      public static readonly IProperty<System.Windows.Controls.DocumentViewer, System.Double> extentWidth = new Property<System.Windows.Controls.DocumentViewer, System.Double>(System.Windows.Controls.DocumentViewer.ExtentWidthProperty);
-      public static readonly IProperty<System.Windows.Controls.DocumentViewer, System.Double> extentHeight = new Property<System.Windows.Controls.DocumentViewer, System.Double>(System.Windows.Controls.DocumentViewer.ExtentHeightProperty);
-      public static readonly IProperty<System.Windows.Controls.DocumentViewer, System.Double> viewportWidth = new Property<System.Windows.Controls.DocumentViewer, System.Double>(System.Windows.Controls.DocumentViewer.ViewportWidthProperty);
-      public static readonly IProperty<System.Windows.Controls.DocumentViewer, System.Double> viewportHeight = new Property<System.Windows.Controls.DocumentViewer, System.Double>(System.Windows.Controls.DocumentViewer.ViewportHeightProperty);
       public static readonly IProperty<System.Windows.Controls.DocumentViewer, System.Boolean> showPageBorders = new Property<System.Windows.Controls.DocumentViewer, System.Boolean>(System.Windows.Controls.DocumentViewer.ShowPageBordersProperty);
       public static readonly IProperty<System.Windows.Controls.DocumentViewer, System.Double> zoom = new Property<System.Windows.Controls.DocumentViewer, System.Double>(System.Windows.Controls.DocumentViewer.ZoomProperty);
       public static readonly IProperty<System.Windows.Controls.DocumentViewer, System.Int32> maxPagesAcross = new Property<System.Windows.Controls.DocumentViewer, System.Int32>(System.Windows.Controls.DocumentViewer.MaxPagesAcrossProperty);
       public static readonly IProperty<System.Windows.Controls.DocumentViewer, System.Double> verticalPageSpacing = new Property<System.Windows.Controls.DocumentViewer, System.Double>(System.Windows.Controls.DocumentViewer.VerticalPageSpacingProperty);
       public static readonly IProperty<System.Windows.Controls.DocumentViewer, System.Double> horizontalPageSpacing = new Property<System.Windows.Controls.DocumentViewer, System.Double>(System.Windows.Controls.DocumentViewer.HorizontalPageSpacingProperty);
-      public static readonly IProperty<System.Windows.Controls.DocumentViewer, System.Boolean> canMoveUp = new Property<System.Windows.Controls.DocumentViewer, System.Boolean>(System.Windows.Controls.DocumentViewer.CanMoveUpProperty);
-      public static readonly IProperty<System.Windows.Controls.DocumentViewer, System.Boolean> canMoveDown = new Property<System.Windows.Controls.DocumentViewer, System.Boolean>(System.Windows.Controls.DocumentViewer.CanMoveDownProperty);
-      public static readonly IProperty<System.Windows.Controls.DocumentViewer, System.Boolean> canMoveLeft = new Property<System.Windows.Controls.DocumentViewer, System.Boolean>(System.Windows.Controls.DocumentViewer.CanMoveLeftProperty);
-      public static readonly IProperty<System.Windows.Controls.DocumentViewer, System.Boolean> canMoveRight = new Property<System.Windows.Controls.DocumentViewer, System.Boolean>(System.Windows.Controls.DocumentViewer.CanMoveRightProperty);
-      public static readonly IProperty<System.Windows.Controls.DocumentViewer, System.Boolean> canIncreaseZoom = new Property<System.Windows.Controls.DocumentViewer, System.Boolean>(System.Windows.Controls.DocumentViewer.CanIncreaseZoomProperty);
-      public static readonly IProperty<System.Windows.Controls.DocumentViewer, System.Boolean> canDecreaseZoom = new Property<System.Windows.Controls.DocumentViewer, System.Boolean>(System.Windows.Controls.DocumentViewer.CanDecreaseZoomProperty);
     }
 
     public partial class documentViewerBase : control
     {
       public static readonly IProperty<System.Windows.Controls.Primitives.DocumentViewerBase, System.Windows.Documents.IDocumentPaginatorSource> document = new Property<System.Windows.Controls.Primitives.DocumentViewerBase, System.Windows.Documents.IDocumentPaginatorSource>(System.Windows.Controls.Primitives.DocumentViewerBase.DocumentProperty);
-      public static readonly IProperty<System.Windows.Controls.Primitives.DocumentViewerBase, System.Int32> pageCount = new Property<System.Windows.Controls.Primitives.DocumentViewerBase, System.Int32>(System.Windows.Controls.Primitives.DocumentViewerBase.PageCountProperty);
-      public static readonly IProperty<System.Windows.Controls.Primitives.DocumentViewerBase, System.Int32> masterPageNumber = new Property<System.Windows.Controls.Primitives.DocumentViewerBase, System.Int32>(System.Windows.Controls.Primitives.DocumentViewerBase.MasterPageNumberProperty);
-      public static readonly IProperty<System.Windows.Controls.Primitives.DocumentViewerBase, System.Boolean> canGoToPreviousPage = new Property<System.Windows.Controls.Primitives.DocumentViewerBase, System.Boolean>(System.Windows.Controls.Primitives.DocumentViewerBase.CanGoToPreviousPageProperty);
-      public static readonly IProperty<System.Windows.Controls.Primitives.DocumentViewerBase, System.Boolean> canGoToNextPage = new Property<System.Windows.Controls.Primitives.DocumentViewerBase, System.Boolean>(System.Windows.Controls.Primitives.DocumentViewerBase.CanGoToNextPageProperty);
-      public static readonly IProperty<System.Windows.Controls.Primitives.DocumentViewerBase, System.Boolean> isMasterPage = new Property<System.Windows.Controls.Primitives.DocumentViewerBase, System.Boolean>(System.Windows.Controls.Primitives.DocumentViewerBase.IsMasterPageProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Boolean> isMasterPage = new Property<System.Windows.UIElement, System.Boolean>(System.Windows.Controls.Primitives.DocumentViewerBase.IsMasterPageProperty);
     }
 
     public partial class ellipse : shape
@@ -395,13 +353,13 @@ namespace Galactus.Standard
     {
       public static readonly IProperty<System.Windows.Documents.FixedPage, System.Object> printTicket = new Property<System.Windows.Documents.FixedPage, System.Object>(System.Windows.Documents.FixedPage.PrintTicketProperty);
       public static readonly IProperty<System.Windows.Documents.FixedPage, System.Windows.Media.Brush> background = new Property<System.Windows.Documents.FixedPage, System.Windows.Media.Brush>(System.Windows.Documents.FixedPage.BackgroundProperty);
-      public static readonly IProperty<System.Windows.Documents.FixedPage, System.Double> left = new Property<System.Windows.Documents.FixedPage, System.Double>(System.Windows.Documents.FixedPage.LeftProperty);
-      public static readonly IProperty<System.Windows.Documents.FixedPage, System.Double> top = new Property<System.Windows.Documents.FixedPage, System.Double>(System.Windows.Documents.FixedPage.TopProperty);
-      public static readonly IProperty<System.Windows.Documents.FixedPage, System.Double> right = new Property<System.Windows.Documents.FixedPage, System.Double>(System.Windows.Documents.FixedPage.RightProperty);
-      public static readonly IProperty<System.Windows.Documents.FixedPage, System.Double> bottom = new Property<System.Windows.Documents.FixedPage, System.Double>(System.Windows.Documents.FixedPage.BottomProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Double> left = new Property<System.Windows.UIElement, System.Double>(System.Windows.Documents.FixedPage.LeftProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Double> top = new Property<System.Windows.UIElement, System.Double>(System.Windows.Documents.FixedPage.TopProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Double> right = new Property<System.Windows.UIElement, System.Double>(System.Windows.Documents.FixedPage.RightProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Double> bottom = new Property<System.Windows.UIElement, System.Double>(System.Windows.Documents.FixedPage.BottomProperty);
       public static readonly IProperty<System.Windows.Documents.FixedPage, System.Windows.Rect> contentBox = new Property<System.Windows.Documents.FixedPage, System.Windows.Rect>(System.Windows.Documents.FixedPage.ContentBoxProperty);
       public static readonly IProperty<System.Windows.Documents.FixedPage, System.Windows.Rect> bleedBox = new Property<System.Windows.Documents.FixedPage, System.Windows.Rect>(System.Windows.Documents.FixedPage.BleedBoxProperty);
-      public static readonly IProperty<System.Windows.Documents.FixedPage, System.Uri> navigateUri = new Property<System.Windows.Documents.FixedPage, System.Uri>(System.Windows.Documents.FixedPage.NavigateUriProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Uri> navigateUri = new Property<System.Windows.UIElement, System.Uri>(System.Windows.Documents.FixedPage.NavigateUriProperty);
     }
 
     public partial class flowDocumentPageViewer : documentViewerBase
@@ -410,11 +368,8 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.FlowDocumentPageViewer, System.Double> maxZoom = new Property<System.Windows.Controls.FlowDocumentPageViewer, System.Double>(System.Windows.Controls.FlowDocumentPageViewer.MaxZoomProperty);
       public static readonly IProperty<System.Windows.Controls.FlowDocumentPageViewer, System.Double> minZoom = new Property<System.Windows.Controls.FlowDocumentPageViewer, System.Double>(System.Windows.Controls.FlowDocumentPageViewer.MinZoomProperty);
       public static readonly IProperty<System.Windows.Controls.FlowDocumentPageViewer, System.Double> zoomIncrement = new Property<System.Windows.Controls.FlowDocumentPageViewer, System.Double>(System.Windows.Controls.FlowDocumentPageViewer.ZoomIncrementProperty);
-      public static readonly IProperty<System.Windows.Controls.FlowDocumentPageViewer, System.Boolean> canIncreaseZoom = new Property<System.Windows.Controls.FlowDocumentPageViewer, System.Boolean>(System.Windows.Controls.FlowDocumentPageViewer.CanIncreaseZoomProperty);
-      public static readonly IProperty<System.Windows.Controls.FlowDocumentPageViewer, System.Boolean> canDecreaseZoom = new Property<System.Windows.Controls.FlowDocumentPageViewer, System.Boolean>(System.Windows.Controls.FlowDocumentPageViewer.CanDecreaseZoomProperty);
       public static readonly IProperty<System.Windows.Controls.FlowDocumentPageViewer, System.Windows.Media.Brush> selectionBrush = new Property<System.Windows.Controls.FlowDocumentPageViewer, System.Windows.Media.Brush>(System.Windows.Controls.FlowDocumentPageViewer.SelectionBrushProperty);
       public static readonly IProperty<System.Windows.Controls.FlowDocumentPageViewer, System.Double> selectionOpacity = new Property<System.Windows.Controls.FlowDocumentPageViewer, System.Double>(System.Windows.Controls.FlowDocumentPageViewer.SelectionOpacityProperty);
-      public static readonly IProperty<System.Windows.Controls.FlowDocumentPageViewer, System.Boolean> isSelectionActive = new Property<System.Windows.Controls.FlowDocumentPageViewer, System.Boolean>(System.Windows.Controls.FlowDocumentPageViewer.IsSelectionActiveProperty);
       public static readonly IProperty<System.Windows.Controls.FlowDocumentPageViewer, System.Boolean> isInactiveSelectionHighlightEnabled = new Property<System.Windows.Controls.FlowDocumentPageViewer, System.Boolean>(System.Windows.Controls.FlowDocumentPageViewer.IsInactiveSelectionHighlightEnabledProperty);
     }
 
@@ -424,10 +379,6 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.FlowDocumentReader, System.Boolean> isPageViewEnabled = new Property<System.Windows.Controls.FlowDocumentReader, System.Boolean>(System.Windows.Controls.FlowDocumentReader.IsPageViewEnabledProperty);
       public static readonly IProperty<System.Windows.Controls.FlowDocumentReader, System.Boolean> isTwoPageViewEnabled = new Property<System.Windows.Controls.FlowDocumentReader, System.Boolean>(System.Windows.Controls.FlowDocumentReader.IsTwoPageViewEnabledProperty);
       public static readonly IProperty<System.Windows.Controls.FlowDocumentReader, System.Boolean> isScrollViewEnabled = new Property<System.Windows.Controls.FlowDocumentReader, System.Boolean>(System.Windows.Controls.FlowDocumentReader.IsScrollViewEnabledProperty);
-      public static readonly IProperty<System.Windows.Controls.FlowDocumentReader, System.Int32> pageCount = new Property<System.Windows.Controls.FlowDocumentReader, System.Int32>(System.Windows.Controls.FlowDocumentReader.PageCountProperty);
-      public static readonly IProperty<System.Windows.Controls.FlowDocumentReader, System.Int32> pageNumber = new Property<System.Windows.Controls.FlowDocumentReader, System.Int32>(System.Windows.Controls.FlowDocumentReader.PageNumberProperty);
-      public static readonly IProperty<System.Windows.Controls.FlowDocumentReader, System.Boolean> canGoToPreviousPage = new Property<System.Windows.Controls.FlowDocumentReader, System.Boolean>(System.Windows.Controls.FlowDocumentReader.CanGoToPreviousPageProperty);
-      public static readonly IProperty<System.Windows.Controls.FlowDocumentReader, System.Boolean> canGoToNextPage = new Property<System.Windows.Controls.FlowDocumentReader, System.Boolean>(System.Windows.Controls.FlowDocumentReader.CanGoToNextPageProperty);
       public static readonly IProperty<System.Windows.Controls.FlowDocumentReader, System.Boolean> isFindEnabled = new Property<System.Windows.Controls.FlowDocumentReader, System.Boolean>(System.Windows.Controls.FlowDocumentReader.IsFindEnabledProperty);
       public static readonly IProperty<System.Windows.Controls.FlowDocumentReader, System.Boolean> isPrintEnabled = new Property<System.Windows.Controls.FlowDocumentReader, System.Boolean>(System.Windows.Controls.FlowDocumentReader.IsPrintEnabledProperty);
       public static readonly IProperty<System.Windows.Controls.FlowDocumentReader, System.Windows.Documents.FlowDocument> document = new Property<System.Windows.Controls.FlowDocumentReader, System.Windows.Documents.FlowDocument>(System.Windows.Controls.FlowDocumentReader.DocumentProperty);
@@ -435,11 +386,8 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.FlowDocumentReader, System.Double> maxZoom = new Property<System.Windows.Controls.FlowDocumentReader, System.Double>(System.Windows.Controls.FlowDocumentReader.MaxZoomProperty);
       public static readonly IProperty<System.Windows.Controls.FlowDocumentReader, System.Double> minZoom = new Property<System.Windows.Controls.FlowDocumentReader, System.Double>(System.Windows.Controls.FlowDocumentReader.MinZoomProperty);
       public static readonly IProperty<System.Windows.Controls.FlowDocumentReader, System.Double> zoomIncrement = new Property<System.Windows.Controls.FlowDocumentReader, System.Double>(System.Windows.Controls.FlowDocumentReader.ZoomIncrementProperty);
-      public static readonly IProperty<System.Windows.Controls.FlowDocumentReader, System.Boolean> canIncreaseZoom = new Property<System.Windows.Controls.FlowDocumentReader, System.Boolean>(System.Windows.Controls.FlowDocumentReader.CanIncreaseZoomProperty);
-      public static readonly IProperty<System.Windows.Controls.FlowDocumentReader, System.Boolean> canDecreaseZoom = new Property<System.Windows.Controls.FlowDocumentReader, System.Boolean>(System.Windows.Controls.FlowDocumentReader.CanDecreaseZoomProperty);
       public static readonly IProperty<System.Windows.Controls.FlowDocumentReader, System.Windows.Media.Brush> selectionBrush = new Property<System.Windows.Controls.FlowDocumentReader, System.Windows.Media.Brush>(System.Windows.Controls.FlowDocumentReader.SelectionBrushProperty);
       public static readonly IProperty<System.Windows.Controls.FlowDocumentReader, System.Double> selectionOpacity = new Property<System.Windows.Controls.FlowDocumentReader, System.Double>(System.Windows.Controls.FlowDocumentReader.SelectionOpacityProperty);
-      public static readonly IProperty<System.Windows.Controls.FlowDocumentReader, System.Boolean> isSelectionActive = new Property<System.Windows.Controls.FlowDocumentReader, System.Boolean>(System.Windows.Controls.FlowDocumentReader.IsSelectionActiveProperty);
       public static readonly IProperty<System.Windows.Controls.FlowDocumentReader, System.Boolean> isInactiveSelectionHighlightEnabled = new Property<System.Windows.Controls.FlowDocumentReader, System.Boolean>(System.Windows.Controls.FlowDocumentReader.IsInactiveSelectionHighlightEnabledProperty);
     }
 
@@ -450,25 +398,18 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.FlowDocumentScrollViewer, System.Double> maxZoom = new Property<System.Windows.Controls.FlowDocumentScrollViewer, System.Double>(System.Windows.Controls.FlowDocumentScrollViewer.MaxZoomProperty);
       public static readonly IProperty<System.Windows.Controls.FlowDocumentScrollViewer, System.Double> minZoom = new Property<System.Windows.Controls.FlowDocumentScrollViewer, System.Double>(System.Windows.Controls.FlowDocumentScrollViewer.MinZoomProperty);
       public static readonly IProperty<System.Windows.Controls.FlowDocumentScrollViewer, System.Double> zoomIncrement = new Property<System.Windows.Controls.FlowDocumentScrollViewer, System.Double>(System.Windows.Controls.FlowDocumentScrollViewer.ZoomIncrementProperty);
-      public static readonly IProperty<System.Windows.Controls.FlowDocumentScrollViewer, System.Boolean> canIncreaseZoom = new Property<System.Windows.Controls.FlowDocumentScrollViewer, System.Boolean>(System.Windows.Controls.FlowDocumentScrollViewer.CanIncreaseZoomProperty);
-      public static readonly IProperty<System.Windows.Controls.FlowDocumentScrollViewer, System.Boolean> canDecreaseZoom = new Property<System.Windows.Controls.FlowDocumentScrollViewer, System.Boolean>(System.Windows.Controls.FlowDocumentScrollViewer.CanDecreaseZoomProperty);
       public static readonly IProperty<System.Windows.Controls.FlowDocumentScrollViewer, System.Boolean> isSelectionEnabled = new Property<System.Windows.Controls.FlowDocumentScrollViewer, System.Boolean>(System.Windows.Controls.FlowDocumentScrollViewer.IsSelectionEnabledProperty);
       public static readonly IProperty<System.Windows.Controls.FlowDocumentScrollViewer, System.Boolean> isToolBarVisible = new Property<System.Windows.Controls.FlowDocumentScrollViewer, System.Boolean>(System.Windows.Controls.FlowDocumentScrollViewer.IsToolBarVisibleProperty);
       public static readonly IProperty<System.Windows.Controls.FlowDocumentScrollViewer, System.Windows.Controls.ScrollBarVisibility> horizontalScrollBarVisibility = new Property<System.Windows.Controls.FlowDocumentScrollViewer, System.Windows.Controls.ScrollBarVisibility>(System.Windows.Controls.FlowDocumentScrollViewer.HorizontalScrollBarVisibilityProperty);
       public static readonly IProperty<System.Windows.Controls.FlowDocumentScrollViewer, System.Windows.Controls.ScrollBarVisibility> verticalScrollBarVisibility = new Property<System.Windows.Controls.FlowDocumentScrollViewer, System.Windows.Controls.ScrollBarVisibility>(System.Windows.Controls.FlowDocumentScrollViewer.VerticalScrollBarVisibilityProperty);
       public static readonly IProperty<System.Windows.Controls.FlowDocumentScrollViewer, System.Windows.Media.Brush> selectionBrush = new Property<System.Windows.Controls.FlowDocumentScrollViewer, System.Windows.Media.Brush>(System.Windows.Controls.FlowDocumentScrollViewer.SelectionBrushProperty);
       public static readonly IProperty<System.Windows.Controls.FlowDocumentScrollViewer, System.Double> selectionOpacity = new Property<System.Windows.Controls.FlowDocumentScrollViewer, System.Double>(System.Windows.Controls.FlowDocumentScrollViewer.SelectionOpacityProperty);
-      public static readonly IProperty<System.Windows.Controls.FlowDocumentScrollViewer, System.Boolean> isSelectionActive = new Property<System.Windows.Controls.FlowDocumentScrollViewer, System.Boolean>(System.Windows.Controls.FlowDocumentScrollViewer.IsSelectionActiveProperty);
       public static readonly IProperty<System.Windows.Controls.FlowDocumentScrollViewer, System.Boolean> isInactiveSelectionHighlightEnabled = new Property<System.Windows.Controls.FlowDocumentScrollViewer, System.Boolean>(System.Windows.Controls.FlowDocumentScrollViewer.IsInactiveSelectionHighlightEnabledProperty);
     }
 
     public partial class frame : contentControl
     {
       public static readonly IProperty<System.Windows.Controls.Frame, System.Uri> source = new Property<System.Windows.Controls.Frame, System.Uri>(System.Windows.Controls.Frame.SourceProperty);
-      public static readonly IProperty<System.Windows.Controls.Frame, System.Boolean> canGoBack = new Property<System.Windows.Controls.Frame, System.Boolean>(System.Windows.Controls.Frame.CanGoBackProperty);
-      public static readonly IProperty<System.Windows.Controls.Frame, System.Boolean> canGoForward = new Property<System.Windows.Controls.Frame, System.Boolean>(System.Windows.Controls.Frame.CanGoForwardProperty);
-      public static readonly IProperty<System.Windows.Controls.Frame, System.Collections.IEnumerable> backStack = new Property<System.Windows.Controls.Frame, System.Collections.IEnumerable>(System.Windows.Controls.Frame.BackStackProperty);
-      public static readonly IProperty<System.Windows.Controls.Frame, System.Collections.IEnumerable> forwardStack = new Property<System.Windows.Controls.Frame, System.Collections.IEnumerable>(System.Windows.Controls.Frame.ForwardStackProperty);
       public static readonly IProperty<System.Windows.Controls.Frame, System.Windows.Navigation.NavigationUIVisibility> navigationUIVisibility = new Property<System.Windows.Controls.Frame, System.Windows.Navigation.NavigationUIVisibility>(System.Windows.Controls.Frame.NavigationUIVisibilityProperty);
       public static readonly IProperty<System.Windows.Controls.Frame, System.Boolean> sandboxExternalContent = new Property<System.Windows.Controls.Frame, System.Boolean>(System.Windows.Controls.Frame.SandboxExternalContentProperty);
       public static readonly IProperty<System.Windows.Controls.Frame, System.Windows.Navigation.JournalOwnership> journalOwnership = new Property<System.Windows.Controls.Frame, System.Windows.Navigation.JournalOwnership>(System.Windows.Controls.Frame.JournalOwnershipProperty);
@@ -485,8 +426,6 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.FrameworkElement, System.String> name = new Property<System.Windows.FrameworkElement, System.String>(System.Windows.FrameworkElement.NameProperty);
       public static readonly IProperty<System.Windows.FrameworkElement, System.Object> tag = new Property<System.Windows.FrameworkElement, System.Object>(System.Windows.FrameworkElement.TagProperty);
       public static readonly IProperty<System.Windows.FrameworkElement, System.Windows.Input.InputScope> inputScope = new Property<System.Windows.FrameworkElement, System.Windows.Input.InputScope>(System.Windows.FrameworkElement.InputScopeProperty);
-      public static readonly IProperty<System.Windows.FrameworkElement, System.Double> actualWidth = new Property<System.Windows.FrameworkElement, System.Double>(System.Windows.FrameworkElement.ActualWidthProperty);
-      public static readonly IProperty<System.Windows.FrameworkElement, System.Double> actualHeight = new Property<System.Windows.FrameworkElement, System.Double>(System.Windows.FrameworkElement.ActualHeightProperty);
       public static readonly IProperty<System.Windows.FrameworkElement, System.Windows.Media.Transform> layoutTransform = new Property<System.Windows.FrameworkElement, System.Windows.Media.Transform>(System.Windows.FrameworkElement.LayoutTransformProperty);
       public static readonly IProperty<System.Windows.FrameworkElement, System.Double> width = new Property<System.Windows.FrameworkElement, System.Double>(System.Windows.FrameworkElement.WidthProperty);
       public static readonly IProperty<System.Windows.FrameworkElement, System.Double> minWidth = new Property<System.Windows.FrameworkElement, System.Double>(System.Windows.FrameworkElement.MinWidthProperty);
@@ -494,7 +433,7 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.FrameworkElement, System.Double> height = new Property<System.Windows.FrameworkElement, System.Double>(System.Windows.FrameworkElement.HeightProperty);
       public static readonly IProperty<System.Windows.FrameworkElement, System.Double> minHeight = new Property<System.Windows.FrameworkElement, System.Double>(System.Windows.FrameworkElement.MinHeightProperty);
       public static readonly IProperty<System.Windows.FrameworkElement, System.Double> maxHeight = new Property<System.Windows.FrameworkElement, System.Double>(System.Windows.FrameworkElement.MaxHeightProperty);
-      public static readonly IProperty<System.Windows.FrameworkElement, System.Windows.FlowDirection> flowDirection = new Property<System.Windows.FrameworkElement, System.Windows.FlowDirection>(System.Windows.FrameworkElement.FlowDirectionProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Windows.FlowDirection> flowDirection = new Property<System.Windows.UIElement, System.Windows.FlowDirection>(System.Windows.FrameworkElement.FlowDirectionProperty);
       public static readonly IProperty<System.Windows.FrameworkElement, System.Windows.Thickness> margin = new Property<System.Windows.FrameworkElement, System.Windows.Thickness>(System.Windows.FrameworkElement.MarginProperty);
       public static readonly IProperty<System.Windows.FrameworkElement, System.Windows.HorizontalAlignment> horizontalAlignment = new Property<System.Windows.FrameworkElement, System.Windows.HorizontalAlignment>(System.Windows.FrameworkElement.HorizontalAlignmentProperty);
       public static readonly IProperty<System.Windows.FrameworkElement, System.Windows.VerticalAlignment> verticalAlignment = new Property<System.Windows.FrameworkElement, System.Windows.VerticalAlignment>(System.Windows.FrameworkElement.VerticalAlignmentProperty);
@@ -524,11 +463,11 @@ namespace Galactus.Standard
     public partial class grid : panel
     {
       public static readonly IProperty<System.Windows.Controls.Grid, System.Boolean> showGridLines = new Property<System.Windows.Controls.Grid, System.Boolean>(System.Windows.Controls.Grid.ShowGridLinesProperty);
-      public static readonly IProperty<System.Windows.Controls.Grid, System.Int32> column = new Property<System.Windows.Controls.Grid, System.Int32>(System.Windows.Controls.Grid.ColumnProperty);
-      public static readonly IProperty<System.Windows.Controls.Grid, System.Int32> row = new Property<System.Windows.Controls.Grid, System.Int32>(System.Windows.Controls.Grid.RowProperty);
-      public static readonly IProperty<System.Windows.Controls.Grid, System.Int32> columnSpan = new Property<System.Windows.Controls.Grid, System.Int32>(System.Windows.Controls.Grid.ColumnSpanProperty);
-      public static readonly IProperty<System.Windows.Controls.Grid, System.Int32> rowSpan = new Property<System.Windows.Controls.Grid, System.Int32>(System.Windows.Controls.Grid.RowSpanProperty);
-      public static readonly IProperty<System.Windows.Controls.Grid, System.Boolean> isSharedSizeScope = new Property<System.Windows.Controls.Grid, System.Boolean>(System.Windows.Controls.Grid.IsSharedSizeScopeProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Int32> column = new Property<System.Windows.UIElement, System.Int32>(System.Windows.Controls.Grid.ColumnProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Int32> row = new Property<System.Windows.UIElement, System.Int32>(System.Windows.Controls.Grid.RowProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Int32> columnSpan = new Property<System.Windows.UIElement, System.Int32>(System.Windows.Controls.Grid.ColumnSpanProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Int32> rowSpan = new Property<System.Windows.UIElement, System.Int32>(System.Windows.Controls.Grid.RowSpanProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Boolean> isSharedSizeScope = new Property<System.Windows.UIElement, System.Boolean>(System.Windows.Controls.Grid.IsSharedSizeScopeProperty);
     }
 
     public partial class gridSplitter : thumb
@@ -543,8 +482,6 @@ namespace Galactus.Standard
 
     public partial class gridViewColumnHeader : buttonBase
     {
-      public static readonly IProperty<System.Windows.Controls.GridViewColumnHeader, System.Windows.Controls.GridViewColumn> column = new Property<System.Windows.Controls.GridViewColumnHeader, System.Windows.Controls.GridViewColumn>(System.Windows.Controls.GridViewColumnHeader.ColumnProperty);
-      public static readonly IProperty<System.Windows.Controls.GridViewColumnHeader, System.Windows.Controls.GridViewColumnHeaderRole> role = new Property<System.Windows.Controls.GridViewColumnHeader, System.Windows.Controls.GridViewColumnHeaderRole>(System.Windows.Controls.GridViewColumnHeader.RoleProperty);
     }
 
     public partial class gridViewHeaderRowPresenter : gridViewRowPresenterBase
@@ -579,7 +516,6 @@ namespace Galactus.Standard
     public partial class headeredContentControl : contentControl
     {
       public static readonly IProperty<System.Windows.Controls.HeaderedContentControl, System.Object> header = new Property<System.Windows.Controls.HeaderedContentControl, System.Object>(System.Windows.Controls.HeaderedContentControl.HeaderProperty);
-      public static readonly IProperty<System.Windows.Controls.HeaderedContentControl, System.Boolean> hasHeader = new Property<System.Windows.Controls.HeaderedContentControl, System.Boolean>(System.Windows.Controls.HeaderedContentControl.HasHeaderProperty);
       public static readonly IProperty<System.Windows.Controls.HeaderedContentControl, System.Windows.DataTemplate> headerTemplate = new Property<System.Windows.Controls.HeaderedContentControl, System.Windows.DataTemplate>(System.Windows.Controls.HeaderedContentControl.HeaderTemplateProperty);
       public static readonly IProperty<System.Windows.Controls.HeaderedContentControl, System.Windows.Controls.DataTemplateSelector> headerTemplateSelector = new Property<System.Windows.Controls.HeaderedContentControl, System.Windows.Controls.DataTemplateSelector>(System.Windows.Controls.HeaderedContentControl.HeaderTemplateSelectorProperty);
       public static readonly IProperty<System.Windows.Controls.HeaderedContentControl, System.String> headerStringFormat = new Property<System.Windows.Controls.HeaderedContentControl, System.String>(System.Windows.Controls.HeaderedContentControl.HeaderStringFormatProperty);
@@ -588,7 +524,6 @@ namespace Galactus.Standard
     public partial class headeredItemsControl : itemsControl
     {
       public static readonly IProperty<System.Windows.Controls.HeaderedItemsControl, System.Object> header = new Property<System.Windows.Controls.HeaderedItemsControl, System.Object>(System.Windows.Controls.HeaderedItemsControl.HeaderProperty);
-      public static readonly IProperty<System.Windows.Controls.HeaderedItemsControl, System.Boolean> hasHeader = new Property<System.Windows.Controls.HeaderedItemsControl, System.Boolean>(System.Windows.Controls.HeaderedItemsControl.HasHeaderProperty);
       public static readonly IProperty<System.Windows.Controls.HeaderedItemsControl, System.Windows.DataTemplate> headerTemplate = new Property<System.Windows.Controls.HeaderedItemsControl, System.Windows.DataTemplate>(System.Windows.Controls.HeaderedItemsControl.HeaderTemplateProperty);
       public static readonly IProperty<System.Windows.Controls.HeaderedItemsControl, System.Windows.Controls.DataTemplateSelector> headerTemplateSelector = new Property<System.Windows.Controls.HeaderedItemsControl, System.Windows.Controls.DataTemplateSelector>(System.Windows.Controls.HeaderedItemsControl.HeaderTemplateSelectorProperty);
       public static readonly IProperty<System.Windows.Controls.HeaderedItemsControl, System.String> headerStringFormat = new Property<System.Windows.Controls.HeaderedItemsControl, System.String>(System.Windows.Controls.HeaderedItemsControl.HeaderStringFormatProperty);
@@ -608,13 +543,12 @@ namespace Galactus.Standard
     public partial class inkCanvas : frameworkElement
     {
       public static readonly IProperty<System.Windows.Controls.InkCanvas, System.Windows.Media.Brush> background = new Property<System.Windows.Controls.InkCanvas, System.Windows.Media.Brush>(System.Windows.Controls.InkCanvas.BackgroundProperty);
-      public static readonly IProperty<System.Windows.Controls.InkCanvas, System.Double> top = new Property<System.Windows.Controls.InkCanvas, System.Double>(System.Windows.Controls.InkCanvas.TopProperty);
-      public static readonly IProperty<System.Windows.Controls.InkCanvas, System.Double> bottom = new Property<System.Windows.Controls.InkCanvas, System.Double>(System.Windows.Controls.InkCanvas.BottomProperty);
-      public static readonly IProperty<System.Windows.Controls.InkCanvas, System.Double> left = new Property<System.Windows.Controls.InkCanvas, System.Double>(System.Windows.Controls.InkCanvas.LeftProperty);
-      public static readonly IProperty<System.Windows.Controls.InkCanvas, System.Double> right = new Property<System.Windows.Controls.InkCanvas, System.Double>(System.Windows.Controls.InkCanvas.RightProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Double> top = new Property<System.Windows.UIElement, System.Double>(System.Windows.Controls.InkCanvas.TopProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Double> bottom = new Property<System.Windows.UIElement, System.Double>(System.Windows.Controls.InkCanvas.BottomProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Double> left = new Property<System.Windows.UIElement, System.Double>(System.Windows.Controls.InkCanvas.LeftProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Double> right = new Property<System.Windows.UIElement, System.Double>(System.Windows.Controls.InkCanvas.RightProperty);
       public static readonly IProperty<System.Windows.Controls.InkCanvas, System.Windows.Ink.StrokeCollection> strokes = new Property<System.Windows.Controls.InkCanvas, System.Windows.Ink.StrokeCollection>(System.Windows.Controls.InkCanvas.StrokesProperty);
       public static readonly IProperty<System.Windows.Controls.InkCanvas, System.Windows.Ink.DrawingAttributes> defaultDrawingAttributes = new Property<System.Windows.Controls.InkCanvas, System.Windows.Ink.DrawingAttributes>(System.Windows.Controls.InkCanvas.DefaultDrawingAttributesProperty);
-      public static readonly IProperty<System.Windows.Controls.InkCanvas, System.Windows.Controls.InkCanvasEditingMode> activeEditingMode = new Property<System.Windows.Controls.InkCanvas, System.Windows.Controls.InkCanvasEditingMode>(System.Windows.Controls.InkCanvas.ActiveEditingModeProperty);
       public static readonly IProperty<System.Windows.Controls.InkCanvas, System.Windows.Controls.InkCanvasEditingMode> editingMode = new Property<System.Windows.Controls.InkCanvas, System.Windows.Controls.InkCanvasEditingMode>(System.Windows.Controls.InkCanvas.EditingModeProperty);
       public static readonly IProperty<System.Windows.Controls.InkCanvas, System.Windows.Controls.InkCanvasEditingMode> editingModeInverted = new Property<System.Windows.Controls.InkCanvas, System.Windows.Controls.InkCanvasEditingMode>(System.Windows.Controls.InkCanvas.EditingModeInvertedProperty);
     }
@@ -627,7 +561,6 @@ namespace Galactus.Standard
     public partial class itemsControl : control
     {
       public static readonly IProperty<System.Windows.Controls.ItemsControl, System.Collections.IEnumerable> itemsSource = new Property<System.Windows.Controls.ItemsControl, System.Collections.IEnumerable>(System.Windows.Controls.ItemsControl.ItemsSourceProperty);
-      public static readonly IProperty<System.Windows.Controls.ItemsControl, System.Boolean> hasItems = new Property<System.Windows.Controls.ItemsControl, System.Boolean>(System.Windows.Controls.ItemsControl.HasItemsProperty);
       public static readonly IProperty<System.Windows.Controls.ItemsControl, System.String> displayMemberPath = new Property<System.Windows.Controls.ItemsControl, System.String>(System.Windows.Controls.ItemsControl.DisplayMemberPathProperty);
       public static readonly IProperty<System.Windows.Controls.ItemsControl, System.Windows.DataTemplate> itemTemplate = new Property<System.Windows.Controls.ItemsControl, System.Windows.DataTemplate>(System.Windows.Controls.ItemsControl.ItemTemplateProperty);
       public static readonly IProperty<System.Windows.Controls.ItemsControl, System.Windows.Controls.DataTemplateSelector> itemTemplateSelector = new Property<System.Windows.Controls.ItemsControl, System.Windows.Controls.DataTemplateSelector>(System.Windows.Controls.ItemsControl.ItemTemplateSelectorProperty);
@@ -636,10 +569,8 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.ItemsControl, System.Windows.Style> itemContainerStyle = new Property<System.Windows.Controls.ItemsControl, System.Windows.Style>(System.Windows.Controls.ItemsControl.ItemContainerStyleProperty);
       public static readonly IProperty<System.Windows.Controls.ItemsControl, System.Windows.Controls.StyleSelector> itemContainerStyleSelector = new Property<System.Windows.Controls.ItemsControl, System.Windows.Controls.StyleSelector>(System.Windows.Controls.ItemsControl.ItemContainerStyleSelectorProperty);
       public static readonly IProperty<System.Windows.Controls.ItemsControl, System.Windows.Controls.ItemsPanelTemplate> itemsPanel = new Property<System.Windows.Controls.ItemsControl, System.Windows.Controls.ItemsPanelTemplate>(System.Windows.Controls.ItemsControl.ItemsPanelProperty);
-      public static readonly IProperty<System.Windows.Controls.ItemsControl, System.Boolean> isGrouping = new Property<System.Windows.Controls.ItemsControl, System.Boolean>(System.Windows.Controls.ItemsControl.IsGroupingProperty);
       public static readonly IProperty<System.Windows.Controls.ItemsControl, System.Windows.Controls.GroupStyleSelector> groupStyleSelector = new Property<System.Windows.Controls.ItemsControl, System.Windows.Controls.GroupStyleSelector>(System.Windows.Controls.ItemsControl.GroupStyleSelectorProperty);
       public static readonly IProperty<System.Windows.Controls.ItemsControl, System.Int32> alternationCount = new Property<System.Windows.Controls.ItemsControl, System.Int32>(System.Windows.Controls.ItemsControl.AlternationCountProperty);
-      public static readonly IProperty<System.Windows.Controls.ItemsControl, System.Int32> alternationIndex = new Property<System.Windows.Controls.ItemsControl, System.Int32>(System.Windows.Controls.ItemsControl.AlternationIndexProperty);
       public static readonly IProperty<System.Windows.Controls.ItemsControl, System.Boolean> isTextSearchEnabled = new Property<System.Windows.Controls.ItemsControl, System.Boolean>(System.Windows.Controls.ItemsControl.IsTextSearchEnabledProperty);
       public static readonly IProperty<System.Windows.Controls.ItemsControl, System.Boolean> isTextSearchCaseSensitive = new Property<System.Windows.Controls.ItemsControl, System.Boolean>(System.Windows.Controls.ItemsControl.IsTextSearchCaseSensitiveProperty);
     }
@@ -664,7 +595,6 @@ namespace Galactus.Standard
     public partial class listBox : selector
     {
       public static readonly IProperty<System.Windows.Controls.ListBox, System.Windows.Controls.SelectionMode> selectionMode = new Property<System.Windows.Controls.ListBox, System.Windows.Controls.SelectionMode>(System.Windows.Controls.ListBox.SelectionModeProperty);
-      public static readonly IProperty<System.Windows.Controls.ListBox, System.Collections.IList> selectedItems = new Property<System.Windows.Controls.ListBox, System.Collections.IList>(System.Windows.Controls.ListBox.SelectedItemsProperty);
     }
 
     public partial class listBoxItem : contentControl
@@ -711,15 +641,11 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.MenuItem, System.Object> commandParameter = new Property<System.Windows.Controls.MenuItem, System.Object>(System.Windows.Controls.MenuItem.CommandParameterProperty);
       public static readonly IProperty<System.Windows.Controls.MenuItem, System.Windows.IInputElement> commandTarget = new Property<System.Windows.Controls.MenuItem, System.Windows.IInputElement>(System.Windows.Controls.MenuItem.CommandTargetProperty);
       public static readonly IProperty<System.Windows.Controls.MenuItem, System.Boolean> isSubmenuOpen = new Property<System.Windows.Controls.MenuItem, System.Boolean>(System.Windows.Controls.MenuItem.IsSubmenuOpenProperty);
-      public static readonly IProperty<System.Windows.Controls.MenuItem, System.Windows.Controls.MenuItemRole> role = new Property<System.Windows.Controls.MenuItem, System.Windows.Controls.MenuItemRole>(System.Windows.Controls.MenuItem.RoleProperty);
       public static readonly IProperty<System.Windows.Controls.MenuItem, System.Boolean> isCheckable = new Property<System.Windows.Controls.MenuItem, System.Boolean>(System.Windows.Controls.MenuItem.IsCheckableProperty);
-      public static readonly IProperty<System.Windows.Controls.MenuItem, System.Boolean> isPressed = new Property<System.Windows.Controls.MenuItem, System.Boolean>(System.Windows.Controls.MenuItem.IsPressedProperty);
-      public static readonly IProperty<System.Windows.Controls.MenuItem, System.Boolean> isHighlighted = new Property<System.Windows.Controls.MenuItem, System.Boolean>(System.Windows.Controls.MenuItem.IsHighlightedProperty);
       public static readonly IProperty<System.Windows.Controls.MenuItem, System.Boolean> isChecked = new Property<System.Windows.Controls.MenuItem, System.Boolean>(System.Windows.Controls.MenuItem.IsCheckedProperty);
       public static readonly IProperty<System.Windows.Controls.MenuItem, System.Boolean> staysOpenOnClick = new Property<System.Windows.Controls.MenuItem, System.Boolean>(System.Windows.Controls.MenuItem.StaysOpenOnClickProperty);
       public static readonly IProperty<System.Windows.Controls.MenuItem, System.String> inputGestureText = new Property<System.Windows.Controls.MenuItem, System.String>(System.Windows.Controls.MenuItem.InputGestureTextProperty);
       public static readonly IProperty<System.Windows.Controls.MenuItem, System.Object> icon = new Property<System.Windows.Controls.MenuItem, System.Object>(System.Windows.Controls.MenuItem.IconProperty);
-      public static readonly IProperty<System.Windows.Controls.MenuItem, System.Boolean> isSuspendingPopupAnimation = new Property<System.Windows.Controls.MenuItem, System.Boolean>(System.Windows.Controls.MenuItem.IsSuspendingPopupAnimationProperty);
       public static readonly IProperty<System.Windows.Controls.MenuItem, System.Windows.Controls.ItemContainerTemplateSelector> itemContainerTemplateSelector = new Property<System.Windows.Controls.MenuItem, System.Windows.Controls.ItemContainerTemplateSelector>(System.Windows.Controls.MenuItem.ItemContainerTemplateSelectorProperty);
       public static readonly IProperty<System.Windows.Controls.MenuItem, System.Boolean> usesItemContainerTemplate = new Property<System.Windows.Controls.MenuItem, System.Boolean>(System.Windows.Controls.MenuItem.UsesItemContainerTemplateProperty);
     }
@@ -732,10 +658,6 @@ namespace Galactus.Standard
     {
       public static readonly IProperty<System.Windows.Navigation.NavigationWindow, System.Boolean> sandboxExternalContent = new Property<System.Windows.Navigation.NavigationWindow, System.Boolean>(System.Windows.Navigation.NavigationWindow.SandboxExternalContentProperty);
       public static readonly IProperty<System.Windows.Navigation.NavigationWindow, System.Boolean> showsNavigationUI = new Property<System.Windows.Navigation.NavigationWindow, System.Boolean>(System.Windows.Navigation.NavigationWindow.ShowsNavigationUIProperty);
-      public static readonly IProperty<System.Windows.Navigation.NavigationWindow, System.Collections.IEnumerable> backStack = new Property<System.Windows.Navigation.NavigationWindow, System.Collections.IEnumerable>(System.Windows.Navigation.NavigationWindow.BackStackProperty);
-      public static readonly IProperty<System.Windows.Navigation.NavigationWindow, System.Collections.IEnumerable> forwardStack = new Property<System.Windows.Navigation.NavigationWindow, System.Collections.IEnumerable>(System.Windows.Navigation.NavigationWindow.ForwardStackProperty);
-      public static readonly IProperty<System.Windows.Navigation.NavigationWindow, System.Boolean> canGoBack = new Property<System.Windows.Navigation.NavigationWindow, System.Boolean>(System.Windows.Navigation.NavigationWindow.CanGoBackProperty);
-      public static readonly IProperty<System.Windows.Navigation.NavigationWindow, System.Boolean> canGoForward = new Property<System.Windows.Navigation.NavigationWindow, System.Boolean>(System.Windows.Navigation.NavigationWindow.CanGoForwardProperty);
       public static readonly IProperty<System.Windows.Navigation.NavigationWindow, System.Uri> source = new Property<System.Windows.Navigation.NavigationWindow, System.Uri>(System.Windows.Navigation.NavigationWindow.SourceProperty);
     }
 
@@ -764,7 +686,7 @@ namespace Galactus.Standard
     {
       public static readonly IProperty<System.Windows.Controls.Panel, System.Windows.Media.Brush> background = new Property<System.Windows.Controls.Panel, System.Windows.Media.Brush>(System.Windows.Controls.Panel.BackgroundProperty);
       public static readonly IProperty<System.Windows.Controls.Panel, System.Boolean> isItemsHost = new Property<System.Windows.Controls.Panel, System.Boolean>(System.Windows.Controls.Panel.IsItemsHostProperty);
-      public static readonly IProperty<System.Windows.Controls.Panel, System.Int32> zIndex = new Property<System.Windows.Controls.Panel, System.Int32>(System.Windows.Controls.Panel.ZIndexProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Int32> zIndex = new Property<System.Windows.UIElement, System.Int32>(System.Windows.Controls.Panel.ZIndexProperty);
     }
 
     public partial class passwordBox : control
@@ -774,7 +696,6 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.PasswordBox, System.Windows.Media.Brush> selectionBrush = new Property<System.Windows.Controls.PasswordBox, System.Windows.Media.Brush>(System.Windows.Controls.PasswordBox.SelectionBrushProperty);
       public static readonly IProperty<System.Windows.Controls.PasswordBox, System.Double> selectionOpacity = new Property<System.Windows.Controls.PasswordBox, System.Double>(System.Windows.Controls.PasswordBox.SelectionOpacityProperty);
       public static readonly IProperty<System.Windows.Controls.PasswordBox, System.Windows.Media.Brush> caretBrush = new Property<System.Windows.Controls.PasswordBox, System.Windows.Media.Brush>(System.Windows.Controls.PasswordBox.CaretBrushProperty);
-      public static readonly IProperty<System.Windows.Controls.PasswordBox, System.Boolean> isSelectionActive = new Property<System.Windows.Controls.PasswordBox, System.Boolean>(System.Windows.Controls.PasswordBox.IsSelectionActiveProperty);
       public static readonly IProperty<System.Windows.Controls.PasswordBox, System.Boolean> isInactiveSelectionHighlightEnabled = new Property<System.Windows.Controls.PasswordBox, System.Boolean>(System.Windows.Controls.PasswordBox.IsInactiveSelectionHighlightEnabledProperty);
     }
 
@@ -808,7 +729,6 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.Primitives.Popup, System.Windows.Rect> placementRectangle = new Property<System.Windows.Controls.Primitives.Popup, System.Windows.Rect>(System.Windows.Controls.Primitives.Popup.PlacementRectangleProperty);
       public static readonly IProperty<System.Windows.Controls.Primitives.Popup, System.Windows.Controls.Primitives.PopupAnimation> popupAnimation = new Property<System.Windows.Controls.Primitives.Popup, System.Windows.Controls.Primitives.PopupAnimation>(System.Windows.Controls.Primitives.Popup.PopupAnimationProperty);
       public static readonly IProperty<System.Windows.Controls.Primitives.Popup, System.Boolean> allowsTransparency = new Property<System.Windows.Controls.Primitives.Popup, System.Boolean>(System.Windows.Controls.Primitives.Popup.AllowsTransparencyProperty);
-      public static readonly IProperty<System.Windows.Controls.Primitives.Popup, System.Boolean> hasDropShadow = new Property<System.Windows.Controls.Primitives.Popup, System.Boolean>(System.Windows.Controls.Primitives.Popup.HasDropShadowProperty);
     }
 
     public partial class progressBar : rangeBase
@@ -865,36 +785,23 @@ namespace Galactus.Standard
 
     public partial class scrollViewer : contentControl
     {
-      public static readonly IProperty<System.Windows.Controls.ScrollViewer, System.Boolean> canContentScroll = new Property<System.Windows.Controls.ScrollViewer, System.Boolean>(System.Windows.Controls.ScrollViewer.CanContentScrollProperty);
-      public static readonly IProperty<System.Windows.Controls.ScrollViewer, System.Windows.Controls.ScrollBarVisibility> horizontalScrollBarVisibility = new Property<System.Windows.Controls.ScrollViewer, System.Windows.Controls.ScrollBarVisibility>(System.Windows.Controls.ScrollViewer.HorizontalScrollBarVisibilityProperty);
-      public static readonly IProperty<System.Windows.Controls.ScrollViewer, System.Windows.Controls.ScrollBarVisibility> verticalScrollBarVisibility = new Property<System.Windows.Controls.ScrollViewer, System.Windows.Controls.ScrollBarVisibility>(System.Windows.Controls.ScrollViewer.VerticalScrollBarVisibilityProperty);
-      public static readonly IProperty<System.Windows.Controls.ScrollViewer, System.Windows.Visibility> computedHorizontalScrollBarVisibility = new Property<System.Windows.Controls.ScrollViewer, System.Windows.Visibility>(System.Windows.Controls.ScrollViewer.ComputedHorizontalScrollBarVisibilityProperty);
-      public static readonly IProperty<System.Windows.Controls.ScrollViewer, System.Windows.Visibility> computedVerticalScrollBarVisibility = new Property<System.Windows.Controls.ScrollViewer, System.Windows.Visibility>(System.Windows.Controls.ScrollViewer.ComputedVerticalScrollBarVisibilityProperty);
-      public static readonly IProperty<System.Windows.Controls.ScrollViewer, System.Double> verticalOffset = new Property<System.Windows.Controls.ScrollViewer, System.Double>(System.Windows.Controls.ScrollViewer.VerticalOffsetProperty);
-      public static readonly IProperty<System.Windows.Controls.ScrollViewer, System.Double> horizontalOffset = new Property<System.Windows.Controls.ScrollViewer, System.Double>(System.Windows.Controls.ScrollViewer.HorizontalOffsetProperty);
-      public static readonly IProperty<System.Windows.Controls.ScrollViewer, System.Double> contentVerticalOffset = new Property<System.Windows.Controls.ScrollViewer, System.Double>(System.Windows.Controls.ScrollViewer.ContentVerticalOffsetProperty);
-      public static readonly IProperty<System.Windows.Controls.ScrollViewer, System.Double> contentHorizontalOffset = new Property<System.Windows.Controls.ScrollViewer, System.Double>(System.Windows.Controls.ScrollViewer.ContentHorizontalOffsetProperty);
-      public static readonly IProperty<System.Windows.Controls.ScrollViewer, System.Double> extentWidth = new Property<System.Windows.Controls.ScrollViewer, System.Double>(System.Windows.Controls.ScrollViewer.ExtentWidthProperty);
-      public static readonly IProperty<System.Windows.Controls.ScrollViewer, System.Double> extentHeight = new Property<System.Windows.Controls.ScrollViewer, System.Double>(System.Windows.Controls.ScrollViewer.ExtentHeightProperty);
-      public static readonly IProperty<System.Windows.Controls.ScrollViewer, System.Double> scrollableWidth = new Property<System.Windows.Controls.ScrollViewer, System.Double>(System.Windows.Controls.ScrollViewer.ScrollableWidthProperty);
-      public static readonly IProperty<System.Windows.Controls.ScrollViewer, System.Double> scrollableHeight = new Property<System.Windows.Controls.ScrollViewer, System.Double>(System.Windows.Controls.ScrollViewer.ScrollableHeightProperty);
-      public static readonly IProperty<System.Windows.Controls.ScrollViewer, System.Double> viewportWidth = new Property<System.Windows.Controls.ScrollViewer, System.Double>(System.Windows.Controls.ScrollViewer.ViewportWidthProperty);
-      public static readonly IProperty<System.Windows.Controls.ScrollViewer, System.Double> viewportHeight = new Property<System.Windows.Controls.ScrollViewer, System.Double>(System.Windows.Controls.ScrollViewer.ViewportHeightProperty);
-      public static readonly IProperty<System.Windows.Controls.ScrollViewer, System.Boolean> isDeferredScrollingEnabled = new Property<System.Windows.Controls.ScrollViewer, System.Boolean>(System.Windows.Controls.ScrollViewer.IsDeferredScrollingEnabledProperty);
-      public static readonly IProperty<System.Windows.Controls.ScrollViewer, System.Windows.Controls.PanningMode> panningMode = new Property<System.Windows.Controls.ScrollViewer, System.Windows.Controls.PanningMode>(System.Windows.Controls.ScrollViewer.PanningModeProperty);
-      public static readonly IProperty<System.Windows.Controls.ScrollViewer, System.Double> panningDeceleration = new Property<System.Windows.Controls.ScrollViewer, System.Double>(System.Windows.Controls.ScrollViewer.PanningDecelerationProperty);
-      public static readonly IProperty<System.Windows.Controls.ScrollViewer, System.Double> panningRatio = new Property<System.Windows.Controls.ScrollViewer, System.Double>(System.Windows.Controls.ScrollViewer.PanningRatioProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Boolean> canContentScroll = new Property<System.Windows.UIElement, System.Boolean>(System.Windows.Controls.ScrollViewer.CanContentScrollProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Windows.Controls.ScrollBarVisibility> horizontalScrollBarVisibility = new Property<System.Windows.UIElement, System.Windows.Controls.ScrollBarVisibility>(System.Windows.Controls.ScrollViewer.HorizontalScrollBarVisibilityProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Windows.Controls.ScrollBarVisibility> verticalScrollBarVisibility = new Property<System.Windows.UIElement, System.Windows.Controls.ScrollBarVisibility>(System.Windows.Controls.ScrollViewer.VerticalScrollBarVisibilityProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Boolean> isDeferredScrollingEnabled = new Property<System.Windows.UIElement, System.Boolean>(System.Windows.Controls.ScrollViewer.IsDeferredScrollingEnabledProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Windows.Controls.PanningMode> panningMode = new Property<System.Windows.UIElement, System.Windows.Controls.PanningMode>(System.Windows.Controls.ScrollViewer.PanningModeProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Double> panningDeceleration = new Property<System.Windows.UIElement, System.Double>(System.Windows.Controls.ScrollViewer.PanningDecelerationProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Double> panningRatio = new Property<System.Windows.UIElement, System.Double>(System.Windows.Controls.ScrollViewer.PanningRatioProperty);
     }
 
     public partial class selectiveScrollingGrid : grid
     {
-      public static readonly IProperty<System.Windows.Controls.Primitives.SelectiveScrollingGrid, System.Windows.Controls.SelectiveScrollingOrientation> selectiveScrollingOrientation = new Property<System.Windows.Controls.Primitives.SelectiveScrollingGrid, System.Windows.Controls.SelectiveScrollingOrientation>(System.Windows.Controls.Primitives.SelectiveScrollingGrid.SelectiveScrollingOrientationProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Windows.Controls.SelectiveScrollingOrientation> selectiveScrollingOrientation = new Property<System.Windows.UIElement, System.Windows.Controls.SelectiveScrollingOrientation>(System.Windows.Controls.Primitives.SelectiveScrollingGrid.SelectiveScrollingOrientationProperty);
     }
 
     public partial class selector : itemsControl
     {
-      public static readonly IProperty<System.Windows.Controls.Primitives.Selector, System.Boolean> isSelectionActive = new Property<System.Windows.Controls.Primitives.Selector, System.Boolean>(System.Windows.Controls.Primitives.Selector.IsSelectionActiveProperty);
-      public static readonly IProperty<System.Windows.Controls.Primitives.Selector, System.Boolean> isSelected = new Property<System.Windows.Controls.Primitives.Selector, System.Boolean>(System.Windows.Controls.Primitives.Selector.IsSelectedProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Boolean> isSelected = new Property<System.Windows.UIElement, System.Boolean>(System.Windows.Controls.Primitives.Selector.IsSelectedProperty);
       public static readonly IProperty<System.Windows.Controls.Primitives.Selector, System.Nullable<System.Boolean>> isSynchronizedWithCurrentItem = new Property<System.Windows.Controls.Primitives.Selector, System.Nullable<System.Boolean>>(System.Windows.Controls.Primitives.Selector.IsSynchronizedWithCurrentItemProperty);
       public static readonly IProperty<System.Windows.Controls.Primitives.Selector, System.Int32> selectedIndex = new Property<System.Windows.Controls.Primitives.Selector, System.Int32>(System.Windows.Controls.Primitives.Selector.SelectedIndexProperty);
       public static readonly IProperty<System.Windows.Controls.Primitives.Selector, System.Object> selectedItem = new Property<System.Windows.Controls.Primitives.Selector, System.Object>(System.Windows.Controls.Primitives.Selector.SelectedItemProperty);
@@ -956,26 +863,19 @@ namespace Galactus.Standard
 
     public partial class stickyNoteControl : control
     {
-      public static readonly IProperty<System.Windows.Controls.StickyNoteControl, System.String> author = new Property<System.Windows.Controls.StickyNoteControl, System.String>(System.Windows.Controls.StickyNoteControl.AuthorProperty);
       public static readonly IProperty<System.Windows.Controls.StickyNoteControl, System.Boolean> isExpanded = new Property<System.Windows.Controls.StickyNoteControl, System.Boolean>(System.Windows.Controls.StickyNoteControl.IsExpandedProperty);
       public static readonly IProperty<System.Windows.Controls.StickyNoteControl, System.Boolean> isActive = new Property<System.Windows.Controls.StickyNoteControl, System.Boolean>(System.Windows.Controls.StickyNoteControl.IsActiveProperty);
-      public static readonly IProperty<System.Windows.Controls.StickyNoteControl, System.Boolean> isMouseOverAnchor = new Property<System.Windows.Controls.StickyNoteControl, System.Boolean>(System.Windows.Controls.StickyNoteControl.IsMouseOverAnchorProperty);
       public static readonly IProperty<System.Windows.Controls.StickyNoteControl, System.Windows.Media.FontFamily> captionFontFamily = new Property<System.Windows.Controls.StickyNoteControl, System.Windows.Media.FontFamily>(System.Windows.Controls.StickyNoteControl.CaptionFontFamilyProperty);
       public static readonly IProperty<System.Windows.Controls.StickyNoteControl, System.Double> captionFontSize = new Property<System.Windows.Controls.StickyNoteControl, System.Double>(System.Windows.Controls.StickyNoteControl.CaptionFontSizeProperty);
       public static readonly IProperty<System.Windows.Controls.StickyNoteControl, System.Windows.FontStretch> captionFontStretch = new Property<System.Windows.Controls.StickyNoteControl, System.Windows.FontStretch>(System.Windows.Controls.StickyNoteControl.CaptionFontStretchProperty);
       public static readonly IProperty<System.Windows.Controls.StickyNoteControl, System.Windows.FontStyle> captionFontStyle = new Property<System.Windows.Controls.StickyNoteControl, System.Windows.FontStyle>(System.Windows.Controls.StickyNoteControl.CaptionFontStyleProperty);
       public static readonly IProperty<System.Windows.Controls.StickyNoteControl, System.Windows.FontWeight> captionFontWeight = new Property<System.Windows.Controls.StickyNoteControl, System.Windows.FontWeight>(System.Windows.Controls.StickyNoteControl.CaptionFontWeightProperty);
       public static readonly IProperty<System.Windows.Controls.StickyNoteControl, System.Double> penWidth = new Property<System.Windows.Controls.StickyNoteControl, System.Double>(System.Windows.Controls.StickyNoteControl.PenWidthProperty);
-      public static readonly IProperty<System.Windows.Controls.StickyNoteControl, System.Windows.Controls.StickyNoteType> stickyNoteType = new Property<System.Windows.Controls.StickyNoteControl, System.Windows.Controls.StickyNoteType>(System.Windows.Controls.StickyNoteControl.StickyNoteTypeProperty);
     }
 
     public partial class tabControl : selector
     {
       public static readonly IProperty<System.Windows.Controls.TabControl, System.Windows.Controls.Dock> tabStripPlacement = new Property<System.Windows.Controls.TabControl, System.Windows.Controls.Dock>(System.Windows.Controls.TabControl.TabStripPlacementProperty);
-      public static readonly IProperty<System.Windows.Controls.TabControl, System.Object> selectedContent = new Property<System.Windows.Controls.TabControl, System.Object>(System.Windows.Controls.TabControl.SelectedContentProperty);
-      public static readonly IProperty<System.Windows.Controls.TabControl, System.Windows.DataTemplate> selectedContentTemplate = new Property<System.Windows.Controls.TabControl, System.Windows.DataTemplate>(System.Windows.Controls.TabControl.SelectedContentTemplateProperty);
-      public static readonly IProperty<System.Windows.Controls.TabControl, System.Windows.Controls.DataTemplateSelector> selectedContentTemplateSelector = new Property<System.Windows.Controls.TabControl, System.Windows.Controls.DataTemplateSelector>(System.Windows.Controls.TabControl.SelectedContentTemplateSelectorProperty);
-      public static readonly IProperty<System.Windows.Controls.TabControl, System.String> selectedContentStringFormat = new Property<System.Windows.Controls.TabControl, System.String>(System.Windows.Controls.TabControl.SelectedContentStringFormatProperty);
       public static readonly IProperty<System.Windows.Controls.TabControl, System.Windows.DataTemplate> contentTemplate = new Property<System.Windows.Controls.TabControl, System.Windows.DataTemplate>(System.Windows.Controls.TabControl.ContentTemplateProperty);
       public static readonly IProperty<System.Windows.Controls.TabControl, System.Windows.Controls.DataTemplateSelector> contentTemplateSelector = new Property<System.Windows.Controls.TabControl, System.Windows.Controls.DataTemplateSelector>(System.Windows.Controls.TabControl.ContentTemplateSelectorProperty);
       public static readonly IProperty<System.Windows.Controls.TabControl, System.String> contentStringFormat = new Property<System.Windows.Controls.TabControl, System.String>(System.Windows.Controls.TabControl.ContentStringFormatProperty);
@@ -984,7 +884,6 @@ namespace Galactus.Standard
     public partial class tabItem : headeredContentControl
     {
       public static readonly IProperty<System.Windows.Controls.TabItem, System.Boolean> isSelected = new Property<System.Windows.Controls.TabItem, System.Boolean>(System.Windows.Controls.TabItem.IsSelectedProperty);
-      public static readonly IProperty<System.Windows.Controls.TabItem, System.Windows.Controls.Dock> tabStripPlacement = new Property<System.Windows.Controls.TabItem, System.Windows.Controls.Dock>(System.Windows.Controls.TabItem.TabStripPlacementProperty);
     }
 
     public partial class tabPanel : panel
@@ -993,21 +892,21 @@ namespace Galactus.Standard
 
     public partial class textBlock : frameworkElement
     {
-      public static readonly IProperty<System.Windows.Controls.TextBlock, System.Double> baselineOffset = new Property<System.Windows.Controls.TextBlock, System.Double>(System.Windows.Controls.TextBlock.BaselineOffsetProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Double> baselineOffset = new Property<System.Windows.UIElement, System.Double>(System.Windows.Controls.TextBlock.BaselineOffsetProperty);
       public static readonly IProperty<System.Windows.Controls.TextBlock, System.String> text = new Property<System.Windows.Controls.TextBlock, System.String>(System.Windows.Controls.TextBlock.TextProperty);
-      public static readonly IProperty<System.Windows.Controls.TextBlock, System.Windows.Media.FontFamily> fontFamily = new Property<System.Windows.Controls.TextBlock, System.Windows.Media.FontFamily>(System.Windows.Controls.TextBlock.FontFamilyProperty);
-      public static readonly IProperty<System.Windows.Controls.TextBlock, System.Windows.FontStyle> fontStyle = new Property<System.Windows.Controls.TextBlock, System.Windows.FontStyle>(System.Windows.Controls.TextBlock.FontStyleProperty);
-      public static readonly IProperty<System.Windows.Controls.TextBlock, System.Windows.FontWeight> fontWeight = new Property<System.Windows.Controls.TextBlock, System.Windows.FontWeight>(System.Windows.Controls.TextBlock.FontWeightProperty);
-      public static readonly IProperty<System.Windows.Controls.TextBlock, System.Windows.FontStretch> fontStretch = new Property<System.Windows.Controls.TextBlock, System.Windows.FontStretch>(System.Windows.Controls.TextBlock.FontStretchProperty);
-      public static readonly IProperty<System.Windows.Controls.TextBlock, System.Double> fontSize = new Property<System.Windows.Controls.TextBlock, System.Double>(System.Windows.Controls.TextBlock.FontSizeProperty);
-      public static readonly IProperty<System.Windows.Controls.TextBlock, System.Windows.Media.Brush> foreground = new Property<System.Windows.Controls.TextBlock, System.Windows.Media.Brush>(System.Windows.Controls.TextBlock.ForegroundProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Windows.Media.FontFamily> fontFamily = new Property<System.Windows.UIElement, System.Windows.Media.FontFamily>(System.Windows.Controls.TextBlock.FontFamilyProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Windows.FontStyle> fontStyle = new Property<System.Windows.UIElement, System.Windows.FontStyle>(System.Windows.Controls.TextBlock.FontStyleProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Windows.FontWeight> fontWeight = new Property<System.Windows.UIElement, System.Windows.FontWeight>(System.Windows.Controls.TextBlock.FontWeightProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Windows.FontStretch> fontStretch = new Property<System.Windows.UIElement, System.Windows.FontStretch>(System.Windows.Controls.TextBlock.FontStretchProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Double> fontSize = new Property<System.Windows.UIElement, System.Double>(System.Windows.Controls.TextBlock.FontSizeProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Windows.Media.Brush> foreground = new Property<System.Windows.UIElement, System.Windows.Media.Brush>(System.Windows.Controls.TextBlock.ForegroundProperty);
       public static readonly IProperty<System.Windows.Controls.TextBlock, System.Windows.Media.Brush> background = new Property<System.Windows.Controls.TextBlock, System.Windows.Media.Brush>(System.Windows.Controls.TextBlock.BackgroundProperty);
       public static readonly IProperty<System.Windows.Controls.TextBlock, System.Windows.TextDecorationCollection> textDecorations = new Property<System.Windows.Controls.TextBlock, System.Windows.TextDecorationCollection>(System.Windows.Controls.TextBlock.TextDecorationsProperty);
       public static readonly IProperty<System.Windows.Controls.TextBlock, System.Windows.Media.TextEffectCollection> textEffects = new Property<System.Windows.Controls.TextBlock, System.Windows.Media.TextEffectCollection>(System.Windows.Controls.TextBlock.TextEffectsProperty);
-      public static readonly IProperty<System.Windows.Controls.TextBlock, System.Double> lineHeight = new Property<System.Windows.Controls.TextBlock, System.Double>(System.Windows.Controls.TextBlock.LineHeightProperty);
-      public static readonly IProperty<System.Windows.Controls.TextBlock, System.Windows.LineStackingStrategy> lineStackingStrategy = new Property<System.Windows.Controls.TextBlock, System.Windows.LineStackingStrategy>(System.Windows.Controls.TextBlock.LineStackingStrategyProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Double> lineHeight = new Property<System.Windows.UIElement, System.Double>(System.Windows.Controls.TextBlock.LineHeightProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Windows.LineStackingStrategy> lineStackingStrategy = new Property<System.Windows.UIElement, System.Windows.LineStackingStrategy>(System.Windows.Controls.TextBlock.LineStackingStrategyProperty);
       public static readonly IProperty<System.Windows.Controls.TextBlock, System.Windows.Thickness> padding = new Property<System.Windows.Controls.TextBlock, System.Windows.Thickness>(System.Windows.Controls.TextBlock.PaddingProperty);
-      public static readonly IProperty<System.Windows.Controls.TextBlock, System.Windows.TextAlignment> textAlignment = new Property<System.Windows.Controls.TextBlock, System.Windows.TextAlignment>(System.Windows.Controls.TextBlock.TextAlignmentProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Windows.TextAlignment> textAlignment = new Property<System.Windows.UIElement, System.Windows.TextAlignment>(System.Windows.Controls.TextBlock.TextAlignmentProperty);
       public static readonly IProperty<System.Windows.Controls.TextBlock, System.Windows.TextTrimming> textTrimming = new Property<System.Windows.Controls.TextBlock, System.Windows.TextTrimming>(System.Windows.Controls.TextBlock.TextTrimmingProperty);
       public static readonly IProperty<System.Windows.Controls.TextBlock, System.Windows.TextWrapping> textWrapping = new Property<System.Windows.Controls.TextBlock, System.Windows.TextWrapping>(System.Windows.Controls.TextBlock.TextWrappingProperty);
       public static readonly IProperty<System.Windows.Controls.TextBlock, System.Boolean> isHyphenationEnabled = new Property<System.Windows.Controls.TextBlock, System.Boolean>(System.Windows.Controls.TextBlock.IsHyphenationEnabledProperty);
@@ -1039,13 +938,11 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Controls.Primitives.TextBoxBase, System.Windows.Media.Brush> selectionBrush = new Property<System.Windows.Controls.Primitives.TextBoxBase, System.Windows.Media.Brush>(System.Windows.Controls.Primitives.TextBoxBase.SelectionBrushProperty);
       public static readonly IProperty<System.Windows.Controls.Primitives.TextBoxBase, System.Double> selectionOpacity = new Property<System.Windows.Controls.Primitives.TextBoxBase, System.Double>(System.Windows.Controls.Primitives.TextBoxBase.SelectionOpacityProperty);
       public static readonly IProperty<System.Windows.Controls.Primitives.TextBoxBase, System.Windows.Media.Brush> caretBrush = new Property<System.Windows.Controls.Primitives.TextBoxBase, System.Windows.Media.Brush>(System.Windows.Controls.Primitives.TextBoxBase.CaretBrushProperty);
-      public static readonly IProperty<System.Windows.Controls.Primitives.TextBoxBase, System.Boolean> isSelectionActive = new Property<System.Windows.Controls.Primitives.TextBoxBase, System.Boolean>(System.Windows.Controls.Primitives.TextBoxBase.IsSelectionActiveProperty);
       public static readonly IProperty<System.Windows.Controls.Primitives.TextBoxBase, System.Boolean> isInactiveSelectionHighlightEnabled = new Property<System.Windows.Controls.Primitives.TextBoxBase, System.Boolean>(System.Windows.Controls.Primitives.TextBoxBase.IsInactiveSelectionHighlightEnabledProperty);
     }
 
     public partial class thumb : control
     {
-      public static readonly IProperty<System.Windows.Controls.Primitives.Thumb, System.Boolean> isDragging = new Property<System.Windows.Controls.Primitives.Thumb, System.Boolean>(System.Windows.Controls.Primitives.Thumb.IsDraggingProperty);
     }
 
     public partial class tickBar : frameworkElement
@@ -1071,13 +968,10 @@ namespace Galactus.Standard
 
     public partial class toolBar : headeredItemsControl
     {
-      public static readonly IProperty<System.Windows.Controls.ToolBar, System.Windows.Controls.Orientation> orientation = new Property<System.Windows.Controls.ToolBar, System.Windows.Controls.Orientation>(System.Windows.Controls.ToolBar.OrientationProperty);
       public static readonly IProperty<System.Windows.Controls.ToolBar, System.Int32> band = new Property<System.Windows.Controls.ToolBar, System.Int32>(System.Windows.Controls.ToolBar.BandProperty);
       public static readonly IProperty<System.Windows.Controls.ToolBar, System.Int32> bandIndex = new Property<System.Windows.Controls.ToolBar, System.Int32>(System.Windows.Controls.ToolBar.BandIndexProperty);
       public static readonly IProperty<System.Windows.Controls.ToolBar, System.Boolean> isOverflowOpen = new Property<System.Windows.Controls.ToolBar, System.Boolean>(System.Windows.Controls.ToolBar.IsOverflowOpenProperty);
-      public static readonly IProperty<System.Windows.Controls.ToolBar, System.Boolean> hasOverflowItems = new Property<System.Windows.Controls.ToolBar, System.Boolean>(System.Windows.Controls.ToolBar.HasOverflowItemsProperty);
-      public static readonly IProperty<System.Windows.Controls.ToolBar, System.Boolean> isOverflowItem = new Property<System.Windows.Controls.ToolBar, System.Boolean>(System.Windows.Controls.ToolBar.IsOverflowItemProperty);
-      public static readonly IProperty<System.Windows.Controls.ToolBar, System.Windows.Controls.OverflowMode> overflowMode = new Property<System.Windows.Controls.ToolBar, System.Windows.Controls.OverflowMode>(System.Windows.Controls.ToolBar.OverflowModeProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Windows.Controls.OverflowMode> overflowMode = new Property<System.Windows.UIElement, System.Windows.Controls.OverflowMode>(System.Windows.Controls.ToolBar.OverflowModeProperty);
     }
 
     public partial class toolBarOverflowPanel : panel
@@ -1093,7 +987,7 @@ namespace Galactus.Standard
     {
       public static readonly IProperty<System.Windows.Controls.ToolBarTray, System.Windows.Media.Brush> background = new Property<System.Windows.Controls.ToolBarTray, System.Windows.Media.Brush>(System.Windows.Controls.ToolBarTray.BackgroundProperty);
       public static readonly IProperty<System.Windows.Controls.ToolBarTray, System.Windows.Controls.Orientation> orientation = new Property<System.Windows.Controls.ToolBarTray, System.Windows.Controls.Orientation>(System.Windows.Controls.ToolBarTray.OrientationProperty);
-      public static readonly IProperty<System.Windows.Controls.ToolBarTray, System.Boolean> isLocked = new Property<System.Windows.Controls.ToolBarTray, System.Boolean>(System.Windows.Controls.ToolBarTray.IsLockedProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Boolean> isLocked = new Property<System.Windows.UIElement, System.Boolean>(System.Windows.Controls.ToolBarTray.IsLockedProperty);
     }
 
     public partial class toolTip : contentControl
@@ -1121,8 +1015,6 @@ namespace Galactus.Standard
 
     public partial class treeView : itemsControl
     {
-      public static readonly IProperty<System.Windows.Controls.TreeView, System.Object> selectedItem = new Property<System.Windows.Controls.TreeView, System.Object>(System.Windows.Controls.TreeView.SelectedItemProperty);
-      public static readonly IProperty<System.Windows.Controls.TreeView, System.Object> selectedValue = new Property<System.Windows.Controls.TreeView, System.Object>(System.Windows.Controls.TreeView.SelectedValueProperty);
       public static readonly IProperty<System.Windows.Controls.TreeView, System.String> selectedValuePath = new Property<System.Windows.Controls.TreeView, System.String>(System.Windows.Controls.TreeView.SelectedValuePathProperty);
     }
 
@@ -1130,25 +1022,10 @@ namespace Galactus.Standard
     {
       public static readonly IProperty<System.Windows.Controls.TreeViewItem, System.Boolean> isExpanded = new Property<System.Windows.Controls.TreeViewItem, System.Boolean>(System.Windows.Controls.TreeViewItem.IsExpandedProperty);
       public static readonly IProperty<System.Windows.Controls.TreeViewItem, System.Boolean> isSelected = new Property<System.Windows.Controls.TreeViewItem, System.Boolean>(System.Windows.Controls.TreeViewItem.IsSelectedProperty);
-      public static readonly IProperty<System.Windows.Controls.TreeViewItem, System.Boolean> isSelectionActive = new Property<System.Windows.Controls.TreeViewItem, System.Boolean>(System.Windows.Controls.TreeViewItem.IsSelectionActiveProperty);
     }
 
     public partial class uIElement
     {
-      public static readonly IProperty<System.Windows.UIElement, System.Boolean> isMouseDirectlyOver = new Property<System.Windows.UIElement, System.Boolean>(System.Windows.UIElement.IsMouseDirectlyOverProperty);
-      public static readonly IProperty<System.Windows.UIElement, System.Boolean> isMouseOver = new Property<System.Windows.UIElement, System.Boolean>(System.Windows.UIElement.IsMouseOverProperty);
-      public static readonly IProperty<System.Windows.UIElement, System.Boolean> isStylusOver = new Property<System.Windows.UIElement, System.Boolean>(System.Windows.UIElement.IsStylusOverProperty);
-      public static readonly IProperty<System.Windows.UIElement, System.Boolean> isKeyboardFocusWithin = new Property<System.Windows.UIElement, System.Boolean>(System.Windows.UIElement.IsKeyboardFocusWithinProperty);
-      public static readonly IProperty<System.Windows.UIElement, System.Boolean> isMouseCaptured = new Property<System.Windows.UIElement, System.Boolean>(System.Windows.UIElement.IsMouseCapturedProperty);
-      public static readonly IProperty<System.Windows.UIElement, System.Boolean> isMouseCaptureWithin = new Property<System.Windows.UIElement, System.Boolean>(System.Windows.UIElement.IsMouseCaptureWithinProperty);
-      public static readonly IProperty<System.Windows.UIElement, System.Boolean> isStylusDirectlyOver = new Property<System.Windows.UIElement, System.Boolean>(System.Windows.UIElement.IsStylusDirectlyOverProperty);
-      public static readonly IProperty<System.Windows.UIElement, System.Boolean> isStylusCaptured = new Property<System.Windows.UIElement, System.Boolean>(System.Windows.UIElement.IsStylusCapturedProperty);
-      public static readonly IProperty<System.Windows.UIElement, System.Boolean> isStylusCaptureWithin = new Property<System.Windows.UIElement, System.Boolean>(System.Windows.UIElement.IsStylusCaptureWithinProperty);
-      public static readonly IProperty<System.Windows.UIElement, System.Boolean> isKeyboardFocused = new Property<System.Windows.UIElement, System.Boolean>(System.Windows.UIElement.IsKeyboardFocusedProperty);
-      public static readonly IProperty<System.Windows.UIElement, System.Boolean> areAnyTouchesDirectlyOver = new Property<System.Windows.UIElement, System.Boolean>(System.Windows.UIElement.AreAnyTouchesDirectlyOverProperty);
-      public static readonly IProperty<System.Windows.UIElement, System.Boolean> areAnyTouchesOver = new Property<System.Windows.UIElement, System.Boolean>(System.Windows.UIElement.AreAnyTouchesOverProperty);
-      public static readonly IProperty<System.Windows.UIElement, System.Boolean> areAnyTouchesCaptured = new Property<System.Windows.UIElement, System.Boolean>(System.Windows.UIElement.AreAnyTouchesCapturedProperty);
-      public static readonly IProperty<System.Windows.UIElement, System.Boolean> areAnyTouchesCapturedWithin = new Property<System.Windows.UIElement, System.Boolean>(System.Windows.UIElement.AreAnyTouchesCapturedWithinProperty);
       public static readonly IProperty<System.Windows.UIElement, System.Boolean> allowDrop = new Property<System.Windows.UIElement, System.Boolean>(System.Windows.UIElement.AllowDropProperty);
       public static readonly IProperty<System.Windows.UIElement, System.Windows.Media.Transform> renderTransform = new Property<System.Windows.UIElement, System.Windows.Media.Transform>(System.Windows.UIElement.RenderTransformProperty);
       public static readonly IProperty<System.Windows.UIElement, System.Windows.Point> renderTransformOrigin = new Property<System.Windows.UIElement, System.Windows.Point>(System.Windows.UIElement.RenderTransformOriginProperty);
@@ -1163,10 +1040,8 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.UIElement, System.Boolean> clipToBounds = new Property<System.Windows.UIElement, System.Boolean>(System.Windows.UIElement.ClipToBoundsProperty);
       public static readonly IProperty<System.Windows.UIElement, System.Windows.Media.Geometry> clip = new Property<System.Windows.UIElement, System.Windows.Media.Geometry>(System.Windows.UIElement.ClipProperty);
       public static readonly IProperty<System.Windows.UIElement, System.Boolean> snapsToDevicePixels = new Property<System.Windows.UIElement, System.Boolean>(System.Windows.UIElement.SnapsToDevicePixelsProperty);
-      public static readonly IProperty<System.Windows.UIElement, System.Boolean> isFocused = new Property<System.Windows.UIElement, System.Boolean>(System.Windows.UIElement.IsFocusedProperty);
       public static readonly IProperty<System.Windows.UIElement, System.Boolean> isEnabled = new Property<System.Windows.UIElement, System.Boolean>(System.Windows.UIElement.IsEnabledProperty);
       public static readonly IProperty<System.Windows.UIElement, System.Boolean> isHitTestVisible = new Property<System.Windows.UIElement, System.Boolean>(System.Windows.UIElement.IsHitTestVisibleProperty);
-      public static readonly IProperty<System.Windows.UIElement, System.Boolean> isVisible = new Property<System.Windows.UIElement, System.Boolean>(System.Windows.UIElement.IsVisibleProperty);
       public static readonly IProperty<System.Windows.UIElement, System.Boolean> focusable = new Property<System.Windows.UIElement, System.Boolean>(System.Windows.UIElement.FocusableProperty);
       public static readonly IProperty<System.Windows.UIElement, System.Boolean> isManipulationEnabled = new Property<System.Windows.UIElement, System.Boolean>(System.Windows.UIElement.IsManipulationEnabledProperty);
     }
@@ -1195,7 +1070,6 @@ namespace Galactus.Standard
     public partial class viewport3D : frameworkElement
     {
       public static readonly IProperty<System.Windows.Controls.Viewport3D, System.Windows.Media.Media3D.Camera> camera = new Property<System.Windows.Controls.Viewport3D, System.Windows.Media.Media3D.Camera>(System.Windows.Controls.Viewport3D.CameraProperty);
-      public static readonly IProperty<System.Windows.Controls.Viewport3D, System.Windows.Media.Media3D.Visual3DCollection> children = new Property<System.Windows.Controls.Viewport3D, System.Windows.Media.Media3D.Visual3DCollection>(System.Windows.Controls.Viewport3D.ChildrenProperty);
     }
 
     public partial class window : contentControl
@@ -1208,7 +1082,6 @@ namespace Galactus.Standard
       public static readonly IProperty<System.Windows.Window, System.Double> top = new Property<System.Windows.Window, System.Double>(System.Windows.Window.TopProperty);
       public static readonly IProperty<System.Windows.Window, System.Double> left = new Property<System.Windows.Window, System.Double>(System.Windows.Window.LeftProperty);
       public static readonly IProperty<System.Windows.Window, System.Boolean> showInTaskbar = new Property<System.Windows.Window, System.Boolean>(System.Windows.Window.ShowInTaskbarProperty);
-      public static readonly IProperty<System.Windows.Window, System.Boolean> isActive = new Property<System.Windows.Window, System.Boolean>(System.Windows.Window.IsActiveProperty);
       public static readonly IProperty<System.Windows.Window, System.Windows.WindowStyle> windowStyle = new Property<System.Windows.Window, System.Windows.WindowStyle>(System.Windows.Window.WindowStyleProperty);
       public static readonly IProperty<System.Windows.Window, System.Windows.WindowState> windowState = new Property<System.Windows.Window, System.Windows.WindowState>(System.Windows.Window.WindowStateProperty);
       public static readonly IProperty<System.Windows.Window, System.Windows.ResizeMode> resizeMode = new Property<System.Windows.Window, System.Windows.ResizeMode>(System.Windows.Window.ResizeModeProperty);
@@ -1218,13 +1091,13 @@ namespace Galactus.Standard
 
     public partial class virtualizingPanel : panel
     {
-      public static readonly IProperty<System.Windows.Controls.VirtualizingPanel, System.Boolean> isVirtualizing = new Property<System.Windows.Controls.VirtualizingPanel, System.Boolean>(System.Windows.Controls.VirtualizingPanel.IsVirtualizingProperty);
-      public static readonly IProperty<System.Windows.Controls.VirtualizingPanel, System.Windows.Controls.VirtualizationMode> virtualizationMode = new Property<System.Windows.Controls.VirtualizingPanel, System.Windows.Controls.VirtualizationMode>(System.Windows.Controls.VirtualizingPanel.VirtualizationModeProperty);
-      public static readonly IProperty<System.Windows.Controls.VirtualizingPanel, System.Boolean> isVirtualizingWhenGrouping = new Property<System.Windows.Controls.VirtualizingPanel, System.Boolean>(System.Windows.Controls.VirtualizingPanel.IsVirtualizingWhenGroupingProperty);
-      public static readonly IProperty<System.Windows.Controls.VirtualizingPanel, System.Windows.Controls.ScrollUnit> scrollUnit = new Property<System.Windows.Controls.VirtualizingPanel, System.Windows.Controls.ScrollUnit>(System.Windows.Controls.VirtualizingPanel.ScrollUnitProperty);
-      public static readonly IProperty<System.Windows.Controls.VirtualizingPanel, System.Windows.Controls.VirtualizationCacheLength> cacheLength = new Property<System.Windows.Controls.VirtualizingPanel, System.Windows.Controls.VirtualizationCacheLength>(System.Windows.Controls.VirtualizingPanel.CacheLengthProperty);
-      public static readonly IProperty<System.Windows.Controls.VirtualizingPanel, System.Windows.Controls.VirtualizationCacheLengthUnit> cacheLengthUnit = new Property<System.Windows.Controls.VirtualizingPanel, System.Windows.Controls.VirtualizationCacheLengthUnit>(System.Windows.Controls.VirtualizingPanel.CacheLengthUnitProperty);
-      public static readonly IProperty<System.Windows.Controls.VirtualizingPanel, System.Boolean> isContainerVirtualizable = new Property<System.Windows.Controls.VirtualizingPanel, System.Boolean>(System.Windows.Controls.VirtualizingPanel.IsContainerVirtualizableProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Boolean> isVirtualizing = new Property<System.Windows.UIElement, System.Boolean>(System.Windows.Controls.VirtualizingPanel.IsVirtualizingProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Windows.Controls.VirtualizationMode> virtualizationMode = new Property<System.Windows.UIElement, System.Windows.Controls.VirtualizationMode>(System.Windows.Controls.VirtualizingPanel.VirtualizationModeProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Boolean> isVirtualizingWhenGrouping = new Property<System.Windows.UIElement, System.Boolean>(System.Windows.Controls.VirtualizingPanel.IsVirtualizingWhenGroupingProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Windows.Controls.ScrollUnit> scrollUnit = new Property<System.Windows.UIElement, System.Windows.Controls.ScrollUnit>(System.Windows.Controls.VirtualizingPanel.ScrollUnitProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Windows.Controls.VirtualizationCacheLength> cacheLength = new Property<System.Windows.UIElement, System.Windows.Controls.VirtualizationCacheLength>(System.Windows.Controls.VirtualizingPanel.CacheLengthProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Windows.Controls.VirtualizationCacheLengthUnit> cacheLengthUnit = new Property<System.Windows.UIElement, System.Windows.Controls.VirtualizationCacheLengthUnit>(System.Windows.Controls.VirtualizingPanel.CacheLengthUnitProperty);
+      public static readonly IProperty<System.Windows.UIElement, System.Boolean> isContainerVirtualizable = new Property<System.Windows.UIElement, System.Boolean>(System.Windows.Controls.VirtualizingPanel.IsContainerVirtualizableProperty);
     }
 
     public partial class virtualizingStackPanel : virtualizingPanel
@@ -2006,7 +1879,6 @@ namespace Galactus.Standard
     {
       public static IValue<TMessage, System.Windows.Controls.Button> isDefault(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Button, System.Boolean>(Properties.button.isDefault, v);
       public static IValue<TMessage, System.Windows.Controls.Button> isCancel(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Button, System.Boolean>(Properties.button.isCancel, v);
-      public static IValue<TMessage, System.Windows.Controls.Button> isDefaulted(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Button, System.Boolean>(Properties.button.isDefaulted, v);
 
 
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Button>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.Button>(vs, c);
@@ -2017,7 +1889,6 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.Primitives.ButtonBase> command(System.Windows.Input.ICommand v) => new SetValue<TMessage, System.Windows.Controls.Primitives.ButtonBase, System.Windows.Input.ICommand>(Properties.buttonBase.command, v);
       public static IValue<TMessage, System.Windows.Controls.Primitives.ButtonBase> commandParameter(System.Object v) => new SetValue<TMessage, System.Windows.Controls.Primitives.ButtonBase, System.Object>(Properties.buttonBase.commandParameter, v);
       public static IValue<TMessage, System.Windows.Controls.Primitives.ButtonBase> commandTarget(System.Windows.IInputElement v) => new SetValue<TMessage, System.Windows.Controls.Primitives.ButtonBase, System.Windows.IInputElement>(Properties.buttonBase.commandTarget, v);
-      public static IValue<TMessage, System.Windows.Controls.Primitives.ButtonBase> isPressed(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.ButtonBase, System.Boolean>(Properties.buttonBase.isPressed, v);
       public static IValue<TMessage, System.Windows.Controls.Primitives.ButtonBase> clickMode(System.Windows.Controls.ClickMode v) => new SetValue<TMessage, System.Windows.Controls.Primitives.ButtonBase, System.Windows.Controls.ClickMode>(Properties.buttonBase.clickMode, v);
 
       public static IValue<TMessage, System.Windows.UIElement> onClick (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
@@ -2047,8 +1918,6 @@ namespace Galactus.Standard
 
     public partial class calendarButton : button
     {
-      public static IValue<TMessage, System.Windows.Controls.Primitives.CalendarButton> hasSelectedDays(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.CalendarButton, System.Boolean>(Properties.calendarButton.hasSelectedDays, v);
-      public static IValue<TMessage, System.Windows.Controls.Primitives.CalendarButton> isInactive(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.CalendarButton, System.Boolean>(Properties.calendarButton.isInactive, v);
 
 
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.CalendarButton>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.Primitives.CalendarButton>(vs, c);
@@ -2056,11 +1925,6 @@ namespace Galactus.Standard
 
     public partial class calendarDayButton : button
     {
-      public static IValue<TMessage, System.Windows.Controls.Primitives.CalendarDayButton> isToday(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.CalendarDayButton, System.Boolean>(Properties.calendarDayButton.isToday, v);
-      public static IValue<TMessage, System.Windows.Controls.Primitives.CalendarDayButton> isSelected(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.CalendarDayButton, System.Boolean>(Properties.calendarDayButton.isSelected, v);
-      public static IValue<TMessage, System.Windows.Controls.Primitives.CalendarDayButton> isInactive(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.CalendarDayButton, System.Boolean>(Properties.calendarDayButton.isInactive, v);
-      public static IValue<TMessage, System.Windows.Controls.Primitives.CalendarDayButton> isBlackedOut(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.CalendarDayButton, System.Boolean>(Properties.calendarDayButton.isBlackedOut, v);
-      public static IValue<TMessage, System.Windows.Controls.Primitives.CalendarDayButton> isHighlighted(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.CalendarDayButton, System.Boolean>(Properties.calendarDayButton.isHighlighted, v);
 
 
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.CalendarDayButton>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.Primitives.CalendarDayButton>(vs, c);
@@ -2075,10 +1939,10 @@ namespace Galactus.Standard
 
     public partial class canvas : panel
     {
-      public static IValue<TMessage, System.Windows.Controls.Canvas> left(System.Double v) => new SetValue<TMessage, System.Windows.Controls.Canvas, System.Double>(Properties.canvas.left, v);
-      public static IValue<TMessage, System.Windows.Controls.Canvas> top(System.Double v) => new SetValue<TMessage, System.Windows.Controls.Canvas, System.Double>(Properties.canvas.top, v);
-      public static IValue<TMessage, System.Windows.Controls.Canvas> right(System.Double v) => new SetValue<TMessage, System.Windows.Controls.Canvas, System.Double>(Properties.canvas.right, v);
-      public static IValue<TMessage, System.Windows.Controls.Canvas> bottom(System.Double v) => new SetValue<TMessage, System.Windows.Controls.Canvas, System.Double>(Properties.canvas.bottom, v);
+      public static IValue<TMessage, System.Windows.UIElement> left(System.Double v) => new SetValue<TMessage, System.Windows.UIElement, System.Double>(Properties.canvas.left, v);
+      public static IValue<TMessage, System.Windows.UIElement> top(System.Double v) => new SetValue<TMessage, System.Windows.UIElement, System.Double>(Properties.canvas.top, v);
+      public static IValue<TMessage, System.Windows.UIElement> right(System.Double v) => new SetValue<TMessage, System.Windows.UIElement, System.Double>(Properties.canvas.right, v);
+      public static IValue<TMessage, System.Windows.UIElement> bottom(System.Double v) => new SetValue<TMessage, System.Windows.UIElement, System.Double>(Properties.canvas.bottom, v);
 
 
       public static DelayedPanelView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Canvas>[] vs) => cs => new StandardPanelView<TMessage, System.Windows.Controls.Canvas>(vs, cs);
@@ -2099,9 +1963,6 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.ComboBox> isEditable(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.ComboBox, System.Boolean>(Properties.comboBox.isEditable, v);
       public static IValue<TMessage, System.Windows.Controls.ComboBox> text(System.String v) => new SetValue<TMessage, System.Windows.Controls.ComboBox, System.String>(Properties.comboBox.text, v);
       public static IValue<TMessage, System.Windows.Controls.ComboBox> isReadOnly(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.ComboBox, System.Boolean>(Properties.comboBox.isReadOnly, v);
-      public static IValue<TMessage, System.Windows.Controls.ComboBox> selectionBoxItem(System.Object v) => new SetValue<TMessage, System.Windows.Controls.ComboBox, System.Object>(Properties.comboBox.selectionBoxItem, v);
-      public static IValue<TMessage, System.Windows.Controls.ComboBox> selectionBoxItemTemplate(System.Windows.DataTemplate v) => new SetValue<TMessage, System.Windows.Controls.ComboBox, System.Windows.DataTemplate>(Properties.comboBox.selectionBoxItemTemplate, v);
-      public static IValue<TMessage, System.Windows.Controls.ComboBox> selectionBoxItemStringFormat(System.String v) => new SetValue<TMessage, System.Windows.Controls.ComboBox, System.String>(Properties.comboBox.selectionBoxItemStringFormat, v);
       public static IValue<TMessage, System.Windows.Controls.ComboBox> staysOpenOnEdit(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.ComboBox, System.Boolean>(Properties.comboBox.staysOpenOnEdit, v);
 
 
@@ -2110,7 +1971,6 @@ namespace Galactus.Standard
 
     public partial class comboBoxItem : listBoxItem
     {
-      public static IValue<TMessage, System.Windows.Controls.ComboBoxItem> isHighlighted(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.ComboBoxItem, System.Boolean>(Properties.comboBoxItem.isHighlighted, v);
 
 
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.ComboBoxItem>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.ComboBoxItem>(vs, c);
@@ -2119,13 +1979,12 @@ namespace Galactus.Standard
     public partial class contentControl : control
     {
       public static IValue<TMessage, System.Windows.Controls.ContentControl> content(System.Object v) => new SetValue<TMessage, System.Windows.Controls.ContentControl, System.Object>(Properties.contentControl.content, v);
-      public static IValue<TMessage, System.Windows.Controls.ContentControl> hasContent(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.ContentControl, System.Boolean>(Properties.contentControl.hasContent, v);
       public static IValue<TMessage, System.Windows.Controls.ContentControl> contentTemplate(System.Windows.DataTemplate v) => new SetValue<TMessage, System.Windows.Controls.ContentControl, System.Windows.DataTemplate>(Properties.contentControl.contentTemplate, v);
       public static IValue<TMessage, System.Windows.Controls.ContentControl> contentTemplateSelector(System.Windows.Controls.DataTemplateSelector v) => new SetValue<TMessage, System.Windows.Controls.ContentControl, System.Windows.Controls.DataTemplateSelector>(Properties.contentControl.contentTemplateSelector, v);
       public static IValue<TMessage, System.Windows.Controls.ContentControl> contentStringFormat(System.String v) => new SetValue<TMessage, System.Windows.Controls.ContentControl, System.String>(Properties.contentControl.contentStringFormat, v);
 
 
-      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.ContentControl>[] vs) => new StandardView<TMessage, System.Windows.Controls.ContentControl>(vs);
+      public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.ContentControl>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.ContentControl>(vs, c);
     }
 
     public partial class contentPresenter : frameworkElement
@@ -2204,7 +2063,6 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.DataGrid> rowHeight(System.Double v) => new SetValue<TMessage, System.Windows.Controls.DataGrid, System.Double>(Properties.dataGrid.rowHeight, v);
       public static IValue<TMessage, System.Windows.Controls.DataGrid> minRowHeight(System.Double v) => new SetValue<TMessage, System.Windows.Controls.DataGrid, System.Double>(Properties.dataGrid.minRowHeight, v);
       public static IValue<TMessage, System.Windows.Controls.DataGrid> rowHeaderWidth(System.Double v) => new SetValue<TMessage, System.Windows.Controls.DataGrid, System.Double>(Properties.dataGrid.rowHeaderWidth, v);
-      public static IValue<TMessage, System.Windows.Controls.DataGrid> rowHeaderActualWidth(System.Double v) => new SetValue<TMessage, System.Windows.Controls.DataGrid, System.Double>(Properties.dataGrid.rowHeaderActualWidth, v);
       public static IValue<TMessage, System.Windows.Controls.DataGrid> columnHeaderHeight(System.Double v) => new SetValue<TMessage, System.Windows.Controls.DataGrid, System.Double>(Properties.dataGrid.columnHeaderHeight, v);
       public static IValue<TMessage, System.Windows.Controls.DataGrid> headersVisibility(System.Windows.Controls.DataGridHeadersVisibility v) => new SetValue<TMessage, System.Windows.Controls.DataGrid, System.Windows.Controls.DataGridHeadersVisibility>(Properties.dataGrid.headersVisibility, v);
       public static IValue<TMessage, System.Windows.Controls.DataGrid> cellStyle(System.Windows.Style v) => new SetValue<TMessage, System.Windows.Controls.DataGrid, System.Windows.Style>(Properties.dataGrid.cellStyle, v);
@@ -2225,20 +2083,17 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.DataGrid> rowDetailsTemplate(System.Windows.DataTemplate v) => new SetValue<TMessage, System.Windows.Controls.DataGrid, System.Windows.DataTemplate>(Properties.dataGrid.rowDetailsTemplate, v);
       public static IValue<TMessage, System.Windows.Controls.DataGrid> rowDetailsTemplateSelector(System.Windows.Controls.DataTemplateSelector v) => new SetValue<TMessage, System.Windows.Controls.DataGrid, System.Windows.Controls.DataTemplateSelector>(Properties.dataGrid.rowDetailsTemplateSelector, v);
       public static IValue<TMessage, System.Windows.Controls.DataGrid> canUserResizeRows(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.DataGrid, System.Boolean>(Properties.dataGrid.canUserResizeRows, v);
-      public static IValue<TMessage, System.Windows.Controls.DataGrid> newItemMargin(System.Windows.Thickness v) => new SetValue<TMessage, System.Windows.Controls.DataGrid, System.Windows.Thickness>(Properties.dataGrid.newItemMargin, v);
       public static IValue<TMessage, System.Windows.Controls.DataGrid> selectionMode(System.Windows.Controls.DataGridSelectionMode v) => new SetValue<TMessage, System.Windows.Controls.DataGrid, System.Windows.Controls.DataGridSelectionMode>(Properties.dataGrid.selectionMode, v);
       public static IValue<TMessage, System.Windows.Controls.DataGrid> selectionUnit(System.Windows.Controls.DataGridSelectionUnit v) => new SetValue<TMessage, System.Windows.Controls.DataGrid, System.Windows.Controls.DataGridSelectionUnit>(Properties.dataGrid.selectionUnit, v);
       public static IValue<TMessage, System.Windows.Controls.DataGrid> canUserSortColumns(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.DataGrid, System.Boolean>(Properties.dataGrid.canUserSortColumns, v);
       public static IValue<TMessage, System.Windows.Controls.DataGrid> autoGenerateColumns(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.DataGrid, System.Boolean>(Properties.dataGrid.autoGenerateColumns, v);
       public static IValue<TMessage, System.Windows.Controls.DataGrid> frozenColumnCount(System.Int32 v) => new SetValue<TMessage, System.Windows.Controls.DataGrid, System.Int32>(Properties.dataGrid.frozenColumnCount, v);
-      public static IValue<TMessage, System.Windows.Controls.DataGrid> nonFrozenColumnsViewportHorizontalOffset(System.Double v) => new SetValue<TMessage, System.Windows.Controls.DataGrid, System.Double>(Properties.dataGrid.nonFrozenColumnsViewportHorizontalOffset, v);
       public static IValue<TMessage, System.Windows.Controls.DataGrid> enableRowVirtualization(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.DataGrid, System.Boolean>(Properties.dataGrid.enableRowVirtualization, v);
       public static IValue<TMessage, System.Windows.Controls.DataGrid> enableColumnVirtualization(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.DataGrid, System.Boolean>(Properties.dataGrid.enableColumnVirtualization, v);
       public static IValue<TMessage, System.Windows.Controls.DataGrid> canUserReorderColumns(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.DataGrid, System.Boolean>(Properties.dataGrid.canUserReorderColumns, v);
       public static IValue<TMessage, System.Windows.Controls.DataGrid> dragIndicatorStyle(System.Windows.Style v) => new SetValue<TMessage, System.Windows.Controls.DataGrid, System.Windows.Style>(Properties.dataGrid.dragIndicatorStyle, v);
       public static IValue<TMessage, System.Windows.Controls.DataGrid> dropLocationIndicatorStyle(System.Windows.Style v) => new SetValue<TMessage, System.Windows.Controls.DataGrid, System.Windows.Style>(Properties.dataGrid.dropLocationIndicatorStyle, v);
       public static IValue<TMessage, System.Windows.Controls.DataGrid> clipboardCopyMode(System.Windows.Controls.DataGridClipboardCopyMode v) => new SetValue<TMessage, System.Windows.Controls.DataGrid, System.Windows.Controls.DataGridClipboardCopyMode>(Properties.dataGrid.clipboardCopyMode, v);
-      public static IValue<TMessage, System.Windows.Controls.DataGrid> cellsPanelHorizontalOffset(System.Double v) => new SetValue<TMessage, System.Windows.Controls.DataGrid, System.Double>(Properties.dataGrid.cellsPanelHorizontalOffset, v);
 
 
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.DataGrid>[] vs) => new StandardView<TMessage, System.Windows.Controls.DataGrid>(vs);
@@ -2246,9 +2101,7 @@ namespace Galactus.Standard
 
     public partial class dataGridCell : contentControl
     {
-      public static IValue<TMessage, System.Windows.Controls.DataGridCell> column(System.Windows.Controls.DataGridColumn v) => new SetValue<TMessage, System.Windows.Controls.DataGridCell, System.Windows.Controls.DataGridColumn>(Properties.dataGridCell.column, v);
       public static IValue<TMessage, System.Windows.Controls.DataGridCell> isEditing(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.DataGridCell, System.Boolean>(Properties.dataGridCell.isEditing, v);
-      public static IValue<TMessage, System.Windows.Controls.DataGridCell> isReadOnly(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.DataGridCell, System.Boolean>(Properties.dataGridCell.isReadOnly, v);
       public static IValue<TMessage, System.Windows.Controls.DataGridCell> isSelected(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.DataGridCell, System.Boolean>(Properties.dataGridCell.isSelected, v);
 
       public static IValue<TMessage, System.Windows.UIElement> onSelected (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
@@ -2277,10 +2130,6 @@ namespace Galactus.Standard
     {
       public static IValue<TMessage, System.Windows.Controls.Primitives.DataGridColumnHeader> separatorBrush(System.Windows.Media.Brush v) => new SetValue<TMessage, System.Windows.Controls.Primitives.DataGridColumnHeader, System.Windows.Media.Brush>(Properties.dataGridColumnHeader.separatorBrush, v);
       public static IValue<TMessage, System.Windows.Controls.Primitives.DataGridColumnHeader> separatorVisibility(System.Windows.Visibility v) => new SetValue<TMessage, System.Windows.Controls.Primitives.DataGridColumnHeader, System.Windows.Visibility>(Properties.dataGridColumnHeader.separatorVisibility, v);
-      public static IValue<TMessage, System.Windows.Controls.Primitives.DataGridColumnHeader> displayIndex(System.Int32 v) => new SetValue<TMessage, System.Windows.Controls.Primitives.DataGridColumnHeader, System.Int32>(Properties.dataGridColumnHeader.displayIndex, v);
-      public static IValue<TMessage, System.Windows.Controls.Primitives.DataGridColumnHeader> canUserSort(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.DataGridColumnHeader, System.Boolean>(Properties.dataGridColumnHeader.canUserSort, v);
-      public static IValue<TMessage, System.Windows.Controls.Primitives.DataGridColumnHeader> sortDirection(System.Nullable<System.ComponentModel.ListSortDirection> v) => new SetValue<TMessage, System.Windows.Controls.Primitives.DataGridColumnHeader, System.Nullable<System.ComponentModel.ListSortDirection>>(Properties.dataGridColumnHeader.sortDirection, v);
-      public static IValue<TMessage, System.Windows.Controls.Primitives.DataGridColumnHeader> isFrozen(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.DataGridColumnHeader, System.Boolean>(Properties.dataGridColumnHeader.isFrozen, v);
 
 
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.DataGridColumnHeader>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.Primitives.DataGridColumnHeader>(vs, c);
@@ -2312,10 +2161,7 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.DataGridRow> detailsTemplate(System.Windows.DataTemplate v) => new SetValue<TMessage, System.Windows.Controls.DataGridRow, System.Windows.DataTemplate>(Properties.dataGridRow.detailsTemplate, v);
       public static IValue<TMessage, System.Windows.Controls.DataGridRow> detailsTemplateSelector(System.Windows.Controls.DataTemplateSelector v) => new SetValue<TMessage, System.Windows.Controls.DataGridRow, System.Windows.Controls.DataTemplateSelector>(Properties.dataGridRow.detailsTemplateSelector, v);
       public static IValue<TMessage, System.Windows.Controls.DataGridRow> detailsVisibility(System.Windows.Visibility v) => new SetValue<TMessage, System.Windows.Controls.DataGridRow, System.Windows.Visibility>(Properties.dataGridRow.detailsVisibility, v);
-      public static IValue<TMessage, System.Windows.Controls.DataGridRow> alternationIndex(System.Int32 v) => new SetValue<TMessage, System.Windows.Controls.DataGridRow, System.Int32>(Properties.dataGridRow.alternationIndex, v);
       public static IValue<TMessage, System.Windows.Controls.DataGridRow> isSelected(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.DataGridRow, System.Boolean>(Properties.dataGridRow.isSelected, v);
-      public static IValue<TMessage, System.Windows.Controls.DataGridRow> isEditing(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.DataGridRow, System.Boolean>(Properties.dataGridRow.isEditing, v);
-      public static IValue<TMessage, System.Windows.Controls.DataGridRow> isNewItem(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.DataGridRow, System.Boolean>(Properties.dataGridRow.isNewItem, v);
 
       public static IValue<TMessage, System.Windows.UIElement> onSelected (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
         new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.dataGridRow.selected, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
@@ -2329,7 +2175,6 @@ namespace Galactus.Standard
     {
       public static IValue<TMessage, System.Windows.Controls.Primitives.DataGridRowHeader> separatorBrush(System.Windows.Media.Brush v) => new SetValue<TMessage, System.Windows.Controls.Primitives.DataGridRowHeader, System.Windows.Media.Brush>(Properties.dataGridRowHeader.separatorBrush, v);
       public static IValue<TMessage, System.Windows.Controls.Primitives.DataGridRowHeader> separatorVisibility(System.Windows.Visibility v) => new SetValue<TMessage, System.Windows.Controls.Primitives.DataGridRowHeader, System.Windows.Visibility>(Properties.dataGridRowHeader.separatorVisibility, v);
-      public static IValue<TMessage, System.Windows.Controls.Primitives.DataGridRowHeader> isRowSelected(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.DataGridRowHeader, System.Boolean>(Properties.dataGridRowHeader.isRowSelected, v);
 
 
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.DataGridRowHeader>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.Primitives.DataGridRowHeader>(vs, c);
@@ -2372,13 +2217,13 @@ namespace Galactus.Standard
     {
 
 
-      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Decorator>[] vs) => new StandardView<TMessage, System.Windows.Controls.Decorator>(vs);
+      public static DelayedDecoratorView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Decorator>[] vs) => c => new StandardDecoratorView<TMessage, System.Windows.Controls.Decorator>(vs, c);
     }
 
     public partial class dockPanel : panel
     {
       public static IValue<TMessage, System.Windows.Controls.DockPanel> lastChildFill(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.DockPanel, System.Boolean>(Properties.dockPanel.lastChildFill, v);
-      public static IValue<TMessage, System.Windows.Controls.DockPanel> dock(System.Windows.Controls.Dock v) => new SetValue<TMessage, System.Windows.Controls.DockPanel, System.Windows.Controls.Dock>(Properties.dockPanel.dock, v);
+      public static IValue<TMessage, System.Windows.UIElement> dock(System.Windows.Controls.Dock v) => new SetValue<TMessage, System.Windows.UIElement, System.Windows.Controls.Dock>(Properties.dockPanel.dock, v);
 
 
       public static DelayedPanelView<TMessage> View(params IValue<TMessage, System.Windows.Controls.DockPanel>[] vs) => cs => new StandardPanelView<TMessage, System.Windows.Controls.DockPanel>(vs, cs);
@@ -2406,21 +2251,11 @@ namespace Galactus.Standard
     {
       public static IValue<TMessage, System.Windows.Controls.DocumentViewer> horizontalOffset(System.Double v) => new SetValue<TMessage, System.Windows.Controls.DocumentViewer, System.Double>(Properties.documentViewer.horizontalOffset, v);
       public static IValue<TMessage, System.Windows.Controls.DocumentViewer> verticalOffset(System.Double v) => new SetValue<TMessage, System.Windows.Controls.DocumentViewer, System.Double>(Properties.documentViewer.verticalOffset, v);
-      public static IValue<TMessage, System.Windows.Controls.DocumentViewer> extentWidth(System.Double v) => new SetValue<TMessage, System.Windows.Controls.DocumentViewer, System.Double>(Properties.documentViewer.extentWidth, v);
-      public static IValue<TMessage, System.Windows.Controls.DocumentViewer> extentHeight(System.Double v) => new SetValue<TMessage, System.Windows.Controls.DocumentViewer, System.Double>(Properties.documentViewer.extentHeight, v);
-      public static IValue<TMessage, System.Windows.Controls.DocumentViewer> viewportWidth(System.Double v) => new SetValue<TMessage, System.Windows.Controls.DocumentViewer, System.Double>(Properties.documentViewer.viewportWidth, v);
-      public static IValue<TMessage, System.Windows.Controls.DocumentViewer> viewportHeight(System.Double v) => new SetValue<TMessage, System.Windows.Controls.DocumentViewer, System.Double>(Properties.documentViewer.viewportHeight, v);
       public static IValue<TMessage, System.Windows.Controls.DocumentViewer> showPageBorders(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.DocumentViewer, System.Boolean>(Properties.documentViewer.showPageBorders, v);
       public static IValue<TMessage, System.Windows.Controls.DocumentViewer> zoom(System.Double v) => new SetValue<TMessage, System.Windows.Controls.DocumentViewer, System.Double>(Properties.documentViewer.zoom, v);
       public static IValue<TMessage, System.Windows.Controls.DocumentViewer> maxPagesAcross(System.Int32 v) => new SetValue<TMessage, System.Windows.Controls.DocumentViewer, System.Int32>(Properties.documentViewer.maxPagesAcross, v);
       public static IValue<TMessage, System.Windows.Controls.DocumentViewer> verticalPageSpacing(System.Double v) => new SetValue<TMessage, System.Windows.Controls.DocumentViewer, System.Double>(Properties.documentViewer.verticalPageSpacing, v);
       public static IValue<TMessage, System.Windows.Controls.DocumentViewer> horizontalPageSpacing(System.Double v) => new SetValue<TMessage, System.Windows.Controls.DocumentViewer, System.Double>(Properties.documentViewer.horizontalPageSpacing, v);
-      public static IValue<TMessage, System.Windows.Controls.DocumentViewer> canMoveUp(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.DocumentViewer, System.Boolean>(Properties.documentViewer.canMoveUp, v);
-      public static IValue<TMessage, System.Windows.Controls.DocumentViewer> canMoveDown(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.DocumentViewer, System.Boolean>(Properties.documentViewer.canMoveDown, v);
-      public static IValue<TMessage, System.Windows.Controls.DocumentViewer> canMoveLeft(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.DocumentViewer, System.Boolean>(Properties.documentViewer.canMoveLeft, v);
-      public static IValue<TMessage, System.Windows.Controls.DocumentViewer> canMoveRight(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.DocumentViewer, System.Boolean>(Properties.documentViewer.canMoveRight, v);
-      public static IValue<TMessage, System.Windows.Controls.DocumentViewer> canIncreaseZoom(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.DocumentViewer, System.Boolean>(Properties.documentViewer.canIncreaseZoom, v);
-      public static IValue<TMessage, System.Windows.Controls.DocumentViewer> canDecreaseZoom(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.DocumentViewer, System.Boolean>(Properties.documentViewer.canDecreaseZoom, v);
 
 
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.DocumentViewer>[] vs) => new StandardView<TMessage, System.Windows.Controls.DocumentViewer>(vs);
@@ -2429,11 +2264,7 @@ namespace Galactus.Standard
     public partial class documentViewerBase : control
     {
       public static IValue<TMessage, System.Windows.Controls.Primitives.DocumentViewerBase> document(System.Windows.Documents.IDocumentPaginatorSource v) => new SetValue<TMessage, System.Windows.Controls.Primitives.DocumentViewerBase, System.Windows.Documents.IDocumentPaginatorSource>(Properties.documentViewerBase.document, v);
-      public static IValue<TMessage, System.Windows.Controls.Primitives.DocumentViewerBase> pageCount(System.Int32 v) => new SetValue<TMessage, System.Windows.Controls.Primitives.DocumentViewerBase, System.Int32>(Properties.documentViewerBase.pageCount, v);
-      public static IValue<TMessage, System.Windows.Controls.Primitives.DocumentViewerBase> masterPageNumber(System.Int32 v) => new SetValue<TMessage, System.Windows.Controls.Primitives.DocumentViewerBase, System.Int32>(Properties.documentViewerBase.masterPageNumber, v);
-      public static IValue<TMessage, System.Windows.Controls.Primitives.DocumentViewerBase> canGoToPreviousPage(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.DocumentViewerBase, System.Boolean>(Properties.documentViewerBase.canGoToPreviousPage, v);
-      public static IValue<TMessage, System.Windows.Controls.Primitives.DocumentViewerBase> canGoToNextPage(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.DocumentViewerBase, System.Boolean>(Properties.documentViewerBase.canGoToNextPage, v);
-      public static IValue<TMessage, System.Windows.Controls.Primitives.DocumentViewerBase> isMasterPage(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.DocumentViewerBase, System.Boolean>(Properties.documentViewerBase.isMasterPage, v);
+      public static IValue<TMessage, System.Windows.UIElement> isMasterPage(System.Boolean v) => new SetValue<TMessage, System.Windows.UIElement, System.Boolean>(Properties.documentViewerBase.isMasterPage, v);
 
 
     }
@@ -2462,13 +2293,13 @@ namespace Galactus.Standard
     {
       public static IValue<TMessage, System.Windows.Documents.FixedPage> printTicket(System.Object v) => new SetValue<TMessage, System.Windows.Documents.FixedPage, System.Object>(Properties.fixedPage.printTicket, v);
       public static IValue<TMessage, System.Windows.Documents.FixedPage> background(System.Windows.Media.Brush v) => new SetValue<TMessage, System.Windows.Documents.FixedPage, System.Windows.Media.Brush>(Properties.fixedPage.background, v);
-      public static IValue<TMessage, System.Windows.Documents.FixedPage> left(System.Double v) => new SetValue<TMessage, System.Windows.Documents.FixedPage, System.Double>(Properties.fixedPage.left, v);
-      public static IValue<TMessage, System.Windows.Documents.FixedPage> top(System.Double v) => new SetValue<TMessage, System.Windows.Documents.FixedPage, System.Double>(Properties.fixedPage.top, v);
-      public static IValue<TMessage, System.Windows.Documents.FixedPage> right(System.Double v) => new SetValue<TMessage, System.Windows.Documents.FixedPage, System.Double>(Properties.fixedPage.right, v);
-      public static IValue<TMessage, System.Windows.Documents.FixedPage> bottom(System.Double v) => new SetValue<TMessage, System.Windows.Documents.FixedPage, System.Double>(Properties.fixedPage.bottom, v);
+      public static IValue<TMessage, System.Windows.UIElement> left(System.Double v) => new SetValue<TMessage, System.Windows.UIElement, System.Double>(Properties.fixedPage.left, v);
+      public static IValue<TMessage, System.Windows.UIElement> top(System.Double v) => new SetValue<TMessage, System.Windows.UIElement, System.Double>(Properties.fixedPage.top, v);
+      public static IValue<TMessage, System.Windows.UIElement> right(System.Double v) => new SetValue<TMessage, System.Windows.UIElement, System.Double>(Properties.fixedPage.right, v);
+      public static IValue<TMessage, System.Windows.UIElement> bottom(System.Double v) => new SetValue<TMessage, System.Windows.UIElement, System.Double>(Properties.fixedPage.bottom, v);
       public static IValue<TMessage, System.Windows.Documents.FixedPage> contentBox(System.Windows.Rect v) => new SetValue<TMessage, System.Windows.Documents.FixedPage, System.Windows.Rect>(Properties.fixedPage.contentBox, v);
       public static IValue<TMessage, System.Windows.Documents.FixedPage> bleedBox(System.Windows.Rect v) => new SetValue<TMessage, System.Windows.Documents.FixedPage, System.Windows.Rect>(Properties.fixedPage.bleedBox, v);
-      public static IValue<TMessage, System.Windows.Documents.FixedPage> navigateUri(System.Uri v) => new SetValue<TMessage, System.Windows.Documents.FixedPage, System.Uri>(Properties.fixedPage.navigateUri, v);
+      public static IValue<TMessage, System.Windows.UIElement> navigateUri(System.Uri v) => new SetValue<TMessage, System.Windows.UIElement, System.Uri>(Properties.fixedPage.navigateUri, v);
 
 
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Documents.FixedPage>[] vs) => new StandardView<TMessage, System.Windows.Documents.FixedPage>(vs);
@@ -2480,11 +2311,8 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.FlowDocumentPageViewer> maxZoom(System.Double v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentPageViewer, System.Double>(Properties.flowDocumentPageViewer.maxZoom, v);
       public static IValue<TMessage, System.Windows.Controls.FlowDocumentPageViewer> minZoom(System.Double v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentPageViewer, System.Double>(Properties.flowDocumentPageViewer.minZoom, v);
       public static IValue<TMessage, System.Windows.Controls.FlowDocumentPageViewer> zoomIncrement(System.Double v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentPageViewer, System.Double>(Properties.flowDocumentPageViewer.zoomIncrement, v);
-      public static IValue<TMessage, System.Windows.Controls.FlowDocumentPageViewer> canIncreaseZoom(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentPageViewer, System.Boolean>(Properties.flowDocumentPageViewer.canIncreaseZoom, v);
-      public static IValue<TMessage, System.Windows.Controls.FlowDocumentPageViewer> canDecreaseZoom(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentPageViewer, System.Boolean>(Properties.flowDocumentPageViewer.canDecreaseZoom, v);
       public static IValue<TMessage, System.Windows.Controls.FlowDocumentPageViewer> selectionBrush(System.Windows.Media.Brush v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentPageViewer, System.Windows.Media.Brush>(Properties.flowDocumentPageViewer.selectionBrush, v);
       public static IValue<TMessage, System.Windows.Controls.FlowDocumentPageViewer> selectionOpacity(System.Double v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentPageViewer, System.Double>(Properties.flowDocumentPageViewer.selectionOpacity, v);
-      public static IValue<TMessage, System.Windows.Controls.FlowDocumentPageViewer> isSelectionActive(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentPageViewer, System.Boolean>(Properties.flowDocumentPageViewer.isSelectionActive, v);
       public static IValue<TMessage, System.Windows.Controls.FlowDocumentPageViewer> isInactiveSelectionHighlightEnabled(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentPageViewer, System.Boolean>(Properties.flowDocumentPageViewer.isInactiveSelectionHighlightEnabled, v);
 
 
@@ -2497,10 +2325,6 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.FlowDocumentReader> isPageViewEnabled(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentReader, System.Boolean>(Properties.flowDocumentReader.isPageViewEnabled, v);
       public static IValue<TMessage, System.Windows.Controls.FlowDocumentReader> isTwoPageViewEnabled(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentReader, System.Boolean>(Properties.flowDocumentReader.isTwoPageViewEnabled, v);
       public static IValue<TMessage, System.Windows.Controls.FlowDocumentReader> isScrollViewEnabled(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentReader, System.Boolean>(Properties.flowDocumentReader.isScrollViewEnabled, v);
-      public static IValue<TMessage, System.Windows.Controls.FlowDocumentReader> pageCount(System.Int32 v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentReader, System.Int32>(Properties.flowDocumentReader.pageCount, v);
-      public static IValue<TMessage, System.Windows.Controls.FlowDocumentReader> pageNumber(System.Int32 v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentReader, System.Int32>(Properties.flowDocumentReader.pageNumber, v);
-      public static IValue<TMessage, System.Windows.Controls.FlowDocumentReader> canGoToPreviousPage(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentReader, System.Boolean>(Properties.flowDocumentReader.canGoToPreviousPage, v);
-      public static IValue<TMessage, System.Windows.Controls.FlowDocumentReader> canGoToNextPage(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentReader, System.Boolean>(Properties.flowDocumentReader.canGoToNextPage, v);
       public static IValue<TMessage, System.Windows.Controls.FlowDocumentReader> isFindEnabled(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentReader, System.Boolean>(Properties.flowDocumentReader.isFindEnabled, v);
       public static IValue<TMessage, System.Windows.Controls.FlowDocumentReader> isPrintEnabled(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentReader, System.Boolean>(Properties.flowDocumentReader.isPrintEnabled, v);
       public static IValue<TMessage, System.Windows.Controls.FlowDocumentReader> document(System.Windows.Documents.FlowDocument v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentReader, System.Windows.Documents.FlowDocument>(Properties.flowDocumentReader.document, v);
@@ -2508,11 +2332,8 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.FlowDocumentReader> maxZoom(System.Double v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentReader, System.Double>(Properties.flowDocumentReader.maxZoom, v);
       public static IValue<TMessage, System.Windows.Controls.FlowDocumentReader> minZoom(System.Double v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentReader, System.Double>(Properties.flowDocumentReader.minZoom, v);
       public static IValue<TMessage, System.Windows.Controls.FlowDocumentReader> zoomIncrement(System.Double v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentReader, System.Double>(Properties.flowDocumentReader.zoomIncrement, v);
-      public static IValue<TMessage, System.Windows.Controls.FlowDocumentReader> canIncreaseZoom(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentReader, System.Boolean>(Properties.flowDocumentReader.canIncreaseZoom, v);
-      public static IValue<TMessage, System.Windows.Controls.FlowDocumentReader> canDecreaseZoom(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentReader, System.Boolean>(Properties.flowDocumentReader.canDecreaseZoom, v);
       public static IValue<TMessage, System.Windows.Controls.FlowDocumentReader> selectionBrush(System.Windows.Media.Brush v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentReader, System.Windows.Media.Brush>(Properties.flowDocumentReader.selectionBrush, v);
       public static IValue<TMessage, System.Windows.Controls.FlowDocumentReader> selectionOpacity(System.Double v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentReader, System.Double>(Properties.flowDocumentReader.selectionOpacity, v);
-      public static IValue<TMessage, System.Windows.Controls.FlowDocumentReader> isSelectionActive(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentReader, System.Boolean>(Properties.flowDocumentReader.isSelectionActive, v);
       public static IValue<TMessage, System.Windows.Controls.FlowDocumentReader> isInactiveSelectionHighlightEnabled(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentReader, System.Boolean>(Properties.flowDocumentReader.isInactiveSelectionHighlightEnabled, v);
 
 
@@ -2526,15 +2347,12 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.FlowDocumentScrollViewer> maxZoom(System.Double v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentScrollViewer, System.Double>(Properties.flowDocumentScrollViewer.maxZoom, v);
       public static IValue<TMessage, System.Windows.Controls.FlowDocumentScrollViewer> minZoom(System.Double v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentScrollViewer, System.Double>(Properties.flowDocumentScrollViewer.minZoom, v);
       public static IValue<TMessage, System.Windows.Controls.FlowDocumentScrollViewer> zoomIncrement(System.Double v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentScrollViewer, System.Double>(Properties.flowDocumentScrollViewer.zoomIncrement, v);
-      public static IValue<TMessage, System.Windows.Controls.FlowDocumentScrollViewer> canIncreaseZoom(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentScrollViewer, System.Boolean>(Properties.flowDocumentScrollViewer.canIncreaseZoom, v);
-      public static IValue<TMessage, System.Windows.Controls.FlowDocumentScrollViewer> canDecreaseZoom(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentScrollViewer, System.Boolean>(Properties.flowDocumentScrollViewer.canDecreaseZoom, v);
       public static IValue<TMessage, System.Windows.Controls.FlowDocumentScrollViewer> isSelectionEnabled(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentScrollViewer, System.Boolean>(Properties.flowDocumentScrollViewer.isSelectionEnabled, v);
       public static IValue<TMessage, System.Windows.Controls.FlowDocumentScrollViewer> isToolBarVisible(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentScrollViewer, System.Boolean>(Properties.flowDocumentScrollViewer.isToolBarVisible, v);
       public static IValue<TMessage, System.Windows.Controls.FlowDocumentScrollViewer> horizontalScrollBarVisibility(System.Windows.Controls.ScrollBarVisibility v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentScrollViewer, System.Windows.Controls.ScrollBarVisibility>(Properties.flowDocumentScrollViewer.horizontalScrollBarVisibility, v);
       public static IValue<TMessage, System.Windows.Controls.FlowDocumentScrollViewer> verticalScrollBarVisibility(System.Windows.Controls.ScrollBarVisibility v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentScrollViewer, System.Windows.Controls.ScrollBarVisibility>(Properties.flowDocumentScrollViewer.verticalScrollBarVisibility, v);
       public static IValue<TMessage, System.Windows.Controls.FlowDocumentScrollViewer> selectionBrush(System.Windows.Media.Brush v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentScrollViewer, System.Windows.Media.Brush>(Properties.flowDocumentScrollViewer.selectionBrush, v);
       public static IValue<TMessage, System.Windows.Controls.FlowDocumentScrollViewer> selectionOpacity(System.Double v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentScrollViewer, System.Double>(Properties.flowDocumentScrollViewer.selectionOpacity, v);
-      public static IValue<TMessage, System.Windows.Controls.FlowDocumentScrollViewer> isSelectionActive(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentScrollViewer, System.Boolean>(Properties.flowDocumentScrollViewer.isSelectionActive, v);
       public static IValue<TMessage, System.Windows.Controls.FlowDocumentScrollViewer> isInactiveSelectionHighlightEnabled(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.FlowDocumentScrollViewer, System.Boolean>(Properties.flowDocumentScrollViewer.isInactiveSelectionHighlightEnabled, v);
 
 
@@ -2544,10 +2362,6 @@ namespace Galactus.Standard
     public partial class frame : contentControl
     {
       public static IValue<TMessage, System.Windows.Controls.Frame> source(System.Uri v) => new SetValue<TMessage, System.Windows.Controls.Frame, System.Uri>(Properties.frame.source, v);
-      public static IValue<TMessage, System.Windows.Controls.Frame> canGoBack(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Frame, System.Boolean>(Properties.frame.canGoBack, v);
-      public static IValue<TMessage, System.Windows.Controls.Frame> canGoForward(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Frame, System.Boolean>(Properties.frame.canGoForward, v);
-      public static IValue<TMessage, System.Windows.Controls.Frame> backStack(System.Collections.IEnumerable v) => new SetValue<TMessage, System.Windows.Controls.Frame, System.Collections.IEnumerable>(Properties.frame.backStack, v);
-      public static IValue<TMessage, System.Windows.Controls.Frame> forwardStack(System.Collections.IEnumerable v) => new SetValue<TMessage, System.Windows.Controls.Frame, System.Collections.IEnumerable>(Properties.frame.forwardStack, v);
       public static IValue<TMessage, System.Windows.Controls.Frame> navigationUIVisibility(System.Windows.Navigation.NavigationUIVisibility v) => new SetValue<TMessage, System.Windows.Controls.Frame, System.Windows.Navigation.NavigationUIVisibility>(Properties.frame.navigationUIVisibility, v);
       public static IValue<TMessage, System.Windows.Controls.Frame> sandboxExternalContent(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Frame, System.Boolean>(Properties.frame.sandboxExternalContent, v);
       public static IValue<TMessage, System.Windows.Controls.Frame> journalOwnership(System.Windows.Navigation.JournalOwnership v) => new SetValue<TMessage, System.Windows.Controls.Frame, System.Windows.Navigation.JournalOwnership>(Properties.frame.journalOwnership, v);
@@ -2567,8 +2381,6 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.FrameworkElement> name(System.String v) => new SetValue<TMessage, System.Windows.FrameworkElement, System.String>(Properties.frameworkElement.name, v);
       public static IValue<TMessage, System.Windows.FrameworkElement> tag(System.Object v) => new SetValue<TMessage, System.Windows.FrameworkElement, System.Object>(Properties.frameworkElement.tag, v);
       public static IValue<TMessage, System.Windows.FrameworkElement> inputScope(System.Windows.Input.InputScope v) => new SetValue<TMessage, System.Windows.FrameworkElement, System.Windows.Input.InputScope>(Properties.frameworkElement.inputScope, v);
-      public static IValue<TMessage, System.Windows.FrameworkElement> actualWidth(System.Double v) => new SetValue<TMessage, System.Windows.FrameworkElement, System.Double>(Properties.frameworkElement.actualWidth, v);
-      public static IValue<TMessage, System.Windows.FrameworkElement> actualHeight(System.Double v) => new SetValue<TMessage, System.Windows.FrameworkElement, System.Double>(Properties.frameworkElement.actualHeight, v);
       public static IValue<TMessage, System.Windows.FrameworkElement> layoutTransform(System.Windows.Media.Transform v) => new SetValue<TMessage, System.Windows.FrameworkElement, System.Windows.Media.Transform>(Properties.frameworkElement.layoutTransform, v);
       public static IValue<TMessage, System.Windows.FrameworkElement> width(System.Double v) => new SetValue<TMessage, System.Windows.FrameworkElement, System.Double>(Properties.frameworkElement.width, v);
       public static IValue<TMessage, System.Windows.FrameworkElement> minWidth(System.Double v) => new SetValue<TMessage, System.Windows.FrameworkElement, System.Double>(Properties.frameworkElement.minWidth, v);
@@ -2576,7 +2388,7 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.FrameworkElement> height(System.Double v) => new SetValue<TMessage, System.Windows.FrameworkElement, System.Double>(Properties.frameworkElement.height, v);
       public static IValue<TMessage, System.Windows.FrameworkElement> minHeight(System.Double v) => new SetValue<TMessage, System.Windows.FrameworkElement, System.Double>(Properties.frameworkElement.minHeight, v);
       public static IValue<TMessage, System.Windows.FrameworkElement> maxHeight(System.Double v) => new SetValue<TMessage, System.Windows.FrameworkElement, System.Double>(Properties.frameworkElement.maxHeight, v);
-      public static IValue<TMessage, System.Windows.FrameworkElement> flowDirection(System.Windows.FlowDirection v) => new SetValue<TMessage, System.Windows.FrameworkElement, System.Windows.FlowDirection>(Properties.frameworkElement.flowDirection, v);
+      public static IValue<TMessage, System.Windows.UIElement> flowDirection(System.Windows.FlowDirection v) => new SetValue<TMessage, System.Windows.UIElement, System.Windows.FlowDirection>(Properties.frameworkElement.flowDirection, v);
       public static IValue<TMessage, System.Windows.FrameworkElement> margin(System.Windows.Thickness v) => new SetValue<TMessage, System.Windows.FrameworkElement, System.Windows.Thickness>(Properties.frameworkElement.margin, v);
       public static IValue<TMessage, System.Windows.FrameworkElement> horizontalAlignment(System.Windows.HorizontalAlignment v) => new SetValue<TMessage, System.Windows.FrameworkElement, System.Windows.HorizontalAlignment>(Properties.frameworkElement.horizontalAlignment, v);
       public static IValue<TMessage, System.Windows.FrameworkElement> verticalAlignment(System.Windows.VerticalAlignment v) => new SetValue<TMessage, System.Windows.FrameworkElement, System.Windows.VerticalAlignment>(Properties.frameworkElement.verticalAlignment, v);
@@ -2628,11 +2440,11 @@ namespace Galactus.Standard
     public partial class grid : panel
     {
       public static IValue<TMessage, System.Windows.Controls.Grid> showGridLines(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Grid, System.Boolean>(Properties.grid.showGridLines, v);
-      public static IValue<TMessage, System.Windows.Controls.Grid> column(System.Int32 v) => new SetValue<TMessage, System.Windows.Controls.Grid, System.Int32>(Properties.grid.column, v);
-      public static IValue<TMessage, System.Windows.Controls.Grid> row(System.Int32 v) => new SetValue<TMessage, System.Windows.Controls.Grid, System.Int32>(Properties.grid.row, v);
-      public static IValue<TMessage, System.Windows.Controls.Grid> columnSpan(System.Int32 v) => new SetValue<TMessage, System.Windows.Controls.Grid, System.Int32>(Properties.grid.columnSpan, v);
-      public static IValue<TMessage, System.Windows.Controls.Grid> rowSpan(System.Int32 v) => new SetValue<TMessage, System.Windows.Controls.Grid, System.Int32>(Properties.grid.rowSpan, v);
-      public static IValue<TMessage, System.Windows.Controls.Grid> isSharedSizeScope(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Grid, System.Boolean>(Properties.grid.isSharedSizeScope, v);
+      public static IValue<TMessage, System.Windows.UIElement> column(System.Int32 v) => new SetValue<TMessage, System.Windows.UIElement, System.Int32>(Properties.grid.column, v);
+      public static IValue<TMessage, System.Windows.UIElement> row(System.Int32 v) => new SetValue<TMessage, System.Windows.UIElement, System.Int32>(Properties.grid.row, v);
+      public static IValue<TMessage, System.Windows.UIElement> columnSpan(System.Int32 v) => new SetValue<TMessage, System.Windows.UIElement, System.Int32>(Properties.grid.columnSpan, v);
+      public static IValue<TMessage, System.Windows.UIElement> rowSpan(System.Int32 v) => new SetValue<TMessage, System.Windows.UIElement, System.Int32>(Properties.grid.rowSpan, v);
+      public static IValue<TMessage, System.Windows.UIElement> isSharedSizeScope(System.Boolean v) => new SetValue<TMessage, System.Windows.UIElement, System.Boolean>(Properties.grid.isSharedSizeScope, v);
 
 
       public static DelayedPanelView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Grid>[] vs) => cs => new StandardPanelView<TMessage, System.Windows.Controls.Grid>(vs, cs);
@@ -2653,8 +2465,6 @@ namespace Galactus.Standard
 
     public partial class gridViewColumnHeader : buttonBase
     {
-      public static IValue<TMessage, System.Windows.Controls.GridViewColumnHeader> column(System.Windows.Controls.GridViewColumn v) => new SetValue<TMessage, System.Windows.Controls.GridViewColumnHeader, System.Windows.Controls.GridViewColumn>(Properties.gridViewColumnHeader.column, v);
-      public static IValue<TMessage, System.Windows.Controls.GridViewColumnHeader> role(System.Windows.Controls.GridViewColumnHeaderRole v) => new SetValue<TMessage, System.Windows.Controls.GridViewColumnHeader, System.Windows.Controls.GridViewColumnHeaderRole>(Properties.gridViewColumnHeader.role, v);
 
 
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.GridViewColumnHeader>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.GridViewColumnHeader>(vs, c);
@@ -2706,7 +2516,6 @@ namespace Galactus.Standard
     public partial class headeredContentControl : contentControl
     {
       public static IValue<TMessage, System.Windows.Controls.HeaderedContentControl> header(System.Object v) => new SetValue<TMessage, System.Windows.Controls.HeaderedContentControl, System.Object>(Properties.headeredContentControl.header, v);
-      public static IValue<TMessage, System.Windows.Controls.HeaderedContentControl> hasHeader(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.HeaderedContentControl, System.Boolean>(Properties.headeredContentControl.hasHeader, v);
       public static IValue<TMessage, System.Windows.Controls.HeaderedContentControl> headerTemplate(System.Windows.DataTemplate v) => new SetValue<TMessage, System.Windows.Controls.HeaderedContentControl, System.Windows.DataTemplate>(Properties.headeredContentControl.headerTemplate, v);
       public static IValue<TMessage, System.Windows.Controls.HeaderedContentControl> headerTemplateSelector(System.Windows.Controls.DataTemplateSelector v) => new SetValue<TMessage, System.Windows.Controls.HeaderedContentControl, System.Windows.Controls.DataTemplateSelector>(Properties.headeredContentControl.headerTemplateSelector, v);
       public static IValue<TMessage, System.Windows.Controls.HeaderedContentControl> headerStringFormat(System.String v) => new SetValue<TMessage, System.Windows.Controls.HeaderedContentControl, System.String>(Properties.headeredContentControl.headerStringFormat, v);
@@ -2718,7 +2527,6 @@ namespace Galactus.Standard
     public partial class headeredItemsControl : itemsControl
     {
       public static IValue<TMessage, System.Windows.Controls.HeaderedItemsControl> header(System.Object v) => new SetValue<TMessage, System.Windows.Controls.HeaderedItemsControl, System.Object>(Properties.headeredItemsControl.header, v);
-      public static IValue<TMessage, System.Windows.Controls.HeaderedItemsControl> hasHeader(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.HeaderedItemsControl, System.Boolean>(Properties.headeredItemsControl.hasHeader, v);
       public static IValue<TMessage, System.Windows.Controls.HeaderedItemsControl> headerTemplate(System.Windows.DataTemplate v) => new SetValue<TMessage, System.Windows.Controls.HeaderedItemsControl, System.Windows.DataTemplate>(Properties.headeredItemsControl.headerTemplate, v);
       public static IValue<TMessage, System.Windows.Controls.HeaderedItemsControl> headerTemplateSelector(System.Windows.Controls.DataTemplateSelector v) => new SetValue<TMessage, System.Windows.Controls.HeaderedItemsControl, System.Windows.Controls.DataTemplateSelector>(Properties.headeredItemsControl.headerTemplateSelector, v);
       public static IValue<TMessage, System.Windows.Controls.HeaderedItemsControl> headerStringFormat(System.String v) => new SetValue<TMessage, System.Windows.Controls.HeaderedItemsControl, System.String>(Properties.headeredItemsControl.headerStringFormat, v);
@@ -2752,13 +2560,12 @@ namespace Galactus.Standard
     public partial class inkCanvas : frameworkElement
     {
       public static IValue<TMessage, System.Windows.Controls.InkCanvas> background(System.Windows.Media.Brush v) => new SetValue<TMessage, System.Windows.Controls.InkCanvas, System.Windows.Media.Brush>(Properties.inkCanvas.background, v);
-      public static IValue<TMessage, System.Windows.Controls.InkCanvas> top(System.Double v) => new SetValue<TMessage, System.Windows.Controls.InkCanvas, System.Double>(Properties.inkCanvas.top, v);
-      public static IValue<TMessage, System.Windows.Controls.InkCanvas> bottom(System.Double v) => new SetValue<TMessage, System.Windows.Controls.InkCanvas, System.Double>(Properties.inkCanvas.bottom, v);
-      public static IValue<TMessage, System.Windows.Controls.InkCanvas> left(System.Double v) => new SetValue<TMessage, System.Windows.Controls.InkCanvas, System.Double>(Properties.inkCanvas.left, v);
-      public static IValue<TMessage, System.Windows.Controls.InkCanvas> right(System.Double v) => new SetValue<TMessage, System.Windows.Controls.InkCanvas, System.Double>(Properties.inkCanvas.right, v);
+      public static IValue<TMessage, System.Windows.UIElement> top(System.Double v) => new SetValue<TMessage, System.Windows.UIElement, System.Double>(Properties.inkCanvas.top, v);
+      public static IValue<TMessage, System.Windows.UIElement> bottom(System.Double v) => new SetValue<TMessage, System.Windows.UIElement, System.Double>(Properties.inkCanvas.bottom, v);
+      public static IValue<TMessage, System.Windows.UIElement> left(System.Double v) => new SetValue<TMessage, System.Windows.UIElement, System.Double>(Properties.inkCanvas.left, v);
+      public static IValue<TMessage, System.Windows.UIElement> right(System.Double v) => new SetValue<TMessage, System.Windows.UIElement, System.Double>(Properties.inkCanvas.right, v);
       public static IValue<TMessage, System.Windows.Controls.InkCanvas> strokes(System.Windows.Ink.StrokeCollection v) => new SetValue<TMessage, System.Windows.Controls.InkCanvas, System.Windows.Ink.StrokeCollection>(Properties.inkCanvas.strokes, v);
       public static IValue<TMessage, System.Windows.Controls.InkCanvas> defaultDrawingAttributes(System.Windows.Ink.DrawingAttributes v) => new SetValue<TMessage, System.Windows.Controls.InkCanvas, System.Windows.Ink.DrawingAttributes>(Properties.inkCanvas.defaultDrawingAttributes, v);
-      public static IValue<TMessage, System.Windows.Controls.InkCanvas> activeEditingMode(System.Windows.Controls.InkCanvasEditingMode v) => new SetValue<TMessage, System.Windows.Controls.InkCanvas, System.Windows.Controls.InkCanvasEditingMode>(Properties.inkCanvas.activeEditingMode, v);
       public static IValue<TMessage, System.Windows.Controls.InkCanvas> editingMode(System.Windows.Controls.InkCanvasEditingMode v) => new SetValue<TMessage, System.Windows.Controls.InkCanvas, System.Windows.Controls.InkCanvasEditingMode>(Properties.inkCanvas.editingMode, v);
       public static IValue<TMessage, System.Windows.Controls.InkCanvas> editingModeInverted(System.Windows.Controls.InkCanvasEditingMode v) => new SetValue<TMessage, System.Windows.Controls.InkCanvas, System.Windows.Controls.InkCanvasEditingMode>(Properties.inkCanvas.editingModeInverted, v);
 
@@ -2789,7 +2596,6 @@ namespace Galactus.Standard
     public partial class itemsControl : control
     {
       public static IValue<TMessage, System.Windows.Controls.ItemsControl> itemsSource(System.Collections.IEnumerable v) => new SetValue<TMessage, System.Windows.Controls.ItemsControl, System.Collections.IEnumerable>(Properties.itemsControl.itemsSource, v);
-      public static IValue<TMessage, System.Windows.Controls.ItemsControl> hasItems(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.ItemsControl, System.Boolean>(Properties.itemsControl.hasItems, v);
       public static IValue<TMessage, System.Windows.Controls.ItemsControl> displayMemberPath(System.String v) => new SetValue<TMessage, System.Windows.Controls.ItemsControl, System.String>(Properties.itemsControl.displayMemberPath, v);
       public static IValue<TMessage, System.Windows.Controls.ItemsControl> itemTemplate(System.Windows.DataTemplate v) => new SetValue<TMessage, System.Windows.Controls.ItemsControl, System.Windows.DataTemplate>(Properties.itemsControl.itemTemplate, v);
       public static IValue<TMessage, System.Windows.Controls.ItemsControl> itemTemplateSelector(System.Windows.Controls.DataTemplateSelector v) => new SetValue<TMessage, System.Windows.Controls.ItemsControl, System.Windows.Controls.DataTemplateSelector>(Properties.itemsControl.itemTemplateSelector, v);
@@ -2798,10 +2604,8 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.ItemsControl> itemContainerStyle(System.Windows.Style v) => new SetValue<TMessage, System.Windows.Controls.ItemsControl, System.Windows.Style>(Properties.itemsControl.itemContainerStyle, v);
       public static IValue<TMessage, System.Windows.Controls.ItemsControl> itemContainerStyleSelector(System.Windows.Controls.StyleSelector v) => new SetValue<TMessage, System.Windows.Controls.ItemsControl, System.Windows.Controls.StyleSelector>(Properties.itemsControl.itemContainerStyleSelector, v);
       public static IValue<TMessage, System.Windows.Controls.ItemsControl> itemsPanel(System.Windows.Controls.ItemsPanelTemplate v) => new SetValue<TMessage, System.Windows.Controls.ItemsControl, System.Windows.Controls.ItemsPanelTemplate>(Properties.itemsControl.itemsPanel, v);
-      public static IValue<TMessage, System.Windows.Controls.ItemsControl> isGrouping(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.ItemsControl, System.Boolean>(Properties.itemsControl.isGrouping, v);
       public static IValue<TMessage, System.Windows.Controls.ItemsControl> groupStyleSelector(System.Windows.Controls.GroupStyleSelector v) => new SetValue<TMessage, System.Windows.Controls.ItemsControl, System.Windows.Controls.GroupStyleSelector>(Properties.itemsControl.groupStyleSelector, v);
       public static IValue<TMessage, System.Windows.Controls.ItemsControl> alternationCount(System.Int32 v) => new SetValue<TMessage, System.Windows.Controls.ItemsControl, System.Int32>(Properties.itemsControl.alternationCount, v);
-      public static IValue<TMessage, System.Windows.Controls.ItemsControl> alternationIndex(System.Int32 v) => new SetValue<TMessage, System.Windows.Controls.ItemsControl, System.Int32>(Properties.itemsControl.alternationIndex, v);
       public static IValue<TMessage, System.Windows.Controls.ItemsControl> isTextSearchEnabled(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.ItemsControl, System.Boolean>(Properties.itemsControl.isTextSearchEnabled, v);
       public static IValue<TMessage, System.Windows.Controls.ItemsControl> isTextSearchCaseSensitive(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.ItemsControl, System.Boolean>(Properties.itemsControl.isTextSearchCaseSensitive, v);
 
@@ -2838,7 +2642,6 @@ namespace Galactus.Standard
     public partial class listBox : selector
     {
       public static IValue<TMessage, System.Windows.Controls.ListBox> selectionMode(System.Windows.Controls.SelectionMode v) => new SetValue<TMessage, System.Windows.Controls.ListBox, System.Windows.Controls.SelectionMode>(Properties.listBox.selectionMode, v);
-      public static IValue<TMessage, System.Windows.Controls.ListBox> selectedItems(System.Collections.IList v) => new SetValue<TMessage, System.Windows.Controls.ListBox, System.Collections.IList>(Properties.listBox.selectedItems, v);
 
 
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.ListBox>[] vs) => new StandardView<TMessage, System.Windows.Controls.ListBox>(vs);
@@ -2921,15 +2724,11 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.MenuItem> commandParameter(System.Object v) => new SetValue<TMessage, System.Windows.Controls.MenuItem, System.Object>(Properties.menuItem.commandParameter, v);
       public static IValue<TMessage, System.Windows.Controls.MenuItem> commandTarget(System.Windows.IInputElement v) => new SetValue<TMessage, System.Windows.Controls.MenuItem, System.Windows.IInputElement>(Properties.menuItem.commandTarget, v);
       public static IValue<TMessage, System.Windows.Controls.MenuItem> isSubmenuOpen(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.MenuItem, System.Boolean>(Properties.menuItem.isSubmenuOpen, v);
-      public static IValue<TMessage, System.Windows.Controls.MenuItem> role(System.Windows.Controls.MenuItemRole v) => new SetValue<TMessage, System.Windows.Controls.MenuItem, System.Windows.Controls.MenuItemRole>(Properties.menuItem.role, v);
       public static IValue<TMessage, System.Windows.Controls.MenuItem> isCheckable(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.MenuItem, System.Boolean>(Properties.menuItem.isCheckable, v);
-      public static IValue<TMessage, System.Windows.Controls.MenuItem> isPressed(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.MenuItem, System.Boolean>(Properties.menuItem.isPressed, v);
-      public static IValue<TMessage, System.Windows.Controls.MenuItem> isHighlighted(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.MenuItem, System.Boolean>(Properties.menuItem.isHighlighted, v);
       public static IValue<TMessage, System.Windows.Controls.MenuItem> isChecked(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.MenuItem, System.Boolean>(Properties.menuItem.isChecked, v);
       public static IValue<TMessage, System.Windows.Controls.MenuItem> staysOpenOnClick(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.MenuItem, System.Boolean>(Properties.menuItem.staysOpenOnClick, v);
       public static IValue<TMessage, System.Windows.Controls.MenuItem> inputGestureText(System.String v) => new SetValue<TMessage, System.Windows.Controls.MenuItem, System.String>(Properties.menuItem.inputGestureText, v);
       public static IValue<TMessage, System.Windows.Controls.MenuItem> icon(System.Object v) => new SetValue<TMessage, System.Windows.Controls.MenuItem, System.Object>(Properties.menuItem.icon, v);
-      public static IValue<TMessage, System.Windows.Controls.MenuItem> isSuspendingPopupAnimation(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.MenuItem, System.Boolean>(Properties.menuItem.isSuspendingPopupAnimation, v);
       public static IValue<TMessage, System.Windows.Controls.MenuItem> itemContainerTemplateSelector(System.Windows.Controls.ItemContainerTemplateSelector v) => new SetValue<TMessage, System.Windows.Controls.MenuItem, System.Windows.Controls.ItemContainerTemplateSelector>(Properties.menuItem.itemContainerTemplateSelector, v);
       public static IValue<TMessage, System.Windows.Controls.MenuItem> usesItemContainerTemplate(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.MenuItem, System.Boolean>(Properties.menuItem.usesItemContainerTemplate, v);
 
@@ -2957,10 +2756,6 @@ namespace Galactus.Standard
     {
       public static IValue<TMessage, System.Windows.Navigation.NavigationWindow> sandboxExternalContent(System.Boolean v) => new SetValue<TMessage, System.Windows.Navigation.NavigationWindow, System.Boolean>(Properties.navigationWindow.sandboxExternalContent, v);
       public static IValue<TMessage, System.Windows.Navigation.NavigationWindow> showsNavigationUI(System.Boolean v) => new SetValue<TMessage, System.Windows.Navigation.NavigationWindow, System.Boolean>(Properties.navigationWindow.showsNavigationUI, v);
-      public static IValue<TMessage, System.Windows.Navigation.NavigationWindow> backStack(System.Collections.IEnumerable v) => new SetValue<TMessage, System.Windows.Navigation.NavigationWindow, System.Collections.IEnumerable>(Properties.navigationWindow.backStack, v);
-      public static IValue<TMessage, System.Windows.Navigation.NavigationWindow> forwardStack(System.Collections.IEnumerable v) => new SetValue<TMessage, System.Windows.Navigation.NavigationWindow, System.Collections.IEnumerable>(Properties.navigationWindow.forwardStack, v);
-      public static IValue<TMessage, System.Windows.Navigation.NavigationWindow> canGoBack(System.Boolean v) => new SetValue<TMessage, System.Windows.Navigation.NavigationWindow, System.Boolean>(Properties.navigationWindow.canGoBack, v);
-      public static IValue<TMessage, System.Windows.Navigation.NavigationWindow> canGoForward(System.Boolean v) => new SetValue<TMessage, System.Windows.Navigation.NavigationWindow, System.Boolean>(Properties.navigationWindow.canGoForward, v);
       public static IValue<TMessage, System.Windows.Navigation.NavigationWindow> source(System.Uri v) => new SetValue<TMessage, System.Windows.Navigation.NavigationWindow, System.Uri>(Properties.navigationWindow.source, v);
 
 
@@ -3000,7 +2795,7 @@ namespace Galactus.Standard
     {
       public static IValue<TMessage, System.Windows.Controls.Panel> background(System.Windows.Media.Brush v) => new SetValue<TMessage, System.Windows.Controls.Panel, System.Windows.Media.Brush>(Properties.panel.background, v);
       public static IValue<TMessage, System.Windows.Controls.Panel> isItemsHost(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Panel, System.Boolean>(Properties.panel.isItemsHost, v);
-      public static IValue<TMessage, System.Windows.Controls.Panel> zIndex(System.Int32 v) => new SetValue<TMessage, System.Windows.Controls.Panel, System.Int32>(Properties.panel.zIndex, v);
+      public static IValue<TMessage, System.Windows.UIElement> zIndex(System.Int32 v) => new SetValue<TMessage, System.Windows.UIElement, System.Int32>(Properties.panel.zIndex, v);
 
 
     }
@@ -3012,7 +2807,6 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.PasswordBox> selectionBrush(System.Windows.Media.Brush v) => new SetValue<TMessage, System.Windows.Controls.PasswordBox, System.Windows.Media.Brush>(Properties.passwordBox.selectionBrush, v);
       public static IValue<TMessage, System.Windows.Controls.PasswordBox> selectionOpacity(System.Double v) => new SetValue<TMessage, System.Windows.Controls.PasswordBox, System.Double>(Properties.passwordBox.selectionOpacity, v);
       public static IValue<TMessage, System.Windows.Controls.PasswordBox> caretBrush(System.Windows.Media.Brush v) => new SetValue<TMessage, System.Windows.Controls.PasswordBox, System.Windows.Media.Brush>(Properties.passwordBox.caretBrush, v);
-      public static IValue<TMessage, System.Windows.Controls.PasswordBox> isSelectionActive(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.PasswordBox, System.Boolean>(Properties.passwordBox.isSelectionActive, v);
       public static IValue<TMessage, System.Windows.Controls.PasswordBox> isInactiveSelectionHighlightEnabled(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.PasswordBox, System.Boolean>(Properties.passwordBox.isInactiveSelectionHighlightEnabled, v);
 
       public static IValue<TMessage, System.Windows.UIElement> onPasswordChanged (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
@@ -3060,7 +2854,6 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.Primitives.Popup> placementRectangle(System.Windows.Rect v) => new SetValue<TMessage, System.Windows.Controls.Primitives.Popup, System.Windows.Rect>(Properties.popup.placementRectangle, v);
       public static IValue<TMessage, System.Windows.Controls.Primitives.Popup> popupAnimation(System.Windows.Controls.Primitives.PopupAnimation v) => new SetValue<TMessage, System.Windows.Controls.Primitives.Popup, System.Windows.Controls.Primitives.PopupAnimation>(Properties.popup.popupAnimation, v);
       public static IValue<TMessage, System.Windows.Controls.Primitives.Popup> allowsTransparency(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.Popup, System.Boolean>(Properties.popup.allowsTransparency, v);
-      public static IValue<TMessage, System.Windows.Controls.Primitives.Popup> hasDropShadow(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.Popup, System.Boolean>(Properties.popup.hasDropShadow, v);
 
 
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.Popup>[] vs) => new StandardView<TMessage, System.Windows.Controls.Primitives.Popup>(vs);
@@ -3150,25 +2943,13 @@ namespace Galactus.Standard
 
     public partial class scrollViewer : contentControl
     {
-      public static IValue<TMessage, System.Windows.Controls.ScrollViewer> canContentScroll(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.ScrollViewer, System.Boolean>(Properties.scrollViewer.canContentScroll, v);
-      public static IValue<TMessage, System.Windows.Controls.ScrollViewer> horizontalScrollBarVisibility(System.Windows.Controls.ScrollBarVisibility v) => new SetValue<TMessage, System.Windows.Controls.ScrollViewer, System.Windows.Controls.ScrollBarVisibility>(Properties.scrollViewer.horizontalScrollBarVisibility, v);
-      public static IValue<TMessage, System.Windows.Controls.ScrollViewer> verticalScrollBarVisibility(System.Windows.Controls.ScrollBarVisibility v) => new SetValue<TMessage, System.Windows.Controls.ScrollViewer, System.Windows.Controls.ScrollBarVisibility>(Properties.scrollViewer.verticalScrollBarVisibility, v);
-      public static IValue<TMessage, System.Windows.Controls.ScrollViewer> computedHorizontalScrollBarVisibility(System.Windows.Visibility v) => new SetValue<TMessage, System.Windows.Controls.ScrollViewer, System.Windows.Visibility>(Properties.scrollViewer.computedHorizontalScrollBarVisibility, v);
-      public static IValue<TMessage, System.Windows.Controls.ScrollViewer> computedVerticalScrollBarVisibility(System.Windows.Visibility v) => new SetValue<TMessage, System.Windows.Controls.ScrollViewer, System.Windows.Visibility>(Properties.scrollViewer.computedVerticalScrollBarVisibility, v);
-      public static IValue<TMessage, System.Windows.Controls.ScrollViewer> verticalOffset(System.Double v) => new SetValue<TMessage, System.Windows.Controls.ScrollViewer, System.Double>(Properties.scrollViewer.verticalOffset, v);
-      public static IValue<TMessage, System.Windows.Controls.ScrollViewer> horizontalOffset(System.Double v) => new SetValue<TMessage, System.Windows.Controls.ScrollViewer, System.Double>(Properties.scrollViewer.horizontalOffset, v);
-      public static IValue<TMessage, System.Windows.Controls.ScrollViewer> contentVerticalOffset(System.Double v) => new SetValue<TMessage, System.Windows.Controls.ScrollViewer, System.Double>(Properties.scrollViewer.contentVerticalOffset, v);
-      public static IValue<TMessage, System.Windows.Controls.ScrollViewer> contentHorizontalOffset(System.Double v) => new SetValue<TMessage, System.Windows.Controls.ScrollViewer, System.Double>(Properties.scrollViewer.contentHorizontalOffset, v);
-      public static IValue<TMessage, System.Windows.Controls.ScrollViewer> extentWidth(System.Double v) => new SetValue<TMessage, System.Windows.Controls.ScrollViewer, System.Double>(Properties.scrollViewer.extentWidth, v);
-      public static IValue<TMessage, System.Windows.Controls.ScrollViewer> extentHeight(System.Double v) => new SetValue<TMessage, System.Windows.Controls.ScrollViewer, System.Double>(Properties.scrollViewer.extentHeight, v);
-      public static IValue<TMessage, System.Windows.Controls.ScrollViewer> scrollableWidth(System.Double v) => new SetValue<TMessage, System.Windows.Controls.ScrollViewer, System.Double>(Properties.scrollViewer.scrollableWidth, v);
-      public static IValue<TMessage, System.Windows.Controls.ScrollViewer> scrollableHeight(System.Double v) => new SetValue<TMessage, System.Windows.Controls.ScrollViewer, System.Double>(Properties.scrollViewer.scrollableHeight, v);
-      public static IValue<TMessage, System.Windows.Controls.ScrollViewer> viewportWidth(System.Double v) => new SetValue<TMessage, System.Windows.Controls.ScrollViewer, System.Double>(Properties.scrollViewer.viewportWidth, v);
-      public static IValue<TMessage, System.Windows.Controls.ScrollViewer> viewportHeight(System.Double v) => new SetValue<TMessage, System.Windows.Controls.ScrollViewer, System.Double>(Properties.scrollViewer.viewportHeight, v);
-      public static IValue<TMessage, System.Windows.Controls.ScrollViewer> isDeferredScrollingEnabled(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.ScrollViewer, System.Boolean>(Properties.scrollViewer.isDeferredScrollingEnabled, v);
-      public static IValue<TMessage, System.Windows.Controls.ScrollViewer> panningMode(System.Windows.Controls.PanningMode v) => new SetValue<TMessage, System.Windows.Controls.ScrollViewer, System.Windows.Controls.PanningMode>(Properties.scrollViewer.panningMode, v);
-      public static IValue<TMessage, System.Windows.Controls.ScrollViewer> panningDeceleration(System.Double v) => new SetValue<TMessage, System.Windows.Controls.ScrollViewer, System.Double>(Properties.scrollViewer.panningDeceleration, v);
-      public static IValue<TMessage, System.Windows.Controls.ScrollViewer> panningRatio(System.Double v) => new SetValue<TMessage, System.Windows.Controls.ScrollViewer, System.Double>(Properties.scrollViewer.panningRatio, v);
+      public static IValue<TMessage, System.Windows.UIElement> canContentScroll(System.Boolean v) => new SetValue<TMessage, System.Windows.UIElement, System.Boolean>(Properties.scrollViewer.canContentScroll, v);
+      public static IValue<TMessage, System.Windows.UIElement> horizontalScrollBarVisibility(System.Windows.Controls.ScrollBarVisibility v) => new SetValue<TMessage, System.Windows.UIElement, System.Windows.Controls.ScrollBarVisibility>(Properties.scrollViewer.horizontalScrollBarVisibility, v);
+      public static IValue<TMessage, System.Windows.UIElement> verticalScrollBarVisibility(System.Windows.Controls.ScrollBarVisibility v) => new SetValue<TMessage, System.Windows.UIElement, System.Windows.Controls.ScrollBarVisibility>(Properties.scrollViewer.verticalScrollBarVisibility, v);
+      public static IValue<TMessage, System.Windows.UIElement> isDeferredScrollingEnabled(System.Boolean v) => new SetValue<TMessage, System.Windows.UIElement, System.Boolean>(Properties.scrollViewer.isDeferredScrollingEnabled, v);
+      public static IValue<TMessage, System.Windows.UIElement> panningMode(System.Windows.Controls.PanningMode v) => new SetValue<TMessage, System.Windows.UIElement, System.Windows.Controls.PanningMode>(Properties.scrollViewer.panningMode, v);
+      public static IValue<TMessage, System.Windows.UIElement> panningDeceleration(System.Double v) => new SetValue<TMessage, System.Windows.UIElement, System.Double>(Properties.scrollViewer.panningDeceleration, v);
+      public static IValue<TMessage, System.Windows.UIElement> panningRatio(System.Double v) => new SetValue<TMessage, System.Windows.UIElement, System.Double>(Properties.scrollViewer.panningRatio, v);
 
       public static IValue<TMessage, System.Windows.UIElement> onScrollChanged (OnChange<TMessage, System.Windows.UIElement, System.Windows.Controls.ScrollChangedEventArgs> onChange) =>
         new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.Controls.ScrollChangedEventHandler, System.Windows.Controls.ScrollChangedEventArgs> (Events.scrollViewer.scrollChanged, h => (System.Windows.Controls.ScrollChangedEventHandler)h.Invoke, onChange);
@@ -3178,7 +2959,7 @@ namespace Galactus.Standard
 
     public partial class selectiveScrollingGrid : grid
     {
-      public static IValue<TMessage, System.Windows.Controls.Primitives.SelectiveScrollingGrid> selectiveScrollingOrientation(System.Windows.Controls.SelectiveScrollingOrientation v) => new SetValue<TMessage, System.Windows.Controls.Primitives.SelectiveScrollingGrid, System.Windows.Controls.SelectiveScrollingOrientation>(Properties.selectiveScrollingGrid.selectiveScrollingOrientation, v);
+      public static IValue<TMessage, System.Windows.UIElement> selectiveScrollingOrientation(System.Windows.Controls.SelectiveScrollingOrientation v) => new SetValue<TMessage, System.Windows.UIElement, System.Windows.Controls.SelectiveScrollingOrientation>(Properties.selectiveScrollingGrid.selectiveScrollingOrientation, v);
 
 
       public static DelayedPanelView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.SelectiveScrollingGrid>[] vs) => cs => new StandardPanelView<TMessage, System.Windows.Controls.Primitives.SelectiveScrollingGrid>(vs, cs);
@@ -3186,8 +2967,7 @@ namespace Galactus.Standard
 
     public partial class selector : itemsControl
     {
-      public static IValue<TMessage, System.Windows.Controls.Primitives.Selector> isSelectionActive(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.Selector, System.Boolean>(Properties.selector.isSelectionActive, v);
-      public static IValue<TMessage, System.Windows.Controls.Primitives.Selector> isSelected(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.Selector, System.Boolean>(Properties.selector.isSelected, v);
+      public static IValue<TMessage, System.Windows.UIElement> isSelected(System.Boolean v) => new SetValue<TMessage, System.Windows.UIElement, System.Boolean>(Properties.selector.isSelected, v);
       public static IValue<TMessage, System.Windows.Controls.Primitives.Selector> isSynchronizedWithCurrentItem(System.Nullable<System.Boolean> v) => new SetValue<TMessage, System.Windows.Controls.Primitives.Selector, System.Nullable<System.Boolean>>(Properties.selector.isSynchronizedWithCurrentItem, v);
       public static IValue<TMessage, System.Windows.Controls.Primitives.Selector> selectedIndex(System.Int32 v) => new SetValue<TMessage, System.Windows.Controls.Primitives.Selector, System.Int32>(Properties.selector.selectedIndex, v);
       public static IValue<TMessage, System.Windows.Controls.Primitives.Selector> selectedItem(System.Object v) => new SetValue<TMessage, System.Windows.Controls.Primitives.Selector, System.Object>(Properties.selector.selectedItem, v);
@@ -3274,17 +3054,14 @@ namespace Galactus.Standard
 
     public partial class stickyNoteControl : control
     {
-      public static IValue<TMessage, System.Windows.Controls.StickyNoteControl> author(System.String v) => new SetValue<TMessage, System.Windows.Controls.StickyNoteControl, System.String>(Properties.stickyNoteControl.author, v);
       public static IValue<TMessage, System.Windows.Controls.StickyNoteControl> isExpanded(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.StickyNoteControl, System.Boolean>(Properties.stickyNoteControl.isExpanded, v);
       public static IValue<TMessage, System.Windows.Controls.StickyNoteControl> isActive(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.StickyNoteControl, System.Boolean>(Properties.stickyNoteControl.isActive, v);
-      public static IValue<TMessage, System.Windows.Controls.StickyNoteControl> isMouseOverAnchor(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.StickyNoteControl, System.Boolean>(Properties.stickyNoteControl.isMouseOverAnchor, v);
       public static IValue<TMessage, System.Windows.Controls.StickyNoteControl> captionFontFamily(System.Windows.Media.FontFamily v) => new SetValue<TMessage, System.Windows.Controls.StickyNoteControl, System.Windows.Media.FontFamily>(Properties.stickyNoteControl.captionFontFamily, v);
       public static IValue<TMessage, System.Windows.Controls.StickyNoteControl> captionFontSize(System.Double v) => new SetValue<TMessage, System.Windows.Controls.StickyNoteControl, System.Double>(Properties.stickyNoteControl.captionFontSize, v);
       public static IValue<TMessage, System.Windows.Controls.StickyNoteControl> captionFontStretch(System.Windows.FontStretch v) => new SetValue<TMessage, System.Windows.Controls.StickyNoteControl, System.Windows.FontStretch>(Properties.stickyNoteControl.captionFontStretch, v);
       public static IValue<TMessage, System.Windows.Controls.StickyNoteControl> captionFontStyle(System.Windows.FontStyle v) => new SetValue<TMessage, System.Windows.Controls.StickyNoteControl, System.Windows.FontStyle>(Properties.stickyNoteControl.captionFontStyle, v);
       public static IValue<TMessage, System.Windows.Controls.StickyNoteControl> captionFontWeight(System.Windows.FontWeight v) => new SetValue<TMessage, System.Windows.Controls.StickyNoteControl, System.Windows.FontWeight>(Properties.stickyNoteControl.captionFontWeight, v);
       public static IValue<TMessage, System.Windows.Controls.StickyNoteControl> penWidth(System.Double v) => new SetValue<TMessage, System.Windows.Controls.StickyNoteControl, System.Double>(Properties.stickyNoteControl.penWidth, v);
-      public static IValue<TMessage, System.Windows.Controls.StickyNoteControl> stickyNoteType(System.Windows.Controls.StickyNoteType v) => new SetValue<TMessage, System.Windows.Controls.StickyNoteControl, System.Windows.Controls.StickyNoteType>(Properties.stickyNoteControl.stickyNoteType, v);
 
 
     }
@@ -3292,10 +3069,6 @@ namespace Galactus.Standard
     public partial class tabControl : selector
     {
       public static IValue<TMessage, System.Windows.Controls.TabControl> tabStripPlacement(System.Windows.Controls.Dock v) => new SetValue<TMessage, System.Windows.Controls.TabControl, System.Windows.Controls.Dock>(Properties.tabControl.tabStripPlacement, v);
-      public static IValue<TMessage, System.Windows.Controls.TabControl> selectedContent(System.Object v) => new SetValue<TMessage, System.Windows.Controls.TabControl, System.Object>(Properties.tabControl.selectedContent, v);
-      public static IValue<TMessage, System.Windows.Controls.TabControl> selectedContentTemplate(System.Windows.DataTemplate v) => new SetValue<TMessage, System.Windows.Controls.TabControl, System.Windows.DataTemplate>(Properties.tabControl.selectedContentTemplate, v);
-      public static IValue<TMessage, System.Windows.Controls.TabControl> selectedContentTemplateSelector(System.Windows.Controls.DataTemplateSelector v) => new SetValue<TMessage, System.Windows.Controls.TabControl, System.Windows.Controls.DataTemplateSelector>(Properties.tabControl.selectedContentTemplateSelector, v);
-      public static IValue<TMessage, System.Windows.Controls.TabControl> selectedContentStringFormat(System.String v) => new SetValue<TMessage, System.Windows.Controls.TabControl, System.String>(Properties.tabControl.selectedContentStringFormat, v);
       public static IValue<TMessage, System.Windows.Controls.TabControl> contentTemplate(System.Windows.DataTemplate v) => new SetValue<TMessage, System.Windows.Controls.TabControl, System.Windows.DataTemplate>(Properties.tabControl.contentTemplate, v);
       public static IValue<TMessage, System.Windows.Controls.TabControl> contentTemplateSelector(System.Windows.Controls.DataTemplateSelector v) => new SetValue<TMessage, System.Windows.Controls.TabControl, System.Windows.Controls.DataTemplateSelector>(Properties.tabControl.contentTemplateSelector, v);
       public static IValue<TMessage, System.Windows.Controls.TabControl> contentStringFormat(System.String v) => new SetValue<TMessage, System.Windows.Controls.TabControl, System.String>(Properties.tabControl.contentStringFormat, v);
@@ -3307,7 +3080,6 @@ namespace Galactus.Standard
     public partial class tabItem : headeredContentControl
     {
       public static IValue<TMessage, System.Windows.Controls.TabItem> isSelected(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.TabItem, System.Boolean>(Properties.tabItem.isSelected, v);
-      public static IValue<TMessage, System.Windows.Controls.TabItem> tabStripPlacement(System.Windows.Controls.Dock v) => new SetValue<TMessage, System.Windows.Controls.TabItem, System.Windows.Controls.Dock>(Properties.tabItem.tabStripPlacement, v);
 
 
       public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.TabItem>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.TabItem>(vs, c);
@@ -3322,21 +3094,21 @@ namespace Galactus.Standard
 
     public partial class textBlock : frameworkElement
     {
-      public static IValue<TMessage, System.Windows.Controls.TextBlock> baselineOffset(System.Double v) => new SetValue<TMessage, System.Windows.Controls.TextBlock, System.Double>(Properties.textBlock.baselineOffset, v);
+      public static IValue<TMessage, System.Windows.UIElement> baselineOffset(System.Double v) => new SetValue<TMessage, System.Windows.UIElement, System.Double>(Properties.textBlock.baselineOffset, v);
       public static IValue<TMessage, System.Windows.Controls.TextBlock> text(System.String v) => new SetValue<TMessage, System.Windows.Controls.TextBlock, System.String>(Properties.textBlock.text, v);
-      public static IValue<TMessage, System.Windows.Controls.TextBlock> fontFamily(System.Windows.Media.FontFamily v) => new SetValue<TMessage, System.Windows.Controls.TextBlock, System.Windows.Media.FontFamily>(Properties.textBlock.fontFamily, v);
-      public static IValue<TMessage, System.Windows.Controls.TextBlock> fontStyle(System.Windows.FontStyle v) => new SetValue<TMessage, System.Windows.Controls.TextBlock, System.Windows.FontStyle>(Properties.textBlock.fontStyle, v);
-      public static IValue<TMessage, System.Windows.Controls.TextBlock> fontWeight(System.Windows.FontWeight v) => new SetValue<TMessage, System.Windows.Controls.TextBlock, System.Windows.FontWeight>(Properties.textBlock.fontWeight, v);
-      public static IValue<TMessage, System.Windows.Controls.TextBlock> fontStretch(System.Windows.FontStretch v) => new SetValue<TMessage, System.Windows.Controls.TextBlock, System.Windows.FontStretch>(Properties.textBlock.fontStretch, v);
-      public static IValue<TMessage, System.Windows.Controls.TextBlock> fontSize(System.Double v) => new SetValue<TMessage, System.Windows.Controls.TextBlock, System.Double>(Properties.textBlock.fontSize, v);
-      public static IValue<TMessage, System.Windows.Controls.TextBlock> foreground(System.Windows.Media.Brush v) => new SetValue<TMessage, System.Windows.Controls.TextBlock, System.Windows.Media.Brush>(Properties.textBlock.foreground, v);
+      public static IValue<TMessage, System.Windows.UIElement> fontFamily(System.Windows.Media.FontFamily v) => new SetValue<TMessage, System.Windows.UIElement, System.Windows.Media.FontFamily>(Properties.textBlock.fontFamily, v);
+      public static IValue<TMessage, System.Windows.UIElement> fontStyle(System.Windows.FontStyle v) => new SetValue<TMessage, System.Windows.UIElement, System.Windows.FontStyle>(Properties.textBlock.fontStyle, v);
+      public static IValue<TMessage, System.Windows.UIElement> fontWeight(System.Windows.FontWeight v) => new SetValue<TMessage, System.Windows.UIElement, System.Windows.FontWeight>(Properties.textBlock.fontWeight, v);
+      public static IValue<TMessage, System.Windows.UIElement> fontStretch(System.Windows.FontStretch v) => new SetValue<TMessage, System.Windows.UIElement, System.Windows.FontStretch>(Properties.textBlock.fontStretch, v);
+      public static IValue<TMessage, System.Windows.UIElement> fontSize(System.Double v) => new SetValue<TMessage, System.Windows.UIElement, System.Double>(Properties.textBlock.fontSize, v);
+      public static IValue<TMessage, System.Windows.UIElement> foreground(System.Windows.Media.Brush v) => new SetValue<TMessage, System.Windows.UIElement, System.Windows.Media.Brush>(Properties.textBlock.foreground, v);
       public static IValue<TMessage, System.Windows.Controls.TextBlock> background(System.Windows.Media.Brush v) => new SetValue<TMessage, System.Windows.Controls.TextBlock, System.Windows.Media.Brush>(Properties.textBlock.background, v);
       public static IValue<TMessage, System.Windows.Controls.TextBlock> textDecorations(System.Windows.TextDecorationCollection v) => new SetValue<TMessage, System.Windows.Controls.TextBlock, System.Windows.TextDecorationCollection>(Properties.textBlock.textDecorations, v);
       public static IValue<TMessage, System.Windows.Controls.TextBlock> textEffects(System.Windows.Media.TextEffectCollection v) => new SetValue<TMessage, System.Windows.Controls.TextBlock, System.Windows.Media.TextEffectCollection>(Properties.textBlock.textEffects, v);
-      public static IValue<TMessage, System.Windows.Controls.TextBlock> lineHeight(System.Double v) => new SetValue<TMessage, System.Windows.Controls.TextBlock, System.Double>(Properties.textBlock.lineHeight, v);
-      public static IValue<TMessage, System.Windows.Controls.TextBlock> lineStackingStrategy(System.Windows.LineStackingStrategy v) => new SetValue<TMessage, System.Windows.Controls.TextBlock, System.Windows.LineStackingStrategy>(Properties.textBlock.lineStackingStrategy, v);
+      public static IValue<TMessage, System.Windows.UIElement> lineHeight(System.Double v) => new SetValue<TMessage, System.Windows.UIElement, System.Double>(Properties.textBlock.lineHeight, v);
+      public static IValue<TMessage, System.Windows.UIElement> lineStackingStrategy(System.Windows.LineStackingStrategy v) => new SetValue<TMessage, System.Windows.UIElement, System.Windows.LineStackingStrategy>(Properties.textBlock.lineStackingStrategy, v);
       public static IValue<TMessage, System.Windows.Controls.TextBlock> padding(System.Windows.Thickness v) => new SetValue<TMessage, System.Windows.Controls.TextBlock, System.Windows.Thickness>(Properties.textBlock.padding, v);
-      public static IValue<TMessage, System.Windows.Controls.TextBlock> textAlignment(System.Windows.TextAlignment v) => new SetValue<TMessage, System.Windows.Controls.TextBlock, System.Windows.TextAlignment>(Properties.textBlock.textAlignment, v);
+      public static IValue<TMessage, System.Windows.UIElement> textAlignment(System.Windows.TextAlignment v) => new SetValue<TMessage, System.Windows.UIElement, System.Windows.TextAlignment>(Properties.textBlock.textAlignment, v);
       public static IValue<TMessage, System.Windows.Controls.TextBlock> textTrimming(System.Windows.TextTrimming v) => new SetValue<TMessage, System.Windows.Controls.TextBlock, System.Windows.TextTrimming>(Properties.textBlock.textTrimming, v);
       public static IValue<TMessage, System.Windows.Controls.TextBlock> textWrapping(System.Windows.TextWrapping v) => new SetValue<TMessage, System.Windows.Controls.TextBlock, System.Windows.TextWrapping>(Properties.textBlock.textWrapping, v);
       public static IValue<TMessage, System.Windows.Controls.TextBlock> isHyphenationEnabled(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.TextBlock, System.Boolean>(Properties.textBlock.isHyphenationEnabled, v);
@@ -3374,7 +3146,6 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.Primitives.TextBoxBase> selectionBrush(System.Windows.Media.Brush v) => new SetValue<TMessage, System.Windows.Controls.Primitives.TextBoxBase, System.Windows.Media.Brush>(Properties.textBoxBase.selectionBrush, v);
       public static IValue<TMessage, System.Windows.Controls.Primitives.TextBoxBase> selectionOpacity(System.Double v) => new SetValue<TMessage, System.Windows.Controls.Primitives.TextBoxBase, System.Double>(Properties.textBoxBase.selectionOpacity, v);
       public static IValue<TMessage, System.Windows.Controls.Primitives.TextBoxBase> caretBrush(System.Windows.Media.Brush v) => new SetValue<TMessage, System.Windows.Controls.Primitives.TextBoxBase, System.Windows.Media.Brush>(Properties.textBoxBase.caretBrush, v);
-      public static IValue<TMessage, System.Windows.Controls.Primitives.TextBoxBase> isSelectionActive(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.TextBoxBase, System.Boolean>(Properties.textBoxBase.isSelectionActive, v);
       public static IValue<TMessage, System.Windows.Controls.Primitives.TextBoxBase> isInactiveSelectionHighlightEnabled(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.TextBoxBase, System.Boolean>(Properties.textBoxBase.isInactiveSelectionHighlightEnabled, v);
 
       public static IValue<TMessage, System.Windows.UIElement> onTextChanged (OnChange<TMessage, System.Windows.UIElement, System.Windows.Controls.TextChangedEventArgs> onChange) =>
@@ -3386,7 +3157,6 @@ namespace Galactus.Standard
 
     public partial class thumb : control
     {
-      public static IValue<TMessage, System.Windows.Controls.Primitives.Thumb> isDragging(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Primitives.Thumb, System.Boolean>(Properties.thumb.isDragging, v);
 
       public static IValue<TMessage, System.Windows.UIElement> onDragStarted (OnChange<TMessage, System.Windows.UIElement, System.Windows.Controls.Primitives.DragStartedEventArgs> onChange) =>
         new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.Controls.Primitives.DragStartedEventHandler, System.Windows.Controls.Primitives.DragStartedEventArgs> (Events.thumb.dragStarted, h => (System.Windows.Controls.Primitives.DragStartedEventHandler)h.Invoke, onChange);
@@ -3433,13 +3203,10 @@ namespace Galactus.Standard
 
     public partial class toolBar : headeredItemsControl
     {
-      public static IValue<TMessage, System.Windows.Controls.ToolBar> orientation(System.Windows.Controls.Orientation v) => new SetValue<TMessage, System.Windows.Controls.ToolBar, System.Windows.Controls.Orientation>(Properties.toolBar.orientation, v);
       public static IValue<TMessage, System.Windows.Controls.ToolBar> band(System.Int32 v) => new SetValue<TMessage, System.Windows.Controls.ToolBar, System.Int32>(Properties.toolBar.band, v);
       public static IValue<TMessage, System.Windows.Controls.ToolBar> bandIndex(System.Int32 v) => new SetValue<TMessage, System.Windows.Controls.ToolBar, System.Int32>(Properties.toolBar.bandIndex, v);
       public static IValue<TMessage, System.Windows.Controls.ToolBar> isOverflowOpen(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.ToolBar, System.Boolean>(Properties.toolBar.isOverflowOpen, v);
-      public static IValue<TMessage, System.Windows.Controls.ToolBar> hasOverflowItems(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.ToolBar, System.Boolean>(Properties.toolBar.hasOverflowItems, v);
-      public static IValue<TMessage, System.Windows.Controls.ToolBar> isOverflowItem(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.ToolBar, System.Boolean>(Properties.toolBar.isOverflowItem, v);
-      public static IValue<TMessage, System.Windows.Controls.ToolBar> overflowMode(System.Windows.Controls.OverflowMode v) => new SetValue<TMessage, System.Windows.Controls.ToolBar, System.Windows.Controls.OverflowMode>(Properties.toolBar.overflowMode, v);
+      public static IValue<TMessage, System.Windows.UIElement> overflowMode(System.Windows.Controls.OverflowMode v) => new SetValue<TMessage, System.Windows.UIElement, System.Windows.Controls.OverflowMode>(Properties.toolBar.overflowMode, v);
 
 
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.ToolBar>[] vs) => new StandardView<TMessage, System.Windows.Controls.ToolBar>(vs);
@@ -3464,7 +3231,7 @@ namespace Galactus.Standard
     {
       public static IValue<TMessage, System.Windows.Controls.ToolBarTray> background(System.Windows.Media.Brush v) => new SetValue<TMessage, System.Windows.Controls.ToolBarTray, System.Windows.Media.Brush>(Properties.toolBarTray.background, v);
       public static IValue<TMessage, System.Windows.Controls.ToolBarTray> orientation(System.Windows.Controls.Orientation v) => new SetValue<TMessage, System.Windows.Controls.ToolBarTray, System.Windows.Controls.Orientation>(Properties.toolBarTray.orientation, v);
-      public static IValue<TMessage, System.Windows.Controls.ToolBarTray> isLocked(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.ToolBarTray, System.Boolean>(Properties.toolBarTray.isLocked, v);
+      public static IValue<TMessage, System.Windows.UIElement> isLocked(System.Boolean v) => new SetValue<TMessage, System.Windows.UIElement, System.Boolean>(Properties.toolBarTray.isLocked, v);
 
 
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.ToolBarTray>[] vs) => new StandardView<TMessage, System.Windows.Controls.ToolBarTray>(vs);
@@ -3505,8 +3272,6 @@ namespace Galactus.Standard
 
     public partial class treeView : itemsControl
     {
-      public static IValue<TMessage, System.Windows.Controls.TreeView> selectedItem(System.Object v) => new SetValue<TMessage, System.Windows.Controls.TreeView, System.Object>(Properties.treeView.selectedItem, v);
-      public static IValue<TMessage, System.Windows.Controls.TreeView> selectedValue(System.Object v) => new SetValue<TMessage, System.Windows.Controls.TreeView, System.Object>(Properties.treeView.selectedValue, v);
       public static IValue<TMessage, System.Windows.Controls.TreeView> selectedValuePath(System.String v) => new SetValue<TMessage, System.Windows.Controls.TreeView, System.String>(Properties.treeView.selectedValuePath, v);
 
       public static IValue<TMessage, System.Windows.UIElement> onSelectedItemChanged (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedPropertyChangedEventArgs<System.Object>> onChange) =>
@@ -3519,7 +3284,6 @@ namespace Galactus.Standard
     {
       public static IValue<TMessage, System.Windows.Controls.TreeViewItem> isExpanded(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.TreeViewItem, System.Boolean>(Properties.treeViewItem.isExpanded, v);
       public static IValue<TMessage, System.Windows.Controls.TreeViewItem> isSelected(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.TreeViewItem, System.Boolean>(Properties.treeViewItem.isSelected, v);
-      public static IValue<TMessage, System.Windows.Controls.TreeViewItem> isSelectionActive(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.TreeViewItem, System.Boolean>(Properties.treeViewItem.isSelectionActive, v);
 
       public static IValue<TMessage, System.Windows.UIElement> onExpanded (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
         new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.treeViewItem.expanded, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
@@ -3535,20 +3299,6 @@ namespace Galactus.Standard
 
     public partial class uIElement
     {
-      public static IValue<TMessage, System.Windows.UIElement> isMouseDirectlyOver(System.Boolean v) => new SetValue<TMessage, System.Windows.UIElement, System.Boolean>(Properties.uIElement.isMouseDirectlyOver, v);
-      public static IValue<TMessage, System.Windows.UIElement> isMouseOver(System.Boolean v) => new SetValue<TMessage, System.Windows.UIElement, System.Boolean>(Properties.uIElement.isMouseOver, v);
-      public static IValue<TMessage, System.Windows.UIElement> isStylusOver(System.Boolean v) => new SetValue<TMessage, System.Windows.UIElement, System.Boolean>(Properties.uIElement.isStylusOver, v);
-      public static IValue<TMessage, System.Windows.UIElement> isKeyboardFocusWithin(System.Boolean v) => new SetValue<TMessage, System.Windows.UIElement, System.Boolean>(Properties.uIElement.isKeyboardFocusWithin, v);
-      public static IValue<TMessage, System.Windows.UIElement> isMouseCaptured(System.Boolean v) => new SetValue<TMessage, System.Windows.UIElement, System.Boolean>(Properties.uIElement.isMouseCaptured, v);
-      public static IValue<TMessage, System.Windows.UIElement> isMouseCaptureWithin(System.Boolean v) => new SetValue<TMessage, System.Windows.UIElement, System.Boolean>(Properties.uIElement.isMouseCaptureWithin, v);
-      public static IValue<TMessage, System.Windows.UIElement> isStylusDirectlyOver(System.Boolean v) => new SetValue<TMessage, System.Windows.UIElement, System.Boolean>(Properties.uIElement.isStylusDirectlyOver, v);
-      public static IValue<TMessage, System.Windows.UIElement> isStylusCaptured(System.Boolean v) => new SetValue<TMessage, System.Windows.UIElement, System.Boolean>(Properties.uIElement.isStylusCaptured, v);
-      public static IValue<TMessage, System.Windows.UIElement> isStylusCaptureWithin(System.Boolean v) => new SetValue<TMessage, System.Windows.UIElement, System.Boolean>(Properties.uIElement.isStylusCaptureWithin, v);
-      public static IValue<TMessage, System.Windows.UIElement> isKeyboardFocused(System.Boolean v) => new SetValue<TMessage, System.Windows.UIElement, System.Boolean>(Properties.uIElement.isKeyboardFocused, v);
-      public static IValue<TMessage, System.Windows.UIElement> areAnyTouchesDirectlyOver(System.Boolean v) => new SetValue<TMessage, System.Windows.UIElement, System.Boolean>(Properties.uIElement.areAnyTouchesDirectlyOver, v);
-      public static IValue<TMessage, System.Windows.UIElement> areAnyTouchesOver(System.Boolean v) => new SetValue<TMessage, System.Windows.UIElement, System.Boolean>(Properties.uIElement.areAnyTouchesOver, v);
-      public static IValue<TMessage, System.Windows.UIElement> areAnyTouchesCaptured(System.Boolean v) => new SetValue<TMessage, System.Windows.UIElement, System.Boolean>(Properties.uIElement.areAnyTouchesCaptured, v);
-      public static IValue<TMessage, System.Windows.UIElement> areAnyTouchesCapturedWithin(System.Boolean v) => new SetValue<TMessage, System.Windows.UIElement, System.Boolean>(Properties.uIElement.areAnyTouchesCapturedWithin, v);
       public static IValue<TMessage, System.Windows.UIElement> allowDrop(System.Boolean v) => new SetValue<TMessage, System.Windows.UIElement, System.Boolean>(Properties.uIElement.allowDrop, v);
       public static IValue<TMessage, System.Windows.UIElement> renderTransform(System.Windows.Media.Transform v) => new SetValue<TMessage, System.Windows.UIElement, System.Windows.Media.Transform>(Properties.uIElement.renderTransform, v);
       public static IValue<TMessage, System.Windows.UIElement> renderTransformOrigin(System.Windows.Point v) => new SetValue<TMessage, System.Windows.UIElement, System.Windows.Point>(Properties.uIElement.renderTransformOrigin, v);
@@ -3563,10 +3313,8 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.UIElement> clipToBounds(System.Boolean v) => new SetValue<TMessage, System.Windows.UIElement, System.Boolean>(Properties.uIElement.clipToBounds, v);
       public static IValue<TMessage, System.Windows.UIElement> clip(System.Windows.Media.Geometry v) => new SetValue<TMessage, System.Windows.UIElement, System.Windows.Media.Geometry>(Properties.uIElement.clip, v);
       public static IValue<TMessage, System.Windows.UIElement> snapsToDevicePixels(System.Boolean v) => new SetValue<TMessage, System.Windows.UIElement, System.Boolean>(Properties.uIElement.snapsToDevicePixels, v);
-      public static IValue<TMessage, System.Windows.UIElement> isFocused(System.Boolean v) => new SetValue<TMessage, System.Windows.UIElement, System.Boolean>(Properties.uIElement.isFocused, v);
       public static IValue<TMessage, System.Windows.UIElement> isEnabled(System.Boolean v) => new SetValue<TMessage, System.Windows.UIElement, System.Boolean>(Properties.uIElement.isEnabled, v);
       public static IValue<TMessage, System.Windows.UIElement> isHitTestVisible(System.Boolean v) => new SetValue<TMessage, System.Windows.UIElement, System.Boolean>(Properties.uIElement.isHitTestVisible, v);
-      public static IValue<TMessage, System.Windows.UIElement> isVisible(System.Boolean v) => new SetValue<TMessage, System.Windows.UIElement, System.Boolean>(Properties.uIElement.isVisible, v);
       public static IValue<TMessage, System.Windows.UIElement> focusable(System.Boolean v) => new SetValue<TMessage, System.Windows.UIElement, System.Boolean>(Properties.uIElement.focusable, v);
       public static IValue<TMessage, System.Windows.UIElement> isManipulationEnabled(System.Boolean v) => new SetValue<TMessage, System.Windows.UIElement, System.Boolean>(Properties.uIElement.isManipulationEnabled, v);
 
@@ -3776,7 +3524,6 @@ namespace Galactus.Standard
     public partial class viewport3D : frameworkElement
     {
       public static IValue<TMessage, System.Windows.Controls.Viewport3D> camera(System.Windows.Media.Media3D.Camera v) => new SetValue<TMessage, System.Windows.Controls.Viewport3D, System.Windows.Media.Media3D.Camera>(Properties.viewport3D.camera, v);
-      public static IValue<TMessage, System.Windows.Controls.Viewport3D> children(System.Windows.Media.Media3D.Visual3DCollection v) => new SetValue<TMessage, System.Windows.Controls.Viewport3D, System.Windows.Media.Media3D.Visual3DCollection>(Properties.viewport3D.children, v);
 
 
       public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Viewport3D>[] vs) => new StandardView<TMessage, System.Windows.Controls.Viewport3D>(vs);
@@ -3792,7 +3539,6 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Window> top(System.Double v) => new SetValue<TMessage, System.Windows.Window, System.Double>(Properties.window.top, v);
       public static IValue<TMessage, System.Windows.Window> left(System.Double v) => new SetValue<TMessage, System.Windows.Window, System.Double>(Properties.window.left, v);
       public static IValue<TMessage, System.Windows.Window> showInTaskbar(System.Boolean v) => new SetValue<TMessage, System.Windows.Window, System.Boolean>(Properties.window.showInTaskbar, v);
-      public static IValue<TMessage, System.Windows.Window> isActive(System.Boolean v) => new SetValue<TMessage, System.Windows.Window, System.Boolean>(Properties.window.isActive, v);
       public static IValue<TMessage, System.Windows.Window> windowStyle(System.Windows.WindowStyle v) => new SetValue<TMessage, System.Windows.Window, System.Windows.WindowStyle>(Properties.window.windowStyle, v);
       public static IValue<TMessage, System.Windows.Window> windowState(System.Windows.WindowState v) => new SetValue<TMessage, System.Windows.Window, System.Windows.WindowState>(Properties.window.windowState, v);
       public static IValue<TMessage, System.Windows.Window> resizeMode(System.Windows.ResizeMode v) => new SetValue<TMessage, System.Windows.Window, System.Windows.ResizeMode>(Properties.window.resizeMode, v);
@@ -3807,13 +3553,13 @@ namespace Galactus.Standard
 
     public partial class virtualizingPanel : panel
     {
-      public static IValue<TMessage, System.Windows.Controls.VirtualizingPanel> isVirtualizing(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.VirtualizingPanel, System.Boolean>(Properties.virtualizingPanel.isVirtualizing, v);
-      public static IValue<TMessage, System.Windows.Controls.VirtualizingPanel> virtualizationMode(System.Windows.Controls.VirtualizationMode v) => new SetValue<TMessage, System.Windows.Controls.VirtualizingPanel, System.Windows.Controls.VirtualizationMode>(Properties.virtualizingPanel.virtualizationMode, v);
-      public static IValue<TMessage, System.Windows.Controls.VirtualizingPanel> isVirtualizingWhenGrouping(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.VirtualizingPanel, System.Boolean>(Properties.virtualizingPanel.isVirtualizingWhenGrouping, v);
-      public static IValue<TMessage, System.Windows.Controls.VirtualizingPanel> scrollUnit(System.Windows.Controls.ScrollUnit v) => new SetValue<TMessage, System.Windows.Controls.VirtualizingPanel, System.Windows.Controls.ScrollUnit>(Properties.virtualizingPanel.scrollUnit, v);
-      public static IValue<TMessage, System.Windows.Controls.VirtualizingPanel> cacheLength(System.Windows.Controls.VirtualizationCacheLength v) => new SetValue<TMessage, System.Windows.Controls.VirtualizingPanel, System.Windows.Controls.VirtualizationCacheLength>(Properties.virtualizingPanel.cacheLength, v);
-      public static IValue<TMessage, System.Windows.Controls.VirtualizingPanel> cacheLengthUnit(System.Windows.Controls.VirtualizationCacheLengthUnit v) => new SetValue<TMessage, System.Windows.Controls.VirtualizingPanel, System.Windows.Controls.VirtualizationCacheLengthUnit>(Properties.virtualizingPanel.cacheLengthUnit, v);
-      public static IValue<TMessage, System.Windows.Controls.VirtualizingPanel> isContainerVirtualizable(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.VirtualizingPanel, System.Boolean>(Properties.virtualizingPanel.isContainerVirtualizable, v);
+      public static IValue<TMessage, System.Windows.UIElement> isVirtualizing(System.Boolean v) => new SetValue<TMessage, System.Windows.UIElement, System.Boolean>(Properties.virtualizingPanel.isVirtualizing, v);
+      public static IValue<TMessage, System.Windows.UIElement> virtualizationMode(System.Windows.Controls.VirtualizationMode v) => new SetValue<TMessage, System.Windows.UIElement, System.Windows.Controls.VirtualizationMode>(Properties.virtualizingPanel.virtualizationMode, v);
+      public static IValue<TMessage, System.Windows.UIElement> isVirtualizingWhenGrouping(System.Boolean v) => new SetValue<TMessage, System.Windows.UIElement, System.Boolean>(Properties.virtualizingPanel.isVirtualizingWhenGrouping, v);
+      public static IValue<TMessage, System.Windows.UIElement> scrollUnit(System.Windows.Controls.ScrollUnit v) => new SetValue<TMessage, System.Windows.UIElement, System.Windows.Controls.ScrollUnit>(Properties.virtualizingPanel.scrollUnit, v);
+      public static IValue<TMessage, System.Windows.UIElement> cacheLength(System.Windows.Controls.VirtualizationCacheLength v) => new SetValue<TMessage, System.Windows.UIElement, System.Windows.Controls.VirtualizationCacheLength>(Properties.virtualizingPanel.cacheLength, v);
+      public static IValue<TMessage, System.Windows.UIElement> cacheLengthUnit(System.Windows.Controls.VirtualizationCacheLengthUnit v) => new SetValue<TMessage, System.Windows.UIElement, System.Windows.Controls.VirtualizationCacheLengthUnit>(Properties.virtualizingPanel.cacheLengthUnit, v);
+      public static IValue<TMessage, System.Windows.UIElement> isContainerVirtualizable(System.Boolean v) => new SetValue<TMessage, System.Windows.UIElement, System.Boolean>(Properties.virtualizingPanel.isContainerVirtualizable, v);
 
 
     }
