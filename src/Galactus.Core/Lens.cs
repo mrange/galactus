@@ -153,6 +153,11 @@
       return new MapLens<M, P, PP>(l, to, from);
     }
 
+    public static Lens<M, PP> Cast<PP, M, P>(this Lens<M, P> l)
+    {
+      return new MapLens<M, P, PP>(l, v => (PP)(object)v, v => (P)(object)v);
+    }
+
     public static DelayedSet<M> Set<M, P>(this Lens<M, P> l, P v)
     {
       return m => l.Set(m, v);

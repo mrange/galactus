@@ -30,11 +30,12 @@
   {
       U("CustomerKind")
       ( R("Individual")
-        ( M("string"      , "SocialNo"                )
+        ( M("string"      , "SocialId"              )
         )
       , R("Company")
-        ( M("string"      , "CompanyId"               )
-        , M("string"      , "VatNo"                   )
+        ( M("string"      , "CompanyId"             )
+        , M("string"      , "CompanyName"           )
+        , M("string"      , "VatNo"                 )
         )
       )
   };

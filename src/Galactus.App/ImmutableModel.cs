@@ -99,6 +99,38 @@
           );
       }
 
+      IView<Message> company(Lens<Customer, Company> l)
+      {
+        return labeledGroup
+          ( "Company"
+          , stackPanel.View
+              ( stackPanel.orientation(Orientation.Vertical)
+              )
+              ( labeledTextBox("Name"               , l.To(Company.companyName))
+              , labeledTextBox("Org No"             , l.To(Company.companyId))
+              , labeledTextBox("VAT No"             , l.To(Company.vatNo))
+              , labeledTextBox("Contact first name" , Customer.firstName)
+              , labeledTextBox("Contact last name"  , Customer.lastName)
+              , labeledTextBox("Contact email"      , Customer.email)
+              )
+          );
+      }
+
+      IView<Message> individual(Lens<Customer, Individual> l)
+      {
+        return labeledGroup
+          ( "Individual"
+          , stackPanel.View
+              ( stackPanel.orientation(Orientation.Vertical)
+              )
+              ( labeledTextBox("First name" , Customer.firstName)
+              , labeledTextBox("Last name"  , Customer.lastName)
+              , labeledTextBox("Email"      , Customer.email)
+              , labeledTextBox("Social No"  , l.To(Individual.socialId))
+              )
+          );
+      }
+
       return scrollViewer.View
         ( frameworkElement.layoutTransform(new ScaleTransform(2, 2))
         , labeledTextBoxHandler
@@ -127,6 +159,8 @@
     {
       var addressInfo   = new Address();
       var customer      = new Customer();
+
+      var x = Customer.firstName.Cast<object, Customer, string>();
 
       var setCarryOver  = Address.carryOver.Set("Melinda Gates");
       var newCustomer   = Lens.SetAll

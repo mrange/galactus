@@ -585,13 +585,13 @@
 
   sealed partial class Individual : CustomerKind
   {
-    public readonly string SocialNo;
+    public readonly string SocialId;
 
     public Individual(
-        string socialNo
+        string socialId
       )
     {
-      SocialNo = socialNo;
+      SocialId = socialId;
     }
 
     public Individual()
@@ -607,38 +607,38 @@
     {
       var sb = new StringBuilder(16);
       sb.Append("{ Individual");
-      sb.Append(", SocialNo: ");
-      sb.Append(SocialNo);
+      sb.Append(", SocialId: ");
+      sb.Append(SocialId);
       sb.Append(" }");
       return sb.ToString();
     }
 
-    public Individual With_SocialNo(string socialNo)
+    public Individual With_SocialId(string socialId)
     {
       return new Individual(
-        socialNo
+        socialId
       );
     }
 
-    sealed class SocialNoLens : Lens<Individual, string>
+    sealed class SocialIdLens : Lens<Individual, string>
     {
       public override void BuildPath(StringBuilder sb)
       {
-        sb.Append("SocialNo");
+        sb.Append("SocialId");
       }
 
       public override string Get(Individual m)
       {
-        return m.SocialNo;
+        return m.SocialId;
       }
 
       public override Individual Set(Individual m, string p)
       {
-        return m.With_SocialNo(p);
+        return m.With_SocialId(p);
       }
     }
 
-    public readonly static Lens<Individual, string> socialNo = new SocialNoLens();
+    public readonly static Lens<Individual, string> socialId = new SocialIdLens();
 
     public override T Apply<T>(IVisitor<T> visitor)
     {
@@ -650,20 +650,24 @@
   sealed partial class Company : CustomerKind
   {
     public readonly string CompanyId;
+    public readonly string CompanyName;
     public readonly string VatNo;
 
     public Company(
         string companyId
+      , string companyName
       , string vatNo
       )
     {
       CompanyId = companyId;
+      CompanyName = companyName;
       VatNo = vatNo;
     }
 
     public Company()
       : this(
         ""
+      , ""
       , ""
       )
     {
@@ -677,6 +681,8 @@
       sb.Append("{ Company");
       sb.Append(", CompanyId: ");
       sb.Append(CompanyId);
+      sb.Append(", CompanyName: ");
+      sb.Append(CompanyName);
       sb.Append(", VatNo: ");
       sb.Append(VatNo);
       sb.Append(" }");
@@ -687,6 +693,7 @@
     {
       return new Company(
         companyId
+      , CompanyName
       , VatNo
       );
     }
@@ -711,10 +718,40 @@
 
     public readonly static Lens<Company, string> companyId = new CompanyIdLens();
 
+    public Company With_CompanyName(string companyName)
+    {
+      return new Company(
+        CompanyId
+      , companyName
+      , VatNo
+      );
+    }
+
+    sealed class CompanyNameLens : Lens<Company, string>
+    {
+      public override void BuildPath(StringBuilder sb)
+      {
+        sb.Append("CompanyName");
+      }
+
+      public override string Get(Company m)
+      {
+        return m.CompanyName;
+      }
+
+      public override Company Set(Company m, string p)
+      {
+        return m.With_CompanyName(p);
+      }
+    }
+
+    public readonly static Lens<Company, string> companyName = new CompanyNameLens();
+
     public Company With_VatNo(string vatNo)
     {
       return new Company(
         CompanyId
+      , CompanyName
       , vatNo
       );
     }
