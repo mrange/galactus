@@ -68,7 +68,11 @@
 
     public override void BuildPath(StringBuilder sb)
     {
-      throw new NotImplementedException();
+      sb.Append('(');
+      left.BuildPath(sb);
+      sb.Append(',');
+      right.BuildPath(sb);
+      sb.Append(')');
     }
 
     public override (L left, R right) Get(M m)

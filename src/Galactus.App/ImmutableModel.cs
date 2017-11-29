@@ -10,7 +10,7 @@
   using static Galactus.Standard.Controls<Message>;
   using static System.Windows.GridUnitType;
 
-  public delegate Customer Message(Customer customer);
+  delegate Customer Message(Customer customer);
 
   class Program
   {
@@ -108,6 +108,7 @@
             (stackPanel.orientation(Orientation.Vertical))
             ( labeledTextBox("First Name" , Customer.firstName  )
             , labeledTextBox("Last Name"  , Customer.lastName   )
+            , labeledTextBox("Email"      , Customer.email      )
             , labeledCheckBox("Separate Delivery Address?", Customer.separateDeliveryAddress)
             , address("Invoice Address" , Customer.invoiceAddress)
             , customer.SeparateDeliveryAddress ? address("Delivery Address", Customer.deliveryAddress) : empty.View

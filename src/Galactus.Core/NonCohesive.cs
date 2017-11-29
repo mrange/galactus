@@ -1,7 +1,6 @@
 ﻿namespace Galactus.Core
 {
   using System;
-  using System.Collections.Generic;
   using System.Runtime.CompilerServices;
   using System.Windows.Threading;
 
@@ -11,6 +10,7 @@
     public static (ParentInfo ParentInfo, T Instance) GetInstance<T> (object o)
       where T : class, new ()
     {
+      // TODO: Is there a faster way to test that o is exactly type T?
       return o != null && o.GetType () == typeof (T)
         ? (ParentInfo.ReusedInstance, (T)o)
         : (ParentInfo.NewInstance   , new T ())

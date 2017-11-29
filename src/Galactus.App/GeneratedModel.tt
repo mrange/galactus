@@ -1,127 +1,274 @@
-﻿<#@ assembly    name        ="System.Core"                  #>
-<#@ import      namespace   ="System.Linq"                  #>
+﻿<#@ assembly    name        ="System.Core"                    #>
+<#@ import      namespace   ="System"                         #>
+<#@ import      namespace   ="System.Collections.Concurrent"  #>
+<#@ import      namespace   ="System.Collections.Generic"     #>
+<#@ import      namespace   ="System.Linq"                    #>
 <#
-  var namespace_  = "Galactus.App.Model";
-  var records     = new []
+  Namespace = "Galactus.App.Model";
+  Records   = new []
   {
-      R
-      ( "Address"
-      , M("string"      , "CarryOver"               )
+      R("Address")
+      ( M("string"      , "CarryOver"               )
       , M("string"      , "Street"                  )
       , M("string"      , "Zip"                     )
       , M("string"      , "City"                    )
       , M("string"      , "County"                  )
       , M("string"      , "Country"                 )
       )
-    , R
-      ( "CustomerKind"
-      )
-    , R
-      ( "Individual"
-      )
-    , R
-      ( "Company"
-      )
-    , R
-      ( "Customer"
-      , M("string"      , "FirstName"               )
+    , R("Customer")
+      ( M("string"      , "FirstName"               )
       , M("string"      , "LastName"                )
+      , M("string"      , "Email"                   )
+      , M("CustomerKind", "Kind"                    )
       , M("bool"        , "SeparateDeliveryAddress" )
       , M("Address"     , "InvoiceAddress"          )
       , M("Address"     , "DeliveryAddress"         )
       )
   };
+
+  Unions = new []
+  {
+      U("CustomerKind")
+      ( R("Individual")
+        ( M("string"      , "SocialNo"                )
+        )
+      , R("Company")
+        ( M("string"      , "CompanyId"               )
+        , M("string"      , "VatNo"                   )
+        )
+      )
+  };
 #>
-namespace <#=namespace_#>
+namespace <#=Namespace#>
 {
   using Galactus.Core;
   using System.Text;
 
 <#
-  string DefaultValueOfType(string type)
+  foreach (var record in Records)
   {
-    var isRecord = records.FirstOrDefault(r => r.Name == type) != null;
+#>
+  // --------------------------------------------------------------------------
+  // Records
+  // --------------------------------------------------------------------------
 
-    if (isRecord)
+<#
+    GenerateRecord(record, "", () => {});
+  }
+
+  foreach (var union_ in Unions)
+  {
+#>
+  // --------------------------------------------------------------------------
+  // Unions 
+  // --------------------------------------------------------------------------
+
+<#
+    GenerateUnion(union_);
+  }
+#>
+}
+<#+
+  static string Namespace = "Galactus"    ;
+  static Record[] Records = new Record[0] ;
+  static Union[] Unions   = new Union[0]  ;
+
+  static ConcurrentDictionary<string, string> DefaultValueOfTypes = new ConcurrentDictionary<string, string>();
+
+  sealed class Member
+  {
+    public readonly string Type         ;
+    public readonly string Name         ;
+    public readonly string DefaultValue ;
+
+    public Member(string type, string name, string defaultValue)
     {
-      return type + ".Zero";
-    }
-    else
-    {
-      switch(type)
-      {
-      case "string":
-      case "System.String":
-        return @"""""";
-      default:
-        return "default(" + type + ")";
-      }
+      Type          = type    ?? "<NoType>" ;
+      Name          = name    ?? "<NoName>" ;
+      DefaultValue  = defaultValue          ;
     }
   }
 
+  sealed class Record
+  {
+    public readonly string    Name    ;
+    public readonly Member[]  Members ;
 
-  var isFirst = true;
-  foreach (var record in records)
+    public Record(string name, params Member[] members)
+    {
+      Name      = name      ?? "<NoName>"     ;
+      Members   = members   ?? new Member[0]  ;
+    }
+  }
+  delegate Record DelayedRecord(params Member[] members);
+
+  sealed class Union
+  {
+    public readonly string    Name    ;
+    public readonly Record[]  Records ;
+
+    public Union(string name, params Record[] records)
+    {
+      Name      = name      ?? "<NoName>"     ;
+      Records   = records   ?? new Record[0]  ;
+    }
+  }
+  delegate Union DelayedUnion(params Record[] records);
+
+  static Member        M(string type, string name, string defaultValue = null) => new Member(type, name, defaultValue);
+  static DelayedRecord R(string name) => members => new Record(name, members);
+  static DelayedUnion  U(string name) => records => new Union(name, records);
+
+  static string CamelCase(string s)
+  {
+    if (s?.Length > 0)
+    {
+      return Char.ToLowerInvariant(s[0]).ToString() + s.Substring(1);
+    }
+    else
+    {
+      return s ?? "";
+    }
+  }
+
+  static string DefaultValueOfType(string type)
+  {
+    string ComputeDefaultValueOfType(string t)
+    {
+      var allKnownTypes = 
+        Records.Select(r => r.Name)
+        .Concat(Unions.SelectMany(u => (new [] {u.Name}).Concat(u.Records.Select(r => r.Name))))
+        ;
+      var isRecord = allKnownTypes.FirstOrDefault(kt => kt == t) != null;
+
+      if (isRecord)
+      {
+        return t + ".Zero";
+      }
+      else
+      {
+        switch(t)
+        {
+        case "string":
+        case "System.String":
+          return @"""""";
+        default:
+          return "default(" + t + ")";
+        }
+      }
+    }
+
+    return DefaultValueOfTypes.GetOrAdd(type, ComputeDefaultValueOfType);
+  }
+
+  void GenerateUnion(Union union_)
   {
 #>
-  public partial class <#=record.Name#>
+  abstract partial class <#=union_.Name#>
   {
-<#
+<#+
+  if (union_.Records.Length > 0)
+  {
+#>
+    public readonly static <#=union_.Name#> Zero = new <#=union_.Records[0].Name#>();
+
+    public partial interface IVisitor<out T>
+    { 
+<#+
+  foreach (var record in union_.Records)
+  {
+#>
+      T Visit(<#=record.Name#> v);
+<#+
+  }
+#>
+    }
+
+    public abstract T Apply<T>(IVisitor<T> visitor);
+<#+    
+  }
+#>
+  }
+
+<#+
+
+  foreach (var record in union_.Records)
+  {
+    GenerateRecord(record, union_.Name, () => 
+    {
+#>
+    public override T Apply<T>(IVisitor<T> visitor)
+    {
+      return visitor.Visit(this);
+    }
+<#+
+    });
+  }
+
+  }
+
+  void GenerateRecord(Record record, string baseClass, Action postProcess)
+  {
+    var bc      = baseClass ?? "";
+    var isFirst = false;
+#>
+  sealed partial class <#=record.Name#><#=bc.Length > 0 ? " : " + bc : ""#>
+  {
+<#+
   foreach (var member in record.Members)
   {
 #>
     public readonly <#=member.Type#> <#=member.Name#>;
-<#
+<#+
   }
 #>
 
     public <#=record.Name#>(
-<#
+<#+
   isFirst = true;
   foreach (var member in record.Members)
   {
 #>
       <#= isFirst ? "  " : ", " #><#=member.Type#> <#=CamelCase(member.Name)#>
-<#
+<#+
     isFirst = false;
   }
 #>
       )
     {
-<#
+<#+
   foreach (var member in record.Members)
   {
 #>
       <#=member.Name#> = <#=CamelCase(member.Name)#>;
-<#
+<#+
   }
 #>
     }
 
-<#
+<#+
   if (record.Members.Length > 0)
   {
 #>
     public <#=record.Name#>()
       : this(
-<#
+<#+
   isFirst = true;
   foreach (var member in record.Members)
   {
     var defaultValue = member.DefaultValue ?? DefaultValueOfType(member.Type);
 #>
       <#= isFirst ? "  " : ", " #><#=defaultValue#>
-<#
+<#+
     isFirst = false;
   }
 #>
       )
     {
     }
-<#
+<#+
   }
 #>
-
 
     public readonly static <#=record.Name#> Zero = new <#=record.Name#>();
 
@@ -129,27 +276,27 @@ namespace <#=namespace_#>
     {
       var sb = new StringBuilder(16);
       sb.Append("{ <#=record.Name#>");
-<#
+<#+
   foreach (var member in record.Members)
   {
 #>
       sb.Append(", <#=member.Name#>: ");
       sb.Append(<#=member.Name#>);
-<#
+<#+
   }
 #>
       sb.Append(" }");
       return sb.ToString();
     }
 
-<#
+<#+
   foreach (var member in record.Members)
   {
 #>
     public <#=record.Name#> With_<#=member.Name#>(<#=member.Type#> <#=CamelCase(member.Name)#>)
     {
       return new <#=record.Name#>(
-<#
+<#+
   isFirst = true;
   foreach (var imember in record.Members)
   {
@@ -157,13 +304,13 @@ namespace <#=namespace_#>
   {
 #>
       <#= isFirst ? "  " : ", " #><#=imember.Name#>
-<#
+<#+
   }
   else
   {
 #>
       <#= isFirst ? "  " : ", " #><#=CamelCase(member.Name)#>
-<#
+<#+
   }
     isFirst = false;
   }
@@ -191,56 +338,15 @@ namespace <#=namespace_#>
 
     public readonly static Lens<<#=record.Name#>, <#=member.Type#>> <#=CamelCase(member.Name)#> = new <#=member.Name#>Lens();
 
-<#
-  }
-#>
-
-  }
-
-<#
-  }
-#>
-}
 <#+
-  sealed class Member
-  {
-    public readonly string Type         ;
-    public readonly string Name         ;
-    public readonly string DefaultValue ;
-
-    public Member(string type, string name, string defaultValue)
-    {
-      Type          = type    ?? "<NoType>" ;
-      Name          = name    ?? "<NoName>" ;
-      DefaultValue  = defaultValue          ;
-    }
   }
 
-  sealed class Record
-  {
-    public readonly string    Name    ;
-    public readonly Member[]  Members ;
+  postProcess();
+#>
 
-    public Record(string name, params Member[] members)
-    {
-      Name    = name    ?? "<NoName>"   ;
-      Members = members ?? new Member[0];
-    }
   }
 
-  static Member M(string type, string name, string defaultValue = null) => new Member(type, name, defaultValue);
-  static Record R(string name, params Member[] members) => new Record(name, members);
-
-  static string CamelCase(string s)
-  {
-    if (s?.Length > 0)
-    {
-      return Char.ToLowerInvariant(s[0]).ToString() + s.Substring(1);
-    }
-    else
-    {
-      return s ?? "";
-    }
+<#+
   }
 
 #>

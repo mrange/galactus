@@ -3,7 +3,11 @@
   using Galactus.Core;
   using System.Text;
 
-  public partial class Address
+  // --------------------------------------------------------------------------
+  // Records
+  // --------------------------------------------------------------------------
+
+  sealed partial class Address
   {
     public readonly string CarryOver;
     public readonly string Street;
@@ -40,7 +44,6 @@
       )
     {
     }
-
 
     public readonly static Address Zero = new Address();
 
@@ -259,79 +262,16 @@
 
   }
 
-  public partial class CustomerKind
-  {
+  // --------------------------------------------------------------------------
+  // Records
+  // --------------------------------------------------------------------------
 
-    public CustomerKind(
-      )
-    {
-    }
-
-
-
-    public readonly static CustomerKind Zero = new CustomerKind();
-
-    public override string ToString()
-    {
-      var sb = new StringBuilder(16);
-      sb.Append("{ CustomerKind");
-      sb.Append(" }");
-      return sb.ToString();
-    }
-
-
-  }
-
-  public partial class Individual
-  {
-
-    public Individual(
-      )
-    {
-    }
-
-
-
-    public readonly static Individual Zero = new Individual();
-
-    public override string ToString()
-    {
-      var sb = new StringBuilder(16);
-      sb.Append("{ Individual");
-      sb.Append(" }");
-      return sb.ToString();
-    }
-
-
-  }
-
-  public partial class Company
-  {
-
-    public Company(
-      )
-    {
-    }
-
-
-
-    public readonly static Company Zero = new Company();
-
-    public override string ToString()
-    {
-      var sb = new StringBuilder(16);
-      sb.Append("{ Company");
-      sb.Append(" }");
-      return sb.ToString();
-    }
-
-
-  }
-
-  public partial class Customer
+  sealed partial class Customer
   {
     public readonly string FirstName;
     public readonly string LastName;
+    public readonly string Email;
+    public readonly CustomerKind Kind;
     public readonly bool SeparateDeliveryAddress;
     public readonly Address InvoiceAddress;
     public readonly Address DeliveryAddress;
@@ -339,6 +279,8 @@
     public Customer(
         string firstName
       , string lastName
+      , string email
+      , CustomerKind kind
       , bool separateDeliveryAddress
       , Address invoiceAddress
       , Address deliveryAddress
@@ -346,6 +288,8 @@
     {
       FirstName = firstName;
       LastName = lastName;
+      Email = email;
+      Kind = kind;
       SeparateDeliveryAddress = separateDeliveryAddress;
       InvoiceAddress = invoiceAddress;
       DeliveryAddress = deliveryAddress;
@@ -355,13 +299,14 @@
       : this(
         ""
       , ""
+      , ""
+      , CustomerKind.Zero
       , default(bool)
       , Address.Zero
       , Address.Zero
       )
     {
     }
-
 
     public readonly static Customer Zero = new Customer();
 
@@ -373,6 +318,10 @@
       sb.Append(FirstName);
       sb.Append(", LastName: ");
       sb.Append(LastName);
+      sb.Append(", Email: ");
+      sb.Append(Email);
+      sb.Append(", Kind: ");
+      sb.Append(Kind);
       sb.Append(", SeparateDeliveryAddress: ");
       sb.Append(SeparateDeliveryAddress);
       sb.Append(", InvoiceAddress: ");
@@ -388,6 +337,8 @@
       return new Customer(
         firstName
       , LastName
+      , Email
+      , Kind
       , SeparateDeliveryAddress
       , InvoiceAddress
       , DeliveryAddress
@@ -419,6 +370,8 @@
       return new Customer(
         FirstName
       , lastName
+      , Email
+      , Kind
       , SeparateDeliveryAddress
       , InvoiceAddress
       , DeliveryAddress
@@ -445,11 +398,79 @@
 
     public readonly static Lens<Customer, string> lastName = new LastNameLens();
 
+    public Customer With_Email(string email)
+    {
+      return new Customer(
+        FirstName
+      , LastName
+      , email
+      , Kind
+      , SeparateDeliveryAddress
+      , InvoiceAddress
+      , DeliveryAddress
+      );
+    }
+
+    sealed class EmailLens : Lens<Customer, string>
+    {
+      public override void BuildPath(StringBuilder sb)
+      {
+        sb.Append("Email");
+      }
+
+      public override string Get(Customer m)
+      {
+        return m.Email;
+      }
+
+      public override Customer Set(Customer m, string p)
+      {
+        return m.With_Email(p);
+      }
+    }
+
+    public readonly static Lens<Customer, string> email = new EmailLens();
+
+    public Customer With_Kind(CustomerKind kind)
+    {
+      return new Customer(
+        FirstName
+      , LastName
+      , Email
+      , kind
+      , SeparateDeliveryAddress
+      , InvoiceAddress
+      , DeliveryAddress
+      );
+    }
+
+    sealed class KindLens : Lens<Customer, CustomerKind>
+    {
+      public override void BuildPath(StringBuilder sb)
+      {
+        sb.Append("Kind");
+      }
+
+      public override CustomerKind Get(Customer m)
+      {
+        return m.Kind;
+      }
+
+      public override Customer Set(Customer m, CustomerKind p)
+      {
+        return m.With_Kind(p);
+      }
+    }
+
+    public readonly static Lens<Customer, CustomerKind> kind = new KindLens();
+
     public Customer With_SeparateDeliveryAddress(bool separateDeliveryAddress)
     {
       return new Customer(
         FirstName
       , LastName
+      , Email
+      , Kind
       , separateDeliveryAddress
       , InvoiceAddress
       , DeliveryAddress
@@ -481,6 +502,8 @@
       return new Customer(
         FirstName
       , LastName
+      , Email
+      , Kind
       , SeparateDeliveryAddress
       , invoiceAddress
       , DeliveryAddress
@@ -512,6 +535,8 @@
       return new Customer(
         FirstName
       , LastName
+      , Email
+      , Kind
       , SeparateDeliveryAddress
       , InvoiceAddress
       , deliveryAddress
@@ -538,6 +563,186 @@
 
     public readonly static Lens<Customer, Address> deliveryAddress = new DeliveryAddressLens();
 
+
+  }
+
+  // --------------------------------------------------------------------------
+  // Unions 
+  // --------------------------------------------------------------------------
+
+  abstract partial class CustomerKind
+  {
+    public readonly static CustomerKind Zero = new Individual();
+
+    public partial interface IVisitor<out T>
+    { 
+      T Visit(Individual v);
+      T Visit(Company v);
+    }
+
+    public abstract T Apply<T>(IVisitor<T> visitor);
+  }
+
+  sealed partial class Individual : CustomerKind
+  {
+    public readonly string SocialNo;
+
+    public Individual(
+        string socialNo
+      )
+    {
+      SocialNo = socialNo;
+    }
+
+    public Individual()
+      : this(
+        ""
+      )
+    {
+    }
+
+    public readonly static Individual Zero = new Individual();
+
+    public override string ToString()
+    {
+      var sb = new StringBuilder(16);
+      sb.Append("{ Individual");
+      sb.Append(", SocialNo: ");
+      sb.Append(SocialNo);
+      sb.Append(" }");
+      return sb.ToString();
+    }
+
+    public Individual With_SocialNo(string socialNo)
+    {
+      return new Individual(
+        socialNo
+      );
+    }
+
+    sealed class SocialNoLens : Lens<Individual, string>
+    {
+      public override void BuildPath(StringBuilder sb)
+      {
+        sb.Append("SocialNo");
+      }
+
+      public override string Get(Individual m)
+      {
+        return m.SocialNo;
+      }
+
+      public override Individual Set(Individual m, string p)
+      {
+        return m.With_SocialNo(p);
+      }
+    }
+
+    public readonly static Lens<Individual, string> socialNo = new SocialNoLens();
+
+    public override T Apply<T>(IVisitor<T> visitor)
+    {
+      return visitor.Visit(this);
+    }
+
+  }
+
+  sealed partial class Company : CustomerKind
+  {
+    public readonly string CompanyId;
+    public readonly string VatNo;
+
+    public Company(
+        string companyId
+      , string vatNo
+      )
+    {
+      CompanyId = companyId;
+      VatNo = vatNo;
+    }
+
+    public Company()
+      : this(
+        ""
+      , ""
+      )
+    {
+    }
+
+    public readonly static Company Zero = new Company();
+
+    public override string ToString()
+    {
+      var sb = new StringBuilder(16);
+      sb.Append("{ Company");
+      sb.Append(", CompanyId: ");
+      sb.Append(CompanyId);
+      sb.Append(", VatNo: ");
+      sb.Append(VatNo);
+      sb.Append(" }");
+      return sb.ToString();
+    }
+
+    public Company With_CompanyId(string companyId)
+    {
+      return new Company(
+        companyId
+      , VatNo
+      );
+    }
+
+    sealed class CompanyIdLens : Lens<Company, string>
+    {
+      public override void BuildPath(StringBuilder sb)
+      {
+        sb.Append("CompanyId");
+      }
+
+      public override string Get(Company m)
+      {
+        return m.CompanyId;
+      }
+
+      public override Company Set(Company m, string p)
+      {
+        return m.With_CompanyId(p);
+      }
+    }
+
+    public readonly static Lens<Company, string> companyId = new CompanyIdLens();
+
+    public Company With_VatNo(string vatNo)
+    {
+      return new Company(
+        CompanyId
+      , vatNo
+      );
+    }
+
+    sealed class VatNoLens : Lens<Company, string>
+    {
+      public override void BuildPath(StringBuilder sb)
+      {
+        sb.Append("VatNo");
+      }
+
+      public override string Get(Company m)
+      {
+        return m.VatNo;
+      }
+
+      public override Company Set(Company m, string p)
+      {
+        return m.With_VatNo(p);
+      }
+    }
+
+    public readonly static Lens<Company, string> vatNo = new VatNoLens();
+
+    public override T Apply<T>(IVisitor<T> visitor)
+    {
+      return visitor.Visit(this);
+    }
 
   }
 
