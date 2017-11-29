@@ -91,14 +91,15 @@ namespace Galactus.Standard
     return sb.ToString();
   }
 
-  var dependencyObject    = typeof (System.Windows.DependencyObject)          ;
-  var content             = typeof (System.Windows.Controls.ContentControl)   ;
-  var decorator           = typeof (System.Windows.Controls.Decorator)        ;
-  var dependencyProperty  = typeof (System.Windows.DependencyProperty)        ;
-  var routedEvent         = typeof (System.Windows.RoutedEvent)               ;
-  var eventArgs           = typeof (System.EventArgs)                         ;
-  var panel               = typeof (System.Windows.Controls.Panel)            ;
-  var uiElement           = typeof (System.Windows.UIElement)                 ;
+  var dependencyObject    = typeof (System.Windows.DependencyObject)                ;
+  var content             = typeof (System.Windows.Controls.ContentControl)         ;
+  var decorator           = typeof (System.Windows.Controls.Decorator)              ;
+  var dependencyProperty  = typeof (System.Windows.DependencyProperty)              ;
+  var eventArgs           = typeof (System.EventArgs)                               ;
+  var headeredContent     = typeof (System.Windows.Controls.HeaderedContentControl) ;
+  var panel               = typeof (System.Windows.Controls.Panel)                  ;
+  var routedEvent         = typeof (System.Windows.RoutedEvent)                     ;
+  var uiElement           = typeof (System.Windows.UIElement)                       ;
 
   Type MinUIElement(Type t)
   {
@@ -308,7 +309,13 @@ namespace Galactus.Standard
 <#
   if (!tp.IsAbstract && tp.GetConstructor(new Type [] {}) != null)
   {
-  if (IsSubclassOfOrEqual(tp, content))
+  if (IsSubclassOfOrEqual(tp, headeredContent))
+  {
+#>
+      public static DelayedHeaderedContentView<TMessage> View(params IValue<TMessage, <#=etn#>>[] vs) => (h, c) => new StandardHeaderedContentView<TMessage, <#=etn#>>(vs, h, c);
+<#
+  }
+  else if (IsSubclassOfOrEqual(tp, content))
   {
 #>
       public static DelayedContentView<TMessage> View(params IValue<TMessage, <#=etn#>>[] vs) => c => new StandardContentView<TMessage, <#=etn#>>(vs, c);

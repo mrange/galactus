@@ -122,7 +122,7 @@
 
     public static void Run()
     {
-      Hosts.OpenWindow(new MyModel(), View, Update);
+      Hosts.OpenNewWindow(new MyModel(), View, Update);
     }
   }
 }

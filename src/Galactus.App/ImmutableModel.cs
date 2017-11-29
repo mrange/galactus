@@ -8,6 +8,7 @@
   using Galactus.App.Model;
 
   using static Galactus.Standard.Controls<Message>;
+  using static System.Windows.GridUnitType;
 
   public delegate Customer Message(Customer customer);
 
@@ -19,12 +20,12 @@
 
       IView<Message> labeledGroup(string lbl, IView<Message> view)
       {
-        return grid.View
+        return grid.View                               
           (frameworkElement.margin(new Thickness(4,12,4,4)))
           ( border.View
-            ( border.borderThickness(new Thickness(2.0))
+            ( border.borderThickness(new Thickness(2))
             , border.borderBrush(Brushes.LimeGreen)
-            , border.padding(new Thickness(4.0))
+            , border.padding(new Thickness(4))
             )
             (view)
           , textBlock.View
@@ -89,7 +90,7 @@
         });
 
       return scrollViewer.View
-        ( frameworkElement.layoutTransform(new ScaleTransform(2.0, 2.0))
+        ( frameworkElement.layoutTransform(new ScaleTransform(2, 2))
         , textBoxHandler
         )
         ( stackPanel.View
@@ -123,7 +124,7 @@
         , Customer.invoiceAddress .Set(setCarryOver)
         , Customer.deliveryAddress.Set(setCarryOver)
         );
-      Hosts.OpenWindow(newCustomer, View, Update);
+      Hosts.OpenNewWindow(newCustomer, View, Update);
     }
   }
 }

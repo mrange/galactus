@@ -2286,7 +2286,7 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.UIElement> onCollapsed (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
         new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.expander.collapsed, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
 
-      public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Expander>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.Expander>(vs, c);
+      public static DelayedHeaderedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Expander>[] vs) => (h, c) => new StandardHeaderedContentView<TMessage, System.Windows.Controls.Expander>(vs, h, c);
     }
 
     public partial class fixedPage : frameworkElement
@@ -2503,7 +2503,7 @@ namespace Galactus.Standard
     {
 
 
-      public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.GroupBox>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.GroupBox>(vs, c);
+      public static DelayedHeaderedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.GroupBox>[] vs) => (h, c) => new StandardHeaderedContentView<TMessage, System.Windows.Controls.GroupBox>(vs, h, c);
     }
 
     public partial class groupItem : contentControl
@@ -2521,7 +2521,7 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.HeaderedContentControl> headerStringFormat(System.String v) => new SetValue<TMessage, System.Windows.Controls.HeaderedContentControl, System.String>(Properties.headeredContentControl.headerStringFormat, v);
 
 
-      public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.HeaderedContentControl>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.HeaderedContentControl>(vs, c);
+      public static DelayedHeaderedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.HeaderedContentControl>[] vs) => (h, c) => new StandardHeaderedContentView<TMessage, System.Windows.Controls.HeaderedContentControl>(vs, h, c);
     }
 
     public partial class headeredItemsControl : itemsControl
@@ -3082,7 +3082,7 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.TabItem> isSelected(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.TabItem, System.Boolean>(Properties.tabItem.isSelected, v);
 
 
-      public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.TabItem>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.TabItem>(vs, c);
+      public static DelayedHeaderedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.TabItem>[] vs) => (h, c) => new StandardHeaderedContentView<TMessage, System.Windows.Controls.TabItem>(vs, h, c);
     }
 
     public partial class tabPanel : panel

@@ -46,11 +46,13 @@
     }
   }
 
+  public delegate void Teardown();
+
   public sealed class UpdateContext
   {
-    readonly List<Action> tearDowns = new List<Action>(16);
+    readonly List<Teardown> tearDowns = new List<Teardown>(16);
 
-    public void OnTearDown(Action action)
+    public void OnTearDown(Teardown action)
     {
       // TODO: Handle nulls
       tearDowns.Add(action);
@@ -187,6 +189,33 @@
     {
       // TODO: Cast unnecessary but doesn't cost that much compared to set in general
       property.Set((TUI)ui, value);
+    }
+  }
+
+  public delegate void Invoker(UpdateContext ctx, ParentInfo pi, UIElement ui);
+
+  public interface IInvokedValue<TMessage, in TUI> : IValue<TMessage, TUI>
+    where TUI : UIElement
+  {
+    Invoker Invoker { get; }
+  }
+
+  public sealed class InvokedValue<TMessage, TUI> : IInvokedValue<TMessage, TUI>
+    where TUI : UIElement
+  {
+    readonly Invoker invoker;
+
+    public Invoker Invoker => invoker;
+
+    public InvokedValue(Invoker i)
+    {
+      // TODO: Handle nulls
+      invoker = i;
+    }
+
+    public void Update(UpdateContext ctx, ParentInfo pi, UIElement ui)
+    {
+      invoker(ctx, pi, ui);
     }
   }
 
@@ -368,6 +397,54 @@
 
   public delegate IView<TMessage> DelayedContentView<TMessage> (IView<TMessage> c);
 
+  public sealed class StandardHeaderedContentView<TMessage, TUI>
+    : IView<TMessage>
+    where TUI: HeaderedContentControl, new()
+  {
+    readonly IValue<TMessage, TUI>[]  values      ;
+    readonly IView<TMessage>          headerView  ;
+    readonly IView<TMessage>          contentView ;
+
+    public StandardHeaderedContentView(IValue<TMessage, TUI>[] vs, IView<TMessage> h, IView<TMessage> c)
+    {
+      // TODO: Handle nulls
+      values      = vs ?? new IValue<TMessage, TUI>[0];
+      headerView  = h;
+      contentView = c;
+    }
+
+    public UIElement Update(UpdateContext ctx, ParentInfo pi, UIElement ui)
+    {
+      var v = GetInstance<TUI>(ui);
+
+      var tpi = v.ParentInfo;
+      var tui = v.Instance  ;
+
+      var content = tui.Content as UIElement;
+      var ncontent= contentView.Update(ctx, pi, content);
+      if (!ReferenceEquals(content, ncontent))
+      {
+        tui.Content = ncontent;
+      }
+
+      var header  = tui.Header as UIElement;
+      var nheader = headerView.Update(ctx, pi, header);
+      if (!ReferenceEquals(header, nheader))
+      {
+        tui.Header = nheader;
+      }
+
+      foreach (var value in values)
+      {
+        value.Update(ctx, tpi, tui);
+      }
+
+      return tui;
+    }
+  }
+
+  public delegate IView<TMessage> DelayedHeaderedContentView<TMessage> (IView<TMessage> h, IView<TMessage> c);
+
   public sealed class StandardDecoratorView<TMessage, TUI>
     : IView<TMessage>
     where TUI: Decorator, new()
@@ -517,13 +594,30 @@
 
   // Hosts
 
+  public delegate void HostCleanup();
+
   public static class Hosts
   {
-    public static void OpenWindow<TModel, TMessage>(TModel model, View<TModel, TMessage> view, Update<TModel, TMessage> update)
+    public static void OpenNewWindow<TModel, TMessage>(TModel model, View<TModel, TMessage> view, Update<TModel, TMessage> update)
     {
-      var wnd     = new Window()            ;
+      var wnd     = new Window();
+      var cleanup = ExistingContentControl(wnd, model, view, update);
+
+      wnd.ShowDialog();
+      cleanup();
+    }
+
+    public static (ContentControl contentControl, HostCleanup cleanup) NewContentControl<TModel, TMessage>(TModel model, View<TModel, TMessage> view, Update<TModel, TMessage> update)
+    {
+      var cc      = new ContentControl();
+      var cleanup = ExistingContentControl(cc, model, view, update);
+      return (cc, cleanup);
+    }
+
+    public static HostCleanup ExistingContentControl<TModel, TMessage>(ContentControl cc, TModel model, View<TModel, TMessage> view, Update<TModel, TMessage> update)
+    {
       var ctx     = new UpdateContext()     ;
-      var disp    = wnd.Dispatcher          ;
+      var disp    = cc.Dispatcher           ;
       var current = model                   ;
       var queue   = new Queue<TMessage>(16) ;
 
@@ -531,11 +625,11 @@
       {
         ctx.TearDown ();
         var nv      = view(current)             ;
-        var cnt     = wnd.Content as UIElement  ;
+        var cnt     = cc.Content as UIElement   ;
         var pi      = ParentInfo.ReusedInstance ;
 
-        wnd.Content = null                      ;
-        wnd.Content = nv.Update(ctx, pi, cnt)   ;
+        cc.Content  = null                      ;
+        cc.Content  = nv.Update(ctx, pi, cnt)   ;
       }
 
       void Process()
@@ -554,16 +648,20 @@
       {
         var msg = (TMessage)args.Message;
         queue.Enqueue(msg);
+        // TODO: Avoiding invoking Delay if already a queue?
         disp.Delay(process);
       }
       var onMessage = new MessageEventHandler(OnMessage);
 
       Refresh();
-      wnd.AddHandler(RoutedEvents.MessageEvent, onMessage);
+      cc.AddHandler(RoutedEvents.MessageEvent, onMessage);
 
-      wnd.ShowDialog();
-      queue.Clear();
-      ctx.TearDown();
+      return () => 
+      { 
+        cc.RemoveHandler(RoutedEvents.MessageEvent, onMessage);
+        queue.Clear();
+        ctx.TearDown();
+      };
     }
   }
 }

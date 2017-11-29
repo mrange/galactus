@@ -66,7 +66,7 @@
         LastName  = "Gates"   ,
         IsFemale  = true      ,
       };
-      Hosts.OpenWindow(model, View, Update);
+      Hosts.OpenNewWindow(model, View, Update);
     }
   }
 }
