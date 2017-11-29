@@ -265,7 +265,7 @@
       // TODO: How to handle events more efficiently?
 
       // TODO: Whether to handle events that already been handled should be configurable
-      ui.AddHandler(event_.RoutedEvent, onChangeHandler, true);
+      ui.AddHandler(event_.RoutedEvent, onChangeHandler, false);
       ctx.OnTearDown(() => ui.RemoveHandler(event_.RoutedEvent, onChangeHandler));
     }
   }
@@ -654,7 +654,7 @@
       var onMessage = new MessageEventHandler(OnMessage);
 
       Refresh();
-      cc.AddHandler(RoutedEvents.MessageEvent, onMessage);
+      cc.AddHandler(RoutedEvents.MessageEvent, onMessage, false);
 
       return () => 
       { 

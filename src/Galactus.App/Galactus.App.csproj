@@ -52,11 +52,12 @@
   <ItemGroup>
     <Compile Include="Demo.cs" />
     <Compile Include="ImmutableModel.cs" />
-    <Compile Include="Model.cs">
+    <Compile Include="GeneratedModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>GeneratedModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model.cs" />
     <Compile Include="MutableModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,9 +72,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Model.tt">
+    <Content Include="GeneratedModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model.cs</LastGenOutput>
+      <LastGenOutput>GeneratedModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

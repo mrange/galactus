@@ -20,22 +20,10 @@
 
       IView<Message> labeledGroup(string lbl, IView<Message> view)
       {
-        return grid.View                               
-          (frameworkElement.margin(new Thickness(4,12,4,4)))
-          ( border.View
-            ( border.borderThickness(new Thickness(2))
-            , border.borderBrush(Brushes.LimeGreen)
-            , border.padding(new Thickness(4))
-            )
-            (view)
-          , textBlock.View
-            ( textBlock.text(lbl)
-            , textBlock.padding(new Thickness(4,0,4,0))
-            , textBlock.background(Brushes.White)
-            , textBlock.verticalAlignment(VerticalAlignment.Top)
-            , textBlock.horizontalAlignment(HorizontalAlignment.Left)
-            , textBlock.renderTransform(new TranslateTransform(10, -8))
-            )
+        return groupBox.View
+          ()
+          ( textBlock.View(textBlock.text(lbl))
+          , view
           ).Named(lbl);
       }
 
@@ -43,11 +31,18 @@
       {
         return checkBox.View
           ( checkBox.isChecked(l.Get(customer))
-          , checkBox.onClick((ui, args) => c => l.Set(c, ((CheckBox)ui).IsChecked ?? false))
+          , uIElement.lens(l)
+          , margin
           )
           (textBlock.View(textBlock.text(lbl)))
           ;
       }
+      var labeledCheckBoxHandler = checkBox.onClick((ui, args) => c => 
+        {
+          var cb  = args.OriginalSource as CheckBox;
+          var ll  = DependencyProperties.GetLens(cb) as Lens<Customer, bool>;
+          return ll?.Set(c, cb.IsChecked ?? false);
+        });
 
       IView<Message> labeledTextBox(string lbl, Lens<Customer, string> l)
       {
@@ -62,6 +57,28 @@
             , uIElement.lens(l)
             )
           )
+          ;
+      }
+      var labeledTextBoxHandler = uIElement.onLostFocus((ui, args) => c =>
+        {
+          var ltb = args.OriginalSource as TextBox;
+          var ll  = DependencyProperties.GetLens(ltb) as Lens<Customer, string>;
+          return ll?.Set(c, ltb.Text) ?? c;
+        });
+
+
+      IView<Message> frugalExpander(string lbl, Lens<Customer, bool> l, IView<Message> view)
+      {
+        var isExpanded = l.Get(customer);
+        return expander.View
+          ( expander.isExpanded(isExpanded)
+          , expander.onExpanded((ui, args) => c => l.Set(c, true))
+          , expander.onCollapsed((ui, args) => c => l.Set(c, false))
+          )
+          ( textBlock.View(textBlock.text(lbl))
+          , isExpanded ? view :empty.View
+          )
+          .Named(lbl)
           ;
       }
 
@@ -82,16 +99,10 @@
           );
       }
 
-      var textBoxHandler = uIElement.onLostFocus((ui, args) => c =>
-        {
-          var ltb = args.OriginalSource as TextBox;
-          var ll  = DependencyProperties.GetLens(ltb) as Lens<Customer, string>;
-          return ll?.Set(c, ltb.Text) ?? c;
-        });
-
       return scrollViewer.View
         ( frameworkElement.layoutTransform(new ScaleTransform(2, 2))
-        , textBoxHandler
+        , labeledTextBoxHandler
+        , labeledCheckBoxHandler
         )
         ( stackPanel.View
             (stackPanel.orientation(Orientation.Vertical))

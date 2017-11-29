@@ -4,7 +4,8 @@
   var namespace_  = "Galactus.App.Model";
   var records     = new []
   {
-      R("Address"
+      R
+      ( "Address"
       , M("string"      , "CarryOver"               )
       , M("string"      , "Street"                  )
       , M("string"      , "Zip"                     )
@@ -12,7 +13,17 @@
       , M("string"      , "County"                  )
       , M("string"      , "Country"                 )
       )
-    , R("Customer"
+    , R
+      ( "CustomerKind"
+      )
+    , R
+      ( "Individual"
+      )
+    , R
+      ( "Company"
+      )
+    , R
+      ( "Customer"
       , M("string"      , "FirstName"               )
       , M("string"      , "LastName"                )
       , M("bool"        , "SeparateDeliveryAddress" )
@@ -53,7 +64,7 @@ namespace <#=namespace_#>
   foreach (var record in records)
   {
 #>
-  public sealed partial class <#=record.Name#>
+  public partial class <#=record.Name#>
   {
 <#
   foreach (var member in record.Members)
@@ -87,6 +98,10 @@ namespace <#=namespace_#>
 #>
     }
 
+<#
+  if (record.Members.Length > 0)
+  {
+#>
     public <#=record.Name#>()
       : this(
 <#
@@ -103,6 +118,10 @@ namespace <#=namespace_#>
       )
     {
     }
+<#
+  }
+#>
+
 
     public readonly static <#=record.Name#> Zero = new <#=record.Name#>();
 
