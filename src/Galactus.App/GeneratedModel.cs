@@ -79,7 +79,7 @@
       );
     }
 
-    sealed class CarryOverLens : Prism<Address, string>
+    sealed class CarryOverPrism : Prism<Address, string>
     {
       public override void BuildPath(StringBuilder sb)
       {
@@ -97,7 +97,7 @@
       }
     }
 
-    public readonly static Prism<Address, string> carryOver = new CarryOverLens();
+    public readonly static Prism<Address, string> carryOver = new CarryOverPrism();
 
     public Address With_Street(string street)
     {
@@ -111,7 +111,7 @@
       );
     }
 
-    sealed class StreetLens : Prism<Address, string>
+    sealed class StreetPrism : Prism<Address, string>
     {
       public override void BuildPath(StringBuilder sb)
       {
@@ -129,7 +129,7 @@
       }
     }
 
-    public readonly static Prism<Address, string> street = new StreetLens();
+    public readonly static Prism<Address, string> street = new StreetPrism();
 
     public Address With_Zip(string zip)
     {
@@ -143,7 +143,7 @@
       );
     }
 
-    sealed class ZipLens : Prism<Address, string>
+    sealed class ZipPrism : Prism<Address, string>
     {
       public override void BuildPath(StringBuilder sb)
       {
@@ -161,7 +161,7 @@
       }
     }
 
-    public readonly static Prism<Address, string> zip = new ZipLens();
+    public readonly static Prism<Address, string> zip = new ZipPrism();
 
     public Address With_City(string city)
     {
@@ -175,7 +175,7 @@
       );
     }
 
-    sealed class CityLens : Prism<Address, string>
+    sealed class CityPrism : Prism<Address, string>
     {
       public override void BuildPath(StringBuilder sb)
       {
@@ -193,7 +193,7 @@
       }
     }
 
-    public readonly static Prism<Address, string> city = new CityLens();
+    public readonly static Prism<Address, string> city = new CityPrism();
 
     public Address With_County(string county)
     {
@@ -207,7 +207,7 @@
       );
     }
 
-    sealed class CountyLens : Prism<Address, string>
+    sealed class CountyPrism : Prism<Address, string>
     {
       public override void BuildPath(StringBuilder sb)
       {
@@ -225,7 +225,7 @@
       }
     }
 
-    public readonly static Prism<Address, string> county = new CountyLens();
+    public readonly static Prism<Address, string> county = new CountyPrism();
 
     public Address With_Country(string country)
     {
@@ -239,7 +239,7 @@
       );
     }
 
-    sealed class CountryLens : Prism<Address, string>
+    sealed class CountryPrism : Prism<Address, string>
     {
       public override void BuildPath(StringBuilder sb)
       {
@@ -257,7 +257,7 @@
       }
     }
 
-    public readonly static Prism<Address, string> country = new CountryLens();
+    public readonly static Prism<Address, string> country = new CountryPrism();
 
 
   }
@@ -345,7 +345,7 @@
       );
     }
 
-    sealed class FirstNameLens : Prism<Customer, string>
+    sealed class FirstNamePrism : Prism<Customer, string>
     {
       public override void BuildPath(StringBuilder sb)
       {
@@ -363,7 +363,7 @@
       }
     }
 
-    public readonly static Prism<Customer, string> firstName = new FirstNameLens();
+    public readonly static Prism<Customer, string> firstName = new FirstNamePrism();
 
     public Customer With_LastName(string lastName)
     {
@@ -378,7 +378,7 @@
       );
     }
 
-    sealed class LastNameLens : Prism<Customer, string>
+    sealed class LastNamePrism : Prism<Customer, string>
     {
       public override void BuildPath(StringBuilder sb)
       {
@@ -396,7 +396,7 @@
       }
     }
 
-    public readonly static Prism<Customer, string> lastName = new LastNameLens();
+    public readonly static Prism<Customer, string> lastName = new LastNamePrism();
 
     public Customer With_Email(string email)
     {
@@ -411,7 +411,7 @@
       );
     }
 
-    sealed class EmailLens : Prism<Customer, string>
+    sealed class EmailPrism : Prism<Customer, string>
     {
       public override void BuildPath(StringBuilder sb)
       {
@@ -429,7 +429,7 @@
       }
     }
 
-    public readonly static Prism<Customer, string> email = new EmailLens();
+    public readonly static Prism<Customer, string> email = new EmailPrism();
 
     public Customer With_Kind(CustomerKind kind)
     {
@@ -444,7 +444,7 @@
       );
     }
 
-    sealed class KindLens : Prism<Customer, CustomerKind>
+    sealed class KindPrism : Prism<Customer, CustomerKind>
     {
       public override void BuildPath(StringBuilder sb)
       {
@@ -462,7 +462,7 @@
       }
     }
 
-    public readonly static Prism<Customer, CustomerKind> kind = new KindLens();
+    public readonly static Prism<Customer, CustomerKind> kind = new KindPrism();
 
     public Customer With_SeparateDeliveryAddress(bool separateDeliveryAddress)
     {
@@ -477,7 +477,7 @@
       );
     }
 
-    sealed class SeparateDeliveryAddressLens : Prism<Customer, bool>
+    sealed class SeparateDeliveryAddressPrism : Prism<Customer, bool>
     {
       public override void BuildPath(StringBuilder sb)
       {
@@ -495,7 +495,7 @@
       }
     }
 
-    public readonly static Prism<Customer, bool> separateDeliveryAddress = new SeparateDeliveryAddressLens();
+    public readonly static Prism<Customer, bool> separateDeliveryAddress = new SeparateDeliveryAddressPrism();
 
     public Customer With_InvoiceAddress(Address invoiceAddress)
     {
@@ -510,7 +510,7 @@
       );
     }
 
-    sealed class InvoiceAddressLens : Prism<Customer, Address>
+    sealed class InvoiceAddressPrism : Prism<Customer, Address>
     {
       public override void BuildPath(StringBuilder sb)
       {
@@ -528,7 +528,7 @@
       }
     }
 
-    public readonly static Prism<Customer, Address> invoiceAddress = new InvoiceAddressLens();
+    public readonly static Prism<Customer, Address> invoiceAddress = new InvoiceAddressPrism();
 
     public Customer With_DeliveryAddress(Address deliveryAddress)
     {
@@ -543,7 +543,7 @@
       );
     }
 
-    sealed class DeliveryAddressLens : Prism<Customer, Address>
+    sealed class DeliveryAddressPrism : Prism<Customer, Address>
     {
       public override void BuildPath(StringBuilder sb)
       {
@@ -561,7 +561,7 @@
       }
     }
 
-    public readonly static Prism<Customer, Address> deliveryAddress = new DeliveryAddressLens();
+    public readonly static Prism<Customer, Address> deliveryAddress = new DeliveryAddressPrism();
 
 
   }
@@ -581,6 +581,63 @@
     }
 
     public abstract T Apply<T>(IVisitor<T> visitor);
+
+    sealed class IndividualPrism : Prism<CustomerKind, Individual>
+    {
+      public override void BuildPath(StringBuilder sb)
+      {
+        sb.Append("|Individual");
+      }
+
+      public override Maybe<Individual> Get(CustomerKind m)
+      {
+        var mm = m as Individual;
+        if (mm != null)
+        {
+          return mm.Just();
+        }
+        else
+        {
+          return Maybe.Nothing<Individual>();
+        }
+      }
+
+      public override CustomerKind Set(CustomerKind m, Individual p)
+      {
+        return p;
+      }
+    }
+
+    public readonly static Prism<CustomerKind, Individual> individual = new IndividualPrism();
+
+    sealed class CompanyPrism : Prism<CustomerKind, Company>
+    {
+      public override void BuildPath(StringBuilder sb)
+      {
+        sb.Append("|Company");
+      }
+
+      public override Maybe<Company> Get(CustomerKind m)
+      {
+        var mm = m as Company;
+        if (mm != null)
+        {
+          return mm.Just();
+        }
+        else
+        {
+          return Maybe.Nothing<Company>();
+        }
+      }
+
+      public override CustomerKind Set(CustomerKind m, Company p)
+      {
+        return p;
+      }
+    }
+
+    public readonly static Prism<CustomerKind, Company> company = new CompanyPrism();
+
   }
 
   sealed partial class Individual : CustomerKind
@@ -620,7 +677,7 @@
       );
     }
 
-    sealed class SocialIdLens : Prism<Individual, string>
+    sealed class SocialIdPrism : Prism<Individual, string>
     {
       public override void BuildPath(StringBuilder sb)
       {
@@ -638,7 +695,7 @@
       }
     }
 
-    public readonly static Prism<Individual, string> socialId = new SocialIdLens();
+    public readonly static Prism<Individual, string> socialId = new SocialIdPrism();
 
     public override T Apply<T>(IVisitor<T> visitor)
     {
@@ -698,7 +755,7 @@
       );
     }
 
-    sealed class CompanyIdLens : Prism<Company, string>
+    sealed class CompanyIdPrism : Prism<Company, string>
     {
       public override void BuildPath(StringBuilder sb)
       {
@@ -716,7 +773,7 @@
       }
     }
 
-    public readonly static Prism<Company, string> companyId = new CompanyIdLens();
+    public readonly static Prism<Company, string> companyId = new CompanyIdPrism();
 
     public Company With_CompanyName(string companyName)
     {
@@ -727,7 +784,7 @@
       );
     }
 
-    sealed class CompanyNameLens : Prism<Company, string>
+    sealed class CompanyNamePrism : Prism<Company, string>
     {
       public override void BuildPath(StringBuilder sb)
       {
@@ -745,7 +802,7 @@
       }
     }
 
-    public readonly static Prism<Company, string> companyName = new CompanyNameLens();
+    public readonly static Prism<Company, string> companyName = new CompanyNamePrism();
 
     public Company With_VatNo(string vatNo)
     {
@@ -756,7 +813,7 @@
       );
     }
 
-    sealed class VatNoLens : Prism<Company, string>
+    sealed class VatNoPrism : Prism<Company, string>
     {
       public override void BuildPath(StringBuilder sb)
       {
@@ -774,7 +831,7 @@
       }
     }
 
-    public readonly static Prism<Company, string> vatNo = new VatNoLens();
+    public readonly static Prism<Company, string> vatNo = new VatNoPrism();
 
     public override T Apply<T>(IVisitor<T> visitor)
     {

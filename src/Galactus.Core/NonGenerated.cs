@@ -11,7 +11,7 @@ namespace Galactus.Standard
   {
     public partial class uIElement
     {
-      public static readonly IProperty<UIElement, IPrism> lens = new Property<UIElement, IPrism>(DependencyProperties.LensProperty);
+      public static readonly IProperty<UIElement, IPrism> prism = new Property<UIElement, IPrism>(DependencyProperties.PrismProperty);
     }
   }
 
@@ -24,7 +24,7 @@ namespace Galactus.Standard
 
     public partial class uIElement
     {
-      public static IValue<TMessage, UIElement> lens(IPrism v) => new SetValue<TMessage, UIElement, IPrism>(Properties.uIElement.lens, v);
+      public static IValue<TMessage, UIElement> prism(IPrism v) => new SetValue<TMessage, UIElement, IPrism>(Properties.uIElement.prism, v);
     }
 
     public partial class grid

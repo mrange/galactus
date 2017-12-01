@@ -31,7 +31,7 @@
       {
         return checkBox.View
           ( checkBox.isChecked(l.Get(customer).GetOrDefaultTo(false))
-          , uIElement.lens(l)
+          , uIElement.prism(l)
           , margin
           )
           (textBlock.View(textBlock.text(lbl)))
@@ -40,7 +40,7 @@
       var labeledCheckBoxHandler = checkBox.onClick((ui, args) => c => 
         {
           var cb  = args.OriginalSource as CheckBox;
-          var ll  = DependencyProperties.GetLens(cb) as Prism<Customer, bool>;
+          var ll  = DependencyProperties.GetPrism(cb) as Prism<Customer, bool>;
           return ll?.Set(c, cb.IsChecked ?? false);
         });
 
@@ -54,7 +54,7 @@
           , textBox.View
             ( textBox.text(l.Get(customer).GetOrDefaultTo(""))
             , textBox.minWidth(80)
-            , uIElement.lens(l)
+            , uIElement.prism(l)
             )
           )
           ;
@@ -62,7 +62,7 @@
       var labeledTextBoxHandler = uIElement.onLostFocus((ui, args) => c =>
         {
           var ltb = args.OriginalSource as TextBox;
-          var ll  = DependencyProperties.GetLens(ltb) as Prism<Customer, string>;
+          var ll  = DependencyProperties.GetPrism(ltb) as Prism<Customer, string>;
           return ll?.Set(c, ltb.Text) ?? c;
         });
 

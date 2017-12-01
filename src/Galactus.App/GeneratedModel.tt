@@ -186,13 +186,48 @@ namespace <#=Namespace#>
     }
 
     public abstract T Apply<T>(IVisitor<T> visitor);
+
+<#+
+  foreach (var record in union_.Records)
+  {
+#>
+    sealed class <#=record.Name#>Prism : Prism<<#=union_.Name#>, <#=record.Name#>>
+    {
+      public override void BuildPath(StringBuilder sb)
+      {
+        sb.Append("|<#=record.Name#>");
+      }
+
+      public override Maybe<<#=record.Name#>> Get(<#=union_.Name#> m)
+      {
+        var mm = m as <#=record.Name#>;
+        if (mm != null)
+        {
+          return mm.Just();
+        }
+        else
+        {
+          return Maybe.Nothing<<#=record.Name#>>();
+        }
+      }
+
+      public override <#=union_.Name#> Set(<#=union_.Name#> m, <#=record.Name#> p)
+      {
+        return p;
+      }
+    }
+
+    public readonly static Prism<<#=union_.Name#>, <#=record.Name#>> <#=CamelCase(record.Name)#> = new <#=record.Name#>Prism();
+
+<#+
+  }
+#>
 <#+    
   }
 #>
   }
 
 <#+
-
   foreach (var record in union_.Records)
   {
     GenerateRecord(record, union_.Name, () => 
@@ -319,7 +354,7 @@ namespace <#=Namespace#>
       );
     }
 
-    sealed class <#=member.Name#>Lens : Lens<<#=record.Name#>, <#=member.Type#>>
+    sealed class <#=member.Name#>Prism : Prism<<#=record.Name#>, <#=member.Type#>>
     {
       public override void BuildPath(StringBuilder sb)
       {
@@ -337,7 +372,7 @@ namespace <#=Namespace#>
       }
     }
 
-    public readonly static Lens<<#=record.Name#>, <#=member.Type#>> <#=CamelCase(member.Name)#> = new <#=member.Name#>Lens();
+    public readonly static Prism<<#=record.Name#>, <#=member.Type#>> <#=CamelCase(member.Name)#> = new <#=member.Name#>Prism();
 
 <#+
   }

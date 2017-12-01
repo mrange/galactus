@@ -29,20 +29,20 @@
 
   public static class DependencyProperties
   {
-    public static readonly DependencyProperty DummyProperty = DependencyProperty.RegisterAttached("Dummy" , typeof(object), typeof(DependencyProperties));
+    public static readonly DependencyProperty DummyProperty = DependencyProperty.RegisterAttached ("Dummy" , typeof(object), typeof(DependencyProperties));
 
-    public static readonly DependencyProperty NameProperty  = DependencyProperty.RegisterAttached("Name"  , typeof(string), typeof(DependencyProperties));
+    public static readonly DependencyProperty NameProperty  = DependencyProperty.RegisterAttached ("Name"  , typeof(string), typeof(DependencyProperties));
 
-    public static readonly DependencyProperty LensProperty  = DependencyProperty.RegisterAttached("Lens"  , typeof(IPrism) , typeof(DependencyProperties));
+    public static readonly DependencyProperty PrismProperty  = DependencyProperty.RegisterAttached("Prism"  , typeof(IPrism) , typeof(DependencyProperties));
 
-    public static IPrism GetLens(DependencyObject dobj)
+    public static IPrism GetPrism(DependencyObject dobj)
     {
-      return (IPrism)dobj?.GetValue(LensProperty);
+      return (IPrism)dobj?.GetValue(PrismProperty);
     }
 
-    public static void SetLens(DependencyObject dobj, IPrism l)
+    public static void SetPrism(DependencyObject dobj, IPrism l)
     {
-      dobj?.SetValue(LensProperty, l);
+      dobj?.SetValue(PrismProperty, l);
     }
   }
 
