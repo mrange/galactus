@@ -326,9 +326,9 @@ namespace <#=Namespace#>
         sb.Append("<#=member.Name#>");
       }
 
-      public override <#=member.Type#> Get(<#=record.Name#> m)
+      public override Maybe<<#=member.Type#>> Get(<#=record.Name#> m)
       {
-        return m.<#=member.Name#>;
+        return m.<#=member.Name#>.Just();
       }
 
       public override <#=record.Name#> Set(<#=record.Name#> m, <#=member.Type#> p)

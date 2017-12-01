@@ -79,16 +79,16 @@
       );
     }
 
-    sealed class CarryOverLens : Lens<Address, string>
+    sealed class CarryOverLens : Prism<Address, string>
     {
       public override void BuildPath(StringBuilder sb)
       {
         sb.Append("CarryOver");
       }
 
-      public override string Get(Address m)
+      public override Maybe<string> Get(Address m)
       {
-        return m.CarryOver;
+        return m.CarryOver.Just();
       }
 
       public override Address Set(Address m, string p)
@@ -97,7 +97,7 @@
       }
     }
 
-    public readonly static Lens<Address, string> carryOver = new CarryOverLens();
+    public readonly static Prism<Address, string> carryOver = new CarryOverLens();
 
     public Address With_Street(string street)
     {
@@ -111,16 +111,16 @@
       );
     }
 
-    sealed class StreetLens : Lens<Address, string>
+    sealed class StreetLens : Prism<Address, string>
     {
       public override void BuildPath(StringBuilder sb)
       {
         sb.Append("Street");
       }
 
-      public override string Get(Address m)
+      public override Maybe<string> Get(Address m)
       {
-        return m.Street;
+        return m.Street.Just();
       }
 
       public override Address Set(Address m, string p)
@@ -129,7 +129,7 @@
       }
     }
 
-    public readonly static Lens<Address, string> street = new StreetLens();
+    public readonly static Prism<Address, string> street = new StreetLens();
 
     public Address With_Zip(string zip)
     {
@@ -143,16 +143,16 @@
       );
     }
 
-    sealed class ZipLens : Lens<Address, string>
+    sealed class ZipLens : Prism<Address, string>
     {
       public override void BuildPath(StringBuilder sb)
       {
         sb.Append("Zip");
       }
 
-      public override string Get(Address m)
+      public override Maybe<string> Get(Address m)
       {
-        return m.Zip;
+        return m.Zip.Just();
       }
 
       public override Address Set(Address m, string p)
@@ -161,7 +161,7 @@
       }
     }
 
-    public readonly static Lens<Address, string> zip = new ZipLens();
+    public readonly static Prism<Address, string> zip = new ZipLens();
 
     public Address With_City(string city)
     {
@@ -175,16 +175,16 @@
       );
     }
 
-    sealed class CityLens : Lens<Address, string>
+    sealed class CityLens : Prism<Address, string>
     {
       public override void BuildPath(StringBuilder sb)
       {
         sb.Append("City");
       }
 
-      public override string Get(Address m)
+      public override Maybe<string> Get(Address m)
       {
-        return m.City;
+        return m.City.Just();
       }
 
       public override Address Set(Address m, string p)
@@ -193,7 +193,7 @@
       }
     }
 
-    public readonly static Lens<Address, string> city = new CityLens();
+    public readonly static Prism<Address, string> city = new CityLens();
 
     public Address With_County(string county)
     {
@@ -207,16 +207,16 @@
       );
     }
 
-    sealed class CountyLens : Lens<Address, string>
+    sealed class CountyLens : Prism<Address, string>
     {
       public override void BuildPath(StringBuilder sb)
       {
         sb.Append("County");
       }
 
-      public override string Get(Address m)
+      public override Maybe<string> Get(Address m)
       {
-        return m.County;
+        return m.County.Just();
       }
 
       public override Address Set(Address m, string p)
@@ -225,7 +225,7 @@
       }
     }
 
-    public readonly static Lens<Address, string> county = new CountyLens();
+    public readonly static Prism<Address, string> county = new CountyLens();
 
     public Address With_Country(string country)
     {
@@ -239,16 +239,16 @@
       );
     }
 
-    sealed class CountryLens : Lens<Address, string>
+    sealed class CountryLens : Prism<Address, string>
     {
       public override void BuildPath(StringBuilder sb)
       {
         sb.Append("Country");
       }
 
-      public override string Get(Address m)
+      public override Maybe<string> Get(Address m)
       {
-        return m.Country;
+        return m.Country.Just();
       }
 
       public override Address Set(Address m, string p)
@@ -257,7 +257,7 @@
       }
     }
 
-    public readonly static Lens<Address, string> country = new CountryLens();
+    public readonly static Prism<Address, string> country = new CountryLens();
 
 
   }
@@ -345,16 +345,16 @@
       );
     }
 
-    sealed class FirstNameLens : Lens<Customer, string>
+    sealed class FirstNameLens : Prism<Customer, string>
     {
       public override void BuildPath(StringBuilder sb)
       {
         sb.Append("FirstName");
       }
 
-      public override string Get(Customer m)
+      public override Maybe<string> Get(Customer m)
       {
-        return m.FirstName;
+        return m.FirstName.Just();
       }
 
       public override Customer Set(Customer m, string p)
@@ -363,7 +363,7 @@
       }
     }
 
-    public readonly static Lens<Customer, string> firstName = new FirstNameLens();
+    public readonly static Prism<Customer, string> firstName = new FirstNameLens();
 
     public Customer With_LastName(string lastName)
     {
@@ -378,16 +378,16 @@
       );
     }
 
-    sealed class LastNameLens : Lens<Customer, string>
+    sealed class LastNameLens : Prism<Customer, string>
     {
       public override void BuildPath(StringBuilder sb)
       {
         sb.Append("LastName");
       }
 
-      public override string Get(Customer m)
+      public override Maybe<string> Get(Customer m)
       {
-        return m.LastName;
+        return m.LastName.Just();
       }
 
       public override Customer Set(Customer m, string p)
@@ -396,7 +396,7 @@
       }
     }
 
-    public readonly static Lens<Customer, string> lastName = new LastNameLens();
+    public readonly static Prism<Customer, string> lastName = new LastNameLens();
 
     public Customer With_Email(string email)
     {
@@ -411,16 +411,16 @@
       );
     }
 
-    sealed class EmailLens : Lens<Customer, string>
+    sealed class EmailLens : Prism<Customer, string>
     {
       public override void BuildPath(StringBuilder sb)
       {
         sb.Append("Email");
       }
 
-      public override string Get(Customer m)
+      public override Maybe<string> Get(Customer m)
       {
-        return m.Email;
+        return m.Email.Just();
       }
 
       public override Customer Set(Customer m, string p)
@@ -429,7 +429,7 @@
       }
     }
 
-    public readonly static Lens<Customer, string> email = new EmailLens();
+    public readonly static Prism<Customer, string> email = new EmailLens();
 
     public Customer With_Kind(CustomerKind kind)
     {
@@ -444,16 +444,16 @@
       );
     }
 
-    sealed class KindLens : Lens<Customer, CustomerKind>
+    sealed class KindLens : Prism<Customer, CustomerKind>
     {
       public override void BuildPath(StringBuilder sb)
       {
         sb.Append("Kind");
       }
 
-      public override CustomerKind Get(Customer m)
+      public override Maybe<CustomerKind> Get(Customer m)
       {
-        return m.Kind;
+        return m.Kind.Just();
       }
 
       public override Customer Set(Customer m, CustomerKind p)
@@ -462,7 +462,7 @@
       }
     }
 
-    public readonly static Lens<Customer, CustomerKind> kind = new KindLens();
+    public readonly static Prism<Customer, CustomerKind> kind = new KindLens();
 
     public Customer With_SeparateDeliveryAddress(bool separateDeliveryAddress)
     {
@@ -477,16 +477,16 @@
       );
     }
 
-    sealed class SeparateDeliveryAddressLens : Lens<Customer, bool>
+    sealed class SeparateDeliveryAddressLens : Prism<Customer, bool>
     {
       public override void BuildPath(StringBuilder sb)
       {
         sb.Append("SeparateDeliveryAddress");
       }
 
-      public override bool Get(Customer m)
+      public override Maybe<bool> Get(Customer m)
       {
-        return m.SeparateDeliveryAddress;
+        return m.SeparateDeliveryAddress.Just();
       }
 
       public override Customer Set(Customer m, bool p)
@@ -495,7 +495,7 @@
       }
     }
 
-    public readonly static Lens<Customer, bool> separateDeliveryAddress = new SeparateDeliveryAddressLens();
+    public readonly static Prism<Customer, bool> separateDeliveryAddress = new SeparateDeliveryAddressLens();
 
     public Customer With_InvoiceAddress(Address invoiceAddress)
     {
@@ -510,16 +510,16 @@
       );
     }
 
-    sealed class InvoiceAddressLens : Lens<Customer, Address>
+    sealed class InvoiceAddressLens : Prism<Customer, Address>
     {
       public override void BuildPath(StringBuilder sb)
       {
         sb.Append("InvoiceAddress");
       }
 
-      public override Address Get(Customer m)
+      public override Maybe<Address> Get(Customer m)
       {
-        return m.InvoiceAddress;
+        return m.InvoiceAddress.Just();
       }
 
       public override Customer Set(Customer m, Address p)
@@ -528,7 +528,7 @@
       }
     }
 
-    public readonly static Lens<Customer, Address> invoiceAddress = new InvoiceAddressLens();
+    public readonly static Prism<Customer, Address> invoiceAddress = new InvoiceAddressLens();
 
     public Customer With_DeliveryAddress(Address deliveryAddress)
     {
@@ -543,16 +543,16 @@
       );
     }
 
-    sealed class DeliveryAddressLens : Lens<Customer, Address>
+    sealed class DeliveryAddressLens : Prism<Customer, Address>
     {
       public override void BuildPath(StringBuilder sb)
       {
         sb.Append("DeliveryAddress");
       }
 
-      public override Address Get(Customer m)
+      public override Maybe<Address> Get(Customer m)
       {
-        return m.DeliveryAddress;
+        return m.DeliveryAddress.Just();
       }
 
       public override Customer Set(Customer m, Address p)
@@ -561,7 +561,7 @@
       }
     }
 
-    public readonly static Lens<Customer, Address> deliveryAddress = new DeliveryAddressLens();
+    public readonly static Prism<Customer, Address> deliveryAddress = new DeliveryAddressLens();
 
 
   }
@@ -620,16 +620,16 @@
       );
     }
 
-    sealed class SocialIdLens : Lens<Individual, string>
+    sealed class SocialIdLens : Prism<Individual, string>
     {
       public override void BuildPath(StringBuilder sb)
       {
         sb.Append("SocialId");
       }
 
-      public override string Get(Individual m)
+      public override Maybe<string> Get(Individual m)
       {
-        return m.SocialId;
+        return m.SocialId.Just();
       }
 
       public override Individual Set(Individual m, string p)
@@ -638,7 +638,7 @@
       }
     }
 
-    public readonly static Lens<Individual, string> socialId = new SocialIdLens();
+    public readonly static Prism<Individual, string> socialId = new SocialIdLens();
 
     public override T Apply<T>(IVisitor<T> visitor)
     {
@@ -698,16 +698,16 @@
       );
     }
 
-    sealed class CompanyIdLens : Lens<Company, string>
+    sealed class CompanyIdLens : Prism<Company, string>
     {
       public override void BuildPath(StringBuilder sb)
       {
         sb.Append("CompanyId");
       }
 
-      public override string Get(Company m)
+      public override Maybe<string> Get(Company m)
       {
-        return m.CompanyId;
+        return m.CompanyId.Just();
       }
 
       public override Company Set(Company m, string p)
@@ -716,7 +716,7 @@
       }
     }
 
-    public readonly static Lens<Company, string> companyId = new CompanyIdLens();
+    public readonly static Prism<Company, string> companyId = new CompanyIdLens();
 
     public Company With_CompanyName(string companyName)
     {
@@ -727,16 +727,16 @@
       );
     }
 
-    sealed class CompanyNameLens : Lens<Company, string>
+    sealed class CompanyNameLens : Prism<Company, string>
     {
       public override void BuildPath(StringBuilder sb)
       {
         sb.Append("CompanyName");
       }
 
-      public override string Get(Company m)
+      public override Maybe<string> Get(Company m)
       {
-        return m.CompanyName;
+        return m.CompanyName.Just();
       }
 
       public override Company Set(Company m, string p)
@@ -745,7 +745,7 @@
       }
     }
 
-    public readonly static Lens<Company, string> companyName = new CompanyNameLens();
+    public readonly static Prism<Company, string> companyName = new CompanyNameLens();
 
     public Company With_VatNo(string vatNo)
     {
@@ -756,16 +756,16 @@
       );
     }
 
-    sealed class VatNoLens : Lens<Company, string>
+    sealed class VatNoLens : Prism<Company, string>
     {
       public override void BuildPath(StringBuilder sb)
       {
         sb.Append("VatNo");
       }
 
-      public override string Get(Company m)
+      public override Maybe<string> Get(Company m)
       {
-        return m.VatNo;
+        return m.VatNo.Just();
       }
 
       public override Company Set(Company m, string p)
@@ -774,7 +774,7 @@
       }
     }
 
-    public readonly static Lens<Company, string> vatNo = new VatNoLens();
+    public readonly static Prism<Company, string> vatNo = new VatNoLens();
 
     public override T Apply<T>(IVisitor<T> visitor)
     {

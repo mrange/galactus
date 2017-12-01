@@ -27,10 +27,10 @@
           ).Named(lbl);
       }
 
-      IView<Message> labeledCheckBox(string lbl, Lens<Customer, bool> l)
+      IView<Message> labeledCheckBox(string lbl, Prism<Customer, bool> l)
       {
         return checkBox.View
-          ( checkBox.isChecked(l.Get(customer))
+          ( checkBox.isChecked(l.Get(customer).GetOrDefaultTo(false))
           , uIElement.lens(l)
           , margin
           )
@@ -40,11 +40,11 @@
       var labeledCheckBoxHandler = checkBox.onClick((ui, args) => c => 
         {
           var cb  = args.OriginalSource as CheckBox;
-          var ll  = DependencyProperties.GetLens(cb) as Lens<Customer, bool>;
+          var ll  = DependencyProperties.GetLens(cb) as Prism<Customer, bool>;
           return ll?.Set(c, cb.IsChecked ?? false);
         });
 
-      IView<Message> labeledTextBox(string lbl, Lens<Customer, string> l)
+      IView<Message> labeledTextBox(string lbl, Prism<Customer, string> l)
       {
         return stackPanel.View
           ( stackPanel.orientation(Orientation.Horizontal)
@@ -52,7 +52,7 @@
           )
           ( textBlock.View(textBlock.text(lbl), textBlock.width(80))
           , textBox.View
-            ( textBox.text(l.Get(customer))
+            ( textBox.text(l.Get(customer).GetOrDefaultTo(""))
             , textBox.minWidth(80)
             , uIElement.lens(l)
             )
@@ -62,27 +62,12 @@
       var labeledTextBoxHandler = uIElement.onLostFocus((ui, args) => c =>
         {
           var ltb = args.OriginalSource as TextBox;
-          var ll  = DependencyProperties.GetLens(ltb) as Lens<Customer, string>;
+          var ll  = DependencyProperties.GetLens(ltb) as Prism<Customer, string>;
           return ll?.Set(c, ltb.Text) ?? c;
         });
 
 
-      IView<Message> frugalExpander(string lbl, Lens<Customer, bool> l, IView<Message> view)
-      {
-        var isExpanded = l.Get(customer);
-        return expander.View
-          ( expander.isExpanded(isExpanded)
-          , expander.onExpanded((ui, args) => c => l.Set(c, true))
-          , expander.onCollapsed((ui, args) => c => l.Set(c, false))
-          )
-          ( textBlock.View(textBlock.text(lbl))
-          , isExpanded ? view :empty.View
-          )
-          .Named(lbl)
-          ;
-      }
-
-      IView<Message> address(string lbl, Lens<Customer, Address> l)
+      IView<Message> address(string lbl, Prism<Customer, Address> l)
       {
         return labeledGroup
           ( lbl
@@ -99,7 +84,7 @@
           );
       }
 
-      IView<Message> company(Lens<Customer, Company> l)
+      IView<Message> company(Prism<Customer, Company> l)
       {
         return labeledGroup
           ( "Company"
@@ -116,7 +101,7 @@
           );
       }
 
-      IView<Message> individual(Lens<Customer, Individual> l)
+      IView<Message> individual(Prism<Customer, Individual> l)
       {
         return labeledGroup
           ( "Individual"
@@ -160,10 +145,8 @@
       var addressInfo   = new Address();
       var customer      = new Customer();
 
-      var x = Customer.firstName.Cast<object, Customer, string>();
-
       var setCarryOver  = Address.carryOver.Set("Melinda Gates");
-      var newCustomer   = Lens.SetAll
+      var newCustomer   = Prism.SetAll
         ( customer
         , Customer.firstName      .Set("Bill")
         , Customer.lastName       .Set("Gates")

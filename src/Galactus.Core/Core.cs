@@ -33,14 +33,14 @@
 
     public static readonly DependencyProperty NameProperty  = DependencyProperty.RegisterAttached("Name"  , typeof(string), typeof(DependencyProperties));
 
-    public static readonly DependencyProperty LensProperty  = DependencyProperty.RegisterAttached("Lens"  , typeof(ILens) , typeof(DependencyProperties));
+    public static readonly DependencyProperty LensProperty  = DependencyProperty.RegisterAttached("Lens"  , typeof(IPrism) , typeof(DependencyProperties));
 
-    public static ILens GetLens(DependencyObject dobj)
+    public static IPrism GetLens(DependencyObject dobj)
     {
-      return (ILens)dobj?.GetValue(LensProperty);
+      return (IPrism)dobj?.GetValue(LensProperty);
     }
 
-    public static void SetLens(DependencyObject dobj, ILens l)
+    public static void SetLens(DependencyObject dobj, IPrism l)
     {
       dobj?.SetValue(LensProperty, l);
     }

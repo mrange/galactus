@@ -54,7 +54,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Generated.tt</DependentUpon>
     </Compile>
-    <Compile Include="Lens.cs" />
+    <Compile Include="Prism.cs" />
+    <Compile Include="Maybe.cs" />
     <Compile Include="NonCohesive.cs" />
     <Compile Include="NonGenerated.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
