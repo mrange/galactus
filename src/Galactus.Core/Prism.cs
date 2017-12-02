@@ -56,6 +56,37 @@
     }
   }
 
+  sealed class MapPrism<M, P, MP> : Prism<M, MP>
+  {
+    readonly Prism<M, P> prism;
+    readonly Func<P, MP> to   ;
+    readonly Func<MP, P> from ;
+
+    public MapPrism(Prism<M, P> p, Func<P, MP> t, Func<MP, P> f)
+    {
+      // TODO: handle nulls
+      prism = p;
+      to    = t;
+      from  = f;
+    }
+
+    public override Maybe<MP> Get(M m)
+    {
+      var pm = prism.Get(m);
+      return pm.HasValue ? to(pm.Value).Just() : Maybe.Nothing<MP>();
+    }
+
+    public override M Set(M m, MP p)
+    {
+      return prism.Set(m, from(p));
+    }
+
+    public override void BuildPath(StringBuilder sb)
+    {
+      prism.BuildPath(sb);
+    }
+  }
+
   public delegate M DelayedSet<M>(M m);
 
   public static class Prism
@@ -95,6 +126,11 @@
     public static Prism<O, P> To<O, I, P>(this Prism<O, I> o, Prism<I, P> i)
     {
       return new ToPrism<O, I, P>(o, i);
+    }
+
+    public static Prism<M, MP> Map<M, P, MP>(this Prism<M, P> p, Func<P, MP> to, Func<MP, P> from)
+    {
+      return new MapPrism<M, P, MP>(p, to, from);
     }
 
     public static M Update<M, P>(this Prism<M, P> l, M m, Func<P, P> f)

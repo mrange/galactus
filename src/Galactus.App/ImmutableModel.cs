@@ -16,7 +16,8 @@
   {
     static IView<Message> View(Customer customer)
     {
-      var margin = frameworkElement.margin(new Thickness(4));
+      var margin      = frameworkElement.margin(new Thickness(4));
+      var labelWidth  = 120;
 
       IView<Message> labeledGroup(string lbl, IView<Message> view)
       {
@@ -50,7 +51,7 @@
           ( stackPanel.orientation(Orientation.Horizontal)
           , margin
           )
-          ( textBlock.View(textBlock.text(lbl), textBlock.width(80))
+          ( textBlock.View(textBlock.text(lbl), textBlock.width(labelWidth))
           , textBox.View
             ( textBox.text(l.Get(customer).GetOrDefaultTo(""))
             , textBox.minWidth(80)
@@ -116,6 +117,24 @@
           );
       }
 
+      IView<Message> customerKind(Prism<Customer, CustomerKind> l)
+      {
+        var c = l.To(CustomerKind.company);
+        var i = l.To(CustomerKind.individual);
+        if (c.Get(customer).IsJust())
+        {
+          return company(c);
+        }
+        else if (i.Get(customer).IsJust())
+        {
+          return individual(i);
+        }
+        else
+        {
+          return empty.View;
+        }
+      }
+
       return scrollViewer.View
         ( frameworkElement.layoutTransform(new ScaleTransform(2, 2))
         , labeledTextBoxHandler
@@ -123,9 +142,8 @@
         )
         ( stackPanel.View
             (stackPanel.orientation(Orientation.Vertical))
-            ( labeledTextBox("First Name" , Customer.firstName  )
-            , labeledTextBox("Last Name"  , Customer.lastName   )
-            , labeledTextBox("Email"      , Customer.email      )
+            ( labeledCheckBox("Is company?", Customer.kind.Map(k => (k as Company) != null, b => b ? (CustomerKind)Company.Zero : (CustomerKind)Individual.Zero))
+            , customerKind(Customer.kind)
             , labeledCheckBox("Separate Delivery Address?", Customer.separateDeliveryAddress)
             , address("Invoice Address" , Customer.invoiceAddress)
             , customer.SeparateDeliveryAddress ? address("Delivery Address", Customer.deliveryAddress) : empty.View

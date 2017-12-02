@@ -20,6 +20,10 @@
 
     public static Maybe<T> Nothing<T>() => new Maybe<T>(false, default(T));
 
+    public static bool IsJust<T>(this Maybe<T> m) => m.HasValue;
+
+    public static bool IsNothing<T>(this Maybe<T> m) => !m.HasValue;
+
     public static Maybe<T> Nothing<T>(this T ignored) => new Maybe<T>(false, default(T));
 
     public static Maybe<U> Bind<T, U>(this Maybe<T> m, Func<T, Maybe<U>> f)
