@@ -41,7 +41,7 @@
         {
           var cb  = args.OriginalSource as CheckBox;
           var ll  = DependencyProperties.GetPrism(cb) as Prism<Customer, bool>;
-          return ll?.Set(c, cb.IsChecked ?? false);
+          return ll?.Set(c, cb.IsChecked ?? false) ?? c;
         });
 
       IView<Message> labeledTextBox(string lbl, Prism<Customer, string> l)
@@ -66,7 +66,6 @@
           var ll  = DependencyProperties.GetPrism(ltb) as Prism<Customer, string>;
           return ll?.Set(c, ltb.Text) ?? c;
         });
-
 
       IView<Message> address(string lbl, Prism<Customer, Address> l)
       {
@@ -146,7 +145,13 @@
           ( stackPanel.View
               ( stackPanel.orientation(Orientation.Vertical)
               , stackPanel.childViews
-                ( labeledCheckBox("Is company?", Customer.kind.Map(k => (k as Company) != null, b => b ? (CustomerKind)Company.Zero : (CustomerKind)Individual.Zero))
+                ( comboBox.View
+                  (comboBox.itemSourceViews
+                    ( textBlock.View(textBlock.text("Hello"))
+                    , textBlock.View(textBlock.text("There"))
+                    ).Init()
+                  )
+                , labeledCheckBox("Is company?", Customer.kind.Map(k => (k as Company) != null, b => b ? (CustomerKind)Company.Zero : (CustomerKind)Individual.Zero))
                 , customerKind(Customer.kind)
                 , labeledCheckBox("Separate Delivery Address?", Customer.separateDeliveryAddress)
                 , address("Invoice Address" , Customer.invoiceAddress)

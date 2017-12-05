@@ -5,6 +5,7 @@ namespace Galactus.Standard
   using Galactus.Core;
   using System;
   using System.Collections.Generic;
+  using System.Collections.ObjectModel;
   using System.Windows;
   using System.Windows.Controls;
 
@@ -192,6 +193,74 @@ namespace Galactus.Standard
           UpdateRowDefinitions((Grid)ui, gls);
         });
 
+    }
+
+    public partial class itemsControl
+    {
+      sealed class ItemSourceViewsValue : IViewsValue<TMessage, ItemsControl>
+      {
+        readonly IView<TMessage>[] views;
+
+        public ItemSourceViewsValue(IView<TMessage>[] vs)
+        {
+          views = vs;
+        }
+
+        public IView<TMessage>[] Views => views;
+
+        public void Update(UpdateContext ctx, ParentInfo pi, UIElement ui)
+        {
+          var tui = (ItemsControl)ui;
+
+          // TODO: How to rebuild this more efficiently?
+
+          var tchildren = tui.ItemsSource as ObservableCollection<UIElement>;
+          if (tchildren == null)
+          {
+            tchildren = new ObservableCollection<UIElement>();
+            tui.ItemsSource = tchildren;
+          }
+
+          var children  = new List<UIElement>(Math.Max(tchildren.Count, views.Length));
+          {
+            var cc = tchildren.Count;
+            for (var iter = 0; iter < cc; ++iter)
+            {
+              children.Add(tchildren[iter]);
+            }
+          }
+          tchildren.Clear();
+
+          for (var iter = 0; iter < views.Length; ++iter)
+          {
+            if (iter < children.Count)
+            {
+              var child     = children[iter];
+              var view      = views[iter]   ;
+              var cui       = view.Update(ctx, pi, child);
+              children[iter]= cui;
+            }
+            else
+            {
+              var view      = views[iter]   ;
+              var cui       = view.Update(ctx, pi, null);
+              children.Add(view.Update(ctx, pi, null));
+            }
+          }
+
+          for (var iter = 0; iter < children.Count; ++iter)
+          {
+            var child = children[iter];
+            if (child != null)
+            {
+              tchildren.Add(child);
+            }
+          }
+
+        }
+      }
+
+      public static IValue<TMessage, ItemsControl> itemSourceViews(params IView<TMessage>[] vs) => new ItemSourceViewsValue(vs);
     }
 
     public partial class panel
