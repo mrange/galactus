@@ -309,36 +309,9 @@ namespace Galactus.Standard
 <#
   if (!tp.IsAbstract && tp.GetConstructor(new Type [] {}) != null)
   {
-  if (IsSubclassOfOrEqual(tp, headeredContent))
-  {
-#>
-      public static DelayedHeaderedContentView<TMessage> View(params IValue<TMessage, <#=etn#>>[] vs) => (h, c) => new StandardHeaderedContentView<TMessage, <#=etn#>>(vs, h, c);
-<#
-  }
-  else if (IsSubclassOfOrEqual(tp, content))
-  {
-#>
-      public static DelayedContentView<TMessage> View(params IValue<TMessage, <#=etn#>>[] vs) => c => new StandardContentView<TMessage, <#=etn#>>(vs, c);
-<#
-  }
-  else if (IsSubclassOfOrEqual(tp, decorator))
-  {
-#>
-      public static DelayedDecoratorView<TMessage> View(params IValue<TMessage, <#=etn#>>[] vs) => c => new StandardDecoratorView<TMessage, <#=etn#>>(vs, c);
-<#
-  }
-  else if (IsSubclassOfOrEqual(tp, panel))
-  {
-#>
-      public static DelayedPanelView<TMessage> View(params IValue<TMessage, <#=etn#>>[] vs) => cs => new StandardPanelView<TMessage, <#=etn#>>(vs, cs);
-<#
-  }
-  else
-  {
 #>
       public static IView<TMessage> View(params IValue<TMessage, <#=etn#>>[] vs) => new StandardView<TMessage, <#=etn#>>(vs);
 <#
-  }
   }
 #>
     }

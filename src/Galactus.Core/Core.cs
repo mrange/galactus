@@ -192,6 +192,18 @@
     }
   }
 
+  public interface IViewValue<TMessage, in TUI> : IValue<TMessage, TUI>
+    where TUI : UIElement
+  {
+    IView<TMessage> View { get; }
+  }
+
+  public interface IViewsValue<TMessage, in TUI> : IValue<TMessage, TUI>
+    where TUI : UIElement
+  {
+    IView<TMessage>[] Views { get; }
+  }
+
   public delegate void Invoker(UpdateContext ctx, ParentInfo pi, UIElement ui);
 
   public interface IInvokedValue<TMessage, in TUI> : IValue<TMessage, TUI>
@@ -305,9 +317,13 @@
 
   // Views
 
-  public interface IView<TMessage>
+  public interface IView
   {
     UIElement Update(UpdateContext ctx, ParentInfo pi, UIElement ui);
+  }
+
+  public interface IView<TMessage> : IView
+  {
   }
 
   public sealed class Empty : UIElement
@@ -357,202 +373,6 @@
       return tui;
     }
   }
-
-  public sealed class StandardContentView<TMessage, TUI>
-    : IView<TMessage>
-    where TUI: ContentControl, new()
-  {
-    readonly IValue<TMessage, TUI>[]  values;
-    readonly IView<TMessage>          view  ;
-
-    public StandardContentView(IValue<TMessage, TUI>[] vs, IView<TMessage> c)
-    {
-      // TODO: Handle nulls
-      values = vs ?? new IValue<TMessage, TUI>[0];
-      view   = c;
-    }
-
-    public UIElement Update(UpdateContext ctx, ParentInfo pi, UIElement ui)
-    {
-      var v = GetInstance<TUI>(ui);
-
-      var tpi = v.ParentInfo;
-      var tui = v.Instance  ;
-
-      var content = tui.Content as UIElement;
-      var ncontent= view.Update(ctx, pi, content);
-      if (!ReferenceEquals(content, ncontent))
-      {
-        tui.Content = ncontent;
-      }
-
-      foreach (var value in values)
-      {
-        value.Update(ctx, tpi, tui);
-      }
-
-      return tui;
-    }
-  }
-
-  public delegate IView<TMessage> DelayedContentView<TMessage> (IView<TMessage> c);
-
-  public sealed class StandardHeaderedContentView<TMessage, TUI>
-    : IView<TMessage>
-    where TUI: HeaderedContentControl, new()
-  {
-    readonly IValue<TMessage, TUI>[]  values      ;
-    readonly IView<TMessage>          headerView  ;
-    readonly IView<TMessage>          contentView ;
-
-    public StandardHeaderedContentView(IValue<TMessage, TUI>[] vs, IView<TMessage> h, IView<TMessage> c)
-    {
-      // TODO: Handle nulls
-      values      = vs ?? new IValue<TMessage, TUI>[0];
-      headerView  = h;
-      contentView = c;
-    }
-
-    public UIElement Update(UpdateContext ctx, ParentInfo pi, UIElement ui)
-    {
-      var v = GetInstance<TUI>(ui);
-
-      var tpi = v.ParentInfo;
-      var tui = v.Instance  ;
-
-      var content = tui.Content as UIElement;
-      var ncontent= contentView.Update(ctx, pi, content);
-      if (!ReferenceEquals(content, ncontent))
-      {
-        tui.Content = ncontent;
-      }
-
-      var header  = tui.Header as UIElement;
-      var nheader = headerView.Update(ctx, pi, header);
-      if (!ReferenceEquals(header, nheader))
-      {
-        tui.Header = nheader;
-      }
-
-      foreach (var value in values)
-      {
-        value.Update(ctx, tpi, tui);
-      }
-
-      return tui;
-    }
-  }
-
-  public delegate IView<TMessage> DelayedHeaderedContentView<TMessage> (IView<TMessage> h, IView<TMessage> c);
-
-  public sealed class StandardDecoratorView<TMessage, TUI>
-    : IView<TMessage>
-    where TUI: Decorator, new()
-  {
-    readonly IValue<TMessage, TUI>[]  values;
-    readonly IView<TMessage>          view  ;
-
-    public StandardDecoratorView(IValue<TMessage, TUI>[] vs, IView<TMessage> c)
-    {
-      // TODO: Handle nulls
-      values = vs ?? new IValue<TMessage, TUI>[0];
-      view   = c;
-    }
-
-    public UIElement Update(UpdateContext ctx, ParentInfo pi, UIElement ui)
-    {
-      var v = GetInstance<TUI>(ui);
-
-      var tpi = v.ParentInfo;
-      var tui = v.Instance  ;
-
-      var child   = tui.Child as UIElement;
-      var nchild  = view.Update(ctx, pi, child);
-      if (!ReferenceEquals(child, nchild))
-      {
-        tui.Child = nchild;
-      }
-
-      foreach (var value in values)
-      {
-        value.Update(ctx, tpi, tui);
-      }
-
-      return tui;
-    }
-  }
-
-  public delegate IView<TMessage> DelayedDecoratorView<TMessage> (IView<TMessage> c);
-
-  public sealed class StandardPanelView<TMessage, TUI>
-    : IView<TMessage>
-    where TUI: Panel, new()
-  {
-    readonly IValue<TMessage, TUI>[]  values  ;
-    readonly IView<TMessage>[]        views   ;
-
-    public StandardPanelView(IValue<TMessage, TUI>[] vs, IView<TMessage>[] cs)
-    {
-      values  = vs ?? new IValue<TMessage, TUI>[0] ;
-      views   = cs ?? new IView<TMessage>[0]       ;
-    }
-
-    public UIElement Update(UpdateContext ctx, ParentInfo pi, UIElement ui)
-    {
-      var v = GetInstance<TUI>(ui);
-
-      var tpi = v.ParentInfo;
-      var tui = v.Instance  ;
-
-      // TODO: How to rebuild this more efficiently?
-
-      var tchildren = tui.Children;
-      var children  = new List<UIElement>(Math.Max(tchildren.Count, views.Length));
-      {
-        var cc = tchildren.Count;
-        for (var iter = 0; iter < cc; ++iter)
-        {
-          children.Add(tchildren[iter]);
-        }
-      }
-      tchildren.Clear();
-
-      for (var iter = 0; iter < views.Length; ++iter)
-      {
-        if (iter < children.Count)
-        {
-          var child     = children[iter];
-          var view      = views[iter]   ;
-          var cui       = view.Update(ctx, tpi, child);
-          children[iter]= cui;
-        }
-        else
-        {
-          var view      = views[iter]   ;
-          var cui       = view.Update(ctx, tpi, null);
-          children.Add(view.Update(ctx, tpi, null));
-        }
-      }
-
-      for (var iter = 0; iter < children.Count; ++iter)
-      {
-        var child = children[iter];
-        if (child != null)
-        {
-          tchildren.Add(child);
-        }
-      }
-
-      foreach (var value in values)
-      {
-        value.Update(ctx, tpi, tui);
-      }
-
-      return tui;
-    }
-  }
-
-  public delegate IView<TMessage> DelayedPanelView<TMessage> (params IView<TMessage>[] cs);
 
   public delegate IView<TMessage> View<in TModel, TMessage>   (TModel model);
   public delegate TModel          Update<TModel, in TMessage> (TModel model, TMessage message);

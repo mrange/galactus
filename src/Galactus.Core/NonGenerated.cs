@@ -4,6 +4,7 @@ namespace Galactus.Standard
 {
   using Galactus.Core;
   using System;
+  using System.Collections.Generic;
   using System.Windows;
   using System.Windows.Controls;
 
@@ -22,9 +23,91 @@ namespace Galactus.Standard
       public static IView<TMessage> View = new EmptyView<TMessage> ();
     }
 
-    public partial class uIElement
+    public partial class contentControl
     {
-      public static IValue<TMessage, UIElement> prism(IPrism v) => new SetValue<TMessage, UIElement, IPrism>(Properties.uIElement.prism, v);
+      sealed class ContentViewValue : IViewValue<TMessage, ContentControl>
+      {
+        readonly IView<TMessage> view;
+
+        public ContentViewValue(IView<TMessage> v)
+        {
+          view = v ?? empty.View;
+        }
+
+        public IView<TMessage> View => view;
+
+        public void Update(UpdateContext ctx, ParentInfo pi, UIElement ui)
+        {
+          var tui = (ContentControl)ui;
+
+          var content = tui.Content as UIElement;
+          var ncontent= view.Update(ctx, pi, content);
+          if (!ReferenceEquals(content, ncontent))
+          {
+            tui.Content = ncontent;
+          }
+        }
+      }
+
+      public static IValue<TMessage, ContentControl> contentView(IView<TMessage> v) => new ContentViewValue(v);
+    }
+
+    public partial class decorator
+    {
+      sealed class DecoratorViewValue : IViewValue<TMessage, Decorator>
+      {
+        readonly IView<TMessage> view;
+
+        public DecoratorViewValue(IView<TMessage> v)
+        {
+          view = v ?? empty.View;
+        }
+
+        public IView<TMessage> View => view;
+
+        public void Update(UpdateContext ctx, ParentInfo pi, UIElement ui)
+        {
+          var tui = (Decorator)ui;
+
+          var child = tui.Child;
+          var nchild = view.Update(ctx, pi, child);
+          if (!ReferenceEquals(child, nchild))
+          {
+            tui.Child = nchild;
+          }
+        }
+      }
+
+      public static IValue<TMessage, Decorator> decoratorView(IView<TMessage> v) => new DecoratorViewValue(v);
+    }
+
+   public partial class headeredContentControl
+    {
+      sealed class HeaderViewValue : IViewValue<TMessage, HeaderedContentControl>
+      {
+        readonly IView<TMessage> view;
+
+        public HeaderViewValue(IView<TMessage> v)
+        {
+          view = v ?? empty.View;
+        }
+
+        public IView<TMessage> View => view;
+
+        public void Update(UpdateContext ctx, ParentInfo pi, UIElement ui)
+        {
+          var tui = (HeaderedContentControl)ui;
+
+          var header  = tui.Header as UIElement;
+          var nheader = view.Update(ctx, pi, header);
+          if (!ReferenceEquals(header, nheader))
+          {
+            tui.Header = nheader;
+          }
+        }
+      }
+
+      public static IValue<TMessage, HeaderedContentControl> headerView(IView<TMessage> v) => new HeaderViewValue(v);
     }
 
     public partial class grid
@@ -110,5 +193,73 @@ namespace Galactus.Standard
         });
 
     }
+
+    public partial class panel
+    {
+      sealed class PanelViewsValue : IViewsValue<TMessage, Panel>
+      {
+        readonly IView<TMessage>[] views;
+
+        public PanelViewsValue(IView<TMessage>[] vs)
+        {
+          views = vs;
+        }
+
+        public IView<TMessage>[] Views => views;
+
+        public void Update(UpdateContext ctx, ParentInfo pi, UIElement ui)
+        {
+          var tui = (Panel)ui;
+
+          // TODO: How to rebuild this more efficiently?
+
+          var tchildren = tui.Children;
+          var children  = new List<UIElement>(Math.Max(tchildren.Count, views.Length));
+          {
+            var cc = tchildren.Count;
+            for (var iter = 0; iter < cc; ++iter)
+            {
+              children.Add(tchildren[iter]);
+            }
+          }
+          tchildren.Clear();
+
+          for (var iter = 0; iter < views.Length; ++iter)
+          {
+            if (iter < children.Count)
+            {
+              var child     = children[iter];
+              var view      = views[iter]   ;
+              var cui       = view.Update(ctx, pi, child);
+              children[iter]= cui;
+            }
+            else
+            {
+              var view      = views[iter]   ;
+              var cui       = view.Update(ctx, pi, null);
+              children.Add(view.Update(ctx, pi, null));
+            }
+          }
+
+          for (var iter = 0; iter < children.Count; ++iter)
+          {
+            var child = children[iter];
+            if (child != null)
+            {
+              tchildren.Add(child);
+            }
+          }
+
+        }
+      }
+
+      public static IValue<TMessage, Panel> childViews(params IView<TMessage>[] vs) => new PanelViewsValue(vs);
+    }
+
+    public partial class uIElement
+    {
+      public static IValue<TMessage, UIElement> prism(IPrism v) => new SetValue<TMessage, UIElement, IPrism>(Properties.uIElement.prism, v);
+    }
+
   }
 }

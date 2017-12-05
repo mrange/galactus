@@ -1,4 +1,5 @@
-﻿namespace Galactus.App.Demo
+﻿#if GG
+namespace Galactus.App.Demo
 {
   using Galactus.Core;
   using System;
@@ -70,3 +71,4 @@
     }
   }
 }
+#endif

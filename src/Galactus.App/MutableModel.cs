@@ -1,4 +1,5 @@
-﻿namespace Galactus.App.MutableModel
+﻿#if GG
+namespace Galactus.App.MutableModel
 {
   using Galactus.Core;
   using System;
@@ -126,3 +127,4 @@
     }
   }
 }
+#endif

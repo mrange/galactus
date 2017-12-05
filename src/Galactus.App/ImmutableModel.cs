@@ -22,20 +22,19 @@
       IView<Message> labeledGroup(string lbl, IView<Message> view)
       {
         return groupBox.View
-          ()
-          ( textBlock.View(textBlock.text(lbl))
-          , view
+          ( groupBox.headerView(textBlock.View(textBlock.text(lbl)))
+          , groupBox.contentView(view)
           ).Named(lbl);
       }
 
       IView<Message> labeledCheckBox(string lbl, Prism<Customer, bool> l)
       {
         return checkBox.View
-          ( checkBox.isChecked(l.Get(customer).GetOrDefaultTo(false))
+          ( checkBox.isChecked(l.Get(customer).ValueOr(false))
           , uIElement.prism(l)
           , margin
+          , checkBox.contentView(textBlock.View(textBlock.text(lbl)))
           )
-          (textBlock.View(textBlock.text(lbl)))
           ;
       }
       var labeledCheckBoxHandler = checkBox.onClick((ui, args) => c => 
@@ -50,12 +49,13 @@
         return stackPanel.View
           ( stackPanel.orientation(Orientation.Horizontal)
           , margin
-          )
-          ( textBlock.View(textBlock.text(lbl), textBlock.width(labelWidth))
-          , textBox.View
-            ( textBox.text(l.Get(customer).GetOrDefaultTo(""))
-            , textBox.minWidth(80)
-            , uIElement.prism(l)
+          , stackPanel.childViews
+            ( textBlock.View(textBlock.text(lbl), textBlock.width(labelWidth))
+            , textBox.View
+              ( textBox.text(l.Get(customer).ValueOr(""))
+              , textBox.minWidth(80)
+              , uIElement.prism(l)
+              )
             )
           )
           ;
@@ -74,13 +74,14 @@
           ( lbl
           , stackPanel.View
               ( stackPanel.orientation(Orientation.Vertical)
-              )
-              ( labeledTextBox("Carry Over" , l.To(Address.carryOver))
-              , labeledTextBox("Street"     , l.To(Address.street))
-              , labeledTextBox("Zip"        , l.To(Address.zip))
-              , labeledTextBox("City"       , l.To(Address.city))
-              , labeledTextBox("County"     , l.To(Address.county))
-              , labeledTextBox("Country"    , l.To(Address.county))
+              , stackPanel.childViews
+                ( labeledTextBox("Carry Over" , l.To(Address.carryOver))
+                , labeledTextBox("Street"     , l.To(Address.street))
+                , labeledTextBox("Zip"        , l.To(Address.zip))
+                , labeledTextBox("City"       , l.To(Address.city))
+                , labeledTextBox("County"     , l.To(Address.county))
+                , labeledTextBox("Country"    , l.To(Address.county))
+                )
               )
           );
       }
@@ -91,13 +92,14 @@
           ( "Company"
           , stackPanel.View
               ( stackPanel.orientation(Orientation.Vertical)
-              )
-              ( labeledTextBox("Name"               , l.To(Company.companyName))
-              , labeledTextBox("Org No"             , l.To(Company.companyId))
-              , labeledTextBox("VAT No"             , l.To(Company.vatNo))
-              , labeledTextBox("Contact first name" , Customer.firstName)
-              , labeledTextBox("Contact last name"  , Customer.lastName)
-              , labeledTextBox("Contact email"      , Customer.email)
+              , stackPanel.childViews
+                ( labeledTextBox("Name"               , l.To(Company.companyName))
+                , labeledTextBox("Org No"             , l.To(Company.companyId))
+                , labeledTextBox("VAT No"             , l.To(Company.vatNo))
+                , labeledTextBox("Contact first name" , Customer.firstName)
+                , labeledTextBox("Contact last name"  , Customer.lastName)
+                , labeledTextBox("Contact email"      , Customer.email)
+                )
               )
           );
       }
@@ -108,11 +110,12 @@
           ( "Individual"
           , stackPanel.View
               ( stackPanel.orientation(Orientation.Vertical)
-              )
-              ( labeledTextBox("First name" , Customer.firstName)
-              , labeledTextBox("Last name"  , Customer.lastName)
-              , labeledTextBox("Email"      , Customer.email)
-              , labeledTextBox("Social No"  , l.To(Individual.socialId))
+              , stackPanel.childViews
+                ( labeledTextBox("First name" , Customer.firstName)
+                , labeledTextBox("Last name"  , Customer.lastName)
+                , labeledTextBox("Email"      , Customer.email)
+                , labeledTextBox("Social No"  , l.To(Individual.socialId))
+                )
               )
           );
       }
@@ -121,11 +124,11 @@
       {
         var c = l.To(CustomerKind.company);
         var i = l.To(CustomerKind.individual);
-        if (c.Get(customer).IsJust())
+        if (c.Get(customer).HasValue())
         {
           return company(c);
         }
-        else if (i.Get(customer).IsJust())
+        else if (i.Get(customer).HasValue())
         {
           return individual(i);
         }
@@ -139,16 +142,19 @@
         ( frameworkElement.layoutTransform(new ScaleTransform(2, 2))
         , labeledTextBoxHandler
         , labeledCheckBoxHandler
-        )
-        ( stackPanel.View
-            (stackPanel.orientation(Orientation.Vertical))
-            ( labeledCheckBox("Is company?", Customer.kind.Map(k => (k as Company) != null, b => b ? (CustomerKind)Company.Zero : (CustomerKind)Individual.Zero))
-            , customerKind(Customer.kind)
-            , labeledCheckBox("Separate Delivery Address?", Customer.separateDeliveryAddress)
-            , address("Invoice Address" , Customer.invoiceAddress)
-            , customer.SeparateDeliveryAddress ? address("Delivery Address", Customer.deliveryAddress) : empty.View
-            , address("Invoice Address" , Customer.invoiceAddress)
-            )
+        , scrollViewer.contentView
+          ( stackPanel.View
+              ( stackPanel.orientation(Orientation.Vertical)
+              , stackPanel.childViews
+                ( labeledCheckBox("Is company?", Customer.kind.Map(k => (k as Company) != null, b => b ? (CustomerKind)Company.Zero : (CustomerKind)Individual.Zero))
+                , customerKind(Customer.kind)
+                , labeledCheckBox("Separate Delivery Address?", Customer.separateDeliveryAddress)
+                , address("Invoice Address" , Customer.invoiceAddress)
+                , customer.SeparateDeliveryAddress ? address("Delivery Address", Customer.deliveryAddress) : empty.View
+                , address("Invoice Address" , Customer.invoiceAddress)
+                )
+              )
+          )
         )
         ;
     }

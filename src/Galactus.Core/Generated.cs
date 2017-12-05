@@ -1846,7 +1846,7 @@ namespace Galactus.Standard
     {
 
 
-      public static DelayedDecoratorView<TMessage> View(params IValue<TMessage, System.Windows.Documents.AdornerDecorator>[] vs) => c => new StandardDecoratorView<TMessage, System.Windows.Documents.AdornerDecorator>(vs, c);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Documents.AdornerDecorator>[] vs) => new StandardView<TMessage, System.Windows.Documents.AdornerDecorator>(vs);
     }
 
     public partial class adornerLayer : frameworkElement
@@ -1864,7 +1864,7 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.Border> background(System.Windows.Media.Brush v) => new SetValue<TMessage, System.Windows.Controls.Border, System.Windows.Media.Brush>(Properties.border.background, v);
 
 
-      public static DelayedDecoratorView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Border>[] vs) => c => new StandardDecoratorView<TMessage, System.Windows.Controls.Border>(vs, c);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Border>[] vs) => new StandardView<TMessage, System.Windows.Controls.Border>(vs);
     }
 
     public partial class bulletDecorator : decorator
@@ -1872,7 +1872,7 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.Primitives.BulletDecorator> background(System.Windows.Media.Brush v) => new SetValue<TMessage, System.Windows.Controls.Primitives.BulletDecorator, System.Windows.Media.Brush>(Properties.bulletDecorator.background, v);
 
 
-      public static DelayedDecoratorView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.BulletDecorator>[] vs) => c => new StandardDecoratorView<TMessage, System.Windows.Controls.Primitives.BulletDecorator>(vs, c);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.BulletDecorator>[] vs) => new StandardView<TMessage, System.Windows.Controls.Primitives.BulletDecorator>(vs);
     }
 
     public partial class button : buttonBase
@@ -1881,7 +1881,7 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.Button> isCancel(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.Button, System.Boolean>(Properties.button.isCancel, v);
 
 
-      public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Button>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.Button>(vs, c);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Button>[] vs) => new StandardView<TMessage, System.Windows.Controls.Button>(vs);
     }
 
     public partial class buttonBase : contentControl
@@ -1920,14 +1920,14 @@ namespace Galactus.Standard
     {
 
 
-      public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.CalendarButton>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.Primitives.CalendarButton>(vs, c);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.CalendarButton>[] vs) => new StandardView<TMessage, System.Windows.Controls.Primitives.CalendarButton>(vs);
     }
 
     public partial class calendarDayButton : button
     {
 
 
-      public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.CalendarDayButton>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.Primitives.CalendarDayButton>(vs, c);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.CalendarDayButton>[] vs) => new StandardView<TMessage, System.Windows.Controls.Primitives.CalendarDayButton>(vs);
     }
 
     public partial class calendarItem : control
@@ -1945,14 +1945,14 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.UIElement> bottom(System.Double v) => new SetValue<TMessage, System.Windows.UIElement, System.Double>(Properties.canvas.bottom, v);
 
 
-      public static DelayedPanelView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Canvas>[] vs) => cs => new StandardPanelView<TMessage, System.Windows.Controls.Canvas>(vs, cs);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Canvas>[] vs) => new StandardView<TMessage, System.Windows.Controls.Canvas>(vs);
     }
 
     public partial class checkBox : toggleButton
     {
 
 
-      public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.CheckBox>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.CheckBox>(vs, c);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.CheckBox>[] vs) => new StandardView<TMessage, System.Windows.Controls.CheckBox>(vs);
     }
 
     public partial class comboBox : selector
@@ -1973,7 +1973,7 @@ namespace Galactus.Standard
     {
 
 
-      public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.ComboBoxItem>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.ComboBoxItem>(vs, c);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.ComboBoxItem>[] vs) => new StandardView<TMessage, System.Windows.Controls.ComboBoxItem>(vs);
     }
 
     public partial class contentControl : control
@@ -1984,7 +1984,7 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.ContentControl> contentStringFormat(System.String v) => new SetValue<TMessage, System.Windows.Controls.ContentControl, System.String>(Properties.contentControl.contentStringFormat, v);
 
 
-      public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.ContentControl>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.ContentControl>(vs, c);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.ContentControl>[] vs) => new StandardView<TMessage, System.Windows.Controls.ContentControl>(vs);
     }
 
     public partial class contentPresenter : frameworkElement
@@ -2109,14 +2109,14 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.UIElement> onUnselected (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
         new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.dataGridCell.unselected, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
 
-      public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.DataGridCell>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.DataGridCell>(vs, c);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.DataGridCell>[] vs) => new StandardView<TMessage, System.Windows.Controls.DataGridCell>(vs);
     }
 
     public partial class dataGridCellsPanel : virtualizingPanel
     {
 
 
-      public static DelayedPanelView<TMessage> View(params IValue<TMessage, System.Windows.Controls.DataGridCellsPanel>[] vs) => cs => new StandardPanelView<TMessage, System.Windows.Controls.DataGridCellsPanel>(vs, cs);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.DataGridCellsPanel>[] vs) => new StandardView<TMessage, System.Windows.Controls.DataGridCellsPanel>(vs);
     }
 
     public partial class dataGridCellsPresenter : itemsControl
@@ -2132,7 +2132,7 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.Primitives.DataGridColumnHeader> separatorVisibility(System.Windows.Visibility v) => new SetValue<TMessage, System.Windows.Controls.Primitives.DataGridColumnHeader, System.Windows.Visibility>(Properties.dataGridColumnHeader.separatorVisibility, v);
 
 
-      public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.DataGridColumnHeader>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.Primitives.DataGridColumnHeader>(vs, c);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.DataGridColumnHeader>[] vs) => new StandardView<TMessage, System.Windows.Controls.Primitives.DataGridColumnHeader>(vs);
     }
 
     public partial class dataGridColumnHeadersPresenter : itemsControl
@@ -2177,14 +2177,14 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.Primitives.DataGridRowHeader> separatorVisibility(System.Windows.Visibility v) => new SetValue<TMessage, System.Windows.Controls.Primitives.DataGridRowHeader, System.Windows.Visibility>(Properties.dataGridRowHeader.separatorVisibility, v);
 
 
-      public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.DataGridRowHeader>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.Primitives.DataGridRowHeader>(vs, c);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.DataGridRowHeader>[] vs) => new StandardView<TMessage, System.Windows.Controls.Primitives.DataGridRowHeader>(vs);
     }
 
     public partial class dataGridRowsPresenter : virtualizingStackPanel
     {
 
 
-      public static DelayedPanelView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.DataGridRowsPresenter>[] vs) => cs => new StandardPanelView<TMessage, System.Windows.Controls.Primitives.DataGridRowsPresenter>(vs, cs);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.DataGridRowsPresenter>[] vs) => new StandardView<TMessage, System.Windows.Controls.Primitives.DataGridRowsPresenter>(vs);
     }
 
     public partial class datePicker : control
@@ -2217,7 +2217,7 @@ namespace Galactus.Standard
     {
 
 
-      public static DelayedDecoratorView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Decorator>[] vs) => c => new StandardDecoratorView<TMessage, System.Windows.Controls.Decorator>(vs, c);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Decorator>[] vs) => new StandardView<TMessage, System.Windows.Controls.Decorator>(vs);
     }
 
     public partial class dockPanel : panel
@@ -2226,7 +2226,7 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.UIElement> dock(System.Windows.Controls.Dock v) => new SetValue<TMessage, System.Windows.UIElement, System.Windows.Controls.Dock>(Properties.dockPanel.dock, v);
 
 
-      public static DelayedPanelView<TMessage> View(params IValue<TMessage, System.Windows.Controls.DockPanel>[] vs) => cs => new StandardPanelView<TMessage, System.Windows.Controls.DockPanel>(vs, cs);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.DockPanel>[] vs) => new StandardView<TMessage, System.Windows.Controls.DockPanel>(vs);
     }
 
     public partial class documentPageView : frameworkElement
@@ -2286,7 +2286,7 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.UIElement> onCollapsed (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
         new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.expander.collapsed, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
 
-      public static DelayedHeaderedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Expander>[] vs) => (h, c) => new StandardHeaderedContentView<TMessage, System.Windows.Controls.Expander>(vs, h, c);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Expander>[] vs) => new StandardView<TMessage, System.Windows.Controls.Expander>(vs);
     }
 
     public partial class fixedPage : frameworkElement
@@ -2367,7 +2367,7 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.Frame> journalOwnership(System.Windows.Navigation.JournalOwnership v) => new SetValue<TMessage, System.Windows.Controls.Frame, System.Windows.Navigation.JournalOwnership>(Properties.frame.journalOwnership, v);
 
 
-      public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Frame>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.Frame>(vs, c);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Frame>[] vs) => new StandardView<TMessage, System.Windows.Controls.Frame>(vs);
     }
 
     public partial class frameworkElement : uIElement
@@ -2447,7 +2447,7 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.UIElement> isSharedSizeScope(System.Boolean v) => new SetValue<TMessage, System.Windows.UIElement, System.Boolean>(Properties.grid.isSharedSizeScope, v);
 
 
-      public static DelayedPanelView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Grid>[] vs) => cs => new StandardPanelView<TMessage, System.Windows.Controls.Grid>(vs, cs);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Grid>[] vs) => new StandardView<TMessage, System.Windows.Controls.Grid>(vs);
     }
 
     public partial class gridSplitter : thumb
@@ -2467,7 +2467,7 @@ namespace Galactus.Standard
     {
 
 
-      public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.GridViewColumnHeader>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.GridViewColumnHeader>(vs, c);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.GridViewColumnHeader>[] vs) => new StandardView<TMessage, System.Windows.Controls.GridViewColumnHeader>(vs);
     }
 
     public partial class gridViewHeaderRowPresenter : gridViewRowPresenterBase
@@ -2503,14 +2503,14 @@ namespace Galactus.Standard
     {
 
 
-      public static DelayedHeaderedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.GroupBox>[] vs) => (h, c) => new StandardHeaderedContentView<TMessage, System.Windows.Controls.GroupBox>(vs, h, c);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.GroupBox>[] vs) => new StandardView<TMessage, System.Windows.Controls.GroupBox>(vs);
     }
 
     public partial class groupItem : contentControl
     {
 
 
-      public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.GroupItem>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.GroupItem>(vs, c);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.GroupItem>[] vs) => new StandardView<TMessage, System.Windows.Controls.GroupItem>(vs);
     }
 
     public partial class headeredContentControl : contentControl
@@ -2521,7 +2521,7 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.HeaderedContentControl> headerStringFormat(System.String v) => new SetValue<TMessage, System.Windows.Controls.HeaderedContentControl, System.String>(Properties.headeredContentControl.headerStringFormat, v);
 
 
-      public static DelayedHeaderedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.HeaderedContentControl>[] vs) => (h, c) => new StandardHeaderedContentView<TMessage, System.Windows.Controls.HeaderedContentControl>(vs, h, c);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.HeaderedContentControl>[] vs) => new StandardView<TMessage, System.Windows.Controls.HeaderedContentControl>(vs);
     }
 
     public partial class headeredItemsControl : itemsControl
@@ -2590,7 +2590,7 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.InkPresenter> strokes(System.Windows.Ink.StrokeCollection v) => new SetValue<TMessage, System.Windows.Controls.InkPresenter, System.Windows.Ink.StrokeCollection>(Properties.inkPresenter.strokes, v);
 
 
-      public static DelayedDecoratorView<TMessage> View(params IValue<TMessage, System.Windows.Controls.InkPresenter>[] vs) => c => new StandardDecoratorView<TMessage, System.Windows.Controls.InkPresenter>(vs, c);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.InkPresenter>[] vs) => new StandardView<TMessage, System.Windows.Controls.InkPresenter>(vs);
     }
 
     public partial class itemsControl : control
@@ -2625,7 +2625,7 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.Label> target(System.Windows.UIElement v) => new SetValue<TMessage, System.Windows.Controls.Label, System.Windows.UIElement>(Properties.label.target, v);
 
 
-      public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Label>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.Label>(vs, c);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Label>[] vs) => new StandardView<TMessage, System.Windows.Controls.Label>(vs);
     }
 
     public partial class line : shape
@@ -2656,7 +2656,7 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.UIElement> onUnselected (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
         new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.listBoxItem.unselected, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
 
-      public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.ListBoxItem>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.ListBoxItem>(vs, c);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.ListBoxItem>[] vs) => new StandardView<TMessage, System.Windows.Controls.ListBoxItem>(vs);
     }
 
     public partial class listView : listBox
@@ -2671,7 +2671,7 @@ namespace Galactus.Standard
     {
 
 
-      public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.ListViewItem>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.ListViewItem>(vs, c);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.ListViewItem>[] vs) => new StandardView<TMessage, System.Windows.Controls.ListViewItem>(vs);
     }
 
     public partial class mediaElement : frameworkElement
@@ -2759,7 +2759,7 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Navigation.NavigationWindow> source(System.Uri v) => new SetValue<TMessage, System.Windows.Navigation.NavigationWindow, System.Uri>(Properties.navigationWindow.source, v);
 
 
-      public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Navigation.NavigationWindow>[] vs) => c => new StandardContentView<TMessage, System.Windows.Navigation.NavigationWindow>(vs, c);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Navigation.NavigationWindow>[] vs) => new StandardView<TMessage, System.Windows.Navigation.NavigationWindow>(vs);
     }
 
     public partial class page : frameworkElement
@@ -2873,7 +2873,7 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.RadioButton> groupName(System.String v) => new SetValue<TMessage, System.Windows.Controls.RadioButton, System.String>(Properties.radioButton.groupName, v);
 
 
-      public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.RadioButton>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.RadioButton>(vs, c);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.RadioButton>[] vs) => new StandardView<TMessage, System.Windows.Controls.RadioButton>(vs);
     }
 
     public partial class rangeBase : control
@@ -2904,7 +2904,7 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.Primitives.RepeatButton> interval(System.Int32 v) => new SetValue<TMessage, System.Windows.Controls.Primitives.RepeatButton, System.Int32>(Properties.repeatButton.interval, v);
 
 
-      public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.RepeatButton>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.Primitives.RepeatButton>(vs, c);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.RepeatButton>[] vs) => new StandardView<TMessage, System.Windows.Controls.Primitives.RepeatButton>(vs);
     }
 
     public partial class resizeGrip : control
@@ -2954,7 +2954,7 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.UIElement> onScrollChanged (OnChange<TMessage, System.Windows.UIElement, System.Windows.Controls.ScrollChangedEventArgs> onChange) =>
         new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.Controls.ScrollChangedEventHandler, System.Windows.Controls.ScrollChangedEventArgs> (Events.scrollViewer.scrollChanged, h => (System.Windows.Controls.ScrollChangedEventHandler)h.Invoke, onChange);
 
-      public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.ScrollViewer>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.ScrollViewer>(vs, c);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.ScrollViewer>[] vs) => new StandardView<TMessage, System.Windows.Controls.ScrollViewer>(vs);
     }
 
     public partial class selectiveScrollingGrid : grid
@@ -2962,7 +2962,7 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.UIElement> selectiveScrollingOrientation(System.Windows.Controls.SelectiveScrollingOrientation v) => new SetValue<TMessage, System.Windows.UIElement, System.Windows.Controls.SelectiveScrollingOrientation>(Properties.selectiveScrollingGrid.selectiveScrollingOrientation, v);
 
 
-      public static DelayedPanelView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.SelectiveScrollingGrid>[] vs) => cs => new StandardPanelView<TMessage, System.Windows.Controls.Primitives.SelectiveScrollingGrid>(vs, cs);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.SelectiveScrollingGrid>[] vs) => new StandardView<TMessage, System.Windows.Controls.Primitives.SelectiveScrollingGrid>(vs);
     }
 
     public partial class selector : itemsControl
@@ -3033,7 +3033,7 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.StackPanel> orientation(System.Windows.Controls.Orientation v) => new SetValue<TMessage, System.Windows.Controls.StackPanel, System.Windows.Controls.Orientation>(Properties.stackPanel.orientation, v);
 
 
-      public static DelayedPanelView<TMessage> View(params IValue<TMessage, System.Windows.Controls.StackPanel>[] vs) => cs => new StandardPanelView<TMessage, System.Windows.Controls.StackPanel>(vs, cs);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.StackPanel>[] vs) => new StandardView<TMessage, System.Windows.Controls.StackPanel>(vs);
     }
 
     public partial class statusBar : itemsControl
@@ -3049,7 +3049,7 @@ namespace Galactus.Standard
     {
 
 
-      public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.StatusBarItem>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.Primitives.StatusBarItem>(vs, c);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.StatusBarItem>[] vs) => new StandardView<TMessage, System.Windows.Controls.Primitives.StatusBarItem>(vs);
     }
 
     public partial class stickyNoteControl : control
@@ -3082,14 +3082,14 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.TabItem> isSelected(System.Boolean v) => new SetValue<TMessage, System.Windows.Controls.TabItem, System.Boolean>(Properties.tabItem.isSelected, v);
 
 
-      public static DelayedHeaderedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.TabItem>[] vs) => (h, c) => new StandardHeaderedContentView<TMessage, System.Windows.Controls.TabItem>(vs, h, c);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.TabItem>[] vs) => new StandardView<TMessage, System.Windows.Controls.TabItem>(vs);
     }
 
     public partial class tabPanel : panel
     {
 
 
-      public static DelayedPanelView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.TabPanel>[] vs) => cs => new StandardPanelView<TMessage, System.Windows.Controls.Primitives.TabPanel>(vs, cs);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.TabPanel>[] vs) => new StandardView<TMessage, System.Windows.Controls.Primitives.TabPanel>(vs);
     }
 
     public partial class textBlock : frameworkElement
@@ -3198,7 +3198,7 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.UIElement> onIndeterminate (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
         new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.toggleButton.indeterminate, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
 
-      public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.ToggleButton>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.Primitives.ToggleButton>(vs, c);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.ToggleButton>[] vs) => new StandardView<TMessage, System.Windows.Controls.Primitives.ToggleButton>(vs);
     }
 
     public partial class toolBar : headeredItemsControl
@@ -3217,14 +3217,14 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.Primitives.ToolBarOverflowPanel> wrapWidth(System.Double v) => new SetValue<TMessage, System.Windows.Controls.Primitives.ToolBarOverflowPanel, System.Double>(Properties.toolBarOverflowPanel.wrapWidth, v);
 
 
-      public static DelayedPanelView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.ToolBarOverflowPanel>[] vs) => cs => new StandardPanelView<TMessage, System.Windows.Controls.Primitives.ToolBarOverflowPanel>(vs, cs);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.ToolBarOverflowPanel>[] vs) => new StandardView<TMessage, System.Windows.Controls.Primitives.ToolBarOverflowPanel>(vs);
     }
 
     public partial class toolBarPanel : stackPanel
     {
 
 
-      public static DelayedPanelView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.ToolBarPanel>[] vs) => cs => new StandardPanelView<TMessage, System.Windows.Controls.Primitives.ToolBarPanel>(vs, cs);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.ToolBarPanel>[] vs) => new StandardView<TMessage, System.Windows.Controls.Primitives.ToolBarPanel>(vs);
     }
 
     public partial class toolBarTray : frameworkElement
@@ -3254,7 +3254,7 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.UIElement> onClosed (OnChange<TMessage, System.Windows.UIElement, System.Windows.RoutedEventArgs> onChange) =>
         new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.RoutedEventHandler, System.Windows.RoutedEventArgs> (Events.toolTip.closed, h => (System.Windows.RoutedEventHandler)h.Invoke, onChange);
 
-      public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.ToolTip>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.ToolTip>(vs, c);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.ToolTip>[] vs) => new StandardView<TMessage, System.Windows.Controls.ToolTip>(vs);
     }
 
     public partial class track : frameworkElement
@@ -3495,14 +3495,14 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.Primitives.UniformGrid> rows(System.Int32 v) => new SetValue<TMessage, System.Windows.Controls.Primitives.UniformGrid, System.Int32>(Properties.uniformGrid.rows, v);
 
 
-      public static DelayedPanelView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.UniformGrid>[] vs) => cs => new StandardPanelView<TMessage, System.Windows.Controls.Primitives.UniformGrid>(vs, cs);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Primitives.UniformGrid>[] vs) => new StandardView<TMessage, System.Windows.Controls.Primitives.UniformGrid>(vs);
     }
 
     public partial class userControl : contentControl
     {
 
 
-      public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Controls.UserControl>[] vs) => c => new StandardContentView<TMessage, System.Windows.Controls.UserControl>(vs, c);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.UserControl>[] vs) => new StandardView<TMessage, System.Windows.Controls.UserControl>(vs);
     }
 
     public partial class webBrowser : activeXHost
@@ -3518,7 +3518,7 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.Viewbox> stretchDirection(System.Windows.Controls.StretchDirection v) => new SetValue<TMessage, System.Windows.Controls.Viewbox, System.Windows.Controls.StretchDirection>(Properties.viewbox.stretchDirection, v);
 
 
-      public static DelayedDecoratorView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Viewbox>[] vs) => c => new StandardDecoratorView<TMessage, System.Windows.Controls.Viewbox>(vs, c);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.Viewbox>[] vs) => new StandardView<TMessage, System.Windows.Controls.Viewbox>(vs);
     }
 
     public partial class viewport3D : frameworkElement
@@ -3548,7 +3548,7 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.UIElement> onDpiChanged (OnChange<TMessage, System.Windows.UIElement, System.Windows.DpiChangedEventArgs> onChange) =>
         new OnChangedValue<TMessage, System.Windows.UIElement, System.Windows.DpiChangedEventHandler, System.Windows.DpiChangedEventArgs> (Events.window.dpiChanged, h => (System.Windows.DpiChangedEventHandler)h.Invoke, onChange);
 
-      public static DelayedContentView<TMessage> View(params IValue<TMessage, System.Windows.Window>[] vs) => c => new StandardContentView<TMessage, System.Windows.Window>(vs, c);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Window>[] vs) => new StandardView<TMessage, System.Windows.Window>(vs);
     }
 
     public partial class virtualizingPanel : panel
@@ -3573,7 +3573,7 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.VirtualizingStackPanel> onCleanUpVirtualizedItem (OnChange<TMessage, System.Windows.Controls.VirtualizingStackPanel, System.Windows.Controls.CleanUpVirtualizedItemEventArgs> onChange) =>
         new OnChangedValue<TMessage, System.Windows.Controls.VirtualizingStackPanel, System.Windows.Controls.CleanUpVirtualizedItemEventHandler, System.Windows.Controls.CleanUpVirtualizedItemEventArgs> (Events.virtualizingStackPanel.cleanUpVirtualizedItem, h => (System.Windows.Controls.CleanUpVirtualizedItemEventHandler)h.Invoke, onChange);
 
-      public static DelayedPanelView<TMessage> View(params IValue<TMessage, System.Windows.Controls.VirtualizingStackPanel>[] vs) => cs => new StandardPanelView<TMessage, System.Windows.Controls.VirtualizingStackPanel>(vs, cs);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.VirtualizingStackPanel>[] vs) => new StandardView<TMessage, System.Windows.Controls.VirtualizingStackPanel>(vs);
     }
 
     public partial class wrapPanel : panel
@@ -3583,7 +3583,7 @@ namespace Galactus.Standard
       public static IValue<TMessage, System.Windows.Controls.WrapPanel> orientation(System.Windows.Controls.Orientation v) => new SetValue<TMessage, System.Windows.Controls.WrapPanel, System.Windows.Controls.Orientation>(Properties.wrapPanel.orientation, v);
 
 
-      public static DelayedPanelView<TMessage> View(params IValue<TMessage, System.Windows.Controls.WrapPanel>[] vs) => cs => new StandardPanelView<TMessage, System.Windows.Controls.WrapPanel>(vs, cs);
+      public static IView<TMessage> View(params IValue<TMessage, System.Windows.Controls.WrapPanel>[] vs) => new StandardView<TMessage, System.Windows.Controls.WrapPanel>(vs);
     }
 
   }
