@@ -4,7 +4,6 @@ namespace Galactus.Standard
 {
   using Galactus.Core;
   using System;
-  using System.Collections.Generic;
   using System.Collections.ObjectModel;
   using System.Windows;
   using System.Windows.Controls;
@@ -115,7 +114,9 @@ namespace Galactus.Standard
     {
       static void UpdateRowDefinitions(Grid grid, GridLength[] gridLengths)
       {
-        var rows      = grid.RowDefinitions;
+        var rows = grid.RowDefinitions;
+
+        var commonCount = Math.Min(gridLengths.Length, rows.Count);
 
         for (var iter = 0; iter < Math.Min(gridLengths.Length, rows.Count); ++iter)
         {
@@ -155,9 +156,11 @@ namespace Galactus.Standard
 
       static void UpdateColumnDefinitions(Grid grid, GridLength[] gridLengths)
       {
-        var columns   = grid.ColumnDefinitions;
+        var columns = grid.ColumnDefinitions;
 
-        for (var iter = 0; iter < Math.Min(gridLengths.Length, columns.Count); ++iter)
+        var commonCount = Math.Min(gridLengths.Length, columns.Count);
+
+        for (var iter = 0; iter < commonCount; ++iter)
         {
           columns[0].Width  = gridLengths[iter];
         }
@@ -214,46 +217,40 @@ namespace Galactus.Standard
 
           // TODO: How to rebuild this more efficiently?
 
-          var tchildren = tui.ItemsSource as ObservableCollection<UIElement>;
-          if (tchildren == null)
+          var children = tui.ItemsSource as ObservableCollection<UIElement>;
+          if (children == null)
           {
-            tchildren = new ObservableCollection<UIElement>();
-            tui.ItemsSource = tchildren;
+            children = new ObservableCollection<UIElement>();
+            tui.ItemsSource = children;
           }
 
-          var children  = new List<UIElement>(Math.Max(tchildren.Count, views.Length));
-          {
-            var cc = tchildren.Count;
-            for (var iter = 0; iter < cc; ++iter)
-            {
-              children.Add(tchildren[iter]);
-            }
-          }
-          tchildren.Clear();
+          var commonCount = Math.Min(views.Length, children.Count);
 
-          for (var iter = 0; iter < views.Length; ++iter)
+          for (var iter = 0; iter < commonCount; ++iter)
           {
-            if (iter < children.Count)
+            var child   = children[iter];
+            var view    = views[iter];
+            var nchild  = view.Update(ctx, pi, child);
+            if (!ReferenceEquals(child, nchild))
             {
-              var child     = children[iter];
-              var view      = views[iter]   ;
-              var cui       = view.Update(ctx, pi, child);
-              children[iter]= cui;
-            }
-            else
-            {
-              var view      = views[iter]   ;
-              var cui       = view.Update(ctx, pi, null);
-              children.Add(view.Update(ctx, pi, null));
+              children[iter] = nchild;
             }
           }
 
-          for (var iter = 0; iter < children.Count; ++iter)
+          if (views.Length < children.Count)
           {
-            var child = children[iter];
-            if (child != null)
+            for (var iter = views.Length - 1; iter >= children.Count; --iter)
             {
-              tchildren.Add(child);
+              children.RemoveAt(iter);
+            }
+          }
+          else if (views.Length > children.Count)
+          {
+            for (var iter = children.Count; iter < views.Length; ++iter)
+            {
+              var view    = views[iter];
+              var nchild  = view.Update(ctx, pi, null);
+              children.Add(nchild);
             }
           }
 
@@ -280,42 +277,35 @@ namespace Galactus.Standard
         {
           var tui = (Panel)ui;
 
-          // TODO: How to rebuild this more efficiently?
+          var children = tui.Children;
 
-          var tchildren = tui.Children;
-          var children  = new List<UIElement>(Math.Max(tchildren.Count, views.Length));
-          {
-            var cc = tchildren.Count;
-            for (var iter = 0; iter < cc; ++iter)
-            {
-              children.Add(tchildren[iter]);
-            }
-          }
-          tchildren.Clear();
+          var commonCount = Math.Min(views.Length, children.Count);
 
-          for (var iter = 0; iter < views.Length; ++iter)
+          for (var iter = 0; iter < commonCount; ++iter)
           {
-            if (iter < children.Count)
+            var child   = children[iter];
+            var view    = views[iter];
+            var nchild  = view.Update(ctx, pi, child);
+            if (!ReferenceEquals(child, nchild))
             {
-              var child     = children[iter];
-              var view      = views[iter]   ;
-              var cui       = view.Update(ctx, pi, child);
-              children[iter]= cui;
-            }
-            else
-            {
-              var view      = views[iter]   ;
-              var cui       = view.Update(ctx, pi, null);
-              children.Add(view.Update(ctx, pi, null));
+              // TODO: How to do this more efficiently?
+              Console.WriteLine("Remove/Insert");
+              children.RemoveAt(iter);
+              children.Insert(iter, nchild);
             }
           }
 
-          for (var iter = 0; iter < children.Count; ++iter)
+          if (views.Length < children.Count)
           {
-            var child = children[iter];
-            if (child != null)
+            children.RemoveRange(views.Length, children.Count - views.Length);
+          }
+          else if (views.Length > children.Count)
+          {
+            for (var iter = children.Count; iter < views.Length; ++iter)
             {
-              tchildren.Add(child);
+              var view    = views[iter];
+              var nchild  = view.Update(ctx, pi, null);
+              children.Add(nchild);
             }
           }
 

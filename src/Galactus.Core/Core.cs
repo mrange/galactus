@@ -448,7 +448,6 @@
         var cnt     = cc.Content as UIElement   ;
         var pi      = ParentInfo.ReusedInstance ;
 
-        cc.Content  = null                      ;
         cc.Content  = nv.Update(ctx, pi, cnt)   ;
       }
 
