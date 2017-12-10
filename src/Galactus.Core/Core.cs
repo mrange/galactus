@@ -308,7 +308,7 @@
 
   public static class ValueExtensions
   {
-    public static IValue<TMessage, TUI> Init<TMessage, TUI>(this IValue<TMessage, TUI> v)
+    public static IValue<TMessage, TUI> InitOnly<TMessage, TUI>(this IValue<TMessage, TUI> v)
       where TUI : UIElement
     {
       return new InitOnlyValue<TMessage, TUI>(v);

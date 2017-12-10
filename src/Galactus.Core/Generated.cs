@@ -1,5 +1,6 @@
 ﻿
 
+#pragma warning disable CS0108
 namespace Galactus.Standard
 {
   using Galactus.Core;
@@ -3588,3 +3589,4 @@ namespace Galactus.Standard
 
   }
 }
+#pragma warning enable CS0108

@@ -146,10 +146,11 @@
               ( stackPanel.orientation(Orientation.Vertical)
               , stackPanel.childViews
                 ( comboBox.View
-                  (comboBox.itemSourceViews
-                    ( textBlock.View(textBlock.text("Hello"))
-                    , textBlock.View(textBlock.text("There"))
-                    ).Init()
+                  ( comboBox.itemSourceViews
+                      ( textBlock.View(textBlock.text("Hello"))
+                      , textBlock.View(textBlock.text("There"))
+                      ).InitOnly()
+                  , comboBox.selectedIndex(1).InitOnly()
                   )
                 , labeledCheckBox("Is company?", Customer.kind.Map(k => (k as Company) != null, b => b ? (CustomerKind)Company.Zero : (CustomerKind)Individual.Zero))
                 , customerKind(Customer.kind)

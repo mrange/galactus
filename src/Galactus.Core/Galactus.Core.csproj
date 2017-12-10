@@ -62,6 +62,7 @@
     <Compile Include="Unit.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ModelGenerator.ttinclude" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

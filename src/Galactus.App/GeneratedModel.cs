@@ -1,4 +1,5 @@
-﻿namespace Galactus.App.Model
+﻿#pragma warning disable CS0108
+namespace Galactus.App.Model
 {
   using Galactus.Core;
   using System.Text;
@@ -840,4 +841,115 @@
 
   }
 
+  // --------------------------------------------------------------------------
+  // Unions 
+  // --------------------------------------------------------------------------
+
+  abstract partial class Model
+  {
+    public readonly static Model Zero = new NewCustomer();
+
+    public partial interface IVisitor<out T>
+    { 
+      T Visit(NewCustomer v);
+    }
+
+    public abstract T Apply<T>(IVisitor<T> visitor);
+
+    sealed class NewCustomerPrism : Prism<Model, NewCustomer>
+    {
+      public override void BuildPath(StringBuilder sb)
+      {
+        sb.Append("|NewCustomer");
+      }
+
+      public override Maybe<NewCustomer> Get(Model m)
+      {
+        var mm = m as NewCustomer;
+        if (mm != null)
+        {
+          return mm.Just();
+        }
+        else
+        {
+          return Maybe.Nothing<NewCustomer>();
+        }
+      }
+
+      public override Model Set(Model m, NewCustomer p)
+      {
+        return p;
+      }
+    }
+
+    public readonly static Prism<Model, NewCustomer> newCustomer = new NewCustomerPrism();
+
+  }
+
+  sealed partial class NewCustomer : Model
+  {
+    public readonly Customer Customer;
+
+    public NewCustomer(
+        Customer customer
+      )
+    {
+      Customer = customer;
+    }
+
+    public NewCustomer()
+      : this(
+        Customer.Zero
+      )
+    {
+    }
+
+    public readonly static NewCustomer Zero = new NewCustomer();
+
+    public override string ToString()
+    {
+      var sb = new StringBuilder(16);
+      sb.Append("{ NewCustomer");
+      sb.Append(", Customer: ");
+      sb.Append(Customer);
+      sb.Append(" }");
+      return sb.ToString();
+    }
+
+    public NewCustomer With_Customer(Customer customer)
+    {
+      return new NewCustomer(
+        customer
+      );
+    }
+
+    sealed class CustomerPrism : Prism<NewCustomer, Customer>
+    {
+      public override void BuildPath(StringBuilder sb)
+      {
+        sb.Append("Customer");
+      }
+
+      public override Maybe<Customer> Get(NewCustomer m)
+      {
+        return m.Customer.Just();
+      }
+
+      public override NewCustomer Set(NewCustomer m, Customer p)
+      {
+        return m.With_Customer(p);
+      }
+    }
+
+    public readonly static Prism<NewCustomer, Customer> customer = new CustomerPrism();
+
+    public override T Apply<T>(IVisitor<T> visitor)
+    {
+      return visitor.Visit(this);
+    }
+
+  }
+
 }
+#pragma warning restore CS0108
+
