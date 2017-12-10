@@ -41,6 +41,10 @@
 
     public static readonly DependencyProperty ErrorAdornerProperty  = DependencyProperty.RegisterAttached("ErrorAdorner"  , typeof(ErrorAdorner)  , typeof(DependencyProperties));
 
+    public static readonly DependencyProperty ErrorTreeProperty     = DependencyProperty.RegisterAttached("ErrorTree"     , typeof(ErrorTree)     , typeof(DependencyProperties));
+
+    public static readonly DependencyProperty StateProperty         = DependencyProperty.RegisterAttached("State"         , typeof(object)        , typeof(DependencyProperties));
+
     public static IPrism GetPrism(DependencyObject dobj)
     {
       return (IPrism)dobj?.GetValue(PrismProperty);
@@ -60,6 +64,27 @@
     {
       dobj?.SetValue(ErrorAdornerProperty, l);
     }
+
+    public static ErrorTree GetErrorTree(DependencyObject dobj)
+    {
+      return (ErrorTree)dobj?.GetValue(ErrorTreeProperty);
+    }
+
+    public static void SetErrorTree(DependencyObject dobj, ErrorTree l)
+    {
+      dobj?.SetValue(ErrorTreeProperty, l);
+    }
+
+    public static object GetState(DependencyObject dobj)
+    {
+      return dobj?.GetValue(StateProperty);
+    }
+
+    public static void SetState(DependencyObject dobj, object l)
+    {
+      dobj?.SetValue(StateProperty, l);
+    }
+
   }
   
   public abstract class TearDownTree
@@ -136,13 +161,18 @@
       IsEmpty = isEmpty;
     }
 
-    public abstract void OnCollapse(StringBuilder pathBuilder, List<(string, string)> errors);
+    public abstract void OnCollapse(StringBuilder pathBuilder, Action<string, string> receiver);
 
-    public (string path, string message)[] Collapse()
+    public void Collapse(Action<string, string> receiver)
     {
-      var sb      = new StringBuilder ();
+      var sb = new StringBuilder ();
+      OnCollapse(sb, receiver);
+    }                 
+
+    public (string path, string message)[] ToArray()
+    {
       var errors  = new List<(string, string)>(16);
-      OnCollapse(sb, errors);
+      Collapse((p, m) => errors.Add((p, m)));
       return errors.ToArray();
     }                 
 
@@ -158,7 +188,7 @@
     {
     }
 
-    public override void OnCollapse(StringBuilder pathBuilder, List<(string, string)> errors)
+    public override void OnCollapse(StringBuilder pathBuilder, Action<string, string> receiver)
     {
     }
   }
@@ -191,10 +221,10 @@
       return new ForkedErrorTree(left, right);
     }
 
-    public override void OnCollapse(StringBuilder pathBuilder, List<(string, string)> errors)
+    public override void OnCollapse(StringBuilder pathBuilder, Action<string, string> receiver)
     {
-      Left.OnCollapse(pathBuilder, errors);
-      Right.OnCollapse(pathBuilder, errors);
+      Left.OnCollapse(pathBuilder, receiver);
+      Right.OnCollapse(pathBuilder, receiver);
     }
   }
 
@@ -227,11 +257,11 @@
       }
     }
 
-    public override void OnCollapse(StringBuilder pathBuilder, List<(string, string)> errors)
+    public override void OnCollapse(StringBuilder pathBuilder, Action<string, string> receiver)
     {
       pathBuilder.Clear();
       BuildPath(pathBuilder, Path);
-      errors.Add((pathBuilder.ToString(), Message));
+      receiver(pathBuilder.ToString(), Message);
     }
   }
 
@@ -262,11 +292,11 @@
       }
     }
 
-    public override void OnCollapse(StringBuilder pathBuilder, List<(string, string)> errors)
+    public override void OnCollapse(StringBuilder pathBuilder, Action<string, string> receiver)
     {
       foreach (var e in Errors)
       {
-        e.OnCollapse(pathBuilder, errors);
+        e.OnCollapse(pathBuilder, receiver);
       }
     }
   }
@@ -295,21 +325,23 @@
 
   public sealed class BuildUpContext
   {
-    public readonly IImmutableList<string> Path;
+    public readonly int                    PathLength ;
+    public readonly IImmutableList<string> Path       ;
     
-    public BuildUpContext(IImmutableList<string> path)
+    public BuildUpContext(int pathLength, IImmutableList<string> path)
     {
-      Path = path ?? ImmutableList.Empty<string>();
+      PathLength  = pathLength                            ;
+      Path        = path ?? ImmutableList.Empty<string>() ;
     }
 
     public BuildUpContext()
-      : this(null)
+      : this(0, null)
     {
     }
 
     public BuildUpContext AppendToPath(string name)
     {
-      return new BuildUpContext(Path.Cons(name ?? ""));
+      return new BuildUpContext(PathLength + 1, Path.Cons(name ?? ""));
     }
 
   }
@@ -866,7 +898,43 @@
           new OnLayoutUpdated(br.UIElement);
         }
 
-        errorAdorner.Visibility = br.ErrorTree.IsEmpty() ? Visibility.Collapsed : Visibility.Visible;
+        var hasErrors = !br.ErrorTree.IsEmpty();
+        errorAdorner.Visibility = hasErrors ? Visibility.Visible : Visibility.Collapsed;
+      }
+
+      return br;
+    }
+  }
+
+  public sealed class ToolTipView<TMessage> : IView<TMessage>
+  {
+    readonly IView<TMessage>  view    ;
+    readonly string           toolTip ;
+
+    public ToolTipView(IView<TMessage> v, string tt)
+    {
+      // TODO: Handle nulls
+      view    = v         ;
+      toolTip = tt ?? ""  ;
+    }
+
+    public BuildUpResult BuildUp(BuildUpContext ctx, ParentInfo pi, UIElement ui)
+    {
+      var br = view.BuildUp(ctx, pi, ui);
+
+      if (br.UIElement != null)
+      {
+        ToolTipService.SetShowOnDisabled(br.UIElement, true);
+        if (br.ErrorTree.IsEmpty())
+        {
+          ToolTipService.SetToolTip(br.UIElement, toolTip);
+        }
+        else
+        {
+          var sb = new StringBuilder(toolTip);
+          br.ErrorTree.Collapse((p, m) => sb.AppendFormat("\n {0} - {1}", p, m));
+          ToolTipService.SetToolTip(br.UIElement, sb.ToString());
+        }
       }
 
       return br;
@@ -875,15 +943,21 @@
 
   public static class ViewExtensions
   {
-    public static IView<TMessage> WithName<TMessage>(this IView<TMessage> v, string n)
+    public static IView<TMessage> WithErrorAdorner<TMessage>(this IView<TMessage> view)
     {
-      return new NamedView<TMessage>(v, n);
+      return new ErrorAdornerView<TMessage>(view);
     }
 
-    public static IView<TMessage> WithErrorAdorner<TMessage>(this IView<TMessage> v)
+    public static IView<TMessage> WithName<TMessage>(this IView<TMessage> view, string name)
     {
-      return new ErrorAdornerView<TMessage>(v);
+      return new NamedView<TMessage>(view, name);
     }
+
+    public static IView<TMessage> WithToolTip<TMessage>(this IView<TMessage> view, string toolTip)
+    {
+      return new ToolTipView<TMessage>(view, toolTip);
+    }
+
   }
 
   // Hosts
@@ -934,7 +1008,7 @@
         {
           // TODO: Handle Error Tree?
           Console.WriteLine("Errors");
-          var errors = br.ErrorTree.Collapse();
+          var errors = br.ErrorTree.ToArray();
           foreach (var e in errors)
           {
             Console.WriteLine("  {0} - {1}", e.path, e.message);
@@ -964,6 +1038,7 @@
       var onMessage = new MessageEventHandler(OnMessage);
 
       Refresh();
+
       cc.AddHandler(RoutedEvents.MessageEvent, onMessage, false);
 
       return () => 

@@ -57,7 +57,7 @@
               , uIElement.prism(l)
               ).WithErrorAdorner()
             )
-          )
+          ).WithToolTip(lbl)
           ;
       }
       var labeledTextBoxHandler = uIElement.onLostFocus((ui, args) => c =>
