@@ -338,6 +338,5 @@ namespace Galactus.Standard
     {
       public static IValue<TMessage, UIElement> prism(IPrism v) => new SetValue<TMessage, UIElement, IPrism>(Properties.uIElement.prism, v);
     }
-
   }
 }

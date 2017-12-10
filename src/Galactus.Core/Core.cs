@@ -3,8 +3,11 @@
   using System;
   using System.Collections.Generic;
   using System.Runtime.CompilerServices;
+  using System.Text;
   using System.Windows;
   using System.Windows.Controls;
+  using System.Windows.Documents;
+  using System.Windows.Media;
   using static NonCohesive;
 
   // Common
@@ -30,11 +33,13 @@
 
   public static class DependencyProperties
   {
-    public static readonly DependencyProperty DummyProperty = DependencyProperty.RegisterAttached ("Dummy" , typeof(object), typeof(DependencyProperties));
+    public static readonly DependencyProperty DummyProperty         = DependencyProperty.RegisterAttached ("Dummy"        , typeof(object)        , typeof(DependencyProperties));
 
-    public static readonly DependencyProperty NameProperty  = DependencyProperty.RegisterAttached ("Name"  , typeof(string), typeof(DependencyProperties));
+    public static readonly DependencyProperty NameProperty          = DependencyProperty.RegisterAttached ("Name"         , typeof(string)        , typeof(DependencyProperties));
 
-    public static readonly DependencyProperty PrismProperty  = DependencyProperty.RegisterAttached("Prism"  , typeof(IPrism) , typeof(DependencyProperties));
+    public static readonly DependencyProperty PrismProperty         = DependencyProperty.RegisterAttached("Prism"         , typeof(IPrism)        , typeof(DependencyProperties));
+
+    public static readonly DependencyProperty ErrorAdornerProperty  = DependencyProperty.RegisterAttached("ErrorAdorner"  , typeof(ErrorAdorner)  , typeof(DependencyProperties));
 
     public static IPrism GetPrism(DependencyObject dobj)
     {
@@ -44,6 +49,16 @@
     public static void SetPrism(DependencyObject dobj, IPrism l)
     {
       dobj?.SetValue(PrismProperty, l);
+    }
+
+    public static ErrorAdorner GetErrorAdorner(DependencyObject dobj)
+    {
+      return (ErrorAdorner)dobj?.GetValue(ErrorAdornerProperty);
+    }
+
+    public static void SetErrorAdorner(DependencyObject dobj, ErrorAdorner l)
+    {
+      dobj?.SetValue(ErrorAdornerProperty, l);
     }
   }
   
@@ -121,6 +136,16 @@
       IsEmpty = isEmpty;
     }
 
+    public abstract void OnCollapse(StringBuilder pathBuilder, List<(string, string)> errors);
+
+    public (string path, string message)[] Collapse()
+    {
+      var sb      = new StringBuilder ();
+      var errors  = new List<(string, string)>(16);
+      OnCollapse(sb, errors);
+      return errors.ToArray();
+    }                 
+
     // For efficiency reasons this is set to null
     public readonly static ErrorTree Zero = null;
   }
@@ -130,6 +155,10 @@
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     internal EmptyErrorTree() 
       : base(true)
+    {
+    }
+
+    public override void OnCollapse(StringBuilder pathBuilder, List<(string, string)> errors)
     {
     }
   }
@@ -162,6 +191,11 @@
       return new ForkedErrorTree(left, right);
     }
 
+    public override void OnCollapse(StringBuilder pathBuilder, List<(string, string)> errors)
+    {
+      Left.OnCollapse(pathBuilder, errors);
+      Right.OnCollapse(pathBuilder, errors);
+    }
   }
 
   public sealed class ValidationErrorTree : ErrorTree
@@ -181,6 +215,23 @@
     public static ErrorTree Create(IImmutableList<string> path, string message)
     {
       return new ValidationErrorTree(path ?? ImmutableList.Empty<string>(), message ?? "");
+    }
+
+    static void BuildPath(StringBuilder pathBuilder, IImmutableList<string> path)
+    {
+      var decons = path.Decons();
+      if (decons.HasValue)
+      {
+        BuildPath(pathBuilder, decons.Value.tail);
+        pathBuilder.Append("/").Append(decons.Value.head);
+      }
+    }
+
+    public override void OnCollapse(StringBuilder pathBuilder, List<(string, string)> errors)
+    {
+      pathBuilder.Clear();
+      BuildPath(pathBuilder, Path);
+      errors.Add((pathBuilder.ToString(), Message));
     }
   }
 
@@ -210,6 +261,14 @@
         return new GroupErrorTree(errors);
       }
     }
+
+    public override void OnCollapse(StringBuilder pathBuilder, List<(string, string)> errors)
+    {
+      foreach (var e in Errors)
+      {
+        e.OnCollapse(pathBuilder, errors);
+      }
+    }
   }
 
   public static class TreeExtensions
@@ -224,6 +283,12 @@
     public static ErrorTree JoinWith(this ErrorTree this_, ErrorTree that)
     {
       return ForkedErrorTree.Create(this_, that);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static bool IsEmpty(this ErrorTree this_)
+    {
+      return this_ == null || this_.IsEmpty;
     }
   }
 
@@ -728,19 +793,96 @@
         : null
         ;
 
-      var nctx = ctx.AppendToPath(name);
-      var nbr  = view.BuildUp(nctx, pi, nui);
-      nbr.UIElement?.SetValue(DependencyProperties.NameProperty, name);
+      var nctx  = ctx.AppendToPath(name);
+      var br    = view.BuildUp(nctx, pi, nui);
+      br.UIElement?.SetValue(DependencyProperties.NameProperty, name);
 
-      return nbr;
+      return br;
+    }
+  }
+
+  public sealed class ErrorAdorner : Adorner
+  {
+    static readonly Pen red = new Pen(Brushes.Red, 1.0);
+
+    public ErrorAdorner(UIElement adornedElement)
+      : base(adornedElement)
+    {
+    }
+
+    protected override void OnRender(DrawingContext drawingContext)
+    {
+      base.OnRender(drawingContext);
+
+      drawingContext.DrawRectangle(null, red, new Rect(0, 0, ActualWidth, ActualHeight));
+    }
+  }
+
+  public sealed class ErrorAdornerView<TMessage> : IView<TMessage>
+  {
+    readonly IView<TMessage> view;
+
+    public ErrorAdornerView(IView<TMessage> v)
+    {
+      // TODO: Handle nulls
+      view = v      ;
+    }
+
+    sealed class OnLayoutUpdated
+    {
+      readonly UIElement    ui;
+      readonly EventHandler eh;
+
+      public OnLayoutUpdated(UIElement u)
+      {
+        ui = u;
+        eh = UIElement_LayoutUpdated;
+
+        ui.LayoutUpdated += eh;
+      }
+
+      void UIElement_LayoutUpdated(object sender, EventArgs e)
+      {
+        ui.LayoutUpdated  -=UIElement_LayoutUpdated;
+        var errorAdorner  = DependencyProperties.GetErrorAdorner(ui);
+        var adornerLayer  = AdornerLayer.GetAdornerLayer(ui);
+        adornerLayer?.Add(errorAdorner);
+      }
+    }
+
+    public BuildUpResult BuildUp(BuildUpContext ctx, ParentInfo pi, UIElement ui)
+    {
+      var br = view.BuildUp(ctx, pi, ui);
+
+      if (br.UIElement != null)
+      {
+        var errorAdorner = DependencyProperties.GetErrorAdorner(ui);
+
+        if (errorAdorner == null)
+        {
+          errorAdorner = new ErrorAdorner(br.UIElement);
+          DependencyProperties.SetErrorAdorner(br.UIElement, errorAdorner);
+          // This class registers an event in the ctor
+          new OnLayoutUpdated(br.UIElement);
+        }
+
+        errorAdorner.Visibility = br.ErrorTree.IsEmpty() ? Visibility.Collapsed : Visibility.Visible;
+      }
+
+      return br;
     }
   }
 
   public static class ViewExtensions
   {
-    public static IView<TMessage> Named<TMessage>(this IView<TMessage> v, string n)
+    public static IView<TMessage> WithName<TMessage>(this IView<TMessage> v, string n)
     {
       return new NamedView<TMessage>(v, n);
+    }
+
+    public static IView<TMessage> WithErrorAdorner<TMessage>(this IView<TMessage> v)
+    {
+      return new ErrorAdornerView<TMessage>(v);
     }
   }
 
@@ -775,6 +917,8 @@
 
       void Refresh()
       {
+        Console.WriteLine("Refresh");
+
         tearDownTree?.TearDown();
 
         tearDownTree  = TearDownTree.Zero                     ;
@@ -786,7 +930,16 @@
         var br        = nv.BuildUp(ctx, pi, cnt)              ;
         cc.Content    = br.UIElement                          ;
         tearDownTree  = br.TearDownTree ?? TearDownTree.Zero  ;
-        // TODO: Handle Error Tree?
+        if(!br.ErrorTree.IsEmpty())
+        {
+          // TODO: Handle Error Tree?
+          Console.WriteLine("Errors");
+          var errors = br.ErrorTree.Collapse();
+          foreach (var e in errors)
+          {
+            Console.WriteLine("  {0} - {1}", e.path, e.message);
+          }
+        }
       }
 
       void Process()

@@ -24,7 +24,7 @@
         return groupBox.View
           ( groupBox.headerView(textBlock.View(textBlock.text(lbl)))
           , groupBox.contentView(view)
-          ).Named(lbl);
+          ).WithName(lbl);
       }
 
       IView<Message> labeledCheckBox(string lbl, Prism<Customer, bool> l)
@@ -55,7 +55,7 @@
               ( textBox.text(l.Get(customer).ValueOr("")).Validate(lbl, v => v.IsNullOrEmpty() ? "Missing input" : null)
               , textBox.minWidth(80)
               , uIElement.prism(l)
-              )
+              ).WithErrorAdorner()
             )
           )
           ;
