@@ -4,6 +4,7 @@ namespace Galactus.Core
   using System;
   using System.Collections;
   using System.Collections.Generic;
+  using System.Runtime.CompilerServices;
 
   public interface IImmutableList<out T> : IEnumerable<T>
   {
@@ -18,6 +19,11 @@ namespace Galactus.Core
 
       bool IImmutableList<T>.IsEmpty => throw new NotImplementedException();
 
+      [MethodImpl (MethodImplOptions.AggressiveInlining)]
+      private EmptyList()
+      {
+      }
+
       public IEnumerator<T> GetEnumerator()
       {
         yield break;
@@ -27,6 +33,8 @@ namespace Galactus.Core
       {
         return GetEnumerator();
       }
+
+      public static readonly IImmutableList<T> Zero = new EmptyList<T>();
     }
 
     sealed class ConsList<T> : IImmutableList<T>
@@ -35,6 +43,7 @@ namespace Galactus.Core
       public T                 Head;
       public IImmutableList<T> Tail;
 
+      [MethodImpl (MethodImplOptions.AggressiveInlining)]
       public ConsList(T head, IImmutableList<T> tail)
       {
         Head = head;
@@ -59,9 +68,13 @@ namespace Galactus.Core
       }
     }
 
-    public static IImmutableList<T> Empty<T>() => new EmptyList<T>();
+    [MethodImpl (MethodImplOptions.AggressiveInlining)]
+    public static IImmutableList<T> Empty<T>() => EmptyList<T>.Zero;
     
+    [MethodImpl (MethodImplOptions.AggressiveInlining)]
     public static IImmutableList<T> Cons<T>(T head, IImmutableList<T> tail) => new ConsList<T>(head, tail ?? Empty<T>());
+
+    public static IImmutableList<T> Singleton<T>(T v) => Cons(v, Empty<T>());
 
     public static IImmutableList<T> ToImmutableList<T>(this IEnumerable<T> enumerable)
     {
@@ -95,6 +108,11 @@ namespace Galactus.Core
       {
         return Empty<T>();
       }
+    }
+
+    public static IImmutableList<T> ToImmutableList<T>(this T v)
+    {
+      return Singleton(v);
     }
 
     public static IImmutableList<T> Cons<T>(this IImmutableList<T> t, T h)

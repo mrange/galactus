@@ -2,6 +2,7 @@
 {
   using System;
   using System.Collections.Generic;
+  using System.Runtime.CompilerServices;
   using System.Windows;
   using System.Windows.Controls;
   using static NonCohesive;
@@ -46,67 +47,204 @@
     }
   }
   
-  public struct ValidationError
+  public abstract class TearDownTree
+  {
+    public readonly bool IsEmpty;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected TearDownTree(bool isEmpty)
+    {
+      IsEmpty = isEmpty;
+    }
+
+    // For efficiency reasons this is set to null
+    public readonly static TearDownTree Zero = null;
+
+    public abstract void TearDown();
+  }
+
+  public sealed class EmptyTearDownTree : TearDownTree
+  {
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    internal EmptyTearDownTree() 
+      : base(true)
+    {
+    }
+
+    public override void TearDown()
+    {
+    }
+  }
+
+  public sealed class ForkedTearDownTree : TearDownTree
+  {
+    public readonly TearDownTree Left    ;
+    public readonly TearDownTree Right   ;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    ForkedTearDownTree(TearDownTree left, TearDownTree right)
+      : base(false)
+    {
+      Left  = left  ;
+      Right = right ;
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static TearDownTree Create(TearDownTree left, TearDownTree right)
+    {
+      if (left == null || left.IsEmpty)
+      {
+        return right;
+      }
+      else if (right == null || right.IsEmpty)
+      {
+        return left;
+      }
+
+      return new ForkedTearDownTree(left, right);
+    }
+
+    public override void TearDown()
+    {
+      Right.TearDown();
+      Left.TearDown();
+    }
+  }
+
+  public abstract class ErrorTree
+  {
+    public readonly bool IsEmpty;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected ErrorTree(bool isEmpty)
+    {
+      IsEmpty = isEmpty;
+    }
+
+    // For efficiency reasons this is set to null
+    public readonly static ErrorTree Zero = null;
+  }
+
+  public sealed class EmptyErrorTree : ErrorTree
+  {
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    internal EmptyErrorTree() 
+      : base(true)
+    {
+    }
+  }
+
+  public sealed class ForkedErrorTree : ErrorTree
+  {
+    public readonly ErrorTree Left    ;
+    public readonly ErrorTree Right   ;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    ForkedErrorTree(ErrorTree left, ErrorTree right)
+      : base(false)
+    {
+      Left  = left  ;
+      Right = right ;
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static ErrorTree Create(ErrorTree left, ErrorTree right)
+    {
+      if (left == null || left.IsEmpty)
+      {
+        return right;
+      }
+      else if (right == null || right.IsEmpty)
+      {
+        return left;
+      }
+
+      return new ForkedErrorTree(left, right);
+    }
+
+  }
+
+  public sealed class ValidationErrorTree : ErrorTree
   {
     public readonly IImmutableList<string>  Path    ;
     public readonly string                  Message ;
 
-    public ValidationError(IImmutableList<string> path, string message)
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    ValidationErrorTree(IImmutableList<string> path, string message)
+      : base(false)
     {
-      Path    = path    ?? ImmutableList.Empty<string>();
-      Message = message ?? ""                           ;
+      Path    = path    ;
+      Message = message ;
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static ErrorTree Create(IImmutableList<string> path, string message)
+    {
+      return new ValidationErrorTree(path ?? ImmutableList.Empty<string>(), message ?? "");
     }
   }
 
-  public delegate void Teardown();
-
-  public sealed class UpdateContext
+  public sealed class GroupErrorTree : ErrorTree
   {
-    readonly List<Teardown>         tearDowns         = new List<Teardown>(16);
-    readonly List<ValidationError>  validationErrors  = new List<ValidationError>(16);
+    public readonly ErrorTree[]             Errors  ;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    GroupErrorTree(ErrorTree[] errors)
+      : base(false)
+    {
+      Errors = errors;
+    }
+
+    public static ErrorTree Create(ErrorTree[] errors)
+    {
+      if (errors == null || errors.Length == 0)
+      {
+        return ErrorTree.Zero;
+      }
+      else if (errors.Length == 1)
+      {
+        return errors[0];
+      }
+      else
+      { 
+        return new GroupErrorTree(errors);
+      }
+    }
+  }
+
+  public static class TreeExtensions
+  {
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static TearDownTree JoinWith(this TearDownTree this_, TearDownTree that)
+    {
+      return ForkedTearDownTree.Create(this_, that);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static ErrorTree JoinWith(this ErrorTree this_, ErrorTree that)
+    {
+      return ForkedErrorTree.Create(this_, that);
+    }
+  }
+
+
+  public sealed class BuildUpContext
+  {
+    public readonly IImmutableList<string> Path;
     
-    IImmutableList<string> path = ImmutableList.Empty<string>();
-
-    public void AddValidationError(string name, string message)
+    public BuildUpContext(IImmutableList<string> path)
     {
-      validationErrors.Add(new ValidationError(path.Cons(name ?? ""), message));
+      Path = path ?? ImmutableList.Empty<string>();
     }
 
-    public ValidationError[] ValidationErrors => validationErrors.ToArray();
-
-    public void PushValidationContext(string name)
+    public BuildUpContext()
+      : this(null)
     {
-      path = path.Cons(name ?? "");
     }
 
-    public void PopValidationContext()
+    public BuildUpContext AppendToPath(string name)
     {
-      var m = path.Decons();
-      if (m.HasValue)
-      {
-        path = m.Value.tail;
-      }
-    }
-
-    public void OnTearDown(Teardown action)
-    {
-      if (action != null)
-      {
-        tearDowns.Add(action);
-      }
-    }
-
-    public void TearDown()
-    {
-      for (var iter = tearDowns.Count - 1; iter >= 0; --iter)
-      {
-        var a = tearDowns[iter];
-        a();
-      }
-
-      tearDowns.Clear();
-      validationErrors.Clear();
-      path = ImmutableList.Empty<string>();
+      return new BuildUpContext(Path.Cons(name ?? ""));
     }
 
   }
@@ -198,10 +336,31 @@
     ReusedInstance,
   }
 
+  public struct UpdateResult
+  {
+    public readonly TearDownTree  TearDownTree  ;
+    public readonly ErrorTree     ErrorTree     ;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public UpdateResult(TearDownTree tearDownTree, ErrorTree errorTree)
+    {
+      TearDownTree  = tearDownTree;
+      ErrorTree     = errorTree   ;
+    }
+
+    public static readonly UpdateResult Zero = new UpdateResult(null, null);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public BuildUpResult ToBuildUpResult(UIElement ui)
+    {
+      return new BuildUpResult(ui, TearDownTree, ErrorTree);
+    }
+  }
+
   public interface IValue<TMessage, in TUI>
     where TUI : UIElement
   {
-    void Update(UpdateContext ctx, ParentInfo pi, UIElement ui);
+    UpdateResult Update(BuildUpContext ctx, ParentInfo pi, UIElement ui);
   }
 
   public interface ISetValue<TMessage, in TUI, T> : IValue<TMessage, TUI>
@@ -227,10 +386,12 @@
     public IProperty<TUI, T> Property   => property ;
     public T                  Value     => value    ;
 
-    public void Update(UpdateContext ctx, ParentInfo pi, UIElement ui)
+    public UpdateResult Update(BuildUpContext ctx, ParentInfo pi, UIElement ui)
     {
       // TODO: Cast unnecessary but doesn't cost that much compared to set in general
       property.Set((TUI)ui, value);
+
+      return UpdateResult.Zero;
     }
   }
 
@@ -246,7 +407,7 @@
     IView<TMessage>[] Views { get; }
   }
 
-  public delegate void Invoker(UpdateContext ctx, ParentInfo pi, UIElement ui);
+  public delegate void Invoker(BuildUpContext ctx, ParentInfo pi, UIElement ui);
 
   public interface IInvokedValue<TMessage, in TUI> : IValue<TMessage, TUI>
     where TUI : UIElement
@@ -267,9 +428,11 @@
       invoker = i;
     }
 
-    public void Update(UpdateContext ctx, ParentInfo pi, UIElement ui)
+    public UpdateResult Update(BuildUpContext ctx, ParentInfo pi, UIElement ui)
     {
       invoker(ctx, pi, ui);
+
+      return UpdateResult.Zero;
     }
   }
 
@@ -313,14 +476,35 @@
       ui.RaiseEvent(margs);
     }
 
-    public void Update(UpdateContext ctx, ParentInfo pi, UIElement ui)
+    sealed class RemoveHandlerTearDownTree : TearDownTree
+    {
+      readonly UIElement    uIElement       ;
+      readonly RoutedEvent  routedEvent     ;
+      readonly Delegate     onChangeHandler ;
+
+      [MethodImpl(MethodImplOptions.AggressiveInlining)]
+      public RemoveHandlerTearDownTree (UIElement u, RoutedEvent re, Delegate h)
+        : base(false)
+      {
+        uIElement       = u ;
+        routedEvent     = re;
+        onChangeHandler = h ;
+      }
+
+      public override void TearDown()
+      {
+        uIElement.RemoveHandler(routedEvent, onChangeHandler);
+      }
+    }
+
+    public UpdateResult Update(BuildUpContext ctx, ParentInfo pi, UIElement ui)
     {
       // TODO: Handle nulls
       // TODO: How to handle events more efficiently?
 
       // TODO: Whether to handle events that already been handled should be configurable
       ui.AddHandler(event_.RoutedEvent, onChangeHandler, false);
-      ctx.OnTearDown(() => ui.RemoveHandler(event_.RoutedEvent, onChangeHandler));
+      return new UpdateResult(new RemoveHandlerTearDownTree(ui, event_.RoutedEvent, onChangeHandler), null);
     }
   }
 
@@ -335,7 +519,7 @@
       value = v;
     }
 
-    public void Update(UpdateContext ctx, ParentInfo pi, UIElement ui)
+    public UpdateResult Update(BuildUpContext ctx, ParentInfo pi, UIElement ui)
     {
       switch (pi)
       {
@@ -345,6 +529,8 @@
       case ParentInfo.ReusedInstance:
         break;
       }
+
+      return UpdateResult.Zero;
     }
   }
 
@@ -363,23 +549,38 @@
       validator = vr      ;
     }
 
-    public IProperty<TUI, T> Property   => setValue.Property ;
+    public IProperty<TUI, T>  Property  => setValue.Property ;
     public T                  Value     => setValue.Value    ;
 
-    public void Update(UpdateContext ctx, ParentInfo pi, UIElement ui)
+    public UpdateResult Update(BuildUpContext ctx, ParentInfo pi, UIElement ui)
     {
       setValue.Update(ctx, pi, ui);
 
       var v     = Value;
       var msgs  = validator(v);
-      if (msgs != null)
+      if (msgs != null && msgs.Length > 0)
       {
-        foreach (var msg in msgs)
+        var path = ctx.Path.Cons(name);
+        if (msgs.Length == 1)
         {
-          ctx.AddValidationError(name, msg);
+          return new UpdateResult(null, ValidationErrorTree.Create(path, msgs[0]));
+        }
+        else
+        {
+          var es =  new ErrorTree[msgs.Length];
+
+          for (var i = 0; i < msgs.Length; ++i)
+          {
+            es[i] = ValidationErrorTree.Create(path, msgs[i]);
+          }
+
+          return new UpdateResult(null, GroupErrorTree.Create(es));
         }
       }
-
+      else
+      {
+        return UpdateResult.Zero;
+      }
     }
   }
 
@@ -420,9 +621,31 @@
 
   // Views
 
+  public struct BuildUpResult
+  {
+    public readonly UIElement     UIElement   ;
+    public readonly TearDownTree  TearDownTree;
+    public readonly ErrorTree     ErrorTree   ;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public BuildUpResult(UIElement uiElement, TearDownTree tearDownTree, ErrorTree errorTree)
+    {
+      UIElement     = uiElement     ;
+      TearDownTree  = tearDownTree  ;
+      ErrorTree     = errorTree     ;
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public UpdateResult ToUpdateResult()
+    {
+      return new UpdateResult(TearDownTree, ErrorTree);
+    }
+
+  }
+
   public interface IView
   {
-    UIElement Update(UpdateContext ctx, ParentInfo pi, UIElement ui);
+    BuildUpResult BuildUp(BuildUpContext ctx, ParentInfo pi, UIElement ui);
   }
 
   public interface IView<TMessage> : IView
@@ -440,13 +663,13 @@
   public sealed class EmptyView<TMessage>
     : IView<TMessage>
   {
-    public UIElement Update(UpdateContext ctx, ParentInfo pi, UIElement ui)
+    public BuildUpResult BuildUp(BuildUpContext ctx, ParentInfo pi, UIElement ui)
     {
       var v = GetInstance<Empty>(ui);
       var tpi = v.ParentInfo;
       var tui = v.Instance  ;
 
-      return tui;
+      return new BuildUpResult(tui, null, null);
     }
   }
 
@@ -461,19 +684,24 @@
       values = vs ?? new IValue<TMessage, TUI>[0];
     }
 
-    public UIElement Update(UpdateContext ctx, ParentInfo pi, UIElement ui)
+    public BuildUpResult BuildUp(BuildUpContext ctx, ParentInfo pi, UIElement ui)
     {
       var v = GetInstance<TUI>(ui);
 
       var tpi = v.ParentInfo;
       var tui = v.Instance  ;
 
+      var tearDownTree  = TearDownTree.Zero ;
+      var errorTree     = ErrorTree.Zero    ;
+
       foreach (var value in values)
       {
-        value.Update(ctx, tpi, tui);
+        var ur        = value.Update(ctx, tpi, tui);
+        tearDownTree  = tearDownTree.JoinWith(ur.TearDownTree);
+        errorTree     = errorTree.JoinWith(ur.ErrorTree);
       }
 
-      return tui;
+      return new BuildUpResult(tui, tearDownTree, errorTree);
     }
   }
 
@@ -492,7 +720,7 @@
       name = n ?? "";
     }
 
-    public UIElement Update(UpdateContext ctx, ParentInfo pi, UIElement ui)
+    public BuildUpResult BuildUp(BuildUpContext ctx, ParentInfo pi, UIElement ui)
     {
       var nui =
         ui != null && (string)ui.GetValue(DependencyProperties.NameProperty) == name
@@ -500,12 +728,11 @@
         : null
         ;
 
-      ctx.PushValidationContext(name);
-      var nnui = view.Update(ctx, pi, nui);
-      nnui?.SetValue(DependencyProperties.NameProperty, name);
-      ctx.PopValidationContext();
+      var nctx = ctx.AppendToPath(name);
+      var nbr  = view.BuildUp(nctx, pi, nui);
+      nbr.UIElement?.SetValue(DependencyProperties.NameProperty, name);
 
-      return nnui;
+      return nbr;
     }
   }
 
@@ -541,19 +768,25 @@
 
     public static HostCleanup ExistingContentControl<TModel, TMessage>(ContentControl cc, TModel model, View<TModel, TMessage> view, Update<TModel, TMessage> update)
     {
-      var ctx     = new UpdateContext()     ;
-      var disp    = cc.Dispatcher           ;
-      var current = model                   ;
-      var queue   = new Queue<TMessage>(16) ;
+      var tearDownTree  = TearDownTree.Zero       ;
+      var disp          = cc.Dispatcher           ;
+      var current       = model                   ;
+      var queue         = new Queue<TMessage>(16) ;
 
       void Refresh()
       {
-        ctx.TearDown ();
-        var nv      = view(current)             ;
-        var cnt     = cc.Content as UIElement   ;
-        var pi      = ParentInfo.ReusedInstance ;
+        tearDownTree?.TearDown();
 
-        cc.Content  = nv.Update(ctx, pi, cnt)   ;
+        tearDownTree  = TearDownTree.Zero                     ;
+        var nv        = view(current)                         ;
+        var cnt       = cc.Content as UIElement               ;
+        var pi        = ParentInfo.ReusedInstance             ;
+
+        var ctx       = new BuildUpContext()                  ;
+        var br        = nv.BuildUp(ctx, pi, cnt)              ;
+        cc.Content    = br.UIElement                          ;
+        tearDownTree  = br.TearDownTree ?? TearDownTree.Zero  ;
+        // TODO: Handle Error Tree?
       }
 
       void Process()
@@ -584,7 +817,6 @@
       { 
         cc.RemoveHandler(RoutedEvents.MessageEvent, onMessage);
         queue.Clear();
-        ctx.TearDown();
       };
     }
   }

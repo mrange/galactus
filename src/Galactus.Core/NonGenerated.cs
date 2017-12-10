@@ -36,16 +36,17 @@ namespace Galactus.Standard
 
         public IView<TMessage> View => view;
 
-        public void Update(UpdateContext ctx, ParentInfo pi, UIElement ui)
+        public UpdateResult Update(BuildUpContext ctx, ParentInfo pi, UIElement ui)
         {
           var tui = (ContentControl)ui;
 
           var content = tui.Content as UIElement;
-          var ncontent= view.Update(ctx, pi, content);
-          if (!ReferenceEquals(content, ncontent))
+          var br      = view.BuildUp(ctx, pi, content);
+          if (!ReferenceEquals(content, br.UIElement))
           {
-            tui.Content = ncontent;
+            tui.Content = br.UIElement;
           }
+          return br.ToUpdateResult();
         }
       }
 
@@ -65,16 +66,17 @@ namespace Galactus.Standard
 
         public IView<TMessage> View => view;
 
-        public void Update(UpdateContext ctx, ParentInfo pi, UIElement ui)
+        public UpdateResult Update(BuildUpContext ctx, ParentInfo pi, UIElement ui)
         {
           var tui = (Decorator)ui;
 
           var child = tui.Child;
-          var nchild = view.Update(ctx, pi, child);
-          if (!ReferenceEquals(child, nchild))
+          var br    = view.BuildUp(ctx, pi, child);
+          if (!ReferenceEquals(child, br.UIElement))
           {
-            tui.Child = nchild;
+            tui.Child = br.UIElement;
           }
+          return br.ToUpdateResult();
         }
       }
 
@@ -94,16 +96,17 @@ namespace Galactus.Standard
 
         public IView<TMessage> View => view;
 
-        public void Update(UpdateContext ctx, ParentInfo pi, UIElement ui)
+        public UpdateResult Update(BuildUpContext ctx, ParentInfo pi, UIElement ui)
         {
           var tui = (HeaderedContentControl)ui;
 
           var header  = tui.Header as UIElement;
-          var nheader = view.Update(ctx, pi, header);
-          if (!ReferenceEquals(header, nheader))
+          var br     = view.BuildUp(ctx, pi, header);
+          if (!ReferenceEquals(header, br.UIElement))
           {
-            tui.Header = nheader;
+            tui.Header = br.UIElement;
           }
+          return br.ToUpdateResult();
         }
       }
 
@@ -211,9 +214,12 @@ namespace Galactus.Standard
 
         public IView<TMessage>[] Views => views;
 
-        public void Update(UpdateContext ctx, ParentInfo pi, UIElement ui)
+        public UpdateResult Update(BuildUpContext ctx, ParentInfo pi, UIElement ui)
         {
           var tui = (ItemsControl)ui;
+
+          var tearDownTree  = TearDownTree.Zero ;
+          var errorTree     = ErrorTree.Zero    ;
 
           // TODO: How to rebuild this more efficiently?
 
@@ -230,10 +236,12 @@ namespace Galactus.Standard
           {
             var child   = children[iter];
             var view    = views[iter];
-            var nchild  = view.Update(ctx, pi, child);
-            if (!ReferenceEquals(child, nchild))
+            var br      = view.BuildUp(ctx, pi, child);
+            tearDownTree= tearDownTree.JoinWith(br.TearDownTree);
+            errorTree   = errorTree.JoinWith(br.ErrorTree);
+            if (!ReferenceEquals(child, br.UIElement))
             {
-              children[iter] = nchild;
+              children[iter] = br.UIElement;
             }
           }
 
@@ -249,11 +257,14 @@ namespace Galactus.Standard
             for (var iter = children.Count; iter < views.Length; ++iter)
             {
               var view    = views[iter];
-              var nchild  = view.Update(ctx, pi, null);
-              children.Add(nchild);
+              var br      = view.BuildUp(ctx, pi, null);
+              tearDownTree= tearDownTree.JoinWith(br.TearDownTree);
+              errorTree   = errorTree.JoinWith(br.ErrorTree);
+              children.Add(br.UIElement);
             }
           }
 
+          return new UpdateResult(tearDownTree, errorTree);
         }
       }
 
@@ -273,9 +284,12 @@ namespace Galactus.Standard
 
         public IView<TMessage>[] Views => views;
 
-        public void Update(UpdateContext ctx, ParentInfo pi, UIElement ui)
+        public UpdateResult Update(BuildUpContext ctx, ParentInfo pi, UIElement ui)
         {
           var tui = (Panel)ui;
+
+          var tearDownTree  = TearDownTree.Zero ;
+          var errorTree     = ErrorTree.Zero    ;
 
           var children = tui.Children;
 
@@ -285,13 +299,15 @@ namespace Galactus.Standard
           {
             var child   = children[iter];
             var view    = views[iter];
-            var nchild  = view.Update(ctx, pi, child);
-            if (!ReferenceEquals(child, nchild))
+            var br      = view.BuildUp(ctx, pi, child);
+            tearDownTree= tearDownTree.JoinWith(br.TearDownTree);
+            errorTree   = errorTree.JoinWith(br.ErrorTree);
+            if (!ReferenceEquals(child, br.UIElement))
             {
               // TODO: How to do this more efficiently?
               Console.WriteLine("Remove/Insert");
               children.RemoveAt(iter);
-              children.Insert(iter, nchild);
+              children.Insert(iter, br.UIElement);
             }
           }
 
@@ -304,11 +320,14 @@ namespace Galactus.Standard
             for (var iter = children.Count; iter < views.Length; ++iter)
             {
               var view    = views[iter];
-              var nchild  = view.Update(ctx, pi, null);
-              children.Add(nchild);
+              var br      = view.BuildUp(ctx, pi, null);
+              tearDownTree= tearDownTree.JoinWith(br.TearDownTree);
+              errorTree   = errorTree.JoinWith(br.ErrorTree);
+              children.Add(br.UIElement);
             }
           }
 
+          return new UpdateResult(tearDownTree, errorTree);
         }
       }
 
