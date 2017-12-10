@@ -75,6 +75,11 @@
       dobj?.SetValue(ErrorTreeProperty, l);
     }
 
+    public static void ClearErrorTree(DependencyObject dobj)
+    {
+      dobj?.ClearValue(ErrorTreeProperty);
+    }
+
     public static object GetState(DependencyObject dobj)
     {
       return dobj?.GetValue(StateProperty);
@@ -542,7 +547,7 @@
     where TEventArgs : RoutedEventArgs
     ;
 
-  public delegate TMessage OnChange<TMessage, in TUI, in TEventArgs>(TUI uiElement, TEventArgs args)
+  public delegate Maybe<TMessage> OnChange<TMessage, in TUI, in TEventArgs>(TUI uiElement, TEventArgs args)
     where TUI : UIElement
     ;
 
@@ -660,7 +665,9 @@
         var path = ctx.Path.Cons(name);
         if (msgs.Length == 1)
         {
-          return new UpdateResult(null, ValidationErrorTree.Create(path, msgs[0]));
+          var et = ValidationErrorTree.Create(path, msgs[0]);
+          DependencyProperties.SetErrorTree(ui, et);
+          return new UpdateResult(null, et);
         }
         else
         {
@@ -671,11 +678,14 @@
             es[i] = ValidationErrorTree.Create(path, msgs[i]);
           }
 
-          return new UpdateResult(null, GroupErrorTree.Create(es));
+          var et = GroupErrorTree.Create(es);
+          DependencyProperties.SetErrorTree(ui, et);
+          return new UpdateResult(null, et);
         }
       }
       else
       {
+        DependencyProperties.ClearErrorTree(ui);
         return UpdateResult.Zero;
       }
     }
@@ -803,7 +813,7 @@
   }
 
   public delegate IView<TMessage> View<in TModel, TMessage>   (TModel model);
-  public delegate TModel          Update<TModel, in TMessage> (TModel model, TMessage message);
+  public delegate Maybe<TModel>   Update<TModel, in TMessage> (TModel model, TMessage message);
 
   public sealed class NamedView<TMessage> : IView<TMessage>
   {
@@ -908,8 +918,9 @@
 
   public sealed class ToolTipView<TMessage> : IView<TMessage>
   {
-    readonly IView<TMessage>  view    ;
-    readonly string           toolTip ;
+    static readonly object    boxedTrue = true;
+    readonly IView<TMessage>  view            ;
+    readonly string           toolTip         ;
 
     public ToolTipView(IView<TMessage> v, string tt)
     {
@@ -924,7 +935,7 @@
 
       if (br.UIElement != null)
       {
-        ToolTipService.SetShowOnDisabled(br.UIElement, true);
+        br.UIElement.SetValue(ToolTipService.ShowOnDisabledProperty, boxedTrue);
         if (br.ErrorTree.IsEmpty())
         {
           ToolTipService.SetToolTip(br.UIElement, toolTip);
@@ -960,6 +971,59 @@
 
   }
 
+  // Handlers
+
+  public static class Handlers
+  {
+    public delegate Maybe<TModel> PrismMessage<TModel>(TModel model);
+
+    public static IOnChangedValue<PrismMessage<TModel>, UIElement, RoutedEventHandler, RoutedEventArgs> CreatePrismCheckBoxHandler<TModel>()
+    {
+      return Standard.Controls<PrismMessage<TModel>>.checkBox.onClick((ui, args) =>
+        {
+          var cb  = args.OriginalSource as CheckBox;
+          var ll  = DependencyProperties.GetPrism(cb) as Prism<TModel, bool>;
+          if (cb != null && ll != null)
+          {
+            var isChecked = cb.IsChecked ?? false;
+            PrismMessage<TModel> msg = c => ll.Set(c, isChecked).Just();
+            return msg.Just();
+          }
+          else
+          {
+            return Maybe.Nothing<PrismMessage<TModel>>();
+          } 
+        });
+    }
+
+    public static IOnChangedValue<PrismMessage<TModel>, UIElement, RoutedEventHandler, RoutedEventArgs> CreatePrismTextBoxHandler<TModel>()
+    {
+      return Standard.Controls<PrismMessage<TModel>>.uIElement.onLostFocus((ui, args) =>
+        {
+          var ltb   = args.OriginalSource as TextBox;
+          var ll    = DependencyProperties.GetPrism(ltb) as Prism<TModel, string>;
+          if (ltb != null && ll != null)
+          {
+            var state = DependencyProperties.GetState(ltb) as string;
+            var text  = ltb.Text;
+            if (text != state)
+            {
+              PrismMessage<TModel> msg = m => ll.Set(m, text).Just();
+              return msg.Just();
+            }
+            else
+            {
+              return Maybe.Nothing<PrismMessage<TModel>>();
+            }
+          }
+          else
+          {
+            return Maybe.Nothing<PrismMessage<TModel>>();
+          }
+        });
+    }
+  }
+
   // Hosts
 
   public delegate void HostCleanup();
@@ -992,7 +1056,6 @@
       void Refresh()
       {
         Console.WriteLine("Refresh");
-
         tearDownTree?.TearDown();
 
         tearDownTree  = TearDownTree.Zero                     ;
@@ -1007,33 +1070,39 @@
         if(!br.ErrorTree.IsEmpty())
         {
           // TODO: Handle Error Tree?
-          Console.WriteLine("Errors");
-          var errors = br.ErrorTree.ToArray();
-          foreach (var e in errors)
-          {
-            Console.WriteLine("  {0} - {1}", e.path, e.message);
-          }
         }
       }
 
       void Process()
       {
+        var hasChanged = false;
         while (queue.Count > 0)
         {
           var msg = queue.Dequeue ();
-          current = update(current, msg);
+          var nm  = update(current, msg);
+          if (nm.HasValue)
+          {
+            current = nm.Value;
+            hasChanged = true;
+          }
         }
 
-        Refresh();
+        if (hasChanged)
+        {
+          Refresh();
+        }
       }
       var process = new Action(Process);
 
       void OnMessage(object o, MessageEventArgs args)
       {
-        var msg = (TMessage)args.Message;
-        queue.Enqueue(msg);
-        // TODO: Avoiding invoking Delay if already a queue?
-        disp.Delay(process);
+        var msg = (Maybe<TMessage>)args.Message;
+        if (msg.HasValue)
+        {
+          queue.Enqueue(msg.Value);
+          // TODO: Avoiding invoking Delay if already a queue?
+          disp.Delay(process);
+        }
       }
       var onMessage = new MessageEventHandler(OnMessage);
 

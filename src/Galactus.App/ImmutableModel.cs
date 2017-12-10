@@ -7,11 +7,11 @@
   using Galactus.Core;
   using Galactus.App.Model;
 
-  using static Galactus.Standard.Controls<Message>;
+  using static Galactus.Standard.Controls<Galactus.Core.Handlers.PrismMessage<Galactus.App.Model.Customer>>;
   using static System.Windows.GridUnitType;
 
-  delegate Customer Message(Customer customer);
-
+  using Message = Galactus.Core.Handlers.PrismMessage<Galactus.App.Model.Customer>;
+  
   class Program
   {
     static IView<Message> View(Customer customer)
@@ -29,43 +29,35 @@
 
       IView<Message> labeledCheckBox(string lbl, Prism<Customer, bool> l)
       {
+        var state = l.Get(customer).ValueOr(false);
         return checkBox.View
-          ( checkBox.isChecked(l.Get(customer).ValueOr(false))
+          ( checkBox.isChecked(state)
           , uIElement.prism(l)
+          , uIElement.state(state)
           , margin
           , checkBox.contentView(textBlock.View(textBlock.text(lbl)))
           )
           ;
       }
-      var labeledCheckBoxHandler = checkBox.onClick((ui, args) => c => 
-        {
-          var cb  = args.OriginalSource as CheckBox;
-          var ll  = DependencyProperties.GetPrism(cb) as Prism<Customer, bool>;
-          return ll?.Set(c, cb.IsChecked ?? false) ?? c;
-        });
 
       IView<Message> labeledTextBox(string lbl, Prism<Customer, string> l)
       {
+        var state = l.Get(customer).ValueOr("");
         return stackPanel.View
           ( stackPanel.orientation(Orientation.Horizontal)
           , margin
           , stackPanel.childViews
             ( textBlock.View(textBlock.text(lbl), textBlock.width(labelWidth))
             , textBox.View
-              ( textBox.text(l.Get(customer).ValueOr("")).Validate(lbl, v => v.IsNullOrEmpty() ? "Missing input" : null)
+              ( textBox.text(state).Validate(lbl, v => v.IsNullOrEmpty() ? "Missing input" : null)
               , textBox.minWidth(80)
               , uIElement.prism(l)
+              , uIElement.state(state)
               ).WithErrorAdorner()
             )
           ).WithToolTip(lbl)
           ;
       }
-      var labeledTextBoxHandler = uIElement.onLostFocus((ui, args) => c =>
-        {
-          var ltb = args.OriginalSource as TextBox;
-          var ll  = DependencyProperties.GetPrism(ltb) as Prism<Customer, string>;
-          return ll?.Set(c, ltb.Text) ?? c;
-        });
 
       IView<Message> address(string lbl, Prism<Customer, Address> l)
       {
@@ -137,10 +129,13 @@
         }
       }
 
+      var checkBoxHandler = Handlers.CreatePrismCheckBoxHandler<Customer>();
+      var textBoxHandler  = Handlers.CreatePrismTextBoxHandler<Customer>();
+
       return scrollViewer.View
         ( frameworkElement.layoutTransform(new ScaleTransform(2, 2))
-        , labeledTextBoxHandler
-        , labeledCheckBoxHandler
+        , textBoxHandler
+        , checkBoxHandler
         , scrollViewer.contentView
           ( stackPanel.View
               ( stackPanel.orientation(Orientation.Vertical)
@@ -165,7 +160,7 @@
         ;
     }
 
-    static Customer Update(Customer customer, Message message)
+    static Maybe<Customer> Update(Customer customer, Message message)
     {
       return message(customer);
     }
