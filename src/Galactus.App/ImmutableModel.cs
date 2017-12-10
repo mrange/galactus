@@ -52,7 +52,7 @@
           , stackPanel.childViews
             ( textBlock.View(textBlock.text(lbl), textBlock.width(labelWidth))
             , textBox.View
-              ( textBox.text(l.Get(customer).ValueOr(""))
+              ( textBox.text(l.Get(customer).ValueOr("")).Validate(lbl, v => v.IsNullOrEmpty() ? "Missing input" : null)
               , textBox.minWidth(80)
               , uIElement.prism(l)
               )

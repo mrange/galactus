@@ -275,7 +275,7 @@ namespace Galactus.Standard
     if (!dpr)
     {
 #>
-      public static IValue<TMessage, <#=tn#>> <#=pn#>(<#=dptn#> v) => new SetValue<TMessage, <#=tn#>, <#=dptn#>>(Properties.<#=etsn#>.<#=pn#>, v);
+      public static ISetValue<TMessage, <#=tn#>, <#=dptn#>> <#=pn#>(<#=dptn#> v) => new SetValue<TMessage, <#=tn#>, <#=dptn#>>(Properties.<#=etsn#>.<#=pn#>, v);
 <#
     }
   }
@@ -301,7 +301,7 @@ namespace Galactus.Standard
       ;
     // TODO: Handle the case when ehn = EventHandler<TEventArgs>
 #>
-      public static IValue<TMessage, <#=tn#>> on<#=RemoveTrailing("Event", f.Name)#> (OnChange<TMessage, <#=tn#>, <#=ean#>> onChange) =>
+      public static IOnChangedValue<TMessage, <#=tn#>, <#=ehn#>, <#=ean#>> on<#=RemoveTrailing("Event", f.Name)#> (OnChange<TMessage, <#=tn#>, <#=ean#>> onChange) =>
         new OnChangedValue<TMessage, <#=tn#>, <#=ehn#>, <#=ean#>> (Events.<#=etsn#>.<#=en#>, h => (<#=ehn#>)h.Invoke, onChange);
 <#
   }

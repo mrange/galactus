@@ -1,6 +1,7 @@
 ﻿namespace Galactus.Core
 {
   using System;
+  using System.Globalization;
   using System.Runtime.CompilerServices;
   using System.Windows.Threading;
 
@@ -28,6 +29,21 @@
       {
         action();
       }
+    }
+
+    public static string FormatWith(this string s, params object[] args)
+    {
+      return string.Format(CultureInfo.InvariantCulture, s, args);
+    }
+
+    public static bool IsNullOrEmpty(this string s)
+    {
+      return string.IsNullOrEmpty(s);
+    }
+
+    public static bool IsNullOrWhiteSpace(this string s)
+    {
+      return string.IsNullOrWhiteSpace(s);
     }
   }
 }

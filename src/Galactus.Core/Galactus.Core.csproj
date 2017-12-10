@@ -54,6 +54,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Generated.tt</DependentUpon>
     </Compile>
+    <Compile Include="ImmutableList.cs" />
     <Compile Include="Prism.cs" />
     <Compile Include="Maybe.cs" />
     <Compile Include="NonCohesive.cs" />

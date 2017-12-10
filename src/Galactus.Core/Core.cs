@@ -45,17 +45,55 @@
       dobj?.SetValue(PrismProperty, l);
     }
   }
+  
+  public struct ValidationError
+  {
+    public readonly IImmutableList<string>  Path    ;
+    public readonly string                  Message ;
+
+    public ValidationError(IImmutableList<string> path, string message)
+    {
+      Path    = path    ?? ImmutableList.Empty<string>();
+      Message = message ?? ""                           ;
+    }
+  }
 
   public delegate void Teardown();
 
   public sealed class UpdateContext
   {
-    readonly List<Teardown> tearDowns = new List<Teardown>(16);
+    readonly List<Teardown>         tearDowns         = new List<Teardown>(16);
+    readonly List<ValidationError>  validationErrors  = new List<ValidationError>(16);
+    
+    IImmutableList<string> path = ImmutableList.Empty<string>();
+
+    public void AddValidationError(string name, string message)
+    {
+      validationErrors.Add(new ValidationError(path.Cons(name ?? ""), message));
+    }
+
+    public ValidationError[] ValidationErrors => validationErrors.ToArray();
+
+    public void PushValidationContext(string name)
+    {
+      path = path.Cons(name ?? "");
+    }
+
+    public void PopValidationContext()
+    {
+      var m = path.Decons();
+      if (m.HasValue)
+      {
+        path = m.Value.tail;
+      }
+    }
 
     public void OnTearDown(Teardown action)
     {
-      // TODO: Handle nulls
-      tearDowns.Add(action);
+      if (action != null)
+      {
+        tearDowns.Add(action);
+      }
     }
 
     public void TearDown()
@@ -67,6 +105,8 @@
       }
 
       tearDowns.Clear();
+      validationErrors.Clear();
+      path = ImmutableList.Empty<string>();
     }
 
   }
@@ -167,7 +207,8 @@
   public interface ISetValue<TMessage, in TUI, T> : IValue<TMessage, TUI>
     where TUI : UIElement
   {
-    IProperty<TUI, T> Property { get; }
+    IProperty<TUI, T> Property  { get; }
+    T                 Value     { get; }
   }
 
   public sealed class SetValue<TMessage, TUI, T> : ISetValue<TMessage, TUI, T>
@@ -183,7 +224,8 @@
       value    = v;
     }
 
-    public IProperty<TUI, T> Property => property;
+    public IProperty<TUI, T> Property   => property ;
+    public T                  Value     => value    ;
 
     public void Update(UpdateContext ctx, ParentInfo pi, UIElement ui)
     {
@@ -231,7 +273,7 @@
     }
   }
 
-  public interface IOnChangedValue<TMessage, in TUI> : IValue<TMessage, TUI>
+  public interface IOnChangedValue<TMessage, in TUI, TEventHandler, TEventArgs> : IValue<TMessage, TUI>
     where TUI : UIElement
   {
   }
@@ -244,7 +286,7 @@
     where TUI : UIElement
     ;
 
-  public sealed class OnChangedValue<TMessage, TUI, TEventHandler, TEventArgs> : IOnChangedValue<TMessage, TUI>
+  public sealed class OnChangedValue<TMessage, TUI, TEventHandler, TEventArgs> : IOnChangedValue<TMessage, TUI, TEventHandler, TEventArgs>
     where TUI         : UIElement
     where TEventArgs  : RoutedEventArgs
   {
@@ -306,13 +348,74 @@
     }
   }
 
+  public sealed class ValidateValue<TMessage, TUI, T> : ISetValue<TMessage, TUI, T>
+    where TUI : UIElement
+  {
+    readonly ISetValue<TMessage, TUI, T> setValue ;
+    readonly string                      name     ;
+    readonly Func<T, string[]>           validator;
+
+    public ValidateValue(ISetValue<TMessage, TUI, T> v, string n, Func<T, string[]> vr)
+    {
+      // TODO: Handle nulls
+      setValue  = v       ;
+      name      = n ?? "" ;
+      validator = vr      ;
+    }
+
+    public IProperty<TUI, T> Property   => setValue.Property ;
+    public T                  Value     => setValue.Value    ;
+
+    public void Update(UpdateContext ctx, ParentInfo pi, UIElement ui)
+    {
+      setValue.Update(ctx, pi, ui);
+
+      var v     = Value;
+      var msgs  = validator(v);
+      if (msgs != null)
+      {
+        foreach (var msg in msgs)
+        {
+          ctx.AddValidationError(name, msg);
+        }
+      }
+
+    }
+  }
+
   public static class ValueExtensions
   {
-    public static IValue<TMessage, TUI> InitOnly<TMessage, TUI>(this IValue<TMessage, TUI> v)
+    public static IValue<TMessage, TUI> InitOnly<TMessage, TUI>(this IValue<TMessage, TUI> value)
       where TUI : UIElement
     {
-      return new InitOnlyValue<TMessage, TUI>(v);
+      return new InitOnlyValue<TMessage, TUI>(value);
     }
+
+    public static ISetValue<TMessage, TUI, T> Validate<TMessage, TUI, T>(this ISetValue<TMessage, TUI, T> value, string name, Func<T, string[]> validator)
+      where TUI : UIElement
+    {
+      return new ValidateValue<TMessage, TUI, T>(value, name, validator);
+    }
+
+    public static ISetValue<TMessage, TUI, T> Validate<TMessage, TUI, T>(this ISetValue<TMessage, TUI, T> value, string name, Func<T, string> validator)
+      where TUI : UIElement
+    {
+      string[] Validator(T v)
+      {
+        var msg = validator(v);
+        if (msg != null)
+        {
+          return new [] {msg};
+        }
+        else
+        {
+          return null;
+        }
+      }
+
+      return new ValidateValue<TMessage, TUI, T>(value, name, Validator);
+    }
+
   }
 
   // Views
@@ -397,8 +500,10 @@
         : null
         ;
 
+      ctx.PushValidationContext(name);
       var nnui = view.Update(ctx, pi, nui);
       nnui?.SetValue(DependencyProperties.NameProperty, name);
+      ctx.PopValidationContext();
 
       return nnui;
     }
